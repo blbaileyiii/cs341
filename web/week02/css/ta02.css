@@ -1,0 +1,8 @@
+div.card {
+    background: maroon;
+    font-size: 1.5rem;
+}
+
+div.card:hover {
+    font-weight: bold;
+}
