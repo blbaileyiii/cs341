@@ -16,7 +16,7 @@
         <div class="border top"></div>
         <div class="border bottom"></div>            
         <div class="content">
-            <?php require $_SERVER['DOCUMENT_ROOT'] . '/CS341/snippets/nav.php'; ?>
+            <?php require 'snippets/nav.php'; ?>
             <main>            
                 <h1>Student Assignments</h1>
                 <div class="flex">
@@ -36,8 +36,8 @@
                 </div>
                 <div class="drive">Coming Soon</div>
             </main>
-            <?php require $_SERVER['DOCUMENT_ROOT'] . '/CS341/snippets/nav.php'; ?>
-            <?php require $_SERVER['DOCUMENT_ROOT'] . '/CS341/snippets/footer.php'; ?>
+            <?php require 'snippets/nav.php'; ?>
+            <?php require 'snippets/footer.php'; ?>
         </div>            
     </div>
     

@@ -16,7 +16,7 @@
         <div class="border top"></div>
         <div class="border bottom"></div>            
         <div class="content">
-            <?php require $_SERVER['DOCUMENT_ROOT'] . '/CS341/snippets/nav.php'; ?>
+            <?php require 'snippets/nav.php'; ?>
             <main>           
                 <h1>Student Profile</h1>
                 <div class="flex">
@@ -51,8 +51,8 @@
                 </div>
                 <div class="drive">Nav:<a href="a_blbaileyiii.php" title="Student Assignments - Bernard Bailey">Assignments</a></div>
             </main>
-            <?php require $_SERVER['DOCUMENT_ROOT'] . '/CS341/snippets/nav.php'; ?>
-            <?php require $_SERVER['DOCUMENT_ROOT'] . '/CS341/snippets/footer.php'; ?>
+            <?php require 'snippets/nav.php'; ?>
+            <?php require 'snippets/footer.php'; ?>
         </div>            
     </div>
 </body>
