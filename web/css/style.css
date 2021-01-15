@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+* {
+    border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.border {
+    position: fixed;    
+    z-index: 1;
+}
+
+.border.top {
+    top: 0;
+    left: 0;
+    height: 1rem;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #2c2c2c 10%, #909090);
+    clip-path: polygon(0 0, 100% 0, calc(100% - 1rem) 1rem, 1rem 1rem);
+}
+
+.border.bottom {
+    bottom: 0;
+    right: 0;
+    height: 1rem;
+    width: 100%;
+    background-image: linear-gradient(to top, #2c2c2c 10%, #909090);
+    clip-path: polygon(1rem calc(100% - 1rem), calc(100% - 1rem) calc(100% - 1rem), 100% 100%, 0 100%);
+}
+
+.border.left {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1rem;
+    background-image: linear-gradient(to right, #2c2c2c 10%, #909090);
+}
+
+.border.right {
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 1rem;
+    background-image: linear-gradient(to left, #2c2c2c 10%, #909090);
+}
+
+.content {
+    background: #000000;
+    background-image: radial-gradient(#009600bf 25%, #000000);
+    font-family:'Share Tech Mono', monospace;
+    text-shadow: 0 0 5px #C8C8C8;
+    color: #ffffff;
+    background-attachment: fixed;
+    padding: 3rem;
+}
+
+.drive {
+    margin-top: 1rem;
+}
+
+.drive::before {
+    content: "X:\\> ";
+}
+
+.drive::after {
+    content: "_";
+    margin-left: 0.2rem;
+    animation: blink 0.65s infinite alternate;
+}
+
+@keyframes blink {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
