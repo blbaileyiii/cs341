@@ -20,31 +20,9 @@
             <div class="border top"></div>
             <div class="border bottom"></div>            
             <div class="content">            
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
-                <br><br>
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
-                <br><br>
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
-                <br><br>
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
-                <br><br>
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
-                <br><br><br>
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
-                <br><br><br>
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
-                <br><br><br>
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
-                <br><br><br>
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
-                <br><br><br>
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
-                <br><br><br>
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
-                <br><br><br>
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
-                <br><br><br>
-                <div>TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST</div>
+                <div>
+                  <img src="lee_prof_dec_2020.jpg" alt="Bernard L. Bailey III">
+                </div>
                 <div class="drive">Coming Soon</div>
             </div>            
         </div>
