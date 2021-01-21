@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Roboto&display=swap');
+
+html{
+    font-family: "Roboto";
+}
+
+body {
+    background: lightgrey;
+    margin: 0;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    border-bottom: 2px outset #303030;
+}
+
+header, footer {
+    margin: 0;
+    padding: 1rem;
+    background: darkslategrey;
+    color: white;
+}
+
+header div {
+    background: white;
+    display:inline-block;
+    padding: 0.75rem 1.5rem 0.75rem 1rem;
+    border-radius: 1rem;
+    font-size: 2.5rem;
+    font-family: "Bangers";
+    position: relative;
+    margin: 0 1rem 0 4rem;
+}
+
+header img {
+    width: 5rem;
+    max-width: 100%;
+    position: absolute;
+    top: 0.25rem;
+    left: -4rem;
+}
+
+footer {
+    text-align: center;
+}
+
+header {
+    flex-grow: 1;
+}
+
+nav {
+    flex-grow: 100;
+}
+
+nav {
+    background: #437070;
+    margin: 0;
+    padding: 1rem 1.5rem;    
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main {
+    padding: 1rem;
+}
+
+.stock:not(.item, .details) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.cart {
+    display: grid;
+    gap: 0.5rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.cart.item {
+    display: grid;
+    grid-template-columns: 150px auto;
+    gap: 1rem;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    padding: 1rem;
+}
+
+.cart-item-det {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ext-det {
+    padding: 1rem 0;
+}
+
+.ext-det > * {
+    margin-right: 1rem;
+}
+
+.details {
+    margin: 0 auto;
+}
+
+
+.stock.item {
+    border: 1px solid grey;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px 2px grey;
+    padding: 1rem;
+    background: white;
+    margin: 0 auto;
+    display: flex;    
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.stock.item img{
+    width: auto;
+    max-width: 100%;
+    margin: auto;    
+}
+
+.stock-item-det {
+    background: #437070;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    flex-grow: 1;
+}
+
+.stock-item-det > * {
+    margin-bottom: 0.25rem;
+}
+
+.item a{
+    text-decoration: none;
+}
+
+.item a, .item a:visited {
+    color: black;
+    font-size: 1.25rem;
+    display:block;
+}
+
+.item.ext-det a, .item.ext-det a:visited {
+    font-size: 1rem;
+    display: initial;
+}
+
+.item a:hover {
+    color: orangered;
+}
+
+.price-stock {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.price-stock input {    
+    margin: 0 1rem;
+}
+
+.style-button {
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+
+.stock-ind {
+    display: inline-block;
+}
+
+.stock-ind {
+    margin-left: 1rem;
+}
+
+.price-sign {
+    font-size: 0.75rem;
+    position: relative;
+    top: -0.25rem;
+}
+
+.price, .price-dollar {
+    font-size: 1.25rem;
+}
+
+.price-cents {
+    font-size: 0.75rem;
+    position: relative;
+    top: -0.25rem;
+}
+
+
+.img-cont {
+    position: relative;
+    padding-top: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.img-cont img{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: top;
+}
+
+.summary {
+    text-align: right;
+    padding: 0 1rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+nav li {
+    background: darkslategrey;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #303030;
+    border-radius: 0.25rem;
+    font-family: "Bangers";
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+}
+
+header a, header a:visited {
+    text-decoration: none;
+    color: #0099cc;    
+}
+
+nav a, nav a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.summary ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.summary li {
+    margin: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary span {
+    margin-left: 0.75rem;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.summary .style-button {
+    margin-top: 1rem;
+}
+
+label, input {
+    display: block;
+}
+
+.summary h2 {
+    margin-bottom: 1.25rem;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.shipping input {
+    margin-bottom: 0.5rem;
+}
