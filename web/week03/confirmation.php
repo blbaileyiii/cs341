@@ -33,9 +33,9 @@ foreach($_POST["cart"] as $cart_item_id=>$cart_item_qty) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CSE341 - Profile: Bernard Bailey</title>
+    <title>CSE341 - Week 03: Bernard Bailey</title>
     <meta name="CSE341"
-        content="My Profile">
+        content="Weel 03">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>    
