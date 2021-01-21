@@ -1,6 +1,6 @@
 <?php session_start();?>
 
-<?php require '../snippets/items.php'; ?>
+<?php require './snippets/items.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en-us">
