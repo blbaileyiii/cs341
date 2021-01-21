@@ -49,6 +49,7 @@ header img {
 
 footer {
     text-align: center;
+    border-top: 2px inset #303030;
 }
 
 header {
