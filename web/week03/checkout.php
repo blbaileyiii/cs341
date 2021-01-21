@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CSE341 - Week 03: Bernard Bailey</title>
     <meta name="CSE341"
-        content="Weel 03">
+        content="Week 03">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>    
