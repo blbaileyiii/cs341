@@ -27,7 +27,7 @@
                                 <ul>
                                     <li><span class="category">Week01:</span>...</li>
                                     <li><span class="category">Week02:</span>...</li>
-                                    <li><span class="category">Week03:</span>...</li>
+                                    <li><span class="category">Week03:</span><a href="./week03/index.php" title="Week03 Assignment - Shopping Car">Shopping Cart</a></li>
                                 </ul>
                             </li>
                         </ul>                        
