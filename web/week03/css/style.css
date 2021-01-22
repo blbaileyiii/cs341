@@ -79,6 +79,19 @@ main {
     gap: 1rem;
 }
 
+.stock.item {
+    border: 1px solid grey;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px 2px grey;
+    padding: 1rem;
+    background: white;
+    display: block
+}
+
+.stock.details {
+    display: block;
+}
+
 .cart {
     display: grid;
     gap: 0.5rem;
@@ -111,20 +124,6 @@ main {
 
 .details {
     margin: 0 auto;
-}
-
-
-.stock.item {
-    border: 1px solid grey;
-    border-radius: 1rem;
-    box-shadow: 2px 2px 5px 2px grey;
-    padding: 1rem;
-    background: white;
-    display: block
-}
-
-.stock.details {
-    display: block;
 }
 
 .details .stock.item{
@@ -216,6 +215,11 @@ main {
     top: -0.25rem;
 }
 
+.details-img-cont {
+    width: 500px;
+    text-align: center;
+    margin: auto;
+}
 
 .img-cont {
     position: relative;

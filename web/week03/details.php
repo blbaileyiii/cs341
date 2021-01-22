@@ -59,8 +59,10 @@ if ( isset($_SESSION["cart"]) ) {
     <?php require './snippets/top.php'; ?>
     <main>
         <div class="details">
-            <div class='stock item'>                
+            <div class='stock item'>
+                <div class="details-img-cont">
                 <img src="./images/<?php echo "{$items[$id][2]}";?>" alt="img <?php echo "{$items[$id][0]}";?>" >
+                </div>
                 <div class='stock-item-det'>
                     <div><?php echo "{$items[$id][0]}";?></div>
                     <div>Description: <?php echo "{$items[$id][1]}"; ?></div>
