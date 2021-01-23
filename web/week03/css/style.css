@@ -199,20 +199,18 @@ main {
     margin-left: 1rem;
 }
 
-.price-sign {
-    font-size: 0.75rem;
+.stock-title {
+    font-size: 1.75rem;
+}
+
+.price-sign, .price-cents {
+    font-size: 1rem;
     position: relative;
     top: -0.25rem;
 }
 
 .price, .price-dollar {
-    font-size: 1.25rem;
-}
-
-.price-cents {
-    font-size: 0.75rem;
-    position: relative;
-    top: -0.25rem;
+    font-size: 1.5rem;
 }
 
 .details-img-cont {

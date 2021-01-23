@@ -64,12 +64,12 @@ if ( isset($_SESSION["cart"]) ) {
                 <img src="./images/<?php echo "{$items[$id][2]}";?>" alt="img <?php echo "{$items[$id][0]}";?>" >
                 </div>
                 <div class='stock-item-det'>
-                    <div><?php echo "{$items[$id][0]}";?></div>
+                    <div class="stock-title"><?php echo "{$items[$id][0]}";?></div>
                     <div>Description: <?php echo "{$items[$id][1]}"; ?></div>
                     <form class="price-stock" action="details.php" method="get">
                         <span class="price">
                             <?php $price = explode(".", $items[$id][4]); ?>
-                            <span class="price-sign">$</span><span class="price-dollar"><?php echo "{$price[0]}";?></span><span class="price-cents"><?php echo "{$price[1]}";?></span>
+                            <span class="price-sign">Price $</span><span class="price-dollar"><?php echo "{$price[0]}";?></span><span class="price-cents"><?php echo "{$price[1]}";?></span>
                         </span>
                         <span class="stock-ind">
                             <?php 
