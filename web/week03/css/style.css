@@ -145,7 +145,7 @@ main {
     border-radius: 0.5rem;
     color: white;
     flex-grow: 1;
-    flex-basis: 30rem;
+    flex-basis: 35vw;
 }
 
 .stock-item-det > * {
