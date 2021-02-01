@@ -10,7 +10,7 @@ echo $_SERVER['DOCUMENT_ROOT'];
 if(substr($_SERVER['DOCUMENT_ROOT'], 0, 4) == 'http'){
     echo 'webpage';
 } else {
-    echo 'local drive...'
+    echo 'local drive...';
 }
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/project/libraries/connections.php';
