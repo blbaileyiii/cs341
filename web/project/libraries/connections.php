@@ -18,9 +18,10 @@ function eowConnect(){
     // Create the actual connection object and assign it to a variable
     try {
      $db = new PDO($dsn, $dbUser, $dbPassword, $options);
+     echo "Working"
      return $db;
     } catch(PDOException $e) {
-     //echo 'Sorry, the connection failed';
+     echo 'Sorry, the connection failed';
      header('Location: ./view/500.php');
      exit;
     }
