@@ -5,10 +5,10 @@
  */
 
 // Get the database connection file
-require_once $_SERVER['DOCUMENT_ROOT'] . '/projects/library/connections.php';
+//require_once $_SERVER['DOCUMENT_ROOT'] . '/projects/library/connections.php';
 // Get the Taxaonomy table for use as needed
 //require_once $_SERVER['DOCUMENT_ROOT'] . '/projects/model/main-model.php';
-eowConnect();
+//eowConnect();
 
 // Get the taxonomy array
 //$taxonomy = getTaxonomy();
