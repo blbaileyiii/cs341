@@ -8,13 +8,12 @@
 echo "starting include";
 include $_SERVER['DOCUMENT_ROOT'] . '/project/libraries/connections.php';
 // Get the Taxaonomy table for use as needed
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/project/model/main-model.php';
-eowConnect();
+require_once $_SERVER['DOCUMENT_ROOT'] . '/project/model/main-model.php';
 
 // Get the taxonomy array
-//$taxonomy = getTaxonomy();
+$taxonomy = getTaxonomy();
 
-//var_dump($taxonomy);
+var_dump($taxonomy);
 //	exit;
 
 // Build a navigation bar using the $classifications array
