@@ -24,12 +24,12 @@
             <form action="/project/accounts/index.php" method="post">
                 <div>
                     <label for="email"><span>Email Address</span><span>Required</span></label>
-                    <input id="email" name="email" type="email" autocomplete="email" required>
+                    <input id="email" name="login.email" type="email" autocomplete="email" required>
                     
                 </div>
                 <div>
                     <label for="password"><span>Password</span><span>Required</span></label>
-                    <input id="password" name="password" type="password" autocomplete="current-password" required>
+                    <input id="password" name="login.password" type="password" autocomplete="current-password" required>
                     
                 </div>
                 <div>
