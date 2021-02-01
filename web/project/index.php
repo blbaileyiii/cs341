@@ -5,14 +5,14 @@
  */
 
 // Get the database connection file
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/projects/library/connections.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/projects/library/connections.php';
 // Get the Taxaonomy table for use as needed
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/projects/model/main-model.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/projects/model/main-model.php';
 
 // Get the taxonomy array
-//$taxonomy = getTaxonomy();
+$taxonomy = getTaxonomy();
 
-//var_dump($taxonomy);
+var_dump($taxonomy);
 //	exit;
 
 // Build a navigation bar using the $classifications array
