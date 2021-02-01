@@ -27,5 +27,25 @@ function getTaxonomy(){
     return $taxonomy;
    }
 
+function register(){
+    if(isset($_POST['register.email'])){
+        $useremail = $_POST['register.email'];
+        
+        $db = eowConnect();
+
+        $sql = 
+        'SELECT useremail
+        FROM users
+        WHERE useremail=:useremail';
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute(array(':useremail' => $useremail));
+        $accounts = $stmt->fetchAll();
+        $stmt->closeCursor(); 
+        var_dump($accounts);
+    }
+    
+}
+
 ?>
 

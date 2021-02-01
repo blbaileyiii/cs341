@@ -5,13 +5,15 @@
 
 // Get the database connection file
 require_once $_SERVER['DOCUMENT_ROOT'] . '/project/libraries/connections.php';
-// Get the Taxaonomy table for use as needed
+// Get the db functions for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/project/model/main-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
+
+register();
 
 switch($action){
     case 'login':
