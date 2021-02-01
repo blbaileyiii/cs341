@@ -5,8 +5,8 @@
  */
 
 // Get the database connection file
-echo $_SERVER['DOCUMENT_ROOT'];
-
+echo $_SERVER['DOCUMENT_ROOT'] .'<br>';
+echo substr($_SERVER['DOCUMENT_ROOT'], 0, 4) . '<br>';
 if(substr($_SERVER['DOCUMENT_ROOT'], 0, 4) == 'http'){
     echo 'webpage';
 } else {

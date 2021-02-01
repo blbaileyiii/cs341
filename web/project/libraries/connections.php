@@ -3,8 +3,6 @@
 // <?php require_once './library/connections.php';
 // <?php eowConnect();
 
-echo "included";
-
 function eowConnect(){
     try {
         $dbUrl = getenv('DATABASE_URL');
