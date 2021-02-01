@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Echoes of Whimsy - Template</title>
+    <title>Echoes of Whimsy - Login</title>
     <meta name="Echoes of Whimsy"
-        content="Echoes of Whimsy - Template">
+        content="Echoes of Whimsy - Login">
         <link rel="stylesheet" href="/project/css/layout.css">
         <link rel="stylesheet" href="/project/css/typography.css">
         <link rel="stylesheet" href="/project/css/theme.css">
