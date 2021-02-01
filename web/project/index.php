@@ -9,7 +9,7 @@ echo "starting include";
 include $_SERVER['DOCUMENT_ROOT'] . '/project/libraries/connections.php';
 // Get the Taxaonomy table for use as needed
 //require_once $_SERVER['DOCUMENT_ROOT'] . '/project/model/main-model.php';
-//eowConnect();
+eowConnect();
 
 // Get the taxonomy array
 //$taxonomy = getTaxonomy();
