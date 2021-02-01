@@ -5,6 +5,7 @@
  */
 
 // Get the database connection file
+echo "starting include";
 include $_SERVER['DOCUMENT_ROOT'] . '/projects/library/connections.php';
 // Get the Taxaonomy table for use as needed
 //require_once $_SERVER['DOCUMENT_ROOT'] . '/projects/model/main-model.php';
