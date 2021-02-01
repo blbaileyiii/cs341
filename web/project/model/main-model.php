@@ -1,10 +1,10 @@
 <?php
 /*
- * Main PHP Motors Model
+ * Main Echoes of Whimsy Model
  */
 
 function getTaxonomy(){
-    // Create a connection object from the phpmotors connection function
+    // Create a connection object from the echoes of whimsy connection function
     $db = eowConnect(); 
     // The SQL statement to be used with the database 
     $sql = 
@@ -13,12 +13,12 @@ function getTaxonomy(){
     LEFT JOIN txgenus ON txfamily.txfamilyid=txgenus.txfamilyid
     ORDER BY txracename, txfamilyname, txgenusname';
 
-    // The next line creates the prepared statement using the phpmotors connection      
+    // The next line creates the prepared statement using the echoes of whimsy connection      
     $stmt = $db->prepare($sql);
     // The next line runs the prepared statement 
     $stmt->execute(); 
     // The next line gets the data from the database and 
-    // stores it as an array in the $classifications variable 
+    // stores it as an array in the $taxonomy variable 
     $taxonomy = $stmt->fetchAll(); 
     // The next line closes the interaction with the database 
     $stmt->closeCursor(); 
