@@ -6,9 +6,9 @@
 
 // Get the database connection file
 echo "starting include";
-include $_SERVER['DOCUMENT_ROOT'] . '/projects/libraries/connections.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/project/libraries/connections.php';
 // Get the Taxaonomy table for use as needed
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/projects/model/main-model.php';
+//require_once $_SERVER['DOCUMENT_ROOT'] . '/project/model/main-model.php';
 eowConnect();
 
 // Get the taxonomy array
