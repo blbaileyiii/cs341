@@ -1,3 +1,1 @@
-<?php
-//NOT THE HEADER TAG so it can be expanded...
-?>
+<span><a href="/project/accounts/index.php?action=login" title="Echoes of Whimsy - My Account">My Account</a></span>
