@@ -210,3 +210,12 @@ SELECT txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenusp
 FROM txrace LEFT JOIN txfamily on txrace.txraceid=txfamily.txraceid
 LEFT JOIN txgenus ON txfamily.txfamilyid=txgenus.txfamilyid
 ORDER BY txracename, txfamilyname, txgenusname;
+
+
+--SCHEMA CREATION
+CREATE SCHEMA cse341ta04
+    AUTHORIZATION qmylazbfcihiry;
+
+GRANT ALL ON SCHEMA test TO PUBLIC;
+
+GRANT ALL ON SCHEMA test TO gmybdgutyhhvkc;
