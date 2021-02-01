@@ -21,7 +21,7 @@
     </nav>    
     <main>    
         <h1>Registration</h1>
-        <form action="#" method="post">
+        <form action="/project/accounts/index.php" method="post">
             <div>
                 <label for="fName"><span>First Name</span><span>Required</span></label> 
                 <input id="fName" name="fName" type="text" autocomplete="given-name" required>

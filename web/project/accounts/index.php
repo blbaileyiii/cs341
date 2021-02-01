@@ -20,6 +20,8 @@ switch($action){
     case 'registration':
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/registration.php';
         break;
+    case 'account':
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/account.php';
     default:
         break;
 }

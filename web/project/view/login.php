@@ -21,7 +21,7 @@
     </nav>    
     <main>
         <h1>Register</h1>
-            <form action="#" method="post">
+            <form action="/project/accounts/index.php" method="post">
                 <div>
                     <label for="email"><span>Email Address</span><span>Required</span></label>
                     <input id="email" name="email" type="email" autocomplete="email" required>
