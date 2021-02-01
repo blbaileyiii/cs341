@@ -7,12 +7,11 @@ function getTaxonomy(){
     // Create a connection object from the phpmotors connection function
     $db = eowConnect(); 
     // The SQL statement to be used with the database 
-    $sql = 'SELECT * FROM txrace';
-
-    //'SELECT txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
-    //FROM txrace LEFT JOIN txfamily on txrace.txraceid=txfamily.txraceid
-    //LEFT JOIN txgenus ON txfamily.txfamilyid=txgenus.txfamilyid
-    //ORDER BY txracename, txfamilyname, txgenusname';
+    $sql = 
+    'SELECT txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
+    FROM txrace LEFT JOIN txfamily on txrace.txraceid=txfamily.txraceid
+    LEFT JOIN txgenus ON txfamily.txfamilyid=txgenus.txfamilyid
+    ORDER BY txracename, txfamilyname, txgenusname';
 
     // The next line creates the prepared statement using the phpmotors connection      
     $stmt = $db->prepare($sql);
