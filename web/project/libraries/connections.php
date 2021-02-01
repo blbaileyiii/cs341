@@ -17,13 +17,13 @@ function eowConnect(){
         $dbPassword = $dbOpts["pass"];
         $dbName = ltrim($dbOpts["path"],'/');
         $dsn = "pgsql:host=$dbHost;port=$dbPort;dbname=$dbName";
-        //$options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+        $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
         // Create the actual connection object and assign it to a variable
-        //$db = new PDO($dsn, $dbUser, $dbPassword, $options);
-        $db = new PDO($dsn, $dbUser, $dbPassword);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db = new PDO($dsn, $dbUser, $dbPassword, $options);
+        //$db = new PDO($dsn, $dbUser, $dbPassword);
+        //$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Working";
-        //return $db;
+        return $db;
     } catch(PDOException $ex) {
         echo 'Error!: ' . $ex->getMessage();
         die();
