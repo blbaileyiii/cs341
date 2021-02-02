@@ -231,7 +231,7 @@ function getRaces() {
             }
             */
         }
-        var_dump($races);
+        //var_dump($races);        
 
         return $races;
 
