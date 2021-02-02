@@ -51,7 +51,7 @@ function login() {
                 $sql = 
                 'UPDATE users
                 SET sessionhashpass = :sessionhashpass,
-                    lastactive = now()
+                lastactive = now()
                 WHERE username=:username';
 
                 $stmt = $db->prepare($sql);
@@ -62,7 +62,7 @@ function login() {
                 $_SESSION['eowSession']['user'] = $username;
                 $_SESSION['eowSession']['hash'] = $sessionHash;
 
-                unset($_POST)
+                unset($_POST);
 
 
             } else if ($account['userdisabled']) {
