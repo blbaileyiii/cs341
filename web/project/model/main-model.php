@@ -22,7 +22,7 @@ function login() {
         $accounts = $stmt->fetchAll();
 
         //echo '<br><br>';
-        var_dump($accounts);
+        //var_dump($accounts);
 
         //There should only be 1 record.
         if(count($accounts) == 1){
@@ -41,7 +41,7 @@ function login() {
             && !$account['userdisabled']
             && !$account['usersuspended']
             && $account['useremailverified']) {
-                //echo '<br>Account is good.';
+                echo '<br>Account is good.';
                 unset($_POST['login']['password']);
 
                 //create the active user.
