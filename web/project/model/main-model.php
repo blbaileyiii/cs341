@@ -69,6 +69,9 @@ function register(){
                 $stmt = $db->prepare($sql);
                 $stmt->execute(array(':username' => $username, ':userfname' => $fname, ':userlname' => $lname, ':useremail' => $email, ':userhashpass' => $hashedpass ));
 
+                unset($_POST['register']);
+                echo "Account Created";
+
 
             } catch(PDOException $ex) {
                 echo $sql . "<br>" . $ex->getMessage();
