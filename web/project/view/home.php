@@ -20,7 +20,7 @@
         <?php require $currRoot . '/project/snippets/nav.php'; ?>
     </nav>    
     <main>    
-        <h1>Content Title Here</h1>
+        <h1>News</h1>
         Content goes here.
     </main>
     <footer>
