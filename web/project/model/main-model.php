@@ -25,7 +25,7 @@ function getTaxonomy(){
     // The next line sends the array of data back to where the function 
     // was called (this should be the controller) 
     return $taxonomy;
-   }
+}
 
 function register(){
     //var_dump($_POST);
@@ -81,7 +81,8 @@ function register(){
             //count is greater than 0 ...username already exists...
         }       
 
-        $stmt->closeCursor();    
+        $stmt->closeCursor();  
+    }  
 }
 
 function login() {
