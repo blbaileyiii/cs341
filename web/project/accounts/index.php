@@ -3,10 +3,16 @@
  * Accounts Controller
  */
 
+if(substr($_SERVER['DOCUMENT_ROOT'], 0, 4) == '/app'){
+    $currRoot = $_SERVER['DOCUMENT_ROOT'];
+} else {
+    $currRoot = $_SERVER['DOCUMENT_ROOT'] . '/CS341/web';
+}
+
 // Get the database connection file
-require_once $_SERVER['DOCUMENT_ROOT'] . '/project/libraries/connections.php';
+require_once $currRoot . '/project/libraries/connections.php';
 // Get the db functions for use as needed
-require_once $_SERVER['DOCUMENT_ROOT'] . '/project/model/main-model.php';
+require_once $currRoot . '/project/model/main-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -17,13 +23,13 @@ register();
 
 switch($action){
     case 'login':
-        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/login.php';
+        include $currRoot . '/project/view/login.php';
         break;
     case 'registration':
-        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/registration.php';
+        include $currRoot . '/project/view/registration.php';
         break;
     case 'account':
-        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/account.php';
+        include $currRoot . '/project/view/account.php';
     default:
         break;
 }

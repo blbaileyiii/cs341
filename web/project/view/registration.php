@@ -14,10 +14,10 @@
 
 <body>
     <header>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/header.php'; ?>
+        <?php require $currRoot . '/project/snippets/header.php'; ?>
     </header>
     <nav>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>
+        <?php require $currRoot . '/project/snippets/nav.php'; ?>
     </nav>    
     <main>    
         <h1>Registration</h1>
@@ -47,7 +47,7 @@
         </form>
     </main>
     <footer>
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/footer.php'; ?>
+    <?php require $currRoot . '/project/snippets/footer.php'; ?>
     </footer>
 </body>
 </html>
