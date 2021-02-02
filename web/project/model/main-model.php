@@ -55,7 +55,7 @@ function register(){
 
                 $email = htmlspecialchars($_POST['register']['email']);
                 $fname = htmlspecialchars($_POST['register']['fname']);
-                $lname = htmlspecialchars($_POST['register']['fname']);
+                $lname = htmlspecialchars($_POST['register']['lname']);
 
                 $hashedpass = password_hash(htmlspecialchars($_POST['register']['password']), PASSWORD_DEFAULT);
                 unset($_POST['register']['password']);
@@ -79,6 +79,7 @@ function register(){
 
         } else {
             //count is greater than 0 ...username already exists...
+            //also need to account for email being unique...
         }       
 
         $stmt->closeCursor();  
@@ -88,6 +89,36 @@ function register(){
 function login() {
     //password_verify($input, $hashedpedindb);
     //gethostname();
+    if(isset($_POST['login']['uname'])
+    && isset($_POST['login']['password'])){
+        $username = htmlspecialchars($_POST['login']['uname']);
+        
+        $db = eowConnect();
+
+        $sql = 
+        'SELECT userfname, userlname, userhashpass, userdisabled, usersuspended, useremailverified, userlevel
+        FROM users
+        WHERE username=:username';
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute(array(':username' => $username));
+        $account = $stmt->fetchAll();
+
+        if(count($account) == 1){
+            if(!$account['userdisabled']
+            && !$account['usersuspended']
+            && $account['useremailverified']
+            )
+            echo $account['userfname'];
+
+
+
+
+
+        } else {
+            // if it is greater than 1 something really bad happened and we have duplicate accounts...
+        }
+    }
 }
 
 ?>
