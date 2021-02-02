@@ -106,6 +106,9 @@ function login() {
         $stmt->execute(array(':username' => $username));
         $account = $stmt->fetchAll();
 
+        echo '<br>';
+        var_dump($account);
+
         if(count($account) == 1){
             if(!$account['userdisabled']
             && !$account['usersuspended']
