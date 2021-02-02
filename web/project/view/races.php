@@ -22,13 +22,11 @@
     <main>    
         <h1>The Races and Creatures of Whimsy</h1>        
         
-        <?php
-        foreach ($races as $race => $raceInfo) {
-            echo "<div>\n";
-            echo "<h2>$race</h2>\n";
-            echo "</div>\n";
-        }
-        ?>
+        <?php foreach ($races as $race => $raceInfo) { ?>
+            <div>
+            <h2><?php $race ?></h2>
+            </div>
+        <?php } ?>
         
     </main>
     <footer>
