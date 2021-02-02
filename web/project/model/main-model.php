@@ -42,8 +42,7 @@ function register(){
         $stmt = $db->prepare($sql);
         $stmt->execute(array(':useremail' => $email));
         $accounts = $stmt->fetchAll();
-        $stmt->closeCursor();
-
+        
         echo count($accounts);
 
         if(count($accounts) == 0 
@@ -65,9 +64,10 @@ function register(){
 
             $stmt = $db->prepare($sql);
             $stmt->execute(array(':userfname' => $fname, ':userlname' => $lname, ':useremail' => $email, ':userhashpass' => $hashedpass ));
-            $stmt->closeCursor();
-
+            
         }
+
+        $stmt->closeCursor();
     }
     
 }
