@@ -45,26 +45,32 @@ function register(){
         
         echo count($accounts);
 
-        if(count($accounts) == 0 
-        && isset($_POST['register']['fname'])
-        && isset($_POST['register']['lname'])
-        && isset($_POST['register']['password']) ) {
+        try {
 
-            $fname = htmlspecialchars($_POST['register']['fname']);
-            $lname = htmlspecialchars($_POST['register']['fname']);
+        
+            if(count($accounts) == 0 
+            && isset($_POST['register']['fname'])
+            && isset($_POST['register']['lname'])
+            && isset($_POST['register']['password']) ) {
 
-            $hashedpass = password_hash(htmlspecialchars($_POST['register']['password']), PASSWORD_DEFAULT);
-            unset($_POST['register']['password']);
+                $fname = htmlspecialchars($_POST['register']['fname']);
+                $lname = htmlspecialchars($_POST['register']['fname']);
 
-            //echo '<br>' . $hashedpass;
+                $hashedpass = password_hash(htmlspecialchars($_POST['register']['password']), PASSWORD_DEFAULT);
+                unset($_POST['register']['password']);
 
-            $sql = 
-            'INSERT INTO public.users (userfname, userlname, useremail, userhashpass)
-            VALUES (:userfname, :userlname, :useremail, :userhashpass)';
+                //echo '<br>' . $hashedpass;
 
-            $stmt = $db->prepare($sql);
-            $stmt->execute(array(':userfname' => $fname, ':userlname' => $lname, ':useremail' => $email, ':userhashpass' => $hashedpass ));
-            
+                $sql = 
+                'INSERT INTO public.users (userfname, userlname, useremail, userhashpass)
+                VALUES (:userfname, :userlname, :useremail, :userhashpass)';
+
+                $stmt = $db->prepare($sql);
+                $stmt->execute(array(':userfname' => $fname, ':userlname' => $lname, ':useremail' => $email, ':userhashpass' => $hashedpass ));
+
+            }
+        } catch(PDOException $ex) {
+            echo $sql . "<br>" . $ex->getMessage();
         }
 
         $stmt->closeCursor();
