@@ -204,7 +204,7 @@ function getRaces() {
             if ($sqlrace['txracename'] !== NULL && $sqlrace['txfamilyname'] !== NULL && $sqlrace['txgenusname'] !== NULL){
                 //var_dump($sqlrace);
                 //echo '<br><br>';
-                $races[$sqlrace['txracename']]['txracedesc'] = $sqlrace['txracedsc'];
+                $races[$sqlrace['txracename']]['txracedesc'] = $sqlrace['txracedesc'];
                 $races[$sqlrace['txracename']]['txfamilynames'][$sqlrace['txfamilyname']]['txgenusnames'][$sqlrace['txgenusname']] = 0;
                 
             } else if ($sqlrace['txracename'] !== NULL && $sqlrace['txfamilyname']){
