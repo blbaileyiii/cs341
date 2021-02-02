@@ -48,16 +48,17 @@ function login() {
                 $sessionHash = password_hash($account['userhashpass'], PASSWORD_DEFAULT);
                 $hostname = gethostname();
 
-                echo $hostname;
+                //echo $hostname;
 
                 $sql = 
                 'UPDATE users
                 SET sessionhashpass = :sessionhashpass,
-                    lastactive = now()
+                    lastactive = now(),
+                    userhost = :userhost
                 WHERE username=:username';
 
                 $stmt = $db->prepare($sql);
-                $stmt->execute(array(':username' => $username, ':sessionhashpass' => $sessionHash));
+                $stmt->execute(array(':username' => $username, ':sessionhashpass' => $sessionHash, ':userhost' => $hostname));
                 $accounts = $stmt->fetchAll();
                 
                 echo 'sql executed...';
