@@ -28,7 +28,7 @@ function getTaxonomy(){
    }
 
 function register(){
-    //var_dump($_POST);
+    var_dump($_POST);
     if(isset($_POST['register']['email'])){
         $useremail = htmlspecialchars($_POST['register.email']);
         
