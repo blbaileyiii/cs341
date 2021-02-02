@@ -104,12 +104,16 @@ function login() {
 
         $stmt = $db->prepare($sql);
         $stmt->execute(array(':username' => $username));
-        $account = $stmt->fetchAll();
+        $accounts = $stmt->fetchAll();
 
         echo '<br><br>';
-        var_dump($account);
+        var_dump($accounts);
 
-        if(count($account) == 1){
+        //There should only be 1 record.
+        if(count($accounts) == 1){
+            
+            //If there is only 1 record 
+            $account = $accounts[0];
             echo '<br>Account retrieved.';
             echo $account['userfname'];
 
