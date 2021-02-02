@@ -23,10 +23,8 @@
         <h1>The Races and Creatures of Whimsy</h1>        
         
         <?php
-
-        var_dump($races);
         foreach ($races as $race => $raceInfo) {
-            echo '<div>'. $race .'</div>';
+            echo '<div><h2>'. $race .'</h2></div>';
         }
         ?>
         

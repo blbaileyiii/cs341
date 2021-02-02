@@ -222,7 +222,7 @@ function getRaces() {
                 var_dump($sqlrace);
                 echo '<br><br>';
             }
-            //$races[$sqlrace['txracename']]
+            var_dump($races);
         }
 
         return $races;
