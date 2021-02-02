@@ -46,7 +46,7 @@ switch($action){
         include $currRoot . '/project/view/template.php';
         break;
     default:
-        include $currRoot . '/project/view/home.php';
+        include $currRoot . '/project/view/news.php';
 }
 
 ?>
