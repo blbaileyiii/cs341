@@ -22,14 +22,21 @@ if ($action == NULL) {
 register();
 
 switch($action){
-    case 'login':
+    case 'getlogin':
         include $currRoot . '/project/view/login.php';
         break;
     case 'registration':
         include $currRoot . '/project/view/registration.php';
         break;
+    case 'login':
+        include $currRoot . '/project/view/account.php';
+        break;
+    case 'register':
+        include $currRoot . '/project/view/account.php';
+        break;
     case 'account':
         include $currRoot . '/project/view/account.php';
+        break;
     default:
         break;
 }

@@ -43,7 +43,7 @@ function register(){
         $stmt->execute(array(':username' => $username));
         $accounts = $stmt->fetchAll();
         
-        echo count($accounts);
+        //echo count($accounts);
 
         if(count($accounts) == 0 
         && isset($_POST['register']['email'])
@@ -81,11 +81,7 @@ function register(){
             //count is greater than 0 ...username already exists...
         }       
 
-        $stmt->closeCursor();
-    } else if (isset($_POST['register']['uname'])) {
-
-    }
-    
+        $stmt->closeCursor();    
 }
 
 function login() {

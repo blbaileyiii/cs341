@@ -20,11 +20,11 @@
         <?php require $currRoot. '/project/snippets/nav.php'; ?>
     </nav>    
     <main>
-        <h1>Register</h1>
+        <h1>Login</h1>
             <form action="/project/accounts/index.php" method="post">
                 <div>
-                    <label for="email"><span>Email Address</span><span>Required</span></label>
-                    <input id="email" name="login[email]" type="email" autocomplete="email" required>
+                    <label for="uname"><span>User Name</span><span>Required</span></label>
+                    <input id="uname" name="login[uname]" type="text" autocomplete="username" required>
                     
                 </div>
                 <div>
@@ -32,7 +32,7 @@
                     <input id="password" name="login[password]" type="password" autocomplete="current-password" required>                    
                 </div>
                 <div>
-                    <button id="action" name="action" value="account" type="submit">Login</button>
+                    <button id="action" name="action" value="login" type="submit">Login</button>
                 </div>
                 <div>
                     <div class="a-button">

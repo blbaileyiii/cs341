@@ -43,7 +43,7 @@
                 <input id="lname" name="register[lname]" type="text" autocomplete="family-name" required>
             </div>
             <div>
-                <button id="action" name="action" value="account" type="submit">Register</button>
+                <button id="action" name="action" value="register" type="submit">Register</button>
             </div>            
         </form>
     </main>

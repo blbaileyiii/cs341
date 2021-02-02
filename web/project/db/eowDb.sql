@@ -7,11 +7,14 @@ CREATE TYPE modType as ENUM('+', 'x');
 CREATE TABLE public.user (
 	userID BIGSERIAL NOT NULL PRIMARY KEY,	
 	userEmail VARCHAR(50) NOT NULL,
-	userPass VARCHAR(255) NOT NULL,
+	userHashPass VARCHAR(255) NOT NULL,
 	userName VARCHAR(50) NOT NULL,
+	userFName VARCHAR(50) NOT NULL,
+	userLName VARCHAR(50) NOT NULL,
 	userLevel securityLevel NOT NULL DEFAULT '1',
 	userDisabled BOOLEAN NOT NULL DEFAULT false,
-	userSuspended  BOOLEAN NOT NULL DEFAULT false
+	userSuspended  BOOLEAN NOT NULL DEFAULT false,
+	userEmailVerified BOOLEAN NOT NULL DEFAULT false
 );
 
 CREATE TABLE public.txRace (
@@ -118,6 +121,13 @@ CREATE TABLE public.itemEff (
 	CONSTRAINT U_itemEffID_modID UNIQUE (itemEffID, modID)
 );
 
+CREATE TABLE public.activeUser (
+	sessionID BIGSERIAL NOT NULL PRIMARY KEY,	
+	userID VARCHAR(50) NOT NULL,
+	sessionHashPass VARCHAR(255) NOT NULL,
+	lastActive timestamptz NOT NULL DEFAULT now()
+);
+
 INSERT INTO public.txrace (txRaceName, txRacePron, txRaceDesc) VALUES
 ('Crown', NULL, 'Crown Races'),
 ('Baku', NULL, 'Companion Races'),
@@ -219,4 +229,5 @@ CREATE SCHEMA cse341ta04
 GRANT ALL ON SCHEMA test TO PUBLIC;
 
 GRANT ALL ON SCHEMA test TO gmybdgutyhhvkc;
+
 
