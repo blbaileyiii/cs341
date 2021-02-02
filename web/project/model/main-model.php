@@ -221,9 +221,9 @@ function getRaces() {
                 echo 'Everything was null';
                 var_dump($sqlrace);
                 echo '<br><br>';
-            }
-            var_dump($races);
+            }            
         }
+        var_dump($races);
 
         return $races;
 

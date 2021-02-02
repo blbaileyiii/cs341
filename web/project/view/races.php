@@ -24,7 +24,9 @@
         
         <?php
         foreach ($races as $race => $raceInfo) {
-            echo '<div><h2>'. $race .'</h2></div>';
+            echo '<div>\n';
+            echo '<h2>'. $race . '</h2>\n';
+            echo '</div>\n';
         }
         ?>
         
