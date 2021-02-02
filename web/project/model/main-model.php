@@ -45,14 +45,14 @@ function register(){
         
         echo count($accounts);
 
-        try {
+        if(count($accounts) == 0 
+        && isset($_POST['register']['email'])
+        && isset($_POST['register']['fname'])
+        && isset($_POST['register']['lname'])
+        && isset($_POST['register']['password']) ) {
 
-        
-            if(count($accounts) == 0 
-            && isset($_POST['register']['email'])
-            && isset($_POST['register']['fname'])
-            && isset($_POST['register']['lname'])
-            && isset($_POST['register']['password']) ) {
+            try {
+
                 $email = htmlspecialchars($_POST['register']['email']);
                 $fname = htmlspecialchars($_POST['register']['fname']);
                 $lname = htmlspecialchars($_POST['register']['fname']);
@@ -69,10 +69,14 @@ function register(){
                 $stmt = $db->prepare($sql);
                 $stmt->execute(array(':username' => $username, ':userfname' => $fname, ':userlname' => $lname, ':useremail' => $email, ':userhashpass' => $hashedpass ));
 
+
+            } catch(PDOException $ex) {
+                echo $sql . "<br>" . $ex->getMessage();
             }
-        } catch(PDOException $ex) {
-            echo $sql . "<br>" . $ex->getMessage();
-        }
+
+        } else {
+            //count is greater than 0 ...username already exists...
+        }       
 
         $stmt->closeCursor();
     }
