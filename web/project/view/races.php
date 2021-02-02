@@ -40,6 +40,7 @@
 
             <?php echo '<br><br>'; ?>
         <?php } ?>
+        </div>
     </main>
     <footer>
     <?php require $currRoot . '/project/snippets/footer.php'; ?>
