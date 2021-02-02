@@ -193,10 +193,20 @@ function getRaces() {
 
         $stmt = $db->prepare($sql);
         $stmt->execute();
-        $races = $stmt->fetchAll();
+        $sqlraces = $stmt->fetchAll();
 
         // The next line closes the interaction with the database 
         $stmt->closeCursor(); 
+
+        $races = [];
+
+        foreach($sqlraces as $sqlrace){
+            if ($sqlrace['txracename'] !== NULL && $sqlrace['txfamilyname'] !== NULL && $sqlrace['txgenusname'] !== NULL){
+                var_dump($sqlrace) . '<br><br>';
+            }
+            //$races[$sqlrace['txracename']]
+        }
+
         return $races;
 
     } catch(PDOException $ex) {
