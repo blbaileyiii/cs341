@@ -20,10 +20,14 @@
         <?php require $currRoot . '/project/snippets/nav.php'; ?>
     </nav>    
     <main>    
-        <h1>The Races and Creatures of Whimsy</h1>
-        <?php foreach ($races as $race) {?>
-            <?php var_dump($race); ?><br><br>
-        <?php } ?>
+        <h1>The Races and Creatures of Whimsy</h1>        
+        <?php 
+        
+        $crownRaces = array_filter($races, fn($race)=>$race['txracename'] == "Crown");
+        foreach ($crownRaces as $crownRace) {
+            var_dump($crownRace);
+            echo '<br><br>';
+        } ?>
     </main>
     <footer>
     <?php require $currRoot . '/project/snippets/footer.php'; ?>
