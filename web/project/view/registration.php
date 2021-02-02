@@ -24,11 +24,11 @@
         <form action="/project/accounts/index.php" method="post">
             <div>
                 <label for="fName"><span>First Name</span><span>Required</span></label> 
-                <input id="fName" name="register[fName]" type="text" autocomplete="given-name" required>
+                <input id="fName" name="register[fname]" type="text" autocomplete="given-name" required>
             </div>
             <div>
                 <label for="lName"><span>Last Name</span><span>Required</span></label>
-                <input id="lName" name="register[lName]" type="text" autocomplete="family-name" required>
+                <input id="lName" name="register[lname]" type="text" autocomplete="family-name" required>
             </div>
             <div>
                 <label for="email"><span>Email Address</span><span>Required</span></label>
