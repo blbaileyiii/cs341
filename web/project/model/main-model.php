@@ -206,7 +206,7 @@ function getRaces() {
                 //echo '<br><br>';
 
                 $races[$sqlrace['txracename']] = [ 'txracedesc' => $sqlrace['txracedesc']];
-                $races[$sqlrace['txracename']]['txfamilies'][$sqlrace['txfamilyname']] = ['txfamilydesc' => $sqlrace['txfamilydesc'], 'txgenus' => []];
+                $races[$sqlrace['txracename']][$sqlrace['txfamilyname']] = ['txfamilydesc' => $sqlrace['txfamilydesc'], 'txgenus' => []];
 
             } else if ($sqlrace['txracename'] !== NULL && $sqlrace['txfamilyname']){
                 echo 'Genus was null';
