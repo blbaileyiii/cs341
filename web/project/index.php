@@ -32,7 +32,7 @@ switch($action){
         break;
     case 'login':
         logout();
-        include $currRoot . '/project/view/news.php';
+        include $currRoot . '/project/view/login.php';
         break;
     case 'register':
         register();
