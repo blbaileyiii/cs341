@@ -77,6 +77,8 @@ function register(){
                 echo $sql . "<br>" . $ex->getMessage();
             }
 
+            echo "<br>" . gethostname();
+
         } else {
             //count is greater than 0 ...username already exists...
         }       
@@ -84,6 +86,10 @@ function register(){
         $stmt->closeCursor();
     }
     
+}
+
+function login() {
+    //password_verify($input, $hashedpedindb);
 }
 
 ?>
