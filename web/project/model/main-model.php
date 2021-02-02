@@ -202,7 +202,8 @@ function getRaces() {
 
         foreach($sqlraces as $sqlrace){
             if ($sqlrace['txracename'] !== NULL && $sqlrace['txfamilyname'] !== NULL && $sqlrace['txgenusname'] !== NULL){
-                var_dump($sqlrace) . '<br><br>';
+                var_dump($sqlrace);
+                echo '<br><br>';
             }
             //$races[$sqlrace['txracename']]
         }
