@@ -89,6 +89,8 @@ function login() {
                 echo 'Login Credentials are invalid.';
             } else {
                 // if it is greater than 1 something really bad happened and we have duplicate accounts...
+                echo 'Something unexpected happened...';
+                var_dump($accounts);
             }
 
             //CLOSE CONNECTION
