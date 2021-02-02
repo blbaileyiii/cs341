@@ -1,4 +1,3 @@
-<span><a href="index.php" title="Echoes of Whimsy - News"><img src="/project/imgs/eow_logo.webp" alt="Echoes of Whimsy Logo"></a></span><span></span>
 <?php if ( isset($_SESSION['eowSession']['username']) ) { ?>
     <div>
         <span><a href="?action=account" title="Echoes of Whimsy - My Account">My Account (<?php echo $_SESSION['eowSession']['username'] ?>)</a></span>
