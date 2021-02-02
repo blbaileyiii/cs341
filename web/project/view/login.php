@@ -21,7 +21,7 @@
     </nav>    
     <main>
         <h1>Login</h1>
-            <form action="/project/accounts/index.php" method="post">
+            <form action="/project/index.php" method="post">
                 <div>
                     <label for="uname"><span>User Name</span><span>Required</span></label>
                     <input id="uname" name="login[uname]" type="text" autocomplete="username" required>

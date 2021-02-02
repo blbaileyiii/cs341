@@ -20,6 +20,23 @@ if ($action == NULL) {
 }
 
 switch($action){
+    case 'getlogin':
+        include $currRoot . '/project/view/login.php';
+        break;
+    case 'registration':
+        include $currRoot . '/project/view/registration.php';
+        break;
+    case 'login':
+        login();
+        include $currRoot . '/project/view/account.php';
+        break;
+    case 'register':
+        register();
+        include $currRoot . '/project/view/account.php';
+        break;
+    case 'account':
+        include $currRoot . '/project/view/account.php';
+        break;
     case 'template':
         include $currRoot . '/project/view/template.php';
         break;

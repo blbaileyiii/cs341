@@ -61,7 +61,7 @@ function login() {
                 $stmt->execute(array(':username' => $username, ':sessionhashpass' => $sessionHash, ':userhost' => $hostname));
                 $accounts = $stmt->fetchAll();
                 
-                echo 'sql executed...';
+                //echo 'sql executed...';
 
                 //Sync session to active user.
                 $_SESSION['eowSession']['username'] = $username;
