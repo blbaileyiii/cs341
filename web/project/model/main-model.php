@@ -76,22 +76,22 @@ function login() {
                     // [Temp] Account Suspended. Check again after Date: XYZ. Contact support for further information.
                 } else if (!$account['useremailverified']) {
                     // not verified, warn the user and make them fix it.
-                    echo 'Email Not Verified...';
+                    //echo 'Email Not Verified...';
                 } else if (!password_verify(htmlspecialchars($_POST['login']['password']), $account['userhashpass']) ) {
                     // Login Credentials are invalid.
-                    echo 'Login Credentials are invalid.';
+                    //echo 'Login Credentials are invalid.';
                 } else {
                     //Unexpected error...
-                    echo 'Unexpected error...';
+                    //echo 'Unexpected error...';
                 }
 
             } else if(count($accounts) == 0) {
                 // Login Credentials are invalid.
-                echo 'Login Credentials are invalid.';
+                //echo 'Login Credentials are invalid.';
             } else {
                 // if it is greater than 1 something really bad happened and we have duplicate accounts...
-                echo 'Something unexpected happened...';
-                var_dump($accounts);
+                //echo 'Something unexpected happened...';
+                //var_dump($accounts);
             }
 
             //CLOSE CONNECTION

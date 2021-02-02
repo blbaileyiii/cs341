@@ -27,7 +27,6 @@
     </main>
     <footer>
     <?php require $currRoot . '/project/snippets/footer.php'; ?>
-    <?php var_dump($races); ?>
     </footer>
 </body>
 </html>
