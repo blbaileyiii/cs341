@@ -27,6 +27,7 @@ switch($action){
         include $currRoot . '/project/view/registration.php';
         break;
     case 'login':
+        echo "starting login...";
         login();
         include $currRoot . '/project/view/account.php';
         break;

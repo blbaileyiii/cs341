@@ -89,6 +89,8 @@ function register(){
 function login() {
     //password_verify($input, $hashedpedindb);
     //gethostname();
+    echo 'login called...';
+    var_dump($_POST);
     if(isset($_POST['login']['uname'])
     && isset($_POST['login']['password'])){
         $username = htmlspecialchars($_POST['login']['uname']);
