@@ -186,7 +186,7 @@ function getRaces() {
         $db = eowConnect();
 
         $sql = 
-        'SELECT txraceid, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
+        'SELECT txrace.txraceid, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
         FROM txrace LEFT JOIN txfamily on txrace.txraceid=txfamily.txraceid
         LEFT JOIN txgenus ON txfamily.txfamilyid=txgenus.txfamilyid
         ORDER BY txraceid, txfamilyname, txgenusname';
