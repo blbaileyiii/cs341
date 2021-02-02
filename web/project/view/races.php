@@ -21,13 +21,12 @@
     </nav>    
     <main>    
         <h1>The Races and Creatures of Whimsy</h1>        
-        <?php 
         
-        $crownRaces = array_filter($races, fn($race)=>$race['txracename'] == "Crown");
-        foreach ($crownRaces as $crownRace) {
-            var_dump($crownRace);
-            echo '<br><br>';
-        } ?>
+        <?php foreach ($races as $race) { ?>
+            <?php var_dump($race); ?>
+
+            <?php echo '<br><br>'; ?>
+        <?php } ?>
     </main>
     <footer>
     <?php require $currRoot . '/project/snippets/footer.php'; ?>
