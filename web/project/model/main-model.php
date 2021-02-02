@@ -4,7 +4,7 @@
  */
 
 function login() {
-    echo 'login called...';
+    //echo 'login called...';
     //var_dump($_POST);
     if(isset($_POST['login']['uname'])
     && isset($_POST['login']['password'])){
@@ -22,7 +22,7 @@ function login() {
         $accounts = $stmt->fetchAll();
 
         //echo '<br><br>';
-        //var_dump($accounts);
+        var_dump($accounts);
 
         //There should only be 1 record.
         if(count($accounts) == 1){
