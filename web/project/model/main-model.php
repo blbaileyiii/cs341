@@ -4,7 +4,7 @@
  */
 
 function login() {
-    //echo 'login called...';
+    echo 'login called...';
     //var_dump($_POST);
     if(isset($_POST['login']['uname'])
     && isset($_POST['login']['password'])){
