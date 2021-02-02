@@ -19,8 +19,6 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
-register();
-
 switch($action){
     case 'getlogin':
         include $currRoot . '/project/view/login.php';
@@ -29,9 +27,11 @@ switch($action){
         include $currRoot . '/project/view/registration.php';
         break;
     case 'login':
+        login();
         include $currRoot . '/project/view/account.php';
         break;
     case 'register':
+        register();
         include $currRoot . '/project/view/account.php';
         break;
     case 'account':
