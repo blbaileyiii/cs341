@@ -106,15 +106,20 @@ function login() {
         $stmt->execute(array(':username' => $username));
         $account = $stmt->fetchAll();
 
-        echo '<br>';
+        echo '<br><br>';
         var_dump($account);
 
         if(count($account) == 1){
+            echo '<br>Account retrieved.';
+            echo $account['userfname'];
+
             if(!$account['userdisabled']
             && !$account['usersuspended']
             && $account['useremailverified']
-            )
-            echo $account['userfname'];
+            ) {
+                echo '<br>Account is in good standing.'
+            }
+            
 
 
 
