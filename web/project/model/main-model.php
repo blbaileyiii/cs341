@@ -29,6 +29,7 @@ function getTaxonomy(){
 
 function register(){
     if(isset($_POST['register.email'])){
+        echo "email is set...";
         $useremail = $_POST['register.email'];
         
         $db = eowConnect();
@@ -43,7 +44,7 @@ function register(){
         $accounts = $stmt->fetchAll();
         $stmt->closeCursor(); 
         var_dump($accounts);
-        var_dump(count($accounts));
+        echo count($accounts);
     }
     
 }
