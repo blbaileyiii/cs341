@@ -13,7 +13,7 @@ function login() {
         $db = eowConnect();
 
         $sql = 
-        'SELECT userfname, userlname, userhashpass, userdisabled, usersuspended, useremailverified, userlevel
+        'SELECT userhashpass, userdisabled, usersuspended, useremailverified, userlevel
         FROM users
         WHERE username=:username';
 
@@ -51,7 +51,8 @@ function login() {
                 $sql = 
                 'UPDATE users
                 SET sessionhashpass = :sessionhashpass,
-                lastactive = now()
+                lastactive = now(),
+                usercomp = gethostname();
                 WHERE username=:username';
 
                 $stmt = $db->prepare($sql);
@@ -59,11 +60,10 @@ function login() {
                 $accounts = $stmt->fetchAll();
                 
                 //Sync session to active user.
-                $_SESSION['eowSession']['user'] = $username;
-                $_SESSION['eowSession']['hash'] = $sessionHash;
+                $_SESSION['eowSession']['username'] = $username;
+                $_SESSION['eowSession']['userhashpass'] = $account['userhashpass'];
 
                 unset($_POST);
-
 
             } else if ($account['userdisabled']) {
                 // [Perm] Account Disabled. Contact support for further information.
@@ -79,7 +79,9 @@ function login() {
                 echo 'Unexpected error...';
             }
 
-
+        } else if(count($accounts) == 0) {
+            // Login Credentials are invalid.
+            echo 'Login Credentials are invalid.';
         } else {
             // if it is greater than 1 something really bad happened and we have duplicate accounts...
         }
