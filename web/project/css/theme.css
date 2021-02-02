@@ -1,4 +1,17 @@
+:root {
+    --color-logo: #ffa200;
+}
+
 html {
-    background: black;
+    background: white;
+    color: black;
+}
+
+button, .button {
+    background: var(--color-logo);
     color: white;
+}
+
+a, a:visited, a:focus {
+    color: black;
 }
