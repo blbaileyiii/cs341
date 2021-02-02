@@ -23,24 +23,11 @@
         <h1>The Races and Creatures of Whimsy</h1>        
         
         <?php
-        $currRace = "";
-        $currFamily = "";
         foreach ($races as $race) {
-            if ($currRace != $race['txracename']){
+            var_dump($race);
+        }
         ?>
-                <?php if($currRace !="") {?>
-                    </div>
-                <?php } ?>
-
-                <div>
-                <?php $currRace = $race['txracename'];?>
-            <?php }?>
-            <h2><?php echo $race['txracename'];?></h2>
-            <?php var_dump($race); ?>
-
-            <?php echo '<br><br>'; ?>
-        <?php } ?>
-        </div>
+        
     </main>
     <footer>
     <?php require $currRoot . '/project/snippets/footer.php'; ?>
