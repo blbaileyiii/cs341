@@ -43,6 +43,7 @@ function register(){
         $accounts = $stmt->fetchAll();
         $stmt->closeCursor(); 
         var_dump($accounts);
+        var_dump(count($accounts));
     }
     
 }
