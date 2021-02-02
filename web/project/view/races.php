@@ -28,12 +28,12 @@
                 <?php foreach ($raceInfo['txfamilynames'] as $family => $familyInfo) {?>
                     <div>
                     <h3><?php echo $family ?></h3>
-                    <p><?php $familyInfo['txfamilydesc'] ?></p>
+                    <p><?php echo$familyInfo['txfamilydesc'] ?></p>
                     <?php foreach ($familyInfo['txgenusnames'] as $genus => $genusInfo) {?>
                         <div>
                         <h4><?php echo $genus ?></h4>
-                        <p><?php $genusInfo['txgenuspron'] ?></p>
-                        <p><?php $genusInfo['txgenusdesc'] ?></p>
+                        <p><?php echo $genusInfo['txgenuspron'] ?></p>
+                        <p><?php echo $genusInfo['txgenusdesc'] ?></p>
                         </div>
                     <?php }?>
                     </div>
