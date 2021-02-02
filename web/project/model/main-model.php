@@ -30,7 +30,7 @@ function getTaxonomy(){
 function register(){
     var_dump($_POST);
     if(isset($_POST['register']['email'])){
-        $useremail = htmlspecialchars($_POST['register.email']);
+        $email = htmlspecialchars($_POST['register.email']);
         
         $db = eowConnect();
 
@@ -40,7 +40,7 @@ function register(){
         WHERE useremail=:useremail';
 
         $stmt = $db->prepare($sql);
-        $stmt->execute(array(':useremail' => $useremail));
+        $stmt->execute(array(':useremail' => $email));
         $accounts = $stmt->fetchAll();
         $stmt->closeCursor();
 
@@ -54,10 +54,18 @@ function register(){
             $fname = htmlspecialchars($_POST['register']['fname']);
             $lname = htmlspecialchars($_POST['register']['fname']);
 
-            $hashedPassword = password_hash(htmlspecialchars($_POST['register']['password']), PASSWORD_DEFAULT);
+            $hashedpass = password_hash(htmlspecialchars($_POST['register']['password']), PASSWORD_DEFAULT);
             unset($_POST['register']['password']);
 
-            echo '<br>' . $hashedPassword;
+            //echo '<br>' . $hashedpass;
+
+            $sql = 
+            'INSERT INTO public.users (userfname, userlname, useremail, userhashpass)
+            VALUES (:userfname, :userlname, :useremail, :userhashpass)';
+
+            $stmt = $db->prepare($sql);
+            $stmt->execute(array(':userfname' => $fname, ':userlname' => $lname, ':useremail' => $email, ':userhashpass' => $hashedpass ));
+            $stmt->closeCursor();
 
         }
     }
