@@ -53,11 +53,11 @@ function login() {
                 $sql = 
                 'UPDATE users
                 SET sessionhashpass = :sessionhashpass,
-                lastactive = now()
+                    lastactive = now()
                 WHERE username=:username';
 
                 $stmt = $db->prepare($sql);
-                $stmt->execute(array(':username' => $username, ':sessionhashpass' => $sessionHash);
+                $stmt->execute(array(':username' => $username, ':sessionhashpass' => $sessionHash));
                 $accounts = $stmt->fetchAll();
                 
                 echo 'sql executed...';
