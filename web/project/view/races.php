@@ -23,7 +23,7 @@
         <h1>The Races and Creatures of Whimsy</h1>        
         <?php foreach ($races as $race => $raceInfo) { ?>
             <div>
-            <h2><?php echo $race; ?></h2>
+            <h2><?php echo $race . " " . $raceInfo['txracedesc']; ?></h2>
             </div>
         <?php } ?>
         
