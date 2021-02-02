@@ -82,12 +82,15 @@ function register(){
         }       
 
         $stmt->closeCursor();
+    } else if (isset($_POST['register']['uname'])) {
+
     }
     
 }
 
 function login() {
     //password_verify($input, $hashedpedindb);
+    //gethostname();
 }
 
 ?>
