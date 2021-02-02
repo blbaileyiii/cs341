@@ -41,24 +41,26 @@ function login() {
             && !$account['userdisabled']
             && !$account['usersuspended']
             && $account['useremailverified']) {
-                echo '<br>Account is good.';
+                //echo '<br>Account is good.';
                 unset($_POST['login']['password']);
 
                 //create the active user.
                 $sessionHash = password_hash($account['userhashpass'], PASSWORD_DEFAULT);
-
+                $hostname = gethostname();
 
                 $sql = 
                 'UPDATE users
                 SET sessionhashpass = :sessionhashpass,
                 lastactive = now(),
-                usercomp = gethostname();
+                usercomp = :hostname
                 WHERE username=:username';
 
                 $stmt = $db->prepare($sql);
-                $stmt->execute(array(':username' => $username, ':sessionhashpass' => $sessionHash));
+                $stmt->execute(array(':username' => $username, ':sessionhashpass' => $sessionHash, ':hostname' => $hostname));
                 $accounts = $stmt->fetchAll();
                 
+                echo 'sql executed...'
+
                 //Sync session to active user.
                 $_SESSION['eowSession']['username'] = $username;
                 $_SESSION['eowSession']['userhashpass'] = $account['userhashpass'];
