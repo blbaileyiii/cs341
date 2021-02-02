@@ -30,7 +30,7 @@ switch($action){
         login();
         include $currRoot . '/project/view/account.php';
         break;
-    case 'login':
+    case 'logout':
         logout();
         include $currRoot . '/project/view/login.php';
         break;
