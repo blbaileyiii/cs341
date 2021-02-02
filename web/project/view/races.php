@@ -21,25 +21,8 @@
     </nav>    
     <main>    
         <h1>The Races and Creatures of Whimsy</h1>        
-        <?php foreach ($races as $race => $raceInfo) { ?>
-            <div>
-                <h2><?php echo $race ?></h2>
-                <p><?php echo $raceInfo['txracedesc']?></p>
-                <?php foreach ($raceInfo['txfamilynames'] as $family => $familyInfo) {?>
-                    <div>
-                    <h3><?php echo $family ?></h3>
-                    <p><?php echo$familyInfo['txfamilydesc'] ?></p>
-                    <?php foreach ($familyInfo['txgenusnames'] as $genus => $genusInfo) {?>
-                        <div>
-                        <h4><?php echo $genus ?></h4>
-                        <p><?php echo $genusInfo['txgenuspron'] ?></p>
-                        <p><?php echo $genusInfo['txgenusdesc'] ?></p>
-                        </div>
-                    <?php }?>
-                    </div>
-                <?php }?>
-            </div>
-        <?php } ?>
+
+        <?php echo $raceHTML?>
         
     </main>
     <footer>

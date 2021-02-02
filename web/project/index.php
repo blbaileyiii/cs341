@@ -39,6 +39,7 @@ switch($action){
         break;
     case 'races':
         $races = getRaces();
+        $racesHTML = getRacesHTML($races);
         include $currRoot . '/project/view/races.php';
         break;
     case 'template':
