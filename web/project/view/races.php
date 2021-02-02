@@ -25,9 +25,9 @@
         <?php
 
         var_dump($races);
-        //foreach ($races as $race) {
-        //    var_dump($race);
-        //}
+        foreach ($races as $race => $raceInfo) {
+            echo '<div>'. $race .'</div>';
+        }
         ?>
         
     </main>
