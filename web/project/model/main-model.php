@@ -28,19 +28,19 @@ function getTaxonomy(){
    }
 
 function register(){
-    var_dump($_POST);
-    if(isset($_POST['register']['email'])){
-        $email = htmlspecialchars($_POST['register.email']);
+    //var_dump($_POST);
+    if(isset($_POST['register']['uname'])){
+        $username = htmlspecialchars($_POST['register']['uname']);
         
         $db = eowConnect();
 
         $sql = 
-        'SELECT useremail
+        'SELECT username
         FROM users
-        WHERE useremail=:useremail';
+        WHERE username=:username';
 
         $stmt = $db->prepare($sql);
-        $stmt->execute(array(':useremail' => $email));
+        $stmt->execute(array(':username' => $username));
         $accounts = $stmt->fetchAll();
         
         echo count($accounts);
@@ -49,10 +49,11 @@ function register(){
 
         
             if(count($accounts) == 0 
+            && isset($_POST['register']['email'])
             && isset($_POST['register']['fname'])
             && isset($_POST['register']['lname'])
             && isset($_POST['register']['password']) ) {
-
+                $fname = htmlspecialchars($_POST['register']['email']);
                 $fname = htmlspecialchars($_POST['register']['fname']);
                 $lname = htmlspecialchars($_POST['register']['fname']);
 

@@ -23,12 +23,8 @@
         <h1>Registration</h1>
         <form action="/project/accounts/index.php" method="post">
             <div>
-                <label for="fName"><span>First Name</span><span>Required</span></label> 
-                <input id="fName" name="register[fname]" type="text" autocomplete="given-name" required>
-            </div>
-            <div>
-                <label for="lName"><span>Last Name</span><span>Required</span></label>
-                <input id="lName" name="register[lname]" type="text" autocomplete="family-name" required>
+                <label for="uname"><span>User Name</span><span>Required</span></label> 
+                <input id="uname" name="register[uname]" type="text" autocomplete="username" required>
             </div>
             <div>
                 <label for="email"><span>Email Address</span><span>Required</span></label>
@@ -37,6 +33,14 @@
             <div>
                 <label for="password"><span>Password</span><span>Required</span></label>
                 <input id="password" name="register[password]" type="password" autocomplete="new-password" required>
+            </div>
+            <div>
+                <label for="fname"><span>First Name</span><span>Required</span></label> 
+                <input id="fname" name="register[fname]" type="text" autocomplete="given-name" required>
+            </div>
+            <div>
+                <label for="lname"><span>Last Name</span><span>Required</span></label>
+                <input id="lname" name="register[lname]" type="text" autocomplete="family-name" required>
             </div>
             <div>
                 <input id="action" name="action" value="account" type="hidden">
