@@ -28,10 +28,9 @@ function getTaxonomy(){
    }
 
 function register(){
-    var_dump($_POST);
+    //var_dump($_POST);
     if(isset($_POST['register']['email'])){
-        echo "email is set...";
-        $useremail = $_POST['register.email'];
+        $useremail = htmlspecialchars($_POST['register.email']);
         
         $db = eowConnect();
 
@@ -43,9 +42,24 @@ function register(){
         $stmt = $db->prepare($sql);
         $stmt->execute(array(':useremail' => $useremail));
         $accounts = $stmt->fetchAll();
-        $stmt->closeCursor(); 
-        var_dump($accounts);
+        $stmt->closeCursor();
+
         echo count($accounts);
+
+        if(count($accounts) == 0 
+        && isset($_POST['register']['fname'])
+        && isset($_POST['register']['lname'])
+        && isset($_POST['register']['password']) ) {
+
+            $fname = htmlspecialchars($_POST['register']['fname']);
+            $lname = htmlspecialchars($_POST['register']['fname']);
+
+            $hashedPassword = password_hash(htmlspecialchars($_POST['register']['password']), PASSWORD_DEFAULT);
+            unset($_POST['register']['password']);
+
+            echo '<br>' . $hashedPassword;
+
+        }
     }
     
 }
