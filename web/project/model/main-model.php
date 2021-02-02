@@ -3,28 +3,73 @@
  * Main Echoes of Whimsy Model
  */
 
-function getTaxonomy(){
-    // Create a connection object from the echoes of whimsy connection function
-    $db = eowConnect(); 
-    // The SQL statement to be used with the database 
-    $sql = 
-    'SELECT txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
-    FROM txrace LEFT JOIN txfamily on txrace.txraceid=txfamily.txraceid
-    LEFT JOIN txgenus ON txfamily.txfamilyid=txgenus.txfamilyid
-    ORDER BY txracename, txfamilyname, txgenusname';
+function login() {
+    //echo 'login called...';
+    //var_dump($_POST);
+    if(isset($_POST['login']['uname'])
+    && isset($_POST['login']['password'])){
+        $username = htmlspecialchars($_POST['login']['uname']);
+        
+        $db = eowConnect();
 
-    // The next line creates the prepared statement using the echoes of whimsy connection      
-    $stmt = $db->prepare($sql);
-    // The next line runs the prepared statement 
-    $stmt->execute(); 
-    // The next line gets the data from the database and 
-    // stores it as an array in the $taxonomy variable 
-    $taxonomy = $stmt->fetchAll(); 
-    // The next line closes the interaction with the database 
-    $stmt->closeCursor(); 
-    // The next line sends the array of data back to where the function 
-    // was called (this should be the controller) 
-    return $taxonomy;
+        $sql = 
+        'SELECT userfname, userlname, userhashpass, userdisabled, usersuspended, useremailverified, userlevel
+        FROM users
+        WHERE username=:username';
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute(array(':username' => $username));
+        $accounts = $stmt->fetchAll();
+
+        //echo '<br><br>';
+        //var_dump($accounts);
+
+        //There should only be 1 record.
+        if(count($accounts) == 1){
+            
+            //If there is only 1 record 
+            $account = $accounts[0];
+            //echo '<br>Account retrieved.';
+            //echo $account['userfname'];
+
+            //
+            //password_verify($input, $hashedpedindb);
+            //gethostname();
+
+            //Verify password and check for account "health" and proceed if good. If not address the issue with the "user".
+            if( password_verify(htmlspecialchars($_POST['login']['password']), $account['userhashpass'])
+            && !$account['userdisabled']
+            && !$account['usersuspended']
+            && $account['useremailverified']) {
+                echo '<br>Account is good.';
+
+                //unset($_POST['login']['password']);
+                //unset($_POST)? after setting username into session...?
+
+
+            } else if ($account['userdisabled']) {
+                // [Perm] Account Disabled. Contact support for further information.
+            } else if ($account['usersuspended']) {
+                // [Temp] Account Suspended. Check again after Date: XYZ. Contact support for further information.
+            } else if (!$account['useremailverified']) {
+                // not verified, warn the user and make them fix it.
+            } else if (!password_verify(htmlspecialchars($_POST['login']['password']), $account['userhashpass']) ) {
+                // Login Credentials are invalid.
+                echo 'Login Credentials are invalid.';
+            } else {
+                //Unexpected error...
+                echo 'Unexpected error...';
+            }
+            
+
+
+
+
+
+        } else {
+            // if it is greater than 1 something really bad happened and we have duplicate accounts...
+        }
+    }
 }
 
 function register(){
@@ -86,52 +131,28 @@ function register(){
     }  
 }
 
-function login() {
-    //password_verify($input, $hashedpedindb);
-    //gethostname();
-    echo 'login called...';
-    var_dump($_POST);
-    if(isset($_POST['login']['uname'])
-    && isset($_POST['login']['password'])){
-        $username = htmlspecialchars($_POST['login']['uname']);
-        
-        $db = eowConnect();
+function getTaxonomy(){
+    // Create a connection object from the echoes of whimsy connection function
+    $db = eowConnect(); 
+    // The SQL statement to be used with the database 
+    $sql = 
+    'SELECT txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
+    FROM txrace LEFT JOIN txfamily on txrace.txraceid=txfamily.txraceid
+    LEFT JOIN txgenus ON txfamily.txfamilyid=txgenus.txfamilyid
+    ORDER BY txracename, txfamilyname, txgenusname';
 
-        $sql = 
-        'SELECT userfname, userlname, userhashpass, userdisabled, usersuspended, useremailverified, userlevel
-        FROM users
-        WHERE username=:username';
-
-        $stmt = $db->prepare($sql);
-        $stmt->execute(array(':username' => $username));
-        $accounts = $stmt->fetchAll();
-
-        echo '<br><br>';
-        var_dump($accounts);
-
-        //There should only be 1 record.
-        if(count($accounts) == 1){
-            
-            //If there is only 1 record 
-            $account = $accounts[0];
-            echo '<br>Account retrieved.';
-            echo $account['userfname'];
-
-            if(!$account['userdisabled']
-            && !$account['usersuspended']
-            && $account['useremailverified']) {
-                echo '<br>Account is in good standing.';
-            }
-            
-
-
-
-
-
-        } else {
-            // if it is greater than 1 something really bad happened and we have duplicate accounts...
-        }
-    }
+    // The next line creates the prepared statement using the echoes of whimsy connection      
+    $stmt = $db->prepare($sql);
+    // The next line runs the prepared statement 
+    $stmt->execute(); 
+    // The next line gets the data from the database and 
+    // stores it as an array in the $taxonomy variable 
+    $taxonomy = $stmt->fetchAll(); 
+    // The next line closes the interaction with the database 
+    $stmt->closeCursor(); 
+    // The next line sends the array of data back to where the function 
+    // was called (this should be the controller) 
+    return $taxonomy;
 }
 
 ?>
