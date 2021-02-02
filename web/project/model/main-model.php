@@ -29,7 +29,7 @@ function getTaxonomy(){
 
 function register(){
     var_dump($_POST);
-    if(isset($_POST['register']['register_email'])){
+    if(isset($_POST['register']['email'])){
         echo "email is set...";
         $useremail = $_POST['register.email'];
         
