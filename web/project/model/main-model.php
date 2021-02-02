@@ -76,6 +76,7 @@ function login() {
                     // [Temp] Account Suspended. Check again after Date: XYZ. Contact support for further information.
                 } else if (!$account['useremailverified']) {
                     // not verified, warn the user and make them fix it.
+                    echo 'Email Not Verified...'
                 } else if (!password_verify(htmlspecialchars($_POST['login']['password']), $account['userhashpass']) ) {
                     // Login Credentials are invalid.
                     echo 'Login Credentials are invalid.';
@@ -101,7 +102,13 @@ function login() {
     }
 }
 
-function register(){
+function logout() {
+    // NEED TO UPDATE THE DB TOO!!! BUT FOR NOW JUST CLEAR THE SESSION VAR.
+    unset($_POST['login']);
+    unset($_SESSION['eowSession']);
+}
+
+function register() {
     //var_dump($_POST);
     if(isset($_POST['register']['uname'])){
         $username = htmlspecialchars($_POST['register']['uname']);

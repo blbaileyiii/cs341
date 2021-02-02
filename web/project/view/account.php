@@ -22,6 +22,7 @@
     <main>    
         <h1>Account Page</h1>
         Content goes here.
+        
     </main>
     <footer>
     <?php require $currRoot . '/project/snippets/footer.php'; ?>

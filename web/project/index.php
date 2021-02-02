@@ -30,6 +30,10 @@ switch($action){
         login();
         include $currRoot . '/project/view/account.php';
         break;
+    case 'login':
+        logout();
+        include $currRoot . '/project/view/news.php';
+        break;
     case 'register':
         register();
         include $currRoot . '/project/view/account.php';
