@@ -193,45 +193,49 @@ function getRaces() {
 
         $stmt = $db->prepare($sql);
         $stmt->execute();
-        $sqlraces = $stmt->fetchAll();
+        $racesSQL = $stmt->fetchAll();
 
         // The next line closes the interaction with the database 
         $stmt->closeCursor(); 
 
         $races = [];
 
-        foreach($sqlraces as $sqlrace){
+        foreach($racesSQL as $raceSQL){
 
-            $races[$sqlrace['txracename']]['txracedesc'] = $sqlrace['txracedesc'];
-            $races[$sqlrace['txracename']]['txfamilynames'][$sqlrace['txfamilyname']]['txfamilydesc'] = $sqlrace['txfamilydesc'];
-            $races[$sqlrace['txracename']]['txfamilynames'][$sqlrace['txfamilyname']]['txgenusnames'][$sqlrace['txgenusname']]['txgenusdesc'] = $sqlrace['txgenusdesc'];
-            $races[$sqlrace['txracename']]['txfamilynames'][$sqlrace['txfamilyname']]['txgenusnames'][$sqlrace['txgenusname']]['txgenuspron'] = $sqlrace['txgenuspron'];
+            $races[$raceSQL['txracename']]['txracedesc'] = $raceSQL['txracedesc'];
+            $races[$raceSQL['txracename']]['txfamilynames'][$raceSQL['txfamilyname']]['txfamilydesc'] = $raceSQL['txfamilydesc'];
+            $races[$raceSQL['txracename']]['txfamilynames'][$raceSQL['txfamilyname']]['txgenusnames'][$raceSQL['txgenusname']]['txgenusdesc'] = $raceSQL['txgenusdesc'];
+            $races[$raceSQL['txracename']]['txfamilynames'][$raceSQL['txfamilyname']]['txgenusnames'][$raceSQL['txgenusname']]['txgenuspron'] = $raceSQL['txgenuspron'];
 
             /*
-            if ($sqlrace['txracename'] !== NULL && $sqlrace['txfamilyname'] !== NULL && $sqlrace['txgenusname'] !== NULL){
-                //var_dump($sqlrace);
+            if ($raceSQL['txracename'] !== NULL && $raceSQL['txfamilyname'] !== NULL && $raceSQL['txgenusname'] !== NULL){
+                //var_dump($raceSQL);
                 //echo '<br><br>';
-                $races[$sqlrace['txracename']]['txracedesc'] = $sqlrace['txracedesc'];
-                $races[$sqlrace['txracename']]['txfamilynames'][$sqlrace['txfamilyname']]['txfamilydesc'] = $sqlrace['txfamilydesc'];
-                $races[$sqlrace['txracename']]['txfamilynames'][$sqlrace['txfamilyname']]['txgenusnames'][$sqlrace['txgenusname']]['txgenusdesc'] = $sqlrace['txgenusdesc'];
-                $races[$sqlrace['txracename']]['txfamilynames'][$sqlrace['txfamilyname']]['txgenusnames'][$sqlrace['txgenusname']]['txgenuspron'] = $sqlrace['txgenuspron'];
+                $races[$raceSQL['txracename']]['txracedesc'] = $raceSQL['txracedesc'];
+                $races[$raceSQL['txracename']]['txfamilynames'][$raceSQL['txfamilyname']]['txfamilydesc'] = $raceSQL['txfamilydesc'];
+                $races[$raceSQL['txracename']]['txfamilynames'][$raceSQL['txfamilyname']]['txgenusnames'][$raceSQL['txgenusname']]['txgenusdesc'] = $raceSQL['txgenusdesc'];
+                $races[$raceSQL['txracename']]['txfamilynames'][$raceSQL['txfamilyname']]['txgenusnames'][$raceSQL['txgenusname']]['txgenuspron'] = $raceSQL['txgenuspron'];
                 
-            } else if ($sqlrace['txracename'] !== NULL && $sqlrace['txfamilyname']){
+            } else if ($raceSQL['txracename'] !== NULL && $raceSQL['txfamilyname']){
                 echo 'Genus was null';
-                var_dump($sqlrace);
+                var_dump($raceSQL);
                 echo '<br><br>';
-            } else if ($sqlrace['txracename'] !== NULL){
+            } else if ($raceSQL['txracename'] !== NULL){
                 echo 'Family and Genus were null';
-                var_dump($sqlrace);
+                var_dump($raceSQL);
                 echo '<br><br>';
             } else {
                 echo 'Everything was null';
-                var_dump($sqlrace);
+                var_dump($raceSQL);
                 echo '<br><br>';
             }
             */
         }
-        //var_dump($races);        
+        //var_dump($races);
+        
+        $racesHTML ="";
+
+        
 
         return $races;
 
