@@ -63,7 +63,7 @@ function login() {
                 $_SESSION['eowSession']['username'] = $username;
                 $_SESSION['eowSession']['userhashpass'] = $account['userhashpass'];
 
-                unset($_POST);
+                unset($_POST['login']);
 
             } else if ($account['userdisabled']) {
                 // [Perm] Account Disabled. Contact support for further information.
