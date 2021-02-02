@@ -46,9 +46,9 @@ function login() {
 
                 //create the active user.
                 $sessionHash = password_hash($account['userhashpass'], PASSWORD_DEFAULT);
-                //$hostname = gethostname();
+                $hostname = gethostname();
 
-                //echo $hostname;
+                echo $hostname;
 
                 $sql = 
                 'UPDATE users
