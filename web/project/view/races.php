@@ -23,9 +23,12 @@
         <h1>The Races and Creatures of Whimsy</h1>        
         
         <?php
-        foreach ($races as $race) {
-            var_dump($race);
-        }
+
+        $races = array_column($race, 'txracename');
+        var_dump($races);
+        //foreach ($races as $race) {
+        //    var_dump($race);
+        //}
         ?>
         
     </main>
