@@ -37,6 +37,10 @@ switch($action){
     case 'account':
         include $currRoot . '/project/view/account.php';
         break;
+    case 'races':
+        $races = getRaces();
+        include $currRoot . '/project/view/races.php';
+        break;
     case 'template':
         include $currRoot . '/project/view/template.php';
         break;
