@@ -53,7 +53,7 @@ function register(){
             && isset($_POST['register']['fname'])
             && isset($_POST['register']['lname'])
             && isset($_POST['register']['password']) ) {
-                $fname = htmlspecialchars($_POST['register']['email']);
+                $email = htmlspecialchars($_POST['register']['email']);
                 $fname = htmlspecialchars($_POST['register']['fname']);
                 $lname = htmlspecialchars($_POST['register']['fname']);
 
@@ -63,11 +63,11 @@ function register(){
                 //echo '<br>' . $hashedpass;
 
                 $sql = 
-                'INSERT INTO public.users (userfname, userlname, useremail, userhashpass)
-                VALUES (:userfname, :userlname, :useremail, :userhashpass)';
+                'INSERT INTO public.users (username, userfname, userlname, useremail, userhashpass)
+                VALUES (:username, :userfname, :userlname, :useremail, :userhashpass)';
 
                 $stmt = $db->prepare($sql);
-                $stmt->execute(array(':userfname' => $fname, ':userlname' => $lname, ':useremail' => $email, ':userhashpass' => $hashedpass ));
+                $stmt->execute(array(':username' => $username, ':userfname' => $fname, ':userlname' => $lname, ':useremail' => $email, ':userhashpass' => $hashedpass ));
 
             }
         } catch(PDOException $ex) {
