@@ -19,6 +19,8 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
+echo "<br>" . gethostname();
+
 register();
 
 switch($action){
