@@ -41,10 +41,28 @@ function login() {
             && !$account['userdisabled']
             && !$account['usersuspended']
             && $account['useremailverified']) {
-                echo '<br>Account is good.';
+                //echo '<br>Account is good.';
+                unset($_POST['login']['password']);
 
-                //unset($_POST['login']['password']);
-                //unset($_POST)? after setting username into session...?
+                //create the active user.
+                $sessionHash = password_hash($account['userhashpass'], PASSWORD_DEFAULT);
+
+
+                $sql = 
+                'UPDATE users
+                SET sessionhashpass = :sessionhashpass,
+                    lastactive = now()
+                WHERE username=:username';
+
+                $stmt = $db->prepare($sql);
+                $stmt->execute(array(':username' => $username, ':sessionhashpass' => $sessionHash));
+                $accounts = $stmt->fetchAll();
+                
+                //Sync session to active user.
+                $_SESSION['eowSession']['user'] = $username;
+                $_SESSION['eowSession']['hash'] = $sessionHash;
+
+                unset($_POST)
 
 
             } else if ($account['userdisabled']) {
@@ -60,15 +78,14 @@ function login() {
                 //Unexpected error...
                 echo 'Unexpected error...';
             }
-            
-
-
-
 
 
         } else {
             // if it is greater than 1 something really bad happened and we have duplicate accounts...
         }
+
+        //CLOSE CONNECTION
+        $stmt->closeCursor(); 
     }
 }
 
@@ -115,8 +132,7 @@ function register(){
                 $stmt->execute(array(':username' => $username, ':userfname' => $fname, ':userlname' => $lname, ':useremail' => $email, ':userhashpass' => $hashedpass ));
 
                 unset($_POST['register']);
-                echo "Account Created";
-
+                //echo "Account Created";
 
             } catch(PDOException $ex) {
                 echo $sql . "<br>" . $ex->getMessage();

@@ -4,17 +4,19 @@ CREATE TYPE securityLevel as ENUM('1','2','3');
 CREATE TYPE attribType as ENUM('XP','LVL');
 CREATE TYPE modType as ENUM('+', 'x');
 
-CREATE TABLE public.user (
+CREATE TABLE public.users (
 	userID BIGSERIAL NOT NULL PRIMARY KEY,	
-	userEmail VARCHAR(50) NOT NULL,
+	userEmail VARCHAR(50) NOT NULL UNIQUE,
 	userHashPass VARCHAR(255) NOT NULL,
-	userName VARCHAR(50) NOT NULL,
+	userName VARCHAR(50) NOT NULL UNIQUE,
 	userFName VARCHAR(50) NOT NULL,
 	userLName VARCHAR(50) NOT NULL,
 	userLevel securityLevel NOT NULL DEFAULT '1',
 	userDisabled BOOLEAN NOT NULL DEFAULT false,
 	userSuspended  BOOLEAN NOT NULL DEFAULT false,
-	userEmailVerified BOOLEAN NOT NULL DEFAULT false
+	userEmailVerified BOOLEAN NOT NULL DEFAULT false,
+	sessionHashPass VARCHAR(255) NOT NULL,
+	lastActive timestamptz NOT NULL DEFAULT now()
 );
 
 CREATE TABLE public.txRace (
@@ -42,7 +44,7 @@ CREATE TABLE public.txGenus (
 
 CREATE TABLE public.char (
 	charID BIGSERIAL NOT NULL PRIMARY KEY,
-	userID BIGINT NOT NULL REFERENCES public.user(userID),
+	userID BIGINT NOT NULL REFERENCES public.users(userID),
 	charName VARCHAR(100) NOT NULL,
 	txGenusID INT NOT NULL REFERENCES public.txGenus(txGenusID),
 	CONSTRAINT U_charID_userID UNIQUE (charID, userID)
@@ -119,13 +121,6 @@ CREATE TABLE public.itemEff (
 	modTypeOf modType NOT NULL DEFAULT '+',
 	modVal BIGINT NOT NULL DEFAULT 0,
 	CONSTRAINT U_itemEffID_modID UNIQUE (itemEffID, modID)
-);
-
-CREATE TABLE public.activeUser (
-	sessionID BIGSERIAL NOT NULL PRIMARY KEY,	
-	userID VARCHAR(50) NOT NULL,
-	sessionHashPass VARCHAR(255) NOT NULL,
-	lastActive timestamptz NOT NULL DEFAULT now()
 );
 
 INSERT INTO public.txrace (txRaceName, txRacePron, txRaceDesc) VALUES
@@ -231,3 +226,16 @@ GRANT ALL ON SCHEMA test TO PUBLIC;
 GRANT ALL ON SCHEMA test TO gmybdgutyhhvkc;
 
 
+--ADD CONSTRAINTS...
+--ALTER TABLE the_table ADD CONSTRAINT constraint_name UNIQUE (thecolumn);
+--ALTER TABLE foo ADD UNIQUE (thecolumn, the2ndcolumn...);
+
+--LOOKUP KEYS/CONSTRAINTS
+SELECT con.*
+       FROM pg_catalog.pg_constraint con
+            INNER JOIN pg_catalog.pg_class rel
+                       ON rel.oid = con.conrelid
+            INNER JOIN pg_catalog.pg_namespace nsp
+                       ON nsp.oid = connamespace
+       WHERE nsp.nspname = 'public'
+             AND rel.relname = 'users';
