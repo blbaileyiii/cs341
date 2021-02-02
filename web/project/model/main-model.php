@@ -204,8 +204,16 @@ function getRaces() {
             if ($sqlrace['txracename'] !== NULL && $sqlrace['txfamilyname'] !== NULL && $sqlrace['txgenusname'] !== NULL){
                 var_dump($sqlrace);
                 echo '<br><br>';
+            } else if ($sqlrace['txracename'] !== NULL && $sqlrace['txfamilyname']){
+                echo 'Genus was null';
+                var_dump($sqlrace);
+                echo '<br><br>';
+            } else if ($sqlrace['txracename'] !== NULL){
+                echo 'Family and Genus were null';
+                var_dump($sqlrace);
+                echo '<br><br>';
             } else {
-                echo 'something was null';
+                echo 'Everything was null';
                 var_dump($sqlrace);
                 echo '<br><br>';
             }
