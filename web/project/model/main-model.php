@@ -115,9 +115,8 @@ function login() {
 
             if(!$account['userdisabled']
             && !$account['usersuspended']
-            && $account['useremailverified']
-            ) {
-                echo '<br>Account is in good standing.'
+            && $account['useremailverified']) {
+                echo '<br>Account is in good standing.';
             }
             
 
