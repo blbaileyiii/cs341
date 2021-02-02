@@ -25,7 +25,7 @@
         <?php
 
         $raceNames = array_column($races, 'txracename');
-        var_dump($races);
+        var_dump($raceNames);
         foreach ($races as $race) {
             var_dump($race);
         }
