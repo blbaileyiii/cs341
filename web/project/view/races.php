@@ -22,7 +22,7 @@
     <main>    
         <h1>The Races and Creatures of Whimsy</h1>
         <?php foreach ($races as $race) {?>
-            <? phpvar_dump($race); ?><br>
+            <?php var_dump($race); ?><br>
         <?php } ?>
     </main>
     <footer>
