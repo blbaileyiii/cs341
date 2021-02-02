@@ -21,7 +21,7 @@
     </nav>    
     <main>    
         <h1>The Races and Creatures of Whimsy</h1>        
-        
+        <?php var_dump($races); ?>;
         <?php foreach ($races as $race => $raceInfo) { ?>
             <div>
             <h2><?php $race ?></h2>
