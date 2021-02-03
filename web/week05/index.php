@@ -51,10 +51,10 @@
 
 <body>
     <header>
-        <?php require $currRoot . '/project/snippets/header.php'; ?>
+        <?php include $currRoot . '/project/snippets/header.php'; ?>
     </header>
     <nav>
-        <?php require $currRoot . '/project/snippets/nav.php'; ?>
+        <?php include $currRoot . '/project/snippets/nav.php'; ?>
     </nav>    
     <main>    
         <h1>Content Title Here</h1>
@@ -75,7 +75,7 @@
         </div>
     </main>
     <footer>
-    <?php require $currRoot . '/project/snippets/footer.php'; ?>
+    <?php include $currRoot . '/project/snippets/footer.php'; ?>
     </footer>
 </body>
 </html>
