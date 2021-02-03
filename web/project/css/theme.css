@@ -13,6 +13,7 @@
     --ton-bg-alt: #ffa200;
 
     /* shadow-text-on- (ston-) */
+    --ston-logo: black;
     --ston-logo-dark: black;
     --ston-bg-alt: black;
 
@@ -82,7 +83,7 @@ footer {
 }
 
 .genus h4 {
-    background: var(--logo);
+    background-image: linear-gradient(to right, var(--logo-light) 25%, var(--logo) 75%);
     color: var(--ton-logo);
-    text-shadow: 2px 2px 5px var(--ston-logo-dark);
+    text-shadow: 2px 2px 5px var(--ston-logo);
 }
