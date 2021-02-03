@@ -231,18 +231,18 @@ function getRacesHTML($races) {
     $racesHTML ="";
 
         foreach ($races as $race => $raceInfo) {
-            $racesHTML .= "<div>\n";
+            $racesHTML .= "<div class='race'>\n";
             $racesHTML .= "\t<h2>$race</h2>\n";
             $racesHTML .= "\t<p>$raceInfo[txracedesc]</p>\n";
             foreach ($raceInfo['txfamilynames'] as $family => $familyInfo) {
                 if($family !== "") {
-                    $racesHTML .= "\t<div>\n";
+                    $racesHTML .= "\t<div class='family'>\n";
                     $racesHTML .= "\t\t<h3>$family</h3>\n";
                     $racesHTML .= "\t\t<p>$familyInfo[txfamilydesc]</p>\n";
                 }                
                 foreach ($familyInfo['txgenusnames'] as $genus => $genusInfo) {
                     if($genus !== "") {
-                        $racesHTML .= "\t\t<div>\n";
+                        $racesHTML .= "\t\t<div class='genus'>\n";
                         $racesHTML .= "\t\t\t<h4>$genus</h4>\n";
                         $racesHTML .= "\t\t\t<p>$genusInfo[txgenuspron]</p>\n";
                         $racesHTML .= "\t\t\t<p>$genusInfo[txgenusdesc]</p>\n";
