@@ -16,9 +16,7 @@
     <header>
         <?php require $currRoot . '/project/snippets/header.php'; ?>
     </header>
-    <nav>
-        <?php require $currRoot . '/project/snippets/nav.php'; ?>
-    </nav>    
+    <?php require $currRoot . '/project/snippets/nav.php'; ?>   
     <main>    
         <h1>Content Title Here</h1>
         Content goes here.

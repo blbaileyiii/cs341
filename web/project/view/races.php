@@ -16,9 +16,7 @@
     <header>
         <?php require $currRoot . '/project/snippets/header.php'; ?>
     </header>
-    <nav>
-        <?php require $currRoot . '/project/snippets/nav.php'; ?>
-    </nav>    
+    <?php require $currRoot . '/project/snippets/nav.php'; ?>   
     <main>    
         <h1>The Races and Creatures of Whimsy</h1>        
 

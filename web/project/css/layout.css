@@ -9,14 +9,18 @@ a {
     text-decoration: none;
 }
 
-nav li {
-    display: block;
-}
-
-nav ul {
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.nav-ul {
+    display: flex;
     padding: 0;
     list-style: none;
+}
+
+.nav-li {
+    display: block;
 }
