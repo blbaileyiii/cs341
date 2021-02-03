@@ -7,9 +7,9 @@
     <title>Echoes of Whimsy - Err 500</title>
     <meta name="Echoes of Whimsy"
         content="Echoes of Whimsy - Err 500">
-        <link rel="stylesheet" href="/project/css/layout.css">
-        <link rel="stylesheet" href="/project/css/typography.css">
         <link rel="stylesheet" href="/project/css/theme.css">
+        <link rel="stylesheet" href="/project/css/typography.css">
+        <link rel="stylesheet" href="/project/css/layout.css">
 </head>
 
 <body>
