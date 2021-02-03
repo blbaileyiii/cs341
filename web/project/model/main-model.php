@@ -235,17 +235,19 @@ function getRacesHTML($races) {
             $racesHTML .= "\t<h2>$race</h2>\n";
             $racesHTML .= "\t<p>$raceInfo[txracedesc]</p>\n";
             foreach ($raceInfo['txfamilynames'] as $family => $familyInfo) {
-                $racesHTML .= "\t<div>\n";
-                if($family === "") {$racesHTML .= "\t\t<h3>NULL</h3>\n";}
-                $racesHTML .= "\t\t<h3>$family</h3>\n";
-                $racesHTML .= "\t\t<p>$familyInfo[txfamilydesc]</p>\n";
+                if($family !== "") {
+                    $racesHTML .= "\t<div>\n";
+                    $racesHTML .= "\t\t<h3>$family</h3>\n";
+                    $racesHTML .= "\t\t<p>$familyInfo[txfamilydesc]</p>\n";
+                }                
                 foreach ($familyInfo['txgenusnames'] as $genus => $genusInfo) {
-                    $racesHTML .= "\t\t<div>\n";
-                    if($genus === "") {$racesHTML .= "\t\t<h4>NULL</h4>\n";}
-                    $racesHTML .= "\t\t\t<h4>$genus</h4>\n";
-                    $racesHTML .= "\t\t\t<p>$genusInfo[txgenuspron]</p>\n";
-                    $racesHTML .= "\t\t\t<p>$genusInfo[txgenusdesc]</p>\n";
-                    $racesHTML .= "\t\t</div>\n";
+                    if($genus !== "") {
+                        $racesHTML .= "\t\t<div>\n";
+                        $racesHTML .= "\t\t\t<h4>$genus</h4>\n";
+                        $racesHTML .= "\t\t\t<p>$genusInfo[txgenuspron]</p>\n";
+                        $racesHTML .= "\t\t\t<p>$genusInfo[txgenusdesc]</p>\n";
+                        $racesHTML .= "\t\t</div>\n";
+                    }
                 }
                 $racesHTML .= "\t</div>\n";
             }
