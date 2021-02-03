@@ -22,5 +22,5 @@ header {
 }
 
 .nav {
-    background-image: linear-gradient(to bottom left, var(--color-logo), white 25%);
+    background-image: linear-gradient(to bottom left, var(--color-logo), white 50%);
 }
