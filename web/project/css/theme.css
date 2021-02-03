@@ -71,10 +71,15 @@ footer {
     border-bottom-color: var(--logo-dark);
 }
 
+.family h3 {
+    background-image: linear-gradient(to right, var(--bg) 25%, var(--logo));
+}
+
 .genus {
     border-color: var(--logo);
 }
 
 .genus h4 {
     background: var(--logo);
+    color: var(--ton-logo);
 }
