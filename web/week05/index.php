@@ -71,7 +71,7 @@
         </div>
 
         <div>
-            <?php $searchResultHTML;?>
+            <?php echo $searchResultHTML;?>
         </div>
     </main>
     <footer>
