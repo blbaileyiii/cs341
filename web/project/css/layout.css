@@ -23,7 +23,11 @@ a {
     list-style: none;
 }
 
-.nav-li {
+.nav-lnk, .header-lnk {
+    padding: 0 0.5rem;
     display: block;
-    padding: 0 1rem;
+}
+
+footer {
+    text-align: center;
 }
