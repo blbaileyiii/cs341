@@ -58,12 +58,17 @@ footer {
     padding: 1rem;    
 }
 
-.family:nth-child(n+1){
+.family:nth-child(n+1) {
     border-top-width: 2px;
     border-top-style: solid;
 }
 
-.family-full-width{
+.family:last-child {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+.family-full-width {
     grid-column: 1/-1;
     padding: 0;
     margin: 0;
