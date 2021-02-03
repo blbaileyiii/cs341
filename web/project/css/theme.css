@@ -1,27 +1,40 @@
 :root {
-    --color-logo: #ffa200;
-    --color-logo-dark: #ff6f00;
-    --color-logo-light: #ffcd00;
+    --logo: #ffa200;
+    --logo-dark: #ff6f00;
+    --logo-light: #ffcd00;
+    --bg: white;
+
+    /* text-on- (ton-) */
+    --ton-logo: white;
+    --ton-logo-alt: black;
+    --ton-logo-dark: white;
+    --ton-logo-light: black;
+    --ton-bg: black;
 }
 
 html {
-    background: white;
-    color: black;
+    background: var(--bg);
+    color: var(--ton-bg);
 }
 
 button, .button {
-    background: var(--color-logo);
-    color: white;
+    background: var(--logo);
+    color: var(--ton-logo);
 }
 
 a, a:visited, a:focus {
-    color: black;
+    color: var(--ton-logo-light);
 }
 
 header {
-    background-image: linear-gradient(to right, var(--color-logo-dark) 25%,var(--color-logo) 75%);
+    background-image: linear-gradient(to right, var(--logo-dark) 25%,var(--logo) 75%);
 }
 
 .nav {
-    background-image: linear-gradient(181deg, var(--color-logo-light), white 48%);
+    background-image: linear-gradient(181deg, var(--logo-light), var(--bg) 48%);
+}
+
+footer {
+    background: var(--logo-dark);
+    color: var(--ton-logo-dark);
 }
