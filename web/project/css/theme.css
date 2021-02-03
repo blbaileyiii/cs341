@@ -10,15 +10,22 @@
     --ton-logo-dark: white;
     --ton-logo-light: black;
     --ton-bg: black;
+    --ton-bg-alt: #ffa200;
 
     /* shadow-text-on- (ston-) */
     --ston-logo-dark: black;
+    --ston-bg-alt: black;
 
 }
 
 html {
     background: var(--bg);
     color: var(--ton-bg);
+}
+
+h1 {
+    color: var(--ton-bg-alt);
+    text-shadow: 2px 2px 5px var(--ston-bg-alt);
 }
 
 button, .button {
