@@ -28,7 +28,7 @@
             foreach ($db->query("SELECT * FROM cse341ta05.scriptures WHERE book = '$book';") as $scripture)
             {
                 
-                $searchResultHTML .= "<p><a href='details.php?book=$scripture[book]&chapter=$scripture[chapter]&verse=$scripture[verse]' title='Scripture: $scripture[book] $scripture[chapter]:$scripture[verse]'><b>$scripture[book] $scripture[chapter]:$scripture[verse]</b></a>";
+                $searchResultHTML .= "<p><a href='details.php?book=$scripture[book]&chapter=$scripture[chapter]&verse=$scripture[verse]' title='Scripture: $scripture[book] $scripture[chapter]:$scripture[verse]'><b>$scripture[book] $scripture[chapter]:$scripture[verse]</b></a></p>";
                 $searchResultHTML .= "<br/>";
             }
         }
@@ -64,9 +64,11 @@
         </form>
 
         <div>
-            <?php foreach ($db->query('SELECT * FROM cse341ta05.scriptures') as $scripture) {
-                echo '<p><b>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':' . $scripture['verse'] . '</b> - "' . $scripture['content'] . '"';
-                echo '<br/>';
+            <?php 
+                $scriptureSetHTML = "";
+                foreach ($db->query('SELECT * FROM cse341ta05.scriptures') as $scripture) {
+                $scriptureSetHTML .= "<p><a href='details.php?book=$scripture[book]&chapter=$scripture[chapter]&verse=$scripture[verse]' title='Scripture: $scripture[book] $scripture[chapter]:$scripture[verse]'><b>$scripture[book] $scripture[chapter]:$scripture[verse]</b></a></p>";
+                $scriptureSetHTML .= "<br/>";
             } ?>
         </div>
 
