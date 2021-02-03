@@ -10,6 +10,10 @@
     --ton-logo-dark: white;
     --ton-logo-light: black;
     --ton-bg: black;
+
+    /* shadow-text-on- (ston-) */
+    --ston-logo-dark: black;
+
 }
 
 html {
@@ -37,6 +41,11 @@ header {
 footer {
     background-image: linear-gradient(to top, var(--logo-dark)50%, var(--logo) 95%);
     color: var(--ton-logo-dark);
+}
+
+.race h2 {
+    color: var(--ton-logo-dark);
+    text-shadow: 2px 2px 5px var(--ston-logo-dark);
 }
 
 .race:nth-child(even) h2{
