@@ -17,5 +17,5 @@ a, a:visited, a:focus {
 }
 
 header {
-    background-image: linear-gradient(to right, var(--color-logo), white 25%);
+    background-image: linear-gradient(to right, var(--color-logo), white 75%);
 }
