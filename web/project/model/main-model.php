@@ -237,8 +237,8 @@ function getRacesHTML($races) {
             foreach ($raceInfo['txfamilynames'] as $family => $familyInfo) {
                 if($family !== "") {
                     $racesHTML .= "\t<div class='family'>\n";
-                    $racesHTML .= "\t\t<h3>$family</h3>\n";
-                    $racesHTML .= "\t\t<p>$familyInfo[txfamilydesc]</p>\n";
+                    $racesHTML .= "\t\t<h3 class='family-full-width'>$family</h3>\n";
+                    $racesHTML .= "\t\t<p class='family-full-width'>$familyInfo[txfamilydesc]</p>\n";
                 }                
                 foreach ($familyInfo['txgenusnames'] as $genus => $genusInfo) {
                     if($genus !== "") {
