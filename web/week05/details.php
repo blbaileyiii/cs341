@@ -22,7 +22,7 @@
             if ($book != null)
             {
                 
-                foreach ($db->query("SELECT * FROM cse341ta05.scriptures WHERE book = '$book', chapter = '$chapter', verse = '$verse';") as $scripture)
+                foreach ($db->query("SELECT * FROM cse341ta05.scriptures WHERE book = '$book', chapter = $chapter, verse = $verse;") as $scripture)
                 {
                     $searchResultHTML .=  "<h2>$scripture[book] $scripture[chapter]:$scripture[verse]</h2>";
                     $searchResultHTML .= "<p>$scripture[content]</a>";
