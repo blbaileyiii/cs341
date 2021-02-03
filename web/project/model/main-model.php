@@ -216,29 +216,6 @@ function getRaces() {
             $races[$raceSQL['txracename']]['txfamilynames'][$raceSQL['txfamilyname']]['txgenusnames'][$raceSQL['txgenusname']]['txgenusdesc'] = $raceSQL['txgenusdesc'];
             $races[$raceSQL['txracename']]['txfamilynames'][$raceSQL['txfamilyname']]['txgenusnames'][$raceSQL['txgenusname']]['txgenuspron'] = $raceSQL['txgenuspron'];
 
-            /*
-            if ($raceSQL['txracename'] !== NULL && $raceSQL['txfamilyname'] !== NULL && $raceSQL['txgenusname'] !== NULL){
-                //var_dump($raceSQL);
-                //echo '<br><br>';
-                $races[$raceSQL['txracename']]['txracedesc'] = $raceSQL['txracedesc'];
-                $races[$raceSQL['txracename']]['txfamilynames'][$raceSQL['txfamilyname']]['txfamilydesc'] = $raceSQL['txfamilydesc'];
-                $races[$raceSQL['txracename']]['txfamilynames'][$raceSQL['txfamilyname']]['txgenusnames'][$raceSQL['txgenusname']]['txgenusdesc'] = $raceSQL['txgenusdesc'];
-                $races[$raceSQL['txracename']]['txfamilynames'][$raceSQL['txfamilyname']]['txgenusnames'][$raceSQL['txgenusname']]['txgenuspron'] = $raceSQL['txgenuspron'];
-                
-            } else if ($raceSQL['txracename'] !== NULL && $raceSQL['txfamilyname']){
-                echo 'Genus was null';
-                var_dump($raceSQL);
-                echo '<br><br>';
-            } else if ($raceSQL['txracename'] !== NULL){
-                echo 'Family and Genus were null';
-                var_dump($raceSQL);
-                echo '<br><br>';
-            } else {
-                echo 'Everything was null';
-                var_dump($raceSQL);
-                echo '<br><br>';
-            }
-            */
         }
         //var_dump($races);
 
@@ -259,10 +236,12 @@ function getRacesHTML($races) {
             $racesHTML .= "\t<p>$raceInfo[txracedesc]</p>\n";
             foreach ($raceInfo['txfamilynames'] as $family => $familyInfo) {
                 $racesHTML .= "\t<div>\n";
+                if($family === NULL) {$racesHTML .= "\t\t<h3>NULL</h3>\n";}
                 $racesHTML .= "\t\t<h3>$family</h3>\n";
                 $racesHTML .= "\t\t<p>$familyInfo[txfamilydesc]</p>\n";
                 foreach ($familyInfo['txgenusnames'] as $genus => $genusInfo) {
                     $racesHTML .= "\t\t<div>\n";
+                    if($genus === NULL) {$racesHTML .= "\t\t<h4>NULL</h4>\n";}
                     $racesHTML .= "\t\t\t<h4>$genus</h4>\n";
                     $racesHTML .= "\t\t\t<p>$genusInfo[txgenuspron]</p>\n";
                     $racesHTML .= "\t\t\t<p>$genusInfo[txgenusdesc]</p>\n";
