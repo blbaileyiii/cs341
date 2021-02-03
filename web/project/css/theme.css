@@ -1,5 +1,6 @@
 :root {
     --color-logo: #ffa200;
+    --color-logo-dark: #ff6f00;
 }
 
 html {
@@ -17,5 +18,9 @@ a, a:visited, a:focus {
 }
 
 header {
-    background-image: linear-gradient(to right, var(--color-logo) 25%, white 75%);
+    background-image: linear-gradient(to right, var(--color-logo-dark) 25%,var(--color-logo) 75%);
+}
+
+.nav {
+    background-image: linear-gradient(to bottom left, var(--color-logo) 25%, white 75%);
 }
