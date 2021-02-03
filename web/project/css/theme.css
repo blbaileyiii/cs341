@@ -35,6 +35,6 @@ header {
 }
 
 footer {
-    background-image: linear-gradient(to top, var(--logo-dark)50%, var(--bg) 75%);
+    background-image: linear-gradient(to top, var(--logo-dark)50%, var(--bg) 95%);
     color: var(--ton-logo-dark);
 }
