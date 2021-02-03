@@ -6,6 +6,10 @@ header {
     padding: 0.5rem;
 }
 
+body {
+    margin: 0;
+}
+
 a {
     text-decoration: none;
 }
