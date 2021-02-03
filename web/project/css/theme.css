@@ -15,3 +15,7 @@ button, .button {
 a, a:visited, a:focus {
     color: black;
 }
+
+header {
+    background-image: linear-gradient(to right, var(--color-logo), white);
+}
