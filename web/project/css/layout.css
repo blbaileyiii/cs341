@@ -25,7 +25,7 @@ a {
 
 .nav-lnk, .header-lnk {
     padding: 0 0.5rem;
-    display: block;
+    display: inline-block;
 }
 
 footer {
