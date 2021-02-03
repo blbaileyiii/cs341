@@ -31,7 +31,7 @@ header {
 }
 
 .nav {
-    background-image: linear-gradient(181deg, var(--logo-light), var(--bg) 48%);
+    background-image: linear-gradient(181.5deg, var(--logo-light), var(--bg) 48%);
 }
 
 footer {
