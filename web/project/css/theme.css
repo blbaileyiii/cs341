@@ -27,7 +27,7 @@ a, a:visited, a:focus {
 }
 
 header {
-    background-image: linear-gradient(to right, var(--logo-dark) 25%,var(--logo) 75%);
+    background-image: linear-gradient(to right, var(--logo-dark) 25%, var(--logo) 75%);
 }
 
 .nav {
@@ -39,10 +39,10 @@ footer {
     color: var(--ton-logo-dark);
 }
 
-.race:nth-child(odd) h2{
-    background-image: linear-gradient(to right, var(--logo-dark) 25%,var(--bg) 75%);
+.race:nth-child(even) h2{
+    background-image: linear-gradient(to right, var(--logo-dark), var(--bg) 75%);
 }
 
-.race:nth-child(even) h2{
-    background-image: linear-gradient(to right, var(--bg) 25%,var(--logo-dark) 75%);
+.race:nth-child(odd) h2{
+    background-image: linear-gradient(to right, var(--bg) 25%, var(--logo-dark));
 }
