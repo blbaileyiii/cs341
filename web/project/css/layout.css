@@ -68,6 +68,13 @@ footer {
     border-bottom-style: solid;
 }
 
+.family h3 {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
 .family-full-width {
     grid-column: 1/-1;
     padding: 0;

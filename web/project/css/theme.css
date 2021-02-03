@@ -73,6 +73,8 @@ footer {
 
 .family h3 {
     background-image: linear-gradient(to right, var(--bg) 25%, var(--logo));
+    border-top-color: var(--logo);
+    border-bottom-color: var(--logo);
 }
 
 .genus {
@@ -82,4 +84,5 @@ footer {
 .genus h4 {
     background: var(--logo);
     color: var(--ton-logo);
+    text-shadow: 2px 2px 5px var(--ston-logo-dark);
 }
