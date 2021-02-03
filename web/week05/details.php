@@ -11,28 +11,30 @@
 		$dbName = ltrim($dbOpts["path"],'/');
 		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	}
+	
+    
+        $searchResultHTML = "";
+
+        if(isset($_GET['book'])){
+            $book = ucfirst($_GET['book']);
+            $chapter = ucfirst($_GET['chapter']);
+            $verse = ucfirst($_GET['verse']);
+            if ($book != null)
+            {
+                
+                foreach ($db->query("SELECT * FROM cse341ta05.scriptures WHERE book = '$book', chapter = '$chapter', verse = '$verse';") as $scripture)
+                {
+                    $searchResultHTML .=  "<h2>$scripture[book] $scripture[chapter]:$scripture[verse]</h2>";
+                    $searchResultHTML .= "<p>$scripture[content]</a>";
+                }
+            }
+        }
+
+    }
 	catch (PDOException $exc)
 	{
 		echo 'Error!: ' . $exc->getMessage();
 		die();
-    }
-    
-    $searchResultHTML = "";
-
-    if(isset($_GET['book'])){
-        $book = ucfirst($_GET['book']);
-        $chapter = ucfirst($_GET['chapter']);
-        $verse = ucfirst($_GET['verse']);
-        if ($book != null)
-        {
-            
-            foreach ($db->query("SELECT * FROM cse341ta05.scriptures WHERE book = '$book', chapter = '$chapter', verse = '$verse';") as $scripture)
-            {
-                $searchResultHTML .=  "<h2>$scripture[book] $scripture[chapter]:$scripture[verse]</h2>";
-                $searchResultHTML .= "<p>$scripture[content]</a>";
-            }
-        }
     }
 ?>
 
