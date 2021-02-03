@@ -22,14 +22,15 @@
 
     if(isset($_GET['book'])){
         $book = ucfirst($_GET['book']);
+        $chapter = ucfirst($_GET['chapter']);
+        $verse = ucfirst($_GET['verse']);
         if ($book != null)
         {
-            $searchResultHTML .=  '<h2>Search Results</h2>';
-            foreach ($db->query("SELECT * FROM cse341ta05.scriptures WHERE book = '$book';") as $scripture)
+            
+            foreach ($db->query("SELECT * FROM cse341ta05.scriptures WHERE book = '$book', chapter = '$chapter', verse = '$verse';") as $scripture)
             {
-                
-                $searchResultHTML .= "<p><a href='details.php?book=$scripture[book]&chapter=$scripture[chapter]&verse=$scripture[verse]' title='Scripture: $scripture[book] $scripture[chapter]:$scripture[verse]'><b>$scripture[book] $scripture[chapter]:$scripture[verse]</b></a>";
-                $searchResultHTML .= "<br/>";
+                $searchResultHTML .=  "<h2>$scripture[book] $scripture[chapter]:$scripture[verse]</h2>";
+                $searchResultHTML .= "<p>$scripture[content]</a>";
             }
         }
     }
@@ -62,13 +63,6 @@
             <input type="text" name="book"/>
             <input type="submit" value="Submit"/>
         </form>
-
-        <div>
-            <?php foreach ($db->query('SELECT * FROM cse341ta05.scriptures') as $scripture) {
-                echo '<p><b>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':' . $scripture['verse'] . '</b> - "' . $scripture['content'] . '"';
-                echo '<br/>';
-            } ?>
-        </div>
 
         <div>
             <?php echo $searchResultHTML;?>
