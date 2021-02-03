@@ -55,3 +55,11 @@ footer {
 .race:nth-child(odd) h2{
     background-image: linear-gradient(to right, var(--bg) 25%, var(--logo-dark));
 }
+
+.family {
+    border-color: var(--logo);
+}
+
+.family:nth-child(n+1){
+    border-top-color: var(--logo-dark);
+}
