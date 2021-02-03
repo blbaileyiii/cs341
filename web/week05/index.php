@@ -25,7 +25,7 @@
         if ($book != null)
         {
             $searchResultHTML .=  '<h2>Search Results</h2>';
-            foreach ($db->query("SELECT * FROM public.scriptures WHERE book = '$book';") as $scripture)
+            foreach ($db->query("SELECT * FROM cse341ta05.scriptures WHERE book = '$book';") as $scripture)
             {
                 
                 $searchResultHTML .= '<p><b>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':' . $scripture['verse'] . '</b> - "' . $scripture['content'] . '"';
@@ -64,7 +64,7 @@
         </form>
 
         <div>
-            <?php foreach ($db->query('SELECT * FROM public.scriptures') as $scripture) {
+            <?php foreach ($db->query('SELECT * FROM cse341ta05.scriptures') as $scripture) {
                 echo '<p><b>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':' . $scripture['verse'] . '</b> - "' . $scripture['content'] . '"';
                 echo '<br/>';
             } ?>
