@@ -217,7 +217,7 @@ function getRaces() {
             $races[$raceSQL['txracename']]['txfamilynames'][$raceSQL['txfamilyname']]['txgenusnames'][$raceSQL['txgenusname']]['txgenuspron'] = $raceSQL['txgenuspron'];
 
         }
-        //var_dump($races);
+        var_dump($races);
 
         return $races;
 
