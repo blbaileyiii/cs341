@@ -65,10 +65,9 @@
 
         <div>
             <?php 
-                $scriptureSetHTML = "";
                 foreach ($db->query('SELECT * FROM cse341ta05.scriptures') as $scripture) {
-                $scriptureSetHTML .= "<p><a href='details.php?book=$scripture[book]&chapter=$scripture[chapter]&verse=$scripture[verse]' title='Scripture: $scripture[book] $scripture[chapter]:$scripture[verse]'><b>$scripture[book] $scripture[chapter]:$scripture[verse]</b></a></p>";
-                $scriptureSetHTML .= "<br/>";
+                    echo "<p><a href='details.php?book=$scripture[book]&chapter=$scripture[chapter]&verse=$scripture[verse]' title='Scripture: $scripture[book] $scripture[chapter]:$scripture[verse]'><b>$scripture[book] $scripture[chapter]:$scripture[verse]</b></a></p>";
+                    echo"<br/>";
             } ?>
         </div>
 
