@@ -87,6 +87,10 @@ footer {
 }
 
 .genus h4 {
-    padding: 0;
+    padding: 0.25rem 0.5rem 0;
     margin: 0;
+}
+
+.genus p{
+    margin: 0 0.5rem;
 }
