@@ -25,13 +25,8 @@ html {
 }
 
 h1 {
-    color: var(--bg);
-    text-shadow: 
-        2px 2px 5px var(--ston-bg-alt),
-        -1px -1px 0 var(--logo-dark),
-        1px -1px 0 var(--logo-dark),
-        -1px 1px 0 var(--logo-dark),
-        1px 1px 0 var(--logo-dark);
+    color: var(--ton-bg-alt);
+    text-shadow: 2px 2px 5px var(--ston-bg-alt);
 }
 
 button, .button {
