@@ -196,7 +196,7 @@ function getRaces() {
 
         $sql = 
         'SELECT txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
-        FROM txrace LEFT JOIN txfamily on txrace.txraceid=txfamily.txraceid
+        FROM txrace LEFT JOIN txfamily ON txrace.txraceid=txfamily.txraceid
         LEFT JOIN txgenus ON txfamily.txfamilyid=txgenus.txfamilyid
         ORDER BY txrace.txraceid, txfamilyname, txgenusname';
 
@@ -255,6 +255,41 @@ function getRacesHTML($races) {
         }
 
         return $racesHTML;
+}
+
+function getUserChars() {
+    if(isset($_SESSION['eowSession']['username'])
+    && isset($_SESSION['eowSession']['userhashpass'])) {
+
+        $username = $_SESSION['eowSession']['username'];
+        //$userhashpass = $_SESSION['eowSession']['userhashpass'];
+
+        //CLEAN THIS UP SO IT DOES A PROPER CHECK LATER...
+        try {
+            $db = eowConnect();
+
+            $sql = 
+            'SELECT username, charname, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
+            FROM users 
+            JOIN char ON users.userid=char.userid
+            JOIN txgenus ON txgenus.txgenusid=char.txgenusid
+            JOIN txfamily ON txfamily.txfamilyid=txgenus.txgenusid
+            JOIN txrace ON txrace.txraceid=txfamily.txraceid
+            ';
+
+            $stmt = $db->prepare($sql);
+            $stmt->execute(array(':username' => $username));
+            $characters = $stmt->fetchAll();
+
+            var_dump($characters);
+
+            // The next line closes the interaction with the database 
+            $stmt->closeCursor(); 
+
+        } catch(PDOException $ex) {
+            echo $ex->getMessage();
+        }
+    }
 }
 
 ?>
