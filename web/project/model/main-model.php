@@ -264,7 +264,6 @@ function getRacesHTML($races) {
 }
 
 function getUserChars() {
-    echo "I got here";
     if(isset($_SESSION['eowSession']['username'])
     && isset($_SESSION['eowSession']['userhashpass'])) {
 
@@ -285,7 +284,8 @@ function getUserChars() {
             ';
 
             $stmt = $db->prepare($sql);
-            $stmt->execute(array(':username' => $username));
+            //$stmt->execute(array(':username' => $username));
+            $stmt->execute();
             $characters = $stmt->fetchAll();
 
             var_dump($characters);
