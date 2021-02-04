@@ -20,7 +20,7 @@
     <main>    
         <h1>Account Page</h1>
 
-        <?php echo $races ?>
+        <?php echo $characters ?>
 
     </main>
     <footer>

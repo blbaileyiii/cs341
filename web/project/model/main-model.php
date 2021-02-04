@@ -321,8 +321,8 @@ function getCharactersHTML($characters) {
     $charactersHTML = "WORKING...";
 
     foreach ($characters as $character => $characterInfo) {
-        echo $character;
-        echo $characterInfo;
+        //echo $character;
+        //echo $characterInfo;
     }
 
     return $charactersHTML;
