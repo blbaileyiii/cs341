@@ -239,3 +239,31 @@ SELECT con.*
                        ON nsp.oid = connamespace
        WHERE nsp.nspname = 'public'
              AND rel.relname = 'users';
+
+
+INSERT INTO 'char' (userid, charname, txgenusid) VALUES
+( (SELECT userid FROM users WHERE username='blbaileyiii'), 'Mahershalalhashbaz',(SELECT txgenusid FROM txgenus WHERE txgenusname='Nhilim') ),
+( (SELECT userid FROM users WHERE username='blbaileyiii'), 'Takx',(SELECT txgenusid FROM txgenus WHERE txgenusname='Tsumari') ),
+( (SELECT userid FROM users WHERE username='blbaileyiii'), 'Draegür',(SELECT txgenusid FROM txgenus WHERE txgenusname='Grokarra') ),
+( (SELECT userid FROM users WHERE username='blbaileyiii'), 'Scarabäeus',(SELECT txgenusid FROM txgenus WHERE txgenusname='Beleg') ),
+( (SELECT userid FROM users WHERE username='blbaileyiii'), 'Gron Plunderpaw',(SELECT txgenusid FROM txgenus WHERE txgenusname='Waraabe') ),
+( (SELECT userid FROM users WHERE username='blbaileyiii'), 'Elsa Rävviskning',(SELECT txgenusid FROM txgenus WHERE txgenusname='Ankari') ),
+( (SELECT userid FROM users WHERE username='blbaileyiii'), 'Hayden Frostfire',(SELECT txgenusid FROM txgenus WHERE txgenusname='Usa') ),
+( (SELECT userid FROM users WHERE username='blbaileyiii'), 'Lyra Swiftclaw',(SELECT txgenusid FROM txgenus WHERE txgenusname='Miyat') ),
+( (SELECT userid FROM users WHERE username='blbaileyiii'), 'Alandra Marquette',(SELECT txgenusid FROM txgenus WHERE txgenusname='Rhanea') ),
+( (SELECT userid FROM users WHERE username='blbaileyiii'), 'Kara Emberwind',(SELECT txgenusid FROM txgenus WHERE txgenusname='Lamaan') ),
+( (SELECT userid FROM users WHERE username='blbaileyiii'), 'Traaqz',(SELECT txgenusid FROM txgenus WHERE txgenusname='Vora Pora') ),
+( (SELECT userid FROM users WHERE username='blbaileyiii'), 'Heavens Song',(SELECT txgenusid FROM txgenus WHERE txgenusname='As''tas') ),
+( (SELECT userid FROM users WHERE username='bmwilliamson'), 'Ulipeties Hazzelforth',(SELECT txgenusid FROM txgenus WHERE txgenusname='Oku') ),
+( (SELECT userid FROM users WHERE username='bmwilliamson'), 'Neil Toupes',(SELECT txgenusid FROM txgenus WHERE txgenusname='Musteleph') ),
+( (SELECT userid FROM users WHERE username='bmwilliamson'), 'Gwottel Seet',(SELECT txgenusid FROM txgenus WHERE txgenusname='Mogwa') ),
+( (SELECT userid FROM users WHERE username='bmwilliamson'), 'Lamerah Hep',(SELECT txgenusid FROM txgenus WHERE txgenusname='Rh''orc') ),
+( (SELECT userid FROM users WHERE username='sebailey'), 'Harlow Wells',(SELECT txgenusid FROM txgenus WHERE txgenusname='Kité') ),
+( (SELECT userid FROM users WHERE username='sebailey'), 'Annalise Victor',(SELECT txgenusid FROM txgenus WHERE txgenusname='Tsutsuren') ),
+( (SELECT userid FROM users WHERE username='sebailey'), 'Tallulah',(SELECT txgenusid FROM txgenus WHERE txgenusname='Miyat') ),
+( (SELECT userid FROM users WHERE username='gberguson'), 'Worg Ballisade',(SELECT txgenusid FROM txgenus WHERE txgenusname='Rhashang') ),
+( (SELECT userid FROM users WHERE username='gberguson'), 'Tsumal',(SELECT txgenusid FROM txgenus WHERE txgenusname='Tsumari') ),
+( (SELECT userid FROM users WHERE username='gberguson'), 'Mr. Chapps',(SELECT txgenusid FROM txgenus WHERE txgenusname='Fataru') ),
+( (SELECT userid FROM users WHERE username='jskidmore'), 'Wyatt Erp',(SELECT txgenusid FROM txgenus WHERE txgenusname='Chr''upp') ),
+( (SELECT userid FROM users WHERE username='jskidmore'), 'Sticky Licky',(SELECT txgenusid FROM txgenus WHERE txgenusname='Panangu') ),
+( (SELECT userid FROM users WHERE username='ltonnies'), 'Lance Tonnes',(SELECT txgenusid FROM txgenus WHERE txgenusname='Tibur') );
