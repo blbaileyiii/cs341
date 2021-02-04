@@ -102,6 +102,7 @@ function login() {
 
         } catch(PDOException $ex) {
             echo $sql . "<br>" . $ex->getMessage();
+            //login err redirect back to login...
         }
     } else {
         return false;
@@ -275,13 +276,17 @@ function getUserChars() {
             $db = eowConnect();
 
             $sql = 
-            'SELECT username, charname, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
+            'SELECT username, charname
             FROM users 
-            JOIN char ON users.userid=char.userid
-            JOIN txgenus ON txgenus.txgenusid=char.txgenusid
-            JOIN txfamily ON txfamily.txfamilyid=txgenus.txgenusid
-            JOIN txrace ON txrace.txraceid=txfamily.txraceid
-            ';
+            JOIN char ON users.userid=char.userid';
+
+            //'SELECT username, charname, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
+            //FROM users 
+            //JOIN char ON users.userid=char.userid
+            //JOIN txgenus ON txgenus.txgenusid=char.txgenusid
+            //JOIN txfamily ON txfamily.txfamilyid=txgenus.txgenusid
+            //JOIN txrace ON txrace.txraceid=txfamily.txraceid
+            //';
 
             $stmt = $db->prepare($sql);
             //$stmt->execute(array(':username' => $username));
