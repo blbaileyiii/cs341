@@ -276,18 +276,13 @@ function getUserChars() {
             $db = eowConnect();
 
             $sql = 
-            'SELECT username, charname
+            'SELECT username, charname, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
             FROM users 
             JOIN char ON users.userid=char.userid
+            JOIN txgenus ON txgenus.txgenusid=char.txgenusid
+            JOIN txfamily ON txfamily.txfamilyid=txgenus.txgenusid
+            JOIN txrace ON txrace.txraceid=txfamily.txraceid
             WHERE username=:username';
-
-            //'SELECT username, charname, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
-            //FROM users 
-            //JOIN char ON users.userid=char.userid
-            //JOIN txgenus ON txgenus.txgenusid=char.txgenusid
-            //JOIN txfamily ON txfamily.txfamilyid=txgenus.txgenusid
-            //JOIN txrace ON txrace.txraceid=txfamily.txraceid
-            //WHERE username=:username';
 
             $stmt = $db->prepare($sql);
             $stmt->execute(array(':username' => $username));
