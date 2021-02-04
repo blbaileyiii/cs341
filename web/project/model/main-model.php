@@ -327,7 +327,7 @@ function getCharactersHTML($characters) {
             $charactersHTML .= "<div>";
             $charactersHTML .= "<h3>$character<h3>";
             $charactersHTML .= "<div class='profile'>";
-            $charactersHTML .= "$characterInfo[txgenusname]";
+            $charactersHTML .= "<i>$characterInfo[txfamilyname] $characterInfo[txgenusname]</i>";
             $charactersHTML .= "</div>";
             $charactersHTML .= "<div class='image'>";
             $charactersHTML .= "</div>";
