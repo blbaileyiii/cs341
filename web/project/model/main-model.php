@@ -278,7 +278,8 @@ function getUserChars() {
             $sql = 
             'SELECT username, charname
             FROM users 
-            JOIN char ON users.userid=char.userid';
+            JOIN char ON users.userid=char.userid
+            WHERE username=:username';
 
             //'SELECT username, charname, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
             //FROM users 
@@ -286,11 +287,10 @@ function getUserChars() {
             //JOIN txgenus ON txgenus.txgenusid=char.txgenusid
             //JOIN txfamily ON txfamily.txfamilyid=txgenus.txgenusid
             //JOIN txrace ON txrace.txraceid=txfamily.txraceid
-            //';
+            //WHERE username=:username';
 
             $stmt = $db->prepare($sql);
-            //$stmt->execute(array(':username' => $username));
-            $stmt->execute();
+            $stmt->execute(array(':username' => $username));
             $characters = $stmt->fetchAll();
 
             var_dump($characters);
