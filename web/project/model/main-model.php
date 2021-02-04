@@ -280,7 +280,7 @@ function getUserChars() {
             FROM users 
             JOIN char ON users.userid=char.userid
             JOIN txgenus ON txgenus.txgenusid=char.txgenusid
-            JOIN txfamily ON txfamily.txfamilyid=txgenus.txgenusid
+            JOIN txfamily ON txfamily.txfamilyid=txgenus.txfamilyid
             JOIN txrace ON txrace.txraceid=txfamily.txraceid
             WHERE username=:username';
 
