@@ -19,7 +19,9 @@
     <?php require $currRoot . '/project/snippets/nav.php'; ?>
     <main>    
         <h1>Account Page</h1>
-        Content goes here.        
+
+        <?php echo $races ?>
+
     </main>
     <footer>
     <?php require $currRoot . '/project/snippets/footer.php'; ?>

@@ -306,7 +306,7 @@ function getCharacters() {
                 $characters[$characterSQL['charname']]['txgenusdesc'] = $characterSQL['txgenusdesc'];
                 
             }
-            var_dump($characters);
+            //var_dump($characters);
 
             return $characters;
 
@@ -318,7 +318,7 @@ function getCharacters() {
 
 function getCharactersHTML($characters) {
 
-    $charactersHTML = "";
+    $charactersHTML = "WORKING...";
 
     foreach ($characters as $character => $characterInfo) {
         echo $character;
