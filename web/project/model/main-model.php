@@ -325,9 +325,9 @@ function getCharactersHTML($characters) {
         $charactersHTML .= "<h2>Characters</h2>";
         foreach ($characters as $character => $characterInfo) {
             $charactersHTML .= "<div>";
-            $charactersHTML .= "<h3>$character<h3>";
+            $charactersHTML .= "<h3>$character</h3>";
             $charactersHTML .= "<div class='profile'>";
-            $charactersHTML .= "<i>$characterInfo[txfamilyname] $characterInfo[txgenusname]</i>";
+            $charactersHTML .= "Race: <i>$characterInfo[txfamilyname] $characterInfo[txgenusname]</i>";
             $charactersHTML .= "</div>";
             $charactersHTML .= "<div class='image'>";
             $charactersHTML .= "</div>";
