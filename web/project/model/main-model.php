@@ -96,9 +96,15 @@ function login() {
 
             //CLOSE CONNECTION
             $stmt->closeCursor(); 
+
+
+            return true;
+
         } catch(PDOException $ex) {
             echo $sql . "<br>" . $ex->getMessage();
         }
+    } else {
+        return false;
     }
 }
 
