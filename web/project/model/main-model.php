@@ -258,6 +258,7 @@ function getRacesHTML($races) {
 }
 
 function getUserChars() {
+    echo "I got here";
     if(isset($_SESSION['eowSession']['username'])
     && isset($_SESSION['eowSession']['userhashpass'])) {
 
