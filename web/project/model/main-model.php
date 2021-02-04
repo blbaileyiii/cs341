@@ -264,7 +264,7 @@ function getRacesHTML($races) {
         return $racesHTML;
 }
 
-function getUserChars() {
+function getCharacters() {
     if(isset($_SESSION['eowSession']['username'])
     && isset($_SESSION['eowSession']['userhashpass'])) {
 
@@ -286,17 +286,47 @@ function getUserChars() {
 
             $stmt = $db->prepare($sql);
             $stmt->execute(array(':username' => $username));
-            $characters = $stmt->fetchAll();
+            $charactersSQL = $stmt->fetchAll();
 
-            var_dump($characters);
+            //var_dump($charactersSQL);
 
             // The next line closes the interaction with the database 
             $stmt->closeCursor(); 
 
+            $characters = [];
+
+            foreach($charactersSQL as $characterSQL){
+
+                $characters[$characterSQL['charname']]['txracename'] = $characterSQL['txracename'];
+                $characters[$characterSQL['charname']]['txracedesc'] = $characterSQL['txracedesc'];
+                $characters[$characterSQL['charname']]['txfamilyname'] = $characterSQL['txfamilyname'];
+                $characters[$characterSQL['charname']]['txfamilydesc'] = $characterSQL['txfamilydesc'];
+                $characters[$characterSQL['charname']]['txgenusname'] = $characterSQL['txgenusname'];
+                $characters[$characterSQL['charname']]['txgenuspron'] = $characterSQL['txgenuspron'];
+                $characters[$characterSQL['charname']]['txgenusdesc'] = $characterSQL['txgenusdesc'];
+                
+            }
+            var_dump($characters);
+
+            return $characters;
+
         } catch(PDOException $ex) {
-            echo $ex->getMessage();
+            echo $sql . "<br>" . $ex->getMessage();
         }
     }
+}
+
+function getCharactersHTML($characters) {
+
+    $charactersHTML = "";
+
+    foreach ($characters as $character => $characterInfo) {
+        echo $character;
+        echo $characterInfo;
+    }
+
+    return $charactersHTML;
+
 }
 
 ?>

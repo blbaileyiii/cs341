@@ -27,7 +27,10 @@ switch($action){
         include $currRoot . '/project/view/registration.php';
         break;
     case 'login':
-        if(login()){getUserChars();};
+        if(login()){
+            $characters = getCharacters();
+            $charactersHTML = getCharactersHTML($characters);
+        };
         include $currRoot . '/project/view/account.php';
         break;
     case 'logout':
