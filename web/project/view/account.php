@@ -20,7 +20,7 @@
     <main>    
         <h1>Account Page</h1>
 
-        <?php echo $characters ?>
+        <?php echo $charactersHTML ?>
 
     </main>
     <footer>
