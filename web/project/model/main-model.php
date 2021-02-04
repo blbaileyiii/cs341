@@ -318,12 +318,35 @@ function getCharacters() {
 
 function getCharactersHTML($characters) {
 
-    $charactersHTML = "WORKING...";
+    $charactersHTML = "";
 
-    foreach ($characters as $character => $characterInfo) {
-        $charactersHTML .= "$character<br>";
-        //$charactersHTML .= $characterInfo;
+    if(count($characters) > 0) {
+        $charactersHTML .= "<section class='characters'>";
+        $charactersHTML .= "<h2>Characters</h2>";
+        foreach ($characters as $character => $characterInfo) {
+            $charactersHTML .= "<div>";
+            $charactersHTML .= "<h3>$character<h3>";
+            $charactersHTML .= "<div class='profile'>";
+            $charactersHTML .= "$characterInfo[txgenusname]";
+            $charactersHTML .= "</div>";
+            $charactersHTML .= "<div class='image'>";
+            $charactersHTML .= "</div>";
+            $charactersHTML .= "<section class='attributes'>";
+            $charactersHTML .= "<h4>Attributes<h4>";
+            $charactersHTML .= "</section>";
+            $charactersHTML .= "<section class='skills'>";
+            $charactersHTML .= "<h4>Skills<h4>";
+            $charactersHTML .= "</section>";
+            $charactersHTML .= "<section class='inventory'>";
+            $charactersHTML .= "<h4>Inventory<h4>";
+            $charactersHTML .= "</section>";
+            $charactersHTML .= "</div>";
+        }
+        $charactersHTML .= "</section>";
     }
+
+
+    
 
     return $charactersHTML;
 
