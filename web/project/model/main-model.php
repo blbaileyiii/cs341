@@ -328,6 +328,7 @@ function getCharactersHTML($characters) {
             $charactersHTML .= "<h3>$character</h3>";
             $charactersHTML .= "<div class='profile'>";
             $charactersHTML .= "Race: <i>" . substr($characterInfo['txfamilyname'], 0, 1) . ". " . strtolower($characterInfo['txgenusname']) . "</i>";
+            $charactersHTML .= "Race: <i>$characterInfo[txfamilyname]" . strtolower($characterInfo['txgenusname']) . "</i>";
             $charactersHTML .= "</div>";
             $charactersHTML .= "<div class='image'>";
             $charactersHTML .= "</div>";
