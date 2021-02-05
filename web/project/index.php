@@ -19,9 +19,10 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
+$message = "";
+
 switch($action){
     case 'logon':
-        $message = "";
         include $currRoot . '/project/view/login.php';
         break;
     case 'login':
@@ -29,7 +30,6 @@ switch($action){
         include $currRoot . '/project/view/login.php';
         break;
     case 'registration':
-        $message = "";
         include $currRoot . '/project/view/registration.php';
         break;
     case 'logout':        
@@ -46,10 +46,15 @@ switch($action){
         break;
     case 'account':
         $username = $_SESSION['eowSession']['username'];
-        $userhashpass = $_SESSION['eowSession']['userhashpass'];        
-        $characters = getCharacters($username, $userhashpass);
-        $charactersHTML = getCharactersHTML($characters);
-        include $currRoot . '/project/view/account.php';
+        $userhashpass = $_SESSION['eowSession']['userhashpass'];
+        if(empty($username) || empty($userhashpass)){            
+            include $currRoot . '/project/view/login.php';
+        } else {
+            $characters = getCharacters($username, $userhashpass);
+            $charactersHTML = getCharactersHTML($characters);
+            include $currRoot . '/project/view/account.php';
+        }  
+        
         break;
     case 'races':
         $races = getRaces();
