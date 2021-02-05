@@ -110,9 +110,14 @@ function login() {
 }
 
 function logout() {
-    // NEED TO UPDATE THE DB TOO!!! BUT FOR NOW JUST CLEAR THE SESSION VAR.
+    // CLEAR THE SESSION VAR.
     unset($_POST['login']);
     unset($_SESSION['eowSession']);
+
+    //NEED TO UPDATE THE DB TOO!!!
+
+    return "LOGOUT COMPLETE"
+
 }
 
 function register() {

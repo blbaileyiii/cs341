@@ -21,6 +21,7 @@ if ($action == NULL) {
 
 switch($action){
     case 'logon':
+        $message = "";
         include $currRoot . '/project/view/login.php';
         break;
     case 'login':
@@ -30,8 +31,8 @@ switch($action){
     case 'registration':
         include $currRoot . '/project/view/registration.php';
         break;
-    case 'logout':
-        logout();
+    case 'logout':        
+        $message = logout();
         include $currRoot . '/project/view/login.php';
         break;
     case 'register':
