@@ -17,6 +17,11 @@
     --ston-logo-dark: black;
     --ston-bg-alt: black;
 
+    /* forms */
+    --empty-field: #bababa;
+    --filled-field: #3a3a3a;
+    --button-border: #3a3a3a;
+
 }
 
 html {
@@ -88,30 +93,25 @@ footer {
 }
 
 .fields input {
-    border-color: #bababa;
+    border-color: var(--empty-field);
 }
 
 .fields input:focus,
 .fields input:valid {
-    border-color: #3a3a3a;
-}
-
-.fields label {
-    background: #fff;
-    color: black;
+    border-color: var(--filled-field);
 }
 
 .non-fields button {
     outline: none;
-    border-color:#3a3a3a;
+    border-color: var(--button-border);
 }
 
 .non-fields .button {
-    border-color: #3a3a3a;
+    border-color: var(--button-border);
 }
 
 .non-fields .button a,
 .non-fields .button a:focus,
 .non-fields .button a:visited {
-    color: black;
+    color: var(--ton-logo-dark);
 }
