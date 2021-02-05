@@ -95,7 +95,7 @@ function login() {
                 return 'Invalid User Name / Password';
             } else {
                 // if it is greater than 1 something really bad happened and we have duplicate accounts...
-                return 'Something unexpected happened...';
+                return 'Something Unexpected Occurred. Contact Support';
                 //var_dump($accounts);
             }
 
@@ -118,7 +118,7 @@ function logout() {
 
     //NEED TO UPDATE THE DB TOO!!!
 
-    return "LOGOUT COMPLETE";
+    return "Logout Complete";
 
 }
 
@@ -284,7 +284,7 @@ function getCharacters($username, $userhashpass) {
 
         // SELECT the character bio/info from the corresponding characters.
         $sql = 
-        'SELECT username, charname, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
+        'SELECT username, charid, charname, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
         FROM users 
         JOIN char ON users.userid=char.userid
         JOIN txgenus ON txgenus.txgenusid=char.txgenusid
@@ -299,6 +299,7 @@ function getCharacters($username, $userhashpass) {
 
         foreach($charactersSQL as $characterSQL){
 
+            $characters[$characterSQL['charname']]['charid'] = $characterSQL['charid'];
             $characters[$characterSQL['charname']]['txracename'] = $characterSQL['txracename'];
             $characters[$characterSQL['charname']]['txracedesc'] = $characterSQL['txracedesc'];
             $characters[$characterSQL['charname']]['txfamilyname'] = $characterSQL['txfamilyname'];
@@ -432,6 +433,13 @@ function getCharactersHTML($characters) {
             }
             $charactersHTML .= "</ul>";
             $charactersHTML .= "</section>";
+            $charactersHTML .= "<div>";
+            $charactersHTML .= "<form method='post'>";
+            $charactersHTML .= "<input type='hidden' name='character' value='$characterInfo[charid]'>";
+            $charactersHTML .= "<button type='submit' name='edit' value='edit'>Edit</button>";
+            $charactersHTML .= "<button type='submit' name='delete' value='delete'>Delete</button>";
+            $charactersHTML .= "</form>";
+            $charactersHTML .= "</div>";
             $charactersHTML .= "</div>";
         }
         $charactersHTML .= "</section>";
