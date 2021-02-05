@@ -397,12 +397,12 @@ function getCharactersHTML($characters) {
         foreach ($characters as $character => $characterInfo) {
             $charactersHTML .= "<div>";
             $charactersHTML .= "<h3>$character</h3>";
-            $charactersHTML .= "<div class='profile'>";
+            $charactersHTML .= "<div class='character-profile'>";
             $charactersHTML .= "Race: <i>$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "</i>";
             $charactersHTML .= "</div>";
             $charactersHTML .= "<div class='image'>";
             $charactersHTML .= "</div>";
-            $charactersHTML .= "<section class='attributes'>";
+            $charactersHTML .= "<section class='character-attributes'>";
             $charactersHTML .= "<h4>Attributes</h4>";
             $charactersHTML .= "<ul>";
             foreach($characterInfo['attributes'] as $attribute => $attributeInfo){
@@ -410,7 +410,7 @@ function getCharactersHTML($characters) {
             }
             $charactersHTML .= "</ul>";
             $charactersHTML .= "</section>";
-            $charactersHTML .= "<section class='skills'>";
+            $charactersHTML .= "<section class='character-skills'>";
             $charactersHTML .= "<h4>Skills</h4>";
             $charactersHTML .= "<ul>";
             foreach($characterInfo['skills'] as $skill => $skillInfo){
@@ -425,7 +425,7 @@ function getCharactersHTML($characters) {
             }
             $charactersHTML .= "</ul>";
             $charactersHTML .= "</section>";
-            $charactersHTML .= "<section class='inventory'>";
+            $charactersHTML .= "<section class='character-inventory'>";
             $charactersHTML .= "<h4>Inventory</h4>";
             $charactersHTML .= "<ul>";
             foreach($characterInfo['inventory'] as $slot => $item){
@@ -433,7 +433,7 @@ function getCharactersHTML($characters) {
             }
             $charactersHTML .= "</ul>";
             $charactersHTML .= "</section>";
-            $charactersHTML .= "<div>";
+            $charactersHTML .= "<div class='character-management'>";
             $charactersHTML .= "<form method='post'>";
             $charactersHTML .= "<input type='hidden' name='character' value='$characterInfo[charid]'>";
             $charactersHTML .= "<button type='submit' name='edit' value='edit'>Edit</button>";
