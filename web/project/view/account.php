@@ -24,7 +24,8 @@
 
     </main>
     <footer>
-    <?php require $currRoot . '/project/snippets/footer.php'; ?>
+        <?php require $currRoot . '/project/snippets/footer.php'; ?>
+        <?php echo $$characters ?>
     </footer>
 </body>
 </html>
