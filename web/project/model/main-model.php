@@ -98,14 +98,15 @@ function login() {
             $stmt->closeCursor(); 
 
 
-            return true;
+            header('Location: /project/view/index.php?action=account');
+            exit;
 
         } catch(PDOException $ex) {
-            echo $sql . "<br>" . $ex->getMessage();
+            return $sql . "<br>" . $ex->getMessage();
             //login err redirect back to login...
         }
     } else {
-        return false;
+        return "Login Failed. Please try again.";
     }
 }
 

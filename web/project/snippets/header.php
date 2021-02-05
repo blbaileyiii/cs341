@@ -8,6 +8,6 @@
     </div>
 <?php } else { ?>
     <div>
-        <span><a class="header-lnk" href="?action=login" title="Echoes of Whimsy - Log In">Log In</a></span>
+        <span><a class="header-lnk" href="?action=logon" title="Echoes of Whimsy - Log In">Log In</a></span>
     <div>
 <?php } ?>    

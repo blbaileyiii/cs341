@@ -19,7 +19,7 @@
     <?php require $currRoot. '/project/snippets/nav.php'; ?>  
     <main>
         <h1>Login</h1>
-            <form class="form" action="/project/index.php" method="post">
+            <form class="form" method="post">
                 <div class="fields">
                     <label for="uname"><span>User Name</span><span class="field-tip">Required</span></label>
                     <input id="uname" name="login[uname]" type="text" autocomplete="username" required>
