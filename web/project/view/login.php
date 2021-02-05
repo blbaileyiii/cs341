@@ -19,21 +19,21 @@
     <?php require $currRoot. '/project/snippets/nav.php'; ?>  
     <main>
         <h1>Login</h1>
-            <form action="/project/index.php" method="post">
-                <div>
-                    <label for="uname"><span>User Name</span><span>Required</span></label>
+            <form class="form" action="/project/index.php" method="post">
+                <div class="fields">
+                    <label for="uname"><span>User Name</span><span class="field-tip">Required</span></label>
                     <input id="uname" name="login[uname]" type="text" autocomplete="username" required>
                     
                 </div>
-                <div>
-                    <label for="password"><span>Password</span><span>Required</span></label>
+                <div class="fields">
+                    <label for="password"><span>Password</span><span class="field-tip">Required</span></label>
                     <input id="password" name="login[password]" type="password" autocomplete="current-password" required>                    
                 </div>
-                <div>
+                <div class="non-fields">
                     <button id="action" name="action" value="login" type="submit">Login</button>
                 </div>
-                <div>
-                    <div class="a-button">
+                <div class="non-fields">
+                    <div class="button">
                         <a href="?action=registration" title="Echoes of Whimsy - Register">Register</a>
                     </div>                    
                 </div>
