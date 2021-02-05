@@ -90,7 +90,7 @@ function login() {
 
             } else if(count($accounts) == 0) {
                 // Login Credentials are invalid.
-                return 'Login Credentials are invalid.';
+                return 'Invalid User Name / Password';
             } else {
                 // if it is greater than 1 something really bad happened and we have duplicate accounts...
                 return 'Something unexpected happened...';
