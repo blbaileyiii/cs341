@@ -61,6 +61,9 @@ function login() {
                     $stmt = $db->prepare($sql);
                     $stmt->execute(array(':username' => $username, ':sessionhashpass' => $sessionHash, ':userhost' => $hostname));
                     $accounts = $stmt->fetchAll();
+
+                    //CLOSE CONNECTION
+                    $stmt->closeCursor();
                     
                     //echo 'sql executed...';
 
@@ -87,16 +90,12 @@ function login() {
 
             } else if(count($accounts) == 0) {
                 // Login Credentials are invalid.
-                //echo 'Login Credentials are invalid.';
+                return 'Login Credentials are invalid.';
             } else {
                 // if it is greater than 1 something really bad happened and we have duplicate accounts...
-                //echo 'Something unexpected happened...';
+                return 'Something unexpected happened...';
                 //var_dump($accounts);
             }
-
-            //CLOSE CONNECTION
-            $stmt->closeCursor(); 
-
 
             header('Location: /project/index.php?action=account');
             exit;
@@ -105,9 +104,9 @@ function login() {
             return $sql . "<br>" . $ex->getMessage();
             //login err redirect back to login...
         }
-    } else {
-        return "Login Failed. Please try again.";
-    }
+    } 
+    
+    return "Login Failed. Please try again.";
 }
 
 function logout() {
