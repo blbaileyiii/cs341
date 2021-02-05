@@ -19,28 +19,28 @@
     <?php require $currRoot . '/project/snippets/nav.php'; ?>  
     <main>    
         <h1>Registration</h1>
-        <form action="/project/index.php" method="post">
-            <div>
-                <label for="uname"><span>User Name</span><span>Required</span></label> 
+        <form class="form" action="/project/index.php" method="post">
+            <div class="fields">
+                <label for="uname"><span>User Name</span><span class="field-tip">Required</span></label> 
                 <input id="uname" name="register[uname]" type="text" autocomplete="username" required>
             </div>
-            <div>
-                <label for="email"><span>Email Address</span><span>Required</span></label>
+            <div class="fields">
+                <label for="email"><span>Email Address</span><span class="field-tip">Required</span></label>
                 <input id="email" name="register[email]" type="email" autocomplete="email" required>
             </div>
-            <div>
-                <label for="password"><span>Password</span><span>Required</span></label>
+            <div class="fields">
+                <label for="password"><span>Password</span><span class="field-tip">Required</span></label>
                 <input id="password" name="register[password]" type="password" autocomplete="new-password" required>
             </div>
-            <div>
-                <label for="fname"><span>First Name</span><span>Required</span></label> 
+            <div class="fields">
+                <label for="fname"><span>First Name</span><span class="field-tip">Required</span></label> 
                 <input id="fname" name="register[fname]" type="text" autocomplete="given-name" required>
             </div>
-            <div>
-                <label for="lname"><span>Last Name</span><span>Required</span></label>
+            <div class="fields">
+                <label for="lname"><span>Last Name</span><span class="field-tip">Required</span></label>
                 <input id="lname" name="register[lname]" type="text" autocomplete="family-name" required>
             </div>
-            <div>
+            <div class="non-fields">
                 <button id="action" name="action" value="register" type="submit">Register</button>
             </div>            
         </form>

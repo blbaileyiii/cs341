@@ -79,3 +79,39 @@ footer {
     color: var(--ton-logo);
     text-shadow: 2px 2px 5px var(--ston-logo);
 }
+
+
+.fields input,
+.fields select,
+.fields textarea {
+    outline: none;
+}
+
+.fields input {
+    border-color: #bababa;
+}
+
+.fields input:focus,
+.fields input:valid {
+    border-color: #3a3a3a;
+}
+
+.fields label {
+    background: #fff;
+    color: black;
+}
+
+.non-fields button {
+    outline: none;
+    border-color:#3a3a3a;
+}
+
+.non-fields .button {
+    border-color: #3a3a3a;
+}
+
+.non-fields .button a,
+.non-fields .button a:focus,
+.non-fields .button a:visited {
+    color: black;
+}

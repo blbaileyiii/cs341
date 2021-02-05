@@ -88,3 +88,77 @@ footer {
 .genus p{
     margin: 0.5rem;
 }
+
+.form {
+    padding: 1rem 2rem;
+    margin: 0 auto;
+}
+
+.fields {
+    width: 100%;
+}
+
+.form .fields {
+    margin-top: 0.5rem;
+}
+
+.form .fields:first-child {
+    margin-top: 0;
+}
+
+.fields input,
+.fields select,
+.fields textarea {
+    width: 100%;
+    padding: 0.25rem;
+}
+
+.fields textarea {
+    resize: vertical;
+}
+
+.fields input {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.fields label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form .non-fields {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.non-fields button {
+    width: 100%;
+    padding: 0.25rem;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.non-fields .button {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.non-fields .button a,
+.non-fields .button a:focus,
+.non-fields .button a:visited {
+    display: block;
+    padding: 0.25rem;
+}
+
+.message {
+    padding: 0 2rem;
+}
+
+@media only screen and (min-width: 40rem) {
+    form {
+      width: 25rem;
+      margin: 0;
+    }
+}

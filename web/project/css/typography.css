@@ -32,3 +32,27 @@ h4 {
 .race:nth-child(odd) h2{
     text-align: right;
 }
+
+.fields label {
+    font-size: 1rem;
+}
+
+.non-fields .button {
+    text-align: center;
+}
+
+.non-fields .button a,
+.non-fields .button a:focus,
+.non-fields .button a:visited {
+    text-decoration: none;
+}
+
+.field-tip {
+    font-size: 0.9rem;
+}
+
+.message {
+    font-size: x-large;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
