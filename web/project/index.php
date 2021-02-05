@@ -43,9 +43,7 @@ switch($action){
     case 'verify-email':
         $message = "Account Created: Verify Email Before Logging In";
         include $currRoot . '/project/view/login.php';
-        break;
-    case 'manage':
-        var_dump($_POST);
+        break;    
     case 'account':
         $username = $_SESSION['eowSession']['username'];
         $userhashpass = $_SESSION['eowSession']['userhashpass'];
@@ -56,6 +54,22 @@ switch($action){
             $charactersHTML = getCharactersHTML($characters);
             include $currRoot . '/project/view/account.php';
         }
+        break;
+    case 'manage':        
+        $username = $_SESSION['eowSession']['username'];
+        $userhashpass = $_SESSION['eowSession']['userhashpass'];
+        if(empty($username) || empty($userhashpass)){            
+            include $currRoot . '/project/view/login.php';
+        } else if (!empty($_POST['edit'])) {
+            // Run edit.
+            var_dump($_POST);
+        } else if (!empty($_POST['delete'])) {
+            // Run delete.
+            var_dump($_POST);
+        }
+        $characters = getCharacters($username, $userhashpass);
+        $charactersHTML = getCharactersHTML($characters);
+        include $currRoot . '/project/view/account.php';
         break;
     case 'races':
         $races = getRaces();
