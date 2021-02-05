@@ -98,7 +98,7 @@ function login() {
             $stmt->closeCursor(); 
 
 
-            header('Location: /project/view/index.php?action=account');
+            header('Location: /project/index.php?action=account');
             exit;
 
         } catch(PDOException $ex) {
