@@ -116,7 +116,7 @@ function logout() {
 
     //NEED TO UPDATE THE DB TOO!!!
 
-    return "LOGOUT COMPLETE"
+    return "LOGOUT COMPLETE";
 
 }
 
