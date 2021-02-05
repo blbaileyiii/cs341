@@ -25,6 +25,7 @@
     </main>
     <footer>
         <?php require $currRoot . '/project/snippets/footer.php'; ?>
+        <?php var_dump($characters) ?>
     </footer>
 </body>
 </html>
