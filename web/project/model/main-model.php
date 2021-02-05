@@ -75,17 +75,19 @@ function login() {
 
                 } else if ($account['userdisabled']) {
                     // [Perm] Account Disabled. Contact support for further information.
+                    return "Account Disabled. Contact support for further information.";
                 } else if ($account['usersuspended']) {
                     // [Temp] Account Suspended. Check again after Date: XYZ. Contact support for further information.
+                    return "Account Suspended. Contact support for further information.";
                 } else if (!$account['useremailverified']) {
                     // not verified, warn the user and make them fix it.
-                    //echo 'Email Not Verified...';
+                    return 'Email Not Verified.';
                 } else if (!password_verify(htmlspecialchars($_POST['login']['password']), $account['userhashpass']) ) {
                     // Login Credentials are invalid.
-                    //echo 'Login Credentials are invalid.';
+                    return 'Invalid User Name / Password.';
                 } else {
                     //Unexpected error...
-                    //echo 'Unexpected error...';
+                    return 'Unexpected error. Contact Support.';
                 }
 
             } else if(count($accounts) == 0) {
