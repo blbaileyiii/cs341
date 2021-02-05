@@ -318,10 +318,10 @@ function getCharacters() {
 
             foreach($charsattribsSQL as $charattribsSQL){
 
-                $characters[$charattribsSQL['charname']][$charattribsSQL['attribname']]['attribabbrv'] = $charattribsSQL['attribabbrv'];
-                $characters[$charattribsSQL['charname']][$charattribsSQL['attribname']]['attribdesc'] = $charattribsSQL['attribdesc'];
-                $characters[$charattribsSQL['charname']][$charattribsSQL['attribname']]['attribtypeof'] = $charattribsSQL['attribtypeof'];
-                $characters[$charattribsSQL['charname']][$charattribsSQL['attribname']]['charattribval'] = $charattribsSQL['charattribval'];
+                $characters[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['attribabbrv'] = $charattribsSQL['attribabbrv'];
+                $characters[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['attribdesc'] = $charattribsSQL['attribdesc'];
+                $characters[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['attribtypeof'] = $charattribsSQL['attribtypeof'];
+                $characters[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['charattribval'] = $charattribsSQL['charattribval'];
             }
 
             // SELECT the character inventory from the corresponding characters.
@@ -340,10 +340,10 @@ function getCharacters() {
 
             foreach($charsinvSQL as $charinvSQL){
 
-                $characters[$charinvSQL['charname']][$charinvSQL['charinvslot']]['itemname'] = $charinvSQL['itemname'];
-                $characters[$charinvSQL['charname']][$charinvSQL['charinvslot']]['itemdescshort'] = $charinvSQL['itemdescshort'];
-                $characters[$charinvSQL['charname']][$charinvSQL['charinvslot']]['itemdesclong'] = $charinvSQL['itemdesclong'];
-                $characters[$charinvSQL['charname']][$charinvSQL['charinvslot']]['charinvqty'] = $charinvSQL['charinvqty'];
+                $characters[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['itemname'] = $charinvSQL['itemname'];
+                $characters[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['itemdescshort'] = $charinvSQL['itemdescshort'];
+                $characters[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['itemdesclong'] = $charinvSQL['itemdesclong'];
+                $characters[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['charinvqty'] = $charinvSQL['charinvqty'];
             }
 
             // SELECT the character skills from the corresponding characters.
@@ -363,9 +363,9 @@ function getCharacters() {
 
             foreach($charsskillsSQL as $charskillsSQL){
 
-                $characters[$charskillsSQL['charname']][$charskillsSQL['skillname']]['skilldescshort'] = $charskillsSQL['skilldescshort'];
-                $characters[$charskillsSQL['charname']][$charskillsSQL['skillname']]['skilldesclong'] = $charskillsSQL['skilldesclong'];
-                $characters[$charskillsSQL['charname']][$charskillsSQL['skillname']]['charskillxp'] = $charskillsSQL['charskillxp'];
+                $characters[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['skilldescshort'] = $charskillsSQL['skilldescshort'];
+                $characters[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['skilldesclong'] = $charskillsSQL['skilldesclong'];
+                $characters[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['charskillxp'] = $charskillsSQL['charskillxp'];
             }
 
             // The next line closes the interaction with the database 
