@@ -20,18 +20,18 @@ if ($action == NULL) {
 }
 
 switch($action){
-    case 'getlogin':
+    case 'login':
         include $currRoot . '/project/view/login.php';
         break;
-    case 'registration':
-        include $currRoot . '/project/view/registration.php';
-        break;
-    case 'login':
+    case 'getlogin':
         if(login()){
             $characters = getCharacters();
             $charactersHTML = getCharactersHTML($characters);
         };
         include $currRoot . '/project/view/account.php';
+        break;
+    case 'registration':
+        include $currRoot . '/project/view/registration.php';
         break;
     case 'logout':
         logout();
