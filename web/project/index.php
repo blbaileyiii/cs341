@@ -44,6 +44,8 @@ switch($action){
         $message = "Account Created: Verify Email Before Logging In";
         include $currRoot . '/project/view/login.php';
         break;
+    case 'manage':
+        var_dump($_POST);
     case 'account':
         $username = $_SESSION['eowSession']['username'];
         $userhashpass = $_SESSION['eowSession']['userhashpass'];
@@ -53,8 +55,7 @@ switch($action){
             $characters = getCharacters($username, $userhashpass);
             $charactersHTML = getCharactersHTML($characters);
             include $currRoot . '/project/view/account.php';
-        }  
-        
+        }
         break;
     case 'races':
         $races = getRaces();

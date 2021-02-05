@@ -436,6 +436,7 @@ function getCharactersHTML($characters) {
             $charactersHTML .= "<div class='character-management'>";
             $charactersHTML .= "<form method='post'>";
             $charactersHTML .= "<input type='hidden' name='character' value='$characterInfo[charid]'>";
+            $charactersHTML .= "<input type='hidden' name='action' value='manage'>";
             $charactersHTML .= "<button type='submit' name='edit' value='edit'>Edit</button>";
             $charactersHTML .= "<button type='submit' name='delete' value='delete'>Delete</button>";
             $charactersHTML .= "</form>";
