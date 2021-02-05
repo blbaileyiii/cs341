@@ -94,6 +94,11 @@ footer {
     margin: 0 auto;
 }
 
+.form * {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 .fields {
     width: 100%;
 }
