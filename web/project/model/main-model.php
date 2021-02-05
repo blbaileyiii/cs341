@@ -398,12 +398,34 @@ function getCharactersHTML($characters) {
             $charactersHTML .= "</div>";
             $charactersHTML .= "<section class='attributes'>";
             $charactersHTML .= "<h4>Attributes<h4>";
+            $charactersHTML .= "<ul>";
+            foreach($character['attributes'] as $attribute => $attributeInfo){
+                $charactersHTML .= "<li><span class='info-name'>$attributeInfo[attribabbrv]</span>: $attributeInfo[charattribval]</li>";
+            }
+            $charactersHTML .= "</ul>";
             $charactersHTML .= "</section>";
             $charactersHTML .= "<section class='skills'>";
             $charactersHTML .= "<h4>Skills<h4>";
+            $charactersHTML .= "<ul>";
+            foreach($character['skills'] as $skill => $skillInfo){
+                $charactersHTML .= "<li>";
+                $charactersHTML .= "<span class='info-name'>$skill</span>";
+                //$charactersHTML .= "<ul>";
+                //$charactersHTML .= "<li>Description: $skillInfo[skilldescshort]</li>";
+                //$charactersHTML .= "<li>Additional: $skillInfo[skilldesclong]</li>";
+                //$charactersHTML .= "<li>Advancement: $skillInfo[charskillxp]</li>";
+                //$charactersHTML .= "</ul>";
+                $charactersHTML .= "</li>";
+            }
+            $charactersHTML .= "</ul>";
             $charactersHTML .= "</section>";
             $charactersHTML .= "<section class='inventory'>";
             $charactersHTML .= "<h4>Inventory<h4>";
+            $charactersHTML .= "<ul>";
+            foreach($character['inventory'] as $slot => $item){
+                $charactersHTML .= "<li>$item[itemname]: $item[charinvqty]</li>";
+            }
+            $charactersHTML .= "</ul>";
             $charactersHTML .= "</section>";
             $charactersHTML .= "</div>";
         }
