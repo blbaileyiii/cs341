@@ -19,8 +19,9 @@
     <?php require $currRoot. '/project/snippets/nav.php'; ?>  
     <main>
         <h1>Login</h1>
-            <div class="message"><?php echo $message ?></div>
+            
             <form class="form" method="post">
+                <div class="message"><?php echo $message ?></div>
                 <div class="fields">
                     <label for="uname"><span>User Name</span><span class="field-tip">Required</span></label>
                     <input id="uname" name="login[uname]" type="text" autocomplete="username" required>
