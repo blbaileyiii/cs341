@@ -432,11 +432,7 @@ function getCharactersHTML($characters) {
         $charactersHTML .= "</section>";
     }
 
-
-    
-
     return $charactersHTML;
-
 }
 
 ?>
