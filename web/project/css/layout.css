@@ -157,10 +157,6 @@ footer {
     padding: 0.25rem;
 }
 
-.message {
-    padding: 0 2rem;
-}
-
 @media only screen and (min-width: 40rem) {
     form {
       width: 25rem;
