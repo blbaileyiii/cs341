@@ -281,7 +281,6 @@ function getCharacters() {
             'SELECT username, charname, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
             FROM users 
             JOIN char ON users.userid=char.userid
-            JOIN charattribs ON users.userid=carattribs.userid
             JOIN txgenus ON txgenus.txgenusid=char.txgenusid
             JOIN txfamily ON txfamily.txfamilyid=txgenus.txfamilyid
             JOIN txrace ON txrace.txraceid=txfamily.txraceid
