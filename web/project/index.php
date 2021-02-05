@@ -45,8 +45,10 @@ switch($action){
         include $currRoot . '/project/view/login.php';
         break;
     case 'account':
-        //$characters = getCharacters();
-        //$charactersHTML = getCharactersHTML($characters);
+        $username = $_SESSION['eowSession']['username'];
+        $userhashpass = $_SESSION['eowSession']['userhashpass'];        
+        $characters = getCharacters($username, $userhashpass);
+        $charactersHTML = getCharactersHTML($characters);
         include $currRoot . '/project/view/account.php';
         break;
     case 'races':
