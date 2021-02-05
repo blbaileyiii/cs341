@@ -20,6 +20,7 @@
     <main>    
         <h1>Registration</h1>
         <form class="form" action="/project/index.php" method="post">
+            <div class="message"><?php echo $message ?></div>
             <div class="fields">
                 <label for="uname"><span>User Name</span><span class="field-tip">Required</span></label> 
                 <input id="uname" name="register[uname]" type="text" autocomplete="username" required>

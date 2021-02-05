@@ -29,6 +29,7 @@ switch($action){
         include $currRoot . '/project/view/login.php';
         break;
     case 'registration':
+        $message = "";
         include $currRoot . '/project/view/registration.php';
         break;
     case 'logout':        
@@ -37,6 +38,10 @@ switch($action){
         break;
     case 'register':
         $message = register();
+        include $currRoot . '/project/view/registration.php';
+        break;
+    case 'verify-email':
+        $message = "Account Created: Verify Email Before Logging In";
         include $currRoot . '/project/view/login.php';
         break;
     case 'account':

@@ -162,19 +162,24 @@ function register() {
                 $stmt = $db->prepare($sql);
                 $stmt->execute(array(':username' => $username, ':userfname' => $fname, ':userlname' => $lname, ':useremail' => $email, ':userhashpass' => $hashedpass ));
 
+                $stmt->closeCursor();
+
                 unset($_POST['register']);
-                //echo "Account Created";
+
+                //echo "Account Created: Verify Email Before Logging In";
+                header('Location: /project/index.php?action=verify-email');
+                exit;
 
             } catch(PDOException $ex) {
-                echo $sql . "<br>" . $ex->getMessage();
+                return $sql . "<br>" . $ex->getMessage();
             }
 
         } else {
             //count is greater than 0 ...username already exists...
             //also need to account for email being unique...
-        }       
+            return "Username is already in use";
+        }
 
-        $stmt->closeCursor();  
     }  
 }
 
