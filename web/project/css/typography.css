@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&display=swap');
 
+:root {
+    --body-txt-font: 'Fondamento', Arial, Helvetica, sans-serif;
+    --headers-txt-font: 'Ruslan Display', Georgia, 'Times New Roman', Times, serif;
+}
+
 html {
-    font-family: 'Fondamento', Arial, Helvetica, sans-serif;
+    font-family: var(--body-txt-font);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Ruslan Display', Georgia, 'Times New Roman', Times, serif;
+    font-family: font-family: var(--headers-txt-font);
 }
 
 h1 {
@@ -34,6 +39,11 @@ h4 {
 }
 
 .fields label {
+    font-size: 1rem;
+}
+
+.non-fields button{
+    font-family: var(--body-txt-font);
     font-size: 1rem;
 }
 
