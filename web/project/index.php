@@ -69,7 +69,8 @@ switch($action){
         break;
     case 'char-mgmt':
         $username = $_SESSION['eowSession']['username'];
-        $userhashpass = $_SESSION['eowSession']['userhashpass'];        
+        $userhashpass = $_SESSION['eowSession']['userhashpass'];
+        $charname = filter_input(INPUT_GET,'character');
         if(empty($username) || empty($userhashpass)){            
             include $currRoot . '/project/view/login.php';
             exit;
@@ -77,15 +78,15 @@ switch($action){
             $charname = filter_input(INPUT_POST,'edit');
             // Run edit.
             var_dump($_POST);
-            $character = getCharacter($username, $userhashpass, $characterId);
+            $character = getCharacter($username, $userhashpass, $charname);
             $charEditHTML = getCharEditHTML($character);
             include $currRoot . '/project/view/character.php';
         } else if (!empty($_POST['delete'])) {
             $charname = filter_input(INPUT_POST,'delete');
             // Run delete.
             //var_dump($_POST);
-        } else {
-            $character = getCharacter($username, $userhashpass, $characterId);
+        } else {            
+            $character = getCharacter($username, $userhashpass, $charname);
             $characterHTML = getCharacterHTML($character);
             include $currRoot . '/project/view/character.php';            
         }
