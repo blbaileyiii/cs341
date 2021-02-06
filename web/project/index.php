@@ -78,6 +78,7 @@ switch($action){
             $charname = filter_input(INPUT_POST,'edit');
             // Run edit.
             var_dump($_POST);
+            echo "I AM FOR SURE HERE.";
             $character = getCharacter($username, $userhashpass, $charname);
             $charEditHTML = getCharEditHTML($character);
             include $currRoot . '/project/view/character.php';

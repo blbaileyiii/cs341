@@ -516,6 +516,8 @@ function getCharacterHTML($character) {
 }
 
 function getCharEditHTML($character) {
+    echo "I MADE IT TO getCharEditHTML";
+    var_dump($character);
 
     $characterHTML = "";
 
@@ -535,7 +537,7 @@ function getCharEditHTML($character) {
             $characterHTML .= "<h4>Attributes</h4>";
             $characterHTML .= "<ul>";
             foreach($characterInfo['attributes'] as $attribute => $attributeInfo){
-                //$characterHTML .= "<li><label for=''><span class='info-name'>$attributeInfo[attribabbrv]</span></label><input type='number' value='$attributeInfo[charattribval]'></li>";
+                $characterHTML .= "<li><label for=''><span class='info-name'>$attributeInfo[attribabbrv]</span></label><input type='number' value='$attributeInfo[charattribval]'></li>";
             }
             $characterHTML .= "</ul>";
             $characterHTML .= "</section>";
