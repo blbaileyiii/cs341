@@ -503,8 +503,8 @@ function getCharacterHTML($character) {
             $characterHTML .= "<div class='character-management'>";
             $characterHTML .= "<form method='post'>";
             $characterHTML .= "<input type='hidden' name='action' value='char-mgmt'>";
-            $characterHTML .= "<button type='submit' name='edit' value='$character'>Edit</button>";
-            $characterHTML .= "<button type='submit' name='delete' value='$character'>Delete</button>";
+            $characterHTML .= "<button type='submit' name='edit' value='$charname'>Edit</button>";
+            $characterHTML .= "<button type='submit' name='delete' value='$charname'>Delete</button>";
             $characterHTML .= "</form>";
             $characterHTML .= "</div>";
             $characterHTML .= "</div>";
