@@ -18,8 +18,10 @@
     </header>
     <?php require $currRoot . '/project/snippets/nav.php'; ?>   
     <main>    
-        <h1><?php echo $charname ?></h1>
+        <h1>Character</h1>
+
         <?php echo $characterHTML ?>
+        
     </main>
     <footer>
     <?php require $currRoot . '/project/snippets/footer.php'; ?>

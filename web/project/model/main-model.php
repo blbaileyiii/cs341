@@ -344,7 +344,7 @@ function getCharactersHTML($characters) {
     return $charactersHTML;
 }
 
-function getCharacter($username, $userhashpass) {
+function getCharacter($username, $userhashpass, $charname) {
     try {
         $characters = [];
 
@@ -358,10 +358,10 @@ function getCharacter($username, $userhashpass) {
         JOIN txgenus ON txgenus.txgenusid=char.txgenusid
         JOIN txfamily ON txfamily.txfamilyid=txgenus.txfamilyid
         JOIN txrace ON txrace.txraceid=txfamily.txraceid
-        WHERE username=:username';
+        WHERE username=:username AND charname=:charname';
 
         $stmt = $db->prepare($sql);
-        $stmt->execute(array(':username' => $username));
+        $stmt->execute(array(':username' => $username, ':charname' => $charname));
         $charactersSQL = $stmt->fetchAll();
         //var_dump($charactersSQL);
 
