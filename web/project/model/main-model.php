@@ -28,15 +28,14 @@ function getNews() {
 }
 
 function getNewsHTML($news) {
-    var_dump($news);
+    //var_dump($news);
     $newsHTML ="";
 
-    foreach ($news as $article) {       
-        $newsHTML .= "<div class='news'>\n";
-        $newsHTML .= "\t<h2>$article[newstitle]</h2>\n";
-        $newsHTML .= "\t<p>".date('l, F jS Y h:i:s A', $article['newsposted'])."</p>\n";
+    foreach ($news as $article) {
         $date=date_create($article['newsposted']);
-        $newsHTML .= "\t<p>".date_format($date, 'l, F jS Y h:i:s A')."</p>\n";
+        $newsHTML .= "<div class='news'>\n";
+        $newsHTML .= "\t<h2>$article[newstitle]</h2>\n";        
+        $newsHTML .= "\t<p>".date_format($date, 'l, F jS Y h:i A')."</p>\n";
         $newsHTML .= "\t<p>$article[newsbody]</p>\n";
         $newsHTML .= "</div>\n";
     }
