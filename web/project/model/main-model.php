@@ -392,112 +392,117 @@ function getCharactersHTML($characters) {
 }
 
 function getCharacter($username, $userhashpass, $charname) {
-    try {
+    if($charname == "+new"){
         $character = [];
+        $character['New Character'];
+    } else {
+        try {
+            $character = [];
 
-        $db = eowConnect();
+            $db = eowConnect();
 
-        // SELECT the character bio/info from the corresponding characters.
-        $sql = 
-        'SELECT username, charid, charname, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
-        FROM users 
-        JOIN char ON users.userid=char.userid
-        JOIN txgenus ON txgenus.txgenusid=char.txgenusid
-        JOIN txfamily ON txfamily.txfamilyid=txgenus.txfamilyid
-        JOIN txrace ON txrace.txraceid=txfamily.txraceid
-        WHERE username=:username AND charname=:charname';
+            // SELECT the character bio/info from the corresponding characters.
+            $sql = 
+            'SELECT username, charid, charname, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
+            FROM users 
+            JOIN char ON users.userid=char.userid
+            JOIN txgenus ON txgenus.txgenusid=char.txgenusid
+            JOIN txfamily ON txfamily.txfamilyid=txgenus.txfamilyid
+            JOIN txrace ON txrace.txraceid=txfamily.txraceid
+            WHERE username=:username AND charname=:charname';
 
-        $stmt = $db->prepare($sql);
-        $stmt->execute(array(':username' => $username, ':charname' => $charname));
-        $characterSQL = $stmt->fetchAll();
-        //var_dump($charactersSQL);
+            $stmt = $db->prepare($sql);
+            $stmt->execute(array(':username' => $username, ':charname' => $charname));
+            $characterSQL = $stmt->fetchAll();
+            //var_dump($charactersSQL);
 
-        foreach($characterSQL as $charSQL){
+            foreach($characterSQL as $charSQL){
 
-            $character[$charSQL['charname']]['charid'] = $charSQL['charid'];
-            $character[$charSQL['charname']]['txracename'] = $charSQL['txracename'];
-            $character[$charSQL['charname']]['txracedesc'] = $charSQL['txracedesc'];
-            $character[$charSQL['charname']]['txfamilyname'] = $charSQL['txfamilyname'];
-            $character[$charSQL['charname']]['txfamilydesc'] = $charSQL['txfamilydesc'];
-            $character[$charSQL['charname']]['txgenusname'] = $charSQL['txgenusname'];
-            $character[$charSQL['charname']]['txgenuspron'] = $charSQL['txgenuspron'];
-            $character[$charSQL['charname']]['txgenusdesc'] = $charSQL['txgenusdesc'];                
+                $character[$charSQL['charname']]['charid'] = $charSQL['charid'];
+                $character[$charSQL['charname']]['txracename'] = $charSQL['txracename'];
+                $character[$charSQL['charname']]['txracedesc'] = $charSQL['txracedesc'];
+                $character[$charSQL['charname']]['txfamilyname'] = $charSQL['txfamilyname'];
+                $character[$charSQL['charname']]['txfamilydesc'] = $charSQL['txfamilydesc'];
+                $character[$charSQL['charname']]['txgenusname'] = $charSQL['txgenusname'];
+                $character[$charSQL['charname']]['txgenuspron'] = $charSQL['txgenuspron'];
+                $character[$charSQL['charname']]['txgenusdesc'] = $charSQL['txgenusdesc'];                
+            }
+
+            // SELECT the character attributes from the corresponding characters.
+            $sql = 
+            'SELECT username, charname, attribname, attribabbrv, attribdesc, attribtypeof, charattribval
+            FROM users 
+            JOIN char ON users.userid=char.userid
+            JOIN charattribs ON char.charid=charattribs.charid
+            JOIN attributes ON charattribs.attribid=attributes.attribid
+            WHERE username=:username AND charname=:charname';
+
+            $stmt = $db->prepare($sql);
+            $stmt->execute(array(':username' => $username, ':charname' => $charname));
+            $characterattribsSQL = $stmt->fetchAll();
+            //var_dump($charattribsSQL);
+
+            foreach($characterattribsSQL as $charattribsSQL){
+
+                $character[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['attribabbrv'] = $charattribsSQL['attribabbrv'];
+                $character[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['attribdesc'] = $charattribsSQL['attribdesc'];
+                $character[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['attribtypeof'] = $charattribsSQL['attribtypeof'];
+                $character[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['charattribval'] = $charattribsSQL['charattribval'];
+            }
+
+            // SELECT the character inventory from the corresponding characters.
+            $sql = 
+            'SELECT username, charname, itemname, itemdescshort, itemdesclong, charinvslot, charinvqty
+            FROM users 
+            JOIN char ON users.userid=char.userid
+            JOIN charinv ON char.charid=charinv.charid
+            JOIN items ON charinv.itemid=items.itemid
+            WHERE username=:username AND charname=:charname';
+
+            $stmt = $db->prepare($sql);
+            $stmt->execute(array(':username' => $username, ':charname' => $charname));
+            $characterinvSQL = $stmt->fetchAll();
+            //var_dump($charinvSQL);
+
+            foreach($characterinvSQL as $charinvSQL){
+
+                $character[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['itemname'] = $charinvSQL['itemname'];
+                $character[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['itemdescshort'] = $charinvSQL['itemdescshort'];
+                $character[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['itemdesclong'] = $charinvSQL['itemdesclong'];
+                $character[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['charinvqty'] = $charinvSQL['charinvqty'];
+            }
+
+            // SELECT the character skills from the corresponding characters.
+            $sql = 
+            'SELECT username, charname, skillname, skilldescshort, skilldesclong, charskillxp
+            FROM users 
+            JOIN char ON users.userid=char.userid
+            JOIN charskills ON char.charid=charskills.charid
+            JOIN skills ON charskills.skillid=skills.skillid
+            WHERE username=:username AND charname=:charname';
+
+            $stmt = $db->prepare($sql);
+            $stmt->execute(array(':username' => $username, ':charname' => $charname));
+            $characterskillsSQL = $stmt->fetchAll();
+            //var_dump($charskillsSQL);
+
+            foreach($characterskillsSQL as $charskillsSQL){
+
+                $character[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['skilldescshort'] = $charskillsSQL['skilldescshort'];
+                $character[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['skilldesclong'] = $charskillsSQL['skilldesclong'];
+                $character[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['charskillxp'] = $charskillsSQL['charskillxp'];
+            }
+
+            // The next line closes the interaction with the database 
+            $stmt->closeCursor();
+            
+            //var_dump($characters);
+
+            return $character;
+
+        } catch(PDOException $ex) {
+            echo $sql . "<br>" . $ex->getMessage();
         }
-
-        // SELECT the character attributes from the corresponding characters.
-        $sql = 
-        'SELECT username, charname, attribname, attribabbrv, attribdesc, attribtypeof, charattribval
-        FROM users 
-        JOIN char ON users.userid=char.userid
-        JOIN charattribs ON char.charid=charattribs.charid
-        JOIN attributes ON charattribs.attribid=attributes.attribid
-        WHERE username=:username AND charname=:charname';
-
-        $stmt = $db->prepare($sql);
-        $stmt->execute(array(':username' => $username, ':charname' => $charname));
-        $characterattribsSQL = $stmt->fetchAll();
-        //var_dump($charattribsSQL);
-
-        foreach($characterattribsSQL as $charattribsSQL){
-
-            $character[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['attribabbrv'] = $charattribsSQL['attribabbrv'];
-            $character[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['attribdesc'] = $charattribsSQL['attribdesc'];
-            $character[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['attribtypeof'] = $charattribsSQL['attribtypeof'];
-            $character[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['charattribval'] = $charattribsSQL['charattribval'];
-        }
-
-        // SELECT the character inventory from the corresponding characters.
-        $sql = 
-        'SELECT username, charname, itemname, itemdescshort, itemdesclong, charinvslot, charinvqty
-        FROM users 
-        JOIN char ON users.userid=char.userid
-        JOIN charinv ON char.charid=charinv.charid
-        JOIN items ON charinv.itemid=items.itemid
-        WHERE username=:username AND charname=:charname';
-
-        $stmt = $db->prepare($sql);
-        $stmt->execute(array(':username' => $username, ':charname' => $charname));
-        $characterinvSQL = $stmt->fetchAll();
-        //var_dump($charinvSQL);
-
-        foreach($characterinvSQL as $charinvSQL){
-
-            $character[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['itemname'] = $charinvSQL['itemname'];
-            $character[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['itemdescshort'] = $charinvSQL['itemdescshort'];
-            $character[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['itemdesclong'] = $charinvSQL['itemdesclong'];
-            $character[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['charinvqty'] = $charinvSQL['charinvqty'];
-        }
-
-        // SELECT the character skills from the corresponding characters.
-        $sql = 
-        'SELECT username, charname, skillname, skilldescshort, skilldesclong, charskillxp
-        FROM users 
-        JOIN char ON users.userid=char.userid
-        JOIN charskills ON char.charid=charskills.charid
-        JOIN skills ON charskills.skillid=skills.skillid
-        WHERE username=:username AND charname=:charname';
-
-        $stmt = $db->prepare($sql);
-        $stmt->execute(array(':username' => $username, ':charname' => $charname));
-        $characterskillsSQL = $stmt->fetchAll();
-        //var_dump($charskillsSQL);
-
-        foreach($characterskillsSQL as $charskillsSQL){
-
-            $character[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['skilldescshort'] = $charskillsSQL['skilldescshort'];
-            $character[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['skilldesclong'] = $charskillsSQL['skilldesclong'];
-            $character[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['charskillxp'] = $charskillsSQL['charskillxp'];
-        }
-
-        // The next line closes the interaction with the database 
-        $stmt->closeCursor();
-        
-        //var_dump($characters);
-
-        return $character;
-
-    } catch(PDOException $ex) {
-        echo $sql . "<br>" . $ex->getMessage();
     }
 }
 
