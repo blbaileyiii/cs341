@@ -63,7 +63,7 @@ switch($action){
             include $currRoot . '/project/view/login.php';
         } else {
             $character = getCharacter($username, $userhashpass, $charname);
-            $characterHTML = getCharactersHTML($character);
+            $characterHTML = getCharacterHTML($character);
             include $currRoot . '/project/view/character.php';
         }
         break;
