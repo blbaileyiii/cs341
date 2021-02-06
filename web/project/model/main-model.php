@@ -31,7 +31,7 @@ function getNewsHTML($news) {
     $newsHTML ="";
 
     foreach ($news as $article) {       
-        $newsHTML .= "<div class='race'>\n";
+        $newsHTML .= "<div class='news'>\n";
         $newsHTML .= "\t<h2>$article[newstitle]</h2>\n";
         $newsHTML .= "\t<p>".date('l, F jS Y h:i:s A', $article['newsposted'])."</p>\n";
         $newsHTML .= "\t<p>$article[newsbody]</p>\n";
