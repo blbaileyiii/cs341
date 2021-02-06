@@ -384,10 +384,10 @@ function getCharacter($username, $userhashpass, $charname) {
         JOIN char ON users.userid=char.userid
         JOIN charattribs ON char.charid=charattribs.charid
         JOIN attributes ON charattribs.attribid=attributes.attribid
-        WHERE username=:username';
+        WHERE username=:username AND charname=:charname';
 
         $stmt = $db->prepare($sql);
-        $stmt->execute(array(':username' => $username));
+        $stmt->execute(array(':username' => $username, ':charname' => $charname));
         $characterattribsSQL = $stmt->fetchAll();
         //var_dump($charattribsSQL);
 
@@ -406,10 +406,10 @@ function getCharacter($username, $userhashpass, $charname) {
         JOIN char ON users.userid=char.userid
         JOIN charinv ON char.charid=charinv.charid
         JOIN items ON charinv.itemid=items.itemid
-        WHERE username=:username';
+        WHERE username=:username AND charname=:charname';
 
         $stmt = $db->prepare($sql);
-        $stmt->execute(array(':username' => $username));
+        $stmt->execute(array(':username' => $username, ':charname' => $charname));
         $characterinvSQL = $stmt->fetchAll();
         //var_dump($charinvSQL);
 
@@ -428,11 +428,10 @@ function getCharacter($username, $userhashpass, $charname) {
         JOIN char ON users.userid=char.userid
         JOIN charskills ON char.charid=charskills.charid
         JOIN skills ON charskills.skillid=skills.skillid
-        WHERE username=:username';
-
+        WHERE username=:username AND charname=:charname';
 
         $stmt = $db->prepare($sql);
-        $stmt->execute(array(':username' => $username));
+        $stmt->execute(array(':username' => $username, ':charname' => $charname));
         $characterskillsSQL = $stmt->fetchAll();
         //var_dump($charskillsSQL);
 
