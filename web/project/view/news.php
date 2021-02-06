@@ -19,7 +19,7 @@
     <?php require $currRoot . '/project/snippets/nav.php'; ?>   
     <main>    
         <h1>News</h1>
-        Content goes here.
+        <?php echo $newsHTML; ?>
     </main>
     <footer>
     <?php require $currRoot . '/project/snippets/footer.php'; ?>

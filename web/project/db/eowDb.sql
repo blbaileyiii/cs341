@@ -4,6 +4,13 @@ CREATE TYPE securityLevel as ENUM('1','2','3');
 CREATE TYPE attribType as ENUM('XP','LVL');
 CREATE TYPE modType as ENUM('+', 'x');
 
+CREATE TABLE public.news (
+	newsID SMALLSERIAL NOT NULL PRIMARY KEY,
+	newsTitle  VARCHAR(100) NOT NULL,
+	newsBody   TEXT NOT NULL,
+	newsPosted timestamptz NOT NULL DEFAULT now()
+);
+
 CREATE TABLE public.users (
 	userID BIGSERIAL NOT NULL PRIMARY KEY,	
 	userEmail VARCHAR(50) NOT NULL UNIQUE,

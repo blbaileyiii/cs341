@@ -3,6 +3,63 @@
  * Main Echoes of Whimsy Model
  */
 
+function getNews() {
+        // Create a connection object from the echoes of whimsy connection function
+        $db = eowConnect(); 
+        // The SQL statement to be used with the database 
+        $sql = 
+        'SELECT *
+        FROM news
+        ORDER BY newsposted DESC
+        LIMIT 10';
+    
+        // The next line creates the prepared statement using the echoes of whimsy connection      
+        $stmt = $db->prepare($sql);
+        // The next line runs the prepared statement 
+        $stmt->execute(); 
+        // The next line gets the data from the database and 
+        // stores it as an array in the $taxonomy variable 
+        $news = $stmt->fetchAll();
+        // The next line closes the interaction with the database 
+        $stmt->closeCursor(); 
+        // The next line sends the array of data back to where the function 
+        // was called (this should be the controller) 
+        return $news;
+}
+
+function getNewsHTML($news) {
+    $newsHTML ="";
+
+    foreach ($news as $article) {
+        var_dump($article);
+        /*
+        $racesHTML .= "<div class='race'>\n";
+        $racesHTML .= "\t<h2>$race</h2>\n";
+        $racesHTML .= "\t<p>$raceInfo[txracedesc]</p>\n";
+        foreach ($raceInfo['txfamilynames'] as $family => $familyInfo) {
+            if($family !== "") {
+                $racesHTML .= "\t<div class='family'>\n";
+                $racesHTML .= "\t\t<h3 class='family-full-width'>$family</h3>\n";
+                $racesHTML .= "\t\t<p class='family-full-width'>$familyInfo[txfamilydesc]</p>\n";
+            }                
+            foreach ($familyInfo['txgenusnames'] as $genus => $genusInfo) {
+                if($genus !== "") {
+                    $racesHTML .= "\t\t<div class='genus'>\n";
+                    $racesHTML .= "\t\t\t<h4>$genus</h4>\n";
+                    $racesHTML .= "\t\t\t<p>$genusInfo[txgenuspron]</p>\n";
+                    $racesHTML .= "\t\t\t<p>$genusInfo[txgenusdesc]</p>\n";
+                    $racesHTML .= "\t\t</div>\n";
+                }
+            }
+            $racesHTML .= "\t</div>\n";
+        }
+        $racesHTML .= "</div>\n";
+        */
+    }
+
+    return $newsHTML;
+}
+
 function login() {
     //echo 'login called...';
     //var_dump($_POST);

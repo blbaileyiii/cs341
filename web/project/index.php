@@ -77,7 +77,7 @@ switch($action){
         } else if (!empty($_POST['edit'])) {
             $charname = filter_input(INPUT_POST,'edit');
             // Run edit.
-            var_dump($_POST);
+            //var_dump($_POST);
             $character = getCharacter($username, $userhashpass, $charname);
             $characterHTML = getCharEditHTML($character);
             include $currRoot . '/project/view/character.php';
@@ -100,6 +100,8 @@ switch($action){
         include $currRoot . '/project/view/template.php';
         break;
     default:
+        $news = getNews();
+        $newsHTML = getNewsHTML($news);
         include $currRoot . '/project/view/news.php';
 }
 
