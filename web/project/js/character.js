@@ -4,5 +4,5 @@ characters.forEach(character => character.addEventListener("click", getCharacter
 
 function getCharacter(elem){
     let character = elem.currentTarget.getAttribute('data-character');
-    window.location.href = '?action=character-info&character=' + character;
+    window.location.href = '?action=char-info&character=' + character;
 }

@@ -55,7 +55,7 @@ switch($action){
             include $currRoot . '/project/view/account.php';
         }
         break;
-    case 'character-info':
+    case 'char-info':
         $username = $_SESSION['eowSession']['username'];
         $userhashpass = $_SESSION['eowSession']['userhashpass'];
         $charname = filter_input(INPUT_GET,'character');
@@ -67,25 +67,25 @@ switch($action){
             include $currRoot . '/project/view/character.php';
         }
         break;
-    case 'manage':        
-        //$username = $_SESSION['eowSession']['username'];
-        //$userhashpass = $_SESSION['eowSession']['userhashpass'];        
-        //if(empty($username) || empty($userhashpass)){            
-        //    include $currRoot . '/project/view/login.php';
-        //} else if (!empty($characterId)) {
+    case 'char-mgmt':
+        $username = $_SESSION['eowSession']['username'];
+        $userhashpass = $_SESSION['eowSession']['userhashpass'];        
+        if(empty($username) || empty($userhashpass)){            
+            include $currRoot . '/project/view/login.php';
+        } else if (!empty($characterId)) {
 
-        //} else if (!empty($_POST['edit'])) {
-        //    $characterId = filter_input(INPUT_POST,'edit');
-        //    // Run edit.
-        //    var_dump($_POST);
-        //} else if (!empty($_POST['delete'])) {
-        //    $characterId = filter_input(INPUT_POST,'delete');
-        //    // Run delete.
-        //    var_dump($_POST);
-        //}
-        //$character = getCharacter($username, $userhashpass, $characterId);
-        //$characterHTML = getCharacterHTML($character);
-        //include $currRoot . '/project/view/character.php';
+        } else if (!empty($_POST['edit'])) {
+            $characterId = filter_input(INPUT_POST,'edit');
+            // Run edit.
+            var_dump($_POST);
+        } else if (!empty($_POST['delete'])) {
+            $characterId = filter_input(INPUT_POST,'delete');
+            // Run delete.
+            var_dump($_POST);
+        }
+        $character = getCharacter($username, $userhashpass, $characterId);
+        $characterHTML = getCharacterHTML($character);
+        include $currRoot . '/project/view/character.php';
         break;
     case 'races':
         $races = getRaces();
