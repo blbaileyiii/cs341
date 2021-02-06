@@ -1,6 +1,6 @@
 const characters = document.querySelectorAll('.character');
 
-characters.forEach(character => character.addEventListener("click", getCharacter));
+characters.forEach(character => character.addEventListener("click", getCharacter, capture));
 
 function getCharacter(elem){
     console.log(elem);
