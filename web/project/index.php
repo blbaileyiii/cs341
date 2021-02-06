@@ -75,11 +75,11 @@ switch($action){
         } else if (!empty($characterId)) {
 
         } else if (!empty($_POST['edit'])) {
-            $characterId = filter_input(INPUT_POST,'edit');
+            $charname = filter_input(INPUT_POST,'edit');
             // Run edit.
             var_dump($_POST);
         } else if (!empty($_POST['delete'])) {
-            $characterId = filter_input(INPUT_POST,'delete');
+            $charname = filter_input(INPUT_POST,'delete');
             // Run delete.
             var_dump($_POST);
         }
