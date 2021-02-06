@@ -55,14 +55,14 @@ switch($action){
             include $currRoot . '/project/view/account.php';
         }
         break;
-    case 'character':
+    case 'character-info':
         $username = $_SESSION['eowSession']['username'];
         $userhashpass = $_SESSION['eowSession']['userhashpass'];
-        $charId = filter_input(INPUT_GET,'charid');
+        $charname = filter_input(INPUT_GET,'chararacter');
         if(empty($username) || empty($userhashpass)){
             include $currRoot . '/project/view/login.php';
         } else {
-            $characterHTML = $charId;
+            $characterHTML = $charname;
             //$character = getCharacters($username, $userhashpass, $charId);
             //$characterHTML = getCharactersHTML($character);
             include $currRoot . '/project/view/character.php';

@@ -329,7 +329,7 @@ function getCharactersHTML($characters) {
         $charactersHTML .= "<section class='characters'>";
         $charactersHTML .= "<h2>Characters</h2>";
         foreach ($characters as $character => $characterInfo) {
-            $charactersHTML .= "<div class='character' data-charid='$characterInfo[charid]'>";
+            $charactersHTML .= "<div class='character' data-character='$character'>";
             $charactersHTML .= "<h3>$character</h3>";
             $charactersHTML .= "<div class='character-profile'>";
             $charactersHTML .= "Race: <i>$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "</i>";
