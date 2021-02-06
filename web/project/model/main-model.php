@@ -516,8 +516,6 @@ function getCharacterHTML($character) {
 }
 
 function getCharEditHTML($character) {
-    echo "I MADE IT TO getCharEditHTML";
-    var_dump($character);
 
     $characterHTML = "";
 
