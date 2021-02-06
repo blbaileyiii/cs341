@@ -78,9 +78,8 @@ switch($action){
             $charname = filter_input(INPUT_POST,'edit');
             // Run edit.
             var_dump($_POST);
-            echo "I AM FOR SURE HERE.";
             $character = getCharacter($username, $userhashpass, $charname);
-            $charEditHTML = getCharEditHTML($character);
+            $characterHTML = getCharEditHTML($character);
             include $currRoot . '/project/view/character.php';
         } else if (!empty($_POST['delete'])) {
             $charname = filter_input(INPUT_POST,'delete');
