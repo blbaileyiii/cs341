@@ -36,7 +36,7 @@ function getNewsHTML($news) {
         $newsHTML .= "\t<h2>$article[newstitle]</h2>\n";
         $newsHTML .= "\t<p>".date('l, F jS Y h:i:s A', $article['newsposted'])."</p>\n";
         $date=date_create($article['newsposted']);
-        $newsHTML .= "\t<p>".date_format($article['newsposted'], 'l, F jS Y h:i:s A')."</p>\n";
+        $newsHTML .= "\t<p>".date_format($date, 'l, F jS Y h:i:s A')."</p>\n";
         $newsHTML .= "\t<p>$article[newsbody]</p>\n";
         $newsHTML .= "</div>\n";
     }
