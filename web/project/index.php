@@ -58,7 +58,7 @@ switch($action){
     case 'character-info':
         $username = $_SESSION['eowSession']['username'];
         $userhashpass = $_SESSION['eowSession']['userhashpass'];
-        $charname = filter_input(INPUT_GET,'chararacter');
+        $charname = filter_input(INPUT_GET,'character');
         if(empty($username) || empty($userhashpass)){
             include $currRoot . '/project/view/login.php';
         } else {
