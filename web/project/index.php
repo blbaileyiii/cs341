@@ -55,21 +55,37 @@ switch($action){
             include $currRoot . '/project/view/account.php';
         }
         break;
-    case 'manage':        
+    case 'character':
         $username = $_SESSION['eowSession']['username'];
         $userhashpass = $_SESSION['eowSession']['userhashpass'];
-        if(empty($username) || empty($userhashpass)){            
+        $characterId = filter_input(INPUT_POST,'characterId');
+        if(empty($username) || empty($userhashpass)){
             include $currRoot . '/project/view/login.php';
-        } else if (!empty($_POST['edit'])) {
-            // Run edit.
-            var_dump($_POST);
-        } else if (!empty($_POST['delete'])) {
-            // Run delete.
-            var_dump($_POST);
+        } else {
+            $character = getCharacters($username, $userhashpass, $characterId);
+            $characterHTML = getCharactersHTML($character);
+            include $currRoot . '/project/view/character.php';
         }
-        $characters = getCharacters($username, $userhashpass);
-        $charactersHTML = getCharactersHTML($characters);
-        include $currRoot . '/project/view/account.php';
+        break;
+    case 'manage':        
+        //$username = $_SESSION['eowSession']['username'];
+        //$userhashpass = $_SESSION['eowSession']['userhashpass'];        
+        //if(empty($username) || empty($userhashpass)){            
+        //    include $currRoot . '/project/view/login.php';
+        //} else if (!empty($characterId)) {
+
+        //} else if (!empty($_POST['edit'])) {
+        //    $characterId = filter_input(INPUT_POST,'edit');
+        //    // Run edit.
+        //    var_dump($_POST);
+        //} else if (!empty($_POST['delete'])) {
+        //    $characterId = filter_input(INPUT_POST,'delete');
+        //    // Run delete.
+        //    var_dump($_POST);
+        //}
+        //$character = getCharacter($username, $userhashpass, $characterId);
+        //$characterHTML = getCharacterHTML($character);
+        //include $currRoot . '/project/view/character.php';
         break;
     case 'races':
         $races = getRaces();

@@ -309,6 +309,74 @@ function getCharacters($username, $userhashpass) {
             $characters[$characterSQL['charname']]['txgenusdesc'] = $characterSQL['txgenusdesc'];                
         }
 
+        // The next line closes the interaction with the database 
+        $stmt->closeCursor();
+        
+        //var_dump($characters);
+
+        return $characters;
+
+    } catch(PDOException $ex) {
+        echo $sql . "<br>" . $ex->getMessage();
+    }
+}
+
+function getCharactersHTML($characters) {
+
+    $charactersHTML = "";
+
+    if(count($characters) > 0) {
+        $charactersHTML .= "<section class='characters'>";
+        $charactersHTML .= "<h2>Characters</h2>";
+        foreach ($characters as $character => $characterInfo) {
+            $charactersHTML .= "<div>";
+            $charactersHTML .= "<h3>$character</h3>";
+            $charactersHTML .= "<div class='character-profile'>";
+            $charactersHTML .= "Race: <i>$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "</i>";
+            $charactersHTML .= "</div>";
+            $charactersHTML .= "<div class='image'>";
+            $charactersHTML .= "</div>";
+            $charactersHTML .= "</div>";
+        }
+        $charactersHTML .= "</section>";
+    }
+
+    return $charactersHTML;
+}
+
+function getCharacter($username, $userhashpass) {
+    try {
+        $characters = [];
+
+        $db = eowConnect();
+
+        // SELECT the character bio/info from the corresponding characters.
+        $sql = 
+        'SELECT username, charid, charname, txracename, txracedesc, txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
+        FROM users 
+        JOIN char ON users.userid=char.userid
+        JOIN txgenus ON txgenus.txgenusid=char.txgenusid
+        JOIN txfamily ON txfamily.txfamilyid=txgenus.txfamilyid
+        JOIN txrace ON txrace.txraceid=txfamily.txraceid
+        WHERE username=:username';
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute(array(':username' => $username));
+        $charactersSQL = $stmt->fetchAll();
+        //var_dump($charactersSQL);
+
+        foreach($charactersSQL as $characterSQL){
+
+            $characters[$characterSQL['charname']]['charid'] = $characterSQL['charid'];
+            $characters[$characterSQL['charname']]['txracename'] = $characterSQL['txracename'];
+            $characters[$characterSQL['charname']]['txracedesc'] = $characterSQL['txracedesc'];
+            $characters[$characterSQL['charname']]['txfamilyname'] = $characterSQL['txfamilyname'];
+            $characters[$characterSQL['charname']]['txfamilydesc'] = $characterSQL['txfamilydesc'];
+            $characters[$characterSQL['charname']]['txgenusname'] = $characterSQL['txgenusname'];
+            $characters[$characterSQL['charname']]['txgenuspron'] = $characterSQL['txgenuspron'];
+            $characters[$characterSQL['charname']]['txgenusdesc'] = $characterSQL['txgenusdesc'];                
+        }
+
         // SELECT the character attributes from the corresponding characters.
         $sql = 
         'SELECT username, charname, attribname, attribabbrv, attribdesc, attribtypeof, charattribval
@@ -387,7 +455,7 @@ function getCharacters($username, $userhashpass) {
     }
 }
 
-function getCharactersHTML($characters) {
+function getCharacterHTML($characters) {
 
     $charactersHTML = "";
 
