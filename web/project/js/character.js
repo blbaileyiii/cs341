@@ -1,10 +1,9 @@
 const characters = document.querySelectorAll('.character');
 
-characters.forEach(character => character.addEventListener("click", getCharacter, capture));
+characters.forEach(character => character.addEventListener("click", getCharacter));
 
 function getCharacter(elem){
-    console.log(elem);
-    console.log(elem.target);
-    let charid = elem.target.getAttribute(characterid);
+    console.log(elem.currentTarget);
+    let charid = elem.currentTarget.getAttribute(characterid);
     console.log(charid);
 }
