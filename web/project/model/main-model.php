@@ -28,6 +28,7 @@ function getNews() {
 }
 
 function getNewsHTML($news) {
+    var_dump($news);
     $newsHTML ="";
 
     foreach ($news as $article) {       
