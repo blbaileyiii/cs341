@@ -535,7 +535,10 @@ function getCharEditHTML($character) {
             $characterHTML .= "<h4>Attributes</h4>";
             $characterHTML .= "<ul>";
             foreach($characterInfo['attributes'] as $attribute => $attributeInfo){
-                $characterHTML .= "<li><label for=''><span class='info-name'>$attributeInfo[attribabbrv]</span></label><input type='number' value='$attributeInfo[charattribval]'></li>";
+                $characterHTML .= "<li>";
+                $characterHTML .= "<label for=''><span class='info-name'>$attributeInfo[attribabbrv]</span></label>";
+                $characterHTML .= "<input type='number' value='$attributeInfo[charattribval]'>";
+                $characterHTML .= "</li>";
             }
             $characterHTML .= "</ul>";
             $characterHTML .= "</section>";
@@ -544,12 +547,8 @@ function getCharEditHTML($character) {
             $characterHTML .= "<ul>";
             foreach($characterInfo['skills'] as $skill => $skillInfo){
                 $characterHTML .= "<li>";
-                $characterHTML .= "<span class='info-name'>$skill</span>";
-                //$charactersHTML .= "<ul>";
-                //$charactersHTML .= "<li>Description: $skillInfo[skilldescshort]</li>";
-                //$charactersHTML .= "<li>Additional: $skillInfo[skilldesclong]</li>";
-                //$charactersHTML .= "<li>Advancement: $skillInfo[charskillxp]</li>";
-                //$charactersHTML .= "</ul>";
+                $characterHTML .= "<label for=''><span class='info-name'>$skill</span></label>";
+                $characterHTML .= "<input type='number' value='$skillInfo[charskillxp]'>";
                 $characterHTML .= "</li>";
             }
             $characterHTML .= "</ul>";
@@ -558,7 +557,10 @@ function getCharEditHTML($character) {
             $characterHTML .= "<h4>Inventory</h4>";
             $characterHTML .= "<ul>";
             foreach($characterInfo['inventory'] as $slot => $item){
-                $characterHTML .= "<li>$item[itemname]: $item[charinvqty]</li>";
+                $characterHTML .= "<li>";
+                $characterHTML .= "<label for=''><span class='info-name'>$item[itemname]</span></label>";
+                $characterHTML .= "<input type='number' value='$item[charinvqty]'>";
+                $characterHTML .= "</li>";
             }
             $characterHTML .= "</ul>";
             $characterHTML .= "</section>";
