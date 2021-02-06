@@ -4,6 +4,6 @@ characters.forEach(character => character.addEventListener("click", getCharacter
 
 function getCharacter(elem){
     console.log(elem.currentTarget);
-    let charid = elem.currentTarget.getAttribute(characterid);
+    let charid = elem.currentTarget.getAttribute(data-charid);
     console.log(charid);
 }
