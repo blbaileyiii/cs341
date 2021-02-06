@@ -61,32 +61,35 @@ switch($action){
         $charname = filter_input(INPUT_GET,'character');
         if(empty($username) || empty($userhashpass)){
             include $currRoot . '/project/view/login.php';
-        } else {
-            $character = getCharacter($username, $userhashpass, $charname);
-            $characterHTML = getCharacterHTML($character);
-            include $currRoot . '/project/view/character.php';
+            exit;
         }
+        $character = getCharacter($username, $userhashpass, $charname);
+        $characterHTML = getCharacterHTML($character);
+        include $currRoot . '/project/view/character.php';
         break;
     case 'char-mgmt':
         $username = $_SESSION['eowSession']['username'];
         $userhashpass = $_SESSION['eowSession']['userhashpass'];        
         if(empty($username) || empty($userhashpass)){            
             include $currRoot . '/project/view/login.php';
-        } else if (!empty($characterId)) {
-
+            exit;
         } else if (!empty($_POST['edit'])) {
             $charname = filter_input(INPUT_POST,'edit');
             // Run edit.
-            var_dump($_POST);
+            //var_dump($_POST);
+            $character = getCharacter($username, $userhashpass, $characterId);
+            $charEditHTML = getCharEditHTML($character);
+            include $currRoot . '/project/view/character.php';
         } else if (!empty($_POST['delete'])) {
             $charname = filter_input(INPUT_POST,'delete');
             // Run delete.
-            var_dump($_POST);
+            //var_dump($_POST);
+        } else {
+            $character = getCharacter($username, $userhashpass, $characterId);
+            $characterHTML = getCharacterHTML($character);
+            include $currRoot . '/project/view/character.php';            
         }
-        $character = getCharacter($username, $userhashpass, $characterId);
-        $characterHTML = getCharacterHTML($character);
-        include $currRoot . '/project/view/character.php';
-        break;
+        break;         
     case 'races':
         $races = getRaces();
         $racesHTML = getRacesHTML($races);

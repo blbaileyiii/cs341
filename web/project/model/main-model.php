@@ -515,5 +515,63 @@ function getCharacterHTML($character) {
     return $characterHTML;
 }
 
+function getCharEditHTML($character) {
+
+    $characterHTML = "";
+
+    if(count($character) > 0) {
+        $characterHTML .= "<section class='characters'>";
+        $characterHTML .= "<h2>Characters</h2>";
+        $characterHTML .= "<form>";
+        foreach ($character as $charname => $characterInfo) {
+            $characterHTML .= "<div>";
+            $characterHTML .= "<h3>$charname</h3>";
+            $characterHTML .= "<div class='character-profile'>";
+            $characterHTML .= "Race: <i>$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "</i>";
+            $characterHTML .= "</div>";
+            $characterHTML .= "<div class='image'>";
+            $characterHTML .= "</div>";
+            $characterHTML .= "<section class='character-attributes'>";
+            $characterHTML .= "<h4>Attributes</h4>";
+            $characterHTML .= "<ul>";
+            foreach($characterInfo['attributes'] as $attribute => $attributeInfo){
+                $characterHTML .= "<li><label for=''><span class='info-name'>$attributeInfo[attribabbrv]</span></label><input type='number' value='$attributeInfo[charattribval]'></li>";
+            }
+            $characterHTML .= "</ul>";
+            $characterHTML .= "</section>";
+            $characterHTML .= "<section class='character-skills'>";
+            $characterHTML .= "<h4>Skills</h4>";
+            $characterHTML .= "<ul>";
+            foreach($characterInfo['skills'] as $skill => $skillInfo){
+                $characterHTML .= "<li>";
+                $characterHTML .= "<span class='info-name'>$skill</span>";
+                //$charactersHTML .= "<ul>";
+                //$charactersHTML .= "<li>Description: $skillInfo[skilldescshort]</li>";
+                //$charactersHTML .= "<li>Additional: $skillInfo[skilldesclong]</li>";
+                //$charactersHTML .= "<li>Advancement: $skillInfo[charskillxp]</li>";
+                //$charactersHTML .= "</ul>";
+                $characterHTML .= "</li>";
+            }
+            $characterHTML .= "</ul>";
+            $characterHTML .= "</section>";
+            $characterHTML .= "<section class='character-inventory'>";
+            $characterHTML .= "<h4>Inventory</h4>";
+            $characterHTML .= "<ul>";
+            foreach($characterInfo['inventory'] as $slot => $item){
+                $characterHTML .= "<li>$item[itemname]: $item[charinvqty]</li>";
+            }
+            $characterHTML .= "</ul>";
+            $characterHTML .= "</section>";
+            $characterHTML .= "</div>";
+        }
+        $characterHTML .= "<button type='submit'>Save</button>";
+        $characterHTML .= "<button>Cancel</button>";
+        $characterHTML .= "</form>";
+        $characterHTML .= "</section>";
+    }
+
+    return $characterHTML;
+}
+
 ?>
 
