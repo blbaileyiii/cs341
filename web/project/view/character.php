@@ -18,7 +18,7 @@
     </header>
     <?php require $currRoot . '/project/snippets/nav.php'; ?>   
     <main>    
-        <h1>Content Title Here</h1>
+        <h1><?php echo $charname ?></h1>
         <?php echo $characterHTML ?>
     </main>
     <footer>
