@@ -3,8 +3,6 @@ const characters = document.querySelectorAll('.character');
 characters.forEach(character => character.addEventListener("click", getCharacter));
 
 function getCharacter(elem){
-    //console.log(elem.currentTarget);
-    let charid = elem.currentTarget.getAttribute('data-charid');
-    //console.log(charid);
-    window.location.href = '?action=character&charid=' + charid;
+    let character = elem.currentTarget.getAttribute('data-character');
+    window.location.href = '?action=character-info&character=' + character;
 }
