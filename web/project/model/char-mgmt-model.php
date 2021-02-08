@@ -336,4 +336,9 @@ function getPlayableRaces(){
     return $playableRaces;
 }
 
+function getPlayableOptions($playableRaces){
+    foreach ($playableRaces as $playableRace) {
+        echo "<option>$playableRace[txfamilyname]" . strtolower($characterInfo['txgenusname']) . "</option>";
+}
+
 ?>

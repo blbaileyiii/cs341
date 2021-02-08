@@ -19,11 +19,17 @@
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>   
     <main>    
         <h1>Character Creation</h1>
+
+        <input type="text">
+        <select value="" required>
+        <option selected disabled>Choose a Race</option>
+        <?php echo $playableOptions ?>
+        </select>
         
     </main>
     <footer>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/footer.php'; ?>
-    <?php var_dump($playableRaces) ?>
+    <?php //var_dump($playableRaces) ?>
     </footer>
 </body>
 </html>
