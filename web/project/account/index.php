@@ -47,7 +47,7 @@ switch($action){
         if(empty($username) || empty($userhashpass)){            
             include $currRoot . '/project/view/login.php';
         } else {
-            $charactersHTML = ""
+            $charactersHTML = "";
             //$characters = getCharacters($username, $userhashpass);
             //$charactersHTML = getCharactersHTML($characters);
             include $currRoot . '/project/view/account.php';
