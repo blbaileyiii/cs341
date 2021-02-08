@@ -24,5 +24,6 @@
     <footer>
     <?php require $currRoot . '/project/snippets/footer.php'; ?>
     </footer>
+    <script src="/project/js/character.js"></script>
 </body>
 </html>
