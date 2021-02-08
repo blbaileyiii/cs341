@@ -35,11 +35,12 @@ switch($action){
         break;
     case 'char-edit':
         $charname = filter_input(INPUT_POST,'character');
-        $playableRaces = getPlayableRaces();
-        $playableOptions = getPlayableOptions($playableRaces);
-        // Run edit.
-        //var_dump($_POST);
         $character = getCharacter($username, $userhashpass, $charname);
+        
+        $playableRaces = getPlayableRaces();
+        $playableOptions = getPlayableOptions($playableRaces, $character);
+        // Run edit.
+        //var_dump($_POST);        
         $characterHTML = getCharEditHTML($character, $playableOptions);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
         break;
@@ -54,7 +55,7 @@ switch($action){
         break;
     case 'char-create':
         $playableRaces = getPlayableRaces();
-        $playableOptions = getPlayableOptions($playableRaces);
+        $playableOptions = getPlayableOptions($playableRaces, null);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-create.php';
         break;
     default:

@@ -260,7 +260,7 @@ function getCharEditHTML($character, $playableOptions) {
             $characterHTML .= "<div>";
             $characterHTML .= "<h1>$charname</h1>";
             $characterHTML .= "<div class='character-profile'>";
-            $characterHTML .= "<select name='' value ='$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "' required>";
+            $characterHTML .= "<select name='' value ='' required>";
             $characterHTML .= $playableOptions;
             $characterHTML .= "</select>";
             $characterHTML .= "</div>";
@@ -337,11 +337,22 @@ function getPlayableRaces(){
     return $playableRaces;
 }
 
-function getPlayableOptions($playableRaces){
+function getPlayableOptions($playableRaces, $character){
     $playableOptions = "";
+    $selected = "";
+
+    if(count($character) > 0) {
+        foreach ($character as $charname => $characterInfo) {
+            $selected = "$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']);
+        }
+    }
 
     foreach ($playableRaces as $playableRace) {
-        $playableOptions .= "<option value='$playableRace[txgenusid]'>$playableRace[txfamilyname] " . strtolower($playableRace['txgenusname']) . "</option>";
+        if($selected == "$playableRace[txfamilyname] " . strtolower($playableRace['txgenusname'])) {
+            $playableOptions .= "<option value='$playableRace[txgenusid]' selected>$playableRace[txfamilyname] " . strtolower($playableRace['txgenusname']) . "</option>";
+        } else {
+            $playableOptions .= "<option value='$playableRace[txgenusid]'>$playableRace[txfamilyname] " . strtolower($playableRace['txgenusname']) . "</option>";
+        }
     }
 
     return $playableOptions;
