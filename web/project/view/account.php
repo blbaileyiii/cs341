@@ -19,9 +19,8 @@
     <?php require $currRoot . '/project/snippets/nav.php'; ?>
     <main>    
         <h1>Account Page</h1>
-
-        <?php echo $charactersHTML ?>
-
+        <section><h2><a href='#' title='Account Details'>Account Details</a></h2></section>
+        <section><h2><a href='#' title='Character Management'>Character Management</a></h2></section>
     </main>
     <footer>
         <?php require $currRoot . '/project/snippets/footer.php'; ?>
