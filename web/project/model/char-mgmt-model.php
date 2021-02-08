@@ -268,36 +268,30 @@ function getCharEditHTML($character, $playableOptions) {
             $characterHTML .= "</div>";
             $characterHTML .= "<section class='character-attributes'>";
             $characterHTML .= "<h2>Attributes</h2>";
-            $characterHTML .= "<ul>";
             foreach($characterInfo['attributes'] as $attribute => $attributeInfo){
-                $characterHTML .= "<li>";
-                $characterHTML .= "<label for=''><span class='info-name'>$attributeInfo[attribabbrv]</span></label>";
-                $characterHTML .= "<input type='number' value='$attributeInfo[charattribval]'>";
-                $characterHTML .= "</li>";
+                $characterHTML .= "<div class='fields'>";
+                $characterHTML .= "<label for=''><span class='info-name'>$attributeInfo[attribabbrv]</span><span class='field-tip'>Required</span></label>";
+                $characterHTML .= "<input type='number' value='$attributeInfo[charattribval]' min='$attributeInfo[charattribval]' step='1'>";
+                $characterHTML .= "</div>";
             }
-            $characterHTML .= "</ul>";
             $characterHTML .= "</section>";
             $characterHTML .= "<section class='character-skills'>";
             $characterHTML .= "<h2>Skills</h2>";
-            $characterHTML .= "<ul>";
             foreach($characterInfo['skills'] as $skill => $skillInfo){
-                $characterHTML .= "<li>";
-                $characterHTML .= "<label for=''><span class='info-name'>$skill</span></label>";
-                $characterHTML .= "<input type='number' value='$skillInfo[charskillxp]'>";
-                $characterHTML .= "</li>";
+                $characterHTML .= "<div class='fields'>";
+                $characterHTML .= "<label for=''><span class='info-name'>$skill</span><span class='field-tip'>Required</span></label>";
+                $characterHTML .= "<input type='number' value='$skillInfo[charskillxp]' min='$skillInfo[charskillxp]' step='1'>";
+                $characterHTML .= "</div>";
             }
-            $characterHTML .= "</ul>";
             $characterHTML .= "</section>";
             $characterHTML .= "<section class='character-inventory'>";
             $characterHTML .= "<h2>Inventory</h2>";
-            $characterHTML .= "<ul>";
             foreach($characterInfo['inventory'] as $slot => $item){
-                $characterHTML .= "<li>";
-                $characterHTML .= "<label for=''><span class='info-name'>$item[itemname]</span></label>";
-                $characterHTML .= "<input type='number' value='$item[charinvqty]'>";
-                $characterHTML .= "</li>";
+                $characterHTML .= "<div class='fields'>";
+                $characterHTML .= "<label for=''><span class='info-name'>$item[itemname]</span><span class='field-tip'>Required</span></label>";
+                $characterHTML .= "<input type='number' value='$item[charinvqty]' min='$item[charinvqty]' step='1'>";
+                $characterHTML .= "</div>";
             }
-            $characterHTML .= "</ul>";
             $characterHTML .= "</section>";
             $characterHTML .= "</div>";
         }
