@@ -13,7 +13,7 @@
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>  
     <main>
         <h1><?php echo $page ?></h1>            
-        <form class="form" method="post">
+        <form class="form" action="/project/account/index.php" method="post">
             <div class="message"><?php echo $message ?></div>
             <div class="fields">
                 <label for="uname"><span>User Name</span><span class="field-tip">Required</span></label>

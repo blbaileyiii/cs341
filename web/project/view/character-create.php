@@ -13,7 +13,7 @@
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>   
     <main>    
         <h1><?php echo $page ?></h1>
-        <form>
+        <form class="form" action="/project/character/index.php" method="post">
             <div class="fields">
                 <label for='charname'><span>Character Name</span><span class="field-tip">Required</span></label>
                 <input id='charname' name='charname' type="text" required>
@@ -61,6 +61,9 @@
                 <label for='CHA'><span></span><span class="field-tip">Required</span></label>
                 <input id='CHA' name='CHA' type="number" step="1" min="1" placeholder="1" required>
             </div>
+            <div class="non-fields">
+                <button id="action" name="action" value="save" type="submit">Save Character</button>
+            </div>  
         </form>
     </main>
     <footer>
