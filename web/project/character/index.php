@@ -46,7 +46,7 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-delete.php';
         break;
     case 'char-create':
-        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-new.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-create.php';
         break;
     default:
         $characters = getCharacters($username, $userhashpass);
