@@ -249,7 +249,7 @@ function getCharacterHTML($character) {
     return $characterHTML;
 }
 
-function getCharEditHTML($character) {
+function getCharEditHTML($character, $playableOptions) {
 
     $characterHTML = "";
 
@@ -260,7 +260,9 @@ function getCharEditHTML($character) {
             $characterHTML .= "<div>";
             $characterHTML .= "<h1>$charname</h1>";
             $characterHTML .= "<div class='character-profile'>";
-            $characterHTML .= "Race: <i>$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "</i>";
+            $characterHTML .= "<selection name='' value ='$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "' required>";
+            $characterHTML .= $playableOptions;
+            $characterHTML .= "</selection>";
             $characterHTML .= "</div>";
             $characterHTML .= "<div class='image'>";
             $characterHTML .= "</div>";
