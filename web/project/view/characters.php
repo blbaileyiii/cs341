@@ -23,6 +23,7 @@
     </main>
     <footer>
     <?php require $currRoot . '/project/snippets/footer.php'; ?>
+    <?php echo $characters?>
     </footer>
     <script src="/project/js/character.js"></script>
 </body>
