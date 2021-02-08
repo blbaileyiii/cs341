@@ -17,11 +17,8 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/header.php'; ?>
     </header>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>   
-    <main>    
-        <h1>Character Bio</h1>
-
-        <?php echo $characterHTML ?>
-        
+    <main>
+        <?php echo $characterHTML ?>        
     </main>
     <footer>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/footer.php'; ?>

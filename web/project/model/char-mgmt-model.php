@@ -198,14 +198,14 @@ function getCharacterHTML($character) {
         $characterHTML .= "<section class='characters'>";        
         foreach ($character as $charname => $characterInfo) {
             $characterHTML .= "<div>";
-            $characterHTML .= "<h2>$charname</h2>";
+            $characterHTML .= "<h1>$charname</h1>";
             $characterHTML .= "<div class='character-profile'>";
             $characterHTML .= "Race: <i>$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "</i>";
             $characterHTML .= "</div>";
             $characterHTML .= "<div class='image'>";
             $characterHTML .= "</div>";
             $characterHTML .= "<section class='character-attributes'>";
-            $characterHTML .= "<h3>Attributes</h3>";
+            $characterHTML .= "<h2>Attributes</h2>";
             $characterHTML .= "<ul>";
             foreach($characterInfo['attributes'] as $attribute => $attributeInfo){
                 $characterHTML .= "<li><span class='info-name'>$attributeInfo[attribabbrv]</span>: $attributeInfo[charattribval]</li>";
@@ -213,7 +213,7 @@ function getCharacterHTML($character) {
             $characterHTML .= "</ul>";
             $characterHTML .= "</section>";
             $characterHTML .= "<section class='character-skills'>";
-            $characterHTML .= "<h3>Skills</h3>";
+            $characterHTML .= "<h2>Skills</h2>";
             $characterHTML .= "<ul>";
             foreach($characterInfo['skills'] as $skill => $skillInfo){
                 $characterHTML .= "<li>";
@@ -228,7 +228,7 @@ function getCharacterHTML($character) {
             $characterHTML .= "</ul>";
             $characterHTML .= "</section>";
             $characterHTML .= "<section class='character-inventory'>";
-            $characterHTML .= "<h3>Inventory</h3>";
+            $characterHTML .= "<h2>Inventory</h2>";
             $characterHTML .= "<ul>";
             foreach($characterInfo['inventory'] as $slot => $item){
                 $characterHTML .= "<li>$item[itemname]: $item[charinvqty]</li>";
