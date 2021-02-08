@@ -11,7 +11,7 @@ if(substr($_SERVER['DOCUMENT_ROOT'], 0, 4) == '/app'){
 
 // Get the database connection file
 require_once $currRoot . '/project/libraries/connections.php';
-// Get the Taxaonomy table for use as needed
+// Get all unsecured data
 require_once $currRoot . '/project/model/main-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
@@ -21,40 +21,7 @@ if ($action == NULL) {
 
 $message = "";
 
-switch($action){
-    case 'logon':
-        include $currRoot . '/project/view/login.php';
-        break;
-    case 'login':
-        $message = login();
-        include $currRoot . '/project/view/login.php';
-        break;
-    case 'registration':
-        include $currRoot . '/project/view/registration.php';
-        break;
-    case 'logout':        
-        $message = logout();
-        include $currRoot . '/project/view/login.php';
-        break;
-    case 'register':
-        $message = register();
-        include $currRoot . '/project/view/registration.php';
-        break;
-    case 'verify-email':
-        $message = "Account Created: Verify Email Before Logging In";
-        include $currRoot . '/project/view/login.php';
-        break;    
-    case 'account':
-        $username = $_SESSION['eowSession']['username'];
-        $userhashpass = $_SESSION['eowSession']['userhashpass'];
-        if(empty($username) || empty($userhashpass)){            
-            include $currRoot . '/project/view/login.php';
-        } else {
-            $characters = getCharacters($username, $userhashpass);
-            $charactersHTML = getCharactersHTML($characters);
-            include $currRoot . '/project/view/account.php';
-        }
-        break;
+switch($action){    
     case 'char-info':
         $username = $_SESSION['eowSession']['username'];
         $userhashpass = $_SESSION['eowSession']['userhashpass'];
@@ -95,9 +62,6 @@ switch($action){
         $races = getRaces();
         $racesHTML = getRacesHTML($races);
         include $currRoot . '/project/view/races.php';
-        break;
-    case 'template':
-        include $currRoot . '/project/view/template.php';
         break;
     default:
         $news = getNews();
