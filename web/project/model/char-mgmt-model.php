@@ -295,8 +295,10 @@ function getCharEditHTML($character, $playableOptions) {
             $characterHTML .= "</section>";
             $characterHTML .= "</div>";
         }
+        $characterHTML .= "<div class='non-fields'>";
         $characterHTML .= "<button type='submit'>Save</button>";
         $characterHTML .= "<button>Cancel</button>";
+        $characterHTML .= "</div>";
         $characterHTML .= "</form>";
         $characterHTML .= "</section>";
     }
