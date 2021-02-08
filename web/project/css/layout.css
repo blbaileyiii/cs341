@@ -160,6 +160,5 @@ footer {
 @media only screen and (min-width: 40rem) {
     .form {
       width: 25rem;
-      margin: 0;
     }
 }
