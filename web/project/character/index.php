@@ -41,9 +41,14 @@ switch($action){
         $characterHTML = getCharEditHTML($character);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
         break;
-    case 'char-delete':
+    case 'char-delete-verify':
         $charname = filter_input(INPUT_POST,'character');        
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-delete.php';
+        break;
+    case 'char-delete':
+        // Run delete.
+        // Should return to default when done.
+        // If returns from function rather than redirect... delete failed. Notify user. Contact Support.33
         break;
     case 'char-create':
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-create.php';
