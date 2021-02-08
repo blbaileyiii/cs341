@@ -51,10 +51,9 @@ function getCharactersHTML($characters) {
 
     if(count($characters) > 0) {
         $charactersHTML .= "<section class='characters'>";
-        $charactersHTML .= "<h2>Characters</h2>";
         foreach ($characters as $character => $characterInfo) {
             $charactersHTML .= "<div class='character' data-character='$character'>";
-            $charactersHTML .= "<h3>$character</h3>";
+            $charactersHTML .= "<h2>$character</h2>";
             $charactersHTML .= "<div class='character-profile'>";
             $charactersHTML .= "Race: <i>$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "</i>";
             $charactersHTML .= "</div>";
@@ -64,7 +63,7 @@ function getCharactersHTML($characters) {
         }
 
         $charactersHTML .= "<div class='character' data-character='+new'>";
-        $charactersHTML .= "<h3>+ Create a Character</h3>";
+        $charactersHTML .= "<h2>+ Create a Character</h2>";
         $charactersHTML .= "<div class='image'>";
         $charactersHTML .= "</div>";
         $charactersHTML .= "</div>";
