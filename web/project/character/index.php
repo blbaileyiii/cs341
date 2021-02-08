@@ -33,24 +33,20 @@ switch($action){
         $characterHTML = getCharacterHTML($character);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
         break;
-    case 'char-mgmt':
+    case 'char-edit':
         $charname = filter_input(INPUT_GET,'character');
-        if (!empty($_POST['edit'])) {
-            $charname = filter_input(INPUT_POST,'edit');
-            // Run edit.
-            //var_dump($_POST);
-            $character = getCharacter($username, $userhashpass, $charname);
-            $characterHTML = getCharEditHTML($character);
-            include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
-        } else if (!empty($_POST['delete'])) {
-            $charname = filter_input(INPUT_POST,'delete');
-            // Run delete.
-            //var_dump($_POST);
-        } else {            
-            $character = getCharacter($username, $userhashpass, $charname);
-            $characterHTML = getCharacterHTML($character);
-            include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';            
-        }
+        // Run edit.
+        //var_dump($_POST);
+        $character = getCharacter($username, $userhashpass, $charname);
+        $characterHTML = getCharEditHTML($character);
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
+        break;
+    case 'char-delete':
+        $charname = filter_input(INPUT_GET,'character');        
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-new.php';
+        break;
+    case 'char-create':
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-new.php';
         break;
     default:
         $characters = getCharacters($username, $userhashpass);
