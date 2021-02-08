@@ -2,14 +2,8 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Echoes of Whimsy - Character Creation</title>
-    <meta name="Echoes of Whimsy"
-        content="Echoes of Whimsy - Character Creation">
-        <link rel="stylesheet" href="/project/css/theme.css">
-        <link rel="stylesheet" href="/project/css/typography.css">
-        <link rel="stylesheet" href="/project/css/layout.css">
+    <?php $page = "Character Creation" ?>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/head.php'; ?>
 </head>
 
 <body>
@@ -18,14 +12,36 @@
     </header>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>   
     <main>    
-        <h1>Character Creation</h1>
-
-        <input type="text">
-        <select value="" required>
-        <option selected disabled>Choose a Race</option>
-        <?php echo $playableOptions ?>
-        </select>
-        
+        <h1><?php echo $page ?></h1>
+        <form>
+            <div class="fields">
+                <label for=''><span></span><span class="field-tip">Required</span></label>
+                <input id='' name='' type="text" required>
+            </div>
+            <div class="fields">
+                <label for=''><span></span><span class="field-tip">Required</span></label>
+                <select value="" required>
+                    <option selected disabled>Choose a Race</option>
+                    <?php echo $playableOptions ?>
+                </select>
+            </div>
+            <div class="fields">
+                <label for=''><span></span><span class="field-tip">Required</span></label>
+                <input id='' name='' type="text" required>
+            </div>
+            <div class="fields">
+                <label for=''><span></span><span class="field-tip">Required</span></label>
+                <input id='' name='' type="text" required>
+            </div>
+            <div class="fields">
+                <label for=''><span></span><span class="field-tip">Required</span></label>
+                <input id='' name='' type="text" required>
+            </div>
+            <div class="fields">
+                <label for=''><span></span><span class="field-tip">Required</span></label>
+                <input id='' name='' type="text" required>
+            </div>
+        </form>
     </main>
     <footer>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/footer.php'; ?>

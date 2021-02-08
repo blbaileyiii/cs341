@@ -2,14 +2,8 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Echoes of Whimsy - Registration</title>
-    <meta name="Echoes of Whimsy"
-        content="Echoes of Whimsy - Registration">
-        <link rel="stylesheet" href="/project/css/theme.css">
-        <link rel="stylesheet" href="/project/css/typography.css">
-        <link rel="stylesheet" href="/project/css/layout.css">
+    <?php $page = "Registration" ?>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/head.php'; ?>
 </head>
 
 <body>
@@ -18,7 +12,7 @@
     </header>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>  
     <main>    
-        <h1>Registration</h1>
+        <h1><?php echo $page ?></h1>
         <form class="form" action="/project/index.php" method="post">
             <div class="message"><?php echo $message ?></div>
             <div class="fields">

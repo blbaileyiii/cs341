@@ -2,14 +2,8 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Echoes of Whimsy - Template</title>
-    <meta name="Echoes of Whimsy"
-        content="Echoes of Whimsy - Template">
-        <link rel="stylesheet" href="/project/css/theme.css">
-        <link rel="stylesheet" href="/project/css/typography.css">
-        <link rel="stylesheet" href="/project/css/layout.css">
+    <?php $page = "Character" ?>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/head.php'; ?>
 </head>
 
 <body>

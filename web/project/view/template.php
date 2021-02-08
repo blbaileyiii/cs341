@@ -12,7 +12,7 @@
     </header>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>   
     <main>    
-        <h1>Content Title Here</h1>
+        <h1><?php echo $page ?></h1>
         Content goes here.
     </main>
     <footer>
