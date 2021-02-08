@@ -255,18 +255,17 @@ function getCharEditHTML($character) {
 
     if(count($character) > 0) {
         $characterHTML .= "<section class='characters'>";
-        $characterHTML .= "<h2>Characters</h2>";
         $characterHTML .= "<form>";
         foreach ($character as $charname => $characterInfo) {
             $characterHTML .= "<div>";
-            $characterHTML .= "<h3>$charname</h3>";
+            $characterHTML .= "<h1>$charname</h1>";
             $characterHTML .= "<div class='character-profile'>";
             $characterHTML .= "Race: <i>$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "</i>";
             $characterHTML .= "</div>";
             $characterHTML .= "<div class='image'>";
             $characterHTML .= "</div>";
             $characterHTML .= "<section class='character-attributes'>";
-            $characterHTML .= "<h4>Attributes</h4>";
+            $characterHTML .= "<h2>Attributes</h2>";
             $characterHTML .= "<ul>";
             foreach($characterInfo['attributes'] as $attribute => $attributeInfo){
                 $characterHTML .= "<li>";
@@ -277,7 +276,7 @@ function getCharEditHTML($character) {
             $characterHTML .= "</ul>";
             $characterHTML .= "</section>";
             $characterHTML .= "<section class='character-skills'>";
-            $characterHTML .= "<h4>Skills</h4>";
+            $characterHTML .= "<h2>Skills</h2>";
             $characterHTML .= "<ul>";
             foreach($characterInfo['skills'] as $skill => $skillInfo){
                 $characterHTML .= "<li>";
@@ -288,7 +287,7 @@ function getCharEditHTML($character) {
             $characterHTML .= "</ul>";
             $characterHTML .= "</section>";
             $characterHTML .= "<section class='character-inventory'>";
-            $characterHTML .= "<h4>Inventory</h4>";
+            $characterHTML .= "<h2>Inventory</h2>";
             $characterHTML .= "<ul>";
             foreach($characterInfo['inventory'] as $slot => $item){
                 $characterHTML .= "<li>";
