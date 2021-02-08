@@ -34,7 +34,7 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
         break;
     case 'char-edit':
-        $charname = filter_input(INPUT_GET,'character');
+        $charname = filter_input(INPUT_POST,'character');
         // Run edit.
         //var_dump($_POST);
         $character = getCharacter($username, $userhashpass, $charname);
@@ -42,7 +42,7 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
         break;
     case 'char-delete':
-        $charname = filter_input(INPUT_GET,'character');        
+        $charname = filter_input(INPUT_POST,'character');        
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-delete.php';
         break;
     case 'char-create':
