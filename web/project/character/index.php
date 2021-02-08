@@ -40,7 +40,7 @@ switch($action){
         // Run edit.
         //var_dump($_POST);
         $character = getCharacter($username, $userhashpass, $charname);
-        $characterHTML = getCharEditHTML($character);
+        $characterHTML = getCharEditHTML($character, $playableOptions);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
         break;
     case 'char-delete-verify':
