@@ -1,25 +1,23 @@
 <?php
 session_start();
 /*
- * Master Controller
+ * Character(s) Controller
  */
-if(substr($_SERVER['DOCUMENT_ROOT'], 0, 4) == '/app'){
-    $currRoot = $_SERVER['DOCUMENT_ROOT'];
-} else {
-    $currRoot = $_SERVER['DOCUMENT_ROOT'] . '/CS341/web';
-}
 
-// Get the database connection file
-require_once $currRoot . '/project/libraries/connections.php';
-// Get all unsecured data
-require_once $currRoot . '/project/model/char-mgmt-model.php';
-
+// Secure area.
+// Immediately Check for login/username. 
+// If it has not been created then bump them to the login page.
 $username = $_SESSION['eowSession']['username'];
 $userhashpass = $_SESSION['eowSession']['userhashpass'];
 if(empty($username) || empty($userhashpass)){
     header('Location: /project/account/index.php');
     exit;
 }
+
+// Get the database connection file
+require_once $_SERVER['DOCUMENT_ROOT'] . '/project/libraries/connections.php';
+// Get all unsecured data
+require_once $_SERVER['DOCUMENT_ROOT'] . '/project/model/char-mgmt-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -33,7 +31,7 @@ switch($action){
         $charname = filter_input(INPUT_GET,'character');
         $character = getCharacter($username, $userhashpass, $charname);
         $characterHTML = getCharacterHTML($character);
-        include $currRoot . '/project/view/character.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
         break;
     case 'char-mgmt':
         $charname = filter_input(INPUT_GET,'character');
@@ -43,7 +41,7 @@ switch($action){
             //var_dump($_POST);
             $character = getCharacter($username, $userhashpass, $charname);
             $characterHTML = getCharEditHTML($character);
-            include $currRoot . '/project/view/character.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
         } else if (!empty($_POST['delete'])) {
             $charname = filter_input(INPUT_POST,'delete');
             // Run delete.
@@ -51,13 +49,13 @@ switch($action){
         } else {            
             $character = getCharacter($username, $userhashpass, $charname);
             $characterHTML = getCharacterHTML($character);
-            include $currRoot . '/project/view/character.php';            
+            include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';            
         }
         break;
     default:
         $characters = getCharacters($username, $userhashpass);
         $charactersHTML = getCharactersHTML($characters);
-        include $currRoot . '/project/view/characters.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/characters.php';
         break;
 }
 
