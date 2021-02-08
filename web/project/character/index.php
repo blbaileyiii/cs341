@@ -52,7 +52,7 @@ switch($action){
         // If returns from function rather than redirect... delete failed. Notify user. Contact Support.33
         break;
     case 'char-create':
-        $playabledRaces = getPlayableRaces();
+        $playableRaces = getPlayableRaces();
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-create.php';
         break;
     default:
