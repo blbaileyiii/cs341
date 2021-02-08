@@ -96,7 +96,7 @@ function login() {
                 //var_dump($accounts);
             }
 
-            header('Location: /project/index.php?action=account');
+            header('Location: /project/account/index.php?action=account');
             exit;
 
         } catch(PDOException $ex) {
@@ -166,7 +166,7 @@ function register() {
                 unset($_POST['register']);
 
                 //echo "Account Created: Verify Email Before Logging In";
-                header('Location: /project/index.php?action=verify-email');
+                header('Location: /project/account/index.php?action=verify-email');
                 exit;
 
             } catch(PDOException $ex) {
