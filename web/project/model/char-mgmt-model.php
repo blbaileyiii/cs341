@@ -340,7 +340,7 @@ function getPlayableOptions($playableRaces){
     $playableOptions = "";
 
     foreach ($playableRaces as $playableRace) {
-        $playableOptions .= "<option value='$playableRace[txgenusid]'><i>$playableRace[txfamilyname] " . strtolower($playableRace['txgenusname']) . "</i></option>";
+        $playableOptions .= "<option value='$playableRace[txgenusid]'>$playableRace[txfamilyname] " . strtolower($playableRace['txgenusname']) . "</option>";
     }
 
     return $playableOptions;
