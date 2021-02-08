@@ -255,7 +255,7 @@ function getCharEditHTML($character) {
 
     if(count($character) > 0) {
         $characterHTML .= "<section class='characters'>";
-        $characterHTML .= "<form>";
+        $characterHTML .= "<form class='form'>";
         foreach ($character as $charname => $characterInfo) {
             $characterHTML .= "<div>";
             $characterHTML .= "<h1>$charname</h1>";
