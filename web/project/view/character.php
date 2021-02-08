@@ -18,7 +18,7 @@
     </header>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>   
     <main>    
-        <h1>Character</h1>
+        <h1>Character Bio</h1>
 
         <?php echo $characterHTML ?>
         
