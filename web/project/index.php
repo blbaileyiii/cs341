@@ -22,6 +22,9 @@ switch($action){
         $racesHTML = getRacesHTML($races);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/races.php';
         break;
+    case 'template':
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/template.php';
+        break;
     default:
         $news = getNews();
         $newsHTML = getNewsHTML($news);
