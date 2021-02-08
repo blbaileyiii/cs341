@@ -11,8 +11,6 @@ if(substr($_SERVER['DOCUMENT_ROOT'], 0, 4) == '/app'){
 
 // Get the database connection file
 require_once $currRoot . '/project/libraries/connections.php';
-// Get all unsecured data
-require_once $currRoot . '/project/model/main-model.php';
 // Load the login functions
 require_once $currRoot . '/project/model/acct-mgmt-model.php';
 
