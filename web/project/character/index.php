@@ -43,7 +43,7 @@ switch($action){
         break;
     case 'char-delete':
         $charname = filter_input(INPUT_GET,'character');        
-        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-new.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-delete.php';
         break;
     case 'char-create':
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-new.php';
