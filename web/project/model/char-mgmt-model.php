@@ -309,4 +309,31 @@ function getCharEditHTML($character) {
     return $characterHTML;
 }
 
+
+
+function getPlayableRaces(){
+    // Create a connection object from the echoes of whimsy connection function
+    $db = eowConnect(); 
+    // The SQL statement to be used with the database 
+    $sql = 
+    'SELECT txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
+    FROM txrace LEFT JOIN txfamily on txrace.txraceid=txfamily.txraceid
+    LEFT JOIN txgenus ON txfamily.txfamilyid=txgenus.txfamilyid
+    WHERE txrace.txraceid=1
+    ORDER BY txracename, txfamilyname, txgenusname';
+
+    // The next line creates the prepared statement using the echoes of whimsy connection      
+    $stmt = $db->prepare($sql);
+    // The next line runs the prepared statement 
+    $stmt->execute(); 
+    // The next line gets the data from the database and 
+    // stores it as an array in the $taxonomy variable 
+    $playableRaces = $stmt->fetchAll(); 
+    // The next line closes the interaction with the database 
+    $stmt->closeCursor(); 
+    // The next line sends the array of data back to where the function 
+    // was called (this should be the controller) 
+    return $playableRaces;
+}
+
 ?>

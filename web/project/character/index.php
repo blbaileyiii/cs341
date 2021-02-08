@@ -35,6 +35,7 @@ switch($action){
         break;
     case 'char-edit':
         $charname = filter_input(INPUT_POST,'character');
+        $playabledRaces = getPlayableRaces();
         // Run edit.
         //var_dump($_POST);
         $character = getCharacter($username, $userhashpass, $charname);
@@ -51,6 +52,7 @@ switch($action){
         // If returns from function rather than redirect... delete failed. Notify user. Contact Support.33
         break;
     case 'char-create':
+        $playabledRaces = getPlayableRaces();
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-create.php';
         break;
     default:

@@ -19,10 +19,11 @@
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>   
     <main>    
         <h1>Character Creation</h1>
-        Content goes here.
+        
     </main>
     <footer>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/footer.php'; ?>
+    <?php var_dump($playableRaces) ?>
     </footer>
 </body>
 </html>
