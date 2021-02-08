@@ -24,9 +24,6 @@ if ($action == NULL) {
 $message = "";
 
 switch($action){
-    case 'logon':
-        include $currRoot . '/project/view/login.php';
-        break;
     case 'login':
         $message = login();
         include $currRoot . '/project/view/login.php';
@@ -58,9 +55,8 @@ switch($action){
         }
         break;
     default:
-        $news = getNews();
-        $newsHTML = getNewsHTML($news);
-        include $currRoot . '/project/view/news.php';
+        include $currRoot . '/project/view/login.php';
+        break;
 }
 
 ?>
