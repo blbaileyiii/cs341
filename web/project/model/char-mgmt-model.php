@@ -198,8 +198,8 @@ function getCharacterHTML($character) {
         foreach ($character as $charname => $characterInfo) {
             $characterHTML .= "<div>";
             $characterHTML .= "<h1>$charname</h1>";
+            $characterHTML .= "<div class='character-profile'>";
             $characterHTML .= "<h2><i>$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "</i></h2>";
-            $characterHTML .= "<div class='character-profile'>";            
             $characterHTML .= "</div>";
             $characterHTML .= "<div class='image'>";
             $characterHTML .= "</div>";
