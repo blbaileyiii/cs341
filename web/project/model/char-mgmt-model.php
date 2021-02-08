@@ -260,9 +260,9 @@ function getCharEditHTML($character, $playableOptions) {
             $characterHTML .= "<div>";
             $characterHTML .= "<h1>$charname</h1>";
             $characterHTML .= "<div class='character-profile'>";
-            $characterHTML .= "<selection name='' value ='$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "' required>";
+            $characterHTML .= "<select name='' value ='$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "' required>";
             $characterHTML .= $playableOptions;
-            $characterHTML .= "</selection>";
+            $characterHTML .= "</select>";
             $characterHTML .= "</div>";
             $characterHTML .= "<div class='image'>";
             $characterHTML .= "</div>";
