@@ -235,10 +235,14 @@ function getCharacterHTML($character) {
             $characterHTML .= "</ul>";
             $characterHTML .= "</section>";
             $characterHTML .= "<div class='character-management'>";
-            $characterHTML .= "<form method='post'>";
+            $characterHTML .= "<form class='form' method='post'>";
             $characterHTML .= "<input type='hidden' name='character' value='$charname'>";
+            $characterHTML .= "<div class='non-fields'>";
             $characterHTML .= "<button type='submit' name='action' value='char-edit'>Edit</button>";
+            $characterHTML .= "</div>";
+            $characterHTML .= "<div class='non-fields'>";
             $characterHTML .= "<button type='submit' name='action' value='char-delete-verify'>Delete</button>";
+            $characterHTML .= "</div>";
             $characterHTML .= "</form>";
             $characterHTML .= "</div>";
             $characterHTML .= "</div>";
@@ -297,6 +301,8 @@ function getCharEditHTML($character, $playableOptions) {
         }
         $characterHTML .= "<div class='non-fields'>";
         $characterHTML .= "<button type='submit'>Save</button>";
+        $characterHTML .= "</div>";
+        $characterHTML .= "<div class='non-fields'>";
         $characterHTML .= "<button>Cancel</button>";
         $characterHTML .= "</div>";
         $characterHTML .= "</form>";
