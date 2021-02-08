@@ -14,15 +14,15 @@
 
 <body>
     <header>
-        <?php require $currRoot . '/project/snippets/header.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/header.php'; ?>
     </header>
-    <?php require $currRoot . '/project/snippets/nav.php'; ?>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>
     <main>    
         <h1>Server Error</h1>
         Sorry our server seems to be experiencing some technical difficulties. Please check back later.
     </main>
     <footer>
-    <?php require $currRoot . '/project/snippets/footer.php'; ?>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/footer.php'; ?>
     </footer>
 </body>
 </html>
