@@ -9,7 +9,7 @@
     } else {
 
         $postTopics = $_POST['topics'];
-        var_dump($postTopics);
+        //var_dump($postTopics);
         /*
         try
         {
