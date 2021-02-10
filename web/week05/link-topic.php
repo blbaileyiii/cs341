@@ -14,7 +14,7 @@
 	     
         $topics = "";
 
-        foreach ($db->query("SELECT * FROM cse341ta05.topics ") as $topic)
+        foreach ($db->query("SELECT * FROM cse341ta05.topic") as $topic)
         //foreach ($db->query("SELECT * FROM cse341ta05.scriptures WHERE book = '$book';") as $scripture)
         {
             $topics .= "<input type='checkbox' id='chk-$topic[id]' name='topics[chk-$topic[id]]'>";
