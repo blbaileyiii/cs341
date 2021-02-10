@@ -53,13 +53,13 @@
     <main>    
         <h1>Content Title Here</h1>
         <form action="topics.php" method="post">
-            <label for="book"></label>    
+            <label for="book">Book</label>    
             <input type="text" id="book" name="book"/>
-            <label for="chapter"></label>
+            <label for="chapter">Chapter</label>
             <input type="text" id="chapter" name="chapter"/>
-            <label for="verse"></label>
+            <label for="verse">Verse</label>
             <input type="text" id="verse" name="verse"/>
-            <label for="content"></label>
+            <label for="content">Content</label>
             <textarea id="content" name="content"></textarea>
             <?php echo $topics; ?>
             <input type="submit" value="Submit"/>
