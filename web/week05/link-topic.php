@@ -52,7 +52,7 @@
     </nav>    
     <main>    
         <h1>Content Title Here</h1>
-        <form method="post">
+        <form action="topics.php" method="post">
             <label for="book"></label>    
             <input type="text" id="book" name="book"/>
             <label for="chapter"></label>
