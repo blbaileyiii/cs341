@@ -57,7 +57,8 @@ footer {
 }
 
 .news {
-
+    border-color: var(--logo);
+    
 }
 
 .news h2 {
