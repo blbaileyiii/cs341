@@ -61,7 +61,7 @@ footer {
 }
 
 .news h2 {
-
+    background-image: linear-gradient(to right, var(--logo-dark), var(--bg) 75%);
 }
 
 .news .date {
