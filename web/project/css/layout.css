@@ -49,8 +49,11 @@ footer {
 }
 
 .news {
-    border-style: solid;
-    border-width: 1px;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-radius: 1rem;
     margin: 1rem 0;
     overflow: auto;
 }
