@@ -196,6 +196,11 @@ footer {
 .option-tile h2{
     margin: 0;
     padding: 1rem;
+    display: block;
+}
+
+.option-tile a {
+    display: block;
 }
 
 @media only screen and (min-width: 40rem) {
