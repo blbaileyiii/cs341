@@ -264,9 +264,12 @@ function getCharEditHTML($character, $playableOptions) {
             $characterHTML .= "<div>";
             $characterHTML .= "<h1>$charname</h1>";
             $characterHTML .= "<div class='character-profile'>";
-            $characterHTML .= "<select name='' value ='' required>";
+            $characterHTML .= "<div class='fields'>";
+            $characterHTML .= "<label for='race'><span class='info-name'>Character Race</span><span class='field-tip'>Required</span></label>";
+            $characterHTML .= "<select id='race' name='race' value ='' required>";
             $characterHTML .= $playableOptions;
             $characterHTML .= "</select>";
+            $characterHTML .= "</div>";
             $characterHTML .= "</div>";
             $characterHTML .= "<div class='image'>";
             $characterHTML .= "</div>";
