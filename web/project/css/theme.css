@@ -64,12 +64,8 @@ footer {
     background-image: linear-gradient(to right, var(--logo-dark), var(--bg) 75%);
 }
 
-.news .date {
-
-}
-
-.news .content {
-    
+.news .content::first-letter {
+    color: var(--logo);
 }
 
 .news h2,

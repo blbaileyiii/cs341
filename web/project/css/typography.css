@@ -39,6 +39,10 @@ h4 {
     font-size: 0.75rem;
 }
 
+.news .content::first-letter {
+    font-size: 2rem;
+}
+
 .race:nth-child(odd) h2{
     text-align: right;
 }
