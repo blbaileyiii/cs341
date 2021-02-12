@@ -192,7 +192,7 @@ footer {
 
 .option-tile h2{
     margin: 0;
-    padding: auto 1rem;
+    padding: 1rem;
 }
 
 @media only screen and (min-width: 40rem) {
