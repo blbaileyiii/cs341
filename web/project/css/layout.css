@@ -55,19 +55,9 @@ footer {
     overflow: auto;
 }
 
-.news::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
 .news .date, 
 .news .content {
     margin: 0.5rem 1.25rem 1.25rem;
-}
-
-.news .content::first-letter {
-    float: left;
 }
 
 .news h2,
