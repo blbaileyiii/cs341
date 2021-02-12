@@ -13,7 +13,9 @@
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>   
     <main>    
         <h1><?php echo $page ?></h1>
-        <?php echo $charactersHTML?>
+        <div class="grid-tiles">
+            <?php echo $charactersHTML?>
+        </div>
     </main>
     <footer>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/footer.php'; ?>
