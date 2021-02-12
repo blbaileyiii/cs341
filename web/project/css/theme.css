@@ -98,10 +98,12 @@ footer {
     text-shadow: 2px 2px 5px var(--ston-logo);
 }
 
+.character h2,
 .option-tile {
     background-image: linear-gradient(to right, var(--logo-dark) 25%, var(--logo) 75%);        
 }
 
+.character h2,
 .option-tile a,
 .option-tile a:visited,
 .option-tile a:focus {
