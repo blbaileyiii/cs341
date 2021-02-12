@@ -50,7 +50,7 @@ function getCharactersHTML($characters) {
     $charactersHTML = "";
 
     if(count($characters) > 0) {
-        $charactersHTML .= "<section class='characters'>";
+        $charactersHTML .= "<section class='characters grid-tiles'>";
         foreach ($characters as $character => $characterInfo) {
             $charactersHTML .= "<div class='character' data-character='$character'>";
             $charactersHTML .= "<h2>$character</h2>";
