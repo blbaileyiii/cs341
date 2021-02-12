@@ -205,6 +205,10 @@ footer {
     border-width: 1px;
 }
 
+.character-profile {
+    margin: 1rem;
+}
+
 .character h2 {
     border-radius: 1rem 1rem 0 0;
 }
