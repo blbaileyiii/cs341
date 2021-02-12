@@ -199,6 +199,12 @@ footer {
     align-items: center;
 }
 
+.character {
+    border-radius: 1rem;
+    border-style: solid;
+    border-width: 1px;
+}
+
 @media only screen and (min-width: 40rem) {
     .form {
       width: 25rem;
