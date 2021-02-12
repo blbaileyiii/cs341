@@ -182,11 +182,12 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
+    justify-items: stretch;
+    align-items: stretch;
 }
 
 .option-tile {
     border-radius: 1rem;
-    padding: 1rem;
 }
 
 .option-tile h2{
