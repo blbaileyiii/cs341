@@ -213,6 +213,10 @@ footer {
     margin: 1rem 0;
 }
 
+.form section {
+    margin-top: 1.5rem;
+}
+
 .character h2 {
     border-radius: 1rem 1rem 0 0;
 }
