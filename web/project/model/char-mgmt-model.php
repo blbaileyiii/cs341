@@ -113,7 +113,7 @@ function getCharacter($username, $userhashpass, $charname) {
 
             // SELECT the character attributes from the corresponding characters.
             $sql = 
-            'SELECT username, charname, attribname, attribabbrv, attribdesc, attribtypeof, charattribval
+            'SELECT username, charname, charattribid, attribname, attribabbrv, attribdesc, attribtypeof, charattribval
             FROM users 
             JOIN char ON users.userid=char.userid
             JOIN charattribs ON char.charid=charattribs.charid
@@ -127,6 +127,7 @@ function getCharacter($username, $userhashpass, $charname) {
 
             foreach($characterattribsSQL as $charattribsSQL){
 
+                $character[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['charattribid'] = $charattribsSQL['charattribid'];
                 $character[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['attribabbrv'] = $charattribsSQL['attribabbrv'];
                 $character[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['attribdesc'] = $charattribsSQL['attribdesc'];
                 $character[$charattribsSQL['charname']]['attributes'][$charattribsSQL['attribname']]['attribtypeof'] = $charattribsSQL['attribtypeof'];
@@ -135,7 +136,7 @@ function getCharacter($username, $userhashpass, $charname) {
 
             // SELECT the character inventory from the corresponding characters.
             $sql = 
-            'SELECT username, charname, itemname, itemdescshort, itemdesclong, charinvslot, charinvqty
+            'SELECT username, charname, charinvid, itemname, itemdescshort, itemdesclong, charinvslot, charinvqty
             FROM users 
             JOIN char ON users.userid=char.userid
             JOIN charinv ON char.charid=charinv.charid
@@ -149,6 +150,7 @@ function getCharacter($username, $userhashpass, $charname) {
 
             foreach($characterinvSQL as $charinvSQL){
 
+                $character[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['charinvid'] = $charinvSQL['charinvid'];
                 $character[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['itemname'] = $charinvSQL['itemname'];
                 $character[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['itemdescshort'] = $charinvSQL['itemdescshort'];
                 $character[$charinvSQL['charname']]['inventory'][$charinvSQL['charinvslot']]['itemdesclong'] = $charinvSQL['itemdesclong'];
@@ -157,7 +159,7 @@ function getCharacter($username, $userhashpass, $charname) {
 
             // SELECT the character skills from the corresponding characters.
             $sql = 
-            'SELECT username, charname, skillname, skilldescshort, skilldesclong, charskillxp
+            'SELECT username, charname, charskillid, skillname, skilldescshort, skilldesclong, charskillxp
             FROM users 
             JOIN char ON users.userid=char.userid
             JOIN charskills ON char.charid=charskills.charid
@@ -171,6 +173,7 @@ function getCharacter($username, $userhashpass, $charname) {
 
             foreach($characterskillsSQL as $charskillsSQL){
 
+                $character[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['charskillid'] = $charskillsSQL['charskillid'];
                 $character[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['skilldescshort'] = $charskillsSQL['skilldescshort'];
                 $character[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['skilldesclong'] = $charskillsSQL['skilldesclong'];
                 $character[$charskillsSQL['charname']]['skills'][$charskillsSQL['skillname']]['charskillxp'] = $charskillsSQL['charskillxp'];
@@ -278,7 +281,7 @@ function getCharEditHTML($character, $playableOptions) {
             foreach($characterInfo['attributes'] as $attribute => $attributeInfo){
                 $characterHTML .= "<div class='fields'>";
                 $characterHTML .= "<label for=''><span class='info-name'>$attribute</span><span class='field-tip'>Required</span></label>";
-                $characterHTML .= "<input type='number' value='$attributeInfo[charattribval]' min='$attributeInfo[charattribval]' step='1'>";
+                $characterHTML .= "<input name='attribid-$attributeInfo[charattribid]' type='number' value='$attributeInfo[charattribval]' min='$attributeInfo[charattribval]' step='1'>";
                 $characterHTML .= "</div>";
             }
             $characterHTML .= "</section>";
@@ -287,7 +290,7 @@ function getCharEditHTML($character, $playableOptions) {
             foreach($characterInfo['skills'] as $skill => $skillInfo){
                 $characterHTML .= "<div class='fields'>";
                 $characterHTML .= "<label for=''><span class='info-name'>$skill</span><span class='field-tip'>Required</span></label>";
-                $characterHTML .= "<input type='number' value='$skillInfo[charskillxp]' min='$skillInfo[charskillxp]' step='1'>";
+                $characterHTML .= "<input name='skillid-$skillInfo[charskillid]' type='number' value='$skillInfo[charskillxp]' min='$skillInfo[charskillxp]' step='1'>";
                 $characterHTML .= "</div>";
             }
             $characterHTML .= "</section>";
@@ -296,7 +299,7 @@ function getCharEditHTML($character, $playableOptions) {
             foreach($characterInfo['inventory'] as $slot => $item){
                 $characterHTML .= "<div class='fields'>";
                 $characterHTML .= "<label for=''><span class='info-name'>$item[itemname]</span><span class='field-tip'>Required</span></label>";
-                $characterHTML .= "<input type='number' value='$item[charinvqty]' min='$item[charinvqty]' step='1'>";
+                $characterHTML .= "<input name='itemid-$item[charinvid]'type='number' value='$item[charinvqty]' min='$item[charinvqty]' step='1'>";
                 $characterHTML .= "</div>";
             }
             $characterHTML .= "</section>";
