@@ -98,6 +98,12 @@ footer {
     text-shadow: 2px 2px 5px var(--ston-logo);
 }
 
+.option-tile {
+    background-image: linear-gradient(to right, var(--logo-dark) 25%, var(--logo) 75%);
+    color: var(--ton-logo);
+    text-shadow: 2px 2px 5px var(--ston-logo);
+}
+
 
 .fields input,
 .fields select,

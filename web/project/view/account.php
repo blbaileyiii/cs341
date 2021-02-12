@@ -13,8 +13,8 @@
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>
     <main>    
         <h1><?php echo $page ?></h1>
-        <section><h2><a href='#' title='Account Details'>Account Details</a></h2></section>
-        <section><h2><a href='/project/character/' title='Character Management'>Character Management</a></h2></section>
+        <section class="option-tile"><h2><a href='#' title='Account Details'>Account Details</a></h2></section>
+        <section class="option-tile"><h2><a href='/project/character/' title='Character Management'>Character Management</a></h2></section>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/footer.php'; ?>

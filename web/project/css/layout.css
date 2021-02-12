@@ -174,6 +174,15 @@ footer {
     padding: 0.25rem;
 }
 
+.option-tile {
+    max-width: 20rem;
+    border-width
+}
+
+.option-tile h2{
+
+}
+
 @media only screen and (min-width: 40rem) {
     .form {
       width: 25rem;
