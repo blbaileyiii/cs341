@@ -66,6 +66,9 @@ switch($action){
         }
         echo "<br><br>";
         var_dump($character);
+        $characters = getCharacters($username, $userhashpass);
+        $charactersHTML = getCharactersHTML($characters);
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/characters.php';
         break;
     case 'cancel':
         header('Location: /project/character/');
