@@ -60,6 +60,12 @@ switch($action){
         break;
     case 'save-edit':
         var_dump($_POST);
+        $character = [];
+        foreach($_POST as $charInfo => $val){
+            $character[$charInfo] = filter_input(INPUT_POST, $val);
+        }
+        echo "<br><br>";
+        var_dump($character);
         break;
     case 'cancel':
         header('Location: /project/character/');
