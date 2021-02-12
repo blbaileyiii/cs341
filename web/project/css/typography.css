@@ -37,6 +37,7 @@ h4 {
 
 .news .date {
     font-size: 0.75rem;
+    font-weight: bold;
 }
 
 .news .content::first-letter {
