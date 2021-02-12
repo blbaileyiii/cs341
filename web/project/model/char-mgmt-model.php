@@ -325,7 +325,7 @@ function getPlayableRaces(){
     $db = eowConnect(); 
     // The SQL statement to be used with the database 
     $sql = 
-    'SELECT txfamilyname, txfamilydesc, txgenusname, txgenuspron, txgenusdesc
+    'SELECT txfamilyname, txfamilydesc, txgenusid, txgenusname, txgenuspron, txgenusdesc
     FROM txrace LEFT JOIN txfamily on txrace.txraceid=txfamily.txraceid
     LEFT JOIN txgenus ON txfamily.txfamilyid=txgenus.txfamilyid
     WHERE txrace.txraceid=1
