@@ -67,6 +67,7 @@ footer {
 
 .news h2,
 .race h2 {
+    margin:0;
     padding: 0.5rem 1rem 0;
 }
 
