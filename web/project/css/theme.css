@@ -141,3 +141,7 @@ footer {
 .non-fields .button a:visited {
     color: var(--ton-logo-dark);
 }
+
+.character {
+    border-color: var(--logo);
+}
