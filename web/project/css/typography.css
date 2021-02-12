@@ -16,7 +16,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 3rem;
-    text-align: center;
 }
 
 h2 {
@@ -57,6 +56,8 @@ h4 {
     font-size: 1rem;
 }
 
+h1,
+.option-tile,
 .non-fields .button {
     text-align: center;
 }
@@ -75,8 +76,4 @@ h4 {
     font-size: x-large;
     overflow-wrap: break-word;
     word-wrap: break-word;
-}
-
-.option-tile {
-    text-align: center;
 }
