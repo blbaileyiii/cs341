@@ -62,7 +62,7 @@ switch($action){
         var_dump($_POST);
         $character = [];
         foreach($_POST as $charInfo => $val){
-            $character[$charInfo] = filter_input(INPUT_POST, $val);
+            $character[$charInfo] = filter_input(INPUT_POST, $charInfo);
         }
         echo "<br><br>";
         var_dump($character);
