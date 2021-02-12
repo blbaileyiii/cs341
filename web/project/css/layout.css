@@ -51,7 +51,7 @@ footer {
 .news {
     border-style: solid;
     border-width: 1px;
-    margin: 1rem;
+    margin: 1rem 0;
     overflow: auto;
 }
 
