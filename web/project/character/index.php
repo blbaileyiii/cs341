@@ -58,6 +58,12 @@ switch($action){
         $playableOptions = getPlayableOptions($playableRaces, null);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-create.php';
         break;
+    case 'save-edits':
+        var_dump($_POST);
+        break;
+    case 'cancel':
+        header('Location: /project/character/');
+        exit;
     default:
         $characters = getCharacters($username, $userhashpass);
         $charactersHTML = getCharactersHTML($characters);

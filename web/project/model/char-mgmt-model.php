@@ -262,7 +262,7 @@ function getCharEditHTML($character, $playableOptions) {
 
     if(count($character) > 0) {
         $characterHTML .= "<section class='characters'>";
-        $characterHTML .= "<form class='form'>";
+        $characterHTML .= "<form class='form' method='post'>";
         foreach ($character as $charname => $characterInfo) {
             $characterHTML .= "<div>";
             $characterHTML .= "<h1>$charname</h1>";
@@ -306,10 +306,10 @@ function getCharEditHTML($character, $playableOptions) {
             $characterHTML .= "</div>";
         }
         $characterHTML .= "<div class='non-fields'>";
-        $characterHTML .= "<button type='submit'>Save</button>";
+        $characterHTML .= "<button type='submit' name='action' value='save-edit'>Save</button>";
         $characterHTML .= "</div>";
         $characterHTML .= "<div class='non-fields'>";
-        $characterHTML .= "<button>Cancel</button>";
+        $characterHTML .= "<button name='action' value='cancel'>Cancel</button>";
         $characterHTML .= "</div>";
         $characterHTML .= "</form>";
         $characterHTML .= "</section>";
