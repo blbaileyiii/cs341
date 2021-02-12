@@ -76,3 +76,7 @@ h4 {
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
+
+.option-tile {
+    text-align: center;
+}

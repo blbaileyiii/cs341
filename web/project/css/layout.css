@@ -54,7 +54,6 @@ footer {
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-radius: 0.75rem 0 0.75rem 0.75rem;
-    margin: 1rem 0;
     overflow: auto;
 }
 
@@ -186,11 +185,11 @@ footer {
 }
 
 .option-tile {
-    
+    border-radius: 1rem;
 }
 
 .option-tile h2{
-
+    margin: 0;
 }
 
 @media only screen and (min-width: 40rem) {
