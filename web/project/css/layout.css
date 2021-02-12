@@ -189,6 +189,7 @@ footer {
 .option-tile {
     border-radius: 1rem;
     display: flex;
+    align-items: center;
 }
 
 .option-tile h2{
