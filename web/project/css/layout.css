@@ -188,6 +188,7 @@ footer {
 
 .option-tile {
     border-radius: 1rem;
+    display: flex;
 }
 
 .option-tile h2{
