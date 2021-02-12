@@ -51,18 +51,12 @@ footer {
 .news {
     border-style: solid;
     border-width: 1px;
+    margin: 1rem;
 }
 
-.news .h2 {
-
-}
-
-.news .date {
-
-}
-
+.news .date, 
 .news .content {
-    
+    margin: 0 1rem 1rem;
 }
 
 .news h2,
