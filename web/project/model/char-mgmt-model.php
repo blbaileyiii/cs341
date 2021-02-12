@@ -281,7 +281,7 @@ function getCharEditHTML($character, $playableOptions) {
             foreach($characterInfo['attributes'] as $attribute => $attributeInfo){
                 $characterHTML .= "<div class='fields'>";
                 $characterHTML .= "<label for='attribid-$attributeInfo[charattribid]'><span class='info-name'>$attribute</span><span class='field-tip'>Required</span></label>";
-                $characterHTML .= "<input id='attribid-$attributeInfo[charattribid]' name='attribid-$attributeInfo[charattribid]' type='number' value='$attributeInfo[charattribval]' min='$attributeInfo[charattribval]' step='1'>";
+                $characterHTML .= "<input id='attribid-$attributeInfo[charattribid]' name='attribid-$attributeInfo[charattribid]' type='number' value='$attributeInfo[charattribval]' placeholder='$attributeInfo[charattribval]' min='$attributeInfo[charattribval]' step='1'>";
                 $characterHTML .= "</div>";
             }
             $characterHTML .= "</section>";
@@ -290,7 +290,7 @@ function getCharEditHTML($character, $playableOptions) {
             foreach($characterInfo['skills'] as $skill => $skillInfo){
                 $characterHTML .= "<div class='fields'>";
                 $characterHTML .= "<label for='skillid-$skillInfo[charskillid]'><span class='info-name'>$skill</span><span class='field-tip'>Required</span></label>";
-                $characterHTML .= "<input id='skillid-$skillInfo[charskillid]' name='skillid-$skillInfo[charskillid]' type='number' value='$skillInfo[charskillxp]' min='$skillInfo[charskillxp]' step='1'>";
+                $characterHTML .= "<input id='skillid-$skillInfo[charskillid]' name='skillid-$skillInfo[charskillid]' type='number' value='$skillInfo[charskillxp]' placeholdermin='$skillInfo[charskillxp]' min='$skillInfo[charskillxp]' step='1'>";
                 $characterHTML .= "</div>";
             }
             $characterHTML .= "</section>";
@@ -299,7 +299,7 @@ function getCharEditHTML($character, $playableOptions) {
             foreach($characterInfo['inventory'] as $slot => $item){
                 $characterHTML .= "<div class='fields'>";
                 $characterHTML .= "<label for='itemid-$item[charinvid]'><span class='info-name'>$item[itemname]</span><span class='field-tip'>Required</span></label>";
-                $characterHTML .= "<input id='itemid-$item[charinvid]' name='itemid-$item[charinvid]' type='number' value='$item[charinvqty]' min='$item[charinvqty]' step='1'>";
+                $characterHTML .= "<input id='itemid-$item[charinvid]' name='itemid-$item[charinvid]' type='number' value='$item[charinvqty]' placeholder='$item[charinvqty]' min='$item[charinvqty]' step='1'>";
                 $characterHTML .= "</div>";
             }
             $characterHTML .= "</section>";
