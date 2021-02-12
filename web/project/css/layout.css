@@ -206,6 +206,10 @@ footer {
 }
 
 .character-profile {
+    margin: 1rem;
+}
+
+.form .character-profile {
     margin: 1rem 0;
 }
 
