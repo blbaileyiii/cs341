@@ -8,8 +8,7 @@ session_start();
 // Immediately Check for login/username. 
 // If it has not been created then bump them to the login page.
 $username = $_SESSION['eowSession']['username'];
-$userhashpass = $_SESSION['eowSession']['userhashpass'];
-if(empty($username) || empty($userhashpass)){
+if(empty($username)){
     header('Location: /project/account/index.php');
     exit;
 }
@@ -29,13 +28,13 @@ $message = "";
 switch($action){    
     case 'char-info':
         $charname = filter_input(INPUT_GET,'character');
-        $character = getCharacter($username, $userhashpass, $charname);
+        $character = getCharacter($username, $charname);
         $characterHTML = getCharacterHTML($character);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
         break;
     case 'char-edit':
         $charname = filter_input(INPUT_POST,'character');
-        $character = getCharacter($username, $userhashpass, $charname);
+        $character = getCharacter($username, $charname);
         
         $playableRaces = getPlayableRaces();
         $playableOptions = getPlayableOptions($playableRaces, $character);
@@ -59,14 +58,16 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-create.php';
         break;
     case 'save-edit':
-        var_dump($_POST);
+        //var_dump($_POST);
         $character = [];
         foreach($_POST as $charInfo => $val){
             $character[$charInfo] = filter_input(INPUT_POST, $charInfo);
         }
-        echo "<br><br>";
-        var_dump($character);
-        $characters = getCharacters($username, $userhashpass);
+        //echo "<br><br>";
+        //var_dump($character);
+        
+        $message = saveEdits($username, $character);
+        $characters = getCharacters($username);
         $charactersHTML = getCharactersHTML($characters);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/characters.php';
         break;
@@ -74,7 +75,7 @@ switch($action){
         header('Location: /project/character/');
         exit;
     default:
-        $characters = getCharacters($username, $userhashpass);
+        $characters = getCharacters($username);
         $charactersHTML = getCharactersHTML($characters);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/characters.php';
         break;

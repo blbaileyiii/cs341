@@ -1,6 +1,6 @@
 <?php
 
-function getCharacters($username, $userhashpass) {
+function getCharacters($username) {
     try {
         $characters = [];
 
@@ -74,7 +74,7 @@ function getCharactersHTML($characters) {
     return $charactersHTML;
 }
 
-function getCharacter($username, $userhashpass, $charname) {
+function getCharacter($username, $charname) {
     if($charname == "+new"){
         $character = [];
         $character['New Character'];
@@ -364,6 +364,49 @@ function getPlayableOptions($playableRaces, $character){
     }
 
     return $playableOptions;
+}
+
+function saveEdits($username, $character){
+    if(!empty($character)){
+        
+        try {
+            //$db = eowConnect();
+
+            foreach($character as $charInfo => $val){
+
+                $charInfoTEMP = explode("-", $charInfo, 2);
+                $charInfoKey = $charInfoTEMP[0];
+                $charInfoId = $charInfoTEMP[1];
+
+                echo "$charInfoKey<br>$charInfoId";
+                
+                // SELECT the character bio/info from the corresponding characters.
+                //$sql = 
+                //'';
+                /*
+                'UPDATE users
+                SET sessionhashpass = :sessionhashpass,
+                    lastactive = now(),
+                    userhost = :userhost
+                WHERE username=:username';
+                */
+
+                //$stmt = $db->prepare($sql);
+                //$stmt->execute(array(':username' => $username));
+                //$characterSQL = $stmt->fetchAll();
+                //var_dump($charactersSQL);
+
+                // The next line closes the interaction with the database
+            }
+
+            //$stmt->closeCursor();
+            
+            
+        } catch(PDOException $ex) {
+            echo $sql . "<br>" . $ex->getMessage();
+        }
+
+    }
 }
 
 ?>
