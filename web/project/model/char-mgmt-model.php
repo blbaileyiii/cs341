@@ -380,8 +380,8 @@ function saveEdits($username, $character){
             WHERE charid = :charid';
             $tokens = array(':txgenusid' => $character['race'], ':charid' => $character['charid']);
 
-            echo $sql;
-            var_dump($tokens);
+            //echo $sql;
+            //var_dump($tokens);
 
             if(!empty($sql && !empty($tokens))){
                 $stmt = $db->prepare($sql);
