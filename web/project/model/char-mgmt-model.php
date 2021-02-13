@@ -267,6 +267,7 @@ function getCharEditHTML($character, $playableOptions) {
             $characterHTML .= "<div>";
             $characterHTML .= "<h1>$charname</h1>";
             $characterHTML .= "<div class='character-profile'>";
+            $characterHTML .= "<input id='charid' name='charid' value='$characterInfo[charid]' type='hidden'>";
             $characterHTML .= "<div class='fields'>";
             $characterHTML .= "<label for='race'><span class='info-name'>Character Race</span><span class='field-tip'>Required</span></label>";
             $characterHTML .= "<select id='race' name='race' value ='' required>";
@@ -378,11 +379,22 @@ function saveEdits($username, $character){
                 $charInfoKey = $charInfoTEMP[0];
                 $charInfoId = $charInfoTEMP[1];
 
-                echo "$charInfoKey<br>$charInfoId";
+                echo "$charInfoKey<br>$charInfoId<br>";
                 
-                // SELECT the character bio/info from the corresponding characters.
-                //$sql = 
-                //'';
+                switch ($charInfoKey) {
+                    case 'attribid':
+                        break;
+                    case 'skillid':
+                        break;
+                    case 'itemid':
+                        break;
+                    default:
+                        break;
+                }
+                
+                // UPDATE the character bio/info from the form data.
+                $sql = 
+                '';
                 /*
                 'UPDATE users
                 SET sessionhashpass = :sessionhashpass,
@@ -397,13 +409,11 @@ function saveEdits($username, $character){
                 //var_dump($charactersSQL);
 
                 // The next line closes the interaction with the database
+                //$stmt->closeCursor();
             }
-
-            //$stmt->closeCursor();
-            
             
         } catch(PDOException $ex) {
-            echo $sql . "<br>" . $ex->getMessage();
+            //echo $sql . "<br>" . $ex->getMessage();
         }
 
     }
