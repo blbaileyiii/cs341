@@ -267,6 +267,7 @@ function getCharEditHTML($character, $playableOptions) {
             $characterHTML .= "<div>";
             $characterHTML .= "<h1>$charname</h1>";
             $characterHTML .= "<div class='character-profile'>";
+            $characterHTML .= "<input id='charname' name='charname' value='$charname' type='hidden'>";
             $characterHTML .= "<input id='charid' name='charid' value='$characterInfo[charid]' type='hidden'>";
             $characterHTML .= "<div class='fields'>";
             $characterHTML .= "<label for='race'><span class='info-name'>Character Race</span><span class='field-tip'>Required</span></label>";
@@ -443,12 +444,112 @@ function saveEdits($username, $character){
                     $stmt->closeCursor();
                 }
             }
+
+            header('Location: /project/character/index.php?action=char-info&character=' . $character['charname']);
+            exit;
+
         } catch(PDOException $ex) {
             //echo "<br><br>" . $sql . "<br>" . $ex->getMessage() . "<br>";
             //var_dump($tokens);
         }
 
     }
+}
+
+function saveChar($username, $character){
+
+    // Check for proper values and set to $...
+
+    if(isset($character['charname']) 
+    && isset($character['txgenusid']) 
+    && isset($character['STR']) 
+    && isset($character['DEX']) 
+    && isset($character['AGL']) 
+    && isset($character['END']) 
+    && isset($character['INT']) 
+    && isset($character['ATH']) 
+    && isset($character['PER']) 
+    && isset($character['LCK']) 
+    && isset($character['CHA'])){
+
+        try {
+            $db = eowConnect();
+    
+            // GET Userid
+
+            $sql = 
+            'SELECT userid
+            FROM users
+            WHERE username=:username';
+
+            $tokens = array(':username' => $username);
+                
+            $stmt = $db->prepare($sql);
+            $stmt->execute($tokens);
+            $useridSQL = $stmt->fetchAll();
+            $stmt->closeCursor();
+
+            $userid = $useridSQL[0]['userid'];
+
+            // INSERT Character
+    
+            $sql = 
+            'INSERT INTO public.char (userid, charname, txgenusid)
+            VALUES (:userid, :charname, :txgenusid)';
+    
+            $tokens = array(':userid' => $userid, ':charname' => $character['charname'], ':txgenusid' => $character['txgenusid']);
+    
+            $stmt = $db->prepare($sql);
+            $stmt->execute($tokens);
+
+            // GET Charid... i.e. last inserted id...
+            $charid = $db->lastInsertId('char_charid_seq');            
+    
+            $stmt->closeCursor();
+
+            $charattribvaldef = 1;
+
+            /*
+
+            $sql = 
+            'INSERT INTO public.charattribs (charid, attribid, charattribval) VALUES 
+            (:charid, :coreid, :charattribvaldef),
+            (:charid, :strid, :charattribval),
+            (:charid, :dexid, :charattribval),
+            (:charid, :aglid, :charattribval),
+            (:charid, :endid, :charattribval),
+            (:charid, :intid, :charattribval),
+            (:charid, :athid, :charattribval),
+            (:charid, :perid, :charattribval),
+            (:charid, :lckid, :charattribval),
+            (:charid, :chaid, :charattribval),
+            (:charid, :conid, :charattribvaldef),
+            (:charid, :bacid, :charattribvaldef),
+            (:charid, :morid, :charattribvaldef),
+            (:charid, :rstid, :charattribvaldef)';
+    
+            $tokens = array(':charid' => $charid, ':charattribvaldef' => $charattribvaldef);
+    
+            $stmt = $db->prepare($sql);
+            $stmt->execute($tokens);
+    
+            $stmt->closeCursor();
+    
+            */
+    
+    
+            //echo "Account Created: Verify Email Before Logging In";
+            //header('Location: /project/account/index.php?action=verify-email');
+            //exit;
+    
+        } catch(PDOException $ex) {
+            echo "<br><br>" . $sql . "<br>" . $ex->getMessage() . "<br>";
+            var_dump($tokens);
+        }
+
+    }
+
+    
 }
 
 ?>

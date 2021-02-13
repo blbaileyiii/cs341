@@ -43,6 +43,20 @@ switch($action){
         $characterHTML = getCharEditHTML($character, $playableOptions);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
         break;
+    case 'save-edit':
+        //var_dump($_POST);
+        $character = [];
+        foreach($_POST as $charInfo => $val){
+            $character[$charInfo] = filter_input(INPUT_POST, $charInfo);
+        }
+        //echo "<br><br>";
+        //var_dump($character);
+        
+        $message = saveEdits($username, $character);
+        $characters = getCharacters($username);
+        $charactersHTML = getCharactersHTML($characters);
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/characters.php';
+        break;
     case 'char-delete-verify':
         $charname = filter_input(INPUT_POST,'character');        
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-delete.php';
@@ -57,19 +71,16 @@ switch($action){
         $playableOptions = getPlayableOptions($playableRaces, null);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-create.php';
         break;
-    case 'save-edit':
-        //var_dump($_POST);
+    case 'save-new':
         $character = [];
         foreach($_POST as $charInfo => $val){
             $character[$charInfo] = filter_input(INPUT_POST, $charInfo);
         }
-        //echo "<br><br>";
-        //var_dump($character);
-        
-        $message = saveEdits($username, $character);
+        $message = saveChar($username, $character);
         $characters = getCharacters($username);
         $charactersHTML = getCharactersHTML($characters);
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/characters.php';
+        break;
         break;
     case 'cancel':
         header('Location: /project/character/');

@@ -62,7 +62,7 @@
                 <input id='CHA' name='CHA' type="number" step="1" min="1" placeholder="1" required>
             </div>
             <div class="non-fields">
-                <button id="action" name="action" value="save" type="submit">Save Character</button>
+                <button id="action" name="action" value="save-new" type="submit">Save Character</button>
             </div>  
         </form>
     </main>
