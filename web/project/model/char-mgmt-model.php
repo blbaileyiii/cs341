@@ -374,6 +374,15 @@ function saveEdits($username, $character){
             //$db = eowConnect();
 
             // Run the Character update here.
+            $sql = 
+            'UPDATE char
+            SET txgenusid = :txgenusid
+            WHERE charid = :charid';
+            $tokens = array(':txgenusid' => $character['race'], ':charid' => $character['charid']);
+
+            echo $sql;
+            var_dump($tokens);
+
 
             // Run the Attribute, Skill, and Item updates.
             foreach($character as $charInfo => $val){
@@ -382,7 +391,7 @@ function saveEdits($username, $character){
                 $charInfoKey = $charInfoTEMP[0];
                 $charInfoId = $charInfoTEMP[1];
 
-                echo "$charInfoKey<br>$charInfoId<br>";
+                //echo "$charInfoKey<br>$charInfoId<br>";
                 
                 switch ($charInfoKey) {
                     case 'attribid':
@@ -410,9 +419,9 @@ function saveEdits($username, $character){
                         break;
                 }
                 
-                echo $sql;
-                echo "<br>";
-                var_dump($tokens);
+                //echo $sql;
+                //echo "<br>";
+                //var_dump($tokens);
 
                 // UPDATE the character bio/info from the form data.
                 //$sql = 
