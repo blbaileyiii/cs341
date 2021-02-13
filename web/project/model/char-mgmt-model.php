@@ -428,16 +428,16 @@ function saveEdits($username, $character){
                         break;
                 }
                 
-                //echo $sql;
-                //echo "<br>";
-                //var_dump($tokens);
+                echo $sql;
+                echo "<br>";
+                var_dump($tokens);
 
                 // UPDATE the character bio/info from the form data.
                 if(!empty($sql && !empty($tokens))){
                     $stmt = $db->prepare($sql);
                     $stmt->execute($tokens);
                     $charactersSQL = $stmt->fetchAll();
-                    //var_dump($charactersSQL);
+                    var_dump('DUMP:' . $charactersSQL);
     
                     //The next line closes the interaction with the database
                     $stmt->closeCursor();
