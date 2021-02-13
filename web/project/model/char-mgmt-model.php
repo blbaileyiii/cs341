@@ -503,7 +503,9 @@ function saveChar($username, $character){
             $stmt->execute($tokens);
 
             // GET Charid... i.e. last inserted id...
-            $charid = $db->lastInsertId('char_charid_seq');            
+            $charid = $db->lastInsertId('char_charid_seq');
+            
+            echo $charid;
     
             $stmt->closeCursor();
 
