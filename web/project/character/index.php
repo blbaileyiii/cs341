@@ -58,6 +58,7 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/characters.php';
         break;
     case 'char-delete-verify':
+        $charid = filter_input(INPUT_POST,'charid');
         $charname = filter_input(INPUT_POST,'character');        
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-delete.php';
         break;
