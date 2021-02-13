@@ -21,7 +21,7 @@
                 <input name='delete-char' type="text" placeholder='<?php echo $charname ?>' pattern='<?php echo $charname ?>'></input>
             </div>
             <div class='non-fields'>
-                <button type='submit'>Delete <?php echo $charname ?></button>
+                <button name='action' value='char-delete' type='submit'>Delete <?php echo $charname ?></button>
             </div>
         </form>
     </main>

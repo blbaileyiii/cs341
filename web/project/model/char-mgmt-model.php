@@ -612,4 +612,70 @@ function saveChar($username, $character){
     
 }
 
+function deleteCharacter($username, $charid){
+
+    // Check for proper values and set to $...
+
+    if(!empty($username) 
+    && !empty($charid)){
+
+        try {
+            $db = eowConnect();
+    
+            $sql = 
+            'DELETE FROM public.char
+            WHERE charid=:charid';
+
+            $tokens = array(':charid' => $charid);
+                
+            $stmt = $db->prepare($sql);
+            $stmt->execute($tokens);
+            $useridSQL = $stmt->fetchAll();
+            $stmt->closeCursor();
+
+            $sql = 
+            'DELETE FROM public.charattribs
+            WHERE charid=:charid';
+
+            $tokens = array(':charid' => $charid);
+                
+            $stmt = $db->prepare($sql);
+            $stmt->execute($tokens);
+            $useridSQL = $stmt->fetchAll();
+            $stmt->closeCursor();
+
+            $sql = 
+            'DELETE FROM public.charinv
+            WHERE charid=:charid';
+
+            $tokens = array(':charid' => $charid);
+                
+            $stmt = $db->prepare($sql);
+            $stmt->execute($tokens);
+            $useridSQL = $stmt->fetchAll();
+            $stmt->closeCursor();
+
+            $sql = 
+            'DELETE FROM public.charskills
+            WHERE charid=:charid';
+
+            $tokens = array(':charid' => $charid);
+                
+            $stmt = $db->prepare($sql);
+            $stmt->execute($tokens);
+            $useridSQL = $stmt->fetchAll();
+            $stmt->closeCursor();
+
+            header('Location: /project/character/');
+            exit;
+    
+        } catch(PDOException $ex) {
+            echo "<br><br>" . $sql . "<br>" . $ex->getMessage() . "<br>";
+            var_dump($tokens);
+        }
+
+    }
+
+    
+}
 ?>

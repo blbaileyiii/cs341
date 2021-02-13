@@ -63,9 +63,15 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character-delete.php';
         break;
     case 'char-delete':
-        // Run delete.
-        // Should return to default when done.
-        // If returns from function rather than redirect... delete failed. Notify user. Contact Support.33
+        $charid = filter_input(INPUT_POST,'charid');        
+
+        $message = deleteCharacter($username, $charid);
+
+        // If the delete fails you will be looking at your character again...
+        $charname = filter_input(INPUT_POST,'character');
+        $character = getCharacter($username, $charname);
+        $characterHTML = getCharacterHTML($character);
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/character.php';
         break;
     case 'char-create':
         $playableRaces = getPlayableRaces();
