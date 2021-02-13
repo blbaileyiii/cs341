@@ -383,6 +383,16 @@ function saveEdits($username, $character){
             echo $sql;
             var_dump($tokens);
 
+            if(!empty($sql && !empty($tokens))){
+                $stmt = $db->prepare($sql);
+                $stmt->execute($tokens);
+                $charactersSQL = $stmt->fetchAll();
+                //var_dump($charactersSQL);
+
+                //The next line closes the interaction with the database
+                $stmt->closeCursor();
+            }
+
 
             // Run the Attribute, Skill, and Item updates.
             foreach($character as $charInfo => $val){
@@ -390,17 +400,6 @@ function saveEdits($username, $character){
                 $charInfoTEMP = explode("-", $charInfo, 2);
                 $charInfoKey = $charInfoTEMP[0];
                 $charInfoId = $charInfoTEMP[1];
-
-                if(!empty($sql && !empty($tokens))){
-                    $stmt = $db->prepare($sql);
-                    $stmt->execute($tokens);
-                    $charactersSQL = $stmt->fetchAll();
-                    var_dump($charactersSQL);
-
-                    //The next line closes the interaction with the database
-                    $stmt->closeCursor();
-                }
-
                 //echo "$charInfoKey<br>$charInfoId<br>";
                 
                 switch ($charInfoKey) {
@@ -434,21 +433,16 @@ function saveEdits($username, $character){
                 //var_dump($tokens);
 
                 // UPDATE the character bio/info from the form data.
-                //$sql = 
-                '';
-                /*
-                'UPDATE users
-                SET sessionhashpass = :sessionhashpass,
-                    lastactive = now(),
-                    userhost = :userhost
-                WHERE username=:username';
-                */
-
-                
-
-                
+                if(!empty($sql && !empty($tokens))){
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute($tokens);
+                    $charactersSQL = $stmt->fetchAll();
+                    //var_dump($charactersSQL);
+    
+                    //The next line closes the interaction with the database
+                    $stmt->closeCursor();
+                }
             }
-            
         } catch(PDOException $ex) {
             //echo $sql . "<br>" . $ex->getMessage();
         }
