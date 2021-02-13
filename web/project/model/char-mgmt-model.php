@@ -373,6 +373,9 @@ function saveEdits($username, $character){
         try {
             //$db = eowConnect();
 
+            // Run the Character update here.
+
+            // Run the Attribute, Skill, and Item updates.
             foreach($character as $charInfo => $val){
 
                 $charInfoTEMP = explode("-", $charInfo, 2);
@@ -383,17 +386,36 @@ function saveEdits($username, $character){
                 
                 switch ($charInfoKey) {
                     case 'attribid':
+                        $sql = 
+                        'UPDATE charattribs
+                        SET charattribval = :charattribval
+                        WHERE charattribid = :charattribid';
+                        $tokens = array(':charattribval' => $val, ':charattribid:' => $charInfoId);
                         break;
                     case 'skillid':
+                        $sql=
+                        'UPDATE charskills
+                        SET charskillxp = :charskillxp
+                        WHERE charskillid = :charskillid';
+                        $tokens = array(':charskillxp' => $val, ':charskillid' => $charInfoId);
                         break;
                     case 'itemid':
+                        $sql=
+                        'UPDATE charinv
+                        SET charinvqty = :charinvqty
+                        WHERE charinvid = :charinvid';
+                        $tokens = array(':charinvqty' => $val, ':charinvid' => $charInfoId);
                         break;
                     default:
                         break;
                 }
                 
+                echo $sql;
+                echo "<br>";
+                var_dump($tokens);
+
                 // UPDATE the character bio/info from the form data.
-                $sql = 
+                //$sql = 
                 '';
                 /*
                 'UPDATE users
@@ -403,13 +425,17 @@ function saveEdits($username, $character){
                 WHERE username=:username';
                 */
 
-                //$stmt = $db->prepare($sql);
-                //$stmt->execute(array(':username' => $username));
-                //$characterSQL = $stmt->fetchAll();
-                //var_dump($charactersSQL);
+                // if(!empty($sql)){
+                    //$stmt = $db->prepare($sql);
+                    //$stmt->execute(array(':username' => $username));
+                    //$characterSQL = $stmt->fetchAll();
+                    //var_dump($charactersSQL);
 
-                // The next line closes the interaction with the database
-                //$stmt->closeCursor();
+                    // The next line closes the interaction with the database
+                    //$stmt->closeCursor();
+                //}
+
+                
             }
             
         } catch(PDOException $ex) {
