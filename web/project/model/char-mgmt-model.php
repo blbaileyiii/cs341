@@ -511,36 +511,93 @@ function saveChar($username, $character){
 
             $charattribvaldef = 1;
 
-            /*
-
             $sql = 
             'INSERT INTO public.charattribs (charid, attribid, charattribval) VALUES 
             (:charid, :coreid, :charattribvaldef),
-            (:charid, :strid, :charattribval),
-            (:charid, :dexid, :charattribval),
-            (:charid, :aglid, :charattribval),
-            (:charid, :endid, :charattribval),
-            (:charid, :intid, :charattribval),
-            (:charid, :athid, :charattribval),
-            (:charid, :perid, :charattribval),
-            (:charid, :lckid, :charattribval),
-            (:charid, :chaid, :charattribval),
+            (:charid, :strid, :strval),
+            (:charid, :dexid, :dexval),
+            (:charid, :aglid, :aglval),
+            (:charid, :endid, :endval),
+            (:charid, :intid, :intval),
+            (:charid, :athid, :athval),
+            (:charid, :perid, :perval),
+            (:charid, :lckid, :lckval),
+            (:charid, :chaid, :chaval),
             (:charid, :conid, :charattribvaldef),
             (:charid, :bacid, :charattribvaldef),
             (:charid, :morid, :charattribvaldef),
             (:charid, :rstid, :charattribvaldef)';
     
-            $tokens = array(':charid' => $charid, ':charattribvaldef' => $charattribvaldef);
+            $tokens = array(':charid' => $charid, 
+                            ':charattribvaldef' => $charattribvaldef,
+                            ':coreid' => 1,
+                            ':strid' => 2,
+                            ':dexid' => 3,
+                            ':aglid' => 4,
+                            ':endid' => 5,
+                            ':intid' => 6,
+                            ':athid' => 7,
+                            ':perid' => 8,
+                            ':lckid' => 9,
+                            ':chaid' => 10,
+                            ':conid' => 11,
+                            ':bacid' => 12,
+                            ':morid' => 13,
+                            ':rstid' => 14,
+                            ':strval' => $character['STR'],
+                            ':dexval' => $character['DEX'],
+                            ':aglval' => $character['AGL'],
+                            ':endval' => $character['END'],
+                            ':intval' => $character['INT'],
+                            ':athval' => $character['ATH'],
+                            ':perval' => $character['PER'],
+                            ':lckval' => $character['LCK'],
+                            ':chaval' => $character['CHA']);
     
             $stmt = $db->prepare($sql);
             $stmt->execute($tokens);
     
             $stmt->closeCursor();
+            
+
+            //INSERT SKILLS
+            $sql = 
+            'INSERT INTO public.charskills (charid, skillid, charskillxp) VALUES 
+            (:charid,1,1),
+            (:charid,2,1),
+            (:charid,3,1),
+            (:charid,4,1),
+            (:charid,5,1),
+            (:charid,6,1),
+            (:charid,7,1),
+            (:charid,8,1),
+            (:charid,9,1),
+            (:charid,10,1),
+            (:charid,11,1),
+            (:charid,12,1),
+            (:charid,13,1)';
+
+            $tokens = array(':charid' => $charid);
+        
+            $stmt = $db->prepare($sql);
+            $stmt->execute($tokens);
     
-            */
+            $stmt->closeCursor();
+
+            //INSERT INVENTORY
+            $sql = 
+            'INSERT INTO public.charinv (charid, itemid, charinvslot, charinvqty) VALUES 
+            (:charid,42,1,2),
+            (:charid,46,2,1),
+            (:charid,48,3,1)';
+
+            $tokens = array(':charid' => $charid);
+        
+            $stmt = $db->prepare($sql);
+            $stmt->execute($tokens);
     
-    
-            //echo "Account Created: Verify Email Before Logging In";
+            $stmt->closeCursor();
+
             //header('Location: /project/account/index.php?action=verify-email');
             //exit;
     
