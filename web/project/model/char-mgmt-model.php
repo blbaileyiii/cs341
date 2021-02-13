@@ -408,7 +408,7 @@ function saveEdits($username, $character){
                         'UPDATE charattribs
                         SET charattribval = :charattribval
                         WHERE charattribid = :charattribid';
-                        $tokens = array(':charattribval' => $val, ':charattribid:' => $charInfoId);
+                        $tokens = array(':charattribval' => $val, ':charattribid' => $charInfoId);
                         break;
                     case 'skillid':
                         $sql=
