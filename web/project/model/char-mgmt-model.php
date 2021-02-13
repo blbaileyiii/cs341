@@ -428,9 +428,9 @@ function saveEdits($username, $character){
                         break;
                 }
                 
-                echo $sql;
-                echo "<br>";
-                var_dump($tokens);
+                //echo $sql;
+                //echo "<br>";
+                //var_dump($tokens);
 
                 // UPDATE the character bio/info from the form data.
                 if(!empty($sql && !empty($tokens))){
@@ -444,8 +444,8 @@ function saveEdits($username, $character){
                 }
             }
         } catch(PDOException $ex) {
-            echo "<br><br>" . $sql . "<br>" . $ex->getMessage() . "<br>";
-            var_dump($tokens);
+            //echo "<br><br>" . $sql . "<br>" . $ex->getMessage() . "<br>";
+            //var_dump($tokens);
         }
 
     }
