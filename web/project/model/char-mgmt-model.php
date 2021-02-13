@@ -620,18 +620,7 @@ function deleteCharacter($username, $charid){
     && !empty($charid)){
 
         try {
-            $db = eowConnect();
-    
-            $sql = 
-            'DELETE FROM public.char
-            WHERE charid=:charid';
-
-            $tokens = array(':charid' => $charid);
-                
-            $stmt = $db->prepare($sql);
-            $stmt->execute($tokens);
-            $useridSQL = $stmt->fetchAll();
-            $stmt->closeCursor();
+            $db = eowConnect();   
 
             $sql = 
             'DELETE FROM public.charattribs
@@ -657,6 +646,17 @@ function deleteCharacter($username, $charid){
 
             $sql = 
             'DELETE FROM public.charskills
+            WHERE charid=:charid';
+
+            $tokens = array(':charid' => $charid);
+                
+            $stmt = $db->prepare($sql);
+            $stmt->execute($tokens);
+            $useridSQL = $stmt->fetchAll();
+            $stmt->closeCursor();
+
+            $sql = 
+            'DELETE FROM public.char
             WHERE charid=:charid';
 
             $tokens = array(':charid' => $charid);
