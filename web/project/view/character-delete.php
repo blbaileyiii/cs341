@@ -13,7 +13,7 @@
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>   
     <main>    
         <h1><?php echo $charname ?></h1>
-        <form method='post'>
+        <form class="form" method='post'>
             <span class='warning'>WARNING: Character deletion is permanent!</span>
             To permanently delete this character enter the characters name below.
             <input name='charid' value='<?php echo $charid ?>' type='hidden'>
