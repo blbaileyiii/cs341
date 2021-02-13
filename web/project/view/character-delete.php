@@ -16,6 +16,7 @@
         <form method='post'>
             <span class='warning'>WARNING: Character deletion is permanent!</span>
             To permanently delete this character enter the characters name below.
+            <input name='charid' value='<?php echo $charid ?>' type='hidden'>
             <input name='delete-char' type="text" placeholder='<?php echo $charname ?>' pattern='<?php echo $charname ?>'></input>
             <button type='submit'>Delete <?php echo $charname ?></button>
         </form>
