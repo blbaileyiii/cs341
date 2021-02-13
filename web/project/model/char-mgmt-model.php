@@ -444,7 +444,7 @@ function saveEdits($username, $character){
                 }
             }
         } catch(PDOException $ex) {
-            echo "<br><br>" . $sql . "<br>" . $ex->getMessage() . "<br><br>";
+            echo "<br><br>" . $sql . "<br>" . $ex->getMessage() . "<br>";
             var_dump($tokens);
         }
 
