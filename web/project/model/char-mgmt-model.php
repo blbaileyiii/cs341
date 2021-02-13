@@ -371,7 +371,7 @@ function saveEdits($username, $character){
     if(!empty($character)){
         
         try {
-            //$db = eowConnect();
+            $db = eowConnect();
 
             // Run the Character update here.
             $sql = 
@@ -390,6 +390,16 @@ function saveEdits($username, $character){
                 $charInfoTEMP = explode("-", $charInfo, 2);
                 $charInfoKey = $charInfoTEMP[0];
                 $charInfoId = $charInfoTEMP[1];
+
+                if(!empty($sql && !empty($tokens))){
+                    $stmt = $db->prepare($sql);
+                    $stmt->execute($tokens);
+                    $charactersSQL = $stmt->fetchAll();
+                    var_dump($charactersSQL);
+
+                    //The next line closes the interaction with the database
+                    $stmt->closeCursor();
+                }
 
                 //echo "$charInfoKey<br>$charInfoId<br>";
                 
@@ -434,15 +444,7 @@ function saveEdits($username, $character){
                 WHERE username=:username';
                 */
 
-                // if(!empty($sql)){
-                    //$stmt = $db->prepare($sql);
-                    //$stmt->execute(array(':username' => $username));
-                    //$characterSQL = $stmt->fetchAll();
-                    //var_dump($charactersSQL);
-
-                    // The next line closes the interaction with the database
-                    //$stmt->closeCursor();
-                //}
+                
 
                 
             }
