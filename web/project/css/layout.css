@@ -233,6 +233,41 @@ footer {
     height: calc(100% - 0.5rem);
 }
 
+.character {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "title title"
+        "image profile"
+        "image attributes"
+        "skills skills"
+        "inventory inventory";
+}
+
+.character h1 {
+    grid-area: title;
+}
+
+.character .character-image {
+    grid-area: image;
+}
+
+.character .character-profile {
+    grid-area: profile;
+}
+
+.character .character-attributes {
+    grid-area: attributes;
+}
+
+.character .character-skills {
+    grid-area: skills;
+}
+
+.character .character-inventory {
+    grid-area: inventory;
+}
+
 @media only screen and (min-width: 40rem) {
     .form {
       width: 25rem;
