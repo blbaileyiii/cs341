@@ -241,7 +241,8 @@ footer {
         "image profile"
         "image attributes"
         "skills skills"
-        "inventory inventory";
+        "inventory inventory"
+        "management management";
 }
 
 .character-info h1 {
@@ -266,6 +267,10 @@ footer {
 
 .character-info .character-inventory {
     grid-area: inventory;
+}
+
+.character-info .character-management {
+    grid-area: management;
 }
 
 @media only screen and (min-width: 40rem) {
