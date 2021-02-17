@@ -230,7 +230,7 @@ footer {
 }
 
 .new-char {
-    height: calc(100% - 1rem);
+    height: calc(100% - 0.5rem);
 }
 
 @media only screen and (min-width: 40rem) {
