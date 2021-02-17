@@ -63,7 +63,7 @@ function getCharactersHTML($characters) {
         }
 
         $charactersHTML .= "<div class='character' data-character='+new'>";
-        $charactersHTML .= "<h2>+ Create a Character</h2>";
+        $charactersHTML .= "<h2 class='new-char'>+ Create a Character</h2>";
         $charactersHTML .= "<div class='image'>";
         $charactersHTML .= "</div>";
         $charactersHTML .= "</div>";
