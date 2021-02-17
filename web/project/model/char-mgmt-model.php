@@ -197,7 +197,7 @@ function getCharacterHTML($character) {
     $characterHTML = "";
 
     if(count($character) > 0) {
-        $characterHTML .= "<section class='character'>";        
+        $characterHTML .= "<section class='character-info'>";        
         foreach ($character as $charname => $characterInfo) {            
             $characterHTML .= "<h1>$charname</h1>";
             $characterHTML .= "<div class='character-profile'>";
