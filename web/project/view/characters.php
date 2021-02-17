@@ -17,7 +17,7 @@
     </main>
     <footer>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/footer.php'; ?>
-    <?php //echo $characters?>s
+    <?php //echo $characters?>
     </footer>
     <script src="/project/js/character.js"></script>
 </body>
