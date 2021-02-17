@@ -197,13 +197,13 @@ function getCharacterHTML($character) {
     $characterHTML = "";
 
     if(count($character) > 0) {
-        $characterHTML .= "<section class='characters'>";        
+        $characterHTML .= "<section class='character'>";        
         foreach ($character as $charname => $characterInfo) {            
             $characterHTML .= "<h1>$charname</h1>";
             $characterHTML .= "<div class='character-profile'>";
             $characterHTML .= "<h2><i>$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "</i></h2>";
             $characterHTML .= "</div>";
-            $characterHTML .= "<div class='image'>";
+            $characterHTML .= "<div class='character-image'>";
             $characterHTML .= "</div>";
             $characterHTML .= "<section class='character-attributes'>";
             $characterHTML .= "<h2>Attributes</h2>";
