@@ -200,7 +200,6 @@ function getCharacterHTML($character) {
         $characterHTML .= "<section class='characters'>";        
         foreach ($character as $charname => $characterInfo) {            
             $characterHTML .= "<h1>$charname</h1>";
-            $characterHTML .= "<div>";
             $characterHTML .= "<div class='character-profile'>";
             $characterHTML .= "<h2><i>$characterInfo[txfamilyname] " . strtolower($characterInfo['txgenusname']) . "</i></h2>";
             $characterHTML .= "</div>";
@@ -248,7 +247,6 @@ function getCharacterHTML($character) {
             $characterHTML .= "<button type='submit' name='action' value='char-delete-verify'>Delete</button>";
             $characterHTML .= "</div>";
             $characterHTML .= "</form>";
-            $characterHTML .= "</div>";
             $characterHTML .= "</div>";
         }
         $characterHTML .= "</section>";
