@@ -233,7 +233,7 @@ footer {
     height: calc(100% - 0.5rem);
 }
 
-.character {
+.character-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -244,27 +244,27 @@ footer {
         "inventory inventory";
 }
 
-.character h1 {
+.character-info h1 {
     grid-area: title;
 }
 
-.character .character-image {
+.character-info .character-image {
     grid-area: image;
 }
 
-.character .character-profile {
+.character-info .character-profile {
     grid-area: profile;
 }
 
-.character .character-attributes {
+.character-info .character-attributes {
     grid-area: attributes;
 }
 
-.character .character-skills {
+.character-info .character-skills {
     grid-area: skills;
 }
 
-.character .character-inventory {
+.character-info .character-inventory {
     grid-area: inventory;
 }
 
