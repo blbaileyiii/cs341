@@ -63,9 +63,12 @@ footer {
     margin: 0.5rem 1.25rem 1.25rem;
 }
 
-.character h2,
-.news h2,
 .race h2 {
+    margin: 1rem 0 0;
+}
+
+.character h2,
+.news h2,{
     margin:0;
     padding: 0.5rem 1rem 0;
 }
@@ -88,7 +91,7 @@ footer {
     border-bottom-width: 1px;
     border-bottom-style: solid;
     padding: 0.5rem 0.5rem 0;
-    margin: 0;
+    margin: 1rem 0 0;
 }
 
 .family-full-width {
