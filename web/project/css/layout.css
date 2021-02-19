@@ -245,6 +245,8 @@ footer {
         "skills skills"
         "inventory inventory"
         "management management";
+    gap: 1rem;
+    padding: 0 1rem;
 }
 
 .character-info h1 {
@@ -258,8 +260,7 @@ footer {
     justify-self: center;
     border-width: 5px;
     border-style: double;
-    gap: 1rem;
-    padding: 0 1rem;
+    
 }
 
 .character-info .character-profile {
