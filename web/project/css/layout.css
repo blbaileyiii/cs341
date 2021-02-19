@@ -254,12 +254,13 @@ footer {
     width: 30vw;
     height: 50vh;
     justify-self: center;
-    border-width: 1px;
-    border-style: solid;
+    border-width: 5px;
+    border-style: double;
 }
 
 .character-info .character-profile {
     grid-area: profile;
+    margin: 0;
 }
 
 .character-info .character-attributes {
