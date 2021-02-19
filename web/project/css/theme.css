@@ -147,5 +147,6 @@ footer {
 }
 
 .character-info .character-image {
-    box-shadow: 5px 5px 5px black;
+    border-color: var(--logo);
+    box-shadow: 5px 5px 5px var(--ston-bg-alt);
 }

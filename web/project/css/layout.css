@@ -254,6 +254,8 @@ footer {
     width: 25vw;
     height: 50vh;
     justify-self: center;
+    border-width: 1px;
+    border-style: solid;
 }
 
 .character-info .character-profile {
