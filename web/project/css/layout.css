@@ -63,7 +63,7 @@ footer {
     margin: 0.5rem 1.25rem 1.25rem;
 }
 
-.race h2 {
+.race h2, .character-info h2 {
     margin: 3rem 0 0;
 }
 
@@ -256,6 +256,8 @@ footer {
     justify-self: center;
     border-width: 5px;
     border-style: double;
+    gap: 1rem;
+    padding: 0 1rem;
 }
 
 .character-info .character-profile {

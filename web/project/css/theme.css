@@ -69,12 +69,13 @@ footer {
 }
 
 .news h2,
-.race h2 {
+.race h2,
+.character-info h2 {
     color: var(--ton-logo-dark);
     text-shadow: 2px 2px 5px var(--ston-logo-dark);
 }
 
-.race:nth-child(even) h2{
+.race:nth-child(even) h2, .character-info h2{
     background-image: linear-gradient(to right, var(--logo-dark), var(--bg) 75%);
 }
 
