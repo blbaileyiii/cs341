@@ -251,7 +251,7 @@ footer {
 
 .character-info .character-image {
     grid-area: image;
-    width: 25vw;
+    width: 30vw;
     height: 50vh;
     justify-self: center;
     border-width: 1px;
