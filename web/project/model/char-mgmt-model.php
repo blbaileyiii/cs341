@@ -48,9 +48,9 @@ function getCharacters($username) {
 function getCharactersHTML($characters) {
 
     $charactersHTML = "";
-
+    $charactersHTML .= "<section class='characters grid-tiles'>";
     if(count($characters) > 0) {
-        $charactersHTML .= "<section class='characters grid-tiles'>";
+        
         foreach ($characters as $character => $characterInfo) {
             $charactersHTML .= "<div class='character' data-character='$character'>";
             $charactersHTML .= "<h2>$character</h2>";
@@ -61,15 +61,15 @@ function getCharactersHTML($characters) {
             $charactersHTML .= "</div>";
             $charactersHTML .= "</div>";
         }
-
-        $charactersHTML .= "<div class='character' data-character='+new'>";
-        $charactersHTML .= "<h2 class='new-char'>+ Create a Character</h2>";
-        $charactersHTML .= "<div class='image'>";
-        $charactersHTML .= "</div>";
-        $charactersHTML .= "</div>";
-
-        $charactersHTML .= "</section>";
     }
+
+    $charactersHTML .= "<div class='character' data-character='+new'>";
+    $charactersHTML .= "<h2 class='new-char'>+ Create a Character</h2>";
+    $charactersHTML .= "<div class='image'>";
+    $charactersHTML .= "</div>";
+    $charactersHTML .= "</div>";
+
+    $charactersHTML .= "</section>";
 
     return $charactersHTML;
 }
