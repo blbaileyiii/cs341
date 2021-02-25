@@ -291,7 +291,7 @@ function getCharEditHTML($character, $playableOptions) {
             foreach($characterInfo['skills'] as $skill => $skillInfo){
                 $characterHTML .= "<div class='fields'>";
                 $characterHTML .= "<label for='skillid-$skillInfo[charskillid]'><span class='info-name'>$skill</span><span class='field-tip'>Required</span></label>";
-                $characterHTML .= "<input id='skillid-$skillInfo[charskillid]' name='skillid-$skillInfo[charskillid]' type='number' value='$skillInfo[charskillxp]' placeholdermin='$skillInfo[charskillxp]' min='$skillInfo[charskillxp]' step='1'>";
+                $characterHTML .= "<input id='skillid-$skillInfo[charskillid]' name='skillid-$skillInfo[charskillid]' type='number' value='$skillInfo[charskillxp]' placeholder='$skillInfo[charskillxp]' min='$skillInfo[charskillxp]' step='1'>";
                 $characterHTML .= "</div>";
             }
             $characterHTML .= "</section>";
