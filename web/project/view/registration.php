@@ -16,24 +16,24 @@
         <form class="form" action="/project/account/index.php" method="post">
             <div class="message"><?php echo $message ?></div>
             <div class="fields">
-                <label for="uname"><span>User Name</span><span class="field-tip">Required</span></label> 
-                <input id="uname" name="register[uname]" type="text" autocomplete="username" required>
+                <label for="accountName"><span>Account Name (Email Address)</span><span class="field-tip">Required</span></label> 
+                <input id="accountName" name="accountName" type="email" autocomplete="email" required>
             </div>
             <div class="fields">
-                <label for="email"><span>Email Address</span><span class="field-tip">Required</span></label>
-                <input id="email" name="register[email]" type="email" autocomplete="email" required>
+                <label for="password1"><span>Password</span><span class="field-tip">Required</span></label>
+                <input id="password1" name="password1" type="password" autocomplete="new-password" required>
             </div>
             <div class="fields">
-                <label for="password"><span>Password</span><span class="field-tip">Required</span></label>
-                <input id="password" name="register[password]" type="password" autocomplete="new-password" required>
+                <label for="password"><span>Verify Password</span><span class="field-tip">Required</span></label>
+                <input id="password2" name="password2" type="password" autocomplete="new-password" required>
             </div>
             <div class="fields">
                 <label for="fname"><span>First Name</span><span class="field-tip">Required</span></label> 
-                <input id="fname" name="register[fname]" type="text" autocomplete="given-name" required>
+                <input id="fname" name="fname" type="text" autocomplete="given-name" required>
             </div>
             <div class="fields">
                 <label for="lname"><span>Last Name</span><span class="field-tip">Required</span></label>
-                <input id="lname" name="register[lname]" type="text" autocomplete="family-name" required>
+                <input id="lname" name="lname" type="text" autocomplete="family-name" required>
             </div>
             <div class="non-fields">
                 <button id="action" name="action" value="register" type="submit">Register</button>
