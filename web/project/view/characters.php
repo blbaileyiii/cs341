@@ -16,6 +16,7 @@
         <form method="get">
             <input type="text" name="charname" id ="charname">
             <button type="submit" name="action" value="Search">Search</button>
+            <span><a href="/project/character/">Reset</a></span>
         </form>
         <?php echo $charactersHTML?>
     </main>
