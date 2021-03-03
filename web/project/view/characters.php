@@ -13,6 +13,10 @@
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/project/snippets/nav.php'; ?>   
     <main>    
         <h1><?php echo $page ?></h1>
+        <form method="get">
+            <input type="text" name="charname" id ="charname">
+            <button type="submit">Search</button>
+        </form>
         <?php echo $charactersHTML?>
     </main>
     <footer>
