@@ -15,7 +15,7 @@
         <h1><?php echo $page ?></h1>
         <form method="get">
             <input type="text" name="charname" id ="charname">
-            <button type="submit">Search</button>
+            <button type="submit" name="action" value="search">Search</button>
         </form>
         <?php echo $charactersHTML?>
     </main>
