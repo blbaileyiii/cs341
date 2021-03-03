@@ -49,7 +49,7 @@ function searchCharacters($username, $searchparm) {
     try {
         $characters = [];
 
-        $searchparm = "%$searchparm%";
+        $searchparm = strtolower("%$searchparm%");
 
         $db = eowConnect();
 
@@ -61,7 +61,7 @@ function searchCharacters($username, $searchparm) {
         JOIN txgenus ON txgenus.txgenusid=char.txgenusid
         JOIN txfamily ON txfamily.txfamilyid=txgenus.txfamilyid
         JOIN txrace ON txrace.txraceid=txfamily.txraceid
-        WHERE username=:username AND charname LIKE :searchparm';
+        WHERE username=:username AND lower(charname) LIKE :searchparm';
 
         $stmt = $db->prepare($sql);
         $stmt->execute(array(':username' => $username, ':searchparm' => $searchparm));
