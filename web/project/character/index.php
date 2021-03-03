@@ -92,6 +92,12 @@ switch($action){
     case 'cancel':
         header('Location: /project/character/');
         exit;
+    case 'Search':
+        $searchparm = filter_input(INPUT_GET,'charname', FILTER_SANITIZE_STRING);
+        $characters = searchCharacters($username, $searchparm);
+        $charactersHTML = getCharactersHTML($characters);
+        include $_SERVER['DOCUMENT_ROOT'] . '/project/view/characters.php';
+        break;
     default:
         $characters = getCharacters($username);
         $charactersHTML = getCharactersHTML($characters);
