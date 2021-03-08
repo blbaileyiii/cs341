@@ -205,8 +205,8 @@
                         <span class="field-tip">If no, please contact the event or activity leader directly.</span>
                     </div>
                     <div class="fields">
-                        <label for="mediationList"><span>List all prescription or over-the-counter (OTC) medications the participant is taking</span></label> 
-                        <textarea id="mediationList" name="mediationList"></textarea>
+                        <label for="medicationList"><span>List all prescription or over-the-counter (OTC) medications the participant is taking</span></label> 
+                        <textarea id="medicationList" name="medicationList"></textarea>
                     </div>
                 </fieldset>
                 <fieldset>
