@@ -27,15 +27,15 @@ function getEvents() {
 }
 
 // Will handle site registrations.
-function regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllnes, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate){
+function regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate){
     try {
         // Create a connection object using the phpmotors connection function
         $db = hhConnect();
         // The SQL statement
 
         $sql = 
-        'INSERT INTO hhstake.registrants ("eventId", "participantName", "ward", "participantDOB", "participantAge", "primTel", "primTelType", "secTel", "secTelType", "participantAddress", "participantCity", "participantState", "emergencyContact", "emerPrimTel", "emerPrimTelType", "emerSecTel", "emerSecTelType", "specialDiet", "specialDietTxt", "allergies", "allergiesTxt", "medication", "selfMedicate", "medicationList", "chronicIllnes", "chronicIllnessTxt", "serious", "seriousTxt", "limitations", "considerations", "participantSig", "participantSigDate", "guardianSig", "guardianSigDate")
-        VALUES (:eventId, :registrantId, :participantName, :ward, :participantDOB, :participantAge, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emerSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllnes, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations, :participantSig, :participantSigDate, :guardianSig, :guardianSigDate)';
+        'INSERT INTO hhstake.registrants ("eventId", "participantName", "ward", "participantDOB", "participantAge", "primTel", "primTelType", "secTel", "secTelType", "participantAddress", "participantCity", "participantState", "emergencyContact", "emerPrimTel", "emerPrimTelType", "emerSecTel", "emerSecTelType", "specialDiet", "specialDietTxt", "allergies", "allergiesTxt", "medication", "selfMedicate", "medicationList", "chronicIllness", "chronicIllnessTxt", "serious", "seriousTxt", "limitations", "considerations", "participantSig", "participantSigDate", "guardianSig", "guardianSigDate")
+        VALUES (:eventId, :registrantId, :participantName, :ward, :participantDOB, :participantAge, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emerSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllness, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations, :participantSig, :participantSigDate, :guardianSig, :guardianSigDate)';
         // Create the prepared statement using the phpmotors connection
         $stmt = $db->prepare($sql);
         // Build var array
@@ -64,7 +64,7 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
             ':medication' => $medication,
             ':selfMedicate' => $selfMedicate,
             ':medicationList' => $medicationList,
-            ':chronicIllnes' => $chronicIllnes,
+            ':chronicIllness' => $chronicIllness,
             ':chronicIllnessTxt' => $chronicIllnessTxt,
             ':serious' => $serious,
             ':seriousTxt' => $seriousTxt,

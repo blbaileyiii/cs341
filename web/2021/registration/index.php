@@ -46,7 +46,7 @@ switch($action){
         $medication = filter_input(INPUT_POST, 'medication', FILTER_SANITIZE_STRING);
         $selfMedicate = filter_input(INPUT_POST, 'selfMedicate', FILTER_SANITIZE_STRING);
         $medicationList = filter_input(INPUT_POST, 'medicationList', FILTER_SANITIZE_STRING);
-        $chronicIllnes = filter_input(INPUT_POST, 'chronicIllnes', FILTER_SANITIZE_STRING);
+        $chronicIllness = filter_input(INPUT_POST, 'chronicIllness', FILTER_SANITIZE_STRING);
         $chronicIllnessTxt = filter_input(INPUT_POST, 'chronicIllnessTxt', FILTER_SANITIZE_STRING);
         $serious = filter_input(INPUT_POST, 'serious', FILTER_SANITIZE_STRING);
         $seriousTxt = filter_input(INPUT_POST, 'seriousTxt', FILTER_SANITIZE_STRING);
@@ -62,7 +62,7 @@ switch($action){
 
         // Insert form data
         //getEvents();
-        $regOutcome = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllnes, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
+        $regOutcome = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
         
         // Validate Insert
         if($regOutcome === 1){
