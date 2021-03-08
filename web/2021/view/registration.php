@@ -19,8 +19,8 @@
                 <fieldset>
                     <legend>Event Details</legend>
                     <div class="fields">
-                        <label for="event"><span>Event</span><span class="field-tip">Required</span></label>
-                        <select id="event" name="event" required>
+                        <label for="eventName"><span>Event</span><span class="field-tip">Required</span></label>
+                        <select id="eventName" name="eventName" required>
                             <option value="" selected disabled>Choose an event to populate this section</option>
                             <option value="yw2021">YWCAMP 2021</option>
                             <option value="ym2021">YMCAMP 2021</option>
