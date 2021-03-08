@@ -5,11 +5,11 @@
  */
 
 // Get the database connection file
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/hhstake/camp2021/library/connections.php';
+//require_once $_SERVER['DOCUMENT_ROOT'] . '/camp2021/library/connections.php';
 // Get the Main Whimsy model for use as needed
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/hhstake/camp2021/models/main-model.php';
+//require_once $_SERVER['DOCUMENT_ROOT'] . '/camp2021/models/main-model.php';
 // Get the Main Whimsy model for use as needed
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/hhstake/camp2021/functions/fx.php';
+//require_once $_SERVER['DOCUMENT_ROOT'] . '/camp2021/functions/fx.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -18,19 +18,16 @@ if ($action == NULL) {
 
 switch($action){
     case 'ymcamp':
-        include $_SERVER['DOCUMENT_ROOT'] . '/hhstake/camp2021/view/ymcamp.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/camp2021/view/ymcamp.php';
         break;
     case 'ywcamp':
-        include $_SERVER['DOCUMENT_ROOT'] . '/hhstake/camp2021/view/ywcamp.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/camp2021/view/ywcamp.php';
         break;
     case 'trek':
-        include $_SERVER['DOCUMENT_ROOT'] . '/hhstake/camp2021/view/trek.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/camp2021/view/trek.php';
         break;
     default:
-        //include $_SERVER['DOCUMENT_ROOT'] . '/hhstake/camp2021/view/home.php';
-        include $_SERVER['DOCUMENT_ROOT'] . '/hhstake/camp2021/view/home.php';
+        //include $_SERVER['DOCUMENT_ROOT'] . '/camp2021/view/home.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/camp2021/view/home.php';
 }
-
-echo "here";
-
 ?>
