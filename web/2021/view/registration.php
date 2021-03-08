@@ -35,6 +35,7 @@
                             <option value="trek2021">TREK 2021</option>
                         </select>
                     </div>
+                    <input id="eventId" name="eventId" type="hidden" readonly>
                     <div class="fields">
                         <label for="eventDate"><span>Date(s) of event</span></label> 
                         <input id="eventDate" name="eventDate" type="date" readonly>
