@@ -23,9 +23,9 @@ function hhConnect(){
         //echo "Working";
         return $db;
     } catch(PDOException $ex) {
-        //echo 'Error!: ' . $ex->getMessage();
-        //die();
-        header('Location: ./view/500.php');
+        echo 'Error!: ' . $ex->getMessage();
+        die();
+        //header('Location: ./view/500.php');
         exit;
     }
 }

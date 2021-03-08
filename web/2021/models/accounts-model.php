@@ -8,6 +8,7 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
     // Create a connection object using the phpmotors connection function
     $db = hhConnect();
     // The SQL statement
+    /*
     $sql = 
     'INSERT INTO hhstake.registrants (eventId, participantName, ward, participantDOB, participantAge, primTel, primTelType, secTel, secTelType, participantAddress, participantCity, participantState, emergencyContact, emerPrimTel, emerPrimTelType, emerSecTel, emereSecTelType, specialDiet, specialDietTxt, allergies, allergiesTxt, medication, selfMedicate, medicationList, chronicIllnes, chronicIllnessTxt, serious, seriousTxt, limitations, considerations, participantSig, participantSigDate, guardianSig, guardianSigDate)
     VALUES (:eventId, :registrantId, :participantName, :ward, :participantDOB, :participantAge, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emereSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllnes, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations, :participantSig, :participantSigDate, :guardianSig, :guardianSigDate)';
@@ -58,5 +59,6 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
     $stmt->closeCursor();
     // Return the indication of success (rows changed)
     return $regOutcome;
+    */
 }
 ?>
