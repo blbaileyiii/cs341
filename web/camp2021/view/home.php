@@ -10,7 +10,8 @@
     <header>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/camp2021/common/header-nav.php'; ?>
     </header>
-    <main>        
+    <main>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/camp2021/common/countdown.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/camp2021/common/about.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/camp2021/common/pillars.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/camp2021/common/gallery.php'; ?>
