@@ -3,7 +3,7 @@
 /*
  * Master Controller
  */
-//session_start();
+session_start();
 // Get the database connection file
 //require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
 // Get the account model for use as needed
