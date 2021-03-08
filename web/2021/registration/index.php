@@ -4,12 +4,13 @@
  * Registration Controller
  */
 
+session_start();
 // Get the database connection file
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/camp2021/library/connections.php';
-// Get the Main Whimsy model for use as needed
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/camp2021/models/main-model.php';
-// Get the Main Whimsy model for use as needed
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/camp2021/functions/fx.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
+// Get the account model for use as needed
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/accounts-model.php';
+// Get the account validation fxs for use as needed
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {

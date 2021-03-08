@@ -14,8 +14,16 @@
         <section>
             <h1>Registration</h1>
             <p>Each youth is required to register individually and for each camp separately. Additonally, registration requires an accompanying Permission and Medical Release Form to be signed by the youth's parent/guardian.</p>
-            <form class="form">
+            <form class="form" method="post">
                 <h2>Permission and Medical Release Form</h2>
+                <div class="message">            
+                    <?php
+                        if (isset($_SESSION['message'])) { 
+                                echo $_SESSION['message']; 
+                                unset($_SESSION['message']);
+                        }
+                    ?>
+                </div>
                 <fieldset>
                     <legend>Event Details</legend>
                     <div class="fields">
