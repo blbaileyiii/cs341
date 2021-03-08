@@ -61,9 +61,11 @@ switch($action){
         $eventId = 1;
 
         // Insert form data
-        $regOutcome = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emereSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllnes, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
+        getEvents();
+        //$regOutcome = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emereSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllnes, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
         
         // Validate Insert
+        /*
         if($regOutcome === 1){
             $_SESSION['message'] = "Thanks for registering $participantName.";
             header('Location: /2021/registration/');
@@ -73,6 +75,7 @@ switch($action){
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit;
         }
+        */
 
         break;
     default:

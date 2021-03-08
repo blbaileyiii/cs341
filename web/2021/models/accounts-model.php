@@ -3,12 +3,35 @@
  * PHP Motors Accounts Model
  */
 
+function getEvents() {
+    try {
+        $db = hhConnect();
+
+        $sql = 
+        'SELECT *
+        FROM events';
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $eventSQL = $stmt->fetchAll();
+        var_dump($eventSQL);
+
+        // The next line closes the interaction with the database 
+        $stmt->closeCursor();
+
+        return $eventSQL;
+
+    } catch(PDOException $ex) {
+        echo $sql . "<br>" . $ex->getMessage();
+    }
+}
+
 // Will handle site registrations.
 function regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emereSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllnes, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate){
     // Create a connection object using the phpmotors connection function
     $db = hhConnect();
     // The SQL statement
-    /*
+
     $sql = 
     'INSERT INTO hhstake.registrants (eventId, participantName, ward, participantDOB, participantAge, primTel, primTelType, secTel, secTelType, participantAddress, participantCity, participantState, emergencyContact, emerPrimTel, emerPrimTelType, emerSecTel, emereSecTelType, specialDiet, specialDietTxt, allergies, allergiesTxt, medication, selfMedicate, medicationList, chronicIllnes, chronicIllnessTxt, serious, seriousTxt, limitations, considerations, participantSig, participantSigDate, guardianSig, guardianSigDate)
     VALUES (:eventId, :registrantId, :participantName, :ward, :participantDOB, :participantAge, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emereSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllnes, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations, :participantSig, :participantSigDate, :guardianSig, :guardianSigDate)';
@@ -59,6 +82,5 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
     $stmt->closeCursor();
     // Return the indication of success (rows changed)
     return $regOutcome;
-    */
 }
 ?>
