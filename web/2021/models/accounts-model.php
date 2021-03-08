@@ -9,7 +9,7 @@ function getEvents() {
 
         $sql = 
         'SELECT *
-        FROM events';
+        FROM hhstake.events';
 
         $stmt = $db->prepare($sql);
         $stmt->execute();
