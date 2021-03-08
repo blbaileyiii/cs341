@@ -3,12 +3,12 @@
 
 <head>
     <?php $page = "Template" ?>
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/camp2021/common/head.php'; ?>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/head.php'; ?>
 </head>
 
 <body>
     <header>
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/camp2021/common/header-nav.php'; ?>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/header-nav.php'; ?>
     </header>    
     <main>
         <section>
@@ -22,8 +22,8 @@
                         <label for="event"><span>Event</span><span class="field-tip">Required</span></label>
                         <select id="event" name="event" required>
                             <option value="" selected disabled>Choose an event to populate this section</option>
-                            <option value="ywcamp2021">YWCAMP 2021</option>
-                            <option value="ymcamp2021">YMCAMP 2021</option>
+                            <option value="yw2021">YWCAMP 2021</option>
+                            <option value="ym2021">YMCAMP 2021</option>
                             <option value="trek2021">TREK 2021</option>
                         </select>
                     </div>
@@ -271,7 +271,7 @@
     </main>
     <footer>
         <p><a href="https://www.churchofjesuschrist.org/bc/content/shared/content/english/pdf/callings/young-men/parental-permission-medical-release.pdf" title="Permission and Medical Release Form">Permission and Medical Release Form</a> © 2017, 2019 by Intellectual Reserve, Inc. All rights reserved. 5/19. PD60004035 000</p>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/camp2021/common/footer.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
     </footer>
 </body>
 </html>

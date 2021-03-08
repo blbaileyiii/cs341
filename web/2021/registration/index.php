@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Master Controller
+ * Registration Controller
  */
 
 // Get the database connection file
@@ -17,17 +17,9 @@ if ($action == NULL) {
 }
 
 switch($action){
-    case 'ymcamp':
-        include $_SERVER['DOCUMENT_ROOT'] . '/camp2021/view/ymcamp.php';
-        break;
-    case 'ywcamp':
-        include $_SERVER['DOCUMENT_ROOT'] . '/camp2021/view/ywcamp.php';
-        break;
-    case 'trek':
-        include $_SERVER['DOCUMENT_ROOT'] . '/camp2021/view/trek.php';
-        break;
     default:
         //include $_SERVER['DOCUMENT_ROOT'] . '/camp2021/view/home.php';
-        include $_SERVER['DOCUMENT_ROOT'] . '/camp2021/view/home.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
 }
+
 ?>

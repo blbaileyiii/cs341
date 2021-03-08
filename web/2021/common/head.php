@@ -3,4 +3,4 @@
     <title>Hacienda Heights Stake - <?php echo $page ?></title>
     <meta name="Hacienda Heights Stake - <?php echo $page ?>"
         content="Hacienda Heights Stake - <?php echo $page ?>">
-    <link rel="stylesheet" href="/camp2021/css/style.css">
+    <link rel="stylesheet" href="/2021/css/style.css">
