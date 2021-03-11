@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&display=swap');
+
+:root {
+    --body-txt-font: 'Fondamento', Arial, Helvetica, sans-serif;
+    --headers-txt-font: 'Ruslan Display', Georgia, 'Times New Roman', Times, serif;
+}
+
+html {
+    font-family: var(--body-txt-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--headers-txt-font);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+.nav {
+    font-size: 1.3rem;
+}
+
+.news .date {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.news .content::first-letter {
+    font-size: 2rem;
+}
+
+.race:nth-child(odd) h2{
+    text-align: right;
+}
+
+.fields label {
+    font-size: 1rem;
+}
+
+.non-fields button{
+    font-family: var(--body-txt-font);
+    font-size: 1rem;
+}
+
+h1,
+.option-tile,
+.character h2,
+.non-fields .button {
+    text-align: center;
+}
+
+.non-fields .button a,
+.non-fields .button a:focus,
+.non-fields .button a:visited {
+    text-decoration: none;
+}
+
+.field-tip {
+    font-size: 0.9rem;
+}
+
+.message {
+    font-size: x-large;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}

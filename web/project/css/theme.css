@@ -1,0 +1,153 @@
+:root {
+    --logo: #ffa200;
+    --logo-dark: #ff6f00;
+    --logo-light: #ffcd00;
+    --bg: white;
+
+    /* text-on- (ton-) */
+    --ton-logo: white;
+    --ton-logo-alt: black;
+    --ton-logo-dark: white;
+    --ton-logo-light: black;
+    --ton-bg: black;
+    --ton-bg-alt: #ffa200;
+
+    /* shadow-text-on- (ston-) */
+    --ston-logo: black;
+    --ston-logo-dark: black;
+    --ston-bg-alt: black;
+
+    /* forms */
+    --empty-field: #bababa;
+    --filled-field: #3a3a3a;
+    --button-border: #3a3a3a;
+
+}
+
+html {
+    background: var(--bg);
+    color: var(--ton-bg);
+}
+
+h1 {
+    color: var(--ton-bg-alt);
+    text-shadow: 2px 2px 5px var(--ston-bg-alt);
+}
+
+button, .button {
+    background: var(--logo);
+    color: var(--ton-logo);
+}
+
+a, a:visited, a:focus {
+    color: var(--ton-logo-light);
+}
+
+header {
+    background-image: linear-gradient(to right, var(--logo-dark) 25%, var(--logo) 75%);
+}
+
+.nav {
+    background-image: linear-gradient(3.16rad, var(--logo-light), var(--bg) 48%);
+}
+
+footer {
+    background-image: linear-gradient(to top, var(--logo-dark)50%, var(--logo) 95%);
+    color: var(--ton-logo-dark);
+}
+
+.news {
+    border-color: var(--logo);    
+}
+
+.news h2 {
+    background-image: linear-gradient(to right, var(--logo-dark), var(--bg) 75%);
+}
+
+.news .content::first-letter {
+    color: var(--logo);
+}
+
+.news h2,
+.race h2,
+.character-info h2 {
+    color: var(--ton-logo-dark);
+    text-shadow: 2px 2px 5px var(--ston-logo-dark);
+}
+
+.race:nth-child(even) h2, .character-info h2{
+    background-image: linear-gradient(to right, var(--logo-dark), var(--bg) 75%);
+}
+
+.race:nth-child(odd) h2{
+    background-image: linear-gradient(to right, var(--bg) 25%, var(--logo-dark));
+}
+
+.family h3 {
+    background-image: linear-gradient(to right, var(--bg) 25%, var(--logo));
+    border-top-color: var(--logo);
+    border-bottom-color: var(--logo);
+}
+
+.genus {
+    border-color: var(--logo);
+}
+
+.genus h4 {
+    background-image: linear-gradient(to right, var(--logo-dark) 25%, var(--logo) 75%);
+    color: var(--ton-logo);
+    text-shadow: 2px 2px 5px var(--ston-logo);
+}
+
+.character h2,
+.option-tile {
+    background-image: linear-gradient(to right, var(--logo-dark) 25%, var(--logo) 75%);        
+}
+
+.character h2,
+.option-tile a,
+.option-tile a:visited,
+.option-tile a:focus {
+    color: var(--ton-logo);
+    text-shadow: 2px 2px 5px var(--ston-logo);
+}
+
+
+.fields input,
+.fields select,
+.fields textarea {
+    outline: none;
+}
+
+.fields input {
+    border-color: var(--empty-field);
+}
+
+.fields input:focus,
+.fields input:valid {
+    border-color: var(--filled-field);
+}
+
+.non-fields button {
+    outline: none;
+    border-color: var(--button-border);
+}
+
+.non-fields .button {
+    border-color: var(--button-border);
+}
+
+.non-fields .button a,
+.non-fields .button a:focus,
+.non-fields .button a:visited {
+    color: var(--ton-logo-dark);
+}
+
+.character {
+    border-color: var(--logo);
+}
+
+.character-info .character-image {
+    border-color: var(--logo);
+    box-shadow: 5px 5px 5px var(--ston-bg-alt);
+}

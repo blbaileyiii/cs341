@@ -1,0 +1,290 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+}
+
+.nav-ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-grow: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-lnk, .header-lnk {
+    padding: 0 0.5rem;
+    display: inline-block;
+}
+
+footer {
+    text-align: center;
+    padding: 3rem 1rem 0.25rem;
+    margin-top: 1rem;
+}
+
+.news {
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-radius: 0.75rem 0 0.75rem 0.75rem;
+    overflow: auto;
+}
+
+.news .date, 
+.news .content {
+    margin: 0.5rem 1.25rem 1.25rem;
+}
+
+.race h2 {
+    margin: 3rem 0 0;
+    padding: 0.5rem 1rem 0;
+}
+
+.character h2,
+.news h2,
+.character-info h2 {
+    margin:0;
+    padding: 0.5rem 1rem 0;
+}
+
+.option-tile h2{
+    margin: 0;
+    padding: 1rem;
+}
+
+.family {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1rem;    
+}
+
+.family h3 {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding: 0.5rem 0.5rem 0;
+    margin: 2rem 0 0;
+}
+
+.family-full-width {
+    grid-column: 1/-1;
+    padding: 0;
+    margin: 0;
+}
+
+.genus {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.25rem;
+}
+
+.genus h4 {
+    padding: 0.25rem 0.5rem 0;
+    margin: 0;
+}
+
+.genus p{
+    margin: 0.5rem;
+}
+
+.form {
+    padding: 1rem 2rem;
+    margin: 0 auto;
+}
+
+.form * {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.fields {
+    width: 100%;
+}
+
+.form .fields {
+    margin-top: 0.5rem;
+}
+
+.form .fields:first-child {
+    margin-top: 0;
+}
+
+.fields input,
+.fields select,
+.fields textarea {
+    width: 100%;
+    padding: 0.25rem;
+}
+
+.fields textarea {
+    resize: vertical;
+}
+
+.fields input {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.fields label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form .non-fields {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.non-fields button {
+    width: 100%;
+    padding: 0.25rem;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.non-fields .button {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.non-fields .button a,
+.non-fields .button a:focus,
+.non-fields .button a:visited {
+    display: block;
+    padding: 0.25rem;
+}
+
+.grid-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.grid-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    place-items: stretch;
+    margin: 1rem;
+}
+
+.option-tile {
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character {
+    border-radius: 1.1rem;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.character-profile {
+    margin: 1rem;
+}
+
+.form .character-profile {
+    margin: 1rem 0;
+}
+
+.form section {
+    margin-top: 1.5rem;
+}
+
+.character h2 {
+    border-radius: 1rem 1rem 0 0;
+}
+
+.character:last-of-type h2 {
+    border-radius: 1rem;
+}
+
+.new-char {
+    height: calc(100% - 0.5rem);
+}
+
+.character-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "title title"
+        "image profile"
+        "image attributes"
+        "skills skills"
+        "inventory inventory"
+        "management management";
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.character-info h1 {
+    grid-area: title;
+}
+
+.character-info .character-image {
+    grid-area: image;
+    width: 30vw;
+    height: 50vh;
+    justify-self: center;
+    border-width: 5px;
+    border-style: double;
+}
+
+.character-info .character-profile {
+    grid-area: profile;
+    margin: 0;
+}
+
+.character-info .character-attributes {
+    grid-area: attributes;
+}
+
+.character-info .character-skills {
+    grid-area: skills;
+}
+
+.character-info .character-inventory {
+    grid-area: inventory;
+}
+
+.character-info .character-management {
+    grid-area: management;
+}
+
+@media only screen and (min-width: 40rem) {
+    .form {
+      width: 25rem;
+    }
+}
