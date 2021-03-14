@@ -260,3 +260,15 @@ fieldset {
     display: block;
     padding: 0.25rem;
 }
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.scripture {
+    background-image: url("/2021/images/growth-path-w1280x1707.webp");
+    min-height: 10rem;
+}
