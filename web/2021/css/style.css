@@ -3,6 +3,7 @@
 /* Var */
 :root {
     --nav-bg: #2f375b;
+    --nav-bg-trans: #2f375b79;
     --on-nav-bg: #ffffff;
     --on-nav-bg-soft: #d4e7ed;
     --logo-highlight: #fec240;
@@ -115,6 +116,10 @@ header a:hover {
 
 .scripture {
     color: var(--on-nav-bg-soft);
+}
+
+.filter {
+    background: var(--nav-bg-trans);
 }
 
 /* Layout */
@@ -281,4 +286,8 @@ fieldset {
     background-image: url("/2021/images/growth-path-w1280x1707.webp");
     min-height: 25rem;
     text-align: center;
+}
+
+.filter {
+    min-height: 100%;
 }
