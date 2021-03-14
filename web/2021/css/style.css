@@ -115,7 +115,7 @@ header a:hover {
 }
 
 .scripture {
-    color: var(--on-nav-bg-soft);
+    color: var(--on-nav-bg);
     text-shadow: 2px 2px var(--nav-bg);
 }
 
