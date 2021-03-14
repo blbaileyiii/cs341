@@ -36,8 +36,8 @@ section h1 {
 header a, 
 header a:visited, 
 header a:active,
-.all-schedules a
-.all-schedules a:visited
+.all-schedules a,
+.all-schedules a:visited,
 .all-schedules a:active{
     text-decoration: none;
 }
@@ -304,4 +304,8 @@ fieldset {
     display: flex;
     list-style: none;
     justify-content: center;
+}
+
+.all-schedules li{
+    margin: 0 2rem;
 }
