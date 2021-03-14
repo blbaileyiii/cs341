@@ -65,4 +65,14 @@ function buildClassificationList($classifications){
     return $classificationList; 
 }
 
+function buildEventList($events){
+    $eventList = '';
+    return $eventList;
+}
+
+function buildEventScript($events){
+    $eventScript = '';
+    return $eventScript;
+}
+
 ?>

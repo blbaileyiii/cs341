@@ -8,7 +8,7 @@ session_start();
 // Get the database connection file
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
 // Get the account model for use as needed
-require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/accounts-model.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/reg-model.php';
 // Get the account validation fxs for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
@@ -78,6 +78,8 @@ switch($action){
         break;
     default:
         // include $_SERVER['DOCUMENT_ROOT'] . '/camp2021/view/home.php';
+        $eventList = buildEventList('');
+        $eventScript = buildEventScript('');
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
 }
 

@@ -27,6 +27,7 @@
                 <fieldset>
                     <legend>Event Details</legend>
                     <div class="fields">
+                        <?php echo $eventList; ?>
                         <label for="eventName"><span>Event</span><span class="field-tip">Required</span></label>
                         <select id="eventName" name="eventName" required>
                             <option value="" selected disabled>Choose an event to populate this section</option>
@@ -282,6 +283,9 @@
         <p><a href="https://www.churchofjesuschrist.org/bc/content/shared/content/english/pdf/callings/young-men/parental-permission-medical-release.pdf" title="Permission and Medical Release Form">Permission and Medical Release Form</a> © 2017, 2019 by Intellectual Reserve, Inc. All rights reserved. 5/19. PD60004035 000</p>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
     </footer>
+    <script>
+        <?php echo $eventScript; ?>
+    </script>
 </body>
 </html>
 
