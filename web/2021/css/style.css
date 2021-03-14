@@ -70,6 +70,11 @@ header a, header a:visited, header a:active {
     font-size: x-large;
 }
 
+.scripture {
+    font-size: x-large;
+    font-weight: 700;
+}
+
 /* Color */
 header {
     background: var(--nav-bg);
@@ -106,6 +111,10 @@ header a:hover {
 
 .non-fields button:hover {
     background: var(--btn-bg-soft);
+}
+
+.scripture {
+    color: var(--on-nav-bg-soft);
 }
 
 /* Layout */
@@ -270,5 +279,6 @@ fieldset {
 
 .scripture {
     background-image: url("/2021/images/growth-path-w1280x1707.webp");
-    min-height: 10rem;
+    min-height: 25rem;
+    text-align: center;
 }
