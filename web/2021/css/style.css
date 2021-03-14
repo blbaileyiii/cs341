@@ -130,6 +130,10 @@ header a:hover {
     background: var(--nav-bg-trans);
 }
 
+.all-schedules li{
+    background: var(--nav-bg);
+}
+
 /* Layout */
 body {
     margin: 0;
@@ -307,5 +311,6 @@ fieldset {
 }
 
 .all-schedules li{
-    margin: 0 2rem;
+    margin: 0 1.25rem;
+    border-radius: 1rem;
 }
