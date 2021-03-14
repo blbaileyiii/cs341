@@ -134,6 +134,12 @@ header a:hover {
     background: var(--nav-bg);
 }
 
+.all-schedules a,
+.all-schedules a:visited,
+.all-schedules a:active{
+    color: var(--on-nav-bg);
+}
+
 /* Layout */
 body {
     margin: 0;
@@ -313,4 +319,5 @@ fieldset {
 .all-schedules li{
     margin: 0 1.25rem;
     border-radius: 1rem;
+    padding: 0.25rem;
 }
