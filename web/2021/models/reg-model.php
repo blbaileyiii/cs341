@@ -9,7 +9,7 @@ function getEvents($eventYear) {
 
         $sql = 
         'SELECT *
-        FROM hhstake.events
+        FROM hhstake.events AS e
         WHERE EXTRACT(YEAR FROM e."eventDate") = :eventYear';
 
         $sqlVarArray = array(':eventYear' => $eventYear);
@@ -17,7 +17,6 @@ function getEvents($eventYear) {
         $stmt = $db->prepare($sql);
         $stmt->execute($sqlVarArray);
         $eventSQL = $stmt->fetchAll();
-        var_dump($eventSQL);
 
         // The next line closes the interaction with the database 
         $stmt->closeCursor();
