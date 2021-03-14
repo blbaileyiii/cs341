@@ -13,6 +13,7 @@
     <main>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/countdown.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/about.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/schedule-ym.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/pillars.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/gallery.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/faq.php'; ?>
