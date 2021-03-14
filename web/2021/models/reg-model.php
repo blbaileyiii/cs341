@@ -3,16 +3,19 @@
  * PHP Motors Accounts Model
  */
 
-function getEvents() {
+function getEvents($eventYear) {
     try {
         $db = hhConnect();
 
         $sql = 
         'SELECT *
-        FROM hhstake.events';
+        FROM hhstake.events
+        WHERE YEAR(eventDate) = :eventYear';
+
+        $sqlVarArray = array(':eventYear' => $eventYear);
 
         $stmt = $db->prepare($sql);
-        $stmt->execute();
+        $stmt->execute($sqlVarArray);
         $eventSQL = $stmt->fetchAll();
         var_dump($eventSQL);
 
