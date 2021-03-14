@@ -33,9 +33,16 @@ section h1 {
     font-size: 2rem;
 }
 
-header a, header a:visited, header a:active {
+header a, 
+header a:visited, 
+header a:active,
+.all-schedules a
+.all-schedules a:visited
+.all-schedules a:active{
     text-decoration: none;
 }
+
+
 
 .camp-yr-logo {
     text-transform: uppercase;
@@ -291,4 +298,10 @@ fieldset {
 
 .filter {
     padding: 2rem;
+}
+
+.all-schedules {
+    display: flex;
+    list-style: none;
+    justify-content: center;
 }
