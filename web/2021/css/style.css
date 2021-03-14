@@ -163,6 +163,7 @@ footer {
 .countdown-section {
     text-align: center;
     padding: 2rem 0;
+    background-image: url("/2021/images/hike.jpg");
 }
 
 .time-block {

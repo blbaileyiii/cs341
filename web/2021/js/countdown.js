@@ -1,14 +1,14 @@
 // Set the date we're counting down to
-let datestrYMCamp = "Jul 27, 2021";
 let datestrYWCamp = "Jul 27, 2021";
+let datestrYMCamp = "Jul 27, 2021";
 let datestrTrek = "Oct 22, 2021";
 
-let timestrYMCamp = "12:00:00";
 let timestrYWCamp = "08:00:00";
+let timestrYMCamp = "09:00:00";
 let timestrTrek = "15:00:00";
 
-let dateYMCamp = new Date(datestrYMCamp + " " + timestrYMCamp).getTime();
 let dateYWCamp = new Date(datestrYWCamp + " " + timestrYWCamp).getTime();
+let dateYMCamp = new Date(datestrYMCamp + " " + timestrYMCamp).getTime();
 let dateTrek = new Date(datestrTrek + " " + timestrTrek).getTime();
 
 // TODO: Only add the element to the camps array below based on the page...Home = all, other pages = only the specific one.
