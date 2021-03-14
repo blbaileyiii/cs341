@@ -10,7 +10,7 @@ function getEvents($eventYear) {
         $sql = 
         'SELECT *
         FROM hhstake.events
-        WHERE YEAR(eventDate) = :eventYear';
+        WHERE EXTRACT(YEAR FROM e."eventDate") = :eventYear';
 
         $sqlVarArray = array(':eventYear' => $eventYear);
 
