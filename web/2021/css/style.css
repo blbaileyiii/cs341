@@ -116,6 +116,7 @@ header a:hover {
 
 .scripture {
     color: var(--on-nav-bg-soft);
+    text-shadow: 2px 2px var(--nav-bg);
 }
 
 .filter {
@@ -284,10 +285,9 @@ fieldset {
 
 .scripture {
     background-image: url("/2021/images/growth-path-w1280x1707.webp");
-    min-height: 25rem;
     text-align: center;
 }
 
 .filter {
-    min-height: 100%;
+    padding: 5rem 2rem;
 }
