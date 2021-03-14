@@ -318,6 +318,6 @@ fieldset {
 
 .all-schedules li{
     margin: 0 1.25rem;
-    border-radius: 1rem;
-    padding: 0.25rem;
+    border-radius: 5rem;
+    padding: 0.25rem 1.75rem;
 }
