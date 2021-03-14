@@ -1,7 +1,6 @@
-<!--
 <!DOCTYPE html>
 <html lang="en-us">
-
+    
 <head>
     <?php $page = "Template" ?>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/head.php'; ?>
@@ -290,7 +289,3 @@
     </script>
 </body>
 </html>
-
--->
-
-
