@@ -78,8 +78,9 @@ switch($action){
         break;
     default:
         // include $_SERVER['DOCUMENT_ROOT'] . '/camp2021/view/home.php';
-        $eventList = buildEventList('');
-        $eventScript = buildEventScript('');
+        $events = getEvents();
+        $eventList = buildEventList($events);
+        $eventScript = buildEventScript($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
 }
 
