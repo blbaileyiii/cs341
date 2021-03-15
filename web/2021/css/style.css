@@ -8,6 +8,7 @@
     --on-nav-bg-soft: #d4e7ed;
     --html-bg: #1c2035;
     --body-bg: #ffffff;
+    --on-body-bg: #141414;
     --logo-highlight: #fec240;
     --border-intense: #de4b43;
     --btn-bg: #2f375b;
@@ -112,6 +113,7 @@ footer {
 
 body {
     background: var(--body-bg);
+    color: var(--on-body-bg);
 }
 
 header,
