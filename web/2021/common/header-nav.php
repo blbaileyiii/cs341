@@ -2,6 +2,7 @@
    <span class="logo-lg">Camp</span><span class="logo-highlight logo-sm">2021</span>
 </div>
 <ul class="nav-ul">
+    <li class="ham"><a id="toggleMenu" href="#">☰ Menu</a></li>
     <li><a href="/2021/" title="Hacienda Heights Stake Youth Camps Home">Home</a></li>
     <li><a href="/2021/?action=ywcamp" title="">YW Camp</a></li>
     <li><a href="/2021/?action=ymcamp" title="">YM Camp</a></li>
