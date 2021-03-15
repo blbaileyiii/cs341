@@ -408,6 +408,19 @@ fieldset {
     padding: 0.25rem 1.75rem;
 }
 
+.collapsible {
+    width: 100%;
+}
+
+.faq-active, .collapsible:hover {
+    background: var(--btn-bg-soft);
+}
+
+.collapsible-content {
+    display: none;
+    overflow: hidden;
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
