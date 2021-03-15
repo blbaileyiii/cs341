@@ -58,12 +58,18 @@ header a:active,
     font-size: 1.8rem;
 }
 
-.countdown-data .logo-lg,
+.countdown-data .logo-lg{
+    font-size: 1.8rem;
+}
+
+.countdown-data .logo-sm {
+    font-size: 1.6rem;
+}
+
 .schedule .logo-lg {
     font-size: 1.6rem;
 }
 
-.countdown-data .logo-sm,
 .schedule .logo-sm {
     font-size: 1.4rem;
 }
