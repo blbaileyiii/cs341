@@ -98,7 +98,7 @@ header a:hover {
 }
 
 .countdown-section {
-    background: var(--nav-bg);
+    /* background: var(--nav-bg); */
     color: var(--on-nav-bg);
 }
 
