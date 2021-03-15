@@ -111,7 +111,8 @@ footer {
     color: var(--on-nav-bg-soft);
 }
 
-body {
+body,
+.collapsible-btn {
     background: var(--body-bg);
     color: var(--on-body-bg);
 }
@@ -122,6 +123,10 @@ header,
 .guidelines {
     background: var(--nav-bg);
     color: var(--on-nav-bg);
+}
+
+.faq-active, .collapsible-btn:hover {
+    background: var(--btn-bg-soft);
 }
 
 
@@ -419,12 +424,10 @@ fieldset {
     padding: 0;
 }
 
-.collapsible {
+.collapsible-btn {
     width: 100%;
-}
-
-.faq-active, .collapsible:hover {
-    background: var(--btn-bg-soft);
+    border: none;
+    outline: none;
 }
 
 .collapsible-content {

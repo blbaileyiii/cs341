@@ -3,13 +3,13 @@
     <h2>F.A.Q.</h2>
     <ul>
         <li>
-            <button type="button" class="collapsible">Open Collapsible</button>
+            <button type="button" class="collapsible-btn">Open Collapsible</button>
             <div class="collapsible-content">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
         </li>
         <li>
-            <button type="button" class="collapsible">Open Collapsible</button>
+            <button type="button" class="collapsible-btn">Open Collapsible</button>
             <div class="collapsible-content">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
@@ -18,7 +18,7 @@
     
 </section>
 <script>
-    var coll = document.getElementsByClassName("collapsible");
+    var coll = document.getElementsByClassName("collapsible-btn");
     var i;
 
     for (i = 0; i < coll.length; i++) {
