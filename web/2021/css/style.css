@@ -341,10 +341,14 @@ fieldset {
     padding: 0.25rem 1.75rem;
 }
 
-@media only screen and (min-width: 40rem) {
+@supports not (-webkit-touch-callout: none) {
+    /* CSS for other than iOS devices */ 
     .parallax {
         background-attachment: fixed;
     }
+ }
+
+@media only screen and (min-width: 40rem) {    
 
     header {
         flex-direction: row;
