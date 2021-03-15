@@ -9,7 +9,7 @@ function hhConnect(){
 
         $dbOpts = parse_url($dbUrl);
 
-        var_dump(phpinfo());
+        //var_dump(phpinfo());
 
         $dbHost = $dbOpts["host"];
         $dbPort = $dbOpts["port"];
