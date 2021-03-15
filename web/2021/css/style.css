@@ -67,14 +67,14 @@ header a:active,
 }
 
 .time-txt {
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
 }
 
 .time-unit {
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.7rem;
 }
 
 .date {
@@ -264,8 +264,8 @@ footer {
 }
 
 .time-part {
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 3rem;
+    height: 3rem;
     margin: 0.25rem;
     flex-shrink: 0;
     display:flex;
@@ -388,6 +388,22 @@ fieldset {
     .parallax {
         background-attachment: fixed;
     }
+ }
+
+ @media only screen and (min-width: 20rem) {
+    .time-part {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .time-txt {
+        font-size: 2rem;
+    }
+
+    .time-unit {
+        font-size: 0.85rem;
+    }
+
  }
 
 @media only screen and (min-width: 30rem) {
