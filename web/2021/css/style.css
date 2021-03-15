@@ -367,7 +367,7 @@ fieldset {
         background: var(--nav-bg-trans);
         justify-items: end;
         padding: 0.5rem 0 1rem;
-        border-radius: 0.6rem
+        border-radius: 0.5rem
     }
 }
 
