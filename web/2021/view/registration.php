@@ -13,9 +13,13 @@
     <main>
         <section>
             <h1>Registration</h1>
-            <p>All Adult and Youth Participants are required to register by submitting a valid Permission and Medical Release Form. If the participant is under 19 years of age then the form must also be signed by the youth's legal parent/guardian.</p>
-            <p>A single form can not be used to register more than one participant or a single participant for multiple events. Each must participant must register individually for each event.</p>
-            <p>NOTE: A link to a blank copy of the Permission and Medical Release Form can be found below.</p>
+            <p>All Adult and Youth Participants are required to register by submitting a valid Permission and Medical Release Form.</p>
+            <ul>
+                <li>Please fill out all required fields below. Note: Gray fields are filled out automatically.</li>
+                <li>If the participant is under 19 years of age then the form must also be signed by the youth's legal parent/guardian.</li>
+                <li>A single form can not be used to register more than one participant or a single participant for multiple events.</li>
+                <li>Each must participant must register individually for each event.</li>
+            </ul>
             <form class="form" method="post">
                 <h2>Permission and Medical Release Form</h2>
                 <div class="message">            
@@ -276,9 +280,9 @@
                 </div>
             </form>
         </section>
-        <div>
+        <section class="right-justify-txt">
             <p><a href="https://www.churchofjesuschrist.org/bc/content/shared/content/english/pdf/callings/young-men/parental-permission-medical-release.pdf" title="Permission and Medical Release Form">Permission and Medical Release Form</a> © 2017, 2019 by Intellectual Reserve, Inc. All rights reserved. 5/19. PD60004035 000</p>
-        </div>
+        </section>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
