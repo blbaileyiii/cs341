@@ -149,8 +149,9 @@ header {
     position: sticky;
     top: 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    /*justify-content: space-between;*/
     margin: 0;
     padding: 0.5rem 3rem;
 }
@@ -337,10 +338,14 @@ fieldset {
 }
 
 @media only screen and (min-width: 40rem) {
-
     .parallax {
         background-attachment: fixed;
-    } 
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 @media only screen and (min-width: 83rem) {
