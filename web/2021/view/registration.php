@@ -27,16 +27,12 @@
                 <fieldset>
                     <legend>Event Details</legend>
                     <div class="fields">
-                        <label for="eventName"><span>Event</span><span class="field-tip">Required</span></label>
-                        <select id="eventName" name="eventName" required>
+                        <label for="eventId"><span>Event</span><span class="field-tip">Required</span></label>
+                        <select id="eventId" name="eventId" required>
                             <option value="" selected disabled>Choose an event to populate this section</option>
-                            <option value="yw2021">YWCAMP 2021</option>
-                            <option value="ym2021">YMCAMP 2021</option>
-                            <option value="trek2021">TREK 2021</option>
                             <?php echo $eventList; ?>
                         </select>
                     </div>
-                    <input id="eventId" name="eventId" type="hidden" readonly>
                     <div class="fields">
                         <label for="eventDate"><span>Date(s) of event</span></label> 
                         <input id="eventDate" name="eventDate" type="date" readonly>
