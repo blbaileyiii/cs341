@@ -82,7 +82,7 @@ function buildEventScript($events){
         $switchScript .= "document.getElementById('eventDate').value = '$event[eventDate]';";
         $switchScript .= "break;";
     }
-    $switchScript = "}";
+    $switchScript .= "}";
 
     $eventScript = "document.getElementById('eventId').addEventListener('change', function() { $switchScript });";
 
