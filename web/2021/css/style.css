@@ -164,6 +164,10 @@ header a:hover {
     border-radius: 0.75rem;
 }
 
+.faq li {
+    border-bottom: 3px solid var(--btn-bg);
+}
+
 .non-fields button,
 .non-fields .button {
     background: var(--btn-bg);
@@ -408,6 +412,11 @@ fieldset {
     margin: 0.25rem 1rem;
     border-radius: 5rem;
     padding: 0.25rem 1.75rem;
+}
+
+.faq ul {
+    list-style: none;
+    padding: 0;
 }
 
 .collapsible {
