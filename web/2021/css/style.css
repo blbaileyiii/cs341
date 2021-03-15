@@ -431,11 +431,16 @@ fieldset {
     border: none;
     outline: none;
     text-align: left;
+    margin-bottom: 0.5rem;;
 }
 
 .collapsible-content {
     display: none;
     overflow: hidden;
+}
+
+.collapsible-content p{
+    margin-bottom: 1rem; 
 }
 
 @supports not (-webkit-touch-callout: none) {
