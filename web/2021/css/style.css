@@ -78,7 +78,7 @@ header a:active,
     font-size: x-large;
 }
 
-.parallax-scripture {
+.scripture {
     font-size: x-large;
     font-weight: 700;
 }
@@ -97,7 +97,7 @@ header a:hover {
     color: var(--on-nav-bg);
 }
 
-.parallax-countdown-section {
+.countdown-section {
     /* background: var(--nav-bg); */
     color: var(--on-nav-bg);
 }
@@ -121,7 +121,7 @@ header a:hover {
     background: var(--btn-bg-soft);
 }
 
-.parallax-scripture {
+.scripture {
     color: var(--on-nav-bg);
     text-shadow: 2px 2px var(--nav-bg);
 }
@@ -177,21 +177,18 @@ footer {
     text-align: center;
 }
 
-.parallax-countdown-section {
+.countdown-section {
     text-align: center;
     padding: 0;
     background-image: url("/2021/images/hike-w1280x853.webp");
-    /*background-attachment: fixed;*/
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-background-size: cover;
 }
 
-.parallax-scripture {
+.scripture {
     text-align: center;
     background-image: url("/2021/images/growth-path-w1280x1707.webp");
-    background-attachment: fixed;
+}
+
+.parallax {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -323,4 +320,17 @@ fieldset {
     margin: 0 1.25rem;
     border-radius: 5rem;
     padding: 0.25rem 1.75rem;
+}
+
+
+
+
+
+
+@media only screen and (min-width: 40rem) {
+
+    .parallax {
+        background-attachment: fixed;
+    }
+
 }
