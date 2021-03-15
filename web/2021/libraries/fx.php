@@ -75,7 +75,15 @@ function buildEventList($events){
 }
 
 function buildEventScript($events){
-    $eventScript = '';
+
+    $switchScript = "";
+    foreach ($events as $event) {
+        $switchScript .= "case $event[eventId]:";
+        $switchScript .= "document.getElementById('eventDate').value = $event[eventDate];";
+    }
+
+    $eventScript = "document.getElementById('eventId').addEventListerner('change', function() {  });";
+
     return $eventScript;
 }
 
