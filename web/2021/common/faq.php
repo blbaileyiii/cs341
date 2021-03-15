@@ -3,13 +3,7 @@
     <h2>F.A.Q.</h2>
     <ul>
         <li>
-            <button type="button" class="collapsible-btn"><h3>Open Collapsible +</h3></button>
-            <div class="collapsible-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-        </li>
-        <li>
-            <button type="button" class="collapsible-btn"><h3>Open Collapsible -</h3></button>
+            <button type="button" class="collapsible-btn"><span class="faq-q">Open Collapsible</span><span class="expander">+</span></button>
             <div class="collapsible-content">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
@@ -25,10 +19,16 @@
     coll[i].addEventListener("click", function() {
         this.classList.toggle("faq-active");
         var content = this.nextElementSibling;
+        var expander = this.querySelector(".expander");
         if (content.style.display === "block") {
         content.style.display = "none";
         } else {
         content.style.display = "block";
+        }
+        if (expander.textContent == "+") {
+            expander.textContent == "-";
+        } else {
+            expander.textContent == "+";
         }
     });
     }
