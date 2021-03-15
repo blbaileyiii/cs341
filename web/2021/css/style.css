@@ -178,6 +178,7 @@ section {
     align-items: center;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .nav-ul li{
@@ -345,11 +346,6 @@ fieldset {
     header {
         flex-direction: row;
         justify-content: space-between;
-    }
-
-    .nav-ul {
-        flex-direction: row;
-        flex-wrap: wrap;
     }
 }
 
