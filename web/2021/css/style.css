@@ -181,7 +181,7 @@ footer {
     text-align: center;
     padding: 0;
     background-image: url("/2021/images/hiking-w1280x853.webp");
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
