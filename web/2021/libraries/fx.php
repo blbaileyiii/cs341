@@ -76,8 +76,8 @@ function buildEventList($events){
 
 function buildEventScript($events){
     $switchScript = "let eventID = document.getElementById('eventDate').value;";
-    $switchScript .= "console.log(eventID);";
-    $switchScript .= "switch(1) {";
+    $switchScript .= "console.log('EventID:' + eventID);";
+    $switchScript .= "switch(eventID) {";
     foreach ($events as $event) {
         $switchScript .= "case $event[eventId]:";
         $switchScript .= "document.getElementById('eventDate').value = '$event[eventDate]';";
