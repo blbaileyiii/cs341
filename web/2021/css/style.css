@@ -134,7 +134,7 @@ header,
 }
 
 .faq-active, .collapsible-btn:hover {
-    background: var(--btn-bg-soft);
+    color: var(--btn-bg-soft);
 }
 
 
@@ -198,6 +198,10 @@ header a:hover {
 
 .all-schedules li{
     background: var(--nav-bg);
+}
+
+.faq li {
+    border-bottom: 3px solid var(--btn-bg);
 }
 
 .all-schedules a,
@@ -430,8 +434,8 @@ fieldset {
 }
 
 .faq li {
-    border-bottom: 3px solid var(--btn-bg);
     margin-bottom: 1.5rem;
+    border-bottom-left-radius: 0.75rem;
 }
 
 .collapsible-btn {
@@ -442,6 +446,12 @@ fieldset {
     margin-bottom: 0.5rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.expander {
+    margin-left: 1rem;
 }
 
 .collapsible-content {
