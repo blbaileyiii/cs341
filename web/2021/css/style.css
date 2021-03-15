@@ -136,6 +136,7 @@ header a:hover {
     transform: scaleX(1);
 }
 
+footer,
 .countdown-section,
 .about {
     background: var(--nav-bg);
