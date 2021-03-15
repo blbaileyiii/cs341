@@ -108,6 +108,10 @@ header a:active,
     font-size: 1.17em;
 }
 
+.legal-sm {
+    font-size: x-small;
+}
+
 /* Color */
 
 html,
@@ -274,8 +278,7 @@ section {
     margin-bottom: 1.5rem;
 }
 
-footer, 
-.justify-txt-center {
+footer {
     text-align: center;
 }
 
@@ -466,8 +469,10 @@ fieldset {
     margin: 0 0 1rem; 
 }
 
-.right-justify-txt {
+.legal-sm {
     text-align: right;
+    margin: 0;
+    padding: 0;
 }
 
 @supports not (-webkit-touch-callout: none) {
