@@ -59,11 +59,11 @@ header a:active,
 }
 
 .schedule .logo-lg {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 .schedule .logo-sm {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
 
 .time-txt {
@@ -366,12 +366,14 @@ fieldset {
 
 .all-schedules {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     justify-content: center;
+    padding: 0;
 }
 
 .all-schedules li{
-    margin: 0 1.25rem;
+    margin: 0.25rem 1rem;
     border-radius: 5rem;
     padding: 0.25rem 1.75rem;
 }
