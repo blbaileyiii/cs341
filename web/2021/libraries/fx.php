@@ -76,11 +76,12 @@ function buildEventList($events){
 
 function buildEventScript($events){
 
-    $switchScript = "";
+    $switchScript = "switch(document.getElementById('eventDate').value) {";
     foreach ($events as $event) {
-        //$switchScript .= "case $event[eventId]:";
+        $switchScript .= "case $event[eventId]:";
         $switchScript .= "document.getElementById('eventDate').value = '$event[eventDate]';";
     }
+    $switchScript = "}";
 
     $eventScript = "document.getElementById('eventId').addEventListener('change', function() { $switchScript });";
 
