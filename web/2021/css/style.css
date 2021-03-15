@@ -465,6 +465,10 @@ fieldset {
     margin: 0 0 1rem; 
 }
 
+.right-justify-txt {
+    text-align: right;
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
