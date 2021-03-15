@@ -79,7 +79,7 @@
                         </select>
                     </div>
                     <div class="fields">
-                        <label for="participantDOB"><span>Date of birth</span><span class="field-tip">Required</span></label> 
+                        <label for="participantDOB"><span>Date of birth</span></label> 
                         <input id="participantDOB" name="participantDOB" type="date" required>
                     </div>
                     <div class="fields">
