@@ -32,7 +32,7 @@
         content.style.display = "block";
         }
         if (expander.innerHTML === "+") {
-            expander.innerHTML = "-";
+            expander.innerHTML = "X";
         } else {
             expander.innerHTML = "+";
         }
