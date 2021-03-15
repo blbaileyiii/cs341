@@ -170,7 +170,6 @@ header {
 
 .responsive .nav.item {
     display: block;
-    border: none;
 }
 
 section {
@@ -364,6 +363,9 @@ fieldset {
         background: var(--nav-bg);
         justify-items: end;
         padding: 0.5rem 0 1rem;
+    }
+
+    .responsive {
         border: 3px solid var(--logo-highlight);
     }
 }
