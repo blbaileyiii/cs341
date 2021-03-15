@@ -25,10 +25,10 @@
         } else {
         content.style.display = "block";
         }
-        if (expander.textContent == "+") {
-            expander.textContent == "-";
+        if (expander.innerHTML === "+") {
+            expander.innerHTML = "-";
         } else {
-            expander.textContent == "+";
+            expander.innerHTML = "+";
         }
     });
     }
