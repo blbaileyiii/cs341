@@ -226,11 +226,6 @@ footer {
     padding: 0.25rem 0.25rem 1rem;
 }
 
-.section-center {
-    width: 60%;
-    margin: 0 auto;
-}
-
 .menu {
     text-align: center;
 }
@@ -539,6 +534,11 @@ fieldset {
         justify-items: end;
         padding: 0.5rem 0 1rem;
         border-radius: 0.5rem
+    }
+
+    .section-center {
+        width: 60%;
+        margin: 0 auto;
     }
 }
 
