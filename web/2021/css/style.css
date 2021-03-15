@@ -375,7 +375,7 @@ fieldset {
     }
  }
 
-@media only screen and (min-wdith: 25rem) {
+@media only screen and (min-width: 25rem) {
     .time-part {
         width: 5.5rem;
         height: 5.5rem;
