@@ -203,6 +203,11 @@ header {
     display: block;
 }
 
+img.responsive {
+    width: 100%;
+    height: auto;
+}
+
 section {
     padding: 1rem 3rem;
 }
