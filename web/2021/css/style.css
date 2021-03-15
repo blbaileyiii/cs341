@@ -226,6 +226,11 @@ footer {
     padding: 0.25rem 0.25rem 1rem;
 }
 
+.section-center {
+    width: 60%;
+    margin: 0 auto;
+}
+
 .menu {
     text-align: center;
 }
