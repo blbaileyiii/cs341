@@ -177,9 +177,8 @@ section {
 }
 
 .nav-ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    gap: 0.25rem;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -361,7 +360,6 @@ fieldset {
         top: 2.3rem;
         right: -1rem;
         z-index: 1;
-        align-items: flex-end;
         background: var(--nav-bg);
     }
 }
