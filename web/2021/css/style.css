@@ -349,6 +349,7 @@ fieldset {
 
     .nav-ul {
         flex-direction: row;
+        flex-wrap: wrap;
     }
 }
 
