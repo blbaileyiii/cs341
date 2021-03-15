@@ -35,7 +35,7 @@
                     <div class="fields">
                         <label for="eventId"><span>Event</span><span class="field-tip">Required</span></label>
                         <select id="eventId" name="eventId" required>
-                            <option value="" selected disabled>Choose an event to populate this section</option>
+                            <option value="" selected disabled>Choose an event to populate this Event Details</option>
                             <?php echo $eventList; ?>
                         </select>
                     </div>
