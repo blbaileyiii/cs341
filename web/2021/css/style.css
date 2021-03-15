@@ -6,7 +6,7 @@
     --nav-bg-trans: #2f375baa;
     --on-nav-bg: #ffffff;
     --on-nav-bg-soft: #d4e7ed;
-    --html-bg: #2f375b;
+    --html-bg: #1c2035;
     --body-bg: #ffffff;
     --logo-highlight: #fec240;
     --border-intense: #de4b43;
@@ -104,8 +104,10 @@ header a:active,
 
 /* Color */
 
-html {
+html,
+footer, {
     background: var(--html-bg);
+    color: var(--on-nav-bg-soft);
 }
 
 body {
@@ -147,7 +149,6 @@ header a:hover {
     transform: scaleX(1);
 }
 
-footer,
 .countdown-section,
 .about {
     background: var(--nav-bg);
