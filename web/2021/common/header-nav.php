@@ -18,5 +18,5 @@
         <li class="nav item"><a href="/2021/registration" title="">Registration</a></li>
     </ul>
 </div>
-<script src="js/nav.js"></script>
+<script src="/2021/js/nav.js"></script>
 
