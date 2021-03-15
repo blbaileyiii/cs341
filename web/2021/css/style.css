@@ -78,7 +78,7 @@ header a:active,
     font-size: x-large;
 }
 
-.scripture {
+.parallax-scripture {
     font-size: x-large;
     font-weight: 700;
 }
@@ -97,7 +97,7 @@ header a:hover {
     color: var(--on-nav-bg);
 }
 
-.countdown-section {
+.parallax-countdown-section {
     /* background: var(--nav-bg); */
     color: var(--on-nav-bg);
 }
@@ -121,7 +121,7 @@ header a:hover {
     background: var(--btn-bg-soft);
 }
 
-.scripture {
+.parallax-scripture {
     color: var(--on-nav-bg);
     text-shadow: 2px 2px var(--nav-bg);
 }
