@@ -138,7 +138,7 @@ header a:hover {
 
 .countdown-section,
 .about {
-    /* background: var(--nav-bg); */
+    background: var(--nav-bg);
     color: var(--on-nav-bg);
 }
 
