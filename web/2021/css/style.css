@@ -294,17 +294,17 @@ fieldset {
     padding: 0.25rem;
 }
 
+.scripture {
+    background-image: url("/2021/images/growth-path-w1280x1707.webp");
+    text-align: center;
+}
+
 .parallax {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
-}
-
-.scripture {
-    background-image: url("/2021/images/growth-path-w1280x1707.webp");
-    text-align: center;
 }
 
 .filter {
