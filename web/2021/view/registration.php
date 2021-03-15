@@ -170,7 +170,7 @@
                         <span class="field-tip">Required</span>
                     </div> 
                     <div class="fields">
-                        <label for="specialDietTxt"><span>If yes, please explain the dietary restrictions</span></label> 
+                        <label for="specialDietTxt"><span>If yes, please explain the dietary restrictions:</span></label> 
                         <textarea id="specialDietTxt" name="specialDietTxt"></textarea>
                     </div>
                     <div class="fields-radio">
@@ -184,7 +184,7 @@
                         <span class="field-tip">Required</span>
                     </div>
                     <div class="fields">
-                        <label for="allergiesTxt"><span>If yes, please list the allergies</span></label> 
+                        <label for="allergiesTxt"><span>If yes, please list the allergies:</span></label> 
                         <textarea id="allergiesTxt" name="allergiesTxt"></textarea>
                     </div>
                     <div class="fields-radio">
@@ -208,7 +208,7 @@
                         <span class="field-tip">If no, please contact the event or activity leader directly.</span>
                     </div>
                     <div class="fields">
-                        <label for="medicationList"><span>List all prescription or over-the-counter (OTC) medications the participant is taking</span></label> 
+                        <label for="medicationList"><span>List all prescription or over-the-counter (OTC) medications the participant is taking:</span></label> 
                         <textarea id="medicationList" name="medicationList"></textarea>
                     </div>
                 </fieldset>
@@ -225,7 +225,7 @@
                         <span class="field-tip">Required</span>
                     </div>
                     <div class="fields">
-                        <label for="chronicIllnessTxt"><span>If yes, please explain</span></label> 
+                        <label for="chronicIllnessTxt"><span>If yes, please explain:</span></label> 
                         <textarea id="chronicIllnessTxt" name="chronicIllnessTxt"></textarea>
                     </div>
                     <div class="fields-radio">
@@ -239,18 +239,18 @@
                         <span class="field-tip">Required</span>
                     </div>
                     <div class="fields">
-                        <label for="seriousTxt"><span>If yes, please explain</span></label> 
+                        <label for="seriousTxt"><span>If yes, please explain:</span></label> 
                         <textarea id="seriousTxt" name="seriousTxt"></textarea>
                     </div>
                     <div class="fields">
-                        <label for="limitations"><span>Identify any other limits, restrictions, or disabilities that could prevent the participant from fully participating in the event or activity (attach additional pages if needed)</span></label> 
+                        <label for="limitations"><span>Identify any other limits, restrictions, or disabilities that could prevent the participant from fully participating in the event or activity:</span></label> 
                         <textarea id="limitations" name="limitations"></textarea>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend>Other Accommodations or Special Needs</legend>
                     <div class="fields">
-                        <label for="considerations"><span>Identify any other needs or considerations the participant has that the event or activity planner should be aware of (attach additional pages if needed)</span></label> 
+                        <label for="considerations"><span>Identify any other needs or considerations the participant has that the event or activity planner should be aware of:</span></label> 
                         <textarea id="considerations" name="considerations"></textarea>
                     </div>
                 </fieldset>
