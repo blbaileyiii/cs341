@@ -79,7 +79,7 @@ function buildEventScript($events){
     $switchScript .= "console.log('EventID:' + eventID);";
     $switchScript .= "switch(eventID) {";
     foreach ($events as $event) {
-        $switchScript .= "case $event[eventId]:";
+        $switchScript .= "case '$event[eventId]':";
         $switchScript .= "document.getElementById('eventDate').value = '$event[eventDate]';";
         $switchScript .= "break;";
     }
