@@ -136,7 +136,8 @@ header a:hover {
     transform: scaleX(1);
 }
 
-.countdown-section {
+.countdown-section,
+.about {
     /* background: var(--nav-bg); */
     color: var(--on-nav-bg);
 }
@@ -254,10 +255,6 @@ footer {
 .scripture {
     text-align: center;
     background-image: url("/2021/images/growth-path-w1280x1707.webp");
-}
-
-.about {
-    background-image: url("/2021/images/equipment-w1280x853.webp");
 }
 
 .parallax {
