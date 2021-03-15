@@ -75,9 +75,9 @@ function buildEventList($events){
 }
 
 function buildEventScript($events){
-    $switchScript = "let eventID = document.getElementById('eventDate').value;";
-    $switchScript .= "console.log(eventID);";
-    $switchScript .= "switch(eventID) {";
+    $eventScript = "let eventID = document.getElementById('eventDate').value;";
+    $eventScript .= "console.log(eventID);";
+    $switchScript = "switch(eventID) {";
     foreach ($events as $event) {
         $switchScript .= "case $event[eventId]:";
         $switchScript .= "document.getElementById('eventDate').value = '$event[eventDate]';";
@@ -85,7 +85,7 @@ function buildEventScript($events){
     }
     $switchScript .= "}";
 
-    $eventScript = "document.getElementById('eventId').addEventListener('change', function() { $switchScript });";
+    $eventScript .= "document.getElementById('eventId').addEventListener('change', function() { $switchScript });";
 
     return $eventScript;
 }
