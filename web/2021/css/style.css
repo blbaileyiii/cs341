@@ -177,15 +177,29 @@ footer {
     text-align: center;
 }
 
-.countdown-section {
+.parallax-countdown-section {
     text-align: center;
     padding: 0;
     background-image: url("/2021/images/hike.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
 }
 
-.scripture {
-    background-image: url("/2021/images/growth-path-w1280x1707.webp");
+.parallax-scripture {
     text-align: center;
+    background-image: url("/2021/images/growth-path-w1280x1707.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+.filter {
+    padding: 2rem;
 }
 
 .time-block {
@@ -297,18 +311,6 @@ fieldset {
 .non-fields .button a:visited {
     display: block;
     padding: 0.25rem;
-}
-
-.parallax {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-background-size: cover;
-}
-
-.filter {
-    padding: 2rem;
 }
 
 .all-schedules {
