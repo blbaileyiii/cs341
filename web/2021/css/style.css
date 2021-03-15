@@ -6,6 +6,8 @@
     --nav-bg-trans: #2f375baa;
     --on-nav-bg: #ffffff;
     --on-nav-bg-soft: #d4e7ed;
+    --html-bg: #2f375b;
+    --body-bg: #ffffff;
     --logo-highlight: #fec240;
     --border-intense: #de4b43;
     --btn-bg: #2f375b;
@@ -101,6 +103,15 @@ header a:active,
 }
 
 /* Color */
+
+html {
+    background: var(--html-bg);
+}
+
+body {
+    background: var(--body-bg);
+}
+
 header {
     background: var(--nav-bg);
     color: var(--on-nav-bg);
