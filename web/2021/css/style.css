@@ -13,6 +13,7 @@
     --border-intense: #de4b43;
     --btn-bg: #2f375b;
     --btn-bg-soft: #de4b43;
+    --read-only: #b8b8b8;
 }
 
 /* Typography */
@@ -204,6 +205,10 @@ header a:hover {
 .all-schedules a:visited,
 .all-schedules a:active{
     color: var(--on-nav-bg);
+}
+
+input:read-only {
+    background-color: var(--read-only);
 }
 
 /* Layout */
