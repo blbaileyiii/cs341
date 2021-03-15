@@ -430,6 +430,7 @@ fieldset {
     width: 100%;
     border: none;
     outline: none;
+    text-align: left;
 }
 
 .collapsible-content {
