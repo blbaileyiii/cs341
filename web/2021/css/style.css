@@ -274,7 +274,8 @@ section {
     margin-bottom: 1.5rem;
 }
 
-footer {
+footer, 
+.justify-txt-center {
     text-align: center;
 }
 
