@@ -249,7 +249,7 @@ img.responsive {
 }
 
 section {
-    padding: 1rem 3rem;
+    padding: 1rem;
 }
 
 .nav-ul {
@@ -486,6 +486,10 @@ fieldset {
 
     .countdown-data .logo-sm {
         font-size: 1.8rem;
+    }
+
+    section {
+        padding: 1rem 3rem;
     }
 
     section h1 {
