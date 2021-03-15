@@ -67,6 +67,10 @@ function buildClassificationList($classifications){
 
 function buildEventList($events){
     $eventList = '';
+    foreach ($events as $event) {
+        $eventList .= "<option value='$event[eventId]'>$event[eventName]</option>";
+    }
+    
     return $eventList;
 }
 
