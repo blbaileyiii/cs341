@@ -80,6 +80,7 @@ function buildEventScript($events){
     foreach ($events as $event) {
         $switchScript .= "case $event[eventId]:";
         $switchScript .= "document.getElementById('eventDate').value = '$event[eventDate]';";
+        $switchScript .= "break;";
     }
     $switchScript = "}";
 
