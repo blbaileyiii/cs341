@@ -17,7 +17,7 @@ function toggleMenuTxt(x) {
 window.onresize = toggleMenuResize;
 
 function toggleMenuResize(x) {
-    if (window.innerWidth > 800) {
+    if (window.innerWidth > 1328) {
         mainnav.classList.remove('responsive');
         document.getElementById("toggleMenu").innerHTML = "☰ Menu";
     }            
