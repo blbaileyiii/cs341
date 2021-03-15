@@ -173,6 +173,8 @@ section {
 
 .nav-ul {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     list-style: none;
     padding: 0;
 }
@@ -345,7 +347,7 @@ fieldset {
     .nav.item {
         display: block;    
     }
-    
+
     .nav.item.ham {
         display: none;
     }
