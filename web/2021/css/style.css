@@ -488,10 +488,6 @@ fieldset {
         font-size: 1.8rem;
     }
 
-    section {
-        padding: 1rem 3rem;
-    }
-
     section h1 {
         font-size: 2rem;
     }
@@ -514,6 +510,10 @@ fieldset {
 
     .countdown {
         margin-bottom: 3rem;
+    }
+
+    section {
+        padding: 1rem 3rem;
     }
 
 }
