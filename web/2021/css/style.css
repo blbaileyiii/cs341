@@ -245,7 +245,6 @@ footer {
 
 .countdown-section {
     text-align: center;
-    padding: 0;
     background-image: url("/2021/images/hike-w1280x853.webp");
 }
 
@@ -263,6 +262,7 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
+    padding: 0;
 }
 
 .filter {
