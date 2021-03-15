@@ -13,7 +13,8 @@
     <main>
         <section>
             <h1>Registration</h1>
-            <p>Each youth is required to register individually and for each camp separately. Additonally, registration requires an accompanying Permission and Medical Release Form to be signed by the youth's parent/guardian.</p>
+            <p>All Adult and Youth Participants are required to register by submitting a valid <a href="https://www.churchofjesuschrist.org/bc/content/shared/content/english/pdf/callings/young-men/parental-permission-medical-release.pdf" title="Permission and Medical Release Form">Permission and Medical Release Form</a>. If the participant is under 19 years of age then the form must also be signed by the youth's legal parent/guardian.</p>
+            <p>NOTE: A single form can not be used to register more than one participant or a single participant for multiple events. Each must participant must register individually for each event.</p>
             <form class="form" method="post">
                 <h2>Permission and Medical Release Form</h2>
                 <div class="message">            
