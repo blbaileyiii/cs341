@@ -15,10 +15,10 @@
             <h1>Registration</h1>
             <p>All Adult and Youth Participants are required to register by submitting a valid Permission and Medical Release Form.</p>
             <ul>
-                <li>Please fill out all required fields below. Note: Gray fields will be filled out automatically as you proceed.</li>
+                <li>Please fill out all required fields below. Note: Gray fields will be filled out automatically.</li>
                 <li>If the participant is under 19 years of age then the form must also be signed by the youth's legal parent/guardian.</li>
                 <li>A single form can not be used to register more than one participant or a single participant for multiple events.</li>
-                <li>Each must participant must register individually for each event.</li>
+                <li>Each participant must register individually for each event.</li>
             </ul>
             <h2>Permission and Medical Release Form</h2>
             <div class="message">            
