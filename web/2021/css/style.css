@@ -183,6 +183,11 @@ footer {
     background-image: url("/2021/images/hike.jpg");
 }
 
+.scripture {
+    background-image: url("/2021/images/growth-path-w1280x1707.webp");
+    text-align: center;
+}
+
 .time-block {
     display: flex;
     justify-content: center;
@@ -292,11 +297,6 @@ fieldset {
 .non-fields .button a:visited {
     display: block;
     padding: 0.25rem;
-}
-
-.scripture {
-    background-image: url("/2021/images/growth-path-w1280x1707.webp");
-    text-align: center;
 }
 
 .parallax {
