@@ -78,11 +78,11 @@ function buildEventScript($events){
 
     $switchScript = "";
     foreach ($events as $event) {
-        $switchScript .= "case $event[eventId]:";
+        //$switchScript .= "case $event[eventId]:";
         $switchScript .= "document.getElementById('eventDate').value = $event[eventDate];";
     }
 
-    $eventScript = "document.getElementById('eventId').addEventListerner('change', function() {  });";
+    $eventScript = "document.getElementById('eventId').addEventListerner('change', function() { $switchScript });";
 
     return $eventScript;
 }
