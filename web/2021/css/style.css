@@ -440,7 +440,7 @@ fieldset {
 }
 
 .collapsible-content p{
-    margin-bottom: 1rem; 
+    margin: 0 0 1rem; 
 }
 
 @supports not (-webkit-touch-callout: none) {
