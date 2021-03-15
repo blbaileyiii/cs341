@@ -58,10 +58,12 @@ header a:active,
     font-size: 1.8rem;
 }
 
+.countdown-data .logo-lg,
 .schedule .logo-lg {
     font-size: 1.6rem;
 }
 
+.countdown-data .logo-sm,
 .schedule .logo-sm {
     font-size: 1.4rem;
 }
@@ -402,6 +404,14 @@ fieldset {
 
     .time-unit {
         font-size: 0.85rem;
+    }
+
+    .countdown-data .logo-lg {
+        font-size: 2rem;
+    }
+
+    .countdown-data .logo-sm {
+        font-size: 1.8rem;
     }
 
  }
