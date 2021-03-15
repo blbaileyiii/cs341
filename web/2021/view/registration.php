@@ -44,7 +44,7 @@
                         <input id="eventDate" name="eventDate" type="date" readonly>
                     </div>
                     <div class="fields">
-                        <label for="eventDesc"><span>Describe event and activities (please be specific)</span></label>
+                        <label for="eventDesc"><span>Describe event and activities (please be specific):</span></label>
                         <textarea id="eventDesc" name="eventDesc" readonly></textarea>
                     </div>
                     <div class="fields">
