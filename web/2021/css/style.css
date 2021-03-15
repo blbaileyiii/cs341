@@ -66,6 +66,7 @@ header a:active,
 
 .time-unit {
     font-weight: 600;
+    font-size: 0.85rem;
 }
 
 .date {
@@ -211,7 +212,7 @@ section {
 }
 
 .countdown {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 footer {
@@ -222,6 +223,10 @@ footer {
     text-align: center;
     padding: 0;
     background-image: url("/2021/images/hike-w1280x853.webp");
+}
+
+.countdown-section h1 {
+    margin: 0;
 }
 
 .scripture {
@@ -246,8 +251,8 @@ footer {
 }
 
 .time-part {
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
     margin: 0.25rem;
     flex-shrink: 0;
     display:flex;
@@ -369,6 +374,26 @@ fieldset {
         background-attachment: fixed;
     }
  }
+
+@media only screen and (min-wdith: 25rem) {
+    .time-part {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+
+    .time-unit {
+        font-size: 1rem;
+    }
+
+    .countdown-section h1 {
+        margin: 1rem 0;
+    }
+
+    .countdown {
+        margin-bottom: 3rem;
+    }
+
+}
 
 @media only screen and (min-width: 50rem) {    
 
