@@ -114,10 +114,14 @@ body {
     background: var(--body-bg);
 }
 
-header {
+header,
+.countdown-section,
+.about,
+.guidelines {
     background: var(--nav-bg);
     color: var(--on-nav-bg);
 }
+
 
 header a, header a:visited, header a:active {
     color: var(--on-nav-bg-soft);
@@ -147,12 +151,6 @@ header a:hover {
 .nav.item a:hover::before {
     visibility: visible;
     transform: scaleX(1);
-}
-
-.countdown-section,
-.about {
-    background: var(--nav-bg);
-    color: var(--on-nav-bg);
 }
 
 .logo-highlight {
