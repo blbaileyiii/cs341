@@ -361,12 +361,13 @@ fieldset {
 
     .nav-ul {
         position:absolute;
-        top: 2.3rem;
+        top: 3rem;
         right: -1rem;
         z-index: 1;
         background: var(--nav-bg-trans);
         justify-items: end;
         padding: 0.5rem 0 1rem;
+        border-radius: 0.6rem
     }
 }
 
