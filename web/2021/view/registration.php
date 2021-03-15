@@ -129,7 +129,7 @@
                         <input id="participantState" name="participantState" type="text" required>
                     </div>
                     <div class="fields">
-                        <label for="emergencyContact"><span>Emergency contact (parent or guardian)</span><span class="field-tip">Required</span></label> 
+                        <label for="emergencyContact"><span>Emergency contact (If under 19, must be parent or guardian)</span><span class="field-tip">Required</span></label> 
                         <input id="emergencyContact" name="emergencyContact" type="text" required>
                     </div>
                     <div class="fields">
