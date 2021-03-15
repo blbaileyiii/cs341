@@ -80,11 +80,11 @@ function buildEventScript($events){
     $switchScript .= "switch(eventID) {";
     for ($x = 0; $x <= count($events); $x++) {
         $switchScript .= "case '{$events[$x]['eventId']}':";
-        $switchScript .= "document.getElementById('eventDate').value = '{$events[$x]['eventDate']}';";
-        $switchScript .= "document.getElementById('eventDesc').value = '{$events[$x]['eventDesc']}';";
-        $switchScript .= "document.getElementById('eventLeaderName').value = '{$events[$x]['eventLeaderName']}';";
-        $switchScript .= "document.getElementById('eventLeaderPhone').value = '{$events[$x]['eventLeaderPhone']}';";
-        $switchScript .= "document.getElementById('eventLeaderEmail').value = '{$events[$x]['eventLeaderEmail']}';";
+        $switchScript .= "document.getElementById('eventDate').value = \"{$events[$x]['eventDate']}\";";
+        $switchScript .= "document.getElementById('eventDesc').value = \"{$events[$x]['eventDesc']}\";";
+        $switchScript .= "document.getElementById('eventLeaderName').value = \"{$events[$x]['eventLeaderName']}\";";
+        $switchScript .= "document.getElementById('eventLeaderPhone').value = \"{$events[$x]['eventLeaderPhone']}\";";
+        $switchScript .= "document.getElementById('eventLeaderEmail').value = \"{$events[$x]['eventLeaderEmail']}\";";
         $switchScript .= "break;";
     }
     $switchScript .= "}";
