@@ -105,7 +105,7 @@ header a:active,
 /* Color */
 
 html,
-footer, {
+footer {
     background: var(--html-bg);
     color: var(--on-nav-bg-soft);
 }
