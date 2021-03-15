@@ -81,6 +81,10 @@ function buildEventScript($events){
     foreach ($events as $event) {
         $switchScript .= "case '$event[eventId]':";
         $switchScript .= "document.getElementById('eventDate').value = '$event[eventDate]';";
+        $switchScript .= "document.getElementById('eventDesc').value = '$event[eventDesc]';";
+        $switchScript .= "document.getElementById('eventLeaderName').value = '$event[eventLeaderName]';";
+        $switchScript .= "document.getElementById('eventLeaderPhone').value = '$event[eventLeaderPhone]';";
+        $switchScript .= "document.getElementById('eventLeaderEmail').value = '$event[eventLeaderEmail]';";
         $switchScript .= "break;";
     }
     $switchScript .= "}";
