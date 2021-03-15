@@ -331,8 +331,7 @@ a.anchor{
 }
 
 .form {
-    padding: 1rem 0;
-    margin: 0 auto;
+    margin: 1rem auto;
     display: grid;
     gap: 2rem;
 }

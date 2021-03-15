@@ -20,16 +20,16 @@
                 <li>A single form can not be used to register more than one participant or a single participant for multiple events.</li>
                 <li>Each must participant must register individually for each event.</li>
             </ul>
+            <h2>Permission and Medical Release Form</h2>
+            <div class="message">            
+                <?php
+                    if (isset($_SESSION['message'])) { 
+                            echo $_SESSION['message']; 
+                            unset($_SESSION['message']);
+                    }
+                ?>
+            </div>
             <form class="form" method="post">
-                <h2>Permission and Medical Release Form</h2>
-                <div class="message">            
-                    <?php
-                        if (isset($_SESSION['message'])) { 
-                                echo $_SESSION['message']; 
-                                unset($_SESSION['message']);
-                        }
-                    ?>
-                </div>
                 <fieldset>
                     <legend>Event Details</legend>
                     <div class="fields">
