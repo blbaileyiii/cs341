@@ -170,6 +170,7 @@ header {
 
 .responsive .nav.item {
     display: block;
+    border: none;
 }
 
 section {
@@ -180,7 +181,7 @@ section {
     display: grid;
     gap: 0.5rem;
     list-style: none;
-    padding: 0.5rem 0 1rem;
+    padding: 0;
     margin: 0;
 }
 
@@ -362,6 +363,8 @@ fieldset {
         z-index: 1;
         background: var(--nav-bg);
         justify-items: end;
+        padding: 0.5rem 0 1rem;
+        border: 3px solid var(--logo-highlight);
     }
 }
 
