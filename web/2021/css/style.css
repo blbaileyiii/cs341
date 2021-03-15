@@ -3,7 +3,7 @@
 /* Var */
 :root {
     --nav-bg: #2f375b;
-    --nav-bg-trans: #2f375b79;
+    --nav-bg-trans: #2f375baa;
     --on-nav-bg: #ffffff;
     --on-nav-bg-soft: #d4e7ed;
     --logo-highlight: #fec240;
@@ -360,13 +360,9 @@ fieldset {
         top: 2.3rem;
         right: -1rem;
         z-index: 1;
-        background: var(--nav-bg);
+        background: var(--nav-bg-trans);
         justify-items: end;
         padding: 0.5rem 0 1rem;
-    }
-
-    .responsive {
-        border: 3px solid var(--logo-highlight);
     }
 }
 
