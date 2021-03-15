@@ -67,8 +67,8 @@ function buildClassificationList($classifications){
 
 function buildEventList($events){
     $eventList = '';
-    foreach ($events as $event) {
-        $eventList .= "<option value='$event[eventId]'>$event[eventName]</option>";
+    for ($x = 0; $x <= count($events); $x++) {
+        $eventList .= "<option value='$events[$x][eventId]'>$events[$x][eventName]</option>";
     }
     
     return $eventList;
@@ -78,13 +78,13 @@ function buildEventScript($events){
     $switchScript = "let eventID = document.getElementById('eventId').value;";
     $switchScript .= "console.log('EventID:' + eventID);";
     $switchScript .= "switch(eventID) {";
-    foreach ($events as $event) {
-        $switchScript .= "case '$event[eventId]':";
-        $switchScript .= "document.getElementById('eventDate').value = '$event[eventDate]';";
-        $switchScript .= "document.getElementById('eventDesc').value = '$event[eventDesc]';";
-        $switchScript .= "document.getElementById('eventLeaderName').value = '$event[eventLeaderName]';";
-        $switchScript .= "document.getElementById('eventLeaderPhone').value = '$event[eventLeaderPhone]';";
-        $switchScript .= "document.getElementById('eventLeaderEmail').value = '$event[eventLeaderEmail]';";
+    for ($x = 0; $x <= count($events); $x++) {
+        $switchScript .= "case '$events[$x][eventId]':";
+        $switchScript .= "document.getElementById('eventDate').value = '$events[$x][eventDate]';";
+        $switchScript .= "document.getElementById('eventDesc').value = '$events[$x][eventDesc]';";
+        $switchScript .= "document.getElementById('eventLeaderName').value = '$events[$x][eventLeaderName]';";
+        $switchScript .= "document.getElementById('eventLeaderPhone').value = '$events[$x][eventLeaderPhone]';";
+        $switchScript .= "document.getElementById('eventLeaderEmail').value = '$events[$x][eventLeaderEmail]';";
         $switchScript .= "break;";
     }
     $switchScript .= "}";
