@@ -58,6 +58,14 @@ header a:active,
     font-size: 1.8rem;
 }
 
+.schedule .logo-lg {
+    font-size: 1.8rem;
+}
+
+.schedule .logo-sm {
+    font-size: 1.6rem;
+}
+
 .time-txt {
     font-size: 2rem;
     font-weight: 700;
