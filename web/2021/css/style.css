@@ -573,7 +573,9 @@ p.legal-sm {
     .pillars-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        grid-auto-flow: dense;
+        gap: 1.5rem;
+        margin-top: 1.25rem;
     }
 
     .pillars-content:nth-of-type(odd) div{
