@@ -2,7 +2,7 @@
 <section class="about">
     <div class="section-center about-content">
         <div>
-            <h2><span class="camp-yr-logo"><span class="logo-lg">Camp</span><span class="logo-highlight logo-sm">2021</span></span> <span class="logo-lg">Theme</span></h2>
+            <h2><span class="camp-yr-logo"><span class="logo-lg">Camp</span><span class="logo-highlight logo-sm">2021</span></span> <span class="logo-match">Theme</span></h2>
             <p>"And Jesus increased in wisdom and stature, and in favour with God and man." (<a href="https://www.churchofjesuschrist.org/study/scriptures/nt/luke/2.52?lang=eng&clang=eng#p52" title="Luke 2:52" target="_blank" rel="noreferrer">Luke 2:52</a>) </p>
         </div>
         <div class="details">
