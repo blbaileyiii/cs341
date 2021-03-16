@@ -576,7 +576,7 @@ p.legal-sm {
         gap: 1rem;
     }
 
-    .pillars-content:nth-of-type(even) {
+    .pillars-content:nth-of-type(odd) div{
         background: blue;
     }
 }
