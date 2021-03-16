@@ -1,4 +1,4 @@
-document.getElementById('participantDOB').addEventListener('change', function() {
+document.getElementById('participantDOB').addEventListener('blur', function() {
     let dOB = this.value;
     let ageInput = document.getElementById('participantAge');
 
