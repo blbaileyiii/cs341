@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Master Controller
  */
@@ -30,6 +29,8 @@ switch($action){
         $events = getEvents(2021);
         $aboutHTML = buildAboutHTML($events);
         $contactsHTML = buildContactsHTML($events);
-        include '/2021/view/home.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/home.php';
+
+var_dump($_SERVER['DOCUMENT_ROOT']);
 }
 ?>
