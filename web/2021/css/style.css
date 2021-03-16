@@ -29,7 +29,8 @@ h5,
 h6, 
 .time-txt, 
 .logo-lg,
-.logo.sm {
+.logo.sm,
+.logo-match {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif
 }
 
