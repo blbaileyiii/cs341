@@ -90,7 +90,7 @@
                     </div>
                     <div class="fields">
                         <label for="participantAge"><span>Age</span></label> 
-                        <input id="participantAge" name="participantAge" type="number" min="11" readonly>
+                        <input id="participantAge" name="participantAge" type="number" min="11" placeholder="Invalid Birthday" readonly>
                     </div>
                     <div class="fields">
                         <label for="primTel"><span>Primary telephone number</span><span class="field-tip">Required</span></label>
