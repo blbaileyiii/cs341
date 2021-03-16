@@ -576,8 +576,8 @@ p.legal-sm {
         gap: 1rem;
     }
 
-    .pillars-content:nth-of-type(even) + div{
-        grid-column: 2 / -1;
+    .pillars-content:nth-of-type(even) {
+        background: blue;
     }
 }
 
