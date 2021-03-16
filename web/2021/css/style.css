@@ -569,6 +569,12 @@ p.legal-sm {
         width: 60%;
         margin: 0 auto;
     }
+
+    .pillars-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
 }
 
 @media only screen and (min-width: 75rem) {  
