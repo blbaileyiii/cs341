@@ -75,6 +75,14 @@ function buildEventList($events){
 }
 
 function buildEventScript($events){
+    
+    $switchScript = buildSwitchScript($events);
+
+    $eventScript = "document.getElementById('eventId').addEventListener('change', function() { $switchScript });";
+    return $eventScript;
+}
+
+function buildSwitchScript($events){
     $switchScript = "let eventID = document.getElementById('eventId').value;";
     $switchScript .= "console.log('EventID:' + eventID);";
     $switchScript .= "switch(eventID) {";
@@ -89,9 +97,7 @@ function buildEventScript($events){
     }
     $switchScript .= "}";
 
-    $eventScript = "document.getElementById('eventId').addEventListener('change', function() { $switchScript });";
-
-    return $eventScript;
+    return $switchScript;
 }
 
 function buildAboutHTML($events) {

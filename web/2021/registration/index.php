@@ -26,7 +26,6 @@ switch($action){
         $participantName = filter_input(INPUT_POST, 'participantName', FILTER_SANITIZE_STRING);
         $ward = filter_input(INPUT_POST, 'ward', FILTER_SANITIZE_STRING);
         $participantDOB = filter_input(INPUT_POST, 'participantDOB', FILTER_SANITIZE_STRING);
-        $participantAge = filter_input(INPUT_POST, 'participantAge', FILTER_SANITIZE_NUMBER_INT);
         $primTel = filter_input(INPUT_POST, 'primTel', FILTER_SANITIZE_STRING);
         $primTelType = filter_input(INPUT_POST, 'primTelType', FILTER_SANITIZE_STRING);
         $secTel = filter_input(INPUT_POST, 'secTel', FILTER_SANITIZE_STRING);
@@ -58,7 +57,7 @@ switch($action){
         $guardianSigDate = filter_input(INPUT_POST, 'guardianSigDate', FILTER_SANITIZE_STRING);
 
         // Validate form data
-        $eventId = 1;
+        $participantAge = 0; // Calculate age by DOB...
 
         // Insert form data
         //getEvents();
