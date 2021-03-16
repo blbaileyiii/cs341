@@ -17,11 +17,11 @@
         <ul>
             <li><h2>Clothing</h2>
                 <ul>
-                    <li>3-4 pair of long pants</li>
-                    <li>2-3 pair walking shorts/capris – Must be knee length or longer</li>
-                    <li>5-6 shirts</li>
-                    <li>6 undergarments</li>
-                    <li>6 pair of socks</li>
+                    <li>3-4 Pair of long pants</li>
+                    <li>2-3 Pair walking shorts/capris – Must be knee length or longer</li>
+                    <li>5-6 Shirts</li>
+                    <li>6 Undergarments</li>
+                    <li>6 Pair of socks</li>
                     <li>Warm coat/light raingear</li>
                     <li>Modest, one piece swimsuit</li>
                     <li>Sturdy shoes/hiking boots – must be broken in (no open-toed shoes, except for shower use)</li>
@@ -36,7 +36,7 @@
                     <li>Comb / brush</li>
                     <li>Toothbrush and toothpaste</li>
                     <li>Deodorant</li>
-                    <li>2 towels (bath and swimming)</li>
+                    <li>2 Towels (bath and swimming)</li>
                     <li>Lip balm</li>
                     <li>Sunscreen</li>
                     <li>Tissues</li>
