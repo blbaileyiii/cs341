@@ -30,7 +30,5 @@ switch($action){
         $aboutHTML = buildAboutHTML($events);
         $contactsHTML = buildContactsHTML($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/home.php';
-
-var_dump($_SERVER['DOCUMENT_ROOT']);
 }
 ?>
