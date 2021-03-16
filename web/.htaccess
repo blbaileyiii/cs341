@@ -14,8 +14,6 @@ RewriteEngine On
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteRule ^ index.php [QSA,L]
 
-
-
 ##Force SSL 
 
 #Normal way (in case you need to deploy to NON-heroku)

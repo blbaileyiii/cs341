@@ -84,4 +84,13 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
 }
 
+// Redirect script at java level to switch from http to https.
+// No longer needed as it is handled in .htaccess file rules, but I want to keep a ref. 
+// <script>
+//     if (window.location.href.substring(0, 8) != "https://") {
+//         window.location = location.href.replace(/^http:/, 'https:');
+//     }
+// </script>
+
+
 ?>
