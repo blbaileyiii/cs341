@@ -29,7 +29,7 @@
                     }
                 ?>
             </div>
-            <form action="/2021/registration" class="form" method="post">
+            <form class="form" method="post">
                 <fieldset>
                     <legend>Event Details</legend>
                     <div class="fields">
