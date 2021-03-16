@@ -30,6 +30,13 @@ function checkPassword($clientPassword){
     return preg_match($pattern, $clientPassword);
 }
 
+function getAge($participantDOB) {
+    $dOB = new DateTime($participantDOB);
+    $interval = $dOB->diff(new DateTime);
+    
+    return $interval->y;
+}
+
 function getNavList($carclassifications){
     $navList = "<nav><ul>";
     $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
