@@ -575,6 +575,12 @@ p.legal-sm {
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
+
+    .pillars-content h2{
+        grid-column: 1 / -1;
+    }
+
+    
 }
 
 @media only screen and (min-width: 75rem) {  
