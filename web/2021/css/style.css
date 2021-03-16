@@ -559,6 +559,9 @@ p.legal-sm {
         width: 60%;
         margin: 0 auto;
     }
+}
+
+@media only screen and (min-width: 60rem) {  
 
     .about-content{
         display:grid;
