@@ -576,7 +576,7 @@ p.legal-sm {
         gap: 1rem;
     }
 
-    .pillars-content h2{
+    .pillars-content h3{
         grid-column: 1 / -1;
     }
 
