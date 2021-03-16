@@ -5,7 +5,7 @@
 
 function hhConnect(){
     try {
-        $dbUrl = getenv('DATABASE_URL') || "postgres://qmylazbfcihiry:94a9154677e13ff9ec7923fffe8f6f4c72ec4ebc554da99b532f71e7d3a12ac4@ec2-34-196-34-158.compute-1.amazonaws.com:5432/d1ukbh7e46mhln";
+        $dbUrl = getenv('DATABASE_URL');
 
         $dbOpts = parse_url($dbUrl);
 
