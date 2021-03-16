@@ -70,6 +70,10 @@ header a:active,
     font-size: 1.6rem;
 }
 
+.about .logo-lg {
+    font-size: 2rem;
+}
+
 .schedule .logo-lg {
     font-size: 1.6rem;
 }
