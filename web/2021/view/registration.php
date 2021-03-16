@@ -2,11 +2,13 @@
 <html lang="en-us">
     
 <head>
+    <!--
     <script>
         if (window.location.href.substring(0, 8) != "https://") {
             window.location = location.href.replace(/^http:/, 'https:');
         }
     </script>
+    -->
     <?php $page = "Template" ?>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/head.php'; ?>
 </head>
