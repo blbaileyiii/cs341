@@ -259,11 +259,6 @@ img.responsive {
     height: auto;
 }
 
-img.responsive.img-50 {
-    max-width: 50%;
-    height: auto;
-}
-
 section {
     padding: 1rem;
 }
@@ -515,6 +510,10 @@ p.legal-sm {
         font-size: 2rem;
     }
 
+    img.responsive.img-50 {
+        max-width: 50%;
+        height: auto;
+    }
  }
 
 @media only screen and (min-width: 30rem) {
