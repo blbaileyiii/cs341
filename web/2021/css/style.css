@@ -509,11 +509,6 @@ p.legal-sm {
     section h1 {
         font-size: 2rem;
     }
-
-    img.responsive.img-50 {
-        max-width: 50%;
-        height: auto;
-    }
  }
 
 @media only screen and (min-width: 30rem) {
@@ -538,6 +533,10 @@ p.legal-sm {
         padding: 1rem 3rem;
     }
 
+    img.responsive.img-50 {
+        max-width: 50%;
+        height: auto;
+    }
 }
 
 @media only screen and (min-width: 50rem) {    
