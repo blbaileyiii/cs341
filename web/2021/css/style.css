@@ -241,10 +241,6 @@ footer {
     padding: 0.25rem 0.25rem 1rem;
 }
 
-.menu {
-    text-align: center;
-}
-
 .nav.item.ham {
     display: block;
     margin: 0.5rem 0;
@@ -288,12 +284,15 @@ section {
     margin-bottom: 1.5rem;
 }
 
-footer {
+.menu,
+footer,
+.countdown-section,
+.scripture,
+.pillars {
     text-align: center;
 }
 
 .countdown-section {
-    text-align: center;
     background-image: url("/2021/images/hike-w1280x853.webp");
 }
 
@@ -302,7 +301,6 @@ footer {
 }
 
 .scripture {
-    text-align: center;
     background-image: url("/2021/images/growth-path-w1280x1707.webp");
 }
 
