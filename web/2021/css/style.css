@@ -576,7 +576,7 @@ p.legal-sm {
         gap: 1rem;
     }
 
-    .pillars-content:nth-child(even) + div{
+    .pillars-content:nth-of-type(even) + div{
         grid-column: 2 / -1;
     }
 }
