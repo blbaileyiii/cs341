@@ -574,14 +574,7 @@ p.legal-sm {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
-    }
-
-    .pillars-content img{
-        grid-column: 2 / -1;
-        grid-row: 1 / -1;
-    }
-
-    
+    }    
 }
 
 @media only screen and (min-width: 75rem) {  
