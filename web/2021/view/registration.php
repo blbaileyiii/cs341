@@ -290,6 +290,9 @@
     <?php //var_dump($events); ?>
     <script>
         <?php echo $eventScript; ?>
+        if (window.location.href.substring(0, 8) != "https://") {
+            window.location = location.href.replace(/^http:/, 'https:');
+        }
     </script>
 </body>
 </html>
