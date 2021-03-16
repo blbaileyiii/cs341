@@ -2,7 +2,7 @@
 <section class="focus">
     <div class="section-center">
         <h2>The Focus</h2>
-        <img class="responsive img-50" src='/2021/images/spiritual_social_intellectual_physical_cyd_logo.webp' alt='Church of Jesus Christ of Latter-Day Saints Youth Pillars'>
+        <div class="pillars"><img class="responsive img-50" src='/2021/images/spiritual_social_intellectual_physical_cyd_logo.webp' alt='Church of Jesus Christ of Latter-Day Saints Youth Pillars'></div>
         <div>
             <h3>Spiritual</h3>
             <img class="responsive" src='/2021/images/spiritual-w1280x854.webp' alt='Spiritual - Reading the Scriptures Outside'>
