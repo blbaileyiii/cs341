@@ -565,6 +565,10 @@ p.legal-sm {
         border-radius: 0.5rem
     }
 
+    .menu{
+    text-align: right;
+}
+
     .section-center {
         width: 60%;
         margin: 0 auto;
