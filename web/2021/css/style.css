@@ -561,7 +561,7 @@ p.legal-sm {
     }
 }
 
-@media only screen and (min-width: 60rem) {  
+@media only screen and (min-width: 75rem) {  
 
     .about-content{
         display:grid;
