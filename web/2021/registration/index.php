@@ -59,7 +59,7 @@ switch($action){
         // Validate form data
         $participantAge = getAge($participantDOB); // Calculate age by DOB...
 
-        var_dump($participantDOB);
+        var_dump($participantAge);
         exit;
         // Insert form data
         //getEvents();
