@@ -7,5 +7,7 @@ document.getElementById('participantDOB').addEventListener('change', function() 
 
     if(!isNaN(age_dt)){
         ageInput.value = Math.abs(age_dt.getUTCFullYear() - 1970);
+    } else {
+        ageInput.value = "";
     }
 });
