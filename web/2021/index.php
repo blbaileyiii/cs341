@@ -5,11 +5,11 @@
  */
 session_start();
 // Get the database connection file
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
-// Get the account model for use as needed
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/reg-model.php';
-// Get the account validation fxs for use as needed
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
+// Get the registration model for use as needed
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/reg-model.php';
+// Get the fxs for valiation and file building
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -27,7 +27,9 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/trek.php';
         break;
     default:
-        //include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/home.php';
+        $events = getEvents(2021);
+        $aboutHTML = buildAboutHTML($events);
+        $contactsHTML = buildContactsHTML($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/home.php';
 }
 ?>

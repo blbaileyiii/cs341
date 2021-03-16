@@ -94,4 +94,14 @@ function buildEventScript($events){
     return $eventScript;
 }
 
+function buildAboutHTML($events) {
+    $aboutHTML = "";
+    return $aboutHTML;
+}
+
+function buildContactsHTML($events) {
+    $contactsHTML = "";
+    return $contactsHTML;
+}
+
 ?>
