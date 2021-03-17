@@ -60,9 +60,9 @@
         </div>
     </main>
     <footer>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
-        <hr>
         <p>All images used are believed to be in "Fair Use". Please notify the <a href = "mailto: hhscamps@gmail.com">WebAdmin</a> if any are not and they will be removed.</p>"
+        <hr>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
     </footer>
 </body>
 </html>
