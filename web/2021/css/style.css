@@ -508,11 +508,13 @@ p.legal-sm {
 }
 
 .attributions .portrait{
-    max-width: 15rem;
+    max-height: 15rem;
+    max-width: 100%;
 }
 
 .attributions .landscape{
-    max-height: 15rem;
+    width: 100%;
+    max-width: 20rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
