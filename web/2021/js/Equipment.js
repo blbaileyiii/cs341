@@ -21,11 +21,11 @@ export default class Equipment {
     }
 
     displayItemList() {
-        document.getElementById('equipment-list').classList.remove("hidden");
+        document.querySelector('.equipment-list').classList.remove("hidden");
     }
 
     displayItemCheckList() {
-        document.getElementById('equipment-interactive').classList.remove("hidden");
+        document.querySelector('.equipment-interactive').classList.remove("hidden");
     }
 
 }
