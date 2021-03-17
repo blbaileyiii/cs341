@@ -189,9 +189,11 @@
                     <li>Playing cards</li>
                 </ul>
             </section>
-            <h2>Hydration Requirements</h2>
-            <p>We all should constantly manage her hydration level during all camp activities. Daytime temperatures, dry climate, and elevation, coupled with strenuous outdoor activities can increase how quickly we may become dehydrated. Although water is available at the lodge during mealtimes, as well as before and after activity times, each participant MUST carry water for all activities conducted away from the lodge (e.g. hikes, waterfront, climbing, etc.)</p>
-            <p>The American College of Sports Medicine recommends drinking 1 liter of water per hour for moderate activity in moderate conditions. This is equivalent to two 16.9 oz/500ml bottles of water per hour. Everyone should come to camp with an appropriate hydration system. Examples of hydration systems include: hydration packs, canteens, reusable water bottles, and flasks. The required size of the system is dependent on camp level and activity.</p>
+            <section>
+                <h2>Hydration Requirements</h2>
+                <p>We all should constantly manage her hydration level during all camp activities. Daytime temperatures, dry climate, and elevation, coupled with strenuous outdoor activities can increase how quickly we may become dehydrated. Although water is available at the lodge during mealtimes, as well as before and after activity times, each participant MUST carry water for all activities conducted away from the lodge (e.g. hikes, waterfront, climbing, etc.)</p>
+                <p>The American College of Sports Medicine recommends drinking 1 liter of water per hour for moderate activity in moderate conditions. This is equivalent to two 16.9 oz/500ml bottles of water per hour. Everyone should come to camp with an appropriate hydration system. Examples of hydration systems include: hydration packs, canteens, reusable water bottles, and flasks. The required size of the system is dependent on camp level and activity.</p>
+            </section>
         </div>
     </main>
     <footer>
