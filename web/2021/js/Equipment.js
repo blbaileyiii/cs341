@@ -17,7 +17,7 @@ export default class Equipment {
     }
 
     getItemList() {
-        //
+        // TODO
     }
 
     displayItemList() {
