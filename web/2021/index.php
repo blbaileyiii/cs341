@@ -28,6 +28,9 @@ switch($action){
     case 'equipment':
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/equipment.php';
         break;
+    case 'attributions':
+        include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/attributions.php';
+        break;
     default:
         $events = getEvents(2021);
         $aboutHTML = buildAboutHTML($events);
