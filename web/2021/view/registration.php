@@ -293,6 +293,6 @@
     <script>
         <?php echo $eventScript; ?>
     </script>
-    <script src="/2021/js/registration.js"></script>
+    <script type="module" src="/2021/js/registration.js"></script>
 </body>
 </html>

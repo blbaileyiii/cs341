@@ -1,3 +1,7 @@
+import Participants from './Participants.js';
+
+let participants = new Participants();
+
 document.getElementById('participantDOB').addEventListener('change', function() {
     let dOB = new Date(this.valueAsNumber);
     let ageInput = document.getElementById('participantAge');

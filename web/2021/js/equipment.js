@@ -1,16 +1,13 @@
-class Equipment {
+import Participants from './Participants.js';
+import {loadLS, saveLS} from './ls.js';
+
+export default class Equipment {
     constructor() {
+        this.participants = new Participants();
     }
 
     getItemList() {
 
-    }
-}
-
-class Participant {
-    constructor(name, equipment) {
-        this.participantName = name;
-        this.equipment = equipment;
     }
 }
 
@@ -25,3 +22,4 @@ class Item {
         this.actPrice = actPrice;
     }
 }
+
