@@ -2,7 +2,6 @@
 <section class="focus">
     <div class="section-center">
         <h2>The Focus</h2>
-        <div class="pillars"><img class="responsive img-sm" src='/2021/images/spiritual_social_intellectual_physical_cyd_logo.webp' alt='Church of Jesus Christ of Latter-Day Saints Youth Pillars'></div>
         <div class="pillars-content">
             <div>
                 <h3>Spiritual</h3>
