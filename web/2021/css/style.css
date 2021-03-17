@@ -559,6 +559,10 @@ p.legal-sm {
     img.responsive.img-sm {
         max-width: 50%;
     }
+
+    .attributions figure {
+        width: 50vw;
+    }
 }
 
 @media only screen and (min-width: 50rem) {    
