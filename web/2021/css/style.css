@@ -322,6 +322,15 @@ footer,
     padding: 0;
 }
 
+.equipment {
+    background-image: url("/2021/images/equipment-w1280x1707.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    padding: 0;
+}
+
 .filter {
     padding: 2rem;
 }
