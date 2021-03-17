@@ -506,6 +506,10 @@ p.legal-sm {
     max-width: 100%;
 }
 
+.attributions figcaption {
+    text-align: center;
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
