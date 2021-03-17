@@ -7,13 +7,27 @@ export default class Equipment {
         this.displayEquipment();
     }
 
-    displayEquipment(){
+    displayEquipment() {
         console.log(this.participants.list);
+        if (this.participants.list.length > 0) {
+            this.displayItemCheckList();
+        } else {
+            this.displayItemList();
+        }
     }
 
     getItemList() {
-
+        //
     }
+
+    displayItemList() {
+        document.getElementById('equipment-list').classList.remove("hidden");
+    }
+
+    displayItemCheckList() {
+        document.getElementById('equipment-interactive').classList.remove("hidden");
+    }
+
 }
 
 class Item {

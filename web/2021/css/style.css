@@ -477,6 +477,10 @@ p.legal-sm {
     padding: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
