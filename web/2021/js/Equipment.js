@@ -4,7 +4,7 @@ import {loadLS, saveLS} from './ls.js';
 export default class Equipment {
     constructor() {
         this.participants = new Participants();
-        displayEquipment();
+        this.displayEquipment();
     }
 
     displayEquipment(){
