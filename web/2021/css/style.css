@@ -507,12 +507,12 @@ p.legal-sm {
     justify-content: center;
 }
 
-.attributions img{
-    max-width: 100%;
+.attributions .portrait{
+    max-width: 15rem;
 }
 
-.attributions figcaption {
-    text-align: center;
+.attributions .landscape{
+    max-height: 15rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
@@ -579,10 +579,6 @@ p.legal-sm {
     img.responsive.img-sm {
         max-width: 50%;
     }
-
-    .attributions figure {
-        width: 50vw;
-    }
 }
 
 @media only screen and (min-width: 50rem) {    
@@ -634,10 +630,6 @@ p.legal-sm {
 
     footer hr{
         width: 25rem;
-    }
-
-    .attributions figure {
-        width: 25vw;
     }
 }
 
