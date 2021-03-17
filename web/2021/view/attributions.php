@@ -13,36 +13,36 @@
     <main>    
         <h1><?php echo $page; ?></h1>
         <figure>
-            <img src="/2021/images/hike-w1280x853.webp" alt="">
-            <figcaption>Hiking: Photo by <a href="https://unsplash.com/@toomastartes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Toomas Tartes</a> on <a href="/s/photos/hiking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+            <img src="/2021/images/hike-w1280x853.webp" alt="Hiking">
+            <figcaption>Hiking: Photo by <a href="https://unsplash.com/@toomastartes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Toomas Tartes</a> on <a href="/s/photos/hiking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Unsplash</a></figcaption>
         </figure>
         <figure>
-            <img src="/2021/images/spiritual_social_intellectual_physical_cyd_logo.webp" alt="">
+            <img src="/2021/images/spiritual_social_intellectual_physical_cyd_logo.webp" alt="Pillars">
             <figcaption>Pillars...</figcaption>
         </figure>
         <figure>
-            <img src="/2021/images/equipment-w1280x853.webp" alt="">
-            <figcaption>Camping Equipment: Photo by <a href="https://unsplash.com/@nineteen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew Ly</a> on <a href="/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+            <img src="/2021/images/equipment-w1280x853.webp" alt="Camping Equipment">
+            <figcaption>Camping Equipment: Photo by <a href="https://unsplash.com/@nineteen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Andrew Ly</a> on <a href="/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Unsplash</a></figcaption>
         </figure>
         <figure>
-            <img src="/2021/images/social-w1280x853.webp" alt="">
-            <figcaption>Social/Camp Fire: Photo by <a href="https://unsplash.com/@tegan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tegan Mierle</a> on <a href="/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+            <img src="/2021/images/social-w1280x853.webp" alt="Social/Camp Fire">
+            <figcaption>Social/Camp Fire: Photo by <a href="https://unsplash.com/@tegan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Tegan Mierle</a> on <a href="/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Unsplash</a></figcaption>
         </figure>
         <figure>
-            <img src="/2021/images/physical-w1280x853.webp" alt="">
-            <figcaption>Tug of War: Photo by <a href="https://unsplash.com/@hagalnaud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Anna Samoylova</a> on <a href="/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+            <img src="/2021/images/physical-w1280x853.webp" alt="Tug of War">
+            <figcaption>Tug of War: Photo by <a href="https://unsplash.com/@hagalnaud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Anna Samoylova</a> on <a href="/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Unsplash</a></figcaption>
         </figure>
         <figure>
-            <img src="/2021/images/spiritual-w1280x854.webp" alt="">
-            <figcaption>Scriptures/Outdoors: Photo by <a href="https://unsplash.com/@benwhitephotography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ben White</a> on <a href="/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+            <img src="/2021/images/spiritual-w1280x854.webp" alt="Scriptures/Outdoors">
+            <figcaption>Scriptures/Outdoors: Photo by <a href="https://unsplash.com/@benwhitephotography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Ben White</a> on <a href="/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Unsplash</a></figcaption>
         </figure>
         <figure>
-            <img src="/2021/images/intellectual-w1280x854.webp" alt="">
-            <figcaption>Outdoor Learning: Photo by Charlotte May from Pexels https://www.pexels.com/@charlotte-may?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels  https://www.pexels.com/photo/concentrated-multiethnic-female-students-reading-article-together-in-park-5965826/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels</figcaption>
+            <img src="/2021/images/intellectual-w1280x854.webp" alt="Outdoor Learning">
+            <figcaption>Outdoor Learning: Photo by Charlotte May from Pexels https://www.pexels.com/@charlotte-may?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels target="_blank" rel="noreferrer"  https://www.pexels.com/photo/concentrated-multiethnic-female-students-reading-article-together-in-park-5965826/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels target="_blank" rel="noreferrer"</figcaption>
         </figure>
         <figure>
-            <img src="/2021/images/growth-path-w1280x1707.webp" alt="">
-            <figcaption>Growing and Path: Photo by <a href="https://unsplash.com/@jane_palash?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jane Palash</a> on <a href="/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+            <img src="/2021/images/growth-path-w1280x1707.webp" alt="Path Through Growing Trees">
+            <figcaption>Path Through Growing Trees: Photo by <a href="https://unsplash.com/@jane_palash?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Jane Palash</a> on <a href="/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noreferrer">Unsplash</a></figcaption>
         </figure>
         <!--
         <ul>
