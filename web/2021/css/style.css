@@ -43,10 +43,7 @@ header a:visited,
 header a:active,
 .all-schedules a,
 .all-schedules a:visited,
-.all-schedules a:active,
-footer a,
-footer a:visited,
-footer a:active{
+.all-schedules a:active{
     text-decoration: none;
 }
 
