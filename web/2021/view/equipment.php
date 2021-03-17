@@ -177,7 +177,7 @@
                     </ul>
                 </li>
             </ul>
-            <h2>DO NOT BRING</h2>
+            <h2>DO NOT BRING THESE ITEMS</h2>
             <ul>
                 <li>Sleeveless shirts or tank tops</li>
                 <li>Skin tight clothing</li>
