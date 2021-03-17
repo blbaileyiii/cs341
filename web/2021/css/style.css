@@ -242,7 +242,7 @@ footer {
 }
 
 footer hr{
-    width: 75%;
+    width: 50%;
 }
 
 .nav.item.ham {
@@ -592,6 +592,10 @@ p.legal-sm {
 
     .pillars-content:nth-of-type(odd) div{
         grid-column: 2 / -1;
+    }
+
+    footer hr{
+        width: 30rem;
     }
 }
 
