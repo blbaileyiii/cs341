@@ -2,15 +2,15 @@ import {loadLS, saveLS} from './ls.js';
 
 export default class Participants {
     constructor() {
-        this.participants = this.getParticipants();
+        this.list = this.getParticipants();
     }
 
     getParticipants() {
-        let participants = loadLS("participants");
-        if(!participants) {
-            participants = [];
+        let list = loadLS("participants");
+        if(!list) {
+            list = [];
         }
-        return participants;
+        return list;
     }
 
 }
