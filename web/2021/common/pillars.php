@@ -2,6 +2,7 @@
 <section class="focus">
     <div class="section-center">
         <h2>The Focus</h2>
+        <p>Heavenly Father wants His children to learn and to grow. He sent His Son, Jesus Christ, to be the perfect example for all of us in every way.</p>
         <div class="pillars-content">
             <div>
                 <h3>Spiritual</h3>
