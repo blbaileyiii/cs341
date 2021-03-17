@@ -9,7 +9,6 @@ export default class Equipment {
 
     displayEquipment(){
         console.log(this.participants.list);
-        console.log("Working");
     }
 
     getItemList() {
