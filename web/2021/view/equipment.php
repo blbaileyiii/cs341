@@ -28,7 +28,7 @@
                                 <li>Warm coat/light raingear</li>
                                 <li>Modest, one piece swimsuit</li>
                                 <li>Sturdy shoes/hiking boots – must be broken in (no open-toed shoes, except for shower use)</li>
-                                <li>Modest sleepwear/pajamas/sweatpants</li>
+                                <li>Modest sleepwear / pajamas / sweatpants</li>
                                 <li>Hat</li>
                             </ul>
                         </li>
