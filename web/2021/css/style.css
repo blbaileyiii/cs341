@@ -298,8 +298,7 @@ section {
 .menu,
 footer,
 .countdown-section,
-.scripture,
-.equipment{
+.scripture{
     text-align: center;
 }
 
@@ -313,6 +312,15 @@ footer,
 
 .scripture {
     background-image: url("/2021/images/growth-path-w1280x1707.webp");
+}
+
+.equipment {
+    background-image: url("/2021/images/equipment-w1280x853.webp");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    padding: 0;
 }
 
 .parallax {
@@ -579,7 +587,7 @@ p.legal-sm {
     }
 }
 
-@media only screen and (min-width: 50rem) {    
+@media only screen and (min-width: 50rem) {
 
     header {
         flex-direction: row;
@@ -624,6 +632,10 @@ p.legal-sm {
 
     .pillars-content:nth-of-type(odd) div{
         grid-column: 2 / -1;
+    }
+
+    .equipment {
+        background-position: right;
     }
 
     footer hr{
