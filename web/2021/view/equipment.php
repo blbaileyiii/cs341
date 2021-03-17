@@ -138,7 +138,7 @@
                     <li><input class="" id="" name="" type="checkbox">Extra garbage bag (for bedding on return trip)</li>
                 </ul>
             </li>
-            <li><h2>M<input class="" id="" name="" type="checkbox">edication</h2>
+            <li><h2><input class="" id="" name="" type="checkbox">Medication</h2>
                 <p>Please bring all medication needed for your stay at camp and keep it securely stored in your suitcase or carried with you.<p>
             </li>
             <li><h2><input class="" id="" name="" type="checkbox">Miscellaneous</h2>
