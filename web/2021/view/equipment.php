@@ -191,5 +191,6 @@
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
     </footer>
+    <script type="module" src="/2021/js/equipment-main.js"></script>
 </body>
 </html>
