@@ -34,7 +34,7 @@
                 <figcaption>Photo by <a href="https://unsplash.com@benwhitephotography" target="_blank" rel="noreferrer">Ben White</a> on <a href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a> - <a href="https://unsplash.com/license" target="_blank" rel="noreferrer">License</a></figcaption>
             </figure>
             <figure>
-                <a href="" target="_blank" rel="noreferrer"><img src="/2021/images/intellectual-w1280x854.webp" alt="Outdoor Learning"></a>
+                <a href="https://www.pexels.com/photo/concentrated-multiethnic-female-students-reading-article-together-in-park-5965826" target="_blank" rel="noreferrer"><img src="/2021/images/intellectual-w1280x854.webp" alt="Outdoor Learning"></a>
                 <figcaption>Photo by <a href="https://www.pexels.com/@charlotte-may?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels" target="_blank" rel="noreferrer">Charlotte May</a> from <a href="https://www.pexels.com/" target="_blank" rel="noreferrer">Pexels</a> - <a href="https://www.pexels.com/license/" target="_blank" rel="noreferrer">License</a></figcaption>
             </figure>
             <figure>
