@@ -12,8 +12,8 @@
     </header>    
     <main>
         <div class="equipment">
-            <div><img class="responsive" src="/2021/images/equipment-w1280x400.webp" alt="camping gear"></div>
             <section class="equipment-list hidden">
+            <div class="center"><img class="responsive" src="/2021/images/equipment-w1280x400.webp" alt="camping gear"></div>
                 <h1>Equipment List</h1>
                 <p>Duffle bags or small suitcases are preferred for packing.</p>
                 <p>(Please label all of your belongings with your name and ward name)</p>

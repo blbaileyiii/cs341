@@ -298,7 +298,8 @@ section {
 .menu,
 footer,
 .countdown-section,
-.scripture{
+.scripture,
+.center{
     text-align: center;
 }
 
