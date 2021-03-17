@@ -316,7 +316,7 @@ footer,
 
 .equipment {
     background-image: url("/2021/images/equipment-w1280x853.webp");
-    background-position: right;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
@@ -632,10 +632,6 @@ p.legal-sm {
 
     .pillars-content:nth-of-type(odd) div{
         grid-column: 2 / -1;
-    }
-
-    .equipment {
-        background-position: right;
     }
 
     footer hr{
