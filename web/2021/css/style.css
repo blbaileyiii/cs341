@@ -43,7 +43,10 @@ header a:visited,
 header a:active,
 .all-schedules a,
 .all-schedules a:visited,
-.all-schedules a:active{
+.all-schedules a:active,
+footer a,
+footer a:visited,
+footer a:active{
     text-decoration: none;
 }
 
@@ -139,12 +142,18 @@ header,
     color: var(--on-nav-bg);
 }
 
-.faq-active, .collapsible-btn:hover {
+.faq-active,
+.collapsible-btn:hover {
     color: var(--btn-bg-soft);
 }
 
 
-header a, header a:visited, header a:active {
+header a,
+header a:visited,
+header a:active,
+footer a,
+footer a:visited,
+footer a:active {
     color: var(--on-nav-bg-soft);
 }
 
