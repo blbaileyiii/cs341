@@ -1,1 +1,0 @@
-<a class="anchor" id="schedule"></a>
