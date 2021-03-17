@@ -493,6 +493,7 @@ p.legal-sm {
 .attributions {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .attributions img{
