@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Var */
+:root {
+    --nav-bg: #2f375b;
+    --nav-bg-trans: #2f375baa;
+    --on-nav-bg: #ffffff;
+    --on-nav-bg-soft: #d4e7ed;
+    --html-bg: #1c2035;
+    --body-bg: #ffffff;
+    --on-body-bg: #141414;
+    --logo-highlight: #fec240;
+    --border-intense: #de4b43;
+    --btn-bg: #2f375b;
+    --btn-bg-soft: #de4b43;
+    --read-only: #dddddd;
+}
+
+/* Typography */
+* {
+    font-family: 'Roboto Slab', 'Times New Roman', Times, serif
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+.time-txt, 
+.logo-lg,
+.logo.sm,
+.logo-match {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif
+}
+
+section h1 {
+    font-size: 1.4rem;
+}
+
+header a, 
+header a:visited, 
+header a:active,
+.all-schedules a,
+.all-schedules a:visited,
+.all-schedules a:active{
+    text-decoration: none;
+}
+
+
+
+.camp-yr-logo {
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+}
+
+.logo-lg {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.logo-sm {
+    font-size: 1.8rem;
+}
+
+.countdown-data .logo-lg{
+    font-size: 1.8rem;
+}
+
+.countdown-data .logo-sm {
+    font-size: 1.6rem;
+}
+
+.about .logo-match {
+    font-size: 2rem;
+}
+
+.schedule .logo-lg {
+    font-size: 1.6rem;
+}
+
+.schedule .logo-sm {
+    font-size: 1.4rem;
+}
+
+.time-txt {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+.time-unit {
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.date {
+    font-size: 1.25rem;
+    letter-spacing: 0.1rem;
+}
+
+.non-fields button,
+.non-fields .button {
+    font-size: x-large;
+}
+
+.scripture {
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.collapsible-btn {
+    font-size: 1.17em;
+}
+
+p.legal-sm {
+    font-size: x-small;
+}
+
+/* Color */
+
+html,
+footer {
+    background: var(--html-bg);
+    color: var(--on-nav-bg-soft);
+}
+
+body,
+.collapsible-btn {
+    background: var(--body-bg);
+    color: var(--on-body-bg);
+}
+
+header,
+.countdown-section,
+.about,
+.guidelines {
+    background: var(--nav-bg);
+    color: var(--on-nav-bg);
+}
+
+.faq-active, .collapsible-btn:hover {
+    color: var(--btn-bg-soft);
+}
+
+
+header a, header a:visited, header a:active {
+    color: var(--on-nav-bg-soft);
+}
+
+header a:hover {
+    color: var(--on-nav-bg);
+}
+
+.nav.item a{
+    position: relative;
+}
+
+.nav.item a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -0.25rem;
+    left: 0;
+    background: var(--logo-highlight);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.nav.item a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.logo-highlight {
+    color: var(--logo-highlight);
+}
+
+.time-part {
+    border: 3px solid var(--border-intense);
+    border-radius: 0.75rem;
+}
+
+.non-fields button,
+.non-fields .button {
+    background: var(--btn-bg);
+    color: var(--on-nav-bg);
+}
+
+.non-fields button:hover {
+    background: var(--btn-bg-soft);
+}
+
+.scripture {
+    color: var(--on-nav-bg);
+    text-shadow: 2px 2px var(--nav-bg);
+}
+
+.filter {
+    background: var(--nav-bg-trans);
+}
+
+.all-schedules li{
+    background: var(--nav-bg);
+}
+
+.faq li {
+    border-bottom: 3px solid var(--btn-bg);
+}
+
+.all-schedules a,
+.all-schedules a:visited,
+.all-schedules a:active{
+    color: var(--on-nav-bg);
+}
+
+input:read-only,
+textarea:read-only {
+    background-color: var(--read-only);
+}
+
+/* Layout */
+body {
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: space-between;*/
+    margin: 0;
+    padding: 0.5rem 3rem;
+}
+
+footer {
+    padding: 0.25rem 0.25rem 1rem;
+}
+
+.nav.item.ham {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.nav.item {
+    display: none;
+}
+
+.responsive .nav.item {
+    display: block;
+}
+
+img.responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 1rem;
+}
+
+.nav-ul {
+    display: grid;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-ul li{
+    margin: 0 1rem;
+}
+
+.countdown {
+    margin-bottom: 1.5rem;
+}
+
+.menu,
+footer,
+.countdown-section,
+.scripture,
+.pillars {
+    text-align: center;
+}
+
+.countdown-section {
+    background-image: url("/2021/images/hike-w1280x853.webp");
+}
+
+.countdown-section h1 {
+    margin: 0;
+}
+
+.scripture {
+    background-image: url("/2021/images/growth-path-w1280x1707.webp");
+}
+
+.parallax {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    padding: 0;
+}
+
+.filter {
+    padding: 2rem;
+}
+
+.time-block {
+    display: flex;
+    justify-content: center;
+}
+
+.time-part {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.25rem;
+    flex-shrink: 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+a.anchor{
+    display: block;
+    position: relative;
+    top: -5rem;
+    visibility: hidden;
+}
+
+.form {
+    margin: 1rem auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.form * {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+fieldset {
+    padding: 0 2rem 2rem;
+}
+
+.fields {
+    width: 100%;
+}
+
+.form .fields,
+.form .fields-radio,
+.form p {
+    margin-top: 1rem;
+}
+
+.form .fields:first-child {
+    margin-top: 0;
+}
+
+.fields input,
+.fields select,
+.fields textarea {
+    width: 100%;
+    padding: 0.25rem;
+}
+
+.fields textarea {
+    resize: vertical;
+}
+
+.fields input {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.fields label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.fields-radio {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fields-radio label,
+.fields-radio-alt label {
+    margin-right: 1rem;
+}
+
+.fields-radio span + input,
+.fields-radio-alt span + input {
+    margin-left: 0.5rem;
+}
+
+.form .non-fields {
+    width: 100%;
+}
+
+.non-fields button {
+    width: 100%;
+    padding: 0.25rem;
+    border: none;
+    outline: none;
+}
+
+.non-fields button:active {
+    transform: scale(.9);
+}
+
+.non-fields .button a,
+.non-fields .button a:focus,
+.non-fields .button a:visited {
+    display: block;
+    padding: 0.25rem;
+}
+
+.all-schedules {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+
+.all-schedules li{
+    margin: 0.25rem 1rem;
+    border-radius: 5rem;
+    padding: 0.25rem 1.75rem;
+}
+
+.faq ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.faq li {
+    margin-bottom: 1.5rem;
+    border-bottom-left-radius: 0.75rem;
+}
+
+.collapsible-btn {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.expander {
+    margin-left: 1rem;
+}
+
+.collapsible-content {
+    display: none;
+    overflow: hidden;
+}
+
+.collapsible-content p{
+    margin: 0 0 1rem; 
+}
+
+p.legal-sm {
+    text-align: right;
+    margin: 0.25rem 0 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+@supports not (-webkit-touch-callout: none) {
+    /* CSS for other than iOS devices */ 
+    .parallax {
+        background-attachment: fixed;
+    }
+ }
+
+ @media only screen and (min-width: 22rem) {
+    .time-part {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .time-txt {
+        font-size: 2rem;
+    }
+
+    .time-unit {
+        font-size: 0.85rem;
+    }
+
+    .countdown-data .logo-lg {
+        font-size: 2rem;
+    }
+
+    .countdown-data .logo-sm {
+        font-size: 1.8rem;
+    }
+
+    section h1 {
+        font-size: 2rem;
+    }
+
+    img.responsive.img-sm {
+        max-width: 75%;
+        height: auto;
+    }
+ }
+
+@media only screen and (min-width: 30rem) {
+    .time-part {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+
+    .time-unit {
+        font-size: 1rem;
+    }
+
+    .countdown-section h1 {
+        margin: 1rem 0;
+    }
+
+    .countdown {
+        margin-bottom: 3rem;
+    }
+
+    section {
+        padding: 1rem 3rem;
+    }
+
+    img.responsive.img-sm {
+        max-width: 50%;
+    }
+}
+
+@media only screen and (min-width: 50rem) {    
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu {
+        position: relative;
+    }
+
+    .nav-ul {
+        position:absolute;
+        top: 3rem;
+        right: -1rem;
+        z-index: 1;
+        background: var(--nav-bg-trans);
+        justify-items: end;
+        padding: 0.5rem 0 1rem;
+        border-radius: 0.5rem
+    }
+
+    .menu{
+    text-align: right;
+}
+
+    .section-center {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .pillars-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: dense;
+        gap: 1.5rem;
+        margin-top: 1.25rem;
+    }
+
+    .pillars-content:nth-of-type(odd) div{
+        grid-column: 2 / -1;
+    }
+}
+
+@media only screen and (min-width: 75rem) {  
+
+    .about-content{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
