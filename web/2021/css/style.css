@@ -491,6 +491,10 @@ p.legal-sm {
     display: none;
 }
 
+.attributions img{
+    max-width: 100%;
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
@@ -602,6 +606,10 @@ p.legal-sm {
 
     footer hr{
         width: 25rem;
+    }
+
+    .attributions figure {
+        width: 25vw;
     }
 }
 
