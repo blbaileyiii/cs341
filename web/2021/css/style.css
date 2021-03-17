@@ -119,6 +119,10 @@ p.legal-sm {
     font-size: x-small;
 }
 
+.attributations figcaption {
+    font-size: 0.75rem;
+}
+
 /* Color */
 
 html,
