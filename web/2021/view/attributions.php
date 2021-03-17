@@ -48,6 +48,7 @@ https://www.pexels.com/photo/concentrated-multiethnic-female-students-reading-ar
 
 Growing and Path:
 Photo by <a href="https://unsplash.com/@jane_palash?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jane Palash</a> on <a href="/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
