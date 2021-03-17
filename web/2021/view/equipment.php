@@ -12,7 +12,7 @@
     </header>    
     <main>
         <section class="equipment">
-            <div><img src="/2021/images/equipment-w1280x853.webp" alt="camping gear"></div>
+            <div><img class="responsive" src="/2021/images/equipment-w1280x853.webp" alt="camping gear"></div>
             <div class="equipment-list hidden">
                 <h1>Equipment List</h1>
                 <p>Duffle bags or small suitcases are preferred for packing.</p>
