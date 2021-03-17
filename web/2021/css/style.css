@@ -490,6 +490,11 @@ p.legal-sm {
     display: none;
 }
 
+.attributions {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .attributions img{
     max-width: 100%;
 }
