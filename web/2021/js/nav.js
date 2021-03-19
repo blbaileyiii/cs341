@@ -9,21 +9,20 @@ function toggleMenuTxt(x) {
 
     if (mainnav.classList.contains('nav-hidden')) {
         menu.innerHTML = "☰ Menu";
-        mainnav.classList.remove('nav-hidden');
-        
-        //setTimeout(function () {
-        //    mainnav.classList.remove('visuallyhidden');
-        //}, 20);
+        mainnav.classList.remove('nav-hidden');        
+        setTimeout(function () {
+            mainnav.classList.remove('nav-hide');
+        }, 20);
     } else {
         menu.innerHTML = "✖ Close";
-        //mainnav.classList.add('visuallyhidden');    
-        //mainnav.addEventListener('transitionend', function(e) {
+        mainnav.classList.add('nav-hide');    
+        mainnav.addEventListener('transitionend', function(e) {
             mainnav.classList.add('nav-hidden');
-        //}, {
-        //    capture: false,
-        //    once: true,
-        //    passive: false
-        //});
+        }, {
+            capture: false,
+            once: true,
+            passive: false
+        });
     }
 }
 
