@@ -264,10 +264,13 @@ footer hr{
 
 .nav.item {
     display: none;
+    opacity: 0;
+    transition: opacity 2s ease-in;
 }
 
 .responsive .nav.item {
     display: block;
+    opacity: 1;
 }
 
 img.responsive {
