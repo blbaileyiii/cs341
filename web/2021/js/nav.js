@@ -4,7 +4,7 @@ const mainnav = document.querySelector('.nav-ul');
 hambutton.addEventListener('click', toggleMenuTxt, false);
 
 function toggleMenuTxt(x) {
-    mainnav.classList.toggle('responsive');
+    mainnav.classList.toggle('nav-resp');
     let menu = document.getElementById("toggleMenu");
     if (menu.innerHTML === "☰ Menu" || menu.innerHTML == "&#9776; Menu") {
         menu.innerHTML = "✖ Close";
@@ -18,7 +18,7 @@ window.onresize = toggleMenuResize;
 
 function toggleMenuResize(x) {
     if (window.innerWidth > 800) {
-        mainnav.classList.remove('responsive');
+        mainnav.classList.remove('nav-resp');
         document.getElementById("toggleMenu").innerHTML = "☰ Menu";
     }            
 }
