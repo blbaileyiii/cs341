@@ -278,12 +278,11 @@ section {
     padding: 0;
     margin: 0;
     opacity: 0;
-    transition: opacity 5s ease-in;
+    transition: opacity 1s ease-in;
 }
 
 .nav-ul.nav-resp {    
     opacity: 1;
-
 }
 
 .nav-ul li{
