@@ -287,6 +287,11 @@ section {
 
 .nav-ul li{
     margin: 0 1rem;
+    display: none;
+}
+
+.nav-ul.nav-resp li {
+    display: block;
 }
 
 
