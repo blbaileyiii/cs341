@@ -32,7 +32,9 @@ window.onresize = toggleMenuResize;
 
 function toggleMenuResize(x) {
     if (window.innerWidth > 800) {
-        mainnav.classList.remove('nav-hidden');
-        menu.innerHTML = "☰ Menu";
+        if (mainnav.classList.contains('nav-hidden')) {
+            mainnav.classList.remove('nav-hidden');
+            menu.innerHTML = "☰ Menu";
+        }
     }            
 }
