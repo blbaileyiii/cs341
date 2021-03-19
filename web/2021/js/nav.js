@@ -8,13 +8,13 @@ function toggleMenuTxt(x) {
     //mainnav.classList.toggle('nav-hide');  
 
     if (mainnav.classList.contains('nav-hidden')) {
-        menu.innerHTML = "☰ Menu";
+        menu.innerHTML = "✖ Close";
         mainnav.classList.remove('nav-hidden');        
         setTimeout(function () {
             mainnav.classList.remove('nav-hide');
         }, 20);
     } else {
-        menu.innerHTML = "✖ Close";
+        menu.innerHTML = "☰ Menu";
         mainnav.classList.add('nav-hide');    
         mainnav.addEventListener('transitionend', function(e) {
             mainnav.classList.add('nav-hidden');
