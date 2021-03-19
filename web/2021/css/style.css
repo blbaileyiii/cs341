@@ -599,7 +599,7 @@ p.legal-sm {
         justify-items: end;
         padding: 0.5rem 0 1rem;
         border-radius: 0.5rem;
-        transition: all 1s linear;
+        transition: all 500ms linear;
     }
 
     .menu{
