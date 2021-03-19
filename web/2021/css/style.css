@@ -278,7 +278,7 @@ section {
     padding: 0;
     margin: 0;
     opacity: 0;
-    transition: opacity 1s ease-in, display 0s 1s linear;
+    transition: opacity 1s ease-in;
 }
 
 .nav-ul.nav-resp {    
@@ -288,6 +288,7 @@ section {
 .nav-ul li{
     margin: 0 1rem;
     display: none;
+    transition: display 0s 1s linear;
 }
 
 .nav-ul.nav-resp li {
