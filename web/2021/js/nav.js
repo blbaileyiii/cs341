@@ -9,11 +9,14 @@ function toggleMenuTxt(x) {
 
 
     if (mainnav.classList.contains('nav-hidden')) {
+        menu.innerHTML = "☰ Menu";
         mainnav.classList.remove('nav-hidden');
+        
         //setTimeout(function () {
         //    mainnav.classList.remove('visuallyhidden');
         //}, 20);
     } else {
+        menu.innerHTML = "✖ Close";
         //mainnav.classList.add('visuallyhidden');    
         //mainnav.addEventListener('transitionend', function(e) {
             mainnav.classList.add('nav-hidden');
@@ -22,13 +25,6 @@ function toggleMenuTxt(x) {
         //    once: true,
         //    passive: false
         //});
-    }
-
-
-    if (menu.innerHTML === "☰ Menu" || menu.innerHTML == "&#9776; Menu") {
-        menu.innerHTML = "✖ Close";
-    } else {
-        menu.innerHTML = "☰ Menu";
     }
 }
 
