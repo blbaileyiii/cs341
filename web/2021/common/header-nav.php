@@ -3,7 +3,7 @@
 </div>
 <div class="menu">
     <span class="nav item ham"><a id="toggleMenu" href="javascript:void(0);">☰ Menu</a></span>
-    <ul class="nav-ul nav-hidden">        
+    <ul class="nav-ul nav-hidden .nav-hide">        
         <li class="nav item"><a href="/2021/" title="Hacienda Heights Stake Youth Camps Home">Home</a></li>
         <li class="nav item"><a href="/2021/?action=ywcamp" title="YW Camp">YW Camp</a></li>
         <li class="nav item"><a href="/2021/?action=ymcamp" title="YM Camp">YM Camp</a></li>
