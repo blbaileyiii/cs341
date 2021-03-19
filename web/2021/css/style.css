@@ -286,6 +286,9 @@ section {
     padding: 0;
     margin: 0;
     opacity: 0;
+}
+
+.nav-ul:not(.responsive) {
     transition: opacity 2s ease-in;
 }
 
