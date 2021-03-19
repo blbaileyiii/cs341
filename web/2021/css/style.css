@@ -272,7 +272,7 @@ section {
 }
 
 .nav-ul {
-    display: grid;
+    display: none;
     gap: 0.5rem;
     list-style: none;
     padding: 0;
@@ -286,6 +286,7 @@ section {
 
 .nav-ul.responsive {
     opacity: 1;
+    display: grid;
 }
 
 .nav-ul li{
