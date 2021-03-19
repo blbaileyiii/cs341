@@ -272,7 +272,7 @@ section {
 }
 
 .nav-ul {
-    display: none;
+    display: grid;
     gap: 0.5rem;
     list-style: none;
     padding: 0;
@@ -283,8 +283,8 @@ section {
     margin: 0 1rem;
 }
 
-.nav-unhide {
-    display: grid;
+.nav-hidden {
+    display: none;
 }
 
 

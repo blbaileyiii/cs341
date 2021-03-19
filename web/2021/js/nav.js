@@ -4,25 +4,24 @@ const mainnav = document.querySelector('.nav-ul');
 hambutton.addEventListener('click', toggleMenuTxt, false);
 
 function toggleMenuTxt(x) {
-    //mainnav.classList.toggle('nav-unhide');
+    //mainnav.classList.toggle('nav-hide');
     let menu = document.getElementById("toggleMenu");
 
 
-    if (mainnav.classList.contains('nav-unhide')) {
+    if (box.classList.contains('nav-hidden')) {
+        box.classList.remove('nav-hidden');
+        setTimeout(function () {
+            box.classList.remove('visuallyhidden');
+        }, 20);
+    } else {
         box.classList.add('visuallyhidden');    
         box.addEventListener('transitionend', function(e) {
-            box.classList.add('nav-unhide');
+            box.classList.add('nav-hidden');
         }, {
             capture: false,
             once: true,
             passive: false
         });
-        
-    } else {
-        box.classList.remove('nav-unhide');
-        setTimeout(function () {
-            box.classList.remove('visuallyhidden');
-        }, 20);
     }
 
 
@@ -38,7 +37,7 @@ window.onresize = toggleMenuResize;
 
 function toggleMenuResize(x) {
     if (window.innerWidth > 800) {
-        mainnav.classList.remove('nav-unhide');
+        mainnav.classList.remove('nav-hide');
         document.getElementById("toggleMenu").innerHTML = "☰ Menu";
     }            
 }
