@@ -262,14 +262,6 @@ footer hr{
     margin: 0.5rem 0;
 }
 
-.nav.item {
-    display: none;
-}
-
-.responsive .nav.item {
-    display: block;
-}
-
 img.responsive {
     max-width: 100%;
     height: auto;
