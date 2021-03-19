@@ -10,18 +10,18 @@ function toggleMenuTxt(x) {
 
     if (mainnav.classList.contains('nav-hidden')) {
         mainnav.classList.remove('nav-hidden');
-        setTimeout(function () {
-            mainnav.classList.remove('visuallyhidden');
-        }, 20);
+        //setTimeout(function () {
+        //    mainnav.classList.remove('visuallyhidden');
+        //}, 20);
     } else {
-        mainnav.classList.add('visuallyhidden');    
-        mainnav.addEventListener('transitionend', function(e) {
+        //mainnav.classList.add('visuallyhidden');    
+        //mainnav.addEventListener('transitionend', function(e) {
             mainnav.classList.add('nav-hidden');
-        }, {
-            capture: false,
-            once: true,
-            passive: false
-        });
+        //}, {
+        //    capture: false,
+        //    once: true,
+        //    passive: false
+        //});
     }
 
 
