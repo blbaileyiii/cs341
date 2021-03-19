@@ -18,7 +18,7 @@ window.onresize = toggleMenuResize;
 
 function toggleMenuResize(x) {
     if (window.innerWidth > 800) {
-        mainnav.classList.add('nav-unhide');
+        mainnav.classList.remove('nav-unhide');
         document.getElementById("toggleMenu").innerHTML = "☰ Menu";
     }            
 }
