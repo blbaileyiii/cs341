@@ -32,6 +32,7 @@ window.onresize = toggleMenuResize;
 function toggleMenuResize(x) {
     if (window.innerWidth > 800) {
         mainnav.classList.add('nav-hidden');
+        mainnav.classList.add('nav-hide'); 
         menu.innerHTML = "☰ Menu";
     }            
 }
