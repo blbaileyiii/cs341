@@ -264,13 +264,14 @@ footer hr{
 
 .nav.item {
     display: none;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
+}
+
+.responsive {
+    opacity: 1;
 }
 
 .responsive .nav.item {
     display: block;
-    opacity: 1;
 }
 
 img.responsive {
@@ -288,6 +289,8 @@ section {
     list-style: none;
     padding: 0;
     margin: 0;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
 
 .nav-ul li{
