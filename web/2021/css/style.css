@@ -272,15 +272,15 @@ section {
 }
 
 .nav-ul {
-    display: none;
     gap: 0.5rem;
     list-style: none;
     padding: 0;
     margin: 0;
-    opacity: 0;
 }
 
 .nav-ul:not(.responsive) {
+    opacity: 0;
+    display: none;
     transition: opacity 2s ease-in;
 }
 
