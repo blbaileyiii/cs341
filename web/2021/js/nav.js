@@ -1,12 +1,11 @@
 const hambutton = document.querySelector('.ham');
 const mainnav = document.querySelector('.nav-ul');
+const menu = document.getElementById("toggleMenu");
 
 hambutton.addEventListener('click', toggleMenuTxt, false);
 
 function toggleMenuTxt(x) {
-    //mainnav.classList.toggle('nav-hide');
-    let menu = document.getElementById("toggleMenu");
-
+    //mainnav.classList.toggle('nav-hide');  
 
     if (mainnav.classList.contains('nav-hidden')) {
         menu.innerHTML = "☰ Menu";
@@ -34,6 +33,6 @@ window.onresize = toggleMenuResize;
 function toggleMenuResize(x) {
     if (window.innerWidth > 800) {
         mainnav.classList.remove('nav-hidden');
-        document.getElementById("toggleMenu").innerHTML = "☰ Menu";
+        menu.innerHTML = "☰ Menu";
     }            
 }
