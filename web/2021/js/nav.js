@@ -8,15 +8,15 @@ function toggleMenuTxt(x) {
     let menu = document.getElementById("toggleMenu");
 
 
-    if (box.classList.contains('nav-hidden')) {
-        box.classList.remove('nav-hidden');
+    if (mainnav.classList.contains('nav-hidden')) {
+        mainnav.classList.remove('nav-hidden');
         setTimeout(function () {
-            box.classList.remove('visuallyhidden');
+            mainnav.classList.remove('visuallyhidden');
         }, 20);
     } else {
-        box.classList.add('visuallyhidden');    
-        box.addEventListener('transitionend', function(e) {
-            box.classList.add('nav-hidden');
+        mainnav.classList.add('visuallyhidden');    
+        mainnav.addEventListener('transitionend', function(e) {
+            mainnav.classList.add('nav-hidden');
         }, {
             capture: false,
             once: true,
