@@ -277,7 +277,7 @@ section {
     list-style: none;
     padding: 0;
     margin: 0;
-    transition: all 1s linear;
+    transition: all 1ms linear;
 }
 
 .nav-ul li{
@@ -598,7 +598,8 @@ p.legal-sm {
         background: var(--nav-bg-trans);
         justify-items: end;
         padding: 0.5rem 0 1rem;
-        border-radius: 0.5rem
+        border-radius: 0.5rem;
+        transition: all 1s linear;
     }
 
     .menu{
