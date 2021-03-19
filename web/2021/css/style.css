@@ -266,10 +266,6 @@ footer hr{
     display: none;
 }
 
-.responsive {
-    opacity: 1;
-}
-
 .responsive .nav.item {
     display: block;
 }
@@ -291,6 +287,10 @@ section {
     margin: 0;
     opacity: 0;
     transition: opacity 2s ease-in-out;
+}
+
+.nav-ul.responsive {
+    opacity: 1;
 }
 
 .nav-ul li{
