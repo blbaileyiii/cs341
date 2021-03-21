@@ -83,6 +83,10 @@ switch($action){
         $events = getEvents(2021);
         $eventList = buildEventList($events);
         $eventScript = buildEventScript($events);
+        if (isset($_SESSION['participant'])) {
+                $particpantScript = buildLsScript($_SESSION['participant']);
+                //unset($_SESSION['message']);
+        }
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
 }
 
