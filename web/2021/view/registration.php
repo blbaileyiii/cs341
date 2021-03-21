@@ -292,15 +292,17 @@
     <?php //var_dump($events); ?>
     <script>
         <?php echo $eventScript; ?>
+    </script>
+    <script type="module" src="/2021/js/registration.js"></script>
+    <script>
         <?php
                     if (isset($_SESSION['participant'])) {
-                        echo "let participant = '$_SESSION[participant]';";
+                        echo "const participant = '$_SESSION[participant]';";
                         //unset($_SESSION['participant']);
                     } else {
-                        echo "let particpant = null;";
+                        echo "const particpant = null;";
                     }
         ?>
     </script>
-    <script type="module" src="/2021/js/registration.js"></script>
 </body>
 </html>
