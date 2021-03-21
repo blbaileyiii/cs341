@@ -35,7 +35,7 @@
         <?php
                     if (isset($_SESSION['equipment'])) {
                         //var_dump($_SESSION['equipment']);
-                        echo "let equipment = []";
+                        echo "let equipment = [];";
                         foreach($_SESSION['equipment'] as $item ) {
                             echo "equipment.push({'equipmentid': '$item[equipmentid]', 'equipmentname': '$item[equipmentname]', 'quantity': '$item[quantity]', 'avgprice': '$item[avgprice]', 'bring': '$item[bring]', 'category': '$item[category]', 'ywcamp': '$item[ywcamp]', 'ymcamp': '$item[ymcamp]', 'trek': '$item[trek]'});";
                         }
