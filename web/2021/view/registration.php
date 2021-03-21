@@ -294,7 +294,7 @@
         <?php echo $eventScript; ?>
         <?php
             if (isset($_SESSION['participant'])) {
-                    echo "alert($_SESSION[participant]);"; 
+                    echo "alert('$_SESSION[participant]');"; 
                     //unset($_SESSION['message']);
             }
         ?>
