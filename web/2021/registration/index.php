@@ -75,7 +75,7 @@ switch($action){
             header('Location: /2021/registration/');
             exit;
         } else {
-            $message = "Sorry $participantName, but the registration failed. Please try again.";
+            $_SESSION['message'] = "Sorry $participantName, but the registration failed. Please try again.";
             $events = getEvents(2021);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
