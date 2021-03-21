@@ -292,6 +292,12 @@
     <?php //var_dump($events); ?>
     <script>
         <?php echo $eventScript; ?>
+        <?php
+            if (isset($_SESSION['participant'])) {
+                    echo "alert($_SESSION[participant])"; 
+                    //unset($_SESSION['message']);
+            }
+        ?>
     </script>
     <script type="module" src="/2021/js/registration.js"></script>
 </body>
