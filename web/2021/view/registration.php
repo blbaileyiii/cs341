@@ -300,7 +300,7 @@
                         echo "const participant = '$_SESSION[participant]';";
                         //unset($_SESSION['participant']);
                     } else {
-                        echo "const particpant = null;";
+                        echo "const participant = null;";
                     }
         ?>
     </script>
