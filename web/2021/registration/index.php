@@ -66,7 +66,8 @@ switch($action){
         $regOutcome = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
         
         // Validate Insert
-        if($regOutcome === 1){
+        //if($regOutcome === 1){
+        if($regOutcome){        
             $_SESSION['message'] = "Thanks for registering $participantName.";
             $_SESSION['participant'] = $participantName;
             $_SESSION['eventid'] = $eventId;
