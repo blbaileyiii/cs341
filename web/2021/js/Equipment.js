@@ -26,6 +26,7 @@ export default class Equipment {
                 equipmentList[item.category].push({'equipmentid': item.equipmentid, 'equipmentname': item.equipmentname, 'quantity': item.quantity, 'avgprice': item.avgprice, 'bring': item.bring, 'ywcamp': item.ywcamp, 'ymcamp': item.ymcamp, 'trek': item.trek});
             }
         });
+        return equipmentList;
     }
 
     displayItemList() {
