@@ -1,5 +1,5 @@
 import Participants from './Participants.js';
-import {saveLS} from './ls.js';
+import {saveLS, loadLS} from './ls.js';
 
 let participants = new Participants();
 
@@ -19,7 +19,7 @@ document.getElementById('participantDOB').addEventListener('change', function() 
 
 if(participant) {
 
-    let pList = loadTasks('participant');
+    let pList = loadLS('participant');
     if(!pList){
         pList = [];
     }
