@@ -1,6 +1,6 @@
 <?php
 /*
- * PHP Motors Accounts Model
+ * HHSCAMPS Registration Model
  */
 
 function getEvents($eventYear) {

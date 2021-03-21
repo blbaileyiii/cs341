@@ -493,10 +493,6 @@ p.legal-sm {
     padding: 0;
 }
 
-.hidden {
-    display: none;
-}
-
 .attributions {
     display: flex;
     flex-wrap: wrap;

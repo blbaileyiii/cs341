@@ -14,10 +14,3 @@ export default class Participants {
     }
 
 }
-
-class Participant {
-    constructor(name, equipment) {
-        this.participantName = name;
-        this.equipment = equipment;
-    }
-}

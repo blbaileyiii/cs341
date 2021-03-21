@@ -4,6 +4,7 @@ import {loadLS, saveLS} from './ls.js';
 export default class Equipment {
     constructor() {
         this.participants = new Participants();
+        this.getEquipmentList();
         this.displayEquipment();
     }
 
@@ -16,16 +17,20 @@ export default class Equipment {
         }
     }
 
+    getEquipmentList() {
+        //
+    }
+
     getItemList() {
         // TODO STUFF
     }
 
     displayItemList() {
-        document.querySelector('.equipment-list').classList.remove("hidden");
+        //
     }
 
     displayItemCheckList() {
-        document.querySelector('.equipment-interactive').classList.remove("hidden");
+        //
     }
 
 }

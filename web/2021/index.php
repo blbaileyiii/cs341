@@ -7,6 +7,7 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
 // Get the registration model for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/reg-model.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/equipment-model.php';
 // Get the fxs for valiation and file building
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
@@ -26,6 +27,9 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/trek.php';
         break;
     case 'equipment':
+        if (!isset($_SESSION['equipment'])){
+            $_SESSION['equipment'] = getEquipment();
+        }        
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/equipment.php';
         break;
     case 'attributions':
