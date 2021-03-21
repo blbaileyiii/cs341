@@ -18,7 +18,7 @@ export default class Equipment {
     }
 
     getEquipmentList() {
-        //
+        console.log(equipmentlist);
     }
 
     getItemList() {

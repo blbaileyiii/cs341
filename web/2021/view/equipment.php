@@ -39,9 +39,9 @@
                         foreach($_SESSION['equipment'] as $item ) {
                             echo 'equipment.push({ "equipmentid": encodeURI("'. $item['equipmentid'] .'"), "equipmentname": encodeURI("'. $item['equipmentname'] .'"), "quantity": encodeURI("'. $item['quantity'] .'"), "avgprice": encodeURI("'. $item['avgprice'] .'"), "bring": encodeURI("'. $item['bring'] .'"), "category": encodeURI("'. $item['category'] .'"), "ywcamp": encodeURI("'. $item['ywcamp'] .'"), "ymcamp": encodeURI("'. $item['ymcamp'] .'"), "trek": encodeURI("'. $item['trek'] .'") });';
                         }
-                        //echo "const equipment = {'particpantid': '$_SESSION[participantid]', 'name': '$_SESSION[participant]', 'eventid': '$_SESSION[eventid]'};";
+                        echo "const equipmentlist = equipment;";
                     } else {
-                        //echo "const equipment = null;";
+                        echo "const equipmentlist = null;";
                     }
         ?>
     </script>
