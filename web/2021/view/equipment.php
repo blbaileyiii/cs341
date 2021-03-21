@@ -34,7 +34,11 @@
     <script>
         <?php
                     if (isset($_SESSION['equipment'])) {
-                        var_dump($_SESSION['equipment']);
+                        //var_dump($_SESSION['equipment']);
+                        foreach($_SESSION['equipment'] as $item ) {
+                            echo "{'equipmentid': '$item[equipmentid]', 'equipmentname': '$item[equipmentname]', 'quantity': '$item[quantity]', 'avgprice': '$item[avgprice]', 'bring': '$item[bring]', 'category': '$item[category]', 'ywcamp': '$item[ywcamp]', 'ymcamp': '$item[ymcamp]', 'trek': '$item[trek]'}"
+
+                        }
                         //echo "const equipment = {'particpantid': '$_SESSION[participantid]', 'name': '$_SESSION[participant]', 'eventid': '$_SESSION[eventid]'};";
                     } else {
                         //echo "const equipment = null;";
