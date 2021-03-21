@@ -37,7 +37,15 @@
                         //var_dump($_SESSION['equipment']);
                         echo "let equipment = [];";
                         foreach($_SESSION['equipment'] as $item ) {
-                            echo "equipment.push({'equipmentid': encodeURI($item[equipmentid]), 'equipmentname': encodeURI($item[equipmentname]), 'quantity': encodeURI($item[quantity]), 'avgprice': encodeURI($item[avgprice]), 'bring': encodeURI($item[bring]), 'category': encodeURI($item[category]), 'ywcamp': encodeURI($item[ywcamp]), 'ymcamp': encodeURI($item[ymcamp]), 'trek': encodeURI($item[trek])});";
+                            echo 'let equipmentid = encodeURI("'. $item['equipmentid'] .'");';
+                            echo 'let equipmentname = encodeURI("'. $item['equipmentname'] .'");';
+                            echo 'let quantity = encodeURI("'. $item['quantity'] .'");';
+                            echo 'let avgprice = encodeURI("'. $item['avgprice'] .'");';
+                            echo 'let bring = encodeURI("'. $item['bring'] .'");';
+                            echo 'let category = encodeURI("'. $item['category'] .'");';
+                            echo 'let ywcamp = encodeURI("'. $item['ywcamp'] .'");';
+                            echo 'let ymcamp = encodeURI("'. $item['ymcamp'] .'");';
+                            echo 'let trek = encodeURI("'. $item['trek'] .'");';
                         }
                         //echo "const equipment = {'particpantid': '$_SESSION[participantid]', 'name': '$_SESSION[participant]', 'eventid': '$_SESSION[eventid]'};";
                     } else {
