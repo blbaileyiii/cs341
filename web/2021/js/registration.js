@@ -18,7 +18,6 @@ document.getElementById('participantDOB').addEventListener('change', function() 
 });
 
 if(participant) {
-
     let pList = loadLS('participant');
     if(!pList){
         pList = [];
