@@ -24,9 +24,8 @@ if(participant) {
         pList = [];
     }
     
-    pList[pList.length] = participant;    
+    pList[pList.length] = participant;
+    console.log(pList);
     
     saveLS('participant', pList);
-
-    console.log(pList);
 }
