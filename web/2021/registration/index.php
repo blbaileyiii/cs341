@@ -63,15 +63,15 @@ switch($action){
 
         // Insert form data
         //getEvents();
-        $regOutcome = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
+        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
         
         // Validate Insert
         //if($regOutcome === 1){
-        if($regOutcome){        
+        if($regId){        
             $_SESSION['message'] = "Thanks for registering $participantName.";
             $_SESSION['participant'] = $participantName;
             $_SESSION['eventid'] = $eventId;
-            $_SESSION['particpantid'] = $regOutcome;
+            $_SESSION['particpantid'] = $regId;
             header('Location: /2021/registration/');
             exit;
         } else {
