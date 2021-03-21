@@ -19,4 +19,5 @@ document.getElementById('participantDOB').addEventListener('change', function() 
 
 if(participant) {
     console.log(participant);
+    //saveLS('participant', participant);
 }
