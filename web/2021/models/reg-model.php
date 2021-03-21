@@ -87,6 +87,7 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
             $regId = $regResults[0]['registrantId'];
             $regId = str_replace("int(", "", $regId);
             $regId = str_replace(")", "", $regId);
+            $regId = (int)$regId;
         } else {
             $regId = NULL;
         }
