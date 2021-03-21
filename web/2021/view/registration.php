@@ -290,6 +290,7 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
     </footer>
     <?php //var_dump($events); ?>
+    <?php var_dump($_SESSION['regOutcome']); ?>
     <script>
         <?php echo $eventScript; ?>
     </script>
