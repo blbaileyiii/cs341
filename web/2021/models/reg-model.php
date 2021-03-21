@@ -83,7 +83,13 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
         $stmt->execute($sqlVarArray);
         // Ask how many rows changed as a result of our insert
         $regOutcome = $stmt->rowCount();
-        $regId = $stmt->fetchAll();
+        if($regOutcome === 0){
+            $regId = $stmt->fetchAll();
+            $regId = $regId[0];
+        } else {
+            $regId = NULL;
+        }
+        
         //echo $regId;
         // Close the database interaction
         $stmt->closeCursor();
