@@ -85,7 +85,7 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
         $regOutcome = $stmt->rowCount();
         if($regOutcome === 0){
             $regId = $stmt->fetchAll();
-            $regId = $regId[0];
+            $regId = $regId;
         } else {
             $regId = NULL;
         }
