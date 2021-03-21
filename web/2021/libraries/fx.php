@@ -91,7 +91,7 @@ function buildEventScript($events){
 
 function buildSwitchScript($events){
     $switchScript = "let eventID = document.getElementById('eventId').value;";
-    $switchScript .= "console.log('EventID:' + eventID);";
+    //$switchScript .= "console.log('EventID:' + eventID);";
     $switchScript .= "switch(eventID) {";
     for ($x = 0; $x <= count($events); $x++) {
         $switchScript .= "case '{$events[$x]['eventId']}':";
