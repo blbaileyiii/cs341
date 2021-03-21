@@ -17,6 +17,6 @@ document.getElementById('participantDOB').addEventListener('change', function() 
     }
 });
 
-if(sessionStorage.getItem('participant')){
-    alert(sessionStorage.getItem('participant'));
-}
+//if(sessionStorage.getItem('participant')){
+//    alert(sessionStorage.getItem('participant'));
+//}
