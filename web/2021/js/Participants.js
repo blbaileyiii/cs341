@@ -6,7 +6,7 @@ export default class Participants {
     }
 
     getParticipants() {
-        let list = loadLS("participants");
+        let list = loadLS('participants');
         if(!list) {
             list = [];
         }
