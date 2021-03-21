@@ -88,7 +88,8 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
         // Close the database interaction
         $stmt->closeCursor();
         // Return the indication of success (rows changed)
-        return $regOutcome;
+        //return $regOutcome;
+        return $regId;
     } catch(PDOException $ex) {
         echo $sql . "<br>" . $ex->getMessage();
     }
