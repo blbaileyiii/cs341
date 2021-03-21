@@ -68,7 +68,7 @@ switch($action){
         // Validate Insert
         if($regOutcome === 1){
             $_SESSION['message'] = "Thanks for registering $participantName.";
-            $_SESSION['particpant'] = $particpantName;
+            $_SESSION['participant'] = $participantName;
             header('Location: /2021/registration/');
             exit;
         } else {
