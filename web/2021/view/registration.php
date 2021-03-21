@@ -298,7 +298,7 @@
         <?php
                     if (isset($_SESSION['participant']) && isset($_SESSION['eventid'])) {
                         echo "const participant = {'name': '$_SESSION[participant]', 'eventid': '$_SESSION[eventid]'};";
-                        //unset($_SESSION['participant']);
+                        unset($_SESSION['participant']);
                     } else {
                         echo "const participant = null;";
                     }
