@@ -69,9 +69,9 @@ switch($action){
         //if($regOutcome === 1){
         if($regId){        
             $_SESSION['message'] = "Thanks for registering $participantName.";
+            $_SESSION['participantid'] = $regId;
             $_SESSION['participant'] = $participantName;
-            $_SESSION['eventid'] = $eventId;
-            $_SESSION['particpantid'] = $regId;
+            $_SESSION['eventid'] = $eventId;            
             header('Location: /2021/registration/');
             exit;
         } else {
