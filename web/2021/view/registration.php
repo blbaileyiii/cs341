@@ -296,11 +296,13 @@
     <script type="module" src="/2021/js/registration.js"></script>
     <script>
         <?php
-                    if (isset($_SESSION['participant'])) {
+                    if (isset($_SESSION['participant']) && isset($_SESSION['eventid'])) {
                         echo "const participant = '$_SESSION[participant]';";
+                        echo "const eventid = '$_SESSION[eventid]';";
                         //unset($_SESSION['participant']);
                     } else {
                         echo "const participant = null;";
+                        echo "const eventid = null;";
                     }
         ?>
     </script>
