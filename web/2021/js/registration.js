@@ -1,4 +1,5 @@
 import Participants from './Participants.js';
+import {saveLS} from './ls.js';
 
 let participants = new Participants();
 
@@ -15,3 +16,7 @@ document.getElementById('participantDOB').addEventListener('change', function() 
         ageInput.value = "";
     }
 });
+
+if(sessionStorage.getItem('participant')){
+    alert(sessionStorage.getItem('participant'));
+}
