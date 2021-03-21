@@ -21,10 +21,10 @@ if(participant) {
     let pList = loadLS('participant');
     if(!pList){
         pList = [];
-    }
-    
+    }    
     pList[pList.length] = participant;
-    console.log(pList);
     
     saveLS('participant', pList);
 }
+
+console.log(loadLS('participant'));
