@@ -17,6 +17,9 @@ document.getElementById('participantDOB').addEventListener('change', function() 
     }
 });
 
+console.log(participant);
+console.log(eventid);
+
 if(participant & eventid) {
     console.log(participant);
     console.log(eventid);
