@@ -76,6 +76,9 @@ switch($action){
             exit;
         } else {
             $message = "Sorry $participantName, but the registration failed. Please try again.";
+            $events = getEvents(2021);
+            $eventList = buildEventList($events);
+            $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit;
         }
