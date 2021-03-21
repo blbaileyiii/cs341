@@ -17,4 +17,8 @@ document.getElementById('participantDOB').addEventListener('change', function() 
     }
 });
 
+if(particpant) {
+    console.log(participant);
+}
+
 
