@@ -38,7 +38,8 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
 
         $sql = 
         'INSERT INTO hhstake.registrants ("eventId", "participantName", "ward", "participantDOB", "participantAge", "primTel", "primTelType", "secTel", "secTelType", "participantAddress", "participantCity", "participantState", "emergencyContact", "emerPrimTel", "emerPrimTelType", "emerSecTel", "emerSecTelType", "specialDiet", "specialDietTxt", "allergies", "allergiesTxt", "medication", "selfMedicate", "medicationList", "chronicIllness", "chronicIllnessTxt", "serious", "seriousTxt", "limitations", "considerations", "participantSig", "participantSigDate", "guardianSig", "guardianSigDate")
-        VALUES (:eventId, :participantName, :ward, :participantDOB, :participantAge, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emerSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllness, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations, :participantSig, :participantSigDate, :guardianSig, :guardianSigDate)';
+        VALUES (:eventId, :participantName, :ward, :participantDOB, :participantAge, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emerSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllness, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations, :participantSig, :participantSigDate, :guardianSig, :guardianSigDate)
+        RETURN "registrantId"';
         // Create the prepared statement using the phpmotors connection
         $stmt = $db->prepare($sql);
         // Build var array
@@ -82,6 +83,8 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
         $stmt->execute($sqlVarArray);
         // Ask how many rows changed as a result of our insert
         $regOutcome = $stmt->rowCount();
+        $regId = $stmt->fetchAll();
+        echo $regId;
         // Close the database interaction
         $stmt->closeCursor();
         // Return the indication of success (rows changed)
