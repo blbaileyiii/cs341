@@ -17,6 +17,7 @@ document.getElementById('participantDOB').addEventListener('change', function() 
     }
 });
 
+console.log(sessionStorage.getItem('participant'));
 if(sessionStorage.getItem('participant')){
-    alert(sessionStorage.getItem('participant'));
+    console.log(sessionStorage.getItem('participant'));
 }
