@@ -4,7 +4,7 @@ import {loadLS, saveLS} from './ls.js';
 export default class Equipment {
     constructor() {
         this.participants = new Participants();
-        this.getEquipmentList();
+        this.equipmentList = convertEquipmentList();
         this.displayEquipment();
     }
 
@@ -17,20 +17,23 @@ export default class Equipment {
         }
     }
 
-    getEquipmentList() {
-        console.log(equipmentlist);
-    }
-
-    getItemList() {
-        // TODO STUFF
+    convertEquipmentList() {
+        let equipmentList = {};
+        equipmentlist.foreach(item => {
+            if(!equipmentList.hasOwnProperty(item.category)){
+                equipmentList[item.category] = [{'equipmentid': item.equipmentid, 'equipmentname': item.equipmentname, 'quantity': item.quantity, 'avgprice': item.avgprice, 'bring': item.bring, 'ywcamp': item.ywcamp, 'ymcamp': item.ymcamp, 'trek': item.trek}];
+            } else {
+                equipmentList[item.category].push({'equipmentid': item.equipmentid, 'equipmentname': item.equipmentname, 'quantity': item.quantity, 'avgprice': item.avgprice, 'bring': item.bring, 'ywcamp': item.ywcamp, 'ymcamp': item.ymcamp, 'trek': item.trek});
+            }
+        });
     }
 
     displayItemList() {
-        //
+        console.log(this.equipmentList);
     }
 
     displayItemCheckList() {
-        //
+        console.log(this.equipmentList);
     }
 
 }
