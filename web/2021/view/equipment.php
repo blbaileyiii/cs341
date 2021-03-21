@@ -34,7 +34,7 @@
     <script>
         <?php
                     if (isset($_SESSION['equipment'])) {
-                        echo $_SESSION['equipment'];
+                        var_dump($_SESSION['equipment']);
                         //echo "const equipment = {'particpantid': '$_SESSION[participantid]', 'name': '$_SESSION[participant]', 'eventid': '$_SESSION[eventid]'};";
                     } else {
                         //echo "const equipment = null;";
