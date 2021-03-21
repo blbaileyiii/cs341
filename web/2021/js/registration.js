@@ -18,6 +18,15 @@ document.getElementById('participantDOB').addEventListener('change', function() 
 });
 
 if(participant) {
-    console.log(participant);
-    saveLS('participant', participant);
+
+    let pList = loadTasks('participant');
+    if(!pList){
+        pList = [];
+    }
+    
+    pList[pList.length] = participant;    
+    
+    saveLS('participant', pList);
+
+    console.log(pList);
 }
