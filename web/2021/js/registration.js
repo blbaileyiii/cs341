@@ -75,6 +75,17 @@ function changeRadioRequirement(inputField, required) {
     inputField.required = required;
     let div = inputField.parentElement;
     console.log(div);
+    if (required) {
+        let span = document.createElement("span");
+        span.classList.add('field-tip');
+        span.textContent = 'Required';
+        div.insertBefore(span, div.nextSibling);
+    } else {
+        let span = div.nextSibling;
+        if(span.tagName.toLowerCase() == 'span'){
+            span.remove();
+        }
+    }
 }
 
 if(participant) {
