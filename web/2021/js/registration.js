@@ -32,12 +32,24 @@ let specialDietTxt = document.getElementById('specialDietTxt');
 document.getElementById('specialDietY').addEventListener('change', () => { changeTxtRequirement(specialDietTxt, true) });
 document.getElementById('specialDietN').addEventListener('change', () => { changeTxtRequirement(specialDietTxt, false) });
 
+let allergiesTxt = document.getElementById('allergiesTxt');
+document.getElementById('allergiesY').addEventListener('change', () => { changeTxtRequirement(allergiesTxt, true) });
+document.getElementById('allergiesN').addEventListener('change', () => { changeTxtRequirement(allergiesTxt, false) });
+
+let chronicIllnessTxt = document.getElementById('chronicIllnessTxt');
+document.getElementById('chronicIllnessY').addEventListener('change', () => { changeTxtRequirement(chronicIllnessTxt, true) });
+document.getElementById('chronicIllnessN').addEventListener('change', () => { changeTxtRequirement(chronicIllnessTxt, false) });
+
+let seriousTxt = document.getElementById('seriousTxt');
+document.getElementById('seriousY').addEventListener('change', () => { changeTxtRequirement(seriousTxt, true) });
+document.getElementById('seriousN').addEventListener('change', () => { changeTxtRequirement(seriousTxt, false) });
+
 
 function changeTxtRequirement(txtField, required) {
     let label = document.querySelector('label[for=' + txtField.id + ']');
     txtField.required = required;    
     if (label) {
-        console.log(label);
+        //console.log(label);
         if (required){
             let span = document.createElement("span");
             span.classList.add('field-tip');
