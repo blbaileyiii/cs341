@@ -198,7 +198,7 @@
                         <span class="field-tip">Required</span>
                     </div> 
                     <div class="fields">
-                        <label for="specialDietTxt"><span>If yes, please explain the dietary restrictions:</span></label> 
+                        <label for="specialDietTxt"><span>If yes, please explain the dietary restrictions:</span><?php if(isset($specialDiet) && $specialDiet=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
                         <textarea id="specialDietTxt" name="specialDietTxt" <?php if(isset($specialDiet) && $specialDiet=="y"){echo "required";}?> ><?php if(isset($specialDietTxt)){echo $specialDietTxt;} ?></textarea>
                     </div>
                     <div class="fields-radio">
@@ -216,7 +216,7 @@
                         <span class="field-tip">Required</span>
                     </div>
                     <div class="fields">
-                        <label for="allergiesTxt"><span>If yes, please list the allergies:</span></label> 
+                        <label for="allergiesTxt"><span>If yes, please list the allergies:</span><?php if(isset($allergies) && $allergies=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
                         <textarea id="allergiesTxt" name="allergiesTxt" <?php if(isset($allergies) && $allergies=="y"){echo "required";} ?>><?php if(isset($allergiesTxt)){echo $allergiesTxt;} ?></textarea>
                     </div>
                     <div class="fields-radio">
@@ -245,9 +245,10 @@
                                 <label for="selfMedicateN"><span class="xtr-indent">No</span><span class="special-instructions">If no, please contact the event or activity leader directly.</span></label>
                             </div>
                         </div>
+                        <?php if(isset($medication) && $medication=="y"){echo "<span class='field-tip'>Required</span>";} ?>                        
                     </div>
                     <div class="fields">
-                        <label for="medicationList"><span>List all prescription or over-the-counter (OTC) medications the participant is taking:</span></label> 
+                        <label for="medicationList"><span>List all prescription or over-the-counter (OTC) medications the participant is taking:</span><?php if(isset($medication) && $medication=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
                         <textarea id="medicationList" name="medicationList" <?php if(isset($medication) && $medication=="y"){echo "required";} ?>><?php if(isset($medicationList)){echo $medicationList;} ?></textarea>
                     </div>
                 </fieldset>
@@ -268,7 +269,7 @@
                         <span class="field-tip">Required</span>
                     </div>
                     <div class="fields">
-                        <label for="chronicIllnessTxt"><span>If yes, please explain:</span></label> 
+                        <label for="chronicIllnessTxt"><span>If yes, please explain:</span><?php if(isset($chronicIllness) && $chronicIllness=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
                         <textarea id="chronicIllnessTxt" name="chronicIllnessTxt" <?php if(isset($chronicIllness) && $chronicIllness=="y"){echo "required";} ?>><?php if(isset($chronicIllnessTxt)){echo $chronicIllnessTxt;} ?></textarea>
                     </div>
                     <div class="fields-radio">
@@ -286,7 +287,7 @@
                         <span class="field-tip">Required</span>
                     </div>
                     <div class="fields">
-                        <label for="seriousTxt"><span>If yes, please explain:</span></label> 
+                        <label for="seriousTxt"><span>If yes, please explain:</span><?php if(isset($serious) && $serious=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
                         <textarea id="seriousTxt" name="seriousTxt" <?php if(isset($serious) && $serious=="y"){echo "required";} ?>><?php if(isset($seriousTxt)){echo $seriousTxt;} ?></textarea>
                     </div>
                     <div class="fields">

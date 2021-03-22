@@ -399,16 +399,11 @@ fieldset {
     border-style: solid;
 }
 
-.fields label {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
+.fields label, 
 .fields-radio {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .fields-radio label,

@@ -50,16 +50,16 @@ let selfMedicateN = document.getElementById('selfMedicateN');
 document.getElementById('medicationY').addEventListener('change', () => { 
     selfMedicateY.disabled = false;
     selfMedicateN.disabled = false;
-    changeTxtRequirement(medicationList, true);
     changeRadioRequirement(selfMedicateY, true);
+    changeTxtRequirement(medicationList, true);
 });
 document.getElementById('medicationN').addEventListener('change', () => { 
     selfMedicateY.disabled = true;
     selfMedicateN.disabled = true;
     selfMedicateY.checked = false;
     selfMedicateN.checked = false;
-    changeTxtRequirement(medicationList, false);
     changeRadioRequirement(selfMedicateY, false);
+    changeTxtRequirement(medicationList, false);
 });
 
 function changeTxtRequirement(txtField, required) {
@@ -83,7 +83,7 @@ function changeTxtRequirement(txtField, required) {
 
 function changeRadioRequirement(inputField, required) {
     inputField.required = required;
-    let div = inputField.parentElement.parentElement;
+    let div = inputField.parentElement.parentElement.parentElement;
     console.log(div);
     if (required) {
         let span = document.createElement("span");
