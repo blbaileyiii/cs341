@@ -97,12 +97,18 @@
                         <input id="primTel" name="primTel" type="tel" required> 
                     </div>
                     <div class="fields-radio-alt">
+                        <span>
                         <input id="primTelCell" name="primTelType" type="radio" value="cell" checked required>
                         <label for="primTelCell"><span>Cell</span></label>
+                        </span>
+                        <span>
                         <input id="primTelHome" name="primTelType" type="radio" value="home">
-                        <label for="primTelHome"><span>Home</span></label>                    
+                        <label for="primTelHome"><span>Home</span></label>
+                        </span>
+                        <span>
                         <input id="primTelWork" name="primTelType" type="radio" value="work">
                         <label for="primTelWork"><span>Work</span></label>
+                        </span>
                     </div>
                     <div class="fields">
                         <label for="secTel"><span>Secondary telephone number</span></label> 
