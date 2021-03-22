@@ -243,11 +243,11 @@
                         <div>
                             <div>If yes, can the participant self-administer his or her medication?</div>
                             <div class="inline-block">
-                                <input id="selfMedicateY" name="selfMedicate" type="radio" value="y" <?php if(isset($selfMedicate) && $selfMedicate=="y"){echo "checked";} ?> <?php if(isset($medication) && $medication != "y"){echo "disabled";} ?> <?php if(isset($medication) && $medication=="y"){echo "required";} ?>>
+                                <input id="selfMedicateY" name="selfMedicate" type="radio" value="y" <?php if(isset($selfMedicate) && $selfMedicate=="y"){echo "checked";} ?> <?php if(isset($medication) && $medication != "y"){echo "disabled";} elseif(!isset($medication)){echo "disabled";} ?> <?php if(isset($medication) && $medication=="y"){echo "required";} ?>>
                                 <label for="selfMedicateY"><span>Yes</span></label>
                             </div>
                             <div class="inline-block">
-                                <input id="selfMedicateN" name="selfMedicate" type="radio" value="n" <?php if(isset($selfMedicate) && $selfMedicate=="n"){echo "checked";} ?> <?php if(isset($medication) && $medication != "y"){echo "disabled";} ?>>
+                                <input id="selfMedicateN" name="selfMedicate" type="radio" value="n" <?php if(isset($selfMedicate) && $selfMedicate=="n"){echo "checked";} ?> <?php if(isset($medication) && $medication != "y"){echo "disabled";} elseif(!isset($medication)){echo "disabled";} ?>>
                                 <label for="selfMedicateN"><span class="xtr-indent">No</span><span class="special-instructions">If no, please contact the event or activity leader directly.</span></label>
                             </div>
                         </div>
