@@ -66,7 +66,10 @@ function changeTxtRequirement(txtField, required) {
             span.textContent = 'Required';
             label.appendChild(span);
         } else {
-            label.removeChild(label.querySelector('.field-tip'));
+            let span = label.querySelector('.field-tip');
+            if (span) {
+                label.removeChild(span);
+            }
         }
     }
 }
