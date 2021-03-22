@@ -91,7 +91,7 @@ function changeRadioRequirement(inputField, required) {
         span.textContent = 'Required';
         div.append(span);
     } else {
-        let span = div.lastChild;
+        let span = div.lastElementChild;
         console.log(span);
         console.log(span.tagName);
         if (span.tagName) {
