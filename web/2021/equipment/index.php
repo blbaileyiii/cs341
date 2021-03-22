@@ -18,7 +18,7 @@ if ($action == NULL) {
 
 switch($action){
     case 'getEquipment':
-        
+        echo getEquipmentJSON();
         break;
     default:
         if (!isset($_SESSION['equipment'])){
