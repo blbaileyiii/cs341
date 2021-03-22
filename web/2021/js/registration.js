@@ -44,6 +44,9 @@ let seriousTxt = document.getElementById('seriousTxt');
 document.getElementById('seriousY').addEventListener('change', () => { changeTxtRequirement(seriousTxt, true) });
 document.getElementById('seriousN').addEventListener('change', () => { changeTxtRequirement(seriousTxt, false) });
 
+let medicationList = document.getElementById('medicationList');
+document.getElementById('medicationListY').addEventListener('change', () => { changeTxtRequirement(medicationList, true) });
+document.getElementById('medicationListN').addEventListener('change', () => { changeTxtRequirement(medicationList, false) });
 
 function changeTxtRequirement(txtField, required) {
     let label = document.querySelector('label[for=' + txtField.id + ']');
