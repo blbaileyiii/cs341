@@ -47,7 +47,7 @@ function checkBoolText($chkVal, $chkTxt) {
 }
 
 function checkDepBool($chkVal, $chkAgainst) {
-    if($chkAgainst){
+    if($chkAgainst == 'y'){
         if(is_null($chkVal)) {return NULL;}
     }
     return TRUE;
