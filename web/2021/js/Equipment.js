@@ -64,12 +64,12 @@ export default class Equipment {
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.classList.add('equipment-lists-interactive');
 
-        Object.keys(this.equipmentList).forEach(key => {
-            let pDiv = document.createElement('div');
+        let pDiv = document.createElement('div');
+        pDiv.classList.add(participant.participantid);
+
+        Object.keys(this.equipmentList).forEach(key => {            
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
-
-            pDiv.classList.add(participant.participantid);
 
             h2.innerHTML = "<input type='checkbox' id='" + participant.participantid + "-" + key.replace(/ /g,"-").toLowerCase() + "' name='" + key.replace(/ /g,"-").toLowerCase() + "'><label for='" + participant.participantid + "-" + key.replace(/ /g,"-").toLowerCase() + "'>" + key + "</label>";
             ul.classList.add(key.replace(/ /g,"-").toLowerCase());            
@@ -90,8 +90,9 @@ export default class Equipment {
 
             pDiv.appendChild(h2);
             pDiv.appendChild(ul);
-            equipDiv .appendChild(pDiv);
         });
+
+        equipDiv.appendChild(pDiv);
     }
 
 }
