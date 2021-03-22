@@ -32,6 +32,25 @@ export default class Equipment {
 
     displayItemList() {
         console.log(this.equipmentList);
+        let equipDiv = document.getElementById('equipment-lists');
+        Object.keys(this.equipmentList).forEach(key => {
+            let h2 = document.createElement('h2');
+            let ul = document.createElement('ul');
+
+            h2.innerHTML = key;
+            ul.classList.add(key.replace(/ /g,"-"));            
+
+            this.equipmentList[key].forEach(item => {
+                let li = document.createElement('li');
+
+                li.innerHTML = item.equipmentname;
+
+                ul.appendChild(li);
+            });
+
+            equipDiv.appendChild(h2);
+            equipDiv.appendChild(ul);
+        });
 
     }
 
@@ -42,7 +61,7 @@ export default class Equipment {
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
 
-            h2.innerHTML = key;
+            h2.innerHTML = "<input type='checkbox' id='" + key + "' name='" + key + "'><label for='" + key + "'>" + key + "</label>";
             ul.classList.add(key.replace(/ /g,"-"));            
 
             this.equipmentList[key].forEach(item => {
