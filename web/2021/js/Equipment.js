@@ -11,7 +11,9 @@ export default class Equipment {
     displayEquipment() {
         console.log(this.participants.list);
         if (this.participants.list.length > 0) {
-            this.displayItemCheckList();
+            this.participants.list.forEach(particpant => {
+                this.displayItemCheckList(particpant);
+            });            
         } else {
             this.displayItemList();
         }
@@ -56,7 +58,7 @@ export default class Equipment {
 
     }
 
-    displayItemCheckList() {
+    displayItemCheckList(participant) {
         console.log(this.equipmentList);
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.classList.add('equipment-lists-interactive');
