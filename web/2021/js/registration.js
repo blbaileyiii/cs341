@@ -29,8 +29,8 @@ document.getElementById('participantDOB').addEventListener('change', function() 
 });
 
 let specialDietTxt = document.getElementById('specialDietTxt');
-document.getElementById('specialDietY').addEventListener('change', changeTxtRequirement(specialDietTxt, true));
-document.getElementById('specialDietN').addEventListener('change', changeTxtRequirement(specialDietTxt, false));
+document.getElementById('specialDietY').addEventListener('change', () => { changeTxtRequirement(specialDietTxt, true) });
+document.getElementById('specialDietN').addEventListener('change', () => { changeTxtRequirement(specialDietTxt, false) });
 
 
 function changeTxtRequirement(txtField, required) {
