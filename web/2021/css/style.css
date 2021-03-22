@@ -532,7 +532,7 @@ p.legal-sm {
 }
 
 #selfMedicateN:hover + label .special-instructions {
-    transform: scale(2.0);
+    transform: scale(1.1);
     background: red;
     color: white;
 }
