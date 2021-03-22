@@ -4,8 +4,8 @@ import {loadLS, saveLS} from './ls.js';
 export default class Equipment {
     constructor() {
         this.participants = new Participants();
-        this.equipmentList = this.convertEquipmentList();
-        this.displayEquipment();
+        this.equipmentList = {}; //this.convertEquipmentList();
+        //this.displayEquipment();
     }
 
     displayEquipment() {
@@ -20,21 +20,19 @@ export default class Equipment {
         }
     }
 
-    convertEquipmentList() {
+    convertEquipmentList(dbEquipment) {
         let equipmentList = {};
-        let equipmentlist = this.getEquipment();
-        console.log(equipmentlist);
-        equipmentlist.forEach(item => {
+        dbEquipment.forEach(item => {
             if(!equipmentList.hasOwnProperty(item.category)){
                 equipmentList[item.category] = [{'equipmentid': item.equipmentid, 'equipmentname': item.equipmentname, 'quantity': item.quantity, 'avgprice': item.avgprice, 'bring': item.bring, 'ywcamp': item.ywcamp, 'ymcamp': item.ymcamp, 'trek': item.trek}];
             } else {
                 equipmentList[item.category].push({'equipmentid': item.equipmentid, 'equipmentname': item.equipmentname, 'quantity': item.quantity, 'avgprice': item.avgprice, 'bring': item.bring, 'ywcamp': item.ywcamp, 'ymcamp': item.ymcamp, 'trek': item.trek});
             }
         });
-        return equipmentList;
+        this.equipmentList = equipmentList;
     }
 
-    getEquipment() {
+    getEquipment(master) {
         let url = "/2021/equipment/?action=getEquipment";
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
@@ -42,6 +40,9 @@ export default class Equipment {
             if (this.readyState == 4 && this.status == 200) {
                 let myObj = JSON.parse(this.responseText);
                 console.log(myObj);
+                master.convertEquipmentList(myObj);
+
+
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
                 let div = document.getElementById("json-data"); 
