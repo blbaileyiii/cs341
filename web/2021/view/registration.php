@@ -98,16 +98,16 @@
                     </div>
                     <div class="fields-radio-alt">
                         <div class="inline-block">
-                        <input id="primTelCell" name="primTelType" type="radio" value="cell" checked required>
-                        <label for="primTelCell"><span>Cell</span></label>
+                            <input id="primTelCell" name="primTelType" type="radio" value="cell" checked required>
+                            <label for="primTelCell"><span>Cell</span></label>
                         </div>
                         <div class="inline-block">
-                        <input id="primTelHome" name="primTelType" type="radio" value="home">
-                        <label for="primTelHome"><span>Home</span></label>
+                            <input id="primTelHome" name="primTelType" type="radio" value="home">
+                            <label for="primTelHome"><span>Home</span></label>
                         </div>
                         <div class="inline-block">
-                        <input id="primTelWork" name="primTelType" type="radio" value="work">
-                        <label for="primTelWork"><span>Work</span></label>
+                            <input id="primTelWork" name="primTelType" type="radio" value="work">
+                            <label for="primTelWork"><span>Work</span></label>
                         </div>
                     </div>
                     <div class="fields">
@@ -115,12 +115,18 @@
                         <input id="secTel" name="secTel" type="tel">
                     </div>
                     <div class="fields-radio-alt">
-                        <input id="secTelCell" name="secTelType" type="radio" value="cell" checked>
-                        <label for="secTelCell"><span>Cell</span></label>
-                        <input id="secTelHome" name="secTelType" type="radio" value="home">
-                        <label for="secTelHome"><span>Home</span></label>                    
-                        <input id="secTelWork" name="secTelType" type="radio" value="work">
-                        <label for="secTelWork"><span>Work</span></label>
+                        <div class="inline-block">
+                            <input id="secTelCell" name="secTelType" type="radio" value="cell" checked>
+                            <label for="secTelCell"><span>Cell</span></label>
+                        </div>
+                        <div class="inline-block">
+                            <input id="secTelHome" name="secTelType" type="radio" value="home">
+                            <label for="secTelHome"><span>Home</span></label>
+                        </div>
+                        <div class="inline-block">
+                            <input id="secTelWork" name="secTelType" type="radio" value="work">
+                            <label for="secTelWork"><span>Work</span></label>
+                        </div>
                     </div>                
                     <div class="fields">
                         <label for="participantAddress"><span>Address</span><span class="field-tip">Required</span></label> 
@@ -143,24 +149,36 @@
                         <input id="emerPrimTel" name="emerPrimTel" type="tel" required>
                     </div>
                     <div class="fields-radio-alt">
-                        <input id="emerPrimTelCell" name="emerPrimTelType" type="radio" value="cell" checked required>
-                        <label for="emerPrimTelCell"><span>Cell</span></label>
-                        <input id="emerPrimTelHome" name="emerPrimTelType" type="radio" value="home">
-                        <label for="emerPrimTelHome"><span>Home</span></label>                    
-                        <input id="emerPrimTelWork" name="emerPrimTelType" type="radio" value="work">
-                        <label for="emerPrimTelWork"><span>Work</span></label>
+                        <div class="inline-block">    
+                            <input id="emerPrimTelCell" name="emerPrimTelType" type="radio" value="cell" checked required>
+                            <label for="emerPrimTelCell"><span>Cell</span></label>
+                        </div>
+                        <div class="inline-block">
+                            <input id="emerPrimTelHome" name="emerPrimTelType" type="radio" value="home">
+                            <label for="emerPrimTelHome"><span>Home</span></label>
+                        </div>                    
+                        <div class="inline-block">
+                            <input id="emerPrimTelWork" name="emerPrimTelType" type="radio" value="work">
+                            <label for="emerPrimTelWork"><span>Work</span></label>
+                        </div>
                     </div>
                     <div class="fields">
                         <label for="emerSecTel"><span>Secondary telephone number</span></label> 
                         <input id="emerSecTel" name="emerSecTel" type="tel">
                     </div>
                     <div class="fields-radio-alt">
-                        <input id="emerSecTelCell" name="emerSecTelType" type="radio" value="cell" checked>
-                        <label for="emerSecTelCell"><span>Cell</span></label>
-                        <input id="emerSecTelHome" name="emerSecTelType" type="radio" value="home">
-                        <label for="emerSecTelHome"><span>Home</span></label>                    
-                        <input id="emerSecTelWork" name="emerSecTelType" type="radio" value="work">
-                        <label for="emerSecTelWork"><span>Work</span></label>
+                        <div class="inline-block">    
+                            <input id="emerSecTelCell" name="emerSecTelType" type="radio" value="cell" checked>
+                            <label for="emerSecTelCell"><span>Cell</span></label>
+                        </div>
+                        <div class="inline-block">
+                            <input id="emerSecTelHome" name="emerSecTelType" type="radio" value="home">
+                            <label for="emerSecTelHome"><span>Home</span></label>
+                        </div>                    
+                        <div class="inline-block">
+                            <input id="emerSecTelWork" name="emerSecTelType" type="radio" value="work">
+                            <label for="emerSecTelWork"><span>Work</span></label>
+                        </div>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -168,10 +186,14 @@
                     <div class="fields-radio">
                         <div>
                             <span>Does the participant require a special diet?</span>
-                            <input id="specialDietY" name="specialDiet" type="radio" value="y" required>
-                            <label for="specialDietY"><span>Yes</span></label>
-                            <input id="specialDietN" name="specialDiet" type="radio" value="n">
-                            <label for="specialDietN"><span>No</span></label>
+                            <div class="inline-block">
+                                <input id="specialDietY" name="specialDiet" type="radio" value="y" required>
+                                <label for="specialDietY"><span>Yes</span></label>
+                            </div>
+                            <div class="inline-block">
+                                <input id="specialDietN" name="specialDiet" type="radio" value="n">
+                                <label for="specialDietN"><span>No</span></label>
+                            </div>
                         </div>
                         <span class="field-tip">Required</span>
                     </div> 
@@ -182,10 +204,14 @@
                     <div class="fields-radio">
                         <div>
                             <span>Does the participant have any allergies?</span>
-                            <input id="allergiesY" name="allergies" type="radio" value="y" required>
-                            <label for="allergiesY"><span>Yes</span></label>
-                            <input id="allergiesN" name="allergies" type="radio" value="n">
-                            <label for="allergiesN"><span>No</span></label>
+                            <div class="inline-block">
+                                <input id="allergiesY" name="allergies" type="radio" value="y" required>
+                                <label for="allergiesY"><span>Yes</span></label>
+                            </div>
+                            <div class="inline-block">
+                                <input id="allergiesN" name="allergies" type="radio" value="n">
+                                <label for="allergiesN"><span>No</span></label>
+                            </div>
                         </div>
                         <span class="field-tip">Required</span>
                     </div>
@@ -196,20 +222,28 @@
                     <div class="fields-radio">
                         <div>
                             <span>Is the participant taking any medication or over-the-counter (OTC) drugs?</span>
-                            <input id="medicationY" name="medication" type="radio" value="y" required>
-                            <label for="medicationY"><span>Yes</span></label>
-                            <input id="medicationN" name="medication" type="radio" value="n">
-                            <label for="medicationN"><span>No</span></label>
+                            <div class="inline-block">
+                                <input id="medicationY" name="medication" type="radio" value="y" required>
+                                <label for="medicationY"><span>Yes</span></label>
+                            </div>
+                            <div class="inline-block">
+                                <input id="medicationN" name="medication" type="radio" value="n">
+                                <label for="medicationN"><span>No</span></label>
+                            </div>
                         </div>
                         <span class="field-tip">Required</span>
                     </div>
                     <div class="fields-radio">
                         <div>
                             <span>If yes, can the participant self-administer his or her medication?</span>
-                            <input id="selfMedicateY" name="selfMedicate" type="radio" value="y" disabled>
-                            <label for="selfMedicateY"><span>Yes</span></label>
-                            <input id="selfMedicateN" name="selfMedicate" type="radio" value="n" disabled>
-                            <label for="selfMedicateN"><span class="xtr-indent">No</span><span class="special-instructions">If no, please contact the event or activity leader directly.</span></label>
+                            <div class="inline-block">
+                                <input id="selfMedicateY" name="selfMedicate" type="radio" value="y" disabled>
+                                <label for="selfMedicateY"><span>Yes</span></label>
+                            </div>
+                            <div class="inline-block">
+                                <input id="selfMedicateN" name="selfMedicate" type="radio" value="n" disabled>
+                                <label for="selfMedicateN"><span class="xtr-indent">No</span><span class="special-instructions">If no, please contact the event or activity leader directly.</span></label>
+                            </div>
                         </div>
                     </div>
                     <div class="fields">
@@ -222,10 +256,14 @@
                     <div class="fields-radio">
                         <div>
                             <span>Does the participant have a chronic or recurring illness?</span>
-                            <input id="chronicIllnessY" name="chronicIllness" type="radio" value="y" required>
-                            <label for="chronicIllnessY"><span>Yes</span></label>
-                            <input id="chronicIllnessN" name="chronicIllness" type="radio" value="n">
-                            <label for="chronicIllnessN"><span>No</span></label>
+                            <div class="inline-block">
+                                <input id="chronicIllnessY" name="chronicIllness" type="radio" value="y" required>
+                                <label for="chronicIllnessY"><span>Yes</span></label>
+                            </div>
+                            <div class="inline-block">
+                                <input id="chronicIllnessN" name="chronicIllness" type="radio" value="n">
+                                <label for="chronicIllnessN"><span>No</span></label>
+                            </div>
                         </div>
                         <span class="field-tip">Required</span>
                     </div>
@@ -236,10 +274,14 @@
                     <div class="fields-radio">
                         <div>
                             <span>Has the participant had surgery or a serious illness in the past year?</span>
-                            <input id="seriousY" name="serious" type="radio" value="y" required>
-                            <label for="seriousY"><span>Yes</span></label>
-                            <input id="seriousN" name="serious" type="radio" value="n">
-                            <label for="seriousN"><span>No</span></label>
+                            <div class="inline-block">
+                                <input id="seriousY" name="serious" type="radio" value="y" required>
+                                <label for="seriousY"><span>Yes</span></label>
+                            </div>
+                            <div class="inline-block">
+                                <input id="seriousN" name="serious" type="radio" value="n">
+                                <label for="seriousN"><span>No</span></label>
+                            </div>
                         </div>
                         <span class="field-tip">Required</span>
                     </div>
