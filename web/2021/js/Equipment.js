@@ -66,8 +66,8 @@ export default class Equipment {
 
             this.equipmentList[key].forEach(item => {
                 let li = document.createElement('li');
-
-                li.innerHTML = item.equipmentname;
+                let labelTxt = item.quantity + " " + item.equipmentname;
+                li.innerHTML = "<input type='checkbox' id='item-" + item.equipmentid + "' name='item-" + item.equipmentid + "'><label for='" + item.equipmentid + "'>" + labelTxt + "</label>";
 
                 ul.appendChild(li);
             });
