@@ -1,21 +1,48 @@
 <?php
 
-function checkInt($chkInt){
-    $valInt = filter_var($chkInt, FILTER_VALIDATE_INT);
-    return $valInt;
+function checkInt($chkVal){
+    $chkVal = filter_var($chkVal, FILTER_VALIDATE_INT);
+    if($chkVal){ return $chkVal; } 
+    return NULL;
 }
 
-function checkFloat($chkFloat){
-    $valFloat = filter_var($chkFloat, FILTER_VALIDATE_FLOAT);
-    return $valFloat;
+function checkFloat($chkVal){
+    $chkVal = filter_var($chkVal, FILTER_VALIDATE_FLOAT);
+    if($chkVal){ return $chkVal; } 
+    return NULL;
 }
 
-function checkMinValue($chkValue, $minValue){
-    if($chkValue >= $minValue){
-        return $chkValue;
-    } else {
-        return FALSE;
-    }
+function checkMinValue($chkVal, $minValue){
+    if($chkVal >= $minValue){ return $chkVal; } 
+    return NULL;
+}
+
+function checkTel($chkVal) {
+    if(is_numeric(str_replace(array('-','(',')', ' ', '+'), '', $chkVal))) { return $chkVal; } 
+    return NULL;
+}
+
+function checkTelType($chkVal) {
+    if($chkVal == "cell" || $chkVal == "home" || $chkVal == "work") { return $chkVal; } 
+    return NULL;
+}
+
+function checkWard($chkVal) {
+    if($chkVal == "cs" || $chkVal == "hh1" || $chkVal == "hh5" || $chkVal == "rh" || $chkVal == "tc" || $chkVal == "wv" || $chkVal == "ws") { return $chkVal; } 
+    return NULL;
+}
+
+function checkIsDate($chkVal, $format = 'Y-m-d')
+{
+    $d = DateTime::createFromFormat($format, $chkVal);
+    // The Y ( 4 digits year ) returns TRUE for any integer with any number of digits so changing the comparison from == to === fixes the issue.
+    if($d && $d->format($format) === $chkVal) { return $chkVal; } 
+    return NULL;
+}
+
+function checkBoolText($chkVal, $chkTxt) {
+    if($chkVal && strlen(trim($chkTxt)) > 0) { return $chkVal; }
+    return NULL;
 }
 
 function getAge($participantDOB) {

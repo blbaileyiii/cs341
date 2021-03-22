@@ -58,15 +58,50 @@ switch($action){
 
         // Validate form data
         $eventId = checkInt($eventId);
-        
+        $participantDOB = checkIsDate($participantDOB);
+        $primTel = checkTel($primTel);
+        $secTel = checkTel($secTel);
+        $emerPrimTel = checkTel($emerPrimTel);
+        $emerSecTel = checkTel($emerSecTel);
+        $primTelType = checkTelType($primTelType);
+        $secTelType = checkTelType($secTelType);
+        $emerPrimTelType = checkTelType($emerPrimTelType);
+        $emerSecTelType = checkTelType($emerSecTelType);
+        $specialDiet = checkBoolText($specialDiet,$specialDietTxt);
+        $allergies = checkBoolText($allergies,$allergiesTxt);
+        $medication = checkBoolText($medication,$medicationList);
+        $chronicIllness = checkBoolText($chronicIllness,$chronicIllnessTxt);
+        $serious = checkBoolText($serious,$seriousTxt);
 
+        echo $eventId . "<br>";
+        echo $participantDOB . "<br>";
+        echo $primTel . "<br>";
+        echo $secTel . "<br>";
+        echo $emerPrimTel . "<br>";
+        echo $emerSecTel . "<br>";
+        echo $primTelType . "<br>";
+        echo $secTelType . "<br>";
+        echo $emerPrimTelType . "<br>";
+        echo $emerSecTelType . "<br>";
+        echo $specialDiet . "<br>";
+        echo $allergies . "<br>";
+        echo $medication . "<br>";
+        echo $chronicIllness . "<br>";
+        echo $serious . "<br>";
+
+        //$selfMedicate
+
+        //OVERWRITE Signature Dates... Need to match today.
+
+        // If participantDOB is >= 19 certain things
 
         // Calculate age by DOB...
         $participantAge = getAge($participantDOB); 
 
         // Insert form data
         //getEvents();
-        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
+        $regId = false;
+        //$regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
         
         // Validate Insert
         //if($regOutcome === 1){

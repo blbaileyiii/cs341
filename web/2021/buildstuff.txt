@@ -1,1 +1,15 @@
-"eventId", "participantName", "ward", "participantDOB", "participantAge", "primTel", "primTelType", "secTel", "secTelType", "participantAddress", "participantCity", "participantState", "emergencyContact", "emerPrimTel", "emerPrimTelType", "emerSecTel", "emereSecTelType", "specialDiet", "specialDietTxt", "allergies", "allergiesTxt", "medication", "selfMedicate", "medicationList", "chronicIllnes", "chronicIllnessTxt", "serious", "seriousTxt", "limitations", "considerations", "participantSig", "participantSigDate", "guardianSig", "guardianSigDate"
+echo $eventId . "<br>";
+echo $participantDOB . "<br>";
+echo $primTel . "<br>";
+echo $secTel . "<br>";
+echo $emerPrimTel . "<br>";
+echo $emerSecTel . "<br>";
+echo $primTelType . "<br>";
+echo $secTelType . "<br>";
+echo $emerPrimTelType . "<br>";
+echo $emerSecTelType . "<br>";
+echo $specialDiet . "<br>";
+echo $allergies . "<br>";
+echo $medication . "<br>";
+echo $chronicIllness . "<br>";
+echo $serious . "<br>";
