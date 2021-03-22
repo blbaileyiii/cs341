@@ -59,7 +59,7 @@ function changeTxtRequirement(txtField, required) {
     let label = document.querySelector('label[for=' + txtField.id + ']');
     txtField.required = required;    
     if (label) {
-        //console.log(label);
+        console.log(label);
         if (required){
             let span = document.createElement("span");
             span.classList.add('field-tip');
