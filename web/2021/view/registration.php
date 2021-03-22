@@ -79,7 +79,7 @@
                     <div class="fields">
                         <label for="ward"><span>Ward</span><span class="field-tip">Required</span></label>
                         <select id="ward" name="ward" required>
-                            <option value="" <?php if(isset($ward) && $ward==""){echo "selected";} ?> disabled>Choose your ward</option>
+                            <option value="" <?php if(!isset($ward)){echo "selected";} ?> disabled>Choose your ward</option>
                             <option value="cs" <?php if(isset($ward) && $ward=="cs"){echo "selected";} ?>>Creekside</option>
                             <option value="hh1" <?php if(isset($ward) && $ward=="hh1"){echo "selected";} ?>>Hacienda Heights 1st</option>
                             <option value="hh5" <?php if(isset($ward) && $ward=="hh5"){echo "selected";} ?>>Hacienda Heights 5th</option>
