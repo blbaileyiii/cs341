@@ -35,8 +35,14 @@
                     <div class="fields">
                         <label for="eventId"><span>Event</span><span class="field-tip">Required</span></label>
                         <select id="eventId" name="eventId" required>
-                            <option value="" selected disabled>Choose an event</option>
-                            <?php echo $eventList; ?>
+                            <option value="" <?php if(!isset($eventId)){echo "selected";} ?> disabled>Choose an event</option>
+                            <?php
+                                if(isset($eventId)){
+                                    echo "value='$eventId'";
+                                    $eventList = str_replace("value='$eventId'", "value='$eventId' selected", $eventList);
+                                }
+                                echo $eventList; 
+                            ?>
                         </select>
                     </div>
                     <div class="fields">
