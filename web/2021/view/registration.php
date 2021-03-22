@@ -185,7 +185,7 @@
                     <legend>Medical Information</legend>
                     <div class="fields-radio">
                         <div>
-                            <span>Does the participant require a special diet?</span>
+                            <div>Does the participant require a special diet?</div>
                             <div class="inline-block">
                                 <input id="specialDietY" name="specialDiet" type="radio" value="y" required>
                                 <label for="specialDietY"><span>Yes</span></label>
@@ -203,7 +203,7 @@
                     </div>
                     <div class="fields-radio">
                         <div>
-                            <span>Does the participant have any allergies?</span>
+                            <div>Does the participant have any allergies?</div>
                             <div class="inline-block">
                                 <input id="allergiesY" name="allergies" type="radio" value="y" required>
                                 <label for="allergiesY"><span>Yes</span></label>
