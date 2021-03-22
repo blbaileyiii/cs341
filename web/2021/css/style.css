@@ -512,7 +512,12 @@ p.legal-sm {
 .equipment-lists-interactive ul{
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 1rem 1rem 1rem 2.25rem;
+    text-indent: -1.25rem;
+}
+
+.equipment-lists-interactive input[type=checkbox] + label {
+    margin-left: 1rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
