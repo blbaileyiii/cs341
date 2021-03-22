@@ -45,11 +45,28 @@ function checkBoolText($chkVal, $chkTxt) {
     return NULL;
 }
 
+function checkDepBool($chkVal, $chkAgainst) {
+    if($chkAgainst){
+        if(is_null($chkVal)) {return NULL;}
+    }
+    return TRUE;
+}
+
+function checkSig($chkVal) {
+    if(strlen(trim($chkVal)) > 2) { return $chkVal; }
+    return NULL;
+}
+
 function getAge($participantDOB) {
     $dOB = new DateTime($participantDOB);
     $interval = $dOB->diff(new DateTime);
     
     return $interval->y;
+}
+
+function checkAge($chkVal, $age){
+    if($age >= 19) { return "N/A - Adult Participant"; }
+    return $chkVal;
 }
 
 function buildEventList($events){

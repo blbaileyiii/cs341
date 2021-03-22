@@ -80,15 +80,20 @@ switch($action){
         $medication = checkBoolText($medication,$medicationList);
         $chronicIllness = checkBoolText($chronicIllness,$chronicIllnessTxt);
         $serious = checkBoolText($serious,$seriousTxt);
+        $participantSig = checkSig($participantSig);
+        $guardianSig = checkSig($guardianSig);
 
         //$selfMedicate
-
-        //OVERWRITE Signature Dates... Need to match today.
-
-        // If participantDOB is >= 19 certain things
+        $chkSelfMedicate = checkDepBool($selfMedicate, $medication);
 
         // Calculate age by DOB...
-        $participantAge = getAge($participantDOB); 
+        $participantAge = getAge($participantDOB);
+        // If participantDOB is >= 19 certain things
+        $guardianSig = checkAge($guardianSig, $participantAge);
+
+        //OVERWRITE Signature Dates... Need to match today.
+        $participantSigDate = date('Y-m-d');
+        $guardianSigDate = date('Y-m-d');
 
 
         echo $eventId . "<br>";
@@ -124,6 +129,15 @@ switch($action){
         echo $participantSigDate . "<br>";
         echo $guardianSig . "<br>";
         echo $guardianSigDate . "<br>";
+
+        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
+            $_SESSION['message'] = 'Please provide information for all empty form fields.';
+            $events = getEvents(2021);
+            $eventList = buildEventList($events);
+            $eventScript = buildEventScript($events);
+            include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
+            exit; 
+        }
 
         // Insert form data
         //getEvents();
