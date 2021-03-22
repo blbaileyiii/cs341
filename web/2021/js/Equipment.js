@@ -61,8 +61,8 @@ export default class Equipment {
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
 
-            h2.innerHTML = "<input type='checkbox' id='" + key + "' name='" + key + "'><label for='" + key + "'>" + key + "</label>";
-            ul.classList.add(key.replace(/ /g,"-"));            
+            h2.innerHTML = "<input type='checkbox' id='" + key.replace(/ /g,"-").toLowerCase() + "' name='" + key.replace(/ /g,"-").toLowerCase() + "'><label for='" + key.replace(/ /g,"-").toLowerCase() + "'>" + key + "</label>";
+            ul.classList.add(key.replace(/ /g,"-").toLowerCase());            
 
             this.equipmentList[key].forEach(item => {
                 let li = document.createElement('li');
