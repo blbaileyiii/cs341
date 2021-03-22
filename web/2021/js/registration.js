@@ -48,13 +48,17 @@ let medicationList = document.getElementById('medicationList');
 let selfMedicateY = document.getElementById('selfMedicateY');
 let selfMedicateN = document.getElementById('selfMedicateN');
 document.getElementById('medicationY').addEventListener('change', () => { 
+    selfMedicateY.disabled = false;
+    selfMedicateN.disabled = false;
     changeTxtRequirement(medicationList, true);
     changeRadioRequirement(selfMedicateY, true);
 });
 document.getElementById('medicationN').addEventListener('change', () => { 
-    changeTxtRequirement(medicationList, false);
+    selfMedicateY.disabled = true;
+    selfMedicateN.disabled = true;
     selfMedicateY.checked = false;
     selfMedicateN.checked = false;
+    changeTxtRequirement(medicationList, false);
     changeRadioRequirement(selfMedicateY, false);
 });
 

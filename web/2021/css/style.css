@@ -403,6 +403,7 @@ fieldset {
 .fields-radio {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .fields-radio label,

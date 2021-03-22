@@ -200,9 +200,9 @@
                     <div class="fields-radio">
                         <div>
                             <span>If yes, can the participant self-administer his or her medication?</span>
-                            <input id="selfMedicateY" name="selfMedicate" type="radio" value="y">
+                            <input id="selfMedicateY" name="selfMedicate" type="radio" value="y" disabled>
                             <label for="selfMedicateY"><span>Yes</span></label>
-                            <input id="selfMedicateN" name="selfMedicate" type="radio" value="n">
+                            <input id="selfMedicateN" name="selfMedicate" type="radio" value="n" disabled>
                             <label for="selfMedicateN"><span>No: If no, please contact the event or activity leader directly.</span></label>
                         </div>
                     </div>
