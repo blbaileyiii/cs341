@@ -13,7 +13,7 @@
         <li class="nav item"><a href="#focus" title="The Focus">The Focus</a></li>
         <li class="nav item"><a href="#gallery" title="Gallery">Gallery</a></li>
         <li class="nav item"><a href="#faq" title="FAQ">FAQ</a></li>
-        <li class="nav item"><a href="/2021/?action=equipment" title="Equipment">Equipment</a></li>
+        <li class="nav item"><a href="/2021/equipment" title="Equipment">Equipment</a></li>
         <li class="nav item"><a href="https://www.churchofjesuschrist.org/callings/church-safety-and-health/protecting-children-and-youth?lang=eng" title="Leadership Training" target="_blank" rel="noreferrer">Leadership Training</a></li>
         <li class="nav item"><a href="/2021/registration" title="Registration">Registration</a></li>
     </ul>
