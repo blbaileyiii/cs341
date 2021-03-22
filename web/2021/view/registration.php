@@ -246,7 +246,8 @@
                             </div>
                             <div class="inline-block">
                                 <input id="selfMedicateN" name="selfMedicate" type="radio" value="n" <?php if(isset($selfMedicate) && $selfMedicate=="n"){echo "checked";} ?> <?php if(isset($medication) && $medication != "y"){echo "disabled";} elseif(!isset($medication)){echo "disabled";} ?>>
-                                <label for="selfMedicateN"><span class="xtr-indent">No</span><span class="special-instructions">If no, please contact the event or activity leader directly.</span></label>
+                                <label for="selfMedicateN"><span class="xtr-indent">No</span></label>
+                                <span class="special-instructions">If no, please contact the event or activity leader directly.</span>
                             </div>
                         </div>
                         <?php if(isset($medication) && $medication=="y"){echo "<span class='field-tip'>Required</span>";} ?>                        

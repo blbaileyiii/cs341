@@ -549,11 +549,11 @@ p.legal-sm {
     display: inline-block;
 }
 
-#selfMedicateN + label .special-instructions {
+#selfMedicateN + label + .special-instructions {
     transition: all .2s ease-in-out;
 }
 
-#selfMedicateN:hover + label .special-instructions {
+#selfMedicateN:hover + label + .special-instructions {
     transform: scale(1.05) translateX(0.5rem);
     background: var(--border-intense);
     color: var(--on-nav-bg);
