@@ -34,9 +34,19 @@ document.getElementById('specialDietN').addEventListener('change', () => { chang
 
 
 function changeTxtRequirement(txtField, required) {
-    txtField.required = required;
-    console.log(txtField);
-    console.log(required);
+    let label = document.querySelector('label[for=' + txtField.id + ']');
+    txtField.required = required;    
+    if (label) {
+        console.log(label);
+        if (required){
+            let span = document.createElement("span");
+            span.classList.add('field-tip');
+            span.textContent = 'Required';
+            label.appendChild(span);
+        } else {
+            label.removeChild(label.querySelector('.field-tip'));
+        }
+    }
 }
 
 if(participant) {
