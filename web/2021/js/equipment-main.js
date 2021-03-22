@@ -1,6 +1,6 @@
 import Equipment from './Equipment.js';
 
-let equipment = new Equipment();
+//let equipment = new Equipment();
 
 
 
