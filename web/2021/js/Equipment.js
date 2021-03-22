@@ -33,6 +33,8 @@ export default class Equipment {
     displayItemList() {
         console.log(this.equipmentList);
         let equipDiv = document.getElementById('equipment-lists');
+        equipDiv.classList.add('equipment-lists-standard');
+
         Object.keys(this.equipmentList).forEach(key => {
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
@@ -57,6 +59,8 @@ export default class Equipment {
     displayItemCheckList() {
         console.log(this.equipmentList);
         let equipDiv = document.getElementById('equipment-lists');
+        equipDiv.classList.add('equipment-lists-interactive');
+
         Object.keys(this.equipmentList).forEach(key => {
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');

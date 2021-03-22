@@ -509,6 +509,12 @@ p.legal-sm {
     max-width: 20rem;
 }
 
+.equipment-lists-interactive ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
