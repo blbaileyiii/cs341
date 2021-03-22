@@ -513,7 +513,7 @@ p.legal-sm {
     list-style: none;
     padding: 0;
     margin: 1rem 1rem 1rem 1.5rem;
-    text-indent: -1.5rem;
+    text-indent: -1.55rem;
 }
 
 .equipment-lists-interactive input[type=checkbox] + label {
