@@ -20,6 +20,8 @@ switch($action){
     case 'getEquipment':
         echo getEquipmentJSON();
         break;
+    case 'updateList':
+        break;
     default:
         //if (!isset($_SESSION['equipment'])){
         //    $_SESSION['equipment'] = getEquipment();
