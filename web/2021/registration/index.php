@@ -56,6 +56,14 @@ switch($action){
         $guardianSig = filter_input(INPUT_POST, 'guardianSig', FILTER_SANITIZE_STRING);
         $guardianSigDate = filter_input(INPUT_POST, 'guardianSigDate', FILTER_SANITIZE_STRING);
 
+        // Gray values are not sent on. They are set only to repopulate the gray fields if form validation fails.
+        $eventDate = filter_input(INPUT_POST, 'eventDate', FILTER_SANITIZE_STRING);
+        $eventDesc = filter_input(INPUT_POST, 'eventDesc', FILTER_SANITIZE_STRING);
+        $stake = filter_input(INPUT_POST, 'stake', FILTER_SANITIZE_STRING);
+        $eventLeaderName = filter_input(INPUT_POST, 'eventLeaderName', FILTER_SANITIZE_STRING);
+        $eventLeaderPhone = filter_input(INPUT_POST, 'eventLeaderPhone', FILTER_SANITIZE_STRING);
+        $eventLeaderEmail = filter_input(INPUT_POST, 'eventLeaderEmail', FILTER_SANITIZE_STRING);
+
         // Validate form data
         $eventId = checkInt($eventId);
         $participantDOB = checkIsDate($participantDOB);
