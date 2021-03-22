@@ -20,7 +20,7 @@ export default class Equipment {
     convertEquipmentList() {
         let equipmentList = {};
         console.log(equipmentlist);
-        equipmentlist.foreach(item => {
+        Object.values(equipmentlist).foreach(item => {
             if(!equipmentList.hasOwnProperty(item.category)){
                 equipmentList[item.category] = [{'equipmentid': item.equipmentid, 'equipmentname': item.equipmentname, 'quantity': item.quantity, 'avgprice': item.avgprice, 'bring': item.bring, 'ywcamp': item.ywcamp, 'ymcamp': item.ymcamp, 'trek': item.trek}];
             } else {
