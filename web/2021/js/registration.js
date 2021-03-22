@@ -35,6 +35,8 @@ document.getElementById('specialDietN').addEventListener('change', changeTxtRequ
 
 function changeTxtRequirement(txtField, required) {
     txtField.required = required;
+    console.log(txtField);
+    console.log(required);
 }
 
 if(participant) {
