@@ -57,6 +57,9 @@ switch($action){
         $guardianSigDate = filter_input(INPUT_POST, 'guardianSigDate', FILTER_SANITIZE_STRING);
 
         // Validate form data
+        $eventId = checkInt($eventId);
+        
+
 
         // Calculate age by DOB...
         $participantAge = getAge($participantDOB); 
