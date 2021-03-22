@@ -18,11 +18,11 @@ document.getElementById('participantDOB').addEventListener('change', function() 
     }
 
     if(ageInput.value >= 19) {
-        guardianSig.readonly = true;
+        guardianSig.readOnly = true;
         guardianSig.required = false;
         guardianSig.value = "N/A - Adult Participant";
     } else {
-        guardianSig.readonly = false;
+        guardianSig.readOnly = false;
         guardianSig.required = true;
         guardianSig.value = "";
     }
