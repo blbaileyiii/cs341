@@ -12,15 +12,13 @@
     </header>    
     <main>
         <section>
-            <h1>Registration</h1>
-            <div class="message">            
-                <?php
-                    if (isset($_SESSION['message'])) { 
-                            echo $_SESSION['message']; 
-                            unset($_SESSION['message']);
-                    }
-                ?>
-            </div>
+            <h1>Registration</h1>         
+            <?php
+                if (isset($_SESSION['message'])) { 
+                        echo $_SESSION['message']; 
+                        unset($_SESSION['message']);
+                }
+            ?>
             <p>All Adult and Youth Participants are required to register by submitting a valid Permission and Medical Release Form.</p>
             <ul>
                 <li>Please fill out all required fields below. Note: Gray fields will be filled out automatically.</li>

@@ -63,7 +63,7 @@ switch($action){
         $eventLeaderName = filter_input(INPUT_POST, 'eventLeaderName', FILTER_SANITIZE_STRING);
         $eventLeaderPhone = filter_input(INPUT_POST, 'eventLeaderPhone', FILTER_SANITIZE_STRING);
         $eventLeaderEmail = filter_input(INPUT_POST, 'eventLeaderEmail', FILTER_SANITIZE_STRING);
-        
+
         // Validate form data
         $eventId = checkInt($eventId);
         $participantDOB = checkIsDate($participantDOB);
@@ -132,7 +132,7 @@ switch($action){
         */
 
         if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
-            $_SESSION['message'] = 'Please provide information for all empty form fields.';
+            $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $events = getEvents(2021);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
@@ -147,14 +147,14 @@ switch($action){
         // Validate Insert
         // if($regOutcome === 1){
         if($regId){        
-            $_SESSION['message'] = "Thanks for registering $participantName.";
+            $_SESSION['message'] = "<div class='message'>Thanks for registering $participantName.</div>";
             $_SESSION['participantid'] = $regId;
             $_SESSION['participant'] = $participantName;
             $_SESSION['eventid'] = $eventId;            
             header('Location: /2021/registration/');
             exit;
         } else {
-            $_SESSION['message'] = "Sorry, $participantName, but registration failed. Please try again.<br>If the problem persists please contact your Ward Leadership and/or the WebAdmin.";
+            $_SESSION['message'] = "<div class='alert'>Sorry, $participantName, but registration failed. Please try again.<br>If the problem persists please contact your Ward Leadership and/or the WebAdmin.</div>";
             $events = getEvents(2021);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);

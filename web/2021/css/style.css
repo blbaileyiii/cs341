@@ -18,6 +18,12 @@
 }
 
 .message {
+    background: var(--nav-bg);
+    color: var(--on-nav-bg);
+    padding: 1rem;
+}
+
+.alert {
     background: var(--border-intense);
     color: var(--on-nav-bg);
     padding: 1rem;
