@@ -18,15 +18,24 @@ document.getElementById('participantDOB').addEventListener('change', function() 
     }
 
     if(ageInput.value >= 19) {
+        guardianSig.value = "N/A - Adult Participant";
         guardianSig.readOnly = true;
         guardianSig.required = false;
-        guardianSig.value = "N/A - Adult Participant";
     } else {
+        guardianSig.value = "";
         guardianSig.readOnly = false;
         guardianSig.required = true;
-        guardianSig.value = "";
     }
 });
+
+let specialDietTxt = document.getElementById('specialDietTxt');
+document.getElementById('specialDietY').addEventListener('change', changeTxtRequirement(specialDietTxt, true));
+document.getElementById('specialDietN').addEventListener('change', changeTxtRequirement(specialDietTxt, false));
+
+
+function changeTxtRequirement(txtField, required) {
+    txtField.required = required;
+}
 
 if(participant) {
     let pList = loadLS('participants');
