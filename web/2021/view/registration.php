@@ -203,7 +203,7 @@
                             <input id="selfMedicateY" name="selfMedicate" type="radio" value="y" disabled>
                             <label for="selfMedicateY"><span>Yes</span></label>
                             <input id="selfMedicateN" name="selfMedicate" type="radio" value="n" disabled>
-                            <label for="selfMedicateN"><span>No</span><span class="special-instructions">If no, please contact the event or activity leader directly.</span></label>
+                            <label for="selfMedicateN"><span class="xtr-indent">No</span><span class="special-instructions">If no, please contact the event or activity leader directly.</span></label>
                         </div>
                     </div>
                     <div class="fields">

@@ -407,7 +407,8 @@ fieldset {
 }
 
 .fields-radio label,
-.fields-radio-alt label {
+.fields-radio-alt label,
+.xtr-indent {
     margin-right: 1rem;
 }
 
@@ -522,7 +523,6 @@ p.legal-sm {
 }
 
 .special-instructions {
-    margin-left: 1rem;
     display:inline-block;
     background: white;
 }
@@ -532,9 +532,10 @@ p.legal-sm {
 }
 
 #selfMedicateN:hover + label .special-instructions {
-    transform: scale(1.1);
-    background: red;
-    color: white;
+    transform: scale(1.1) translateX(1rem);
+    background: var(--border-intense);
+    color: var(--on-nav-bg-soft);
+    padding: 0.25rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
