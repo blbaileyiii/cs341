@@ -524,6 +524,7 @@ p.legal-sm {
 .special-instructions {
     margin-left: 1rem;
     display:inline-block;
+    background: white;
 }
 
 #selfMedicateN + label .special-instructions {
@@ -532,6 +533,8 @@ p.legal-sm {
 
 #selfMedicateN:hover + label .special-instructions {
     transform: scale(2.0);
+    background: red;
+    color: white;
 }
 
 @supports not (-webkit-touch-callout: none) {
