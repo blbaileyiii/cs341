@@ -12,6 +12,7 @@ export default class Equipment {
         console.log(this.participants.list);
         if (this.participants.list.length > 0) {
             this.participants.list.forEach(participant => {
+                console.log(participant);
                 this.displayItemCheckList(participant);
             });            
         } else {
