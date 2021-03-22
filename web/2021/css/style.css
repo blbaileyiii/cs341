@@ -20,6 +20,7 @@
 .message {
     background: var(--border-intense);
     color: var(--on-nav-bg);
+    padding: 1rem;
 }
 
 /* Typography */
