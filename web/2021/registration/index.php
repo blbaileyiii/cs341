@@ -97,7 +97,7 @@ switch($action){
         $participantSigDate = date('Y-m-d');
         $guardianSigDate = date('Y-m-d');
 
-
+        /*
         echo "eventId:". $eventId . "<br>";
         echo "participantName:". $participantName . "<br>";
         echo "ward:". $ward . "<br>";
@@ -131,6 +131,7 @@ switch($action){
         echo "participantSigDate:". $participantSigDate . "<br>";
         echo "guardianSig:". $guardianSig . "<br>";
         echo "guardianSigDate:". $guardianSigDate . "<br>";
+        */
 
         if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
             $_SESSION['message'] = 'Please provide information for all empty form fields.';
@@ -142,12 +143,11 @@ switch($action){
         }
 
         // Insert form data
-        //getEvents();
-        $regId = false;
-        //$regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
-        
+        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
+        // $regId = false; // Testing only
+
         // Validate Insert
-        //if($regOutcome === 1){
+        // if($regOutcome === 1){
         if($regId){        
             $_SESSION['message'] = "Thanks for registering $participantName.";
             $_SESSION['participantid'] = $regId;
