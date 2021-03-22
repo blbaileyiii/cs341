@@ -527,6 +527,10 @@ p.legal-sm {
     background: white;
 }
 
+.inline-block {
+    display: inline-block;
+}
+
 #selfMedicateN + label .special-instructions {
     transition: all .2s ease-in-out;
 }
