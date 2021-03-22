@@ -290,7 +290,7 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
     </footer>
     <?php //var_dump($events); ?>
-    <?php //echo $_SESSION['particpantid']; ?>
+    <?php //echo $_SESSION['participantid']; ?>
     <script>
         <?php echo $eventScript; ?>
     </script>
@@ -298,7 +298,7 @@
     <script>
         <?php
                     if (isset($_SESSION['participantid']) && isset($_SESSION['participant']) && isset($_SESSION['eventid'])) {
-                        echo "const participant = {'particpantid': '$_SESSION[participantid]', 'name': '$_SESSION[participant]', 'eventid': '$_SESSION[eventid]'};";
+                        echo "const participant = {'participantid': '$_SESSION[participantid]', 'name': '$_SESSION[participant]', 'eventid': '$_SESSION[eventid]'};";
                         unset($_SESSION['participantid']);
                         unset($_SESSION['participant']);
                         unset($_SESSION['eventid']);
