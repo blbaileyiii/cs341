@@ -521,6 +521,10 @@ p.legal-sm {
     margin-left: 0.25rem;
 }
 
+.special-instructions {
+    margin-left: 1rem;
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
