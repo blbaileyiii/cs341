@@ -221,7 +221,7 @@
                     </div>
                     <div class="fields-radio">
                         <div>
-                            <span>Is the participant taking any medication or over-the-counter (OTC) drugs?</span>
+                            <div>Is the participant taking any medication or over-the-counter (OTC) drugs?</div>
                             <div class="inline-block">
                                 <input id="medicationY" name="medication" type="radio" value="y" required>
                                 <label for="medicationY"><span>Yes</span></label>
@@ -235,7 +235,7 @@
                     </div>
                     <div class="fields-radio">
                         <div>
-                            <span>If yes, can the participant self-administer his or her medication?</span>
+                            <div>If yes, can the participant self-administer his or her medication?</div>
                             <div class="inline-block">
                                 <input id="selfMedicateY" name="selfMedicate" type="radio" value="y" disabled>
                                 <label for="selfMedicateY"><span>Yes</span></label>
@@ -255,7 +255,7 @@
                     <legend>Physical Conditions That Limit Activity</legend>
                     <div class="fields-radio">
                         <div>
-                            <span>Does the participant have a chronic or recurring illness?</span>
+                            <div>Does the participant have a chronic or recurring illness?</div>
                             <div class="inline-block">
                                 <input id="chronicIllnessY" name="chronicIllness" type="radio" value="y" required>
                                 <label for="chronicIllnessY"><span>Yes</span></label>
@@ -273,7 +273,7 @@
                     </div>
                     <div class="fields-radio">
                         <div>
-                            <span>Has the participant had surgery or a serious illness in the past year?</span>
+                            <div>Has the participant had surgery or a serious illness in the past year?</div>
                             <div class="inline-block">
                                 <input id="seriousY" name="serious" type="radio" value="y" required>
                                 <label for="seriousY"><span>Yes</span></label>
