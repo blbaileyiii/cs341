@@ -29,24 +29,31 @@ document.getElementById('participantDOB').addEventListener('change', function() 
 });
 
 let specialDietTxt = document.getElementById('specialDietTxt');
-document.getElementById('specialDietY').addEventListener('change', () => { changeTxtRequirement(specialDietTxt, true) });
-document.getElementById('specialDietN').addEventListener('change', () => { changeTxtRequirement(specialDietTxt, false) });
+document.getElementById('specialDietY').addEventListener('change', () => { changeTxtRequirement(specialDietTxt, true); });
+document.getElementById('specialDietN').addEventListener('change', () => { changeTxtRequirement(specialDietTxt, false); });
 
 let allergiesTxt = document.getElementById('allergiesTxt');
-document.getElementById('allergiesY').addEventListener('change', () => { changeTxtRequirement(allergiesTxt, true) });
-document.getElementById('allergiesN').addEventListener('change', () => { changeTxtRequirement(allergiesTxt, false) });
+document.getElementById('allergiesY').addEventListener('change', () => { changeTxtRequirement(allergiesTxt, true); });
+document.getElementById('allergiesN').addEventListener('change', () => { changeTxtRequirement(allergiesTxt, false); });
 
 let chronicIllnessTxt = document.getElementById('chronicIllnessTxt');
-document.getElementById('chronicIllnessY').addEventListener('change', () => { changeTxtRequirement(chronicIllnessTxt, true) });
-document.getElementById('chronicIllnessN').addEventListener('change', () => { changeTxtRequirement(chronicIllnessTxt, false) });
+document.getElementById('chronicIllnessY').addEventListener('change', () => { changeTxtRequirement(chronicIllnessTxt, true); });
+document.getElementById('chronicIllnessN').addEventListener('change', () => { changeTxtRequirement(chronicIllnessTxt, false); });
 
 let seriousTxt = document.getElementById('seriousTxt');
-document.getElementById('seriousY').addEventListener('change', () => { changeTxtRequirement(seriousTxt, true) });
-document.getElementById('seriousN').addEventListener('change', () => { changeTxtRequirement(seriousTxt, false) });
+document.getElementById('seriousY').addEventListener('change', () => { changeTxtRequirement(seriousTxt, true); });
+document.getElementById('seriousN').addEventListener('change', () => { changeTxtRequirement(seriousTxt, false); });
 
 let medicationList = document.getElementById('medicationList');
-document.getElementById('medicationY').addEventListener('change', () => { changeTxtRequirement(medicationList, true) });
-document.getElementById('medicationN').addEventListener('change', () => { changeTxtRequirement(medicationList, false) });
+let selfMedicateY = document.getElementById('selfMedicateY');
+document.getElementById('medicationY').addEventListener('change', () => { 
+    changeTxtRequirement(medicationList, true);
+    changeRadioRequirement(selfMedicateY, true);
+});
+document.getElementById('medicationN').addEventListener('change', () => { 
+    changeTxtRequirement(medicationList, false);
+    changeRadioRequirement(selfMedicateY, false);
+});
 
 function changeTxtRequirement(txtField, required) {
     let label = document.querySelector('label[for=' + txtField.id + ']');
@@ -62,6 +69,12 @@ function changeTxtRequirement(txtField, required) {
             label.removeChild(label.querySelector('.field-tip'));
         }
     }
+}
+
+function changeRadioRequirement(inputField, required) {
+    inputField.required = required;
+    let div = inputField.parentElement;
+    console.log(div);
 }
 
 if(participant) {

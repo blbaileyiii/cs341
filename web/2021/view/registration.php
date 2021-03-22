@@ -203,9 +203,8 @@
                             <input id="selfMedicateY" name="selfMedicate" type="radio" value="y">
                             <label for="selfMedicateY"><span>Yes</span></label>
                             <input id="selfMedicateN" name="selfMedicate" type="radio" value="n">
-                            <label for="selfMedicateN"><span>No</span></label>
+                            <label for="selfMedicateN"><span>No: If no, please contact the event or activity leader directly.</span></label>
                         </div>
-                        <span class="field-tip">If no, please contact the event or activity leader directly.</span>
                     </div>
                     <div class="fields">
                         <label for="medicationList"><span>List all prescription or over-the-counter (OTC) medications the participant is taking:</span></label> 
