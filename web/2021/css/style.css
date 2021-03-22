@@ -17,18 +17,6 @@
     --read-only: #dddddd;
 }
 
-.message {
-    background: var(--nav-bg);
-    color: var(--on-nav-bg);
-    padding: 1rem;
-}
-
-.alert {
-    background: var(--border-intense);
-    color: var(--on-nav-bg);
-    padding: 1rem;
-}
-
 /* Typography */
 * {
     font-family: 'Roboto Slab', 'Times New Roman', Times, serif
@@ -158,6 +146,16 @@ header,
     color: var(--on-nav-bg);
 }
 
+.message {
+    background: var(--nav-bg);
+    color: var(--on-nav-bg);
+}
+
+.alert {
+    background: var(--border-intense);
+    color: var(--on-nav-bg);
+}
+
 .faq-active,
 .collapsible-btn:hover {
     color: var(--btn-bg-soft);
@@ -282,6 +280,14 @@ footer hr{
 img.responsive {
     max-width: 100%;
     height: auto;
+}
+
+.message {
+    padding: 1rem;
+}
+
+.alert {
+    padding: 1rem;
 }
 
 section {
@@ -414,8 +420,8 @@ fieldset {
 .fields label, 
 .fields-radio {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: column-reverse;
 }
 
 .fields-radio label,
@@ -623,12 +629,10 @@ p.legal-sm {
         max-width: 50%;
     }
 
+    .fields label, 
     .fields-radio {
         flex-wrap: nowrap;
-    }
-    
-    .fields label {
-        flex-wrap: nowrap;
+        flex-direction: row;
     }
 }
 
