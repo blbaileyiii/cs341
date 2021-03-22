@@ -98,15 +98,15 @@
                     </div>
                     <div class="fields-radio-alt">
                         <div class="inline-block">
-                            <input id="primTelCell" name="primTelType" type="radio" value="cell" <?php if(isset($primTelType) && $ward=="cell"){echo "checked";} else {echo "checked";} ?> required>
+                            <input id="primTelCell" name="primTelType" type="radio" value="cell" <?php if(isset($primTelType) && $primTelType=="cell"){echo "checked";} else {echo "checked";} ?> required>
                             <label for="primTelCell"><span>Cell</span></label>
                         </div>
                         <div class="inline-block">
-                            <input id="primTelHome" name="primTelType" type="radio" value="home" <?php if(isset($primTelType) && $ward=="home"){echo "checked";} ?>>
+                            <input id="primTelHome" name="primTelType" type="radio" value="home" <?php if(isset($primTelType) && $primTelType=="home"){echo "checked";} ?>>
                             <label for="primTelHome"><span>Home</span></label>
                         </div>
                         <div class="inline-block">
-                            <input id="primTelWork" name="primTelType" type="radio" value="work" <?php if(isset($primTelType) && $ward=="work"){echo "checked";} ?>>
+                            <input id="primTelWork" name="primTelType" type="radio" value="work" <?php if(isset($primTelType) && $primTelType=="work"){echo "checked";} ?>>
                             <label for="primTelWork"><span>Work</span></label>
                         </div>
                     </div>
@@ -116,15 +116,15 @@
                     </div>
                     <div class="fields-radio-alt">
                         <div class="inline-block">
-                            <input id="secTelCell" name="secTelType" type="radio" value="cell" <?php if(isset($secTelType) && $ward=="cell"){echo "checked";} else {echo "checked";} ?>>
+                            <input id="secTelCell" name="secTelType" type="radio" value="cell" <?php if(isset($secTelType) && $secTelType=="cell"){echo "checked";} else {echo "checked";} ?>>
                             <label for="secTelCell"><span>Cell</span></label>
                         </div>
                         <div class="inline-block">
-                            <input id="secTelHome" name="secTelType" type="radio" value="home" <?php if(isset($secTelType) && $ward=="home"){echo "checked";} ?>>
+                            <input id="secTelHome" name="secTelType" type="radio" value="home" <?php if(isset($secTelType) && $secTelType=="home"){echo "checked";} ?>>
                             <label for="secTelHome"><span>Home</span></label>
                         </div>
                         <div class="inline-block">
-                            <input id="secTelWork" name="secTelType" type="radio" value="work" <?php if(isset($secTelType) && $ward=="work"){echo "checked";} ?>>
+                            <input id="secTelWork" name="secTelType" type="radio" value="work" <?php if(isset($secTelType) && $secTelType=="work"){echo "checked";} ?>>
                             <label for="secTelWork"><span>Work</span></label>
                         </div>
                     </div>                
@@ -150,15 +150,15 @@
                     </div>
                     <div class="fields-radio-alt">
                         <div class="inline-block">    
-                            <input id="emerPrimTelCell" name="emerPrimTelType" type="radio" value="cell" <?php if(isset($emerPrimTelType) && $ward=="cell"){echo "checked";} else {echo "checked";} ?> required>
+                            <input id="emerPrimTelCell" name="emerPrimTelType" type="radio" value="cell" <?php if(isset($emerPrimTelType) && $emerPrimTelType=="cell"){echo "checked";} else {echo "checked";} ?> required>
                             <label for="emerPrimTelCell"><span>Cell</span></label>
                         </div>
                         <div class="inline-block">
-                            <input id="emerPrimTelHome" name="emerPrimTelType" type="radio" value="home" <?php if(isset($emerPrimTelType) && $ward=="home"){echo "checked";} ?>>
+                            <input id="emerPrimTelHome" name="emerPrimTelType" type="radio" value="home" <?php if(isset($emerPrimTelType) && $emerPrimTelType=="home"){echo "checked";} ?>>
                             <label for="emerPrimTelHome"><span>Home</span></label>
                         </div>                    
                         <div class="inline-block">
-                            <input id="emerPrimTelWork" name="emerPrimTelType" type="radio" value="work" <?php if(isset($emerPrimTelType) && $ward=="work"){echo "checked";} ?>>
+                            <input id="emerPrimTelWork" name="emerPrimTelType" type="radio" value="work" <?php if(isset($emerPrimTelType) && $emerPrimTelType=="work"){echo "checked";} ?>>
                             <label for="emerPrimTelWork"><span>Work</span></label>
                         </div>
                     </div>
@@ -168,15 +168,15 @@
                     </div>
                     <div class="fields-radio-alt">
                         <div class="inline-block">    
-                            <input id="emerSecTelCell" name="emerSecTelType" type="radio" value="cell" <?php if(isset($emerSecTelType) && $ward=="cell"){echo "checked";} else {echo "checked";} ?>>
+                            <input id="emerSecTelCell" name="emerSecTelType" type="radio" value="cell" <?php if(isset($emerSecTelType) && $emerSecTelType=="cell"){echo "checked";} else {echo "checked";} ?>>
                             <label for="emerSecTelCell"><span>Cell</span></label>
                         </div>
                         <div class="inline-block">
-                            <input id="emerSecTelHome" name="emerSecTelType" type="radio" value="home" <?php if(isset($emerSecTelType) && $ward=="home"){echo "checked";} ?>>
+                            <input id="emerSecTelHome" name="emerSecTelType" type="radio" value="home" <?php if(isset($emerSecTelType) && $emerSecTelType=="home"){echo "checked";} ?>>
                             <label for="emerSecTelHome"><span>Home</span></label>
                         </div>                    
                         <div class="inline-block">
-                            <input id="emerSecTelWork" name="emerSecTelType" type="radio" value="work" <?php if(isset($emerSecTelType) && $ward=="work"){echo "checked";} ?>>
+                            <input id="emerSecTelWork" name="emerSecTelType" type="radio" value="work" <?php if(isset($emerSecTelType) && $emerSecTelType=="work"){echo "checked";} ?>>
                             <label for="emerSecTelWork"><span>Work</span></label>
                         </div>
                     </div>
