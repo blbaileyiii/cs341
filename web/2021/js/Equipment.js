@@ -22,7 +22,7 @@ export default class Equipment {
 
     convertEquipmentList() {
         let equipmentList = {};
-        let equipmentlist = getEquipment;
+        let equipmentlist = this.getEquipment();
         console.log(equipmentlist);
         equipmentlist.forEach(item => {
             if(!equipmentList.hasOwnProperty(item.category)){
@@ -36,11 +36,11 @@ export default class Equipment {
 
     getEquipment() {
         let url = "/2021/equipment/?action=getEquipment";
-        var xmlhttp = new XMLHttpRequest();
+        let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             //do stuff with data...
             if (this.readyState == 4 && this.status == 200) {
-                var myObj = JSON.parse(this.responseText);
+                let myObj = JSON.parse(this.responseText);
                 console.log(myObj);
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
@@ -130,9 +130,6 @@ export default class Equipment {
 
         equipDiv.appendChild(pDiv);
     }
-
-
-    loadJSON();
 
     /*
     function loadJSON() {
