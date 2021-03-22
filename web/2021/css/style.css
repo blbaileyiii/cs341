@@ -522,7 +522,8 @@ p.legal-sm {
 }
 
 .special-instructions {
-    margin-left: 1rem;    
+    margin-left: 1rem;
+    display:inline-block;
 }
 
 #selfMedicateN + label .special-instructions {
