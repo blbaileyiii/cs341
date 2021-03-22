@@ -30,6 +30,7 @@ export default class Equipment {
             }
         });
         this.equipmentList = equipmentList;
+        console.log(this.equipmentList);
         this.displayEquipment();
     }
 
