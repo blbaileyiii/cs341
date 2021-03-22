@@ -425,8 +425,7 @@ fieldset {
 }
 
 .fields-radio label,
-.fields-radio-alt label,
-.xtr-indent {
+.fields-radio-alt label {
     margin-right: 1rem;
 }
 
@@ -543,21 +542,11 @@ p.legal-sm {
 .special-instructions {
     display:inline-block;
     background: white;
+    transition: all .2s ease-in-out;
 }
 
 .inline-block {
     display: inline-block;
-}
-
-#selfMedicateN + label + .special-instructions {
-    transition: all .2s ease-in-out;
-}
-
-#selfMedicateN:hover + label + .special-instructions {
-    transform: scale(1.05) translateX(0.5rem);
-    background: var(--border-intense);
-    color: var(--on-nav-bg);
-    padding: 0.1rem 0.35rem 0.325rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
