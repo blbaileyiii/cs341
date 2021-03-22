@@ -38,13 +38,13 @@ export default class Equipment {
     displayItemCheckList() {
         console.log(this.equipmentList);
         let equipDiv = document.getElementById('equipment-lists');
-        this.equipmentList.forEach((category, key) => {
+        Object.keys(this.equipmentList).forEach(key => {
             let ul = document.createElement('ul');
 
             ul.classList.add(key);
             ul.innerHTML = "<h2>" + key +"</h2>";
 
-            category.forEach(item => {
+            this.equipmentList[key].forEach(item => {
                 let li = document.createElement('li');
 
                 li.innerHTML = item.equipmentname;
