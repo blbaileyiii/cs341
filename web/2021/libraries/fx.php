@@ -42,6 +42,7 @@ function checkIsDate($chkVal, $format = 'Y-m-d')
 
 function checkBoolText($chkVal, $chkTxt) {
     if($chkVal && strlen(trim($chkTxt)) > 0) { return $chkVal; }
+    elseif (!$chkVal) { return$chkVal; }
     return NULL;
 }
 
