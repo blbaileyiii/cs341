@@ -85,9 +85,9 @@ function changeRadioRequirement(inputField, required) {
         div.insertBefore(span, div.nextSibling);
     } else {
         let span = div.nextSibling;
-        console.log(span);
+        console.log(span.nodeName);
         if (span) {
-            if(span.tagName.toLowerCase() == 'span'){
+            if(span.nodeName.toLowerCase() == 'span'){
                 span.remove();
             }
         }
