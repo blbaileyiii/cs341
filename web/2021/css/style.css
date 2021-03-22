@@ -512,7 +512,7 @@ p.legal-sm {
 .equipment-lists-interactive ul{
     list-style: none;
     padding: 0;
-    margin: 1rem 1rem 1rem 2.25rem;
+    margin: 1rem 1rem 1rem 1.5rem;
     text-indent: -1.5rem;
 }
 
@@ -556,6 +556,10 @@ p.legal-sm {
     img.responsive.img-sm {
         max-width: 75%;
         height: auto;
+    }
+
+    .equipment-lists-interactive ul{
+        margin: 1rem 1rem 1rem 2.75rem;
     }
  }
 
