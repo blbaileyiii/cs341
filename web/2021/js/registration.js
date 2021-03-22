@@ -46,12 +46,15 @@ document.getElementById('seriousN').addEventListener('change', () => { changeTxt
 
 let medicationList = document.getElementById('medicationList');
 let selfMedicateY = document.getElementById('selfMedicateY');
+let selfMedicateN = document.getElementById('selfMedicateN');
 document.getElementById('medicationY').addEventListener('change', () => { 
     changeTxtRequirement(medicationList, true);
     changeRadioRequirement(selfMedicateY, true);
 });
 document.getElementById('medicationN').addEventListener('change', () => { 
     changeTxtRequirement(medicationList, false);
+    selfMedicateY.checked = false;
+    selfMedicateN.checked = false;
     changeRadioRequirement(selfMedicateY, false);
 });
 
