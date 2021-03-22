@@ -32,10 +32,28 @@ export default class Equipment {
 
     displayItemList() {
         console.log(this.equipmentList);
+
     }
 
     displayItemCheckList() {
         console.log(this.equipmentList);
+        let equipDiv = document.getElementById('equipment-lists');
+        this.equipmentList.forEach((category, key) => {
+            let ul = document.createElement('ul');
+
+            ul.classList.add(key);
+            ul.innerHTML = "<h2>" + key +"</h2>";
+
+            category.forEach(item => {
+                let li = document.createElement('li');
+
+                li.innerHTML = item.equipmentname;
+
+                ul.appendChild(li);
+            });
+
+            equipDiv.appendChild(ul);
+        });
     }
 
 }

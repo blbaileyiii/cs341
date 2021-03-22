@@ -18,7 +18,7 @@
                     <h1>Equipment List</h1>
                     <p>Duffle bags or small suitcases are preferred for packing.</p>
                     <p>(Please label all of your belongings with your name and ward name)</p>
-                    <div class="equipment-lists"></div>
+                    <div id="equipment-lists" class="equipment-lists"></div>
                     <div>
                         <h2>Hydration Requirements</h2>
                         <p>We all should constantly manage our hydration level during all camp activities. Daytime temperatures, dry climate, and elevation, coupled with strenuous outdoor activities can increase how quickly we may become dehydrated. Although water is available at the lodge during mealtimes, as well as before and after activity times, each participant MUST carry water for all activities conducted away from the lodge (e.g. hikes, waterfront, climbing, etc.)</p>
