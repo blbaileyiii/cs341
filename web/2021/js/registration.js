@@ -76,15 +76,15 @@ function changeTxtRequirement(txtField, required) {
 
 function changeRadioRequirement(inputField, required) {
     inputField.required = required;
-    let div = inputField.parentElement;
+    let div = inputField.parentElement.parentElement;
     console.log(div);
     if (required) {
         let span = document.createElement("span");
         span.classList.add('field-tip');
         span.textContent = 'Required';
-        div.insertBefore(span, div.nextSibling);
+        div.append(span);
     } else {
-        let span = div.nextSibling;
+        let span = div.lastChild;
         console.log(span);
         console.log(span.tagName);
         if (span) {
