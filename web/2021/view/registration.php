@@ -338,8 +338,7 @@
     <?php //echo $_SESSION['participantid']; ?>
     <script>
         <?php echo $eventScript; ?>
-    </script>
-    <script type="module" src="/2021/js/registration.js"></script>
+    </script>    
     <script>
         <?php
                     if (isset($_SESSION['participantid']) && isset($_SESSION['participant']) && isset($_SESSION['eventid'])) {
@@ -352,5 +351,6 @@
                     }
         ?>
     </script>
+    <script type="module" src="/2021/js/registration.js"></script>
 </body>
 </html>
