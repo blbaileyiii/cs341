@@ -92,6 +92,7 @@ export default class Equipment {
                 ul.appendChild(li);
             });
 
+            equipDiv.innerHTML="";
             equipDiv.appendChild(h2);
             equipDiv.appendChild(ul);
         });
@@ -131,6 +132,7 @@ export default class Equipment {
             pDiv.appendChild(ul);
         });
 
+        equipDiv.innerHTML="";
         equipDiv.appendChild(pDiv);
     }
 
