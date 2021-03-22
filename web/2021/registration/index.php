@@ -81,6 +81,16 @@ switch($action){
         $chronicIllness = checkBoolText($chronicIllness,$chronicIllnessTxt);
         $serious = checkBoolText($serious,$seriousTxt);
 
+        //$selfMedicate
+
+        //OVERWRITE Signature Dates... Need to match today.
+
+        // If participantDOB is >= 19 certain things
+
+        // Calculate age by DOB...
+        $participantAge = getAge($participantDOB); 
+
+
         echo $eventId . "<br>";
         echo $participantName . "<br>";
         echo $ward . "<br>";
@@ -114,15 +124,6 @@ switch($action){
         echo $participantSigDate . "<br>";
         echo $guardianSig . "<br>";
         echo $guardianSigDate . "<br>";
-
-        //$selfMedicate
-
-        //OVERWRITE Signature Dates... Need to match today.
-
-        // If participantDOB is >= 19 certain things
-
-        // Calculate age by DOB...
-        $participantAge = getAge($participantDOB); 
 
         // Insert form data
         //getEvents();
