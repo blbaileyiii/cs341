@@ -21,9 +21,9 @@ switch($action){
         echo getEquipmentJSON();
         break;
     default:
-        if (!isset($_SESSION['equipment'])){
-            $_SESSION['equipment'] = getEquipment();
-        }        
+        //if (!isset($_SESSION['equipment'])){
+        //    $_SESSION['equipment'] = getEquipment();
+        //}        
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/equipment.php';
         break;
 }
