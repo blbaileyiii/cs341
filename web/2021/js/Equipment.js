@@ -39,10 +39,11 @@ export default class Equipment {
         console.log(this.equipmentList);
         let equipDiv = document.getElementById('equipment-lists');
         Object.keys(this.equipmentList).forEach(key => {
+            let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
 
-            ul.classList.add(key.replace(/ /g,"-"));
-            ul.innerHTML = "<h2>" + key +"</h2>";
+            h2.innerHTML = key;
+            ul.classList.add(key.replace(/ /g,"-"));            
 
             this.equipmentList[key].forEach(item => {
                 let li = document.createElement('li');
@@ -52,6 +53,7 @@ export default class Equipment {
                 ul.appendChild(li);
             });
 
+            equipDiv.appendChild(h2);
             equipDiv.appendChild(ul);
         });
     }
