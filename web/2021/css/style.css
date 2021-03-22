@@ -583,6 +583,14 @@ p.legal-sm {
     .equipment-lists-interactive ul{
         margin: 1rem 1rem 1rem 2.75rem;
     }
+
+    .fields-radio {
+        flex-wrap: nowrap;
+    }
+    
+    .fields label {
+        flex-wrap: nowrap;
+    }
  }
 
 @media only screen and (min-width: 30rem) {
