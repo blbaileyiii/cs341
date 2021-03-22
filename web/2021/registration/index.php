@@ -140,7 +140,7 @@ switch($action){
             header('Location: /2021/registration/');
             exit;
         } else {
-            $_SESSION['message'] = "Sorry $participantName, but the registration failed. Please try again.";
+            $_SESSION['message'] = "Sorry $participantName, but registration failed. Please try again. If the problem persists please contact your Ward Leadership and/or the WebAdmin.";
             $events = getEvents(2021);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
