@@ -535,7 +535,7 @@ p.legal-sm {
     transform: scale(1.1) translateX(1rem);
     background: var(--border-intense);
     color: var(--on-nav-bg-soft);
-    padding: 0.25rem;
+    padding: 0.1rem 0.35rem 0.325rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
