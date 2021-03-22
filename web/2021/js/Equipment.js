@@ -41,7 +41,7 @@ export default class Equipment {
         Object.keys(this.equipmentList).forEach(key => {
             let ul = document.createElement('ul');
 
-            ul.classList.add(key.replace(" ", "-"));
+            ul.classList.add(key.replace(/ /g,"-"));
             ul.innerHTML = "<h2>" + key +"</h2>";
 
             this.equipmentList[key].forEach(item => {
