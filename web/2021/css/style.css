@@ -10,6 +10,7 @@
     --body-bg: #ffffff;
     --on-body-bg: #141414;
     --logo-highlight: #fec240;
+    --logo-highlight-none: #ffffff;
     --border-intense: #de4b43;
     --btn-bg: #2f375b;
     --btn-bg-soft: #de4b43;
@@ -184,6 +185,10 @@ header a:hover {
 .nav.item a:hover::before {
     visibility: visible;
     transform: scaleX(1);
+}
+
+.logo-highlight-none {
+    color: var(--logo-highlight-none);
 }
 
 .logo-highlight {
