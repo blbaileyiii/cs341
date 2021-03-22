@@ -248,7 +248,7 @@
                     </div>
                     <div class="fields">
                         <label for="medicationList"><span>List all prescription or over-the-counter (OTC) medications the participant is taking:</span></label> 
-                        <textarea id="medicationList" name="medicationList"><?php if(isset($medicationList)){echo $medicationList;} ?></textarea>
+                        <textarea id="medicationList" name="medicationList" <?php if(isset($medication) && $medication=="y"){echo "required";} ?>><?php if(isset($medicationList)){echo $medicationList;} ?></textarea>
                     </div>
                 </fieldset>
                 <fieldset>
