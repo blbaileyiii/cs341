@@ -17,6 +17,11 @@
     --read-only: #dddddd;
 }
 
+.message {
+    background: var(--border-intense);
+    color: var(--on-nav-bg);
+}
+
 /* Typography */
 * {
     font-family: 'Roboto Slab', 'Times New Roman', Times, serif

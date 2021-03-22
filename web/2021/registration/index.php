@@ -63,9 +63,7 @@ switch($action){
         $eventLeaderName = filter_input(INPUT_POST, 'eventLeaderName', FILTER_SANITIZE_STRING);
         $eventLeaderPhone = filter_input(INPUT_POST, 'eventLeaderPhone', FILTER_SANITIZE_STRING);
         $eventLeaderEmail = filter_input(INPUT_POST, 'eventLeaderEmail', FILTER_SANITIZE_STRING);
-
-        echo "specialDiet:". $specialDiet . "<br>";
-
+        
         // Validate form data
         $eventId = checkInt($eventId);
         $participantDOB = checkIsDate($participantDOB);
