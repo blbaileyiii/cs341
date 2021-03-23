@@ -7,6 +7,7 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
 // Get the registration model for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/reg-model.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/json-model.php';
 // Get the fxs for valiation and file building
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
@@ -29,7 +30,7 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/attributions.php';
         break;
     default:
-        $events = getEvents(2021);
+        $events = getEventsJSON(2021);
         $aboutHTML = buildAboutHTML($events);
         $contactsHTML = buildContactsHTML($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/home.php';

@@ -3,6 +3,7 @@
  * HHSCAMPS Registration Model
  */
 
+/*
 function getEvents($eventYear) {
     try {
         $db = hhConnect();
@@ -28,6 +29,7 @@ function getEvents($eventYear) {
         echo $sql . "<br>" . $ex->getMessage();
     }
 }
+*/
 
 // Will handle site registrations.
 function regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $participantESig, $guardianESig){

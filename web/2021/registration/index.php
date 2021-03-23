@@ -9,6 +9,7 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
 // Get the account model for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/reg-model.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/json-model.php';
 // Get the account validation fxs for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
@@ -141,7 +142,7 @@ switch($action){
 
         if(empty($participantDOB)){
             $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
-            $events = getEvents(2021);
+            $events = getEventsJSON(2021);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
@@ -150,14 +151,14 @@ switch($action){
 
         if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
-            $events = getEvents(2021);
+            $events = getEventsJSON(2021);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
         }
         
-        $events = getEvents(2021);
+        $events = getEventsJSON(2021);
         $eventList = buildEventList($events);
         $eventScript = buildEventScript($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/confirmation.php';
@@ -290,7 +291,7 @@ switch($action){
 
         if(empty($participantDOB)){
             $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
-            $events = getEvents(2021);
+            $events = getEventsJSON(2021);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
@@ -299,7 +300,7 @@ switch($action){
 
         if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig) || empty($participantESig) || empty($guardianESig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
-            $events = getEvents(2021);
+            $events = getEventsJSON(2021);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
@@ -321,7 +322,7 @@ switch($action){
             exit;
         } else {
             $_SESSION['message'] = "<div class='alert'>Sorry, $participantName, but registration failed. Please try again.<br>If the problem persists please contact your Ward Leadership and/or the WebAdmin.</div>";
-            $events = getEvents(2021);
+            $events = getEventsJSON(2021);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
@@ -330,7 +331,7 @@ switch($action){
 
         break;
     default:
-        $events = getEvents(2021);
+        $events = getEventsJSON(2021);
         $eventList = buildEventList($events);
         $eventScript = buildEventScript($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
