@@ -42,7 +42,7 @@ function checkIsDate($chkVal, $format = 'Y-m-d')
 
 function checkBoolText($chkVal, $chkTxt) {
     if($chkVal == 'y' && strlen(trim($chkTxt)) > 0) { return $chkVal; }
-    elseif ($chkVal == 'n') { return$chkVal; }
+    elseif ($chkVal == 'n') { return $chkVal; }
     return NULL;
 }
 

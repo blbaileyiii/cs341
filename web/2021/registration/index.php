@@ -62,9 +62,39 @@ switch($action){
         $eventLeaderPhone = filter_input(INPUT_POST, 'eventLeaderPhone', FILTER_SANITIZE_STRING);
         $eventLeaderEmail = filter_input(INPUT_POST, 'eventLeaderEmail', FILTER_SANITIZE_STRING);
 
-        $participantAge = getAge($participantDOB);
+        // Validate form data
+        $eventId = checkInt($eventId);
+        $participantDOB = checkIsDate($participantDOB);
+        $primTel = checkTel($primTel);
+        $secTel = checkTel($secTel);
+        $emerPrimTel = checkTel($emerPrimTel);
+        $emerSecTel = checkTel($emerSecTel);
+        $primTelType = checkTelType($primTelType);
+        $secTelType = checkTelType($secTelType);
+        $emerPrimTelType = checkTelType($emerPrimTelType);
+        $emerSecTelType = checkTelType($emerSecTelType);
+        $specialDiet = checkBoolText($specialDiet,$specialDietTxt);
+        $allergies = checkBoolText($allergies,$allergiesTxt);
+        $medication = checkBoolText($medication,$medicationList);
+        $chronicIllness = checkBoolText($chronicIllness,$chronicIllnessTxt);
+        $serious = checkBoolText($serious,$seriousTxt);
+        $participantSig = checkSig($participantSig);
+        $guardianSig = checkSig($guardianSig);
 
-        
+        //$selfMedicate
+        $chkSelfMedicate = checkDepBool($selfMedicate, $medication);
+
+        // Calculate age by DOB...
+        $participantAge = getAge($participantDOB);
+        $participantDOB = checkMaxDOB($participantDOB);
+        // If participantDOB is >= 19 certain things
+        $guardianSig = checkAge($guardianSig, $participantAge);
+
+        //OVERWRITE Signature Dates... Need to match today.
+        $participantSigDate = date('Y-m-d');
+        $guardianSigDate = date('Y-m-d');
+
+
         echo "eventId: ". $eventId . "<br>";
         echo "eventDate: ". $eventDate . "<br>";
         echo "eventDesc: ". $eventDesc . "<br>";
@@ -105,6 +135,25 @@ switch($action){
         echo "participantSigDate: ". $participantSigDate . "<br>";
         echo "guardianSig: ". $guardianSig . "<br>";
         echo "guardianSigDate: ". $guardianSigDate . "<br>";
+
+
+        if(empty($participantDOB)){
+            $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
+            $events = getEvents(2021);
+            $eventList = buildEventList($events);
+            $eventScript = buildEventScript($events);
+            include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
+            exit; 
+        }
+
+        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
+            $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
+            $events = getEvents(2021);
+            $eventList = buildEventList($events);
+            $eventScript = buildEventScript($events);
+            include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
+            exit; 
+        }
         
         $events = getEvents(2021);
         $eventList = buildEventList($events);
@@ -189,6 +238,13 @@ switch($action){
 
         /*
         echo "eventId: ". $eventId . "<br>";
+        echo "eventDate: ". $eventDate . "<br>";
+        echo "eventDesc: ". $eventDesc . "<br>";
+        echo "stake: ". $stake . "<br>";
+        echo "eventLeaderName: ". $eventLeaderName . "<br>";
+        echo "eventLeaderPhone: ". $eventLeaderPhone . "<br>";
+        echo "eventLeaderEmail: ". $eventLeaderEmail . "<br>";
+        echo "participantAge: ". $participantAge . "<br>";
         echo "participantName: ". $participantName . "<br>";
         echo "ward: ". $ward . "<br>";
         echo "participantDOB: ". $participantDOB . "<br>";
