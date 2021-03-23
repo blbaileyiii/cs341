@@ -141,7 +141,7 @@ if (participants.list.length > 0) {
             if (option.value == participant.eventid){ eventTxt = option.text; }
         });
         //let event = eventSelect.querySelector('option[value=' + participant.eventid + ']').textContent;
-        li.innerHTML = participant.name + 'Registered for: ' + eventTxt;
+        li.innerHTML = participant.name + 'Registered For: ' + eventTxt;
         ul.appendChild(li);
     });
 
