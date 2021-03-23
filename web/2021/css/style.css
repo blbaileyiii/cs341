@@ -451,13 +451,13 @@ a.button {
     padding: 0.1rem 1.1rem 0.25rem;
     text-decoration: none;
     display: inline-block;
+    transition: all .2s ease-in-out;
 }
 
 a.button:hover {
     background: var(--on-nav-bg);
     color: var(--logo-highlight);
     border-color: var(--border-intense);
-    transition: all .2s ease-in-out;
 }
 
 a.button:hover {
