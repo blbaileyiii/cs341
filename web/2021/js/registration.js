@@ -105,10 +105,10 @@ function changeRadioRequirement(inputField, required) {
 document.getElementById('selfMedicateN').addEventListener('mouseenter', () => {
     console.log('mouseenter...')
     let special = document.querySelector('.special-instructions');
-    special.getElementsByClassName.style.transform = "scale(1.05) translateX(0.5rem)";
-    special.getElementsByClassName.style.background = "var(--border-intense)";
-    special.getElementsByClassName.style.color = "var(--on-nav-bg)";
-    special.getElementsByClassName.style.padding = "0.1rem 0.35rem 0.325rem";
+    special.style.transform = "scale(1.05) translateX(0.5rem)";
+    special.style.background = "var(--border-intense)";
+    special.style.color = "var(--on-nav-bg)";
+    special.style.padding = "0.1rem 0.35rem 0.325rem";
 });
 
 if(participant) {
