@@ -446,6 +446,7 @@ a.button {
     border-radius: 5rem;
     padding: 0 1rem 0.25rem;
     text-decoration: none;
+    margin: 0.5rem;
 }
 
 .non-fields button {
