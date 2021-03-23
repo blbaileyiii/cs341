@@ -47,22 +47,9 @@ export default class Equipment {
 
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
-                let div = document.getElementById("json-data"); 
-                if(div.childNodes[0]){
-                    div.removeChild(div.childNodes[0]);
-                }
-
-                let container = document.createElement("div");
-                
-                let card = document.createElement('section');
                 let err404 = document.createElement("p");
                 err404.className = "err404";
-
                 err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
-
-                card.appendChild(err404);
-                container.appendChild(card);
-                div.appendChild(container);
                 */
             } else {
                 //console.log("failed");

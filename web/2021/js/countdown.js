@@ -1,5 +1,38 @@
 getEvents();
 
+function getEvents() {
+  let url = "/2021/json/?action=getEvents";
+  let xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+      //do stuff with data...
+      if (this.readyState == 4 && this.status == 200) {
+          let myObj = JSON.parse(this.responseText);
+          //console.log(myObj);
+          createCountdown(myObj);
+          //
+      } else if (this.readyState == 4 && this.status == 404) {
+          /*
+          let err404 = document.createElement("p");
+          err404.className = "err404";
+          err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
+          */
+      } else {
+          //console.log("failed");
+      }
+  };
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+}
+
+function createCountdown(eventList){
+	console.log(eventList);
+	if (eventList.length > 0) {
+		eventList.forEach(event => {
+			console.log(event);
+		});
+	}
+}
+
 // Set the date we're counting down to
 let datestrYWCamp = "Jul 27, 2021";
 let datestrYMCamp = "Jul 27, 2021";
@@ -124,40 +157,4 @@ function countDown() {
   if (campsPassed >= camps.length) {
     clearInterval(x);
   }
-}
-
-function getEvents() {
-  let url = "/2021/json/?action=getEvents";
-  let xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-      //do stuff with data...
-      if (this.readyState == 4 && this.status == 200) {
-          let myObj = JSON.parse(this.responseText);
-          console.log(myObj);
-          //
-      } else if (this.readyState == 4 && this.status == 404) {
-          /*
-          let div = document.getElementById("json-data"); 
-          if(div.childNodes[0]){
-              div.removeChild(div.childNodes[0]);
-          }
-
-          let container = document.createElement("div");
-          
-          let card = document.createElement('section');
-          let err404 = document.createElement("p");
-          err404.className = "err404";
-
-          err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
-
-          card.appendChild(err404);
-          container.appendChild(card);
-          div.appendChild(container);
-          */
-      } else {
-          //console.log("failed");
-      }
-  };
-  xmlhttp.open("GET", url, true);
-  xmlhttp.send();
 }
