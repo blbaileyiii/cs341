@@ -6,6 +6,12 @@ function checkInt($chkVal){
     return NULL;
 }
 
+function checkBool($chkVal){
+    $chkVal = filter_var($chkVal, FILTER_VALIDATE_BOOLEAN);
+    if($chkVal){ return $chkVal; } 
+    return NULL;
+}
+
 function checkFloat($chkVal){
     $chkVal = filter_var($chkVal, FILTER_VALIDATE_FLOAT);
     if($chkVal){ return $chkVal; } 

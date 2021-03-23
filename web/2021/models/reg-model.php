@@ -4,15 +4,15 @@
  */
 
 // Will handle site registrations.
-function regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $participantESig, $guardianESig){
+function regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $adult, $contact, $permission, $responsibility, $participantESig, $guardianESig){
     try {
         // Create a connection object using the phpmotors connection function
         $db = hhConnect();
         // The SQL statement
 
         $sql = 
-        'INSERT INTO hhstake.registrants ("eventId", "participantName", "ward", "participantDOB", "participantAge", "email", "primTel", "primTelType", "secTel", "secTelType", "participantAddress", "participantCity", "participantState", "emergencyContact", "emerPrimTel", "emerPrimTelType", "emerSecTel", "emerSecTelType", "specialDiet", "specialDietTxt", "allergies", "allergiesTxt", "medication", "selfMedicate", "medicationList", "chronicIllness", "chronicIllnessTxt", "serious", "seriousTxt", "limitations", "considerations", "participantSig", "participantSigDate", "guardianSig", "guardianSigDate", "participantESig", "guardianESig")
-        VALUES (:eventId, :participantName, :ward, :participantDOB, :participantAge, :email, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emerSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllness, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations, :participantSig, :participantSigDate, :guardianSig, :guardianSigDate, :participantESig, :guardianESig)
+        'INSERT INTO hhstake.registrants (event_id, p_name, p_ward, p_dob, p_age, email, tele_one, tele_one_type, tele_two, tele_two_type, p_address, p_city, p_state, emer_name, emer_tele_one, emer_tele_one_type, emer_tele_two, emer_tele_two_type, diet, diet_txt, allergies, allergies_txt, medication, self_medicate, medication_txt, chronic, chronic_txt, serious, serious_txt, limitations_txt, considerations_txt, p_sig, p_sig_date, g_sig, g_sig_date, adult, contact, permission, responsibility, p_esig, g_esig)
+        VALUES (:eventId, :participantName, :ward, :participantDOB, :participantAge, :email, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emerSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllness, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations, :participantSig, :participantSigDate, :guardianSig, :guardianSigDate, :adult, :contact, :permission, :responsibility, :participantESig, :guardianESig)
         RETURNING "registrantId"';
         // Create the prepared statement using the phpmotors connection
         $stmt = $db->prepare($sql);
@@ -53,6 +53,10 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
             ':participantSigDate' => $participantSigDate,
             ':guardianSig' => $guardianSig,
             ':guardianSigDate' => $guardianSigDate,
+            ':adult' => $adult,
+            ':contact' => $contact,
+            ':permission' => $permission,
+            ':responsibility' => $responsibility,
             ':participantESig' => $participantESig,
             ':guardianESig' => $guardianESig
         );

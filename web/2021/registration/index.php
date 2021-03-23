@@ -150,6 +150,7 @@ switch($action){
             exit; 
         }
 
+        // Check for empty / null values. All values listed are required.
         if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $events = getEventsJSON(2021);
@@ -202,6 +203,10 @@ switch($action){
         $participantSigDate = filter_input(INPUT_POST, 'participantSigDate', FILTER_SANITIZE_STRING);
         $guardianSig = filter_input(INPUT_POST, 'guardianSig', FILTER_SANITIZE_STRING);
         $guardianSigDate = filter_input(INPUT_POST, 'guardianSigDate', FILTER_SANITIZE_STRING);
+        $adult = filter_input(INPUT_POST, 'adult', FILTER_SANITIZE_STRING);
+        $contact = filter_input(INPUT_POST, 'contact', FILTER_SANITIZE_STRING);
+        $permission = filter_input(INPUT_POST, 'permission', FILTER_SANITIZE_STRING);
+        $responsibility = filter_input(INPUT_POST, 'responsibility', FILTER_SANITIZE_STRING);
         $participantESig = filter_input(INPUT_POST, 'participantSig', FILTER_SANITIZE_STRING);
         $guardianESig = filter_input(INPUT_POST, 'guardianSig', FILTER_SANITIZE_STRING);
 
@@ -232,6 +237,10 @@ switch($action){
         $serious = checkBoolText($serious,$seriousTxt);
         $participantSig = checkSig($participantSig);
         $guardianSig = checkSig($guardianSig);
+        $adult = checkBool($adult);
+        $contact = checkBool($contact);
+        $permission = checkBool($permission);
+        $responsibility = checkBool($responsibility);
         $participantESig = checkSig($participantESig);
         $guardianESig = checkSig($guardianESig);
 
@@ -302,7 +311,7 @@ switch($action){
             exit; 
         }
 
-        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig) || empty($participantESig) || empty($guardianESig))){
+        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig)  || empty($adult)  || empty($contact)  || empty($permission)  || empty($responsibility) || empty($participantESig) || empty($guardianESig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $events = getEventsJSON(2021);
             $events = json_decode($events, true);
@@ -313,7 +322,7 @@ switch($action){
         }
 
         // Insert form data
-        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $participantESig, $guardianESig);
+        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $adult, $contact, $permission, $responsibility, $participantESig, $guardianESig);
         //$regId = false; // Testing only
 
         // Validate Insert
