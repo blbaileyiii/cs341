@@ -36,7 +36,7 @@
                                     ?>
                                 </select>
                             </li>
-                            <li><span>Date(s) of event: <?php if(isset($eventDate)){echo $eventDate;} ?></span></li>
+                            <li><span>Date(s) of event: <?php if(isset($eventDate)){echo date('m/d/Y', $eventDate);} ?></span></li>
                             <li><span>Description of event and activities: <?php if(isset($eventDesc)){echo $eventDesc;} ?></span></li>
                         </ul>
                         <p>I give permission for my child or youth to participate in the event and activities listed above (unless noted) and authorize the adult leaders supervising this event to administer emergency treatment to the above named participant for any accident or illness and to act in my stead in approving necessary medical care. This authorization shall cover this event and travel to and from this event.</p>
