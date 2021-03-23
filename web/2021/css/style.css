@@ -608,7 +608,11 @@ ul.re-affirm-details span {
 }
 
 input[type=checkbox] + label {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
+}
+
+.chkbx-ind {
+    text-indent: -1.55rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
