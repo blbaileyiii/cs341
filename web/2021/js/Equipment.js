@@ -79,6 +79,9 @@ export default class Equipment {
 
         let pDiv = document.createElement('div');
 
+        let xh2;
+        let xul;
+
         Object.keys(this.equipmentList).forEach(key => {         
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
