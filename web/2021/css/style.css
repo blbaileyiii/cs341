@@ -439,17 +439,34 @@ fieldset {
 }
 
 .register-block {
-    margin: 0.5rem;
+    margin: 0.75rem;
 }
 
 a.button {
     font-size: 1.25rem;
     background: var(--border-intense);
     color: var(--logo-highlight);
-    border: 5px double var(--on-nav-bg);
+    border: 2px solid var(--on-nav-bg);
     border-radius: 5rem;
-    padding: 0 1rem 0.25rem;
+    padding: 0.1rem 1.1rem 0.25rem;
     text-decoration: none;
+}
+
+a.button:hover {
+    background: var(--on-nav-bg);
+    color: var(--logo-highlight);
+    border-color: var(--border-intense);
+    transition: all .2s ease-in-out;
+}
+
+a.button:hover {
+    background: var(--on-nav-bg);
+    color: var(--logo-highlight);
+    border-color: var(--border-intense);
+}
+
+a.button:active {
+    transform: scale(0.9);
 }
 
 .non-fields button {
