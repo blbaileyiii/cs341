@@ -613,7 +613,7 @@ input[type=checkbox] + label {
 
 .chkbx-ind {
     text-indent: -1.5rem;
-    margin: 1.5rem;
+    margin: 0 0 0 1.5rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
