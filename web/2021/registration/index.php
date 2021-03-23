@@ -304,9 +304,7 @@ switch($action){
         echo "permission: ". $permission . "<br>";
         echo "responsibility: ". $responsibility . "<br>";
         echo "participantESig: ". $participantSig . "<br>";
-        echo "participantESigDate: ". $participantSigDate . "<br>";
         echo "guardianESig: ". $guardianSig . "<br>";
-        echo "guardianESigDate: ". $guardianSigDate . "<br>";
         
 
         if(empty($participantDOB)){
