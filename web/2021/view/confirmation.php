@@ -24,27 +24,21 @@
                 <div>
                     <fieldset>
                         <legend>Re-Affirm Permission</legend>
-                        <div class="fields">
-                            <label for="eventId"><span>Event</span><span class="field-tip">Required</span></label>
-                            <select id="eventId" name="eventId" required>
-                                <option value="" <?php if(!isset($eventId)){echo "selected";} ?> disabled>Choose an event</option>
-                                <?php
-                                    if(isset($eventId)){
-                                        echo "value='$eventId'";
-                                        $eventList = str_replace("value='$eventId'", "value='$eventId' selected", $eventList);
-                                    }
-                                    echo $eventList; 
-                                ?>
-                            </select>
-                        </div>
-                        <div class="fields">
-                            <label for="eventDate"><span>Date(s) of event</span></label> 
-                            <input id="eventDate" name="eventDate" type="date" <?php if(isset($eventDate)){echo "value='$eventDate'";} ?> readonly>
-                        </div>
-                        <div class="fields">
-                            <label for="eventDesc"><span>Describe event and activities (please be specific):</span></label>
-                            <textarea id="eventDesc" name="eventDesc" readonly><?php if(isset($eventDesc)){echo $eventDesc;} ?></textarea>
-                        </div>
+                        <ul>
+                            <li><span>Event: </span>
+                                <select readonly>
+                                    <?php
+                                        if(isset($eventId)){
+                                            echo "value='$eventId'";
+                                            $eventList = str_replace("value='$eventId'", "value='$eventId' selected", $eventList);
+                                        }
+                                        echo $eventList; 
+                                    ?>
+                                </select>
+                            </li>
+                            <li><span>Date(s) of event: <?php if(isset($eventDate)){echo $eventDate;} ?></span></li>
+                            <li></span>Description of event and activities: <?php if(isset($eventDesc)){echo $eventDesc;} ?></span></li>
+                        </ul>
                         <p>I give permission for my child or youth to participate in the event and activities listed above (unless noted) and authorize the adult leaders supervising this event to administer emergency treatment to the above named participant for any accident or illness and to act in my stead in approving necessary medical care. This authorization shall cover this event and travel to and from this event.</p>
                         <p>The participant is responsible for his or her own conduct and is aware of and agrees to abide by Church standards, camp or event safety rules, and other pertinent instructions. Participants’ conduct and interactions should abide by Church standards and exemplify Christlike behavior. Parents and participants should understand that participation in an activity is not a right but a privilege that can be revoked if they behave inappropriately or if they pose a risk to themselves or others.</p>
                         <div class="fields">
@@ -71,7 +65,27 @@
                 </div>
                 <fieldset>
                     <legend>Event Details</legend>
-                    
+                    <div class="fields">
+                        <label for="eventId"><span>Event</span><span class="field-tip">Required</span></label>
+                        <select id="eventId" name="eventId" required>
+                            <option value="" <?php if(!isset($eventId)){echo "selected";} ?> disabled>Choose an event</option>
+                            <?php
+                                if(isset($eventId)){
+                                    echo "value='$eventId'";
+                                    $eventList = str_replace("value='$eventId'", "value='$eventId' selected", $eventList);
+                                }
+                                echo $eventList; 
+                            ?>
+                        </select>
+                    </div>
+                    <div class="fields">
+                        <label for="eventDate"><span>Date(s) of event</span></label> 
+                        <input id="eventDate" name="eventDate" type="date" <?php if(isset($eventDate)){echo "value='$eventDate'";} ?> readonly>
+                    </div>
+                    <div class="fields">
+                        <label for="eventDesc"><span>Describe event and activities (please be specific):</span></label>
+                        <textarea id="eventDesc" name="eventDesc" readonly><?php if(isset($eventDesc)){echo $eventDesc;} ?></textarea>
+                    </div>
                     <div class="fields">
                         <label for="stake"><span>Stake</span></label> 
                         <input id="stake" name="stake" type="text" value="Hacienda Heights California Stake" <?php if(isset($stake)){echo "value='$stake'";} ?> readonly>
