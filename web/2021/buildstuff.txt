@@ -1,7 +1,2 @@
-echo "eventDate: ". $eventDate . "<br>";
-echo "eventDesc: ". $eventDesc . "<br>";
-echo "stake: ". $stake . "<br>";
-echo "eventLeaderName: ". $eventLeaderName . "<br>";
-echo "eventLeaderPhone: ". $eventLeaderPhone . "<br>";
-echo "eventLeaderEmail: ". $eventLeaderEmail . "<br>";
-echo "participantAge: ". $participantAge . "<br>";
+VALUES ($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $adult, $contact, $permission, $responsibility, $participantESig, $guardianESig)
+        RETURNING id';
