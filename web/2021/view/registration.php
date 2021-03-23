@@ -12,8 +12,8 @@
     </header>    
     <main>
         <section>
-            <h1>Registration</h1>
-            <div class="registrantDiv"></div>        
+            <div class="registrantDiv"></div>            
+            <h1>Register</h1>
             <?php
                 if (isset($_SESSION['message'])) { 
                         echo $_SESSION['message']; 

@@ -126,8 +126,8 @@ if (participants.list.length > 0) {
     let registrantDiv = document.querySelector('.registrantDiv');
     let eventSelect = document.getElementById('eventId');
 
-    let h2 = document.createElement("h2");
-    h2.textContent = "My Registration";
+    let h1 = document.createElement("h1");
+    h1.textContent = "My Registration";
 
     let registered = document.createElement("div");
     registered.classList.add('registered');
@@ -146,6 +146,6 @@ if (participants.list.length > 0) {
     });
 
     registered.appendChild(ul);
-    registrantDiv.appendChild(h2);
+    registrantDiv.appendChild(h1);
     registrantDiv.appendChild(registered);
 }
