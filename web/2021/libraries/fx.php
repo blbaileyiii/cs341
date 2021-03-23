@@ -70,7 +70,7 @@ function checkAge($chkVal, $age){
     return $chkVal;
 }
 
-function checkMinAge($chkVal) {
+function checkMaxDOB($chkVal) {
     $dateMax = "2008-01-01";
     if ($dateMax >= $chkVal) { return $chkVal; }
     return NULL;

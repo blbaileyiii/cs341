@@ -88,6 +88,7 @@ switch($action){
 
         // Calculate age by DOB...
         $participantAge = getAge($participantDOB);
+        $participantDOB = checkMaxDOB($participantDOB);
         // If participantDOB is >= 19 certain things
         $guardianSig = checkAge($guardianSig, $participantAge);
 
@@ -131,9 +132,7 @@ switch($action){
         echo "guardianSigDate:". $guardianSigDate . "<br>";
         */
 
-        if(checkMinAge($participantDOB)){
-            // Age is fine.
-        } else {
+        if(empty($particpantDOB)){
             $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
             $events = getEvents(2021);
             $eventList = buildEventList($events);
@@ -152,8 +151,8 @@ switch($action){
         }
 
         // Insert form data
-        //$regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
-        $regId = false; // Testing only
+        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
+        //$regId = false; // Testing only
 
         // Validate Insert
         // if($regOutcome === 1){
