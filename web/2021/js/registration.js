@@ -132,7 +132,7 @@ if (participants.list.length > 0) {
     let registered = document.createElement("div");
     registered.classList.add('myRegistration');
 
-    let ul = document.createElement('ul');
+    let ol = document.createElement('ol');
 
     participants.list.forEach(participant => {
         let li = document.createElement('li');
@@ -145,7 +145,7 @@ if (participants.list.length > 0) {
         ul.appendChild(li);
     });
 
-    registered.appendChild(ul);
+    registered.appendChild(ol);
     registrantDiv.appendChild(h1);
     registrantDiv.appendChild(registered);
 }

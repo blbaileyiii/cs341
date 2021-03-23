@@ -557,15 +557,18 @@ p.legal-sm {
 }
 
 .myRegistration {
-    border: 15px double var(--logo-highlight);
+    border: 5px solid var(--logo-highlight);
 }
 
-.myRegistration ul {
+.myRegistration ol {
     background: var(--btn-bg);
-    padding: 1rem;
+    padding: 1rem 2.25rem;
     margin: 0;
-    list-style: none;
     color: var(--body-bg);
+}
+
+.myRegistration li {
+    margin: 0.5rem 0.75rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
