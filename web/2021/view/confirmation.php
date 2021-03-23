@@ -46,7 +46,7 @@
                         <p class="chkbx-ind"><input id="permission" name="permission" type="checkbox" required><label for="permission">I give permission for my child or youth to participate in the event and activities listed above (unless noted) and authorize the adult leaders supervising this event to administer emergency treatment to the above named participant for any accident or illness and to act in my stead in approving necessary medical care. This authorization shall cover this event and travel to and from this event.</label></p>
                         <p class="chkbx-ind"><input id="responsibility" name="responsibility" type="checkbox" required><label for="responsibility">The participant is responsible for his or her own conduct and is aware of and agrees to abide by Church standards, camp or event safety rules, and other pertinent instructions. Participants’ conduct and interactions should abide by Church standards and exemplify Christlike behavior. Parents and participants should understand that participation in an activity is not a right but a privilege that can be revoked if they behave inappropriately or if they pose a risk to themselves or others.</label></p>
                         <div class="fields">
-                            <label for="participantESig"><span>Participant’s E-signature (Much match first signature)</span><span class="field-tip">Required</span></label> 
+                            <label for="participantESig"><span>Participant’s E-signature (Much match previous signature)</span><span class="field-tip">Required</span></label> 
                             <input id="participantESig" name="participantESig" type="text" <?php if(isset($participantSig)){echo "placeholder='$participantSig' pattern='$participantSig'";} ?> required>
                         </div>
                         <div class="fields">
@@ -54,7 +54,7 @@
                             <input id="participantSigDate" name="participantSigDate" type="date" value="<?php echo date('Y-m-d') ?>" readonly required>
                         </div>
                         <div class="fields">
-                            <label for="guardianESig"><span>Parent or guardian's E-signature (Much match first signature)</span><?php if(isset($participantAge) && $participantAge >=19){ echo "";} else {echo "<span class='field-tip'>Required</span>";} ?></label> 
+                            <label for="guardianESig"><span>Parent or guardian's E-signature (Much match previous signature)</span><?php if(isset($participantAge) && $participantAge >=19){ echo "";} else {echo "<span class='field-tip'>Required</span>";} ?></label> 
                             <input id="guardianESig" name="guardianESig" type="text" <?php if(isset($guardianSig)){echo "placeholder='$guardianSig' pattern='$participantSig'";} ?> <?php if(isset($participantAge) && $participantAge >= 19){echo "value='N/A - Adult Participant' readonly";} else { echo "required";} ?>>
                         </div>
                         <div class="fields">
