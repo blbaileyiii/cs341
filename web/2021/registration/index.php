@@ -94,7 +94,7 @@ switch($action){
         $participantSigDate = date('Y-m-d');
         $guardianSigDate = date('Y-m-d');
 
-
+        /*
         echo "eventId: ". $eventId . "<br>";
         echo "eventDate: ". $eventDate . "<br>";
         echo "eventDesc: ". $eventDesc . "<br>";
@@ -135,7 +135,7 @@ switch($action){
         echo "participantSigDate: ". $participantSigDate . "<br>";
         echo "guardianSig: ". $guardianSig . "<br>";
         echo "guardianSigDate: ". $guardianSigDate . "<br>";
-
+        */
 
         if(empty($participantDOB)){
             $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
