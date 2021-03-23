@@ -79,27 +79,38 @@ export default class Equipment {
 
         let pDiv = document.createElement('div');
 
-        Object.keys(this.equipmentList).forEach(key => {
-            if (key != "DO NOT BRING") {            
-                let h2 = document.createElement('h2');
-                let ul = document.createElement('ul');
+        Object.keys(this.equipmentList).forEach(key => {         
+            let h2 = document.createElement('h2');
+            let ul = document.createElement('ul');
 
-                h2.innerHTML = key;
-                ul.classList.add(key.replace(/ /g,"-"));            
+            h2.innerHTML = key;
+            ul.classList.add(key.replace(/ /g,"-"));            
 
-                this.equipmentList[key].forEach(item => {
-                    let li = document.createElement('li');
+            this.equipmentList[key].forEach(item => {
+                let li = document.createElement('li');
 
-                    li.innerHTML = item.equipmentname;
+                li.innerHTML = item.equipmentname;
 
-                    ul.appendChild(li);
-                });
+                ul.appendChild(li);
+            });
 
-                
+            
+            pDiv.appendChild(h2);
+            pDiv.appendChild(ul);
+
+            if (key != "DO NOT BRING") { 
                 pDiv.appendChild(h2);
                 pDiv.appendChild(ul);
+            } else {
+                xh2 = h2;
+                xul = ul;
             }
         });
+
+        if(xh2 && xul){
+            pDiv.appendChild(xh2);
+            pDiv.appendChild(xul);
+        }
 
         equipDiv.innerHTML="";
         equipDiv.appendChild(pDiv);
