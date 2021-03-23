@@ -102,7 +102,7 @@ function changeRadioRequirement(inputField, required) {
     }
 }
 
-document.getElementById('selfMedicateN').parentElement.addEventListener('mouseenter', () => {
+document.getElementById('selfMedicateN').parentElement.addEventListener('mouseover', () => {
     document.querySelector('.special-instructions').classList.add('special-instructions-hover');
 });
 
