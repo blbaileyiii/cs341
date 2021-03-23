@@ -611,9 +611,9 @@ input[type=checkbox] + label {
     margin-left: 0.75rem;
 }
 
-.chkbx-ind {
+p.chkbx-ind {
     text-indent: -1.5rem;
-    margin: 0 0 0 1.5rem;
+    margin: 0.5rem 0 0 1.5rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
