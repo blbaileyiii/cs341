@@ -71,7 +71,7 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
         // Ask how many rows changed as a result of our insert
         $regResults = $stmt->fetchAll();
         if (count($regResults === 0)){
-            $regId = $regResults[0]['registrantId'];            
+            $regId = $regResults[0]['id'];            
         } else {
             $regId = NULL;
         }
