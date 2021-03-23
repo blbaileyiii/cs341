@@ -38,9 +38,11 @@
                             </li>
                             <li><span>Date(s) of event: </span><?php if(isset($eventDate)){echo date('m/d/Y', $eventDate);} ?></li>
                             <li><span>Description of event and activities: </span><?php if(isset($eventDesc)){echo $eventDesc;} ?></li>
+                            <li><span>Updates to be sent to: </span><?php if(isset($email)){echo $email;} ?></li>
                         </ul>
                         <p>By submitting this form, I affirm the following:</p>
                         <p class="chkbx-ind"><input id="adult" name="adult" type="checkbox" required><label for="adult">I am a legal adult.</label></p>
+                        <p class="chkbx-ind"><input id="contact" name="contact" type="checkbox" required><label for="contact">I agree to receive updates via the email address provided.</label></p>
                         <p class="chkbx-ind"><input id="permission" name="permission" type="checkbox" required><label for="permission">I give permission for my child or youth to participate in the event and activities listed above (unless noted) and authorize the adult leaders supervising this event to administer emergency treatment to the above named participant for any accident or illness and to act in my stead in approving necessary medical care. This authorization shall cover this event and travel to and from this event.</label></p>
                         <p class="chkbx-ind"><input id="responsibility" name="responsibility" type="checkbox" required><label for="responsibility">The participant is responsible for his or her own conduct and is aware of and agrees to abide by Church standards, camp or event safety rules, and other pertinent instructions. Participants’ conduct and interactions should abide by Church standards and exemplify Christlike behavior. Parents and participants should understand that participation in an activity is not a right but a privilege that can be revoked if they behave inappropriately or if they pose a risk to themselves or others.</label></p>
                         <div class="fields">
@@ -67,7 +69,6 @@
                 </div>
                 <input id="eventId" name="eventId" type="hidden" <?php if(isset($participantSig)){echo "value='$participantSig'";} ?> >
                 <input id="eventId" name="eventId" type="hidden" <?php if(isset($guardianSig)){echo "value='$guardianSig'";} ?> >
-
                 <input id="eventId" name="eventId" type="hidden" <?php if(isset($eventId)){echo "value='$eventId'";} ?> >
                 <input id="eventDate" name="eventDate" type="hidden" <?php if(isset($eventDate)){echo "value='$eventDate'";} ?> >
                 <input id="eventDesc" name="eventDesc" type="hidden" <?php if(isset($eventDesc)){echo "value='$eventDesc'";} ?> >
@@ -79,6 +80,7 @@
                 <input id="ward" name="ward" type="hidden" <?php if(isset($ward)){echo "value='$ward'";} ?> >
                 <input id="participantDOB" name="participantDOB" type="hidden" <?php if(isset($participantDOB)){echo "value='$participantDOB'";} ?> >
                 <input id="participantAge" name="participantAge" type="hidden" <?php if(isset($participantAge)){echo "value='$participantAge'";} ?> >
+                <input id="email" name="email" type="hidden" <?php if(isset($email)){echo "value='$email'";} ?> >
                 <input id="primTel" name="primTel" type="hidden" <?php if(isset($primTel)){echo "value='$primTel'";} ?> >
                 <input id="primTelType" name="primTelType" type="hidden" <?php if(isset($primTelType)){echo "value='$primTelType'";} ?> >
                 <input id="secTel" name="secTel" type="hidden" <?php if(isset($secTel)){echo "value='$secTel'";} ?>>

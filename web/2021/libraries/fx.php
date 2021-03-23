@@ -12,6 +12,12 @@ function checkFloat($chkVal){
     return NULL;
 }
 
+function checkEmail($chkVal){
+    $chkVal = filter_var($chkVal, FILTER_VALIDATE_EMAIL);
+    if($chkVal){ return $chkVal; } 
+    return NULL;
+}
+
 function checkMinValue($chkVal, $minValue){
     if($chkVal >= $minValue){ return $chkVal; } 
     return NULL;

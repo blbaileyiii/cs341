@@ -20,6 +20,7 @@
                         unset($_SESSION['message']);
                 }
             ?>
+            <p>Participants must be turning 14 this year or older.</p>
             <p>All Adult and Youth Participants are required to register by submitting a valid Permission and Medical Release Form.</p>
             <ul>
                 <li>Please fill out all required fields below. Note: Gray fields will be filled out automatically.</li>
@@ -96,6 +97,10 @@
                     <div class="fields">
                         <label for="participantAge"><span>Age</span></label> 
                         <input id="participantAge" name="participantAge" type="number" min="11" placeholder="Invalid Birthday" <?php if(isset($participantAge)){echo "value='$participantAge'";} ?> readonly>
+                    </div>
+                    <div class="fields">
+                        <label for="email"><span>Email (If under 19, must be legal parent or guardian)</span><span class="field-tip">Required</span></label> 
+                        <input id="email" name="email" type="email" <?php if(isset($email)){echo "value='$email'";} ?> required>
                     </div>
                     <div class="fields">
                         <label for="primTel"><span>Primary telephone number</span><span class="field-tip">Required</span></label>

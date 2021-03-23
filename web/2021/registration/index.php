@@ -24,6 +24,7 @@ switch($action){
         $participantName = filter_input(INPUT_POST, 'participantName', FILTER_SANITIZE_STRING);
         $ward = filter_input(INPUT_POST, 'ward', FILTER_SANITIZE_STRING);
         $participantDOB = filter_input(INPUT_POST, 'participantDOB', FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $primTel = filter_input(INPUT_POST, 'primTel', FILTER_SANITIZE_STRING);
         $primTelType = filter_input(INPUT_POST, 'primTelType', FILTER_SANITIZE_STRING);
         $secTel = filter_input(INPUT_POST, 'secTel', FILTER_SANITIZE_STRING);
@@ -65,6 +66,7 @@ switch($action){
         // Validate form data
         $eventId = checkInt($eventId);
         $participantDOB = checkIsDate($participantDOB);
+        $email = checkEmail($email);
         $primTel = checkTel($primTel);
         $secTel = checkTel($secTel);
         $emerPrimTel = checkTel($emerPrimTel);
@@ -146,7 +148,7 @@ switch($action){
             exit; 
         }
 
-        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
+        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $events = getEvents(2021);
             $eventList = buildEventList($events);
@@ -166,6 +168,7 @@ switch($action){
         $participantName = filter_input(INPUT_POST, 'participantName', FILTER_SANITIZE_STRING);
         $ward = filter_input(INPUT_POST, 'ward', FILTER_SANITIZE_STRING);
         $participantDOB = filter_input(INPUT_POST, 'participantDOB', FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $primTel = filter_input(INPUT_POST, 'primTel', FILTER_SANITIZE_STRING);
         $primTelType = filter_input(INPUT_POST, 'primTelType', FILTER_SANITIZE_STRING);
         $secTel = filter_input(INPUT_POST, 'secTel', FILTER_SANITIZE_STRING);
@@ -209,6 +212,7 @@ switch($action){
         // Validate form data
         $eventId = checkInt($eventId);
         $participantDOB = checkIsDate($participantDOB);
+        $email = checkEmail($email);
         $primTel = checkTel($primTel);
         $secTel = checkTel($secTel);
         $emerPrimTel = checkTel($emerPrimTel);
@@ -293,7 +297,7 @@ switch($action){
             exit; 
         }
 
-        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig) || empty($participantESig) || empty($guardianESig))){
+        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig) || empty($participantESig) || empty($guardianESig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $events = getEvents(2021);
             $eventList = buildEventList($events);
@@ -303,7 +307,7 @@ switch($action){
         }
 
         // Insert form data
-        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $participantESig, $guardianESig);
+        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $participantESig, $guardianESig);
         //$regId = false; // Testing only
 
         // Validate Insert
