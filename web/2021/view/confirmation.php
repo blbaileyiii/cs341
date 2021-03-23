@@ -63,8 +63,12 @@
                 <div class="non-fields">
                         <button name="action" type="submit" value="Register"><span>Register Participant</span></button>
                 </div>
-                <fieldset>
-                    <legend>Event Details</legend>
+
+
+
+
+
+
                     <div class="fields">
                         <label for="eventId"><span>Event</span><span class="field-tip">Required</span></label>
                         <select id="eventId" name="eventId" required>
@@ -78,37 +82,28 @@
                             ?>
                         </select>
                     </div>
-                    <div class="fields">
-                        <label for="eventDate"><span>Date(s) of event</span></label> 
-                        <input id="eventDate" name="eventDate" type="date" <?php if(isset($eventDate)){echo "value='$eventDate'";} ?> readonly>
-                    </div>
-                    <div class="fields">
-                        <label for="eventDesc"><span>Describe event and activities (please be specific):</span></label>
+
+
+
+                        <input id="eventDate" name="eventDate" type="hidden" <?php if(isset($eventDate)){echo "value='$eventDate'";} ?> >
+
                         <textarea id="eventDesc" name="eventDesc" readonly><?php if(isset($eventDesc)){echo $eventDesc;} ?></textarea>
-                    </div>
-                    <div class="fields">
-                        <label for="stake"><span>Stake</span></label> 
-                        <input id="stake" name="stake" type="text" value="Hacienda Heights California Stake" <?php if(isset($stake)){echo "value='$stake'";} ?> readonly>
-                    </div>
-                    <div class="fields">
-                        <label for="eventLeaderName"><span>Event or activity leader</span></label> 
-                        <input id="eventLeaderName" name="eventLeaderName" type="text" <?php if(isset($eventLeaderName)){echo "value='$eventLeaderName'";} ?> readonly>
-                    </div>
-                    <div class="fields">
-                        <label for="eventLeaderPhone"><span>Event or activity leader’s phone number</span></label> 
-                        <input id="eventLeaderPhone" name="eventLeaderPhone" type="tel" <?php if(isset($eventLeaderPhone)){echo "value='$eventLeaderPhone'";} ?> readonly>
-                    </div>
-                    <div class="fields">
-                        <label for="eventLeaderEmail"><span>Event or activity leader’s email</span></label> 
-                        <input id="eventLeaderEmail" name="eventLeaderEmail" type="email" <?php if(isset($eventLeaderEmail)){echo "value='$eventLeaderEmail'";} ?> readonly>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Participant Information</legend>
-                    <div class="fields">
-                        <label for="participantName"><span>Participant</span><span class="field-tip">Required</span></label> 
-                        <input id="participantName" name="participantName" type="text" <?php if(isset($participantName)){echo "value='$participantName'";} ?> required>
-                    </div>
+
+
+
+
+                        <input id="stake" name="stake" type="hidden" <?php if(isset($stake)){echo "value='$stake'";} ?> >
+
+
+                        <input id="eventLeaderName" name="eventLeaderName" type="hidden" <?php if(isset($eventLeaderName)){echo "value='$eventLeaderName'";} ?> >
+
+                        <input id="eventLeaderPhone" name="eventLeaderPhone" type="hidden" <?php if(isset($eventLeaderPhone)){echo "value='$eventLeaderPhone'";} ?> >
+
+                        <input id="eventLeaderEmail" name="eventLeaderEmail" type="hidden" <?php if(isset($eventLeaderEmail)){echo "value='$eventLeaderEmail'";} ?> >
+
+                        <input id="participantName" name="participantName" type="hidden" <?php if(isset($participantName)){echo "value='$participantName'";} ?> >
+
+
                     <div class="fields">
                         <label for="ward"><span>Ward</span><span class="field-tip">Required</span></label>
                         <select id="ward" name="ward" required>
@@ -123,18 +118,13 @@
                             <option value="ws" <?php if(isset($ward) && $ward=="ws"){echo "selected";} ?>>Woodside</option>
                         </select>
                     </div>
-                    <div class="fields">
-                        <label for="participantDOB"><span>Date of birth</span></label> 
-                        <input id="participantDOB" name="participantDOB" type="date" max="2007-12-31" <?php if(isset($participantDOB)){echo "value='$participantDOB'";} ?> required>
-                    </div>
-                    <div class="fields">
-                        <label for="participantAge"><span>Age</span></label> 
-                        <input id="participantAge" name="participantAge" type="number" min="11" placeholder="Invalid Birthday" <?php if(isset($participantAge)){echo "value='$participantAge'";} ?> readonly>
-                    </div>
-                    <div class="fields">
-                        <label for="primTel"><span>Primary telephone number</span><span class="field-tip">Required</span></label>
-                        <input id="primTel" name="primTel" type="tel" <?php if(isset($primTel)){echo "value='$primTel'";} ?> required> 
-                    </div>
+
+                        <input id="participantDOB" name="participantDOB" type="hidden" <?php if(isset($participantDOB)){echo "value='$participantDOB'";} ?> >
+
+                        <input id="participantAge" name="participantAge" type="hidden" <?php if(isset($participantAge)){echo "value='$participantAge'";} ?> >
+
+                        <input id="primTel" name="primTel" type="hidden" <?php if(isset($primTel)){echo "value='$primTel'";} ?> > 
+
                     <div class="fields-radio-alt">
                         <div class="inline-block">
                             <input id="primTelCell" name="primTelType" type="radio" value="cell" <?php if(isset($primTelType) && $primTelType=="cell"){echo "checked";} else {echo "checked";} ?> required>
@@ -149,10 +139,9 @@
                             <label for="primTelWork"><span>Work</span></label>
                         </div>
                     </div>
-                    <div class="fields">
-                        <label for="secTel"><span>Secondary telephone number</span></label> 
-                        <input id="secTel" name="secTel" type="tel" <?php if(isset($secTel)){echo "value='$secTel'";} ?>>
-                    </div>
+
+                        <input id="secTel" name="secTel" type="hidden" <?php if(isset($secTel)){echo "value='$secTel'";} ?>>
+
                     <div class="fields-radio-alt">
                         <div class="inline-block">
                             <input id="secTelCell" name="secTelType" type="radio" value="cell" <?php if(isset($secTelType) && $secTelType=="cell"){echo "checked";} else {echo "checked";} ?>>
@@ -167,26 +156,18 @@
                             <label for="secTelWork"><span>Work</span></label>
                         </div>
                     </div>                
-                    <div class="fields">
-                        <label for="participantAddress"><span>Address</span><span class="field-tip">Required</span></label> 
-                        <input id="participantAddress" name="participantAddress" type="text" <?php if(isset($participantAddress)){echo "value='$participantAddress'";} ?> required>
-                    </div>
-                    <div class="fields">
-                        <label for="participantCity"><span>City</span><span class="field-tip">Required</span></label> 
-                        <input id="participantCity" name="participantCity" type="text" <?php if(isset($participantCity)){echo "value='$participantCity'";} ?> required>
-                    </div>
-                    <div class="fields">
-                        <label for="participantState"><span>State or province</span><span class="field-tip">Required</span></label> 
-                        <input id="participantState" name="participantState" type="text" <?php if(isset($participantState)){echo "value='$participantState'";} ?> required>
-                    </div>
-                    <div class="fields">
-                        <label for="emergencyContact"><span>Emergency contact (If under 19, must be legal parent or guardian)</span><span class="field-tip">Required</span></label> 
-                        <input id="emergencyContact" name="emergencyContact" type="text" <?php if(isset($emergencyContact)){echo "value='$emergencyContact'";} ?> required>
-                    </div>
-                    <div class="fields">
-                        <label for="emerPrimTel"><span>Primary telephone number</span><span class="field-tip">Required</span></label> 
-                        <input id="emerPrimTel" name="emerPrimTel" type="tel" <?php if(isset($emerPrimTel)){echo "value='$emerPrimTel'";} ?> required>
-                    </div>
+
+                        <input id="participantAddress" name="participantAddress" type="hidden" <?php if(isset($participantAddress)){echo "value='$participantAddress'";} ?> >
+
+                        <input id="participantCity" name="participantCity" type="hidden" <?php if(isset($participantCity)){echo "value='$participantCity'";} ?> >
+
+                        <input id="participantState" name="participantState" type="hidden" <?php if(isset($participantState)){echo "value='$participantState'";} ?> >
+
+                        <input id="emergencyContact" name="emergencyContact" type="hidden" <?php if(isset($emergencyContact)){echo "value='$emergencyContact'";} ?> >
+
+                        <input id="emerPrimTel" name="emerPrimTel" type="hidden" <?php if(isset($emerPrimTel)){echo "value='$emerPrimTel'";} ?> >
+
+
                     <div class="fields-radio-alt">
                         <div class="inline-block">    
                             <input id="emerPrimTelCell" name="emerPrimTelType" type="radio" value="cell" <?php if(isset($emerPrimTelType) && $emerPrimTelType=="cell"){echo "checked";} else {echo "checked";} ?> required>
@@ -201,10 +182,9 @@
                             <label for="emerPrimTelWork"><span>Work</span></label>
                         </div>
                     </div>
-                    <div class="fields">
-                        <label for="emerSecTel"><span>Secondary telephone number</span></label> 
-                        <input id="emerSecTel" name="emerSecTel" type="tel" <?php if(isset($emerSecTel)){echo "value='$emerSecTel'";} ?>>
-                    </div>
+
+                        <input id="emerSecTel" name="emerSecTel" type="hidden" <?php if(isset($emerSecTel)){echo "value='$emerSecTel'";} ?>>
+
                     <div class="fields-radio-alt">
                         <div class="inline-block">    
                             <input id="emerSecTelCell" name="emerSecTelType" type="radio" value="cell" <?php if(isset($emerSecTelType) && $emerSecTelType=="cell"){echo "checked";} else {echo "checked";} ?>>
@@ -219,9 +199,8 @@
                             <label for="emerSecTelWork"><span>Work</span></label>
                         </div>
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Medical Information</legend>
+
+
                     <div class="fields-radio">
                         <div>
                             <div>Does the participant require a special diet?</div>
@@ -234,7 +213,6 @@
                                 <label for="specialDietN"><span>No</span></label>
                             </div>
                         </div>
-                        <span class="field-tip">Required</span>
                     </div> 
                     <div class="fields">
                         <label for="specialDietTxt"><span>If yes, please explain the dietary restrictions:</span><?php if(isset($specialDiet) && $specialDiet=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
@@ -252,7 +230,6 @@
                                 <label for="allergiesN"><span>No</span></label>
                             </div>
                         </div>
-                        <span class="field-tip">Required</span>
                     </div>
                     <div class="fields">
                         <label for="allergiesTxt"><span>If yes, please list the allergies:</span><?php if(isset($allergies) && $allergies=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
@@ -270,7 +247,6 @@
                                 <label for="medicationN"><span>No</span></label>
                             </div>
                         </div>
-                        <span class="field-tip">Required</span>
                     </div>
                     <div class="fields-radio">
                         <div>
@@ -283,7 +259,6 @@
                                 <input id="selfMedicateN" name="selfMedicate" type="radio" value="n" <?php if(isset($selfMedicate) && $selfMedicate=="n"){echo "checked";} ?> <?php if(isset($medication) && $medication != "y"){echo "disabled";} elseif(!isset($medication)){echo "disabled";} ?>>
                                 <label for="selfMedicateN"><span>No</span></label>
                             </div>
-                            <span class="special-instructions">If no, please contact the event or activity leader directly.</span>
                         </div>
                         <?php if(isset($medication) && $medication=="y"){echo "<span class='field-tip'>Required</span>";} ?>                        
                     </div>
@@ -334,14 +309,13 @@
                         <label for="limitations"><span>Identify any other limits, restrictions, or disabilities that could prevent the participant from fully participating in the event or activity:</span></label> 
                         <textarea id="limitations" name="limitations"><?php if(isset($limitations)){echo $limitations;} ?></textarea>
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Other Accommodations or Special Needs</legend>
+
+
                     <div class="fields">
                         <label for="considerations"><span>Identify any other needs or considerations the participant has that the event or activity planner should be aware of:</span></label> 
                         <textarea id="considerations" name="considerations"><?php if(isset($considerations)){echo $considerations;} ?></textarea>
                     </div>
-                </fieldset>
+
             </form>
         </section>
     </main>
@@ -365,6 +339,6 @@
                     }
         ?>
     </script>
-    <script type="module" src="/2021/js/registration.js"></script>
+    <!-- <script type="module" src="/2021/js/registration.js"></script> -->
 </body>
 </html>
