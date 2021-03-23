@@ -51,6 +51,7 @@ for (camp in camps){
   let timeDiv = document.createElement('div');
   let dateDiv = document.createElement('div');
   let registerDiv = document.createElement('div');
+  let a = document.createElement('a');
 
   campDiv.classList.add('countdown');
   timeDiv.classList.add('time-block');
@@ -66,8 +67,16 @@ for (camp in camps){
   dateDiv.innerHTML = "<div class='date'>" + camps[camp].datestr + "</div>";
 
   registerDiv.classList.add('register-block');
-  registerDiv.innerHTML = "<a class='button' href='/2021/registration' title='Registration'>Register</a>"
-  
+
+  let linkText = document.createTextNode("Register");
+  a.appendChild(linkText);
+  a.title = "Register";
+  a.href = "/2021/registration";
+  a.classList.add('button')
+  a.addEventListener('click', ()=>{ this.style.transform = scale(0.9); })
+  a.addEventListener('clickup', ()=>{ this.style.transform = scale(1.0); })
+
+  registerDiv.appendChild(a);
   campDiv.appendChild(timeDiv);
   campDiv.appendChild(dateDiv);
   campDiv.appendChild(registerDiv);
