@@ -350,19 +350,18 @@
     <?php //echo $_SESSION['participantid']; ?>
     <script>
         <?php echo $eventScript; ?>
-    </script>    
-    <script>
-        <?php
-                    if (isset($_SESSION['participantid']) && isset($_SESSION['participant']) && isset($_SESSION['eventid'])) {
-                        echo "const participant = {'participantid': '$_SESSION[participantid]', 'name': '$_SESSION[participant]', 'eventid': '$_SESSION[eventid]'};";
-                        unset($_SESSION['participantid']);
-                        unset($_SESSION['participant']);
-                        unset($_SESSION['eventid']);
-                    } else {
-                        echo "const participant = null;";
-                    }
-        ?>
     </script>
+    <?php
+        if (isset($_SESSION['participantid']) && isset($_SESSION['participant']) && isset($_SESSION['eventid'])) {
+            $setParticipant = "const participant = {'id': '$_SESSION[participantid]', 'p_name': '$_SESSION[participant]', 'event_id': '$_SESSION[eventid]'};";
+            unset($_SESSION['participantid']);
+            unset($_SESSION['participant']);
+            unset($_SESSION['eventid']);
+        } else {
+            $setParticipant = "const participant = null;";
+        }
+    ?>
+    <script><?php echo $setParticipant; ?></script>
     <script type="module" src="/2021/js/registration.js"></script>
 </body>
 </html>
