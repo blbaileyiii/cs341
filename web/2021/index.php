@@ -6,7 +6,6 @@ session_start();
 // Get the database connection file
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
 // Get the registration model for use as needed
-require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/reg-model.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/json-model.php';
 // Get the fxs for valiation and file building
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';

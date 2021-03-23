@@ -3,34 +3,6 @@
  * HHSCAMPS Registration Model
  */
 
-/*
-function getEvents($eventYear) {
-    try {
-        $db = hhConnect();
-
-        $sql = 
-        'SELECT *
-        FROM hhstake.events AS e
-        WHERE EXTRACT(YEAR FROM e."eventDate") = :eventYear
-        ORDER BY e."eventId"';
-
-        $sqlVarArray = array(':eventYear' => $eventYear);
-
-        $stmt = $db->prepare($sql);
-        $stmt->execute($sqlVarArray);
-        $eventSQL = $stmt->fetchAll();
-
-        // The next line closes the interaction with the database 
-        $stmt->closeCursor();
-
-        return $eventSQL;
-
-    } catch(PDOException $ex) {
-        echo $sql . "<br>" . $ex->getMessage();
-    }
-}
-*/
-
 // Will handle site registrations.
 function regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $participantESig, $guardianESig){
     try {
