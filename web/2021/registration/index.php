@@ -246,6 +246,7 @@ switch($action){
         $participantESig = checkSig($participantESig);
         $guardianESig = checkSig($guardianESig);
 
+        $adult = "lee";
         // $selfMedicate
         $chkSelfMedicate = checkDepBool($selfMedicate, $medication);
 
