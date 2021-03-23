@@ -460,12 +460,6 @@ a.button:hover {
     border-color: var(--border-intense);
 }
 
-a.button:hover {
-    background: var(--on-nav-bg);
-    color: var(--logo-highlight);
-    border-color: var(--border-intense);
-}
-
 a.button:active {
     transform: scale(0.9);
 }
