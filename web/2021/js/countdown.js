@@ -68,6 +68,7 @@ for (camp in camps){
   
   campDiv.appendChild(timeDiv);
   campDiv.appendChild(dateDiv);
+  campDiv.appendChild(registerDiv);
   countdownEl.appendChild(campDiv);
 }
 
