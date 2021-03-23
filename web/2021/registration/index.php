@@ -65,6 +65,8 @@ switch($action){
         $eventList = buildEventList($events);
         $eventScript = buildEventScript($events);
 
+        $participantAge = getAge($participantDOB);
+
         
         echo "eventId:". $eventId . "<br>";
         echo "participantName:". $participantName . "<br>";
