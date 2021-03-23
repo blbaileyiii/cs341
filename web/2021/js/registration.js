@@ -3,27 +3,6 @@ import {saveLS, loadLS} from './ls.js';
 
 let participants = new Participants();
 
-if (participants.list.length > 0) {
-    let registrantDiv = document.querySelector('.registrantDiv');
-    let eventSelect = document.getElementById('eventId');
-
-    let registered = document.createElement("div");
-    registered.classList.add('registered');
-
-    let ul = document.createElement('ul');
-
-    participants.list.forEach(participant => {
-        let li = document.createElement('li');
-        console.log('option[value=' + participant.eventId + ']');
-        let event = eventSelect.querySelector('option[value=' + participant.eventId + ']').textContent;
-        li.innerHTML = '<span>Name: '+ participant.name + '</span><span>Event: ' + event + '</span>';
-        ul.appendChild(li);
-    });
-
-    registered.appendChild(ul);
-    registrantDiv.appendChild(registered);
-}
-
 document.getElementById('participantDOB').addEventListener('change', function() {
     let dOB = new Date(this.valueAsNumber);
     let ageInput = document.getElementById('participantAge');
@@ -142,3 +121,24 @@ if(participant) {
 }
 
 console.log(loadLS('participants'));
+
+if (participants.list.length > 0) {
+    let registrantDiv = document.querySelector('.registrantDiv');
+    let eventSelect = document.getElementById('eventId');
+
+    let registered = document.createElement("div");
+    registered.classList.add('registered');
+
+    let ul = document.createElement('ul');
+
+    participants.list.forEach(participant => {
+        let li = document.createElement('li');
+        console.log('option[value=' + participant.eventId + ']');
+        let event = eventSelect.querySelector('option[value=' + participant.eventId + ']').textContent;
+        li.innerHTML = '<span>Name: '+ participant.name + '</span><span>Event: ' + event + '</span>';
+        ul.appendChild(li);
+    });
+
+    registered.appendChild(ul);
+    registrantDiv.appendChild(registered);
+}
