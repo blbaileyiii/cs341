@@ -303,7 +303,7 @@ switch($action){
         echo "contact: ". $contact . "<br>";
         echo "permission: ". $permission . "<br>";
         echo "responsibility: ". $responsibility . "<br>";
-        echo "participantESig: ". $participantSig . "<br>";
+        echo "participantESig: ". $participantESig . "<br>";
         echo "guardianESig: ". $guardianSig . "<br>";
         
 
