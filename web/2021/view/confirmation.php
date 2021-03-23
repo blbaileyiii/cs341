@@ -24,7 +24,7 @@
                 <div>
                     <fieldset>
                         <legend>Re-Affirm Permission</legend>
-                        <ul>
+                        <ul class="re-affirm-details">
                             <li><span>Event: </span>
                                 <select class='select-disabled' disabled>
                                     <?php

@@ -585,6 +585,16 @@ p.legal-sm {
     margin: 0.5rem 0.75rem;
 }
 
+ul.re-affirm-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.re-affirm-details li {
+    margin: 1rem 0;
+}
+
 .select-disabled {
     -moz-appearance: none;
     -webkit-appearance: none;
