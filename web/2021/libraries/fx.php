@@ -87,6 +87,7 @@ function buildEventList($events){
     for ($x = 0; $x <= count($events); $x++) {
         $eventList .= "<option value='{$events[$x]['id']}'>{$events[$x]['name']}</option>";
     }
+    echo $events;
     echo $eventList;
     return $eventList;
 }
