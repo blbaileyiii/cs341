@@ -2,7 +2,6 @@
 /*
  * Master Controller
  */
-session_start();
 // Get the database connection file
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
 // Get the registration model for use as needed
