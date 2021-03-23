@@ -646,9 +646,9 @@ select:invalid {
     border-radius: 0.4rem;
 }
 
-input:invalid,
-textarea:invalid,
-select:invalid {
+input:valid,
+textarea:valid,
+select:valid {
     box-shadow: 0 0 0 3px #c3f73a;
     border-radius: 0.4rem;
 }
