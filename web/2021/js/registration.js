@@ -137,7 +137,7 @@ if (participants.list.length > 0) {
         //console.log('option[value=' + participant.eventid + ']');
         let event = document.querySelector('#eventId option[value=2]');
         //let event = eventSelect.querySelector('option[value=' + participant.eventid + ']').textContent;
-        li.innerHTML = '<span>Name: '+ participant.name + '</span><span>Event: ' + event + '</span>';
+        li.innerHTML = '<span>Name: '+ participant.name + '</span><span>Event: ' + event.textContent + '</span>';
         ul.appendChild(li);
     });
 
