@@ -78,7 +78,6 @@ export default class Equipment {
         equipDiv.classList.add('equipment-lists-standard');
 
         let pDiv = document.createElement('div');
-        pDiv.classList.add(participant.participantid);
 
         Object.keys(this.equipmentList).forEach(key => {
             let h2 = document.createElement('h2');
