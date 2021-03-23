@@ -21,6 +21,30 @@
                 }
             ?>
             <form class="form" method="post">
+                <div>
+                    <fieldset>
+                        <legend>Permission</legend>
+                        <p>I give permission for my child or youth to participate in the event and activities listed above (unless noted) and authorize the adult leaders supervising this event to administer emergency treatment to the above named participant for any accident or illness and to act in my stead in approving necessary medical care. This authorization shall cover this event and travel to and from this event.</p>
+                        <p>The participant is responsible for his or her own conduct and is aware of and agrees to abide by Church standards, camp or event safety rules, and other pertinent instructions. Participants’ conduct and interactions should abide by Church standards and exemplify Christlike behavior. Parents and participants should understand that participation in an activity is not a right but a privilege that can be revoked if they behave inappropriately or if they pose a risk to themselves or others.</p>
+                        <div class="fields">
+                            <label for="participantSig"><span>Participant’s signature</span><span class="field-tip">Required</span></label> 
+                            <input id="participantSig" name="participantSig" type="text" required>
+                        </div>
+                        <div class="fields">
+                            <label for="participantSigDate"><span>Date</span></label> 
+                            <input id="participantSigDate" name="participantSigDate" type="date" value="<?php echo date('Y-m-d') ?>" readonly required>
+                        </div>
+                        <div class="fields">
+                            <label for="guardianSig"><span>Parent or guardian's signature</span><?php if(isset($participantAge) && $participantAge >=19){ echo "";} else {echo "<span class='field-tip'>Required</span>";} ?></label> 
+                            <input id="guardianSig" name="guardianSig" type="text" <?php if(isset($participantAge) && $participantAge >= 19){echo "value='N/A - Adult Participant' readonly";} else { echo "required";} ?>>
+                        </div>
+                        <div class="fields">
+                            <label for="guardianSigDate"><span>Date</span></label> 
+                            <input id="guardianSigDate" name="guardianSigDate" type="date" value="<?php echo date('Y-m-d') ?>" readonly required>
+                        </div>
+                    </fieldset>
+                    <p class="legal-sm"><a href="https://www.churchofjesuschrist.org/bc/content/shared/content/english/pdf/callings/young-men/parental-permission-medical-release.pdf" title="Permission and Medical Release Form">Permission and Medical Release Form</a> © 2017, 2019 by Intellectual Reserve, Inc. All rights reserved. 5/19. PD60004035 000</p>
+                </div>
                 <fieldset>
                     <legend>Event Details</legend>
                     <div class="fields">
@@ -300,30 +324,6 @@
                         <textarea id="considerations" name="considerations"><?php if(isset($considerations)){echo $considerations;} ?></textarea>
                     </div>
                 </fieldset>
-                <div>
-                    <fieldset>
-                        <legend>Permission</legend>
-                        <p>I give permission for my child or youth to participate in the event and activities listed above (unless noted) and authorize the adult leaders supervising this event to administer emergency treatment to the above named participant for any accident or illness and to act in my stead in approving necessary medical care. This authorization shall cover this event and travel to and from this event.</p>
-                        <p>The participant is responsible for his or her own conduct and is aware of and agrees to abide by Church standards, camp or event safety rules, and other pertinent instructions. Participants’ conduct and interactions should abide by Church standards and exemplify Christlike behavior. Parents and participants should understand that participation in an activity is not a right but a privilege that can be revoked if they behave inappropriately or if they pose a risk to themselves or others.</p>
-                        <div class="fields">
-                            <label for="participantSig"><span>Participant’s signature</span><span class="field-tip">Required</span></label> 
-                            <input id="participantSig" name="participantSig" type="text" required>
-                        </div>
-                        <div class="fields">
-                            <label for="participantSigDate"><span>Date</span></label> 
-                            <input id="participantSigDate" name="participantSigDate" type="date" value="<?php echo date('Y-m-d') ?>" readonly required>
-                        </div>
-                        <div class="fields">
-                            <label for="guardianSig"><span>Parent or guardian's signature</span><?php if(isset($participantAge) && $participantAge >=19){ echo "";} else {echo "<span class='field-tip'>Required</span>";} ?></label> 
-                            <input id="guardianSig" name="guardianSig" type="text" <?php if(isset($participantAge) && $participantAge >= 19){echo "value='N/A - Adult Participant' readonly";} else { echo "required";} ?>>
-                        </div>
-                        <div class="fields">
-                            <label for="guardianSigDate"><span>Date</span></label> 
-                            <input id="guardianSigDate" name="guardianSigDate" type="date" value="<?php echo date('Y-m-d') ?>" readonly required>
-                        </div>
-                    </fieldset>
-                    <p class="legal-sm"><a href="https://www.churchofjesuschrist.org/bc/content/shared/content/english/pdf/callings/young-men/parental-permission-medical-release.pdf" title="Permission and Medical Release Form">Permission and Medical Release Form</a> © 2017, 2019 by Intellectual Reserve, Inc. All rights reserved. 5/19. PD60004035 000</p>
-                </div>
                 <div class="non-fields">
                         <button name="action" type="submit" value="Register"><span>Register Participant</span></button>
                 </div>

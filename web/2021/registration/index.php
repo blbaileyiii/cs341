@@ -18,6 +18,55 @@ if ($action == NULL) {
 }
 
 switch($action){
+    case 'confirm':
+        // Sanitize form data
+        $eventId = filter_input(INPUT_POST, 'eventId', FILTER_SANITIZE_NUMBER_INT);
+        $participantName = filter_input(INPUT_POST, 'participantName', FILTER_SANITIZE_STRING);
+        $ward = filter_input(INPUT_POST, 'ward', FILTER_SANITIZE_STRING);
+        $participantDOB = filter_input(INPUT_POST, 'participantDOB', FILTER_SANITIZE_STRING);
+        $primTel = filter_input(INPUT_POST, 'primTel', FILTER_SANITIZE_STRING);
+        $primTelType = filter_input(INPUT_POST, 'primTelType', FILTER_SANITIZE_STRING);
+        $secTel = filter_input(INPUT_POST, 'secTel', FILTER_SANITIZE_STRING);
+        $secTelType = filter_input(INPUT_POST, 'secTelType', FILTER_SANITIZE_STRING);
+        $participantAddress = filter_input(INPUT_POST, 'participantAddress', FILTER_SANITIZE_STRING);
+        $participantCity = filter_input(INPUT_POST, 'participantCity', FILTER_SANITIZE_STRING);
+        $participantState = filter_input(INPUT_POST, 'participantState', FILTER_SANITIZE_STRING);
+        $emergencyContact = filter_input(INPUT_POST, 'emergencyContact', FILTER_SANITIZE_STRING);
+        $emerPrimTel = filter_input(INPUT_POST, 'emerPrimTel', FILTER_SANITIZE_STRING);
+        $emerPrimTelType = filter_input(INPUT_POST, 'emerPrimTelType', FILTER_SANITIZE_STRING);
+        $emerSecTel = filter_input(INPUT_POST, 'emerSecTel', FILTER_SANITIZE_STRING);
+        $emerSecTelType = filter_input(INPUT_POST, 'emerSecTelType', FILTER_SANITIZE_STRING);
+        $specialDiet = filter_input(INPUT_POST, 'specialDiet', FILTER_SANITIZE_STRING);
+        $specialDietTxt = filter_input(INPUT_POST, 'specialDietTxt', FILTER_SANITIZE_STRING);
+        $allergies = filter_input(INPUT_POST, 'allergies', FILTER_SANITIZE_STRING);
+        $allergiesTxt = filter_input(INPUT_POST, 'allergiesTxt', FILTER_SANITIZE_STRING);
+        $medication = filter_input(INPUT_POST, 'medication', FILTER_SANITIZE_STRING);
+        $selfMedicate = filter_input(INPUT_POST, 'selfMedicate', FILTER_SANITIZE_STRING);
+        $medicationList = filter_input(INPUT_POST, 'medicationList', FILTER_SANITIZE_STRING);
+        $chronicIllness = filter_input(INPUT_POST, 'chronicIllness', FILTER_SANITIZE_STRING);
+        $chronicIllnessTxt = filter_input(INPUT_POST, 'chronicIllnessTxt', FILTER_SANITIZE_STRING);
+        $serious = filter_input(INPUT_POST, 'serious', FILTER_SANITIZE_STRING);
+        $seriousTxt = filter_input(INPUT_POST, 'seriousTxt', FILTER_SANITIZE_STRING);
+        $limitations = filter_input(INPUT_POST, 'limitations', FILTER_SANITIZE_STRING);
+        $considerations = filter_input(INPUT_POST, 'considerations', FILTER_SANITIZE_STRING);
+        $participantSig = filter_input(INPUT_POST, 'participantSig', FILTER_SANITIZE_STRING);
+        $participantSigDate = filter_input(INPUT_POST, 'participantSigDate', FILTER_SANITIZE_STRING);
+        $guardianSig = filter_input(INPUT_POST, 'guardianSig', FILTER_SANITIZE_STRING);
+        $guardianSigDate = filter_input(INPUT_POST, 'guardianSigDate', FILTER_SANITIZE_STRING);
+
+        // Gray values are not sent on. They are set only to repopulate the gray fields if form validation fails.
+        $eventDate = filter_input(INPUT_POST, 'eventDate', FILTER_SANITIZE_STRING);
+        $eventDesc = filter_input(INPUT_POST, 'eventDesc', FILTER_SANITIZE_STRING);
+        $stake = filter_input(INPUT_POST, 'stake', FILTER_SANITIZE_STRING);
+        $eventLeaderName = filter_input(INPUT_POST, 'eventLeaderName', FILTER_SANITIZE_STRING);
+        $eventLeaderPhone = filter_input(INPUT_POST, 'eventLeaderPhone', FILTER_SANITIZE_STRING);
+        $eventLeaderEmail = filter_input(INPUT_POST, 'eventLeaderEmail', FILTER_SANITIZE_STRING);
+        $events = getEvents(2021);
+        $eventList = buildEventList($events);
+        $eventScript = buildEventScript($events);
+        
+        include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/confirmation.php';
+        break;
     case 'Register':
         // Sanitize form data
         $eventId = filter_input(INPUT_POST, 'eventId', FILTER_SANITIZE_NUMBER_INT);
@@ -170,54 +219,6 @@ switch($action){
             exit;
         }
 
-        break;
-    case 'confirm':
-        // Sanitize form data
-        $eventId = filter_input(INPUT_POST, 'eventId', FILTER_SANITIZE_NUMBER_INT);
-        $participantName = filter_input(INPUT_POST, 'participantName', FILTER_SANITIZE_STRING);
-        $ward = filter_input(INPUT_POST, 'ward', FILTER_SANITIZE_STRING);
-        $participantDOB = filter_input(INPUT_POST, 'participantDOB', FILTER_SANITIZE_STRING);
-        $primTel = filter_input(INPUT_POST, 'primTel', FILTER_SANITIZE_STRING);
-        $primTelType = filter_input(INPUT_POST, 'primTelType', FILTER_SANITIZE_STRING);
-        $secTel = filter_input(INPUT_POST, 'secTel', FILTER_SANITIZE_STRING);
-        $secTelType = filter_input(INPUT_POST, 'secTelType', FILTER_SANITIZE_STRING);
-        $participantAddress = filter_input(INPUT_POST, 'participantAddress', FILTER_SANITIZE_STRING);
-        $participantCity = filter_input(INPUT_POST, 'participantCity', FILTER_SANITIZE_STRING);
-        $participantState = filter_input(INPUT_POST, 'participantState', FILTER_SANITIZE_STRING);
-        $emergencyContact = filter_input(INPUT_POST, 'emergencyContact', FILTER_SANITIZE_STRING);
-        $emerPrimTel = filter_input(INPUT_POST, 'emerPrimTel', FILTER_SANITIZE_STRING);
-        $emerPrimTelType = filter_input(INPUT_POST, 'emerPrimTelType', FILTER_SANITIZE_STRING);
-        $emerSecTel = filter_input(INPUT_POST, 'emerSecTel', FILTER_SANITIZE_STRING);
-        $emerSecTelType = filter_input(INPUT_POST, 'emerSecTelType', FILTER_SANITIZE_STRING);
-        $specialDiet = filter_input(INPUT_POST, 'specialDiet', FILTER_SANITIZE_STRING);
-        $specialDietTxt = filter_input(INPUT_POST, 'specialDietTxt', FILTER_SANITIZE_STRING);
-        $allergies = filter_input(INPUT_POST, 'allergies', FILTER_SANITIZE_STRING);
-        $allergiesTxt = filter_input(INPUT_POST, 'allergiesTxt', FILTER_SANITIZE_STRING);
-        $medication = filter_input(INPUT_POST, 'medication', FILTER_SANITIZE_STRING);
-        $selfMedicate = filter_input(INPUT_POST, 'selfMedicate', FILTER_SANITIZE_STRING);
-        $medicationList = filter_input(INPUT_POST, 'medicationList', FILTER_SANITIZE_STRING);
-        $chronicIllness = filter_input(INPUT_POST, 'chronicIllness', FILTER_SANITIZE_STRING);
-        $chronicIllnessTxt = filter_input(INPUT_POST, 'chronicIllnessTxt', FILTER_SANITIZE_STRING);
-        $serious = filter_input(INPUT_POST, 'serious', FILTER_SANITIZE_STRING);
-        $seriousTxt = filter_input(INPUT_POST, 'seriousTxt', FILTER_SANITIZE_STRING);
-        $limitations = filter_input(INPUT_POST, 'limitations', FILTER_SANITIZE_STRING);
-        $considerations = filter_input(INPUT_POST, 'considerations', FILTER_SANITIZE_STRING);
-        $participantSig = filter_input(INPUT_POST, 'participantSig', FILTER_SANITIZE_STRING);
-        $participantSigDate = filter_input(INPUT_POST, 'participantSigDate', FILTER_SANITIZE_STRING);
-        $guardianSig = filter_input(INPUT_POST, 'guardianSig', FILTER_SANITIZE_STRING);
-        $guardianSigDate = filter_input(INPUT_POST, 'guardianSigDate', FILTER_SANITIZE_STRING);
-
-        // Gray values are not sent on. They are set only to repopulate the gray fields if form validation fails.
-        $eventDate = filter_input(INPUT_POST, 'eventDate', FILTER_SANITIZE_STRING);
-        $eventDesc = filter_input(INPUT_POST, 'eventDesc', FILTER_SANITIZE_STRING);
-        $stake = filter_input(INPUT_POST, 'stake', FILTER_SANITIZE_STRING);
-        $eventLeaderName = filter_input(INPUT_POST, 'eventLeaderName', FILTER_SANITIZE_STRING);
-        $eventLeaderPhone = filter_input(INPUT_POST, 'eventLeaderPhone', FILTER_SANITIZE_STRING);
-        $eventLeaderEmail = filter_input(INPUT_POST, 'eventLeaderEmail', FILTER_SANITIZE_STRING);
-        $events = getEvents(2021);
-        $eventList = buildEventList($events);
-        $eventScript = buildEventScript($events);
-        include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/confirmation.php';
         break;
     default:
         $events = getEvents(2021);
