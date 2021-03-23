@@ -135,7 +135,7 @@ if (participants.list.length > 0) {
         let li = document.createElement('li');
         console.log(eventSelect);
         //console.log('option[value=' + participant.eventid + ']');
-        let event = eventSelect.querySelector('option[value=2]').textContent;
+        let event = document.querySelector('#eventId option[value=2]');
         //let event = eventSelect.querySelector('option[value=' + participant.eventid + ']').textContent;
         li.innerHTML = '<span>Name: '+ participant.name + '</span><span>Event: ' + event + '</span>';
         ul.appendChild(li);
