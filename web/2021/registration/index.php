@@ -140,7 +140,9 @@ switch($action){
             exit; 
         }
 
-        if(!checkMinAge($participantDOB)){
+        if(checkMinAge($participantDOB)){
+            // Age is fine.
+        } else {
             $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
             $events = getEvents(2021);
             $eventList = buildEventList($events);
