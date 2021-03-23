@@ -15,6 +15,7 @@ if ($action == NULL) {
 
 switch($action){
     case 'getEvents':
+        echo getEventsJSON(2021);
         break;
     case 'getEquipment':
         echo getEquipmentJSON();
