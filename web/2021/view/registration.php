@@ -91,7 +91,7 @@
                     </div>
                     <div class="fields">
                         <label for="participantDOB"><span>Date of birth</span></label> 
-                        <input id="participantDOB" name="participantDOB" type="date" max="2008-01-01" <?php if(isset($participantDOB)){echo "value='$participantDOB'";} ?> required>
+                        <input id="participantDOB" name="participantDOB" type="date" max="2007-12-31" <?php if(isset($participantDOB)){echo "value='$participantDOB'";} ?> required>
                     </div>
                     <div class="fields">
                         <label for="participantAge"><span>Age</span></label> 
