@@ -646,6 +646,13 @@ select:invalid {
     border-radius: 0.4rem;
 }
 
+input:invalid,
+textarea:invalid,
+select:invalid {
+    box-shadow: 0 0 0 3px #c3f73a;
+    border-radius: 0.4rem;
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
