@@ -585,6 +585,13 @@ p.legal-sm {
     margin: 0.5rem 0.75rem;
 }
 
+.select-disabled {
+    /* for Firefox */ 
+    -moz-appearance: none; 
+    /* for Safari, Chrome, Opera */ 
+    -webkit-appearance: none; 
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
