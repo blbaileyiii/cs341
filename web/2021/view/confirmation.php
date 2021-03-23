@@ -36,7 +36,7 @@
                         </div>
                         <div class="fields">
                             <label for="guardianSig"><span>Parent or guardian's signature</span><?php if(isset($participantAge) && $participantAge >=19){ echo "";} else {echo "<span class='field-tip'>Required</span>";} ?></label> 
-                            <input id="guardianSig" name="guardianSig" type="text" <?php if(isset($guardianSig)){echo "placehold='$guardianSig'";} ?> <?php if(isset($participantAge) && $participantAge >= 19){echo "value='N/A - Adult Participant' readonly";} else { echo "required";} ?>>
+                            <input id="guardianSig" name="guardianSig" type="text" <?php if(isset($guardianSig)){echo "placeholder='$guardianSig'";} ?> <?php if(isset($participantAge) && $participantAge >= 19){echo "value='N/A - Adult Participant' readonly";} else { echo "required";} ?>>
                         </div>
                         <div class="fields">
                             <label for="guardianSigDate"><span>Date</span></label> 
