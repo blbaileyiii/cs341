@@ -127,7 +127,7 @@ if (participants.list.length > 0) {
     let eventSelect = document.getElementById('eventId');
 
     let h2 = document.createElement("h2");
-    h2.textContent = "Registered";
+    h2.textContent = "My Registration";
 
     let registered = document.createElement("div");
     registered.classList.add('registered');
