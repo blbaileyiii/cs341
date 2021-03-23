@@ -142,7 +142,7 @@ if (participants.list.length > 0) {
         });
         //let event = eventSelect.querySelector('option[value=' + participant.eventid + ']').textContent;
         li.innerHTML = participant.name + ' registered for ' + eventTxt;
-        ul.appendChild(li);
+        ol.appendChild(li);
     });
 
     registered.appendChild(ol);
