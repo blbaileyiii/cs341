@@ -333,7 +333,7 @@
                     <p class="legal-sm"><a href="https://www.churchofjesuschrist.org/bc/content/shared/content/english/pdf/callings/young-men/parental-permission-medical-release.pdf" title="Permission and Medical Release Form">Permission and Medical Release Form</a> © 2017, 2019 by Intellectual Reserve, Inc. All rights reserved. 5/19. PD60004035 000</p>
                 </div>
                 <div class="non-fields">
-                        <button name="action" type="submit" value="confirm"><span>Register Participant</span></button>
+                        <button name="action" type="submit" value="confirm"><span>Next: Confirmation</span></button>
                 </div>
             </form>
         </section>
