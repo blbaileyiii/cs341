@@ -143,6 +143,7 @@ switch($action){
         if(empty($participantDOB)){
             $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
             $events = getEventsJSON(2021);
+            $events = json_decode($events, true);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
@@ -152,6 +153,7 @@ switch($action){
         if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $events = getEventsJSON(2021);
+            $events = json_decode($events, true);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
@@ -159,6 +161,7 @@ switch($action){
         }
         
         $events = getEventsJSON(2021);
+        $events = json_decode($events, true);
         $eventList = buildEventList($events);
         $eventScript = buildEventScript($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/confirmation.php';
@@ -292,6 +295,7 @@ switch($action){
         if(empty($participantDOB)){
             $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
             $events = getEventsJSON(2021);
+            $events = json_decode($events, true);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
@@ -301,6 +305,7 @@ switch($action){
         if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig) || empty($participantESig) || empty($guardianESig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $events = getEventsJSON(2021);
+            $events = json_decode($events, true);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
@@ -323,6 +328,7 @@ switch($action){
         } else {
             $_SESSION['message'] = "<div class='alert'>Sorry, $participantName, but registration failed. Please try again.<br>If the problem persists please contact your Ward Leadership and/or the WebAdmin.</div>";
             $events = getEventsJSON(2021);
+            $events = json_decode($events, true);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
@@ -332,6 +338,7 @@ switch($action){
         break;
     default:
         $events = getEventsJSON(2021);
+        $events = json_decode($events, true);
         $eventList = buildEventList($events);
         $eventScript = buildEventScript($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
