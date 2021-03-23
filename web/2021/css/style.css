@@ -443,7 +443,7 @@ a.button {
     background: var(--btn-bg);
     color: var(--logo-highlight);
     border: 1px solid var(--border-intense);
-    border-radius: 0.25rem;
+    border-radius: 5rem;
     padding: 0.25rem;
 }
 

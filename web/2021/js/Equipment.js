@@ -77,6 +77,9 @@ export default class Equipment {
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.classList.add('equipment-lists-standard');
 
+        let pDiv = document.createElement('div');
+        pDiv.classList.add(participant.participantid);
+
         Object.keys(this.equipmentList).forEach(key => {
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
@@ -92,11 +95,13 @@ export default class Equipment {
                 ul.appendChild(li);
             });
 
-            equipDiv.innerHTML="";
-            equipDiv.appendChild(h2);
-            equipDiv.appendChild(ul);
+            
+            pDiv.appendChild(h2);
+            pDiv.appendChild(ul);
         });
 
+        equipDiv.innerHTML="";
+        equipDiv.appendChild(pDiv);
     }
 
     displayItemCheckList(participant) {
