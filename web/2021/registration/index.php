@@ -61,9 +61,6 @@ switch($action){
         $eventLeaderName = filter_input(INPUT_POST, 'eventLeaderName', FILTER_SANITIZE_STRING);
         $eventLeaderPhone = filter_input(INPUT_POST, 'eventLeaderPhone', FILTER_SANITIZE_STRING);
         $eventLeaderEmail = filter_input(INPUT_POST, 'eventLeaderEmail', FILTER_SANITIZE_STRING);
-        $events = getEvents(2021);
-        $eventList = buildEventList($events);
-        $eventScript = buildEventScript($events);
 
         $participantAge = getAge($participantDOB);
 
@@ -75,9 +72,6 @@ switch($action){
         echo "eventLeaderName: ". $eventLeaderName . "<br>";
         echo "eventLeaderPhone: ". $eventLeaderPhone . "<br>";
         echo "eventLeaderEmail: ". $eventLeaderEmail . "<br>";
-        echo "events: ". $events . "<br>";
-        echo "eventList: ". $eventList . "<br>";
-        echo "eventScript: ". $eventScript . "<br>";
         echo "participantAge: ". $participantAge . "<br>";
         echo "participantName: ". $participantName . "<br>";
         echo "ward: ". $ward . "<br>";
@@ -112,7 +106,9 @@ switch($action){
         echo "guardianSig: ". $guardianSig . "<br>";
         echo "guardianSigDate: ". $guardianSigDate . "<br>";
         
-
+        $events = getEvents(2021);
+        $eventList = buildEventList($events);
+        $eventScript = buildEventScript($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/confirmation.php';
         break;
     case 'Register':

@@ -4,7 +4,4 @@ echo "stake: ". $stake . "<br>";
 echo "eventLeaderName: ". $eventLeaderName . "<br>";
 echo "eventLeaderPhone: ". $eventLeaderPhone . "<br>";
 echo "eventLeaderEmail: ". $eventLeaderEmail . "<br>";
-echo "events: ". $events . "<br>";
-echo "eventList: ". $eventList . "<br>";
-echo "eventScript: ". $eventScript . "<br>";
 echo "participantAge: ". $participantAge . "<br>";
