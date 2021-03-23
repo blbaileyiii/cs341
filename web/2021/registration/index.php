@@ -232,10 +232,16 @@ switch($action){
         $secTelType = checkTelType($secTelType);
         $emerPrimTelType = checkTelType($emerPrimTelType);
         $emerSecTelType = checkTelType($emerSecTelType);
+        $specialDiet = checkBool($specialDiet);
         $specialDiet = checkBoolText($specialDiet,$specialDietTxt);
+        $allergies = checkBool($allergies);
         $allergies = checkBoolText($allergies,$allergiesTxt);
+        $medication = checkBool($medication);
         $medication = checkBoolText($medication,$medicationList);
+        $selfMedicate = checkBool($selfMedicate);
+        $chronicIllness = checkBool($chronicIllness);
         $chronicIllness = checkBoolText($chronicIllness,$chronicIllnessTxt);
+        $serious = checkBool($serious);
         $serious = checkBoolText($serious,$seriousTxt);
         $participantSig = checkSig($participantSig);
         $guardianSig = checkSig($guardianSig);
