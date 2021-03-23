@@ -438,6 +438,13 @@ fieldset {
     width: 100%;
 }
 
+a.button {
+    font-size: x-large;
+    background: var(--btn-bg);
+    color: var(--logo-highlight);
+    border: 1px solid var(--border-intense);
+}
+
 .non-fields button {
     width: 100%;
     padding: 0.25rem;
