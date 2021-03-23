@@ -136,10 +136,6 @@ switch($action){
         echo "considerations: ". $considerations . "<br>";
         echo "participantSig: ". $participantSig . "<br>";
         echo "participantSigDate: ". $participantSigDate . "<br>";
-        echo "adult: ". $adult . "<br>";
-        echo "contact: ". $contact . "<br>";
-        echo "permission: ". $permission . "<br>";
-        echo "responsibility: ". $responsibility . "<br>";
         echo "guardianSig: ". $guardianSig . "<br>";
         echo "guardianSigDate: ". $guardianSigDate . "<br>";
 
@@ -303,6 +299,14 @@ switch($action){
         echo "participantSigDate: ". $participantSigDate . "<br>";
         echo "guardianSig: ". $guardianSig . "<br>";
         echo "guardianSigDate: ". $guardianSigDate . "<br>";
+        echo "adult: ". $adult . "<br>";
+        echo "contact: ". $contact . "<br>";
+        echo "permission: ". $permission . "<br>";
+        echo "responsibility: ". $responsibility . "<br>";
+        echo "participantESig: ". $participantSig . "<br>";
+        echo "participantESigDate: ". $participantSigDate . "<br>";
+        echo "guardianESig: ". $guardianSig . "<br>";
+        echo "guardianESigDate: ". $guardianSigDate . "<br>";
         
 
         if(empty($participantDOB)){
