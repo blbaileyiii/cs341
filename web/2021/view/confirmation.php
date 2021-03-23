@@ -26,7 +26,7 @@
                         <legend>Re-Affirm Permission</legend>
                         <ul>
                             <li><span>Event: </span>
-                                <select readonly>
+                                <select disabled>
                                     <?php
                                         if(isset($eventId)){
                                             echo "value='$eventId'";
