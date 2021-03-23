@@ -67,8 +67,8 @@
                 <div class="non-fields">
                         <button name="action" type="submit" value="Register"><span>Register Participant</span></button>
                 </div>
-                <input id="eventId" name="eventId" type="hidden" <?php if(isset($participantSig)){echo "value='$participantSig'";} ?> >
-                <input id="eventId" name="eventId" type="hidden" <?php if(isset($guardianSig)){echo "value='$guardianSig'";} ?> >
+                <input id="participantSig" name="participantSig" type="hidden" <?php if(isset($participantSig)){echo "value='$participantSig'";} ?> >
+                <input id="guardianSig" name="guardianSig" type="hidden" <?php if(isset($guardianSig)){echo "value='$guardianSig'";} ?> >
                 <input id="eventId" name="eventId" type="hidden" <?php if(isset($eventId)){echo "value='$eventId'";} ?> >
                 <input id="eventDate" name="eventDate" type="hidden" <?php if(isset($eventDate)){echo "value='$eventDate'";} ?> >
                 <input id="eventDesc" name="eventDesc" type="hidden" <?php if(isset($eventDesc)){echo "value='$eventDesc'";} ?> >
