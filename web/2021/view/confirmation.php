@@ -47,7 +47,7 @@
                         <p class="chkbx-ind"><input id="responsibility" name="responsibility" type="checkbox" required><label for="responsibility">The participant is responsible for his or her own conduct and is aware of and agrees to abide by Church standards, camp or event safety rules, and other pertinent instructions. Participants’ conduct and interactions should abide by Church standards and exemplify Christlike behavior. Parents and participants should understand that participation in an activity is not a right but a privilege that can be revoked if they behave inappropriately or if they pose a risk to themselves or others.</label></p>
                         <div class="fields">
                             <label for="participantESig"><span>Participant’s E-signature</span><span class="field-tip">Required</span></label> 
-                            <input id="participantESig" name="participantESig" type="text" <?php if(isset($participantSig)){echo "placeholder='$participantSig'";} ?> required>
+                            <input id="participantESig" name="participantESig" type="text" <?php if(isset($participantSig)){echo "placeholder='$participantSig' patter='$participantSig'";} ?> required>
                         </div>
                         <div class="fields">
                             <label for="participantSigDate"><span>Date</span></label> 
