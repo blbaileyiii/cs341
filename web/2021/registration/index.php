@@ -64,7 +64,43 @@ switch($action){
         $events = getEvents(2021);
         $eventList = buildEventList($events);
         $eventScript = buildEventScript($events);
-        
+
+        /*
+        echo "eventId:". $eventId . "<br>";
+        echo "participantName:". $participantName . "<br>";
+        echo "ward:". $ward . "<br>";
+        echo "participantDOB:". $participantDOB . "<br>";
+        echo "primTel:". $primTel . "<br>";
+        echo "primTelType:". $primTelType . "<br>";
+        echo "secTel:". $secTel . "<br>";
+        echo "secTelType:". $secTelType . "<br>";
+        echo "participantAddress:". $participantAddress . "<br>";
+        echo "participantCity:". $participantCity . "<br>";
+        echo "participantState:". $participantState . "<br>";
+        echo "emergencyContact:". $emergencyContact . "<br>";
+        echo "emerPrimTel:". $emerPrimTel . "<br>";
+        echo "emerPrimTelType:". $emerPrimTelType . "<br>";
+        echo "emerSecTel:". $emerSecTel . "<br>";
+        echo "emerSecTelType:". $emerSecTelType . "<br>";
+        echo "specialDiet:". $specialDiet . "<br>";
+        echo "specialDietTxt:". $specialDietTxt . "<br>";
+        echo "allergies:". $allergies . "<br>";
+        echo "allergiesTxt:". $allergiesTxt . "<br>";
+        echo "medication:". $medication . "<br>";
+        echo "selfMedicate:". $selfMedicate . "<br>";
+        echo "medicationList:". $medicationList . "<br>";
+        echo "chronicIllness:". $chronicIllness . "<br>";
+        echo "chronicIllnessTxt:". $chronicIllnessTxt . "<br>";
+        echo "serious:". $serious . "<br>";
+        echo "seriousTxt:". $seriousTxt . "<br>";
+        echo "limitations:". $limitations . "<br>";
+        echo "considerations:". $considerations . "<br>";
+        echo "participantSig:". $participantSig . "<br>";
+        echo "participantSigDate:". $participantSigDate . "<br>";
+        echo "guardianSig:". $guardianSig . "<br>";
+        echo "guardianSigDate:". $guardianSigDate . "<br>";
+        */
+
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/confirmation.php';
         break;
     case 'Register':
