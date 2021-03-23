@@ -65,7 +65,7 @@ switch($action){
         $eventList = buildEventList($events);
         $eventScript = buildEventScript($events);
 
-        /*
+        
         echo "eventId:". $eventId . "<br>";
         echo "participantName:". $participantName . "<br>";
         echo "ward:". $ward . "<br>";
@@ -99,7 +99,7 @@ switch($action){
         echo "participantSigDate:". $participantSigDate . "<br>";
         echo "guardianSig:". $guardianSig . "<br>";
         echo "guardianSigDate:". $guardianSigDate . "<br>";
-        */
+        
 
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/confirmation.php';
         break;
