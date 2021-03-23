@@ -52,8 +52,8 @@ for (camp in camps){
   let dateDiv = document.createElement('div');
   let registerDiv = document.createElement('div');
 
-  campDiv.classList.add("countdown");
-  timeDiv.classList.add("time-block");
+  campDiv.classList.add('countdown');
+  timeDiv.classList.add('time-block');
 
   campDiv.innerHTML = "<h2><div class='camp-yr-logo'><span class='logo-lg logo-highlight'>" + camps[camp].name + "</span><span class='logo-sm'>2021</span></div></h2>";
 
