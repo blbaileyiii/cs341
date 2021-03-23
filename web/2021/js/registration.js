@@ -66,7 +66,7 @@ function changeTxtRequirement(txtField, required) {
     let label = document.querySelector('label[for=' + txtField.id + ']');
     txtField.required = required;    
     if (label) {
-        console.log(label);
+        //console.log(label);
         if (required){
             let span = document.createElement("span");
             span.classList.add('field-tip');
@@ -84,7 +84,7 @@ function changeTxtRequirement(txtField, required) {
 function changeRadioRequirement(inputField, required) {
     inputField.required = required;
     let div = inputField.parentElement.parentElement.parentElement;
-    console.log(div);
+    //console.log(div);
     if (required) {
         let span = document.createElement("span");
         span.classList.add('field-tip');
@@ -92,8 +92,8 @@ function changeRadioRequirement(inputField, required) {
         div.append(span);
     } else {
         let span = div.lastElementChild;
-        console.log(span);
-        console.log(span.tagName);
+        //console.log(span);
+        //console.log(span.tagName);
         if (span.tagName) {
             if(span.tagName.toLowerCase() == 'span'){
                 span.remove();
@@ -102,7 +102,7 @@ function changeRadioRequirement(inputField, required) {
     }
 }
 
-document.getElementById('selfMedicateN').addEventListener('mousenter', () => {
+document.getElementById('selfMedicateN').addEventListener('mouseenter', () => {
     console.log('mouseenter...')
     let special = document.querySelector('.special-instructions');
     special.getElementsByClassName.style.transform = "scale(1.05) translateX(0.5rem)";
