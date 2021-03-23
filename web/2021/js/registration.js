@@ -134,6 +134,7 @@ if (participants.list.length > 0) {
     participants.list.forEach(participant => {
         let li = document.createElement('li');
         console.log(event);
+        //console.log('option[value=' + participant.eventid + ']');
         let event = eventSelect.querySelector('option[value=2]').textContent;
         //let event = eventSelect.querySelector('option[value=' + participant.eventid + ']').textContent;
         li.innerHTML = '<span>Name: '+ participant.name + '</span><span>Event: ' + event + '</span>';
