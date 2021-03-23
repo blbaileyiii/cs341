@@ -586,10 +586,12 @@ p.legal-sm {
 }
 
 .select-disabled {
-    /* for Firefox */ 
-    -moz-appearance: none; 
-    /* for Safari, Chrome, Opera */ 
-    -webkit-appearance: none; 
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    color: var(--on-body-bg);
+    font-size: 1rem;
+    opacity: 1;
 }
 
 @supports not (-webkit-touch-callout: none) {
