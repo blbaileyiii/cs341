@@ -135,13 +135,12 @@ if (participants.list.length > 0) {
         let li = document.createElement('li');
         console.log(eventSelect);
         //console.log('option[value=' + participant.eventid + ']');
-        let event;
+        let eventTxt;
         Object.values(eventSelect.options).forEach(option=>{
-            if (option.value == participant.eventid){ event = option.text; }
+            if (option.value == participant.eventid){ eventTxt = option.text; }
         });
-        let event = document.querySelector('option[value=2]');
         //let event = eventSelect.querySelector('option[value=' + participant.eventid + ']').textContent;
-        li.innerHTML = '<span>Name: '+ participant.name + '</span><span>Event: ' + event + '</span>';
+        li.innerHTML = '<span>Name: '+ participant.name + '</span><span>Event: ' + eventTxt + '</span>';
         ul.appendChild(li);
     });
 
