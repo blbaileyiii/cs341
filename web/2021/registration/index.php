@@ -132,7 +132,7 @@ switch($action){
         echo "guardianSigDate:". $guardianSigDate . "<br>";
         */
 
-        if(empty($particpantDOB)){
+        if(empty($participantDOB)){
             $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
             $events = getEvents(2021);
             $eventList = buildEventList($events);
