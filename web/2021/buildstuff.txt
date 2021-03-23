@@ -1,3 +1,9 @@
-INSERT INTO hhstake.registrants (event_id, p_name,         p_ward, p_dob,      p_age, email,                     tele_one,   tele_one_type, tele_two, tele_two_type, p_address,           p_city,          p_state, emer_name,     emer_tele_one, emer_tele_one_type, emer_tele_two, emer_tele_two_type, diet, diet_txt, allergies, allergies_txt, medication, self_medicate, medication_txt, chronic, chronic_txt, serious, serious_txt, limitations_txt, considerations_txt, p_sig,          p_sig_date, g_sig,                   g_sig_date, adult, contact, permission, responsibility, p_esig,         g_esig)
-                                VALUES (2, Bernard Bailey, rh,     1981-10-12, 39,    blbaileyiii.naa@gmail.com, 9093806509, cell,                  , cell,          19364 Baelen Street, Rowland Heights, CA,      Sulika Bailey, 6267150536,    cell,                            , cell,               n,            , n,                      , n,                       ,               , n,                  , n,                  ,                ,                   , Bernard Bailey, 2021-03-23, N/A - Adult Participant, 2021-03-23, true,  true,    true,       true,           Bernard Bailey, N/A - Adult Participant) RETURNING id
-SQLSTATE[42601]: Syntax error: 7 ERROR: syntax error at or near "Bailey" LINE 2: VALUES (2, Bernard Bailey, rh, 1981-10-12, 39, blbai... ^
+
+
+
+$specialDiet = checkBool($specialDiet);
+$allergies = checkBool($allergies);
+$medication = checkBool($medication);
+$selfMedicate = checkBool($selfMedicate);
+$chronicIllness = checkBool($chronicIllness);
+$serious = checkBool($serious);
