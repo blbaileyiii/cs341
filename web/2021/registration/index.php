@@ -131,8 +131,10 @@ switch($action){
         echo "guardianSigDate:". $guardianSigDate . "<br>";
         */
 
-        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
-            $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
+        if(checkMinAge($participantDOB)){
+            // Age is fine.
+        } else {
+            $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
             $events = getEvents(2021);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
@@ -140,10 +142,8 @@ switch($action){
             exit; 
         }
 
-        if(checkMinAge($participantDOB)){
-            // Age is fine.
-        } else {
-            $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
+        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
+            $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $events = getEvents(2021);
             $eventList = buildEventList($events);
             $eventScript = buildEventScript($events);
