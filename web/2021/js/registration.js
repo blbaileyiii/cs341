@@ -138,10 +138,10 @@ if (participants.list.length > 0) {
         let li = document.createElement('li');
         let eventTxt;
         Object.values(eventSelect.options).forEach(option=>{
-            if (option.value == participant.eventid){ eventTxt = option.text; }
+            if (option.value == participant.event_id){ eventTxt = option.text; }
         });
         //let event = eventSelect.querySelector('option[value=' + participant.eventid + ']').textContent;
-        li.innerHTML = participant.name + ' registered for ' + eventTxt;
+        li.innerHTML = participant.p_name + ' registered for ' + eventTxt;
         ol.appendChild(li);
     });
 
