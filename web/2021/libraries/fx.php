@@ -7,9 +7,9 @@ function checkInt($chkVal){
 }
 
 function checkBool($chkVal){
-    $chkVal = filter_var($chkVal, FILTER_VALIDATE_BOOLEAN);
-    if($chkVal){ return $chkVal; } 
-    return NULL;
+    $chkVal = filter_var($chkVal, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
+    if(!is_null($chkVal)){$chkVal ? 'true' : 'false';}
+    return $chkVal;    
 }
 
 function checkFloat($chkVal){

@@ -246,7 +246,7 @@ switch($action){
         $participantESig = checkSig($participantESig);
         $guardianESig = checkSig($guardianESig);
 
-        //$selfMedicate
+        // $selfMedicate
         $chkSelfMedicate = checkDepBool($selfMedicate, $medication);
 
         // Calculate age by DOB...
