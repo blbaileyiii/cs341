@@ -63,259 +63,42 @@
                 <div class="non-fields">
                         <button name="action" type="submit" value="Register"><span>Register Participant</span></button>
                 </div>
-
-
-
-
-
-
-                    <div class="fields">
-                        <label for="eventId"><span>Event</span><span class="field-tip">Required</span></label>
-                        <select id="eventId" name="eventId" required>
-                            <option value="" <?php if(!isset($eventId)){echo "selected";} ?> disabled>Choose an event</option>
-                            <?php
-                                if(isset($eventId)){
-                                    echo "value='$eventId'";
-                                    $eventList = str_replace("value='$eventId'", "value='$eventId' selected", $eventList);
-                                }
-                                echo $eventList; 
-                            ?>
-                        </select>
-                    </div>
-
-
-
-                        <input id="eventDate" name="eventDate" type="hidden" <?php if(isset($eventDate)){echo "value='$eventDate'";} ?> >
-
-                        <textarea id="eventDesc" name="eventDesc" readonly><?php if(isset($eventDesc)){echo $eventDesc;} ?></textarea>
-
-
-
-
-                        <input id="stake" name="stake" type="hidden" <?php if(isset($stake)){echo "value='$stake'";} ?> >
-
-
-                        <input id="eventLeaderName" name="eventLeaderName" type="hidden" <?php if(isset($eventLeaderName)){echo "value='$eventLeaderName'";} ?> >
-
-                        <input id="eventLeaderPhone" name="eventLeaderPhone" type="hidden" <?php if(isset($eventLeaderPhone)){echo "value='$eventLeaderPhone'";} ?> >
-
-                        <input id="eventLeaderEmail" name="eventLeaderEmail" type="hidden" <?php if(isset($eventLeaderEmail)){echo "value='$eventLeaderEmail'";} ?> >
-
-                        <input id="participantName" name="participantName" type="hidden" <?php if(isset($participantName)){echo "value='$participantName'";} ?> >
-
-
-                    <div class="fields">
-                        <label for="ward"><span>Ward</span><span class="field-tip">Required</span></label>
-                        <select id="ward" name="ward" required>
-                            <option value="" <?php if(!isset($ward)){echo "selected";} ?> disabled>Choose your ward</option>
-                            <option value="cs" <?php if(isset($ward) && $ward=="cs"){echo "selected";} ?>>Creekside</option>
-                            <option value="hh1" <?php if(isset($ward) && $ward=="hh1"){echo "selected";} ?>>Hacienda Heights 1st</option>
-                            <option value="hh5" <?php if(isset($ward) && $ward=="hh5"){echo "selected";} ?>>Hacienda Heights 5th</option>
-                            <option value="la" <?php if(isset($ward) && $ward=="la"){echo "selected";} ?>>Los Altos</option>
-                            <option value="rh" <?php if(isset($ward) && $ward=="rh"){echo "selected";} ?>>Rowland Heights</option>
-                            <option value="tc" <?php if(isset($ward) && $ward=="tc"){echo "selected";} ?>>Turnbull Canyon</option>
-                            <option value="wv" <?php if(isset($ward) && $ward=="wv"){echo "selected";} ?>>Walnut Valley</option>
-                            <option value="ws" <?php if(isset($ward) && $ward=="ws"){echo "selected";} ?>>Woodside</option>
-                        </select>
-                    </div>
-
-                        <input id="participantDOB" name="participantDOB" type="hidden" <?php if(isset($participantDOB)){echo "value='$participantDOB'";} ?> >
-
-                        <input id="participantAge" name="participantAge" type="hidden" <?php if(isset($participantAge)){echo "value='$participantAge'";} ?> >
-
-                        <input id="primTel" name="primTel" type="hidden" <?php if(isset($primTel)){echo "value='$primTel'";} ?> > 
-
-                    <div class="fields-radio-alt">
-                        <div class="inline-block">
-                            <input id="primTelCell" name="primTelType" type="radio" value="cell" <?php if(isset($primTelType) && $primTelType=="cell"){echo "checked";} else {echo "checked";} ?> required>
-                            <label for="primTelCell"><span>Cell</span></label>
-                        </div>
-                        <div class="inline-block">
-                            <input id="primTelHome" name="primTelType" type="radio" value="home" <?php if(isset($primTelType) && $primTelType=="home"){echo "checked";} ?>>
-                            <label for="primTelHome"><span>Home</span></label>
-                        </div>
-                        <div class="inline-block">
-                            <input id="primTelWork" name="primTelType" type="radio" value="work" <?php if(isset($primTelType) && $primTelType=="work"){echo "checked";} ?>>
-                            <label for="primTelWork"><span>Work</span></label>
-                        </div>
-                    </div>
-
-                        <input id="secTel" name="secTel" type="hidden" <?php if(isset($secTel)){echo "value='$secTel'";} ?>>
-
-                    <div class="fields-radio-alt">
-                        <div class="inline-block">
-                            <input id="secTelCell" name="secTelType" type="radio" value="cell" <?php if(isset($secTelType) && $secTelType=="cell"){echo "checked";} else {echo "checked";} ?>>
-                            <label for="secTelCell"><span>Cell</span></label>
-                        </div>
-                        <div class="inline-block">
-                            <input id="secTelHome" name="secTelType" type="radio" value="home" <?php if(isset($secTelType) && $secTelType=="home"){echo "checked";} ?>>
-                            <label for="secTelHome"><span>Home</span></label>
-                        </div>
-                        <div class="inline-block">
-                            <input id="secTelWork" name="secTelType" type="radio" value="work" <?php if(isset($secTelType) && $secTelType=="work"){echo "checked";} ?>>
-                            <label for="secTelWork"><span>Work</span></label>
-                        </div>
-                    </div>                
-
-                        <input id="participantAddress" name="participantAddress" type="hidden" <?php if(isset($participantAddress)){echo "value='$participantAddress'";} ?> >
-
-                        <input id="participantCity" name="participantCity" type="hidden" <?php if(isset($participantCity)){echo "value='$participantCity'";} ?> >
-
-                        <input id="participantState" name="participantState" type="hidden" <?php if(isset($participantState)){echo "value='$participantState'";} ?> >
-
-                        <input id="emergencyContact" name="emergencyContact" type="hidden" <?php if(isset($emergencyContact)){echo "value='$emergencyContact'";} ?> >
-
-                        <input id="emerPrimTel" name="emerPrimTel" type="hidden" <?php if(isset($emerPrimTel)){echo "value='$emerPrimTel'";} ?> >
-
-
-                    <div class="fields-radio-alt">
-                        <div class="inline-block">    
-                            <input id="emerPrimTelCell" name="emerPrimTelType" type="radio" value="cell" <?php if(isset($emerPrimTelType) && $emerPrimTelType=="cell"){echo "checked";} else {echo "checked";} ?> required>
-                            <label for="emerPrimTelCell"><span>Cell</span></label>
-                        </div>
-                        <div class="inline-block">
-                            <input id="emerPrimTelHome" name="emerPrimTelType" type="radio" value="home" <?php if(isset($emerPrimTelType) && $emerPrimTelType=="home"){echo "checked";} ?>>
-                            <label for="emerPrimTelHome"><span>Home</span></label>
-                        </div>                    
-                        <div class="inline-block">
-                            <input id="emerPrimTelWork" name="emerPrimTelType" type="radio" value="work" <?php if(isset($emerPrimTelType) && $emerPrimTelType=="work"){echo "checked";} ?>>
-                            <label for="emerPrimTelWork"><span>Work</span></label>
-                        </div>
-                    </div>
-
-                        <input id="emerSecTel" name="emerSecTel" type="hidden" <?php if(isset($emerSecTel)){echo "value='$emerSecTel'";} ?>>
-
-                    <div class="fields-radio-alt">
-                        <div class="inline-block">    
-                            <input id="emerSecTelCell" name="emerSecTelType" type="radio" value="cell" <?php if(isset($emerSecTelType) && $emerSecTelType=="cell"){echo "checked";} else {echo "checked";} ?>>
-                            <label for="emerSecTelCell"><span>Cell</span></label>
-                        </div>
-                        <div class="inline-block">
-                            <input id="emerSecTelHome" name="emerSecTelType" type="radio" value="home" <?php if(isset($emerSecTelType) && $emerSecTelType=="home"){echo "checked";} ?>>
-                            <label for="emerSecTelHome"><span>Home</span></label>
-                        </div>                    
-                        <div class="inline-block">
-                            <input id="emerSecTelWork" name="emerSecTelType" type="radio" value="work" <?php if(isset($emerSecTelType) && $emerSecTelType=="work"){echo "checked";} ?>>
-                            <label for="emerSecTelWork"><span>Work</span></label>
-                        </div>
-                    </div>
-
-
-                    <div class="fields-radio">
-                        <div>
-                            <div>Does the participant require a special diet?</div>
-                            <div class="inline-block">
-                                <input id="specialDietY" name="specialDiet" type="radio" value="y" <?php if(isset($specialDiet) && $specialDiet=="y"){echo "checked";} ?> required>
-                                <label for="specialDietY"><span>Yes</span></label>
-                            </div>
-                            <div class="inline-block">
-                                <input id="specialDietN" name="specialDiet" type="radio" value="n" <?php if(isset($specialDiet) && $specialDiet=="n"){echo "checked";} ?>>
-                                <label for="specialDietN"><span>No</span></label>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="fields">
-                        <label for="specialDietTxt"><span>If yes, please explain the dietary restrictions:</span><?php if(isset($specialDiet) && $specialDiet=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
-                        <textarea id="specialDietTxt" name="specialDietTxt" <?php if(isset($specialDiet) && $specialDiet=="y"){echo "required";}?> ><?php if(isset($specialDietTxt)){echo $specialDietTxt;} ?></textarea>
-                    </div>
-                    <div class="fields-radio">
-                        <div>
-                            <div>Does the participant have any allergies?</div>
-                            <div class="inline-block">
-                                <input id="allergiesY" name="allergies" type="radio" value="y" <?php if(isset($allergies) && $allergies=="y"){echo "checked";} ?> required>
-                                <label for="allergiesY"><span>Yes</span></label>
-                            </div>
-                            <div class="inline-block">
-                                <input id="allergiesN" name="allergies" type="radio" value="n" <?php if(isset($allergies) && $allergies=="n"){echo "checked";} ?>>
-                                <label for="allergiesN"><span>No</span></label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fields">
-                        <label for="allergiesTxt"><span>If yes, please list the allergies:</span><?php if(isset($allergies) && $allergies=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
-                        <textarea id="allergiesTxt" name="allergiesTxt" <?php if(isset($allergies) && $allergies=="y"){echo "required";} ?>><?php if(isset($allergiesTxt)){echo $allergiesTxt;} ?></textarea>
-                    </div>
-                    <div class="fields-radio">
-                        <div>
-                            <div>Is the participant taking any medication or over-the-counter (OTC) drugs?</div>
-                            <div class="inline-block">
-                                <input id="medicationY" name="medication" type="radio" value="y" <?php if(isset($medication) && $medication=="y"){echo "checked";} ?> required>
-                                <label for="medicationY"><span>Yes</span></label>
-                            </div>
-                            <div class="inline-block">
-                                <input id="medicationN" name="medication" type="radio" value="n" <?php if(isset($medication) && $medication=="n"){echo "checked";} ?>>
-                                <label for="medicationN"><span>No</span></label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fields-radio">
-                        <div>
-                            <div>If yes, can the participant self-administer his or her medication?</div>
-                            <div class="inline-block">
-                                <input id="selfMedicateY" name="selfMedicate" type="radio" value="y" <?php if(isset($selfMedicate) && $selfMedicate=="y"){echo "checked";} ?> <?php if(isset($medication) && $medication != "y"){echo "disabled";} elseif(!isset($medication)){echo "disabled";} ?> <?php if(isset($medication) && $medication=="y"){echo "required";} ?>>
-                                <label for="selfMedicateY"><span>Yes</span></label>
-                            </div>
-                            <div class="inline-block">
-                                <input id="selfMedicateN" name="selfMedicate" type="radio" value="n" <?php if(isset($selfMedicate) && $selfMedicate=="n"){echo "checked";} ?> <?php if(isset($medication) && $medication != "y"){echo "disabled";} elseif(!isset($medication)){echo "disabled";} ?>>
-                                <label for="selfMedicateN"><span>No</span></label>
-                            </div>
-                        </div>
-                        <?php if(isset($medication) && $medication=="y"){echo "<span class='field-tip'>Required</span>";} ?>                        
-                    </div>
-                    <div class="fields">
-                        <label for="medicationList"><span>List all prescription or over-the-counter (OTC) medications the participant is taking:</span><?php if(isset($medication) && $medication=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
-                        <textarea id="medicationList" name="medicationList" <?php if(isset($medication) && $medication=="y"){echo "required";} ?>><?php if(isset($medicationList)){echo $medicationList;} ?></textarea>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Physical Conditions That Limit Activity</legend>
-                    <div class="fields-radio">
-                        <div>
-                            <div>Does the participant have a chronic or recurring illness?</div>
-                            <div class="inline-block">
-                                <input id="chronicIllnessY" name="chronicIllness" type="radio" value="y" <?php if(isset($chronicIllness) && $chronicIllness=="y"){echo "checked";} ?> required>
-                                <label for="chronicIllnessY"><span>Yes</span></label>
-                            </div>
-                            <div class="inline-block">
-                                <input id="chronicIllnessN" name="chronicIllness" type="radio" value="n" <?php if(isset($chronicIllness) && $chronicIllness=="n"){echo "checked";} ?>>
-                                <label for="chronicIllnessN"><span>No</span></label>
-                            </div>
-                        </div>
-                        <span class="field-tip">Required</span>
-                    </div>
-                    <div class="fields">
-                        <label for="chronicIllnessTxt"><span>If yes, please explain:</span><?php if(isset($chronicIllness) && $chronicIllness=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
-                        <textarea id="chronicIllnessTxt" name="chronicIllnessTxt" <?php if(isset($chronicIllness) && $chronicIllness=="y"){echo "required";} ?>><?php if(isset($chronicIllnessTxt)){echo $chronicIllnessTxt;} ?></textarea>
-                    </div>
-                    <div class="fields-radio">
-                        <div>
-                            <div>Has the participant had surgery or a serious illness in the past year?</div>
-                            <div class="inline-block">
-                                <input id="seriousY" name="serious" type="radio" value="y" <?php if(isset($serious) && $serious=="y"){echo "checked";} ?> required>
-                                <label for="seriousY"><span>Yes</span></label>
-                            </div>
-                            <div class="inline-block">
-                                <input id="seriousN" name="serious" type="radio" value="n" <?php if(isset($serious) && $serious=="n"){echo "checked";} ?>>
-                                <label for="seriousN"><span>No</span></label>
-                            </div>
-                        </div>
-                        <span class="field-tip">Required</span>
-                    </div>
-                    <div class="fields">
-                        <label for="seriousTxt"><span>If yes, please explain:</span><?php if(isset($serious) && $serious=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
-                        <textarea id="seriousTxt" name="seriousTxt" <?php if(isset($serious) && $serious=="y"){echo "required";} ?>><?php if(isset($seriousTxt)){echo $seriousTxt;} ?></textarea>
-                    </div>
-                    <div class="fields">
-                        <label for="limitations"><span>Identify any other limits, restrictions, or disabilities that could prevent the participant from fully participating in the event or activity:</span></label> 
-                        <textarea id="limitations" name="limitations"><?php if(isset($limitations)){echo $limitations;} ?></textarea>
-                    </div>
-
-
-                    <div class="fields">
-                        <label for="considerations"><span>Identify any other needs or considerations the participant has that the event or activity planner should be aware of:</span></label> 
-                        <textarea id="considerations" name="considerations"><?php if(isset($considerations)){echo $considerations;} ?></textarea>
-                    </div>
-
+                <input id="eventId" name="eventId" type="hidden" <?php if(isset($eventId)){echo "value='$eventId'";} ?> >
+                <input id="eventDate" name="eventDate" type="hidden" <?php if(isset($eventDate)){echo "value='$eventDate'";} ?> >
+                <input id="eventDesc" name="eventDesc" type="hidden" <?php if(isset($eventDesc)){echo "value='$eventDesc'";} ?> >
+                <input id="stake" name="stake" type="hidden" <?php if(isset($stake)){echo "value='$stake'";} ?> >
+                <input id="eventLeaderName" name="eventLeaderName" type="hidden" <?php if(isset($eventLeaderName)){echo "value='$eventLeaderName'";} ?> >
+                <input id="eventLeaderPhone" name="eventLeaderPhone" type="hidden" <?php if(isset($eventLeaderPhone)){echo "value='$eventLeaderPhone'";} ?> >
+                <input id="eventLeaderEmail" name="eventLeaderEmail" type="hidden" <?php if(isset($eventLeaderEmail)){echo "value='$eventLeaderEmail'";} ?> >
+                <input id="participantName" name="participantName" type="hidden" <?php if(isset($participantName)){echo "value='$participantName'";} ?> >
+                <input id="ward" name="ward" type="hidden" <?php if(isset($ward)){echo "value='$ward'";} ?> >
+                <input id="participantDOB" name="participantDOB" type="hidden" <?php if(isset($participantDOB)){echo "value='$participantDOB'";} ?> >
+                <input id="participantAge" name="participantAge" type="hidden" <?php if(isset($participantAge)){echo "value='$participantAge'";} ?> >
+                <input id="primTel" name="primTel" type="hidden" <?php if(isset($primTel)){echo "value='$primTel'";} ?> >
+                <input id="primTelType" name="primTelType" type="hidden" <?php if(isset($primTelType)){echo "value='$primTelType'";} ?> >
+                <input id="secTel" name="secTel" type="hidden" <?php if(isset($secTel)){echo "value='$secTel'";} ?>>
+                <input id="secTelType" name="secTelType" type="hidden" <?php if(isset($secTelType)){echo "value='$secTelType'";} ?>>
+                <input id="participantAddress" name="participantAddress" type="hidden" <?php if(isset($participantAddress)){echo "value='$participantAddress'";} ?> >
+                <input id="participantCity" name="participantCity" type="hidden" <?php if(isset($participantCity)){echo "value='$participantCity'";} ?> >
+                <input id="participantState" name="participantState" type="hidden" <?php if(isset($participantState)){echo "value='$participantState'";} ?> >
+                <input id="emergencyContact" name="emergencyContact" type="hidden" <?php if(isset($emergencyContact)){echo "value='$emergencyContact'";} ?> >
+                <input id="emerPrimTel" name="emerPrimTel" type="hidden" <?php if(isset($emerPrimTel)){echo "value='$emerPrimTel'";} ?> >
+                <input id="emerPrimTelType" name="emerPrimTelType" type="hidden" <?php if(isset($emerPrimTelType)){echo "value='$emerPrimTelType'";} ?> >
+                <input id="emerSecTel" name="emerSecTel" type="hidden" <?php if(isset($emerSecTel)){echo "value='$emerSecTel'";} ?>>
+                <input id="emerSecTelType" name="emerSecTelType" type="hidden" <?php if(isset($emerSecTelType)){echo "value='$emerSecTelType'";} ?>>
+                <input id="specialDiet" name="specialDiet" type="hidden" <?php if(isset($specialDiet)){echo "value='$specialDiet'";} ?>>
+                <input id="specialDietTxt" name="specialDietTxt" type="hidden" <?php if(isset($specialDietTxt)){echo "value='$specialDietTxt'";} ?>>
+                <input id="allergies" name="allergies" type="hidden" <?php if(isset($allergies)){echo "value='$allergies'";} ?>>
+                <input id="allergiesTxt" name="allergiesTxt" type="hidden" <?php if(isset($allergiesTxt)){echo "value='$allergiesTxt'";} ?>>
+                <input id="medication" name="medication" type="hidden" <?php if(isset($medication)){echo "value='$medication'";} ?>>
+                <input id="selfMedicate" name="selfMedicate" type="hidden" <?php if(isset($selfMedicate)){echo "value='$selfMedicate'";} ?>>
+                <input id="medicationList" name="medicationList" type="hidden" <?php if(isset($medicationList)){echo "value='$medicationList'";} ?>>
+                <input id="chronicIllness" name="chronicIllness" type="hidden" <?php if(isset($chronicIllness)){echo "value='$chronicIllness'";} ?>>
+                <input id="chronicIllnessTxt" name="chronicIllnessTxt" type="hidden" <?php if(isset($chronicIllnessTxt)){echo "value='$chronicIllnessTxt'";} ?>>
+                <input id="serious" name="serious" type="hidden" <?php if(isset($serious)){echo "value='$serious'";} ?>>
+                <input id="seriousTxt" name="seriousTxt" type="hidden" <?php if(isset($seriousTxt)){echo "value='$seriousTxt'";} ?>>
+                <input id="limitations" name="limitations" type="hidden" <?php if(isset($limitations)){echo "value='$limitations'";} ?>>
+                <input id="considerations" name="considerations" type="hidden" <?php if(isset($considerations)){echo "value='$considerations'";} ?>>
             </form>
         </section>
     </main>
