@@ -12,6 +12,7 @@
     </header>    
     <main>
         <section>
+            <div class="registrantDiv"></div>
             <h1>Registration</h1>         
             <?php
                 if (isset($_SESSION['message'])) { 
