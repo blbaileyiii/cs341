@@ -140,6 +140,15 @@ switch($action){
             exit; 
         }
 
+        if(!checkMinAge($participantDOB)){
+            $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
+            $events = getEvents(2021);
+            $eventList = buildEventList($events);
+            $eventScript = buildEventScript($events);
+            include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
+            exit; 
+        }
+
         // Insert form data
         $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
         // $regId = false; // Testing only

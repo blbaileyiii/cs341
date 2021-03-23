@@ -70,6 +70,12 @@ function checkAge($chkVal, $age){
     return $chkVal;
 }
 
+function checkMinAge($chkVal) {
+    $dateMax = "2008-01-01";
+    if ($dateMax >= $chkVal) { return $chkVal; }
+    return NULL;
+}
+
 function buildEventList($events){
     $eventList = '';
     for ($x = 0; $x <= count($events); $x++) {
