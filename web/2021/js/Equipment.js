@@ -24,9 +24,9 @@ export default class Equipment {
         let equipmentList = {};
         dbEquipment.forEach(item => {
             if(!equipmentList.hasOwnProperty(item.category)){
-                equipmentList[item.category] = [{'equipmentid': item.equipmentid, 'equipmentname': item.equipmentname, 'quantity': item.quantity, 'avgprice': item.avgprice, 'bring': item.bring, 'ywcamp': item.ywcamp, 'ymcamp': item.ymcamp, 'trek': item.trek}];
+                equipmentList[item.category] = [{'id': item.id, 'name': item.name, 'quantity': item.quantity, 'avg_price': item.avg_price, 'bring': item.bring, 'ywcamp': item.ywcamp, 'ymcamp': item.ymcamp, 'trek': item.trek}];
             } else {
-                equipmentList[item.category].push({'equipmentid': item.equipmentid, 'equipmentname': item.equipmentname, 'quantity': item.quantity, 'avgprice': item.avgprice, 'bring': item.bring, 'ywcamp': item.ywcamp, 'ymcamp': item.ymcamp, 'trek': item.trek});
+                equipmentList[item.category].push({'id': item.id, 'name': item.name, 'quantity': item.quantity, 'avg_price': item.avg_price, 'bring': item.bring, 'ywcamp': item.ywcamp, 'ymcamp': item.ymcamp, 'trek': item.trek});
             }
         });
         this.equipmentList = equipmentList;
@@ -79,7 +79,7 @@ export default class Equipment {
             this.equipmentList[key].forEach(item => {
                 let li = document.createElement('li');
 
-                li.innerHTML = item.equipmentname;
+                li.innerHTML = item.name;
 
                 ul.appendChild(li);
             });
@@ -129,12 +129,12 @@ export default class Equipment {
                 let li = document.createElement('li');
                 let labelTxt;
                 if (item.quantity != '1'){
-                    labelTxt = item.quantity + " " + item.equipmentname;
+                    labelTxt = item.quantity + " " + item.name;
                 } else {
-                    labelTxt = item.equipmentname;
+                    labelTxt = item.name;
                 }
                 
-                li.innerHTML = "<input type='checkbox' id='" + participant.participantid + "-item-" + item.equipmentid + "' name='" + participant.participantid + "-item-" + item.equipmentid + "'><label for='" + participant.participantid + "-item-" + item.equipmentid + "'>" + labelTxt + "</label>";
+                li.innerHTML = "<input type='checkbox' id='" + participant.participantid + "-item-" + item.id + "' name='" + participant.participantid + "-item-" + item.id + "'><label for='" + participant.participantid + "-item-" + item.id + "'>" + labelTxt + "</label>";
 
                 ul.appendChild(li);
             });
@@ -225,16 +225,3 @@ export default class Equipment {
     */
 
 }
-
-class Item {
-    constructor(id, name, quantity, category, haveGot, avgPrice, actPrice) {
-        this.id = id;
-        this.itemName = name;
-        this.quantity = quantity;
-        this.category = category;
-        this.haveGot = haveGot;
-        this.avgPrice = avgPrice;
-        this.actPrice = actPrice;
-    }
-}
-
