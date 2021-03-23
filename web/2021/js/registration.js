@@ -103,7 +103,6 @@ function changeRadioRequirement(inputField, required) {
 }
 
 document.getElementById('selfMedicateN').addEventListener('mouseenter', () => {
-    console.log('mouseenter...')
     let special = document.querySelector('.special-instructions');
     special.style.transform = "scale(1.05) translateX(0.5rem)";
     special.style.background = "var(--border-intense)";
