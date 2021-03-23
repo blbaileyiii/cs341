@@ -10,8 +10,8 @@ function getEventsJSON($eventYear) {
         $sql = 
         'SELECT *
         FROM hhstake.events AS e
-        WHERE EXTRACT(YEAR FROM e."eventDate") = :eventYear
-        ORDER BY e."eventId"';
+        WHERE EXTRACT(YEAR FROM e.date_start) = :eventYear
+        ORDER BY e.id';
 
         $sqlVarArray = array(':eventYear' => $eventYear);
 
@@ -37,7 +37,7 @@ function getEquipmentJSON() {
         $sql = 
         'SELECT *
         FROM hhstake.equipment AS e
-        ORDER BY e.category, e.equipmentname';
+        ORDER BY e.category, e.name';
 
         $stmt = $db->prepare($sql);
         $stmt->execute();
