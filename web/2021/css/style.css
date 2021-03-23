@@ -634,6 +634,11 @@ p.chkbx-ind {
     margin: 0.5rem 0 0 1.5rem;
 }
 
+p.sig {
+    margin: 0 0.35rem;
+    font-size: 0.83rem;
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
