@@ -130,7 +130,7 @@ if (participants.list.length > 0) {
     h1.textContent = "My Registration";
 
     let registered = document.createElement("div");
-    registered.classList.add('registered');
+    registered.classList.add('myRegistration');
 
     let ul = document.createElement('ul');
 
@@ -141,7 +141,7 @@ if (participants.list.length > 0) {
             if (option.value == participant.eventid){ eventTxt = option.text; }
         });
         //let event = eventSelect.querySelector('option[value=' + participant.eventid + ']').textContent;
-        li.innerHTML = participant.name + 'Registered For: ' + eventTxt;
+        li.innerHTML = participant.name + ' registered for ' + eventTxt;
         ul.appendChild(li);
     });
 

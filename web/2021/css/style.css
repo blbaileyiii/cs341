@@ -556,6 +556,18 @@ p.legal-sm {
     padding: 0.1rem 0.35rem 0.325rem;
 }
 
+.myRegistration {
+    border: 15px double var(--logo-highlight);
+}
+
+.myRegistration ul {
+    background: var(--btn-bg);
+    padding: 1rem;
+    margin: 0;
+    list-style: none;
+    color: var(--body-bg);
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
