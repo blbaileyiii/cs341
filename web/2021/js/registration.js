@@ -126,6 +126,9 @@ if (participants.list.length > 0) {
     let registrantDiv = document.querySelector('.registrantDiv');
     let eventSelect = document.getElementById('eventId');
 
+    let h2 = document.createElement("h2");
+    h2.textContent = "Registered";
+
     let registered = document.createElement("div");
     registered.classList.add('registered');
 
@@ -133,17 +136,16 @@ if (participants.list.length > 0) {
 
     participants.list.forEach(participant => {
         let li = document.createElement('li');
-        console.log(eventSelect);
-        //console.log('option[value=' + participant.eventid + ']');
         let eventTxt;
         Object.values(eventSelect.options).forEach(option=>{
             if (option.value == participant.eventid){ eventTxt = option.text; }
         });
         //let event = eventSelect.querySelector('option[value=' + participant.eventid + ']').textContent;
-        li.innerHTML = '<span>Name: '+ participant.name + '</span><span>Event: ' + eventTxt + '</span>';
+        li.innerHTML = '<span>'+ participant.name + '</span><span>registered for: ' + eventTxt + '</span>';
         ul.appendChild(li);
     });
 
     registered.appendChild(ul);
+    registrantDiv.appendChild(h2);
     registrantDiv.appendChild(registered);
 }
