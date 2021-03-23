@@ -607,6 +607,10 @@ ul.re-affirm-details span {
     font-weight: 500;
 }
 
+input[type=checkbox] + label {
+    margin-left: 1rem;
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
