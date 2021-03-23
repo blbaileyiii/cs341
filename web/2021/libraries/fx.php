@@ -85,7 +85,7 @@ function checkMaxDOB($chkVal) {
 function buildEventList($events){
     $eventList = '';
     for ($x = 0; $x <= count($events); $x++) {
-        $eventList .= "<option value='{$events[$x]['eventId']}'>{$events[$x]['eventName']}</option>";
+        $eventList .= "<option value='{$events[$x]['id']}'>{$events[$x]['name']}</option>";
     }
     
     return $eventList;
@@ -105,12 +105,12 @@ function buildSwitchScript($events){
     //$switchScript .= "console.log('EventID:' + eventID);";
     $switchScript .= "switch(eventID) {";
     for ($x = 0; $x <= count($events); $x++) {
-        $switchScript .= "case '{$events[$x]['eventId']}':";
-        $switchScript .= "document.getElementById('eventDate').value = \"{$events[$x]['eventDate']}\";";
-        $switchScript .= "document.getElementById('eventDesc').value = \"{$events[$x]['eventDesc']}\";";
-        $switchScript .= "document.getElementById('eventLeaderName').value = \"{$events[$x]['eventLeaderName']}\";";
-        $switchScript .= "document.getElementById('eventLeaderPhone').value = \"{$events[$x]['eventLeaderPhone']}\";";
-        $switchScript .= "document.getElementById('eventLeaderEmail').value = \"{$events[$x]['eventLeaderEmail']}\";";
+        $switchScript .= "case '{$events[$x]['id']}':";
+        $switchScript .= "document.getElementById('eventDate').value = \"{$events[$x]['date_start']}\";";
+        $switchScript .= "document.getElementById('eventDesc').value = \"{$events[$x]['desc']}\";";
+        $switchScript .= "document.getElementById('eventLeaderName').value = \"{$events[$x]['l_name']}\";";
+        $switchScript .= "document.getElementById('eventLeaderPhone').value = \"{$events[$x]['l_phone']}\";";
+        $switchScript .= "document.getElementById('eventLeaderEmail').value = \"{$events[$x]['l_email']}\";";
         $switchScript .= "break;";
     }
     $switchScript .= "}";
