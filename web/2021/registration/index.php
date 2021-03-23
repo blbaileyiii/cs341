@@ -136,6 +136,10 @@ switch($action){
         echo "considerations: ". $considerations . "<br>";
         echo "participantSig: ". $participantSig . "<br>";
         echo "participantSigDate: ". $participantSigDate . "<br>";
+        echo "adult: ". $adult . "<br>";
+        echo "contact: ". $contact . "<br>";
+        echo "permission: ". $permission . "<br>";
+        echo "responsibility: ". $responsibility . "<br>";
         echo "guardianSig: ". $guardianSig . "<br>";
         echo "guardianSigDate: ". $guardianSigDate . "<br>";
         */
