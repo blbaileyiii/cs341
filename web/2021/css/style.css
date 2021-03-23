@@ -439,7 +439,7 @@ fieldset {
 }
 
 .register-block {
-    margin: 0.75rem;
+    margin: 1rem;
 }
 
 a.button {
@@ -456,7 +456,7 @@ a.button {
 
 a.button:hover {
     background: var(--on-nav-bg);
-    color: var(--logo-highlight);
+    color: var(--border-intense);
     border-color: var(--border-intense);
 }
 
