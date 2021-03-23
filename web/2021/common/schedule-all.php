@@ -1,5 +1,4 @@
-<a class="anchor" id="schedule"></a>
-<section class="schedule">
+<section id="schedule" class="schedule">
     <div class="section-center">
         <h2>Camp Schedules</h2>
         <ul class="all-schedules">

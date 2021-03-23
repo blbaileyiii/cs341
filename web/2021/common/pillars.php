@@ -1,5 +1,4 @@
-<a class="anchor" id="focus"></a>
-<section class="focus">
+<section id="focus" class="focus">
     <div class="section-center">
         <h2>The Focus</h2>
         <p>Heavenly Father wants His children to learn and to grow. He sent His Son, Jesus Christ, to be the perfect example for all of us in every way.</p>

@@ -1,5 +1,4 @@
-<a class="anchor" id="about"></a>
-<section class="about">
+<section id="about" class="about">
     <div class="section-center about-content">
         <div>
             <h2><span class="camp-yr-logo"><span class="logo-lg">Camp</span><span class="logo-highlight logo-sm">2021</span></span> <span class="logo-match">Theme</span></h2>

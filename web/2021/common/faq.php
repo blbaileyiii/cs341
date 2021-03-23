@@ -1,5 +1,4 @@
-<a class="anchor" id="faq"></a>
-<section class="faq">
+<section id="faq" class="faq">
     <div class="section-center">
         <h2>F.A.Q.</h2>
         <ul>
