@@ -120,8 +120,8 @@ if(participant) {
     saveLS('participants', pList);
 }
 
-console.log(loadLS('participants'));
-
+//console.log(loadLS('participants'));
+console.log(participants.list);
 if (participants.list.length > 0) {
     let registrantDiv = document.querySelector('.registrantDiv');
     let eventSelect = document.getElementById('eventId');
@@ -133,7 +133,7 @@ if (participants.list.length > 0) {
 
     participants.list.forEach(participant => {
         let li = document.createElement('li');
-        console.log('option[value=' + participant.eventId + ']');
+        console.log('option[value=' + participant.eventid + ']');
         let event = eventSelect.querySelector('option[value=' + participant.eventId + ']').textContent;
         li.innerHTML = '<span>Name: '+ participant.name + '</span><span>Event: ' + event + '</span>';
         ul.appendChild(li);
