@@ -28,7 +28,7 @@
                         <p>The participant is responsible for his or her own conduct and is aware of and agrees to abide by Church standards, camp or event safety rules, and other pertinent instructions. Participants’ conduct and interactions should abide by Church standards and exemplify Christlike behavior. Parents and participants should understand that participation in an activity is not a right but a privilege that can be revoked if they behave inappropriately or if they pose a risk to themselves or others.</p>
                         <div class="fields">
                             <label for="participantSig"><span>Participant’s signature</span><span class="field-tip">Required</span></label> 
-                            <input id="participantSig" name="participantSig" type="text" required>
+                            <input id="participantSig" name="participantSig" type="text" <?php if(isset($participantSig)){echo "placeholder='$participantSig'";} ?> required>
                         </div>
                         <div class="fields">
                             <label for="participantSigDate"><span>Date</span></label> 
@@ -36,7 +36,7 @@
                         </div>
                         <div class="fields">
                             <label for="guardianSig"><span>Parent or guardian's signature</span><?php if(isset($participantAge) && $participantAge >=19){ echo "";} else {echo "<span class='field-tip'>Required</span>";} ?></label> 
-                            <input id="guardianSig" name="guardianSig" type="text" <?php if(isset($participantAge) && $participantAge >= 19){echo "value='N/A - Adult Participant' readonly";} else { echo "required";} ?>>
+                            <input id="guardianSig" name="guardianSig" type="text" <?php if(isset($guardianSig)){echo "placehold='$guardianSig'";} ?> <?php if(isset($participantAge) && $participantAge >= 19){echo "value='N/A - Adult Participant' readonly";} else { echo "required";} ?>>
                         </div>
                         <div class="fields">
                             <label for="guardianSigDate"><span>Date</span></label> 
