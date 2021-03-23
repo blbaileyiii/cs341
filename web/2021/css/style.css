@@ -439,10 +439,10 @@ fieldset {
 }
 
 a.button {
-    font-size: x-large;
-    background: var(--btn-bg);
+    font-size: 1.25rem;
+    background: var(--border-intense);
     color: var(--logo-highlight);
-    border: 2px solid var(--border-intense);
+    border: 5px double var(--on-nav-bg);
     border-radius: 5rem;
     padding: 0 1rem 0.25rem;
     text-decoration: none;
