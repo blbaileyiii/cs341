@@ -251,7 +251,7 @@ textarea:read-only {
 /* Layout */
 
 html {
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 3rem;
 }
 
 body {
@@ -411,6 +411,7 @@ fieldset {
 .fields textarea {
     width: 100%;
     padding: 0.25rem;
+    scroll-margin-top: 2rem;
 }
 
 .fields textarea {
