@@ -8,7 +8,7 @@ function checkInt($chkVal){
 
 function checkBool($chkVal){
     $chkVal = filter_var($chkVal, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
-    if(!is_null($chkVal)){$chkVal ? 'true' : 'false';}
+    if(!is_null($chkVal)){return $chkVal ? 'true' : 'false';}
     return $chkVal;    
 }
 
