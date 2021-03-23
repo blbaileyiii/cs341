@@ -50,6 +50,7 @@ for (camp in camps){
   let campDiv = document.createElement('div');
   let timeDiv = document.createElement('div');
   let dateDiv = document.createElement('div');
+  let registerDiv = document.createElement('div');
 
   campDiv.classList.add("countdown");
   timeDiv.classList.add("time-block");
@@ -62,6 +63,8 @@ for (camp in camps){
   timeDiv.innerHTML += "<div class='time-part'><div id='" + camp + "-cd-seconds' class='time-txt'></div><div class='time-unit'>Seconds</div></div>";
 
   dateDiv.innerHTML = "<div class='date'>" + camps[camp].datestr + "</div>";
+
+  registerDiv.innerHTML = "<a class='button' href='/2021/registration' title='Registration'>Register</a>"
   
   campDiv.appendChild(timeDiv);
   campDiv.appendChild(dateDiv);
