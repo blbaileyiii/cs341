@@ -13,21 +13,13 @@
     <main>
         <section>
             <div class="registrantDiv"></div>            
-            <h1>Register</h1>
+            <h1>Confirmation</h1>
             <?php
                 if (isset($_SESSION['message'])) { 
                         echo $_SESSION['message']; 
                         unset($_SESSION['message']);
                 }
             ?>
-            <p>All Adult and Youth Participants are required to register by submitting a valid Permission and Medical Release Form.</p>
-            <ul>
-                <li>Please fill out all required fields below. Note: Gray fields will be filled out automatically.</li>
-                <li>If the participant is under 19 years of age then the form must also be signed by the youth's legal parent/guardian.</li>
-                <li>A single form can not be used to register more than one participant or a single participant for multiple events.</li>
-                <li>Each participant must register individually for each event.</li>
-            </ul>
-            <h2>Permission and Medical Release Form</h2>
             <form class="form" method="post">
                 <fieldset>
                     <legend>Event Details</legend>
@@ -333,7 +325,7 @@
                     <p class="legal-sm"><a href="https://www.churchofjesuschrist.org/bc/content/shared/content/english/pdf/callings/young-men/parental-permission-medical-release.pdf" title="Permission and Medical Release Form">Permission and Medical Release Form</a> © 2017, 2019 by Intellectual Reserve, Inc. All rights reserved. 5/19. PD60004035 000</p>
                 </div>
                 <div class="non-fields">
-                        <button name="action" type="submit" value="confirm"><span>Register Participant</span></button>
+                        <button name="action" type="submit" value="Register"><span>Register Participant</span></button>
                 </div>
             </form>
         </section>
