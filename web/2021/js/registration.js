@@ -141,7 +141,7 @@ if (participants.list.length > 0) {
             if (option.value == participant.eventid){ eventTxt = option.text; }
         });
         //let event = eventSelect.querySelector('option[value=' + participant.eventid + ']').textContent;
-        li.innerHTML = '<span>'+ participant.name + '</span><span>registered for: ' + eventTxt + '</span>';
+        li.innerHTML = participant.name + 'Registered for: ' + eventTxt;
         ul.appendChild(li);
     });
 
