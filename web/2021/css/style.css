@@ -587,13 +587,11 @@ p.legal-sm {
 
 ul.re-affirm-details {
     list-style: none;
-    padding: 0;
+    padding: 1rem;
     margin: 1.5rem 0;
     border: 2px groove darkgray;
-}
-
-ul.re-affirm-details li{
-    margin: 0.25rem;
+    display: grid;
+    gap: 0.25rem;
 }
 
 .select-disabled {
@@ -603,6 +601,10 @@ ul.re-affirm-details li{
     color: var(--on-body-bg);
     font-size: 1rem;
     opacity: 1;
+}
+
+ul.re-affirm-details span {
+    font-weight: 500;
 }
 
 @supports not (-webkit-touch-callout: none) {
