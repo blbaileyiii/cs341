@@ -103,11 +103,11 @@ function changeRadioRequirement(inputField, required) {
 }
 
 document.getElementById('selfMedicateN').addEventListener('mouseenter', () => {
-    let special = document.querySelector('.special-instructions');
-    special.style.transform = "scale(1.05) translateX(0.5rem)";
-    special.style.background = "var(--border-intense)";
-    special.style.color = "var(--on-nav-bg)";
-    special.style.padding = "0.1rem 0.35rem 0.325rem";
+    document.querySelector('.special-instructions').classList.add('special-instructions-hover');
+});
+
+document.getElementById('selfMedicateN').addEventListener('mouseout', () => {
+    document.querySelector('.special-instructions').classList.remove('special-instructions-hover');
 });
 
 if(participant) {

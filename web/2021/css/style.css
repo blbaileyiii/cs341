@@ -549,6 +549,13 @@ p.legal-sm {
     display: inline-block;
 }
 
+.special-instructions-hover {
+    transform: scale(1.05) translateX(0.5rem);
+    background: var(--border-intense);
+    color: var(--on-nav-bg);
+    padding: 0.1rem 0.35rem 0.325rem;
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
