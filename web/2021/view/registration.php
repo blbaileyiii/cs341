@@ -99,7 +99,7 @@
                         <input id="participantAge" name="participantAge" type="number" min="11" placeholder="Invalid Birthday" <?php if(isset($participantAge)){echo "value='$participantAge'";} ?> readonly>
                     </div>
                     <div class="fields">
-                        <label for="email"><span>Email (If under 19, must be legal parent or guardian)</span><span class="field-tip">Required</span></label> 
+                        <label for="email"><span>Email (If under 19, must be for legal parent or guardian)</span><span class="field-tip">Required</span></label> 
                         <input id="email" name="email" type="email" <?php if(isset($email)){echo "value='$email'";} ?> required>
                     </div>
                     <div class="fields">

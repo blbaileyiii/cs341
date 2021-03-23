@@ -249,6 +249,11 @@ textarea:read-only {
 }
 
 /* Layout */
+
+html {
+    scroll-padding-top: 5rem;
+}
+
 body {
     margin: 0;
 }
