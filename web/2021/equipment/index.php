@@ -7,9 +7,10 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
 // Get the registration model for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/reg-model.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/equipment-model.php';
+//require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/json-model.php';
+//require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/equipment-model.php';
 // Get the fxs for valiation and file building
-require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
+//require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -17,15 +18,9 @@ if ($action == NULL) {
 }
 
 switch($action){
-    case 'getEquipment':
-        echo getEquipmentJSON();
-        break;
     case 'updateList':
         break;
-    default:
-        //if (!isset($_SESSION['equipment'])){
-        //    $_SESSION['equipment'] = getEquipment();
-        //}        
+    default:     
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/equipment.php';
         break;
 }
