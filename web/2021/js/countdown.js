@@ -73,7 +73,7 @@ for (camp in camps){
   a.title = "Register";
   a.href = "/2021/registration";
   a.classList.add('button')
-  a.addEventListener('click', ()=>{ this.style.transform = scale(0.9); })
+  a.addEventListener('click', ()=>{ this.style.transform = scale(0.5); })
   a.addEventListener('clickup', ()=>{ this.style.transform = scale(1.0); })
 
   registerDiv.appendChild(a);
