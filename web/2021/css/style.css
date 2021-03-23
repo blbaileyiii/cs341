@@ -646,9 +646,9 @@ select:invalid {
     border-radius: 0.4rem;
 }
 
-input:valid,
-textarea:valid,
-select:valid {
+input:hover:valid,
+textarea:hover:valid,
+select:hover:valid {
     box-shadow: 0 0 0 3px #c3f73a;
     border-radius: 0.4rem;
 }
