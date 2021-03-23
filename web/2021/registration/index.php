@@ -18,8 +18,6 @@ if ($action == NULL) {
 }
 
 switch($action){
-    case 'confirm':
-        break;
     case 'Register':
         // Sanitize form data
         $eventId = filter_input(INPUT_POST, 'eventId', FILTER_SANITIZE_NUMBER_INT);
