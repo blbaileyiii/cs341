@@ -639,6 +639,14 @@ p.sig {
     font-size: 0.83rem;
 }
 
+*:invalid {
+    outline-color: var(--border-intense);
+}
+
+*:valid {
+    outline-color: var(#c3f73a);
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
