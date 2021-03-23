@@ -207,8 +207,8 @@ switch($action){
         $contact = filter_input(INPUT_POST, 'contact', FILTER_SANITIZE_STRING);
         $permission = filter_input(INPUT_POST, 'permission', FILTER_SANITIZE_STRING);
         $responsibility = filter_input(INPUT_POST, 'responsibility', FILTER_SANITIZE_STRING);
-        $participantESig = filter_input(INPUT_POST, 'participantSig', FILTER_SANITIZE_STRING);
-        $guardianESig = filter_input(INPUT_POST, 'guardianSig', FILTER_SANITIZE_STRING);
+        $participantESig = filter_input(INPUT_POST, 'participantESig', FILTER_SANITIZE_STRING);
+        $guardianESig = filter_input(INPUT_POST, 'guardianESig', FILTER_SANITIZE_STRING);
 
         echo "participantESig: ". $participantESig . "<br>";
 
