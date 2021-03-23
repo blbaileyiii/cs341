@@ -210,7 +210,7 @@ switch($action){
         $participantESig = filter_input(INPUT_POST, 'participantESig', FILTER_SANITIZE_STRING);
         $guardianESig = filter_input(INPUT_POST, 'guardianESig', FILTER_SANITIZE_STRING);
 
-        echo "participantESig: ". $participantESig . "<br>";
+        echo "participantSig: ". $participantSig . "<br>";
 
         // Gray values are not sent on. They are set only to repopulate the gray fields if form validation fails.
         $eventDate = filter_input(INPUT_POST, 'eventDate', FILTER_SANITIZE_STRING);
