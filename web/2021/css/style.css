@@ -592,6 +592,10 @@ ul.re-affirm-details {
     border: 2px groove darkgray;
 }
 
+ul.re-affirm-details li{
+    margin: 0.25rem;
+}
+
 .select-disabled {
     -moz-appearance: none;
     -webkit-appearance: none;
