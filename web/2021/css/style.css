@@ -644,13 +644,15 @@ textarea:invalid,
 select:invalid {
     box-shadow: 0 0 0 3px var(--border-intense);
     border-radius: 0.4rem;
+    outline: none;
 }
 
-input:hover:valid,
-textarea:hover:valid,
-select:hover:valid {
+input:focus:valid,
+textarea:focus:valid,
+select:focus:valid {
     box-shadow: 0 0 0 3px #c3f73a;
     border-radius: 0.4rem;
+    outline: none;
 }
 
 @supports not (-webkit-touch-callout: none) {
