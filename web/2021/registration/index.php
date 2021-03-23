@@ -195,6 +195,8 @@ switch($action){
         $participantSigDate = filter_input(INPUT_POST, 'participantSigDate', FILTER_SANITIZE_STRING);
         $guardianSig = filter_input(INPUT_POST, 'guardianSig', FILTER_SANITIZE_STRING);
         $guardianSigDate = filter_input(INPUT_POST, 'guardianSigDate', FILTER_SANITIZE_STRING);
+        $participantESig = filter_input(INPUT_POST, 'participantSig', FILTER_SANITIZE_STRING);
+        $guardianESig = filter_input(INPUT_POST, 'guardianSig', FILTER_SANITIZE_STRING);
 
         // Gray values are not sent on. They are set only to repopulate the gray fields if form validation fails.
         $eventDate = filter_input(INPUT_POST, 'eventDate', FILTER_SANITIZE_STRING);
@@ -222,6 +224,8 @@ switch($action){
         $serious = checkBoolText($serious,$seriousTxt);
         $participantSig = checkSig($participantSig);
         $guardianSig = checkSig($guardianSig);
+        $participantESig = checkSig($participantESig);
+        $guardianESig = checkSig($guardianESig);
 
         //$selfMedicate
         $chkSelfMedicate = checkDepBool($selfMedicate, $medication);
@@ -231,6 +235,7 @@ switch($action){
         $participantDOB = checkMaxDOB($participantDOB);
         // If participantDOB is >= 19 certain things
         $guardianSig = checkAge($guardianSig, $participantAge);
+        $guardianESig = checkAge($guardianESig, $participantAge);
 
         //OVERWRITE Signature Dates... Need to match today.
         $participantSigDate = date('Y-m-d');
@@ -288,7 +293,7 @@ switch($action){
             exit; 
         }
 
-        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
+        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig) || empty($participantESig) || empty($guardianESig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $events = getEvents(2021);
             $eventList = buildEventList($events);
@@ -298,7 +303,7 @@ switch($action){
         }
 
         // Insert form data
-        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate);
+        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $participantESig, $guardianESig);
         //$regId = false; // Testing only
 
         // Validate Insert
