@@ -639,12 +639,11 @@ p.sig {
     font-size: 0.83rem;
 }
 
-*:invalid {
-    outline: var(--border-intense) solid 2px;
-}
-
-*:valid {
-    outline: var(#c3f73a) solid 2px;
+input:invalid,
+textarea:invalid,
+select:invalid {
+    box-shadow: 0 0 0 3px var(--border-intense);
+    border-radius: 0.4rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
