@@ -22,7 +22,7 @@ switch($action){
     case 'getItems':
         break;
     case 'postItem':
-        break
+        break;
     default:
         break;
 }
