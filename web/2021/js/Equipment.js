@@ -134,11 +134,13 @@ export default class Equipment {
                 let chkBox = document.createElement('input');
                 let label = document.createElement('label');
 
-                chkBox.id = participant.id + "-item-" + item.id;
-                chkBox.name = participant.id + "-item-" + item.id;
+                let identifier = "p-" + participant.id + "-item-" + item.id;
+
+                chkBox.id = identifier;
+                chkBox.name = identifier;
                 chkBox.type = "checkbox";
 
-                label.htmlFor = participant.id + "-item-" + item.id;
+                label.htmlFor = identifier;
                 if (item.quantity != '1'){
                     label.textContent = item.quantity + " " + item.name;
                 } else {
