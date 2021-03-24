@@ -32,8 +32,18 @@ switch($action){
             echo getInventoryByPId($reg_id);
         }
         break;
+    case 'getParticipant':
+        // GET
+        $reg_id = filter_input(INPUT_GET, 'reg_id', FILTER_SANITIZE_NUMBER_INT);
+        $reg_id = checkInt($reg_id);
+
+        if(empty($reg_id)){
+            echo getParticipantById($reg_id);
+        }
+        break;
     case 'postItem':
         // POST
+        // ?SECURE THIS BY CREATING THE SESSION VARIABLE TO MATCH THE LOCALSTORAGE ARRAY?
         $reg_id = filter_input(INPUT_POST, 'reg_id', FILTER_SANITIZE_NUMBER_INT);
         $item_id = filter_input(INPUT_POST, 'item_id', FILTER_SANITIZE_NUMBER_INT);
         $owned = filter_input(INPUT_POST, 'owned', FILTER_SANITIZE_STRING);

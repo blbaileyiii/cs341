@@ -3,6 +3,35 @@
  * HHSCAMPS JSON Model
  */
 
+function getParticipantById($reg_id) {
+    try {
+        $db = hhConnect();
+
+        $sql = 
+        'SELECT *
+        FROM hhstake.registrants AS p
+        WHERE p.reg_id = :reg_id
+        ORDER BY p.reg_id';
+
+        $sqlVarArray = array(
+            ':reg_id' => $reg_id
+        );
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute($sqlVarArray);
+        $returnSQL = $stmt->fetchAll();
+        $returnSQL = json_encode($returnSQL);
+
+        // The next line closes the interaction with the database 
+        $stmt->closeCursor();
+
+        return $returnSQL;
+
+    } catch(PDOException $ex) {
+        echo $sql . "<br>" . $ex->getMessage();
+    }
+}
+
 function getEventsJSON($eventYear) {
     try {
         $db = hhConnect();
