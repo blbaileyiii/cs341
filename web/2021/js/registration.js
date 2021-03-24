@@ -1,7 +1,6 @@
 import Participants from './Participants.js';
 import {saveLS, loadLS} from './ls.js';
 
-let participants = new Participants();
 let events;
 getEvents();
 
@@ -122,8 +121,9 @@ if(participant) {
     pList[pList.length] = participant;
     
     saveLS('participants', pList);
-    participants.list = participants.getParticipants();
 }
+
+let participants = new Participants();
 
 //console.log(loadLS('participants'));
 console.log(participants.list);
