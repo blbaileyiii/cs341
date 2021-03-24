@@ -134,7 +134,7 @@ export default class Equipment {
                 let chkBox = document.createElement('input');
                 let label = document.createElement('label');
 
-                let identifier = "p-" + participant.id + "-item-" + item.id;
+                let identifier = "p-" + participant.id + "-i-" + item.id;
 
                 chkBox.id = identifier;
                 chkBox.name = identifier;
