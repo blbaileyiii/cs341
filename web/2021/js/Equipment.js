@@ -139,6 +139,8 @@ export default class Equipment {
                 chkBox.id = identifier;
                 chkBox.name = identifier;
                 chkBox.type = "checkbox";
+                chkBox.dataset.pid = participant.id;
+                chkBox.dataset.iid = item.id;
 
                 label.htmlFor = identifier;
                 if (item.quantity != '1'){
