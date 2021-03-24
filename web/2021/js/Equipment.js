@@ -91,6 +91,7 @@ export default class Equipment {
             pDiv.appendChild(h2);
             pDiv.appendChild(ul);
 
+            console.log(key);
             if (key != "DO NOT BRING") { 
                 pDiv.appendChild(h2);
                 pDiv.appendChild(ul);
