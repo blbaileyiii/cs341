@@ -111,7 +111,7 @@ export default class Equipment {
     displayItemCheckList(participant) {
 
         let master = this;
-        
+
         console.log(this.equipmentList);
 
         let pid = "p-" + participant.id;
@@ -194,7 +194,7 @@ export default class Equipment {
         console.log(owned);
         console.log(pur_price);
 
-        let url = "/2021/query";
+        let url = "https://hhscamps.com/2021/query";
 
         let data = new FormData();
         data.append('action', 'postItem');
