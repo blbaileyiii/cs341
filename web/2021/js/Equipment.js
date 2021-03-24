@@ -67,20 +67,20 @@ export default class Equipment {
             }
         });
         //this.equipmentList = equipmentList;
-        console.log(this.equipmentList);
-        this.displayEquipment(id);
+        //console.log(this.equipmentList);
+        this.displayEquipment(id, equipmentList);
     }
 
-    displayEquipment(id) {
+    displayEquipment(id, equipmentList) {
         if (id) {
-            this.displayItemCheckList(id);            
+            this.displayItemCheckList(id, equipmentList);            
         } else {
-            this.displayItemList();
+            this.displayItemList(equipmentList);
         }
     }
     
-    displayItemList() {
-        console.log(this.equipmentList);
+    displayItemList(equipmentList) {
+        console.log(equipmentList);
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.classList.add('equipment-lists-standard');
 
@@ -89,14 +89,14 @@ export default class Equipment {
         let xh2;
         let xul;
 
-        Object.keys(this.equipmentList).forEach(key => {         
+        Object.keys(equipmentList).forEach(key => {         
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
 
             h2.innerHTML = key;
             ul.classList.add(key.replace(/ /g,"-"));            
 
-            this.equipmentList[key].forEach(item => {
+            equipmentList[key].forEach(item => {
                 let li = document.createElement('li');
 
                 li.innerHTML = item.name;
@@ -125,11 +125,11 @@ export default class Equipment {
         equipDiv.appendChild(pDiv);
     }
 
-    displayItemCheckList(participant) {
+    displayItemCheckList(participant, equipmentList) {
 
         let master = this;
 
-        console.log(this.equipmentList);
+        console.log(equipmentList);
 
         let pid = "p-" + participant.id;
 
@@ -141,7 +141,7 @@ export default class Equipment {
 
         let dnb;
 
-        Object.keys(this.equipmentList).forEach(key => {
+        Object.keys(equipmentList).forEach(key => {
 
             let cid = key.replace(/ /g,"-").toLowerCase();
 
@@ -155,7 +155,7 @@ export default class Equipment {
             h2.innerHTML = "<input type='checkbox' id='" + pid+ "-" + cid + "' name='" + cid + "'><label for='" + pid + "-" + cid + "'>" + key + "</label>";
             ul.classList.add(cid);            
 
-            this.equipmentList[key].forEach(item => {
+            equipmentList[key].forEach(item => {
 
                 let iid = "-i-" + item.id;
 
