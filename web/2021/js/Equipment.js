@@ -114,19 +114,19 @@ export default class Equipment {
         equipDiv.classList.add('equipment-lists-interactive');
 
         let pDiv = document.createElement('div');
-        pDiv.classList.add(participant.id);
+        pDiv.classList.add("p-" + participant.id);
 
         let dnb;
 
         Object.keys(this.equipmentList).forEach(key => {
 
             let pCatDiv = document.createElement('div');
-            pCatDiv.classList.add(participant.id + "-" + key.replace(/ /g,"-").toLowerCase());
+            pCatDiv.classList.add("p-" + participant.id + "-" + key.replace(/ /g,"-").toLowerCase());
             
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
 
-            h2.innerHTML = "<input type='checkbox' id='" + participant.id + "-" + key.replace(/ /g,"-").toLowerCase() + "' name='" + key.replace(/ /g,"-").toLowerCase() + "'><label for='" + participant.id + "-" + key.replace(/ /g,"-").toLowerCase() + "'>" + key + "</label>";
+            h2.innerHTML = "<input type='checkbox' id='p-" + participant.id + "-" + key.replace(/ /g,"-").toLowerCase() + "' name='" + key.replace(/ /g,"-").toLowerCase() + "'><label for='" + participant.id + "-" + key.replace(/ /g,"-").toLowerCase() + "'>" + key + "</label>";
             ul.classList.add(key.replace(/ /g,"-").toLowerCase());            
 
             this.equipmentList[key].forEach(item => {
