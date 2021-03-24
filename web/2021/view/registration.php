@@ -29,8 +29,7 @@
                 <li>Each participant must register individually for each event.</li>
             </ul>
             <h2>Permission and Medical Release Form</h2>
-            <?php var_dump($validate); ?>
-            <form <?php if(!isset($validate)){echo "class='form validate'";} else { echo "class='form'"; } ?> method="post">
+            <form <?php if(isset($validate)){echo "class='form validate'";} else { echo "class='form'"; } ?> method="post">
                 <fieldset>
                     <legend>Event Details</legend>
                     <div class="fields">
