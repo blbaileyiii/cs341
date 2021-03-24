@@ -150,6 +150,9 @@ export default class Equipment {
                 chkBox.type = "checkbox";
                 chkBox.dataset.pid = participant.id;
                 chkBox.dataset.iid = item.id;
+                chkBox.addEventListener('change', function ( ) {
+                    master.updateItem(this.dataset.pid, this.dataset.iid, this.value);
+                })
 
                 label.htmlFor = identifier;
                 if (item.quantity != '1'){
@@ -179,6 +182,36 @@ export default class Equipment {
         dnb.remove()
         pDiv.appendChild(dnb);
 
+    }
+
+    updateItem(reg_id, item_id, owned, pur_price = 0.00) {
+        let url = "/2021/query";
+
+        let data = new FormData();
+        data.append('action', 'postItem');
+        data.append('reg_id', reg_id);
+        data.append('item_id', item_id);
+        data.append('owned', owned);
+        data.append('pur_price', pur_price);
+
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            //do stuff with data...
+            if (this.readyState == 4 && this.status == 200) {
+                let myDBRes = JSON.parse(this.responseText);
+                console.log(myDBRes);
+            } else if (this.readyState == 4 && this.status == 404) {
+                /*
+                let err404 = document.createElement("p");
+                err404.className = "err404";
+                err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
+                */
+            } else {
+                //console.log("failed");
+            }
+        };
+        xmlhttp.open("POST", url, true);
+        xmlhttp.send(data);
     }
 
     /* SEND POST DATA as data
