@@ -70,9 +70,9 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
         
         $sqlVarArray = array(
             ':reg_id' => $reg_id,
-            ':reg_id' => $item_id,
-            ':reg_id' => $owned,
-            ':reg_id' => $pur_price
+            ':item_id' => $item_id,
+            ':owned' => $owned,
+            ':pur_price' => $pur_price
         );
 
         $stmt = $db->prepare($sql);
