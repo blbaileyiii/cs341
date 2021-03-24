@@ -36,7 +36,7 @@ switch($action){
 
         // TODO VALIDATE THE 4 to make sure they are what they say they are, 
         // and then if they all exist push on...
-        postItemJSON($reg_id, $item_id, $owned, $pur_price);
+        echo postItemJSON($reg_id, $item_id, $owned, $pur_price);
         break;
     default:
         break;
