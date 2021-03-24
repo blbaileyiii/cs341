@@ -12,7 +12,7 @@ export default class Equipment {
         console.log(this.participants.list);
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.innerHTML="";
-        
+
         if (this.participants.list.length > 0) {
             this.participants.list.forEach(participant => {
                 console.log(participant);
@@ -114,9 +114,12 @@ export default class Equipment {
         equipDiv.classList.add('equipment-lists-interactive');
 
         let pDiv = document.createElement('div');
-        pDiv.classList.add(participant.participantid);
+        pDiv.classList.add(participant.id);
 
         Object.keys(this.equipmentList).forEach(key => {
+
+            let pCatDiv = document.createElement('div');
+            pCatDiv.classList.add(participant.id + "-" + key.replace(/ /g,"-").toLowerCase());
             
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
@@ -138,12 +141,15 @@ export default class Equipment {
                 ul.appendChild(li);
             });
 
-            pDiv.appendChild(h2);
-            pDiv.appendChild(ul);
+            pCatDiv.appendChild(h2);
+            pCatDiv.appendChild(ul);
+
+            pDiv.appendChild(pCatDiv);
+
             equipDiv.appendChild(pDiv);
         });
 
-
+        //let dnb = document.querySelector();
 
         
         
