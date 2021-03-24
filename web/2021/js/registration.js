@@ -22,11 +22,13 @@ document.getElementById('participantDOB').addEventListener('change', function() 
     if(ageInput.value >= 19) {
         guardianSig.value = "N/A - Adult Participant";
         guardianSig.readOnly = true;
-        guardianSig.required = false;
+        changeTxtRequirement(guardianSig, false);
+        //guardianSig.required = false;
     } else {
         guardianSig.value = "";
         guardianSig.readOnly = false;
-        guardianSig.required = true;
+        changeTxtRequirement(guardianSig, true);
+        //guardianSig.required = true;
     }
 });
 
