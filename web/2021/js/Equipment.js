@@ -151,7 +151,7 @@ export default class Equipment {
                 chkBox.dataset.pid = participant.id;
                 chkBox.dataset.iid = item.id;
                 chkBox.addEventListener('change', function ( ) {
-                    master.updateItem(this.dataset.pid, this.dataset.iid, this.value);
+                    this.updateItem(this.dataset.pid, this.dataset.iid, this.value);
                 })
 
                 label.htmlFor = identifier;
