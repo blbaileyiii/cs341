@@ -185,6 +185,12 @@ export default class Equipment {
     }
 
     updateItem(reg_id, item_id, owned, pur_price = 0.00) {
+
+        console.log(reg_id);
+        console.log(item_id);
+        console.log(owned);
+        console.log(pur_price);
+
         let url = "/2021/query";
 
         let data = new FormData();

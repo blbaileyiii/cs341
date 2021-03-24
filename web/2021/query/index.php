@@ -26,9 +26,15 @@ switch($action){
         $item_id = filter_input(INPUT_POST, 'item_id', FILTER_SANITIZE_NUMBER_INT);
         $owned = filter_input(INPUT_POST, 'owned', FILTER_SANITIZE_STRING);
         $pur_price = filter_input(INPUT_POST, 'pur_price', FILTER_SANITIZE_NUMBER_FLOAT);
+        
+        echo $reg_id;
+        echo $item_id;
+        echo $owned;
+        echo $pur_price;
+        
         // TODO VALIDATE THE 4 to make sure they are what they say they are, 
         // and then if they all exist push on...
-        // postItemJSON($reg_id, $item_id, $owned, $pur_price);
+        //postItemJSON($reg_id, $item_id, $owned, $pur_price);
         break;
     default:
         break;
