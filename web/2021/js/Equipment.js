@@ -122,7 +122,7 @@ export default class Equipment {
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
 
-            h2.innerHTML = "<input type='checkbox' id='" + participant.participantid + "-" + key.replace(/ /g,"-").toLowerCase() + "' name='" + key.replace(/ /g,"-").toLowerCase() + "'><label for='" + participant.participantid + "-" + key.replace(/ /g,"-").toLowerCase() + "'>" + key + "</label>";
+            h2.innerHTML = "<input type='checkbox' id='" + participant.id + "-" + key.replace(/ /g,"-").toLowerCase() + "' name='" + key.replace(/ /g,"-").toLowerCase() + "'><label for='" + participant.id + "-" + key.replace(/ /g,"-").toLowerCase() + "'>" + key + "</label>";
             ul.classList.add(key.replace(/ /g,"-").toLowerCase());            
 
             this.equipmentList[key].forEach(item => {
@@ -134,7 +134,7 @@ export default class Equipment {
                     labelTxt = item.name;
                 }
                 
-                li.innerHTML = "<input type='checkbox' id='" + participant.participantid + "-item-" + item.id + "' name='" + participant.participantid + "-item-" + item.id + "'><label for='" + participant.participantid + "-item-" + item.id + "'>" + labelTxt + "</label>";
+                li.innerHTML = "<input type='checkbox' id='" + participant.id + "-item-" + item.id + "' name='" + participant.id + "-item-" + item.id + "'><label for='" + participant.id + "-item-" + item.id + "'>" + labelTxt + "</label>";
 
                 ul.appendChild(li);
             });
