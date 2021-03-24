@@ -121,7 +121,6 @@ export default class Equipment {
         Object.keys(this.equipmentList).forEach(key => {
 
             let pid = "p-" + participant.id;
-            let iid = "-i-" + item.id;
             let cid = key.replace(/ /g,"-").toLowerCase();
 
             let pCatDiv = document.createElement('div');
@@ -135,6 +134,9 @@ export default class Equipment {
             ul.classList.add(cid);            
 
             this.equipmentList[key].forEach(item => {
+
+                let iid = "-i-" + item.id;
+
                 let li = document.createElement('li');
                 let chkBox = document.createElement('input');
                 let label = document.createElement('label');
