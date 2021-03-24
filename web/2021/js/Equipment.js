@@ -149,7 +149,10 @@ export default class Equipment {
             equipDiv.appendChild(pDiv);
         });
 
-        //let dnb = document.querySelector();
+        let dnb = document.querySelector("." + participant.id + "-" + key.replace(/ /g,"-").toLowerCase());
+        dnb.remove()
+
+        equipDiv.appendChild(dnb);
 
         
         
