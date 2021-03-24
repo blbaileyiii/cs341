@@ -114,8 +114,7 @@ export default class Equipment {
         let pDiv = document.createElement('div');
         pDiv.classList.add(participant.participantid);
 
-        let xh2;
-        let xul;
+        equipDiv.innerHTML="";
 
         Object.keys(this.equipmentList).forEach(key => {
             
@@ -139,22 +138,15 @@ export default class Equipment {
                 ul.appendChild(li);
             });
 
-            if (key != "DO NOT BRING") { 
-                pDiv.appendChild(h2);
-                pDiv.appendChild(ul);
-            } else {
-                xh2 = h2;
-                xul = ul;
-            }
+            pDiv.appendChild(h2);
+            pDiv.appendChild(ul);
+            equipDiv.appendChild(pDiv);
         });
 
-        if(xh2 && xul){
-            pDiv.appendChild(xh2);
-            pDiv.appendChild(xul);
-        }
 
-        equipDiv.innerHTML="";
-        equipDiv.appendChild(pDiv);
+
+        
+        
 
     }
 }
