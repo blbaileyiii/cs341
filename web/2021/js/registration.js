@@ -181,7 +181,7 @@ function buildEventScript() {
     console.log(events);
         if (events.length > 0) {
             document.getElementById('eventId').addEventListener('change', function() { 
-
+                console.log(this.value);
              })           
         }
 }
