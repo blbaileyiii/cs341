@@ -10,7 +10,7 @@ function getParticipantById($id) {
         $sql = 
         'SELECT *
         FROM hhstake.registrants AS p
-        WHERE p.id = :reg_id
+        WHERE p.id = :id
         ORDER BY p.id';
 
         $sqlVarArray = array(
