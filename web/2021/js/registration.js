@@ -122,6 +122,7 @@ if(participant) {
     pList[pList.length] = participant;
     
     saveLS('participants', pList);
+    participants.list = participants.getParticipants();
 }
 
 //console.log(loadLS('participants'));
