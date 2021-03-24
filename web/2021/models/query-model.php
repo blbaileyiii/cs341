@@ -59,17 +59,27 @@ function getEventsJSON($eventYear) {
     }
 }
 
-function getEquipmentJSON() {
+function getEquipmentJSON($reg_id) {
     try {
         $db = hhConnect();
 
         $sql = 
+        'SELECT e.category, i.owned, e.id, e.quantity, e.name, e.avg_price, i.pur_price 
+        FROM hhstake.equipment AS e
+        LEFT JOIN hhstake.inventory AS i ON e.id = i.item_id AND i.reg_id = :reg_id
+        ORDER BY e.category, e.name';
+        /*
         'SELECT *
         FROM hhstake.equipment AS e
         ORDER BY e.category, e.name';
+        */
+
+        $sqlVarArray = array(
+            ':reg_id' => $reg_id
+        );
 
         $stmt = $db->prepare($sql);
-        $stmt->execute();
+        $stmt->execute($sqlVarArray);
         $returnSQL = $stmt->fetchAll();
         $returnSQL = json_encode($returnSQL);
 
