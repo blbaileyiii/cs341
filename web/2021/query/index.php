@@ -28,6 +28,10 @@ switch($action){
         $pur_price = filter_input(INPUT_POST, 'pur_price', FILTER_SANITIZE_NUMBER_FLOAT);
         
         $JSON->success = true;
+        $JSON->reg_id = $reg_id;
+        $JSON->item_id = $item_id;
+        $JSON->owned = $owned;
+        $JSON->pur_price = $pur_price;
 
         $myJSON = json_encode($JSON);
         echo  $myJSON;
