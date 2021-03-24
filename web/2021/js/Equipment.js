@@ -4,11 +4,10 @@ import {loadLS, saveLS} from './ls.js';
 export default class Equipment {
     constructor() {
         this.participants = new Participants();
-        this.equipmentList = {}; //this.convertEquipmentList();
-        //this.displayEquipment();
+        //this.equipmentList = {}; //this.convertEquipmentList();
     }
 
-    displayEquipment() {
+    buildEquipment(master) {
         console.log(this.participants.list);
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.innerHTML="";
@@ -16,38 +15,24 @@ export default class Equipment {
         if (this.participants.list.length > 0) {
             this.participants.list.forEach(participant => {
                 console.log(participant);
-                this.displayItemCheckList(participant);
+                this.getEquipment(master, participant.id)
+                //this.displayItemCheckList(participant);
             });            
         } else {
-            this.displayItemList();
+            this.getEquipment(master, null)
+            //this.displayItemList();
         }
     }
 
-    convertEquipmentList(dbEquipment) {
-        let equipmentList = {};
-        dbEquipment.forEach(item => {
-            if(!equipmentList.hasOwnProperty(item.category)){
-                equipmentList[item.category] = [{'id': item.id, 'name': item.name, 'quantity': item.quantity, 'avg_price': item.avg_price, 'bring': item.bring, 'ywcamp': item.ywcamp, 'ymcamp': item.ymcamp, 'trek': item.trek}];
-            } else {
-                equipmentList[item.category].push({'id': item.id, 'name': item.name, 'quantity': item.quantity, 'avg_price': item.avg_price, 'bring': item.bring, 'ywcamp': item.ywcamp, 'ymcamp': item.ymcamp, 'trek': item.trek});
-            }
-        });
-        this.equipmentList = equipmentList;
-        console.log(this.equipmentList);
-        this.displayEquipment();
-    }
-
-    getEquipment(master) {
-        let url = "/2021/query/?action=getEquipment";
+    getEquipment(master, id) {
+        let url = "/2021/query/?action=getEquipment&reg_id=" + id;
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             //do stuff with data...
             if (this.readyState == 4 && this.status == 200) {
                 let myDBRes = JSON.parse(this.responseText);
                 console.log(myDBRes);
-                master.convertEquipmentList(myDBRes);
-
-
+                master.convertEquipmentList(myDBRes, id);
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
                 let err404 = document.createElement("p");
@@ -62,6 +47,39 @@ export default class Equipment {
         xmlhttp.send();
     }
 
+    
+    convertEquipmentList(dbEquipment, id) {
+        let equipmentList = {};
+        dbEquipment.forEach(item => {
+            if(!equipmentList.hasOwnProperty(item.category)){
+                equipmentList[item.category] = [{'owned': item.owned,
+                                                'id': item.id,
+                                                'quantity': item.quantity,
+                                                'name': item.name,                                                  
+                                                'avg_price': item.avg_price, 
+                                                'pur_price': item.pur_price}];
+            } else {
+                equipmentList[item.category].push({ 'owned': item.owned,
+                                                    'id': item.id,
+                                                    'quantity': item.quantity,
+                                                    'name': item.name,                                                  
+                                                    'avg_price': item.avg_price, 
+                                                    'pur_price': item.pur_price});
+            }
+        });
+        //this.equipmentList = equipmentList;
+        console.log(this.equipmentList);
+        this.displayEquipment(id);
+    }
+
+    displayEquipment(id) {
+        if (id) {
+            this.displayItemCheckList(id);            
+        } else {
+            this.displayItemList();
+        }
+    }
+    
     displayItemList() {
         console.log(this.equipmentList);
         let equipDiv = document.getElementById('equipment-lists');
@@ -209,7 +227,9 @@ export default class Equipment {
             if (this.readyState == 4 && this.status == 200) {
                 //console.log(this.responseText)
                 let myDBRes = JSON.parse(this.responseText);
-                console.log(myDBRes);
+                if(myDBRes) {
+                    // SUCCESSFUL...
+                }
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
                 let err404 = document.createElement("p");

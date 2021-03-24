@@ -21,6 +21,10 @@ switch($action){
         break;
     case 'getEquipment':
         // GET
+        $reg_id = filter_input(INPUT_GET, 'reg_id', FILTER_SANITIZE_NUMBER_INT);
+        $reg_id = checkInt($reg_id);
+        
+        //IF REG_ID IS NULL THAT IS OK.
         echo getEquipmentJSON();
         break;
     case 'getItems':
