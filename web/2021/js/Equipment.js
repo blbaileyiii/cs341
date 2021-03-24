@@ -194,7 +194,7 @@ export default class Equipment {
         console.log(owned);
         console.log(pur_price);
 
-        let url = "https://www.hhscamps.com/2021/query/";
+        let url = "/2021/query/";
 
         let data = new FormData();
         data.append('action', 'postItem');
