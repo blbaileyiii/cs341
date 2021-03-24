@@ -10,6 +10,9 @@ export default class Equipment {
 
     displayEquipment() {
         console.log(this.participants.list);
+        let equipDiv = document.getElementById('equipment-lists');
+        equipDiv.innerHTML="";
+        
         if (this.participants.list.length > 0) {
             this.participants.list.forEach(participant => {
                 console.log(participant);
@@ -102,7 +105,6 @@ export default class Equipment {
             pDiv.appendChild(xul);
         }
 
-        equipDiv.innerHTML="";
         equipDiv.appendChild(pDiv);
     }
 
@@ -113,8 +115,6 @@ export default class Equipment {
 
         let pDiv = document.createElement('div');
         pDiv.classList.add(participant.participantid);
-
-        equipDiv.innerHTML="";
 
         Object.keys(this.equipmentList).forEach(key => {
             
