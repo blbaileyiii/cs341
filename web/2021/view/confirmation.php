@@ -20,7 +20,7 @@
                         unset($_SESSION['message']);
                 }
             ?>
-            <form <?php if(!isset($validate)){echo "class='form validate";} else { echo "class='form'"; } ?>
+            <form <?php if(!isset($validate)){echo "class='form validate";} else { echo "class='form'"; } ?> method="post">
                 <div>
                     <fieldset>
                         <legend>Re-Affirm Permission</legend>
