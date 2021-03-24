@@ -16,14 +16,24 @@ if ($action == NULL) {
 
 switch($action){
     case 'getEvents':
+        // GET
         echo getEventsJSON(2021);
         break;
     case 'getEquipment':
+        // GET
         echo getEquipmentJSON();
         break;
     case 'getItems':
+        // GET
+        $reg_id = filter_input(INPUT_GET, 'reg_id', FILTER_SANITIZE_NUMBER_INT);
+        $reg_id = checkInt($reg_id);
+
+        if(empty($reg_id)){
+            echo getInventoryByPId($reg_id);
+        }
         break;
     case 'postItem':
+        // POST
         $reg_id = filter_input(INPUT_POST, 'reg_id', FILTER_SANITIZE_NUMBER_INT);
         $item_id = filter_input(INPUT_POST, 'item_id', FILTER_SANITIZE_NUMBER_INT);
         $owned = filter_input(INPUT_POST, 'owned', FILTER_SANITIZE_STRING);
@@ -34,9 +44,9 @@ switch($action){
         $owned = checkBool($owned);
         $pur_price = checkFloat($pur_price);
 
-        // TODO VALIDATE THE 4 to make sure they are what they say they are, 
-        // and then if they all exist push on...
-        echo postItemJSON($reg_id, $item_id, $owned, $pur_price);
+        if(empty($reg_id) || empty($item_id) || empty($owned) || empty($pur_price)){
+            echo postItemJSON($reg_id, $item_id, $owned, $pur_price);
+        }        
         break;
     default:
         break;
