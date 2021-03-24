@@ -77,7 +77,7 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
 
         $stmt = $db->prepare($sql);
         $stmt->execute($sqlVarArray);
-        $returnSQL = $stmt->fetchAll();
+        $returnSQL = $stmt->rowCount();
         $returnSQL = json_encode($returnSQL);
 
         // The next line closes the interaction with the database 

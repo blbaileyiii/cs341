@@ -4,6 +4,8 @@
  */
 // Get the database connection file
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
+// Get validation, etc fx
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 // Get the registration model for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/query-model.php';
 
@@ -27,17 +29,14 @@ switch($action){
         $owned = filter_input(INPUT_POST, 'owned', FILTER_SANITIZE_STRING);
         $pur_price = filter_input(INPUT_POST, 'pur_price', FILTER_SANITIZE_NUMBER_FLOAT);
         
-        $JSON->success = true;
-        $JSON->reg_id = $reg_id;
-        $JSON->item_id = $item_id;
-        $JSON->owned = $owned;
-        $JSON->pur_price = $pur_price;
+        $reg_id = checkInt($reg_id);
+        $item_id = checkInt($item_id);
+        $owned = checkBool($owned);
+        $pur_price = checkFloat($pur_price);
 
-        $myJSON = json_encode($JSON);
-        echo  $myJSON;
         // TODO VALIDATE THE 4 to make sure they are what they say they are, 
         // and then if they all exist push on...
-        //postItemJSON($reg_id, $item_id, $owned, $pur_price);
+        postItemJSON($reg_id, $item_id, $owned, $pur_price);
         break;
     default:
         break;
