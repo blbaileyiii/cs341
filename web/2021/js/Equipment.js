@@ -116,6 +116,8 @@ export default class Equipment {
         let pDiv = document.createElement('div');
         pDiv.classList.add(participant.id);
 
+        let dnb;
+
         Object.keys(this.equipmentList).forEach(key => {
 
             let pCatDiv = document.createElement('div');
@@ -147,15 +149,14 @@ export default class Equipment {
             pDiv.appendChild(pCatDiv);
 
             equipDiv.appendChild(pDiv);
+
+            if (key != "DO NOT BRING") { 
+                dnb = pDiv;
+            }
         });
 
-        let dnb = document.querySelector("." + participant.id + "-" + key.replace(/ /g,"-").toLowerCase());
         dnb.remove()
-
         equipDiv.appendChild(dnb);
-
-        
-        
 
     }
 }
