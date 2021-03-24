@@ -110,17 +110,19 @@ export default class Equipment {
 
     displayItemCheckList(participant) {
         console.log(this.equipmentList);
+
+        let pid = "p-" + participant.id;
+
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.classList.add('equipment-lists-interactive');
 
         let pDiv = document.createElement('div');
-        pDiv.classList.add("p-" + participant.id);
+        pDiv.classList.add(pid);       
 
         let dnb;
 
         Object.keys(this.equipmentList).forEach(key => {
 
-            let pid = "p-" + participant.id;
             let cid = key.replace(/ /g,"-").toLowerCase();
 
             let pCatDiv = document.createElement('div');
