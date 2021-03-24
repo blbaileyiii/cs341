@@ -207,9 +207,9 @@ export default class Equipment {
         xmlhttp.onreadystatechange = function() {
             //do stuff with data...
             if (this.readyState == 4 && this.status == 200) {
-                //console.log(this.responseText)
+                console.log(this.responseText)
                 let myDBRes = JSON.parse(this.responseText);
-                //console.log(myDBRes);
+                console.log(myDBRes);
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
                 let err404 = document.createElement("p");
