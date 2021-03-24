@@ -5,7 +5,7 @@
 // Get the database connection file
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
 // Get the registration model for use as needed
-require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/json-model.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/query-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -19,6 +19,10 @@ switch($action){
     case 'getEquipment':
         echo getEquipmentJSON();
         break;
+    case 'getItems':
+        break;
+    case 'postItem':
+        break
     default:
         break;
 }

@@ -9,7 +9,7 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/connections.php';
 // Get the account model for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/reg-model.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/json-model.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/query-model.php';
 // Get the account validation fxs for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
