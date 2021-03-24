@@ -154,6 +154,7 @@ export default class Equipment {
                 chkBox.dataset.pid = participant.id;
                 chkBox.dataset.iid = item.id;
                 chkBox.addEventListener('change', function ( ) {
+                    console.log(this.value);
                     master.updateItem(this.dataset.pid, this.dataset.iid, this.value);
                 })
 
@@ -189,10 +190,10 @@ export default class Equipment {
 
     updateItem(reg_id, item_id, owned, pur_price = 0.00) {
 
-        console.log(reg_id);
-        console.log(item_id);
-        console.log(owned);
-        console.log(pur_price);
+        //console.log(reg_id);
+        //console.log(item_id);
+        //console.log(owned);
+        //console.log(pur_price);
 
         let url = "/2021/query/";
 
