@@ -150,8 +150,8 @@ export default class Equipment {
 
             equipDiv.appendChild(pDiv);
 
-            console.log(key);
-            if (key = "DO NOT BRING") { 
+            //console.log(key);
+            if (key == "DO NOT BRING") { 
                 dnb = pCatDiv;
             }
         });
