@@ -178,22 +178,22 @@ function getEvents() {
 }
 
 function buildEventScript() {
-    console.log(events);
-        if (events.length > 0) {
-            document.getElementById('eventId').addEventListener('change', function() { 
-                console.log(this.value);
-                let myEvent;
-                events.forEach( event => { if(event.id == this.value) { 
-                    myEvent = event; 
-                
-                } });
-                if(myEvent){
-                    document.getElementById('eventDate').value = myEvent.date_start;
-                    document.getElementById('eventDesc').value = myEvent.desc;
-                    document.getElementById('eventLeaderName').value = myEvent.l_name;
-                    document.getElementById('eventLeaderPhone').value = myEvent.l_phone;
-                    document.getElementById('eventLeaderEmail').value = myEvent.l_email;
-                }
-            });
-        }
+    //console.log(events);
+    if (events.length > 0) {
+        document.getElementById('eventId').addEventListener('change', function() { 
+            //console.log(this.value);
+            let myEvent;
+            events.forEach( event => { if(event.id == this.value) { 
+                myEvent = event; 
+            
+            } });
+            if(myEvent){
+                document.getElementById('eventDate').value = myEvent.date_start;
+                document.getElementById('eventDesc').value = myEvent.desc;
+                document.getElementById('eventLeaderName').value = myEvent.l_name;
+                document.getElementById('eventLeaderPhone').value = myEvent.l_phone;
+                document.getElementById('eventLeaderEmail').value = myEvent.l_email;
+            }
+        });
+    }
 }
