@@ -41,6 +41,13 @@
                 <a href="https://unsplash.com/photos/i4Fv22LzcQU" target="_blank" rel="noreferrer"><img class="portrait" src="/2021/images/growth-path-w1280x1707.webp" alt="Path Through Growing Trees"></a>
                 <figcaption>Photo by <a href="https://unsplash.com/@jane_palash" target="_blank" rel="noreferrer">Jane Palash</a> on <a href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a> - <a href="https://unsplash.com/license" target="_blank" rel="noreferrer">License</a></figcaption>
             </figure>
+
+            <figure>
+                <img >
+                <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                <figcaption>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></figcaption>
+            </figure>
             <!--
             <ul>
                 <li>Hiking: Photo by <a href="https://unsplash.com/@toomastartes">Toomas Tartes</a> on <a href="https://unsplash.com">Unsplash</a> - <a href="https://unsplash.com/license" target="_blank" rel="noreferrer">License</a></li>
