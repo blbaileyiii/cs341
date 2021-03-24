@@ -153,6 +153,7 @@ switch($action){
         // Check for empty / null values. All values listed are required.
         if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
+            $validate = true;
             $events = getEventsJSON(2021);
             $events = json_decode($events, true);
             $eventList = buildEventList($events);
@@ -326,6 +327,7 @@ switch($action){
 
         if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig)  || empty($adult)  || empty($contact)  || empty($permission)  || empty($responsibility) || empty($participantESig) || empty($guardianESig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
+            $validate = true;
             $events = getEventsJSON(2021);
             $events = json_decode($events, true);
             $eventList = buildEventList($events);

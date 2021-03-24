@@ -639,17 +639,17 @@ p.sig {
     font-size: 0.83rem;
 }
 
-input:invalid,
-textarea:invalid,
-select:invalid {
+.validate input:invalid,
+.validate textarea:invalid,
+.validate select:invalid {
     box-shadow: 0 0 0 3px var(--border-intense);
     border-radius: 0.4rem;
     outline: none;
 }
 
-input:focus:valid,
-textarea:focus:valid,
-select:focus:valid {
+.validate input:focus:valid,
+.validate textarea:focus:valid,
+.validate select:focus:valid {
     box-shadow: 0 0 0 3px #c3f73a;
     border-radius: 0.4rem;
     outline: none;
