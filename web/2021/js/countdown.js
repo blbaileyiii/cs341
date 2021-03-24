@@ -1,7 +1,7 @@
 getEvents();
 
 function getEvents() {
-  let url = "/2021/json/?action=getEvents";
+  let url = "/2021/query/?action=getEvents";
   let xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
       //do stuff with data...

@@ -38,7 +38,7 @@ export default class Equipment {
     }
 
     getEquipment(master) {
-        let url = "/2021/json/?action=getEquipment";
+        let url = "/2021/query/?action=getEquipment";
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             //do stuff with data...
