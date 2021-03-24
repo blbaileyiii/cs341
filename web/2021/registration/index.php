@@ -13,6 +13,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/json-model.php';
 // Get the account validation fxs for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
+$events = getEventsJSON(2021);
+$events = json_decode($events, true);
+$eventList = buildEventList($events);
+
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
@@ -142,10 +146,6 @@ switch($action){
 
         if(empty($participantDOB)){
             $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
-            $events = getEventsJSON(2021);
-            $events = json_decode($events, true);
-            $eventList = buildEventList($events);
-            $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
         }
@@ -154,18 +154,9 @@ switch($action){
         if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $validate = true;
-            $events = getEventsJSON(2021);
-            $events = json_decode($events, true);
-            $eventList = buildEventList($events);
-            $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
         }
-        
-        $events = getEventsJSON(2021);
-        $events = json_decode($events, true);
-        $eventList = buildEventList($events);
-        $eventScript = buildEventScript($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/confirmation.php';
         break;
     case 'Register':
@@ -317,10 +308,6 @@ switch($action){
 
         if(empty($participantDOB)){
             $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
-            $events = getEventsJSON(2021);
-            $events = json_decode($events, true);
-            $eventList = buildEventList($events);
-            $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
         }
@@ -328,10 +315,6 @@ switch($action){
         if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig)  || empty($adult)  || empty($contact)  || empty($permission)  || empty($responsibility) || empty($participantESig) || empty($guardianESig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $validate = true;
-            $events = getEventsJSON(2021);
-            $events = json_decode($events, true);
-            $eventList = buildEventList($events);
-            $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
         }
@@ -351,20 +334,12 @@ switch($action){
             exit;
         } else {
             $_SESSION['message'] = "<div class='alert'>Sorry, $participantName, but registration failed. Please try again.<br>If the problem persists please contact your Ward Leadership and/or the WebAdmin.</div>";
-            $events = getEventsJSON(2021);
-            $events = json_decode($events, true);
-            $eventList = buildEventList($events);
-            $eventScript = buildEventScript($events);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit;
         }
 
         break;
     default:
-        $events = getEventsJSON(2021);
-        $events = json_decode($events, true);
-        $eventList = buildEventList($events);
-        $eventScript = buildEventScript($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
 }
 

@@ -96,33 +96,6 @@ function buildEventList($events){
     return $eventList;
 }
 
-function buildEventScript($events){
-    
-    $switchScript = buildSwitchScript($events);
-
-    $eventScript = "document.getElementById('eventId').addEventListener('change', function() { $switchScript });";
-    return $eventScript;
-}
-
-
-function buildSwitchScript($events){
-    $switchScript = "let eventID = document.getElementById('eventId').value;";
-    //$switchScript .= "console.log('EventID:' + eventID);";
-    $switchScript .= "switch(eventID) {";
-    for ($x = 0; $x <= count($events); $x++) {
-        $switchScript .= "case '{$events[$x]['id']}':";
-        $switchScript .= "document.getElementById('eventDate').value = \"{$events[$x]['date_start']}\";";
-        $switchScript .= "document.getElementById('eventDesc').value = \"{$events[$x]['desc']}\";";
-        $switchScript .= "document.getElementById('eventLeaderName').value = \"{$events[$x]['l_name']}\";";
-        $switchScript .= "document.getElementById('eventLeaderPhone').value = \"{$events[$x]['l_phone']}\";";
-        $switchScript .= "document.getElementById('eventLeaderEmail').value = \"{$events[$x]['l_email']}\";";
-        $switchScript .= "break;";
-    }
-    $switchScript .= "}";
-
-    return $switchScript;
-}
-
 function buildAboutHTML($events) {
     $aboutHTML = "";
     return $aboutHTML;
