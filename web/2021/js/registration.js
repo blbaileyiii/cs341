@@ -153,7 +153,7 @@ if (participants.list.length > 0) {
 }
 
 function getEvents() {
-    let url = "/2021/json/?action=getEvnts";
+    let url = "/2021/json/?action=getEvents";
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         //do stuff with data...
