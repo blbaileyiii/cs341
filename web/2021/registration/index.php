@@ -140,8 +140,10 @@ switch($action){
         echo "guardianSigDate: ". $guardianSigDate . "<br>";
         */
 
-        if(empty($participantDOB)){
-            $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
+        // Check for empty / null values. All values listed are required.
+        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
+            $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
+            $validate = true;
             $events = getEventsJSON(2021);
             $events = json_decode($events, true);
             $eventList = buildEventList($events);
@@ -150,10 +152,8 @@ switch($action){
             exit; 
         }
 
-        // Check for empty / null values. All values listed are required.
-        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
-            $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
-            $validate = true;
+        if(empty($participantDOB)){
+            $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
             $events = getEventsJSON(2021);
             $events = json_decode($events, true);
             $eventList = buildEventList($events);
@@ -313,10 +313,11 @@ switch($action){
         echo "responsibility: ". $responsibility . "<br>";
         echo "participantESig: ". $participantESig . "<br>";
         echo "guardianESig: ". $guardianSig . "<br>";
-        */
+        */        
 
-        if(empty($participantDOB)){
-            $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
+        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig)  || empty($adult)  || empty($contact)  || empty($permission)  || empty($responsibility) || empty($participantESig) || empty($guardianESig))){
+            $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
+            $validate = true;
             $events = getEventsJSON(2021);
             $events = json_decode($events, true);
             $eventList = buildEventList($events);
@@ -325,9 +326,8 @@ switch($action){
             exit; 
         }
 
-        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig)  || empty($adult)  || empty($contact)  || empty($permission)  || empty($responsibility) || empty($participantESig) || empty($guardianESig))){
-            $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
-            $validate = true;
+        if(empty($participantDOB)){
+            $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
             $events = getEventsJSON(2021);
             $events = json_decode($events, true);
             $eventList = buildEventList($events);
