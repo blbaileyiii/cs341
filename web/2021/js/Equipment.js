@@ -146,13 +146,24 @@ export default class Equipment {
             let cid = key.replace(/ /g,"-").toLowerCase();
 
             let pCatDiv = document.createElement('div');
-            pCatDiv.classList.add(pid+ "-" + cid);
+            pCatDiv.classList.add(pid + "-" + cid);
             
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
 
+            let catInput = document.createElement('input');
+            let catLabel = document.createElement('label');
+
+            catInput.id = pid+ "-" + cid;
+            catInput.name = cid;
+            catInput.type = "checkbox";
+
+            catLabel.htmlFor = pid + "-" + cid;
+            catLabel.textContent = key;
+
             // TODO FIX THIS TO USE A CREATED INPUT AND LABEL ELEMENT!!! 
-            h2.innerHTML = "<input type='checkbox' id='" + pid+ "-" + cid + "' name='" + cid + "'><label for='" + pid + "-" + cid + "'>" + key + "</label>";
+            h2.appendChild(catInput);
+            h2.appendChild(catLabel);
             ul.classList.add(cid);            
 
             equipmentList[key].forEach(item => {
