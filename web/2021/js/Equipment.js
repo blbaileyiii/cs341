@@ -120,6 +120,10 @@ export default class Equipment {
 
         Object.keys(this.equipmentList).forEach(key => {
 
+            let pid = "p-" + participant.id;
+            let iid = "-i-" + item.id;
+            let cid = key.replace(/ /g,"-").toLowerCase();
+
             let pCatDiv = document.createElement('div');
             pCatDiv.classList.add("p-" + participant.id + "-" + key.replace(/ /g,"-").toLowerCase());
             
