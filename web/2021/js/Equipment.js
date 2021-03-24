@@ -109,6 +109,9 @@ export default class Equipment {
     }
 
     displayItemCheckList(participant) {
+
+        let master = this;
+        
         console.log(this.equipmentList);
 
         let pid = "p-" + participant.id;
@@ -151,7 +154,7 @@ export default class Equipment {
                 chkBox.dataset.pid = participant.id;
                 chkBox.dataset.iid = item.id;
                 chkBox.addEventListener('change', function ( ) {
-                    this.updateItem(this.dataset.pid, this.dataset.iid, this.value);
+                    master.updateItem(this.dataset.pid, this.dataset.iid, this.value);
                 })
 
                 label.htmlFor = identifier;
