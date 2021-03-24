@@ -131,7 +131,7 @@ export default class Equipment {
 
         console.log(equipmentList);
 
-        let pid = "p-" + participant.id;
+        let pid = "p-" + participant;
 
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.classList.add('equipment-lists-interactive');
@@ -179,7 +179,7 @@ export default class Equipment {
                 chkBox.id = identifier;
                 chkBox.name = identifier;
                 chkBox.type = "checkbox";
-                chkBox.dataset.pid = participant.id;
+                chkBox.dataset.pid = participant;
                 chkBox.dataset.iid = item.id;
                 chkBox.addEventListener('change', function () {
                     master.updateItem(this.dataset.pid, this.dataset.iid, this.checked);
