@@ -3,18 +3,18 @@
  * HHSCAMPS JSON Model
  */
 
-function getParticipantById($reg_id) {
+function getParticipantById($id) {
     try {
         $db = hhConnect();
 
         $sql = 
         'SELECT *
         FROM hhstake.registrants AS p
-        WHERE p.reg_id = :reg_id
-        ORDER BY p.reg_id';
+        WHERE p.id = :reg_id
+        ORDER BY p.id';
 
         $sqlVarArray = array(
-            ':reg_id' => $reg_id
+            ':id' => $id
         );
 
         $stmt = $db->prepare($sql);

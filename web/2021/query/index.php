@@ -38,11 +38,11 @@ switch($action){
         break;
     case 'getParticipant':
         // GET
-        $reg_id = filter_input(INPUT_GET, 'reg_id', FILTER_SANITIZE_NUMBER_INT);
-        $reg_id = checkInt($reg_id);
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $id = checkInt($reg_id);
 
-        if(empty($reg_id)){
-            echo getParticipantById($reg_id);
+        if(empty($id)){
+            echo getParticipantById($id);
         }
         break;
     case 'postItem':

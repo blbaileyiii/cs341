@@ -19,17 +19,15 @@ export default class Participants {
         if (this.list.length > 0) {
             this.list.forEach(participant => {
                 console.log(participant);
-                this.getParticipantById(master, participant.id)
+                this.getParticipantById(master, participant.id);
                 //this.displayItemCheckList(participant);
             });            
-        } else {
-            this.getEquipment(master, null)
-            //this.displayItemList();
-        }
+        } 
     }
 
     getParticipantById(master, id) {
-        let url = "/2021/query/?action=getParticipant&reg_id=" + id;
+        console.log(id);
+        let url = "/2021/query/?action=getParticipant&id=" + id;
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             //do stuff with data...
