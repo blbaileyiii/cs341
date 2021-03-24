@@ -2,6 +2,7 @@ import Participants from './Participants.js';
 import {saveLS, loadLS} from './ls.js';
 
 let participants = new Participants();
+let events;
 
 document.getElementById('participantDOB').addEventListener('change', function() {
     let dOB = new Date(this.valueAsNumber);
@@ -148,4 +149,38 @@ if (participants.list.length > 0) {
     registered.appendChild(ol);
     registrantDiv.appendChild(h1);
     registrantDiv.appendChild(registered);
+}
+
+function getEvents() {
+    let url = "/2021/json/?action=getEvnts";
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        //do stuff with data...
+        if (this.readyState == 4 && this.status == 200) {
+            let myDBRes = JSON.parse(this.responseText);
+            console.log(myDBRes);
+            events = myDBRes;
+            buildEventScript();
+
+        } else if (this.readyState == 4 && this.status == 404) {
+            /*
+            let err404 = document.createElement("p");
+            err404.className = "err404";
+            err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
+            */
+        } else {
+            //console.log("failed");
+        }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+}
+
+function buildEventScript() {
+    console.log(events);
+        if (events.length > 0) {
+            document.getElementById('eventId').addEventListener('change', function() { 
+
+             })           
+        }
 }

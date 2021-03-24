@@ -6,9 +6,9 @@ function getEvents() {
   xmlhttp.onreadystatechange = function() {
       //do stuff with data...
       if (this.readyState == 4 && this.status == 200) {
-          let myObj = JSON.parse(this.responseText);
-          //console.log(myObj);
-          createCountdown(myObj);
+          let myDBRes = JSON.parse(this.responseText);
+          //console.log(myDBRes);
+          createCountdown(myDBRes);
           //
       } else if (this.readyState == 4 && this.status == 404) {
           /*
