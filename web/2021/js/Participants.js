@@ -35,7 +35,7 @@ export default class Participants {
                 console.log(this.responseText);
                 let myDBRes = JSON.parse(this.responseText);
                 console.log(myDBRes);
-                master.convertEquipmentList(myDBRes, id);
+                //master.convertEquipmentList(myDBRes, id);
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
                 let err404 = document.createElement("p");
