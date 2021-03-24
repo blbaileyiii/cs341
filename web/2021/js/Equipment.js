@@ -131,15 +131,22 @@ export default class Equipment {
 
             this.equipmentList[key].forEach(item => {
                 let li = document.createElement('li');
-                let labelTxt;
-                if (item.quantity != '1'){
-                    labelTxt = item.quantity + " " + item.name;
-                } else {
-                    labelTxt = item.name;
-                }
-                
-                li.innerHTML = "<input type='checkbox' id='" + participant.id + "-item-" + item.id + "' name='" + participant.id + "-item-" + item.id + "'><label for='" + participant.id + "-item-" + item.id + "'>" + labelTxt + "</label>";
+                let chkBox = document.createElement('input');
+                let label = document.createElement('label');
 
+                chkBox.id = participant.id + "-item-" + item.id;
+                chkBox.name = participant.id + "-item-" + item.id;
+                chkBox.type = "checkbox";
+
+                label.htmlFor = participant.id + "-item-" + item.id;
+                if (item.quantity != '1'){
+                    label.textContent = item.quantity + " " + item.name;
+                } else {
+                    label.textContent = item.name;
+                }
+
+                li.append(chkBox);
+                li.append(label);
                 ul.appendChild(li);
             });
 
@@ -160,4 +167,20 @@ export default class Equipment {
         pDiv.appendChild(dnb);
 
     }
+
+    /* SEND POST DATA as data
+    var data = new FormData();
+    data.append('user', 'person');
+    data.append('pwd', 'password');
+    data.append('organization', 'place');
+    data.append('requiredkey', 'key');
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open('POST', 'somewhere', true);
+    xmlhttp.onload = function () {
+        // do something to response
+        console.log(this.responseText);
+    };
+    xmlhttp.send(data);
+    */
 }
