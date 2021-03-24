@@ -3,6 +3,7 @@ import {saveLS, loadLS} from './ls.js';
 
 let participants = new Participants();
 let events;
+getEvents();
 
 document.getElementById('participantDOB').addEventListener('change', function() {
     let dOB = new Date(this.valueAsNumber);
