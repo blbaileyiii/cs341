@@ -349,7 +349,7 @@
     <?php //var_dump($events); ?>
     <?php //echo $_SESSION['participantid']; ?>
     <script>
-        <?php echo $eventScript; ?>
+        <?php //echo $eventScript; ?>
     </script>
     <?php
         if (isset($_SESSION['participantid']) && isset($_SESSION['participant']) && isset($_SESSION['eventid'])) {
