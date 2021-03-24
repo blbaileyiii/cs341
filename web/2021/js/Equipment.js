@@ -125,20 +125,21 @@ export default class Equipment {
             let cid = key.replace(/ /g,"-").toLowerCase();
 
             let pCatDiv = document.createElement('div');
-            pCatDiv.classList.add("p-" + participant.id + "-" + key.replace(/ /g,"-").toLowerCase());
+            pCatDiv.classList.add(pid+ "-" + cid);
             
             let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
 
-            h2.innerHTML = "<input type='checkbox' id='p-" + participant.id + "-" + key.replace(/ /g,"-").toLowerCase() + "' name='" + key.replace(/ /g,"-").toLowerCase() + "'><label for='p-" + participant.id + "-" + key.replace(/ /g,"-").toLowerCase() + "'>" + key + "</label>";
-            ul.classList.add(key.replace(/ /g,"-").toLowerCase());            
+            // TODO FIX THIS TO USE A CREATED INPUT AND LABEL ELEMENT!!! 
+            h2.innerHTML = "<input type='checkbox' id='" + pid+ "-" + cid + "' name='" + cid + "'><label for='" + pid + "-" + cid + "'>" + key + "</label>";
+            ul.classList.add(cid);            
 
             this.equipmentList[key].forEach(item => {
                 let li = document.createElement('li');
                 let chkBox = document.createElement('input');
                 let label = document.createElement('label');
 
-                let identifier = "p-" + participant.id + "-i-" + item.id;
+                let identifier = pid + iid;
 
                 chkBox.id = identifier;
                 chkBox.name = identifier;
