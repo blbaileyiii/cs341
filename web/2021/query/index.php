@@ -25,7 +25,7 @@ switch($action){
         $reg_id = checkInt($reg_id);
         
         //IF REG_ID IS NULL THAT IS OK.
-        echo getEquipmentJSON();
+        echo getEquipmentJSON($reg_id);
         break;
     case 'getItems':
         // GET

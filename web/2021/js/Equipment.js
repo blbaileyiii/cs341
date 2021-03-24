@@ -4,7 +4,6 @@ import {loadLS, saveLS} from './ls.js';
 export default class Equipment {
     constructor() {
         this.participants = new Participants();
-        //this.equipmentList = {}; //this.convertEquipmentList();
     }
 
     buildEquipment(master) {
