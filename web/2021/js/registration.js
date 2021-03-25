@@ -194,6 +194,13 @@ function buildEventScript() {
             
             } });
             if(myEvent){
+
+                let dateStart = Date(myEvent.date_start);
+                let dateEnd = Date(myEvent.date_end);
+
+                console.log(dateStart);
+                console.log(dateEnd);
+
                 document.getElementById('eventDate').value = myEvent.date_start + " - " + myEvent.date_end;
                 document.getElementById('eventDesc').value = myEvent.desc;
                 document.getElementById('eventLeaderName').value = myEvent.l_name;
