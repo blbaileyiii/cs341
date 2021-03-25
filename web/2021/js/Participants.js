@@ -50,7 +50,8 @@ export default class Participants {
                             }
                         })
                     })
-                    console.log(newList);
+                    //console.log(newList);
+                    master.list = newList;
                 }
                 //master.validationComplete();
             } else if (this.readyState == 4 && this.status == 404) {
