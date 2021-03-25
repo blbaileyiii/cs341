@@ -44,16 +44,16 @@ function getParticipantsByIds($ids) {
         $sql = 
         'SELECT *
         FROM hhstake.registrants AS p
-        WHERE p.id IN (6,7)
+        WHERE p.id IN (:ids)
         ORDER BY p.id';
 
-        //$sqlVarArray = array(
-        //    ':ids' => $ids
-        //);
+        $sqlVarArray = array(
+            ':ids' => $ids
+        );
 
         $stmt = $db->prepare($sql);
-        //$stmt->execute($sqlVarArray);
-        $stmt->execute();
+        $stmt->execute($sqlVarArray);
+        //$stmt->execute();
         $returnSQL = $stmt->fetchAll();
         $returnSQL = json_encode($returnSQL);
 
