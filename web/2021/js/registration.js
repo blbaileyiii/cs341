@@ -125,10 +125,10 @@ if(participant) {
 
 let participants = new Participants(buildRegistrantDiv);
 
-function buildRegistrantDiv(){
+function buildRegistrantDiv(participantList){
     //console.log(loadLS('participants'));
-    //console.log(participants.list);
-    if (participants.list.length > 0) {
+    //console.log(participants);
+    if (participantList.length > 0) {
         let registrantDiv = document.querySelector('.registrantDiv');
         let eventSelect = document.getElementById('eventId');
 
@@ -140,7 +140,7 @@ function buildRegistrantDiv(){
 
         let ol = document.createElement('ol');
 
-        participants.list.forEach(participant => {
+        participantList.forEach(participant => {
             let li = document.createElement('li');
             let eventTxt;
             Object.values(eventSelect.options).forEach(option=>{
