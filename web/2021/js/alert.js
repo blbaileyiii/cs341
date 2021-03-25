@@ -1,4 +1,4 @@
-let myAlertX = document.getElementById('close-alert');
+let myAlertX = document.querySelector('.close-alert');
 
 myAlertX.addEventListener('click', closeAlert, false);
 

@@ -44,7 +44,10 @@ header a:visited,
 header a:active,
 .all-schedules a,
 .all-schedules a:visited,
-.all-schedules a:active{
+.all-schedules a:active,
+a.close-alert,
+a.close-alert:visited,
+a.close-alert:active{
     text-decoration: none;
 }
 
@@ -172,6 +175,10 @@ footer a:active {
     color: var(--on-nav-bg-soft);
 }
 
+a.close-alert,
+a.close-alert:visited,
+a.close-alert:active,
+a.close-alert:hover,
 header a:hover {
     color: var(--on-nav-bg);
 }
@@ -264,6 +271,8 @@ body {
     justify-content: space-between;
     padding: 1rem;
 }
+
+
 
 header {
     position: sticky;
