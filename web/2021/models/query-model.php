@@ -192,12 +192,7 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
         return $returnSQL;
 
     } catch(PDOException $ex) {
-
-        $unsuccessful = array('success'=> false);
-
-        $returnSQL = json_encode($unsuccessful);
         //echo $sql . "<br>" . $ex->getMessage();
-        return $returnSQL;
     }
 }
 
