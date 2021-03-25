@@ -53,7 +53,7 @@ function getParticipantsByIds($ids) {
 
         $sqlVarArray = array();
         for($i = 0; $i < count($ids); $i++){
-            $sqlVarArray[":id$$i"] = $id;
+            $sqlVarArray[":id$$i"] = $ids[$i];
         }
         // foreach($ids as $id){
         //     $sqlVarArray[":id$id"] = $id;
