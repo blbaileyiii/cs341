@@ -37,24 +37,6 @@ class Camp {
   }
 }
 
-switch(action){
-  case 'ymcamp':
-    camps = {'ym': new Camp("YMCamp", dateYMCamp, datestrYMCamp)};
-    break;
-  case 'ywcamp':
-    camps = {'yw': new Camp("YWCamp", dateYWCamp, datestrYWCamp)};
-    break;
-  case 'trek':
-    camps = {'trek': new Camp("Trek", dateTrek, datestrTrek)};
-    break;
-  default:
-    camps = {'yw': new Camp("YWCamp", dateYWCamp, datestrYWCamp),
-             'ym': new Camp("YMCamp", dateYMCamp, datestrYMCamp),
-             'trek': new Camp("Trek", dateTrek, datestrTrek)
-            };
-    break;
-}
-
 function createCountdown(eventList){
 	//console.log(eventList);
 	if (eventList.length > 0) {
