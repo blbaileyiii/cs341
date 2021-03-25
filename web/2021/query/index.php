@@ -42,6 +42,12 @@ switch($action){
 
         echo getParticipantById($id);
         break;
+    case 'getParticipants':
+        // GET
+        $ids = filter_input(INPUT_GET, 'ids', FILTER_SANITIZE_NUMBER_INT);
+        
+        echo getParticipantById($ids);
+        break;
     case 'postItem':
         // POST
         // ?SECURE THIS BY CREATING THE SESSION VARIABLE TO MATCH THE LOCALSTORAGE ARRAY?
