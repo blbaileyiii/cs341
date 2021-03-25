@@ -7,7 +7,8 @@ export default class Equipment {
     }
 
     equipmentCallBack() {
-        this.buildEquipment(this);
+        //this.buildEquipment(this);
+        console.log("Working");
     }
 
     buildEquipment(master) {
