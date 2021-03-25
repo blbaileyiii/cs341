@@ -151,7 +151,8 @@ header,
     color: var(--on-nav-bg);
 }
 
-.alert {
+.alert,
+.site-alert {
     background: var(--border-intense);
     color: var(--on-nav-bg);
 }
@@ -258,13 +259,17 @@ body {
     margin: 0;
 }
 
+.site-alert {
+    display: flex;
+    justify-content: space-between;
+}
+
 header {
     position: sticky;
     top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*justify-content: space-between;*/
     margin: 0;
     padding: 0.5rem 3rem;
 }
@@ -312,6 +317,7 @@ section {
     margin: 0 1rem;
 }
 
+.hidden,
 .nav-hidden {
     display: none;
 }

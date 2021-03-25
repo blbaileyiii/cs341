@@ -7,8 +7,11 @@
 </head>
 
 <body>
+    <aside>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/alert.php'; ?>
+    </aside>
     <header>
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/nav.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/nav.php'; ?>
     </header>    
     <main>
         <div class="equipment">
