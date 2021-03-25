@@ -55,6 +55,7 @@ export default class Participants {
                     console.log(newList);
                     master.list = newList;
                     master.saveParticipants();
+                    console.log(master.callbackFx);
                     master.callbackFx();
                 }
                 //master.validationComplete();
