@@ -38,7 +38,7 @@ switch($action){
     case 'getParticipant':
         // GET
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-        $id = checkInt($reg_id);
+        $id = checkInt($id);
 
         echo getParticipantById($id);
         break;
