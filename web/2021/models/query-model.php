@@ -39,6 +39,8 @@ function getParticipantsByIds($ids) {
     foreach($ids as $id){
         $idArr[] = ":id$id"; 
     }
+
+    $idArr = implode(',', $idArr);
     var_dump($idArr);   
 
     try {
