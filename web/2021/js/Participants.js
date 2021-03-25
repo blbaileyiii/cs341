@@ -77,7 +77,7 @@ export default class Participants {
     }
 
     async validationComplete() {
-        this.callBackFx();
+        this.callBackFx(this.list);
     }
 
 }
