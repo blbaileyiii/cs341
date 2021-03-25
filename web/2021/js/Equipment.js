@@ -9,6 +9,7 @@ export default class Equipment {
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.innerHTML="";
 
+        console.log(this.participants);
         if (this.participants.list.length > 0) {
             this.participants.list.forEach(participant => {
                 //console.log(participant);
