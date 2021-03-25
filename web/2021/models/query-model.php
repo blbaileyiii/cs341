@@ -34,10 +34,10 @@ function getParticipantById($id) {
 
 function getParticipantsByIds($ids) {
     $len = count($ids);
-    
+
     $idArr = array();
     for($i = 0; $i < $len; $i++){
-        $idArr[] = ":id$$i";
+        $idArr[] = ":id$i";
     }
 
     // foreach($ids as $id){
@@ -55,7 +55,7 @@ function getParticipantsByIds($ids) {
 
         $sqlVarArray = array();
         for($i = 0; $i < $len; $i++){
-            $sqlVarArray[":id$$i"] = $ids[$i];
+            $sqlVarArray[":id$i"] = $ids[$i];
         }
         // foreach($ids as $id){
         //     $sqlVarArray[":id$id"] = $id;
