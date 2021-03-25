@@ -12,7 +12,7 @@ function getEvents() {
       //do stuff with data...
       if (this.readyState == 4 && this.status == 200) {
           let myDBRes = JSON.parse(this.responseText);
-          //console.log(myDBRes);
+          // console.log(myDBRes);
           createCountdown(myDBRes);
           //
       } else if (this.readyState == 4 && this.status == 404) {
@@ -22,7 +22,7 @@ function getEvents() {
           err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
           */
       } else {
-          //console.log("failed");
+          // console.log("failed");
       }
   };
   xmlhttp.open("GET", url, true);
@@ -39,7 +39,7 @@ class Camp {
 }
 
 function createCountdown(eventList){
-	//console.log(eventList);
+	// console.log(eventList);
 	if (eventList.length > 0) {
 		eventList.forEach(event => {
 			// console.log(event);

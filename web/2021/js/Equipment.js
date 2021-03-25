@@ -9,10 +9,10 @@ export default class Equipment {
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.innerHTML="";
 
-        console.log(list);
+        // console.log(list);
         if (list.length > 0) {
             list.forEach(participant => {
-                //console.log(participant);
+                // console.log(participant);
                 this.getEquipment(this, participant.id)
                 //this.displayItemCheckList(participant);
             });            
@@ -29,7 +29,7 @@ export default class Equipment {
             //do stuff with data...
             if (this.readyState == 4 && this.status == 200) {
                 let myDBRes = JSON.parse(this.responseText);
-                //console.log(myDBRes);
+                // console.log(myDBRes);
                 master.convertEquipmentList(myDBRes, id);
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
@@ -38,7 +38,7 @@ export default class Equipment {
                 err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
                 */
             } else {
-                //console.log("failed");
+                // console.log("failed");
             }
         };
         xmlhttp.open("GET", url, true);
@@ -66,7 +66,7 @@ export default class Equipment {
             }
         });
         //this.equipmentList = equipmentList;
-        //console.log(this.equipmentList);
+        // console.log(this.equipmentList);
         this.displayEquipment(id, equipmentList);
     }
 
@@ -79,7 +79,7 @@ export default class Equipment {
     }
     
     displayItemList(equipmentList) {
-        //console.log(equipmentList);
+        // console.log(equipmentList);
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.classList.add('equipment-lists-standard');
 
@@ -128,7 +128,7 @@ export default class Equipment {
 
         let master = this;
 
-        //console.log(equipmentList);
+        // console.log(equipmentList);
 
         let pid = "p-" + participant;
 
@@ -204,7 +204,7 @@ export default class Equipment {
 
             equipDiv.appendChild(pDiv);
 
-            //console.log(key);
+            // console.log(key);
             if (key == "DO NOT BRING") { 
                 dnb = pCatDiv;
             }
@@ -217,10 +217,10 @@ export default class Equipment {
 
     updateItem(reg_id, item_id, owned, pur_price = 0.00) {
 
-        //console.log(reg_id);
-        //console.log(item_id);
-        //console.log(owned);
-        //console.log(pur_price);
+        // console.log(reg_id);
+        // console.log(item_id);
+        // console.log(owned);
+        // console.log(pur_price);
 
         let url = "/2021/query/";
 
@@ -235,7 +235,7 @@ export default class Equipment {
         xmlhttp.onreadystatechange = function() {
             //do stuff with data...
             if (this.readyState == 4 && this.status == 200) {
-                //console.log(this.responseText)
+                // console.log(this.responseText)
                 let myDBRes = JSON.parse(this.responseText);
                 if(myDBRes) {
                     // SUCCESSFUL...
@@ -247,7 +247,7 @@ export default class Equipment {
                 err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
                 */
             } else {
-                //console.log("failed");
+                // console.log("failed");
             }
         };
         xmlhttp.open("POST", url, true);

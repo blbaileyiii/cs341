@@ -165,7 +165,7 @@ function getEvents() {
         //do stuff with data...
         if (this.readyState == 4 && this.status == 200) {
             let myDBRes = JSON.parse(this.responseText);
-            console.log(myDBRes);
+            //console.log(myDBRes);
             events = myDBRes;
             buildEventScript();
 

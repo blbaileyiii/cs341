@@ -20,7 +20,7 @@ export default class Participants {
         if (this.list.length > 0) {
             let ids = [];
             this.list.forEach(participant => {
-                console.log(participant);                
+                // console.log(participant);                
                 ids.push(participant.id);
             });
             this.getParticipantByIds(master, ids);
@@ -30,19 +30,19 @@ export default class Participants {
     }
 
     getParticipantByIds(master, ids) {
-        console.log(ids);
+        // console.log(ids);
         let url = "/2021/query/?action=getParticipants";
         ids.forEach(id => {
             url = url + "&ids[]=" + id;
         });        
-        //console.log(url);
+        // console.log(url);
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             //do stuff with data...
             if (this.readyState == 4 && this.status == 200) {
-                //console.log(this.responseText);
+                // console.log(this.responseText);
                 let myDBRes = JSON.parse(this.responseText);
-                console.log(myDBRes);
+                // console.log(myDBRes);
                 if (myDBRes.length != ids.length){
                     //Remove the missing one from the list
                     let newList = [];
@@ -53,7 +53,7 @@ export default class Participants {
                             }
                         })
                     })
-                    console.log(newList);
+                    // console.log(newList);
                     master.list = newList;
                     master.saveParticipants();
                 }
@@ -65,7 +65,7 @@ export default class Participants {
                 err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
                 */
             } else {
-                //console.log("failed");
+                // console.log("failed");
             }
         };
         xmlhttp.open("GET", url, true);
