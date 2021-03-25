@@ -51,7 +51,7 @@ function createCountdown(eventList){
         let year = eventDate.getFullYear();
         let campName = event.name.replace(year, "").trim();
 
-        let camp = new Camp(campName, eventBTime, year, eventDate);
+        let camp = new Camp(campName, eventBTime, year, eventDateS);
 
         camps[event.key] = camp;
 
@@ -62,7 +62,7 @@ function createCountdown(eventList){
         let year = eventDate.getFullYear();
         let campName = event.name.replace(year, "").trim();
 
-        let camp = new Camp(campName, eventBTime, year, eventDate);
+        let camp = new Camp(campName, eventBTime, year, eventDateS);
 
         camps[event.key] = camp;
       }      
