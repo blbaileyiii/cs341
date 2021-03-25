@@ -31,19 +31,16 @@ switch($action){
         // GET
         $reg_id = filter_input(INPUT_GET, 'reg_id', FILTER_SANITIZE_NUMBER_INT);
         $reg_id = checkInt($reg_id);
-
-        if(empty($reg_id)){
-            echo getInventoryByPId($reg_id);
-        }
+        
+        echo getInventoryByPId($reg_id);
+        
         break;
     case 'getParticipant':
         // GET
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
         $id = checkInt($reg_id);
 
-        if(empty($id)){
-            echo getParticipantById($id);
-        }
+        echo getParticipantById($id);
         break;
     case 'postItem':
         // POST
@@ -58,9 +55,12 @@ switch($action){
         $owned = checkBool($owned);
         $pur_price = checkFloat($pur_price);
 
-        if(empty($reg_id) || empty($item_id) || empty($owned) || empty($pur_price)){
-            echo postItemJSON($reg_id, $item_id, $owned, $pur_price);
-        }        
+        if(empty($reg_id) || empty($item_id) || empty($owned)){
+            $returnSQL = "{}";
+            echo json_encode($returnSQL);
+            exit;
+        }
+        echo postItemJSON($reg_id, $item_id, $owned, $pur_price);
         break;
     default:
         break;
