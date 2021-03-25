@@ -1,9 +1,9 @@
 import {loadLS, saveLS} from './ls.js';
 
 export default class Participants {
-    constructor(callbackFx) {
+    constructor(master) {
         this.list = this.getParticipants();
-        this.callbackFx = callbackFx;
+        this.master = master;
         // Validate the list...loop through it and if the participant is gone, remove and update...
         this.validateList(this);
     }
@@ -55,7 +55,7 @@ export default class Participants {
                     master.list = newList;
                     master.saveParticipants();
                 }
-                master.callbackFx();
+                master.master.callbackFx();
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
                 let err404 = document.createElement("p");
