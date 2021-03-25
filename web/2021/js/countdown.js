@@ -25,10 +25,11 @@ function getEvents() {
 }
 
 function createCountdown(eventList){
-	console.log(eventList);
+	//console.log(eventList);
 	if (eventList.length > 0) {
 		eventList.forEach(event => {
 			console.log(event);
+      
 		});
 	}
 }

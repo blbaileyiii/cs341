@@ -36,14 +36,14 @@ export default class Participants {
         ids.forEach(id => {
             url = url + "&ids[]=" + id;
         });        
-        console.log(url);
+        //console.log(url);
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             //do stuff with data...
             if (this.readyState == 4 && this.status == 200) {
-                console.log(this.responseText);
+                //console.log(this.responseText);
                 let myDBRes = JSON.parse(this.responseText);
-                console.log(myDBRes);
+                //console.log(myDBRes);
                 //master.validationComplete();
             } else if (this.readyState == 4 && this.status == 404) {
                 /*

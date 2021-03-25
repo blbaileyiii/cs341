@@ -8,7 +8,7 @@
 
 <body>
     <header>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/header-nav.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/nav-expd.php'; ?>
     </header>    
     <main>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/countdown.php'; ?>

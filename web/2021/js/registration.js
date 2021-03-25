@@ -126,7 +126,7 @@ if(participant) {
 let participants = new Participants();
 
 //console.log(loadLS('participants'));
-console.log(participants.list);
+//console.log(participants.list);
 if (participants.list.length > 0) {
     let registrantDiv = document.querySelector('.registrantDiv');
     let eventSelect = document.getElementById('eventId');

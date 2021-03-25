@@ -7,13 +7,13 @@ export default class Equipment {
     }
 
     buildEquipment(master) {
-        console.log(this.participants.list);
+        //console.log(this.participants.list);
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.innerHTML="";
 
         if (this.participants.list.length > 0) {
             this.participants.list.forEach(participant => {
-                console.log(participant);
+                //console.log(participant);
                 this.getEquipment(master, participant.id)
                 //this.displayItemCheckList(participant);
             });            
@@ -30,7 +30,7 @@ export default class Equipment {
             //do stuff with data...
             if (this.readyState == 4 && this.status == 200) {
                 let myDBRes = JSON.parse(this.responseText);
-                console.log(myDBRes);
+                //console.log(myDBRes);
                 master.convertEquipmentList(myDBRes, id);
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
@@ -80,7 +80,7 @@ export default class Equipment {
     }
     
     displayItemList(equipmentList) {
-        console.log(equipmentList);
+        //console.log(equipmentList);
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.classList.add('equipment-lists-standard');
 
@@ -129,7 +129,7 @@ export default class Equipment {
 
         let master = this;
 
-        console.log(equipmentList);
+        //console.log(equipmentList);
 
         let pid = "p-" + participant;
 
@@ -254,20 +254,4 @@ export default class Equipment {
         xmlhttp.open("POST", url, true);
         xmlhttp.send(data);
     }
-
-    /* SEND POST DATA as data
-    var data = new FormData();
-    data.append('user', 'person');
-    data.append('pwd', 'password');
-    data.append('organization', 'place');
-    data.append('requiredkey', 'key');
-
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('POST', 'somewhere', true);
-    xmlhttp.onload = function () {
-        // do something to response
-        console.log(this.responseText);
-    };
-    xmlhttp.send(data);
-    */
 }
