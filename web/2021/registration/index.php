@@ -145,7 +145,7 @@ switch($action){
         */
 
         if(empty($participantDOB)){
-            $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
+            $_SESSION['message'] = "<div class='alert'>Sorry, either you forgot to add your Date of Birth or you aren't old enough. Note: Only participants turning 14 this year or older may register.</div>";
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
         }
@@ -307,7 +307,7 @@ switch($action){
         */
 
         if(empty($participantDOB)){
-            $_SESSION['message'] = "<div class='alert'>Sorry, only participants turning 14 this year or older may register.</div>";
+            $_SESSION['message'] = "<div class='alert'>Sorry, either you forgot to add your Date of Birth or you aren't old enough. Note: Only participants turning 14 this year or older may register.</div>";
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
         }
