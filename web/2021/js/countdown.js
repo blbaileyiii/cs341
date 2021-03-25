@@ -44,10 +44,11 @@ function createCountdown(eventList){
 		eventList.forEach(event => {
 			console.log(event);
       if(action && event.key == action){
-        let eventDate = event.date_start;
+        let eventDateS = event.date_start;
         let eventTime = event.meet_time;
-        let eventBTime = new Date(eventDate + 'T' + eventTime).getTime();
-        let year = eventBTime.getFullYear();
+        let eventDate= new Date(eventDateS + 'T' + eventTime);
+        let eventBTime = eventDate.getTime();
+        let year = eventDate.getFullYear();
         let campName = event.name.replace(year, "").trim();
 
         let camp = new Camp(campName, eventBTime, year, eventDate);
@@ -55,10 +56,10 @@ function createCountdown(eventList){
         camps[event.key] = camp;
 
       } else {
-        let eventDate = event.date_start;
-        let eventTime = event.meet_time;
-        let eventBTime = new Date(eventDate + 'T' + eventTime).getTime();
-        let year = eventBTime.getFullYear();
+        let eventDateS = event.date_start;
+        let eventDate= new Date(eventDateS + 'T' + eventTime);
+        let eventBTime = eventDate.getTime();
+        let year = eventDate.getFullYear();
         let campName = event.name.replace(year, "").trim();
 
         let camp = new Camp(campName, eventBTime, year, eventDate);
