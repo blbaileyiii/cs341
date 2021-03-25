@@ -52,7 +52,7 @@ export default class Participants {
                     })
                     console.log(newList);
                     master.list = newList;
-                    //master.saveParticipants();
+                    master.saveParticipants();
                 }
                 //master.validationComplete();
             } else if (this.readyState == 4 && this.status == 404) {
