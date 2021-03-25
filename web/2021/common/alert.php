@@ -1,5 +1,5 @@
 <?php
-    $alert ="Content Under Construction";
+    $alert;
     if(isset($alert)){
         echo "<div class='alert'>$alert</div>";
     }
