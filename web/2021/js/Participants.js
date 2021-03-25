@@ -4,6 +4,7 @@ export default class Participants {
     constructor(masterObj) {
         this.list = this.getParticipants();
         this.masterObj = masterObj;
+        console.log(this.masterObj);
         // Validate the list...loop through it and if the participant is gone, remove and update...
         this.validateList(this);
     }
