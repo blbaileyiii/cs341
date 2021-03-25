@@ -47,10 +47,6 @@ function createCountdown(eventList){
         let eventTime = event.meet_time;
         let eventBTime = new Date(eventDate + 'T' + eventTime).getTime();
         let camp = new Camp(event.name, eventBTime, eventDate);
-        console.log(eventDate);
-        console.log(eventTime);
-        console.log(eventBTime);
-        console.log(camp);
 
         camps[event.key] = camp;
 
@@ -59,10 +55,6 @@ function createCountdown(eventList){
         let eventTime = event.meet_time;
         let eventBTime = new Date(eventDate + 'T' + eventTime).getTime();
         let camp = new Camp(event.name, eventBTime, eventDate);
-        console.log(eventDate);
-        console.log(eventTime);
-        console.log(eventBTime);
-        console.log(camp);
 
         camps[event.key] = camp;
       }      
