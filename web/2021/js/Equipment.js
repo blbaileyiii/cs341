@@ -3,15 +3,10 @@ import {loadLS, saveLS} from './ls.js';
 
 export default class Equipment {
     constructor() {
-        this.participants = new Participants(this.equipmentCallBack);
+        this.participants = new Participants(this.buildEquipment);
     }
 
-    equipmentCallBack() {
-        //this.buildEquipment(this);
-        console.log("Working");
-    }
-
-    buildEquipment(master) {
+    buildEquipment() {
         //console.log(this.participants.list);
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.innerHTML="";
@@ -23,7 +18,7 @@ export default class Equipment {
                 //this.displayItemCheckList(participant);
             });            
         } else {
-            this.getEquipment(master, null)
+            this.getEquipment(this, null)
             //this.displayItemList();
         }
     }

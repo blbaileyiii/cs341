@@ -4,7 +4,6 @@ export default class Participants {
     constructor(callbackFx) {
         this.list = this.getParticipants();
         this.callbackFx = callbackFx;
-        console.log(this.callbackFx);
         // Validate the list...loop through it and if the participant is gone, remove and update...
         this.validateList(this);
     }
