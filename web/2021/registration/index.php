@@ -14,8 +14,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/query-model.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
 $events = getEventsJSON(2021);
+var_dump($events);
 $events = json_decode($events, true);
+var_dump($events);
 $eventList = buildEventList($events);
+var_dump($eventList);
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
