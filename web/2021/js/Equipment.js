@@ -1,5 +1,4 @@
 import Participants from './Participants.js';
-import {loadLS, saveLS} from './ls.js';
 
 export default class Equipment {
     constructor() {
@@ -7,6 +6,7 @@ export default class Equipment {
     }
 
     equipmentCallBack() {
+        console.log(this);
         this.buildEquipment(this);
     }
 
