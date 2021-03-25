@@ -24,7 +24,9 @@ export default class Participants {
                 ids.push(participant.id);
             });
             this.getParticipantByIds(master, ids);
-        } 
+        } else {
+            master.callBackFx();
+        }
     }
 
     getParticipantByIds(master, ids) {
