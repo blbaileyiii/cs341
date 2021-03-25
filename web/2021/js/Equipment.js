@@ -2,7 +2,7 @@ import Participants from './Participants.js';
 
 export default class Equipment {
     constructor() {
-        this.participants = new Participants(this);
+        this.participants = new Participants(this.buildEquipment.bind(this));
     }
 
     buildEquipment() {
