@@ -55,6 +55,7 @@ export default class Participants {
                     master.list = newList;
                     master.saveParticipants();
                 }
+                master.callBackFx();
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
                 let err404 = document.createElement("p");
