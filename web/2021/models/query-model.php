@@ -99,7 +99,7 @@ function getInventoryByPId($reg_id) {
 
         $sql = 
         'SELECT *
-        FROM hhstake.invenotry AS i
+        FROM hhstake.inventory AS i
         WHERE i.reg_id = :reg_id
         ORDER BY i.reg_id';
 
