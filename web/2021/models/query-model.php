@@ -39,19 +39,19 @@ function getParticipantsByIds($ids) {
     //$ids = implode(",", $ids);
     //var_dump($ids);
 
-    $sqlArray = "";
+    $ids = "(" . implode(",", $ids) . ")";
 
-    foreach($ids as $key => $id){
-        if($key == 0){
-            $sqlArray = "[" . $id . ", ";
-        } elseif($key == count($ids)){
-            $sqlArray .= $id . "]";
-        } else{
-            $sqlArray .= $id . ", ";
-        }
-    }
-
-    var_dump($sqlArray);
+    //$sqlArray = "";
+    //foreach($ids as $key => $id){
+    //    if($key == 0){
+    //        $sqlArray = "(" . $id . ", ";
+    //    } elseif($key == count($ids)){
+    //        $sqlArray .= $id . "]";
+    //    } else{
+    //        $sqlArray .= $id . ", ";
+    //    }
+    //}
+    //var_dump($sqlArray);
     //$sql = "SELECT * FROM TABLE WHERE id IN $sqlArray";
     
 
@@ -67,7 +67,7 @@ function getParticipantsByIds($ids) {
         ORDER BY p.id';
 
         $sqlVarArray = array(
-            ':ids' => $sqlArray
+            ':ids' => $ids
         );
 
         $stmt = $db->prepare($sql);
