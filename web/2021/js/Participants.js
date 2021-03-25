@@ -19,13 +19,9 @@ export default class Participants {
         if (this.list.length > 0) {
             let ids = [];
             this.list.forEach(participant => {
-                console.log(participant);
-                //this.getParticipantByIds(master, participant.id);
-                
+                console.log(participant);                
                 ids.push(participant.id);
             });
-            //ids = ids.join(',');
-            //console.log(ids);
             this.getParticipantByIds(master, ids);
         } 
     }
@@ -43,7 +39,7 @@ export default class Participants {
             if (this.readyState == 4 && this.status == 200) {
                 //console.log(this.responseText);
                 let myDBRes = JSON.parse(this.responseText);
-                //console.log(myDBRes);
+                console.log(myDBRes);
                 //master.validationComplete();
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
