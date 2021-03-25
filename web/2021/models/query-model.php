@@ -34,29 +34,12 @@ function getParticipantById($id) {
 
 function getParticipantsByIds($ids) {
     var_dump($ids);
-    //$ids = explode(",", $ids);
-    //var_dump($ids);
-    //$ids = implode(",", $ids);
-    //var_dump($ids);
 
-    $ids = "(" . implode(",", $ids) . ")";
-    var_dump($ids);
-
-    //$sqlArray = "";
-    //foreach($ids as $key => $id){
-    //    if($key == 0){
-    //        $sqlArray = "(" . $id . ", ";
-    //    } elseif($key == count($ids)){
-    //        $sqlArray .= $id . "]";
-    //    } else{
-    //        $sqlArray .= $id . ", ";
-    //    }
-    //}
-    //var_dump($sqlArray);
-    //$sql = "SELECT * FROM TABLE WHERE id IN $sqlArray";
-    
-
-
+    $idArr = array();
+    foreach($ids as $id){
+        $idArr[] = ":id$id"; 
+    }
+    var_dump($idArr);   
 
     try {
         $db = hhConnect();
@@ -64,7 +47,7 @@ function getParticipantsByIds($ids) {
         $sql = 
         'SELECT *
         FROM hhstake.registrants AS p
-        WHERE p.id IN :ids
+        WHERE p.id IN (:ids)
         ORDER BY p.id';
 
         $sqlVarArray = array(
