@@ -47,8 +47,10 @@ function createCountdown(eventList){
       console.log(event.key);
       console.log(action);
     
-      if(action && event.key == action){
-        camps[event.key] = createCamp(event);
+      if(action){
+        if(event.key == action){
+          camps[event.key] = createCamp(event);
+        }        
       } else {
         camps[event.key] = createCamp(event);
       }      
