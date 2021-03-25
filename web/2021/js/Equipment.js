@@ -13,7 +13,7 @@ export default class Equipment {
         if (this.participants.list.length > 0) {
             this.participants.list.forEach(participant => {
                 //console.log(participant);
-                this.getEquipment(master, participant.id)
+                this.getEquipment(this, participant.id)
                 //this.displayItemCheckList(participant);
             });            
         } else {
