@@ -56,14 +56,19 @@ function createCountdown(eventList){
 }
 
 function createCamp(event) {
-  let eventDateS = event.date_start;
+  let eventStartDate = event.date_start;
   let eventTime = event.meet_time;
-  let eventDate= new Date(eventDateS + 'T' + eventTime);
+  let eventDate= new Date(eventStartDate + 'T' + eventTime);
+
   let eventBTime = eventDate.getTime();
+  let month = eventDate.getMonth() + 1;
+  let day = eventDate.getDate();
   let year = eventDate.getFullYear();
+  let eventDateFormated = month + "/" + day + "/" + year;
+
   let campName = event.name.replace(year, "").trim();
 
-  let camp = new Camp(campName, eventBTime, year, eventDateS);
+  let camp = new Camp(campName, eventBTime, year, eventDateFormated);
 
   return camp;
 }
