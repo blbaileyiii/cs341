@@ -17,17 +17,26 @@ export default class Participants {
 
     validateList(master){
         if (this.list.length > 0) {
+            let ids = [];
             this.list.forEach(participant => {
                 console.log(participant);
-                this.getParticipantById(master, participant.id);
-                //this.displayItemCheckList(participant);
-            });            
+                //this.getParticipantById(master, participant.id);
+                
+                ids.push(participant.id);
+            });
+            ids = implode(',',ids);
+            this.displayItemCheckList(ids);
         } 
     }
 
-    getParticipantById(master, id) {
+    validationComplete() {
+        this.v++;
+        if (this.validateList <= this.v)
+    }
+
+    getParticipantById(master, ids) {
         console.log(id);
-        let url = "/2021/query/?action=getParticipant&id=" + id;
+        let url = "/2021/query/?action=getParticipants&ids=" + ids;
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             //do stuff with data...
@@ -35,7 +44,7 @@ export default class Participants {
                 console.log(this.responseText);
                 let myDBRes = JSON.parse(this.responseText);
                 console.log(myDBRes);
-                //master.convertEquipmentList(myDBRes, id);
+                master.validationComplete();
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
                 let err404 = document.createElement("p");

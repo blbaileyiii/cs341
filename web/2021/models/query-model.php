@@ -32,6 +32,35 @@ function getParticipantById($id) {
     }
 }
 
+function getParticipantByIds($ids) {
+    try {
+        $db = hhConnect();
+
+        $sql = 
+        'SELECT *
+        FROM hhstake.registrants AS p
+        WHERE p.ids IN (:ids)
+        ORDER BY p.id';
+
+        $sqlVarArray = array(
+            ':ids' => $ids
+        );
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute($sqlVarArray);
+        $returnSQL = $stmt->fetchAll();
+        $returnSQL = json_encode($returnSQL);
+
+        // The next line closes the interaction with the database 
+        $stmt->closeCursor();
+
+        return $returnSQL;
+
+    } catch(PDOException $ex) {
+        echo $sql . "<br>" . $ex->getMessage();
+    }
+}
+
 function getEventsJSON($eventYear) {
     try {
         $db = hhConnect();
