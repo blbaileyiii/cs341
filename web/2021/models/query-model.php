@@ -39,6 +39,8 @@ function getParticipantsByIds($ids) {
     //$ids = implode(",", $ids);
     //var_dump($ids);
 
+    $sqlArray = "";
+
     foreach($ids as $key => $id){
         if($key == 0){
             $sqlArray = "[" . $id . ", ";
