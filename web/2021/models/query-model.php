@@ -33,7 +33,7 @@ function getParticipantById($id) {
 }
 
 function getParticipantsByIds($ids) {
-    $ids = explode(",", $ids);
+    //$ids = explode(",", $ids);
     try {
         $db = hhConnect();
 
