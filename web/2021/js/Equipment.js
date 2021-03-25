@@ -6,7 +6,7 @@ export default class Equipment {
     }
 
     buildEquipment() {
-        //console.log(this.participants.list);
+        console.log(this.participants.list);
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.innerHTML="";
 
