@@ -33,14 +33,10 @@ function getParticipantById($id) {
 }
 
 function getParticipantsByIds($ids) {
-    var_dump($ids);
-
     $idArr = array();
     foreach($ids as $id){
         $idArr[] = ":id$id"; 
-    }
-
-    //var_dump($idArr);   
+    } 
 
     try {
         $db = hhConnect();
@@ -51,9 +47,6 @@ function getParticipantsByIds($ids) {
         WHERE p.id IN ('.implode(',', $idArr) .')
         ORDER BY p.id';
 
-        // $sqlVarArray = array(
-        //     ':ids' => $ids
-        // );
         $sqlVarArray = array();
         foreach($ids as $id){
             $sqlVarArray[":id$id"] = $id;
@@ -61,7 +54,6 @@ function getParticipantsByIds($ids) {
 
         $stmt = $db->prepare($sql);
         $stmt->execute($sqlVarArray);
-        //$stmt->execute();
         $returnSQL = $stmt->fetchAll();
         $returnSQL = json_encode($returnSQL);
 
