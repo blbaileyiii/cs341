@@ -44,7 +44,7 @@ function getParticipantsByIds($ids) {
         $db = hhConnect();
 
         $sql = 
-        'SELECT *
+        'SELECT p.id
         FROM hhstake.registrants AS p
         WHERE p.id IN ('.implode(',', $idArr) .')
         ORDER BY p.id';
