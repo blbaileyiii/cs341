@@ -39,7 +39,7 @@
                                     ?>
                                 </select>
                             </li>
-                            <li><span>Date(s) of event: </span><?php if(isset($eventDate)){echo date('m/d/Y', $eventDate);} ?></li>
+                            <li><span>Date(s) of event: </span><?php if(isset($eventDate)){echo $eventDate;} ?></li>
                             <li><span>Description of event and activities: </span><?php if(isset($eventDesc)){echo $eventDesc;} ?></li>
                             <li><span>Updates to be sent to: </span><?php if(isset($email)){echo $email;} ?></li>
                         </ul>
