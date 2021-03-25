@@ -1,3 +1,5 @@
+let camps;
+
 getEvents();
 
 function getEvents() {
@@ -29,10 +31,16 @@ function createCountdown(eventList){
 	if (eventList.length > 0) {
 		eventList.forEach(event => {
 			console.log(event);
-      
+      let eventDate = event.date_start;
+      let eventTime = event.meet_time;
+      let eventBTime = new Date(eventDate + 'T' + eventTime).getTime();
+
+      camps[event.key] = new Camp(event.name, eventBTime, eventDate);
 		});
 	}
 }
+
+console.log(camps);
 
 // Set the date we're counting down to
 let datestrYWCamp = "Jul 27, 2021";
@@ -59,7 +67,7 @@ class Camp {
   }
 }
 
-let camps;
+
 switch(action){
   case 'ymcamp':
     camps = {'ym': new Camp("YMCamp", dateYMCamp, datestrYMCamp)};
