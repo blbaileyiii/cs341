@@ -19,7 +19,7 @@ export default class Participants {
         if (this.list.length > 0) {
             let ids = [];
             this.list.forEach(participant => {
-                //console.log(participant);                
+                console.log(participant);                
                 ids.push(participant.id);
             });
             this.getParticipantByIds(master, ids);
@@ -27,7 +27,7 @@ export default class Participants {
     }
 
     getParticipantByIds(master, ids) {
-        //console.log(ids);
+        console.log(ids);
         let url = "/2021/query/?action=getParticipants";
         ids.forEach(id => {
             url = url + "&ids[]=" + id;
@@ -39,7 +39,7 @@ export default class Participants {
             if (this.readyState == 4 && this.status == 200) {
                 //console.log(this.responseText);
                 let myDBRes = JSON.parse(this.responseText);
-                //console.log(myDBRes);
+                console.log(myDBRes);
                 if (myDBRes.length != ids.length){
                     //Remove the missing one from the list
                     let newList = [];
@@ -50,7 +50,7 @@ export default class Participants {
                             }
                         })
                     })
-                    //console.log(newList);
+                    console.log(newList);
                     master.list = newList;
                     master.saveParticipants();
                 }
@@ -70,9 +70,7 @@ export default class Participants {
     }
 
     saveParticipants() {
-        setLS('participants', this.list);
+        saveLS('participants', this.list);
     }
-
-    
 
 }
