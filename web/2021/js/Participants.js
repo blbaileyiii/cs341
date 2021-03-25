@@ -30,7 +30,7 @@ export default class Participants {
     }
 
     getParticipantByIds(master, ids) {
-        console.log(id);
+        console.log(ids);
         let url = "/2021/query/?action=getParticipants&ids=" + ids;
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
