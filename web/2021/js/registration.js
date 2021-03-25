@@ -195,8 +195,8 @@ function buildEventScript() {
             } });
             if(myEvent){
 
-                let dateStart = Date(myEvent.date_start + "T00:00:00");
-                let dateEnd = Date(myEvent.date_end + "T00:00:00");
+                let dateStart = new Date(myEvent.date_start + "T00:00:00");
+                let dateEnd = new Date(myEvent.date_end + "T00:00:00");
 
                 console.log(dateStart);
                 console.log(dateEnd);
