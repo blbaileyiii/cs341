@@ -55,6 +55,7 @@ export default class Participants {
                     master.list = newList;
                     master.saveParticipants();
                     master.callbackFx();
+                    console.log(master.callbackFx);
                 }
                 //master.validationComplete();
             } else if (this.readyState == 4 && this.status == 404) {
