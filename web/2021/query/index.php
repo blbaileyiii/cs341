@@ -45,20 +45,14 @@ switch($action){
     case 'getParticipants':
         // GET
         //$ids = filter_input(INPUT_GET, 'ids', FILTER_SANITIZE_STRING);
-        $ids = $_GET['ids'];
+        $ids = array();
 
-        /*
-        foreach($_GET['deviceId'] as $device){
-        $device = filter_var($device, FILTER_VALIDATE_INT);
-        if($device){
-        $device = getDevice($device);
-        if($device){
-        array_push($deviceArr, $device);
+        foreach($_GET['ids'] as $id){
+            $id = filter_var($id, FILTER_VALIDATE_INT);
+            if($id){
+                array_push($deviceArr, $id);
+            }
         }
-        }
-        }
-
-        */
 
         echo getParticipantsByIds($ids);
         break;
