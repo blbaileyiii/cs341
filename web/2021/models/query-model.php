@@ -34,9 +34,13 @@ function getParticipantById($id) {
 
 function getParticipantsByIds($ids) {
     $idArr = array();
-    foreach($ids as $id){
-        $idArr[] = ":id$id"; 
-    } 
+    for($i = 0; $i < count($ids); $i++){
+        $idArr[] = ":id$$i";
+    }
+
+    // foreach($ids as $id){
+    //     $idArr[] = ":id$id"; 
+    // } 
 
     try {
         $db = hhConnect();
@@ -48,9 +52,12 @@ function getParticipantsByIds($ids) {
         ORDER BY p.id';
 
         $sqlVarArray = array();
-        foreach($ids as $id){
-            $sqlVarArray[":id$id"] = $id;
+        for($i = 0; $i < count($ids); $i++){
+            $sqlVarArray[":id$$i"] = $id;
         }
+        // foreach($ids as $id){
+        //     $sqlVarArray[":id$id"] = $id;
+        // }
 
         $stmt = $db->prepare($sql);
         $stmt->execute($sqlVarArray);
