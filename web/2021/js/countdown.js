@@ -60,50 +60,56 @@ function createCountdown(eventList){
       }      
 		});
 	}
+
+  console.log(camps);
+  buildCountdownHTML();
 }
 
-console.log(camps);
+function buildCountdownHTML(){
+  //Build HTML
+  // Get countdown-data element
+  let countdownEl = document.querySelector('.countdown-data');
 
-//Build HTML
-// Get countdown-data element
-let countdownEl = document.querySelector('.countdown-data');
+  for (camp in camps){
+    console.log(camp)
+    let campDiv = document.createElement('div');
+    let timeDiv = document.createElement('div');
+    let dateDiv = document.createElement('div');
+    let registerDiv = document.createElement('div');
+    let a = document.createElement('a');
 
-for (camp in camps){
-  let campDiv = document.createElement('div');
-  let timeDiv = document.createElement('div');
-  let dateDiv = document.createElement('div');
-  let registerDiv = document.createElement('div');
-  let a = document.createElement('a');
+    campDiv.classList.add('countdown');
+    timeDiv.classList.add('time-block');
 
-  campDiv.classList.add('countdown');
-  timeDiv.classList.add('time-block');
+    campDiv.innerHTML = "<h2><div class='camp-yr-logo'><span class='logo-lg logo-highlight'>" + camps[camp].name + "</span><span class='logo-sm'>2021</span></div></h2>";
 
-  campDiv.innerHTML = "<h2><div class='camp-yr-logo'><span class='logo-lg logo-highlight'>" + camps[camp].name + "</span><span class='logo-sm'>2021</span></div></h2>";
+    timeDiv.innerHTML = "<div class='time-part'><div id='" + camp + "-cd-days' class='time-txt'></div><div class='time-unit'>Days</div></div>";
+    timeDiv.innerHTML += "<div class='time-part'><div id='" + camp + "-cd-hours' class='time-txt'></div><div class='time-unit'>Hours</div></div>";
+    timeDiv.innerHTML += "<div class='time-part'><div id='" + camp + "-cd-minutes' class='time-txt'></div><div class='time-unit'>Minutes</div></div>";
+    timeDiv.innerHTML += "<div class='time-part'><div id='" + camp + "-cd-seconds' class='time-txt'></div><div class='time-unit'>Seconds</div></div>";
 
-  timeDiv.innerHTML = "<div class='time-part'><div id='" + camp + "-cd-days' class='time-txt'></div><div class='time-unit'>Days</div></div>";
-  timeDiv.innerHTML += "<div class='time-part'><div id='" + camp + "-cd-hours' class='time-txt'></div><div class='time-unit'>Hours</div></div>";
-  timeDiv.innerHTML += "<div class='time-part'><div id='" + camp + "-cd-minutes' class='time-txt'></div><div class='time-unit'>Minutes</div></div>";
-  timeDiv.innerHTML += "<div class='time-part'><div id='" + camp + "-cd-seconds' class='time-txt'></div><div class='time-unit'>Seconds</div></div>";
+    dateDiv.classList.add('date-block');
+    dateDiv.innerHTML = "<div class='date'>" + camps[camp].datestr + "</div>";
 
-  dateDiv.classList.add('date-block');
-  dateDiv.innerHTML = "<div class='date'>" + camps[camp].datestr + "</div>";
+    registerDiv.classList.add('register-block');
 
-  registerDiv.classList.add('register-block');
+    let linkText = document.createTextNode("Register");
+    a.appendChild(linkText);
+    a.title = "Register";
+    a.href = "/2021/registration";
+    a.classList.add('button')
+    //a.addEventListener('click', ()=>{ this.style.transform = scale(0.5); })
+    //a.addEventListener('clickup', ()=>{ this.style.transform = scale(1.0); })
 
-  let linkText = document.createTextNode("Register");
-  a.appendChild(linkText);
-  a.title = "Register";
-  a.href = "/2021/registration";
-  a.classList.add('button')
-  //a.addEventListener('click', ()=>{ this.style.transform = scale(0.5); })
-  //a.addEventListener('clickup', ()=>{ this.style.transform = scale(1.0); })
+    registerDiv.appendChild(a);
+    campDiv.appendChild(timeDiv);
+    campDiv.appendChild(dateDiv);
+    campDiv.appendChild(registerDiv);
+    countdownEl.appendChild(campDiv);
+  }
 
-  registerDiv.appendChild(a);
-  campDiv.appendChild(timeDiv);
-  campDiv.appendChild(dateDiv);
-  campDiv.appendChild(registerDiv);
-  countdownEl.appendChild(campDiv);
 }
+
 
 // Update the count down every 1 second
 let x = setInterval(countDown, 1000);
