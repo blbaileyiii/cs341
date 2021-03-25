@@ -43,6 +43,10 @@ function createCountdown(eventList){
 	if (eventList.length > 0) {
 		eventList.forEach(event => {
 			console.log(event);
+
+      console.log(event.key);
+      console.log(action);
+    
       if(action && event.key == action){
         camps[event.key] = createCamp(event);
       } else {
