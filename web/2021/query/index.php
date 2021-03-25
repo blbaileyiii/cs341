@@ -50,7 +50,7 @@ switch($action){
         foreach($_GET['ids'] as $id){
             $id = filter_var($id, FILTER_VALIDATE_INT);
             if($id){
-                array_push($deviceArr, $id);
+                array_push($ids, $id);
             }
         }
 
