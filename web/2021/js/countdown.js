@@ -30,9 +30,10 @@ function getEvents() {
 }
 
 class Camp {
-  constructor(name, date, datestr) {
+  constructor(name, date, year, datestr) {
     this.name = name;
     this.date = date;
+    this.year = year;
     this.datestr = datestr;
   }
 }
@@ -46,7 +47,10 @@ function createCountdown(eventList){
         let eventDate = event.date_start;
         let eventTime = event.meet_time;
         let eventBTime = new Date(eventDate + 'T' + eventTime).getTime();
-        let camp = new Camp(event.name, eventBTime, eventDate);
+        let year = eventBTime.getFullYear();
+        let campName = event.name.replace(year, "").trim();
+
+        let camp = new Camp(campName, eventBTime, year, eventDate);
 
         camps[event.key] = camp;
 
@@ -54,7 +58,10 @@ function createCountdown(eventList){
         let eventDate = event.date_start;
         let eventTime = event.meet_time;
         let eventBTime = new Date(eventDate + 'T' + eventTime).getTime();
-        let camp = new Camp(event.name, eventBTime, eventDate);
+        let year = eventBTime.getFullYear();
+        let campName = event.name.replace(year, "").trim();
+
+        let camp = new Camp(campName, eventBTime, year, eventDate);
 
         camps[event.key] = camp;
       }      
@@ -81,7 +88,7 @@ function buildCountdownHTML(){
     campDiv.classList.add('countdown');
     timeDiv.classList.add('time-block');
 
-    campDiv.innerHTML = "<h2><div class='camp-yr-logo'><span class='logo-lg logo-highlight'>" + camps[camp].name + "</span><span class='logo-sm'>2021</span></div></h2>";
+    campDiv.innerHTML = "<h2><div class='camp-yr-logo'><span class='logo-lg logo-highlight'>" + camps[camp].name + "</span><span class='logo-sm'>" + camps[camp].year + "</span></div></h2>";
 
     timeDiv.innerHTML = "<div class='time-part'><div id='" + camp + "-cd-days' class='time-txt'></div><div class='time-unit'>Days</div></div>";
     timeDiv.innerHTML += "<div class='time-part'><div id='" + camp + "-cd-hours' class='time-txt'></div><div class='time-unit'>Hours</div></div>";
