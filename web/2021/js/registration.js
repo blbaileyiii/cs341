@@ -194,7 +194,7 @@ function buildEventScript() {
             
             } });
             if(myEvent){
-                document.getElementById('eventDate').value = myEvent.date_start;
+                document.getElementById('eventDate').value = myEvent.date_start + " - " + myEvent.date_end;
                 document.getElementById('eventDesc').value = myEvent.desc;
                 document.getElementById('eventLeaderName').value = myEvent.l_name;
                 document.getElementById('eventLeaderPhone').value = myEvent.l_phone;

@@ -49,7 +49,7 @@
                     </div>
                     <div class="fields">
                         <label for="eventDate"><span>Date(s) of event</span></label> 
-                        <input id="eventDate" name="eventDate" type="date" <?php if(isset($eventDate)){echo "value='$eventDate'";} ?> readonly>
+                        <input id="eventDate" name="eventDate" type="text" <?php if(isset($eventDate)){echo "value='$eventDate'";} ?> readonly>
                     </div>
                     <div class="fields">
                         <label for="eventDesc"><span>Describe event and activities (please be specific):</span></label>
