@@ -1,7 +1,7 @@
 // TODO: Only add the element to the camps array below based on the page...Home = all, other pages = only the specific one.
 let urlParms = new URLSearchParams(window.location.search);
 let action = urlParms.get('action');
-let camps;
+let camps = {};
 
 getEvents();
 
