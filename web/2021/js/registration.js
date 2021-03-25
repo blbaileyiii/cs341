@@ -123,37 +123,40 @@ if(participant) {
     saveLS('participants', pList);
 }
 
-let participants = new Participants();
+let participants = new Participants(buildRegistrantDiv);
 
-//console.log(loadLS('participants'));
-//console.log(participants.list);
-if (participants.list.length > 0) {
-    let registrantDiv = document.querySelector('.registrantDiv');
-    let eventSelect = document.getElementById('eventId');
+function buildRegistrantDiv(){
+    //console.log(loadLS('participants'));
+    //console.log(participants.list);
+    if (participants.list.length > 0) {
+        let registrantDiv = document.querySelector('.registrantDiv');
+        let eventSelect = document.getElementById('eventId');
 
-    let h1 = document.createElement("h1");
-    h1.textContent = "My Registration";
+        let h1 = document.createElement("h1");
+        h1.textContent = "My Registration";
 
-    let registered = document.createElement("div");
-    registered.classList.add('myRegistration');
+        let registered = document.createElement("div");
+        registered.classList.add('myRegistration');
 
-    let ol = document.createElement('ol');
+        let ol = document.createElement('ol');
 
-    participants.list.forEach(participant => {
-        let li = document.createElement('li');
-        let eventTxt;
-        Object.values(eventSelect.options).forEach(option=>{
-            if (option.value == participant.event_id){ eventTxt = option.text; }
+        participants.list.forEach(participant => {
+            let li = document.createElement('li');
+            let eventTxt;
+            Object.values(eventSelect.options).forEach(option=>{
+                if (option.value == participant.event_id){ eventTxt = option.text; }
+            });
+            //let event = eventSelect.querySelector('option[value=' + participant.eventid + ']').textContent;
+            li.innerHTML = participant.p_name + ' registered for ' + eventTxt;
+            ol.appendChild(li);
         });
-        //let event = eventSelect.querySelector('option[value=' + participant.eventid + ']').textContent;
-        li.innerHTML = participant.p_name + ' registered for ' + eventTxt;
-        ol.appendChild(li);
-    });
 
-    registered.appendChild(ol);
-    registrantDiv.appendChild(h1);
-    registrantDiv.appendChild(registered);
+        registered.appendChild(ol);
+        registrantDiv.appendChild(h1);
+        registrantDiv.appendChild(registered);
+    }
 }
+
 
 function getEvents() {
     let url = "/2021/query/?action=getEvents";

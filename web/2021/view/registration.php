@@ -350,9 +350,6 @@
     </footer>
     <?php //var_dump($events); ?>
     <?php //echo $_SESSION['participantid']; ?>
-    <script>
-        <?php //echo $eventScript; ?>
-    </script>
     <?php
         if (isset($_SESSION['participantid']) && isset($_SESSION['participant']) && isset($_SESSION['eventid'])) {
             $setParticipant = "const participant = {'id': '$_SESSION[participantid]', 'p_name': '$_SESSION[participant]', 'event_id': '$_SESSION[eventid]'};";
