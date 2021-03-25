@@ -1,3 +1,6 @@
+// TODO: Only add the element to the camps array below based on the page...Home = all, other pages = only the specific one.
+let urlParms = new URLSearchParams(window.location.search);
+let action = urlParms.get('action');
 let camps;
 
 getEvents();
@@ -26,39 +29,6 @@ function getEvents() {
   xmlhttp.send();
 }
 
-function createCountdown(eventList){
-	//console.log(eventList);
-	if (eventList.length > 0) {
-		eventList.forEach(event => {
-			console.log(event);
-      let eventDate = event.date_start;
-      let eventTime = event.meet_time;
-      let eventBTime = new Date(eventDate + 'T' + eventTime).getTime();
-
-      camps[event.key] = new Camp(event.name, eventBTime, eventDate);
-		});
-	}
-}
-
-console.log(camps);
-
-// Set the date we're counting down to
-let datestrYWCamp = "Jul 27, 2021";
-let datestrYMCamp = "Jul 27, 2021";
-let datestrTrek = "Oct 22, 2021";
-
-let timestrYWCamp = "08:00:00";
-let timestrYMCamp = "09:00:00";
-let timestrTrek = "15:00:00";
-
-let dateYWCamp = new Date(datestrYWCamp + " " + timestrYWCamp).getTime();
-let dateYMCamp = new Date(datestrYMCamp + " " + timestrYMCamp).getTime();
-let dateTrek = new Date(datestrTrek + " " + timestrTrek).getTime();
-
-// TODO: Only add the element to the camps array below based on the page...Home = all, other pages = only the specific one.
-let urlParms = new URLSearchParams(window.location.search);
-let action = urlParms.get('action');
-
 class Camp {
   constructor(name, date, datestr) {
     this.name = name;
@@ -66,7 +36,6 @@ class Camp {
     this.datestr = datestr;
   }
 }
-
 
 switch(action){
   case 'ymcamp':
@@ -85,6 +54,31 @@ switch(action){
             };
     break;
 }
+
+function createCountdown(eventList){
+	//console.log(eventList);
+	if (eventList.length > 0) {
+		eventList.forEach(event => {
+			console.log(event);
+      if(action && event.key == action){
+        let eventDate = event.date_start;
+        let eventTime = event.meet_time;
+        let eventBTime = new Date(eventDate + 'T' + eventTime).getTime();
+
+        camps[event.key] = new Camp(event.name, eventBTime, eventDate);
+
+      } else {
+        let eventDate = event.date_start;
+        let eventTime = event.meet_time;
+        let eventBTime = new Date(eventDate + 'T' + eventTime).getTime();
+
+        camps[event.key] = new Camp(event.name, eventBTime, eventDate);
+      }      
+		});
+	}
+}
+
+console.log(camps);
 
 //Build HTML
 // Get countdown-data element
