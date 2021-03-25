@@ -38,7 +38,7 @@
                             <option value="" <?php if(!isset($eventId)){echo "selected";} ?> disabled>Choose an event</option>
                             <?php
                                 if(isset($eventId)){
-                                    echo "value='$eventId'";
+                                    //echo "value='$eventId'";
                                     $eventList = str_replace("value='$eventId'", "value='$eventId' selected", $eventList);
                                 }
                                 echo $eventList; 

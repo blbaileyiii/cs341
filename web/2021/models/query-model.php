@@ -40,10 +40,6 @@ function getParticipantsByIds($ids) {
         $idArr[] = ":id$i";
     }
 
-    // foreach($ids as $id){
-    //     $idArr[] = ":id$id"; 
-    // } 
-
     try {
         $db = hhConnect();
 
@@ -57,9 +53,6 @@ function getParticipantsByIds($ids) {
         for($i = 0; $i < $len; $i++){
             $sqlVarArray[":id$i"] = $ids[$i];
         }
-        // foreach($ids as $id){
-        //     $sqlVarArray[":id$id"] = $id;
-        // }
 
         $stmt = $db->prepare($sql);
         $stmt->execute($sqlVarArray);
