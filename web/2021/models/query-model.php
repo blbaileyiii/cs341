@@ -50,6 +50,8 @@ function getParticipantsByIds($ids) {
             $sqlArray .= $id . ", ";
         }
     }
+
+    var_dump($sqlArray);
     //$sql = "SELECT * FROM TABLE WHERE id IN $sqlArray";
     
 
