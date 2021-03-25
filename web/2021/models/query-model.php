@@ -40,8 +40,7 @@ function getParticipantsByIds($ids) {
         $idArr[] = ":id$id"; 
     }
 
-    $idArr = implode(',', $idArr);
-    var_dump($idArr);   
+    //var_dump($idArr);   
 
     try {
         $db = hhConnect();
@@ -49,12 +48,16 @@ function getParticipantsByIds($ids) {
         $sql = 
         'SELECT *
         FROM hhstake.registrants AS p
-        WHERE p.id IN (:ids)
+        WHERE p.id IN ('.implode(',', $idArr) .')
         ORDER BY p.id';
 
-        $sqlVarArray = array(
-            ':ids' => $ids
-        );
+        // $sqlVarArray = array(
+        //     ':ids' => $ids
+        // );
+        $sqlVarArray = array();
+        foreach($ids as $id){
+            $sqlVarArray[":id$id"] = $id;
+        }
 
         $stmt = $db->prepare($sql);
         $stmt->execute($sqlVarArray);
