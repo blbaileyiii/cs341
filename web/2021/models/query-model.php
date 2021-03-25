@@ -192,7 +192,7 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
         return $returnSQL;
 
     } catch(PDOException $ex) {
-        echo $sql . "<br>" . $ex->getMessage();
+        //echo $sql . "<br>" . $ex->getMessage();
     }
 }
 
