@@ -33,7 +33,7 @@ function getParticipantById($id) {
 }
 
 function getParticipantsByIds($ids) {
-    //$ids = explode(",", $ids);
+    $ids = explode(",", $ids);
     try {
         $db = hhConnect();
 
@@ -58,7 +58,8 @@ function getParticipantsByIds($ids) {
         return $returnSQL;
 
     } catch(PDOException $ex) {
-        echo $ids . "<br>" . $sql . "<br>" . $ex->getMessage();
+        var_dump($ids);
+        echo "<br>" . $sql . "<br>" . $ex->getMessage();
     }
 }
 
