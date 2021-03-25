@@ -40,6 +40,7 @@ function getParticipantsByIds($ids) {
     //var_dump($ids);
 
     $ids = "(" . implode(",", $ids) . ")";
+    var_dump($ids);
 
     //$sqlArray = "";
     //foreach($ids as $key => $id){
