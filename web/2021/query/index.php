@@ -44,7 +44,7 @@ switch($action){
         break;
     case 'getParticipants':
         // GET
-        $ids = filter_input(INPUT_GET, 'ids', FILTER_SANITIZE_NUMBER_INT);
+        $ids = filter_input(INPUT_GET, 'ids', FILTER_SANITIZE_STRING);
 
         echo getParticipantsByIds($ids);
         break;
