@@ -56,6 +56,7 @@ export default class Participants {
                     master.list = newList;
                     master.saveParticipants();
                     console.log(master.callbackFx);
+                    console.log("NOT PASSING");
                     master.callbackFx();
                 }
                 //master.validationComplete();
