@@ -51,6 +51,7 @@ function createCountdown(eventList){
         console.log(eventTime);
         console.log(eventBTime);
         console.log(camp);
+        console.log("lee");
 
         camps[event.key] = camp;
 
