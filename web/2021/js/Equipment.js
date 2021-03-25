@@ -5,14 +5,13 @@ export default class Equipment {
         this.participants = new Participants(this.buildEquipment.bind(this));
     }
 
-    buildEquipment() {
+    buildEquipment(list) {
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.innerHTML="";
 
-        console.log(this);
-        console.log(this.participants);
-        if (this.participants.list.length > 0) {
-            this.participants.list.forEach(participant => {
+        console.log(list);
+        if (list.length > 0) {
+            list.forEach(participant => {
                 //console.log(participant);
                 this.getEquipment(this, participant.id)
                 //this.displayItemCheckList(participant);
