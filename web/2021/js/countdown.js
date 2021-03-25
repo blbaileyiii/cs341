@@ -57,6 +57,7 @@ function createCountdown(eventList){
 
       } else {
         let eventDateS = event.date_start;
+        let eventTime = event.meet_time;
         let eventDate= new Date(eventDateS + 'T' + eventTime);
         let eventBTime = eventDate.getTime();
         let year = eventDate.getFullYear();
