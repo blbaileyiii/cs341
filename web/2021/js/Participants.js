@@ -25,7 +25,7 @@ export default class Participants {
             });
             this.getParticipantByIds(master, ids);
         } else {
-            this.callBackFx();
+            this.validationComplete();
         }
     }
 
@@ -57,7 +57,7 @@ export default class Participants {
                     master.list = newList;
                     master.saveParticipants();
                 }
-                master.callBackFx();
+                master.validationComplete();
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
                 let err404 = document.createElement("p");
@@ -74,6 +74,10 @@ export default class Participants {
 
     saveParticipants() {
         saveLS('participants', this.list);
+    }
+
+    async validationComplete() {
+        this.callBackFx();
     }
 
 }
