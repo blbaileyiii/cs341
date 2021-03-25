@@ -42,10 +42,9 @@ function createCountdown(eventList){
 	//console.log(eventList);
 	if (eventList.length > 0) {
 		eventList.forEach(event => {
-			console.log(event);
-
-      console.log(event.key);
-      console.log(action);
+			// console.log(event);
+      // console.log(event.key);
+      // console.log(action);
     
       if(action){
         if(event.key == action){
@@ -57,7 +56,7 @@ function createCountdown(eventList){
 		});
 	}
 
-  console.log(camps);
+  // console.log(camps);
   buildCountdownHTML();
 }
 
@@ -85,7 +84,7 @@ function buildCountdownHTML(){
   let countdownEl = document.querySelector('.countdown-data');
 
   for (camp in camps){
-    console.log(camp)
+    // console.log(camp)
     let campDiv = document.createElement('div');
     let timeDiv = document.createElement('div');
     let dateDiv = document.createElement('div');
