@@ -24,8 +24,8 @@ export default class Participants {
                 
                 ids.push(participant.id);
             });
-            ids = ids.join(',');
-            console.log(ids);
+            //ids = ids.join(',');
+            //console.log(ids);
             this.getParticipantByIds(master, ids);
         } 
     }
