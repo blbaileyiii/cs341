@@ -3,7 +3,11 @@ import {loadLS, saveLS} from './ls.js';
 
 export default class Equipment {
     constructor() {
-        this.participants = new Participants();
+        this.participants = new Participants(equipmentCallBack);
+    }
+
+    equipmentCallBack() {
+        this.buildEquipment(this);
     }
 
     buildEquipment(master) {
