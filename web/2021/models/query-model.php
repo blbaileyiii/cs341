@@ -34,10 +34,10 @@ function getParticipantById($id) {
 
 function getParticipantsByIds($ids) {
     var_dump($ids);
-    $ids = explode(",", $ids);
-    var_dump($ids);
-    $ids = implode(",", $ids);
-    var_dump($ids);
+    //$ids = explode(",", $ids);
+    //var_dump($ids);
+    //$ids = implode(",", $ids);
+    //var_dump($ids);
     try {
         $db = hhConnect();
 
