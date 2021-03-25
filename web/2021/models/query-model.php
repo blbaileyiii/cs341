@@ -39,7 +39,7 @@ function getParticipantByIds($ids) {
         $sql = 
         'SELECT *
         FROM hhstake.registrants AS p
-        WHERE p.ids IN (:ids)
+        WHERE p.id IN (:ids)
         ORDER BY p.id';
 
         $sqlVarArray = array(
