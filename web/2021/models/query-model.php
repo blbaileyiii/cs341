@@ -63,7 +63,7 @@ function getParticipantsByIds($ids) {
         return $returnSQL;
 
     } catch(PDOException $ex) {
-        var_dump($ids);
+        //var_dump($ids);
         echo "<br>" . $sql . "<br>" . $ex->getMessage();
     }
 }
