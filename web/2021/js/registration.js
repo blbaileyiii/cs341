@@ -198,10 +198,13 @@ function buildEventScript() {
                 let dateStart = new Date(myEvent.date_start + "T00:00:00");
                 let dateEnd = new Date(myEvent.date_end + "T00:00:00");
 
-                console.log(dateStart);
-                console.log(dateEnd);
+                dateStartF = (dateStart.getMonth + 1) + "/" + dateStart.getDate + "/" + dateStart.getFullYear;
+                dateEndF = (dateEnd.getMonth + 1) + "/" + dateEnd.getDate + "/" + dateEnd.getFullYear;
 
-                document.getElementById('eventDate').value = myEvent.date_start + " - " + myEvent.date_end;
+                console.log(dateStartF);
+                console.log(dateEndF);
+
+                document.getElementById('eventDate').value = dateStartF + " - " + dateEndF;
                 document.getElementById('eventDesc').value = myEvent.desc;
                 document.getElementById('eventLeaderName').value = myEvent.l_name;
                 document.getElementById('eventLeaderPhone').value = myEvent.l_phone;
