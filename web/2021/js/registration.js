@@ -198,8 +198,8 @@ function buildEventScript() {
                 let dateStart = new Date(myEvent.date_start + "T00:00:00");
                 let dateEnd = new Date(myEvent.date_end + "T00:00:00");
 
-                dateStartF = (dateStart.getMonth + 1) + "/" + dateStart.getDate + "/" + dateStart.getFullYear;
-                dateEndF = (dateEnd.getMonth + 1) + "/" + dateEnd.getDate + "/" + dateEnd.getFullYear;
+                let dateStartF = (dateStart.getMonth + 1) + "/" + dateStart.getDate + "/" + dateStart.getFullYear;
+                let dateEndF = (dateEnd.getMonth + 1) + "/" + dateEnd.getDate + "/" + dateEnd.getFullYear;
 
                 console.log(dateStartF);
                 console.log(dateEndF);
