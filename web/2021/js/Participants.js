@@ -40,6 +40,18 @@ export default class Participants {
                 //console.log(this.responseText);
                 let myDBRes = JSON.parse(this.responseText);
                 console.log(myDBRes);
+                if (myDBRes.length != ids.length){
+                    //Remove the missing one from the list
+                    let newList = [];
+                    master.list.forEach(participant => {
+                        myDBRes.forEach(registrant => {
+                            if(registrant.id == participant.id){ 
+                                newList.push(participant);
+                            }
+                        })
+                    })
+                    console.log(newList);
+                }
                 //master.validationComplete();
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
