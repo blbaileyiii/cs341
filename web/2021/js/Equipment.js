@@ -39,7 +39,7 @@ export default class Equipment {
     getEquipment(master, participant) {
         let id;
         if(participant){
-            let id = participant.id;
+            id = participant.id;
         }
         
         let url = "/2021/query/?action=getEquipment&reg_id=" + id;
@@ -92,7 +92,10 @@ export default class Equipment {
     }
 
     displayEquipment(participant, equipmentList) {
-        let id = participant.id;
+        let id;
+        if(participant){
+            id = participant.id;
+        }
         if (id) {
             this.displayItemCheckList(participant, equipmentList);            
         } else {
@@ -147,7 +150,10 @@ export default class Equipment {
     }
 
     displayItemCheckList(participant, equipmentList) {
-        let id = participant.id;
+        let id;
+        if(participant){
+            id = participant.id;
+        }
         let master = this;
 
         // console.log(equipmentList);
