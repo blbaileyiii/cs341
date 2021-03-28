@@ -186,7 +186,7 @@ export default class Equipment {
                 chkBox.dataset.cat = item.category;
                 chkBox.checked = item.owned;
                 chkBox.addEventListener('change', function () {
-                    master.updateItem(this.dataset.pid, this.dataset.iid, this.checked);
+                    master.updateItem(this.dataset.pid, this.dataset.iid, this.checked, this.dataset.cat);
                 })
 
                 label.htmlFor = identifier;
@@ -218,8 +218,8 @@ export default class Equipment {
         pDiv.appendChild(dnb);
 
     }
-
-    updateItem(reg_id, item_id, owned, pur_price = 0.00) {
+, 
+    updateItem(reg_id, item_id, owned, category, pur_price = 0.00) {
 
         // console.log(reg_id);
         // console.log(item_id);
@@ -227,6 +227,7 @@ export default class Equipment {
         // console.log(pur_price);
 
         console.log(this.list);
+        console.log(category);
         //console.log(Object.keys(this.list).filter(category => this.list[category].id == item_id).map(category => this.list[category]) );
 
         let url = "/2021/query/";
