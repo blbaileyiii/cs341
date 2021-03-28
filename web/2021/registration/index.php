@@ -248,9 +248,12 @@ switch($action){
 
         // Calculate age by DOB...
         $participantAge = getAge($participantDOB);
-        foreach($events as $event){
-            if($event['id'] == $eventId) { $minDOB = $event['min_DOB']; };
-        } 
+        if(isset($eventId)){
+            foreach($events as $event){
+                if($event['id'] == $eventId) { $minDOB = $event['min_DOB']; };
+            } 
+        }
+        
         $participantDOB = checkMaxDOB($participantDOB, $minDOB);
         // If participantDOB is >= 19 certain things
         $guardianSig = checkAge($guardianSig, $participantAge);
