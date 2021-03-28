@@ -224,12 +224,11 @@ export default class Equipment {
         // console.log(reg_id);
         // console.log(item_id);
         // console.log(owned);
+        // console.log(category);
         // console.log(pur_price);
 
-        //key.replace(/ /g,"-").toLowerCase()
-
-        //console.log(this.list);
-        console.log(category);
+        let categoryChkBx = document.querySelector("p-" + reg_id + "-" + category);
+        console.log(categoryChkBx);
 
         let url = "/2021/query/";
 
