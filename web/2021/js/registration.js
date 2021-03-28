@@ -186,30 +186,37 @@ function getEvents() {
 function buildEventScript() {
     //console.log(events);
     if (events.length > 0) {
-        document.getElementById('eventId').addEventListener('change', function() { 
+        let eventId = document.getElementById('eventId');
+        setMyEvent(eventId.value);
+        
+        eventId.addEventListener('change', function() { 
             //console.log(this.value);
-            let myEvent;
-            events.forEach( event => { if(event.id == this.value) { 
-                myEvent = event; 
-            
-            } });
-            if(myEvent){
-
-                let dateStart = new Date(myEvent.date_start + "T00:00:00");
-                let dateEnd = new Date(myEvent.date_end + "T00:00:00");
-
-                let dateStartF = (dateStart.getMonth() + 1) + "/" + dateStart.getDate() + "/" + dateStart.getFullYear();
-                let dateEndF = (dateEnd.getMonth() + 1) + "/" + dateEnd.getDate() + "/" + dateEnd.getFullYear();
-
-                console.log(dateStartF);
-                console.log(dateEndF);
-
-                document.getElementById('eventDate').value = dateStartF + " - " + dateEndF;
-                document.getElementById('eventDesc').value = myEvent.desc;
-                document.getElementById('eventLeaderName').value = myEvent.l_name;
-                document.getElementById('eventLeaderPhone').value = myEvent.l_phone;
-                document.getElementById('eventLeaderEmail').value = myEvent.l_email;
-            }
+            setMyEvent(this.value);
         });
+    }
+}
+
+function setMyEvent(eventId){
+    let myEvent;
+    events.forEach( event => { if(event.id == eventId) { 
+        myEvent = event; 
+    
+    } });
+    if(myEvent){
+
+        let dateStart = new Date(myEvent.date_start + "T00:00:00");
+        let dateEnd = new Date(myEvent.date_end + "T00:00:00");
+
+        let dateStartF = (dateStart.getMonth() + 1) + "/" + dateStart.getDate() + "/" + dateStart.getFullYear();
+        let dateEndF = (dateEnd.getMonth() + 1) + "/" + dateEnd.getDate() + "/" + dateEnd.getFullYear();
+
+        console.log(dateStartF);
+        console.log(dateEndF);
+
+        document.getElementById('eventDate').value = dateStartF + " - " + dateEndF;
+        document.getElementById('eventDesc').value = myEvent.desc;
+        document.getElementById('eventLeaderName').value = myEvent.l_name;
+        document.getElementById('eventLeaderPhone').value = myEvent.l_phone;
+        document.getElementById('eventLeaderEmail').value = myEvent.l_email;
     }
 }
