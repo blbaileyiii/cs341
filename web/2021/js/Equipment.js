@@ -239,7 +239,8 @@ export default class Equipment {
         categoryChkBxs.forEach(chkbox => {
             if(!chkbox.checked) {chkCategory = false;}
         })
-        console.log(chkCategory);
+        
+        categoryChkBx.checked = chkCategory;
 
         let url = "/2021/query/";
 
