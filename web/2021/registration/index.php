@@ -346,6 +346,8 @@ switch($action){
 
         break;
     default:
+        $eventId = filter_input(INPUT_GET, 'eventId', FILTER_SANITIZE_NUMBER_INT);
+        $eventId = checkInt($eventId);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
 }
 
