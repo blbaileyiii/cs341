@@ -17,7 +17,7 @@ $events = getEventsJSON(2021);
 $events = json_decode($events, true);
 $eventList = buildEventList($events);
 
-echo date('Y');
+echo date('Y') - 12;
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
