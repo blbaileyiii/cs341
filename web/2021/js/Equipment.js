@@ -3,6 +3,7 @@ import Participants from './Participants.js';
 export default class Equipment {
     constructor() {
         this.participants = new Participants(this.buildEquipment.bind(this));
+        this.list = {};
     }
 
     buildEquipment(list) {
@@ -65,7 +66,7 @@ export default class Equipment {
                                                     'pur_price': item.pur_price});
             }
         });
-        //this.equipmentList = equipmentList;
+        this.list = equipmentList;
         // console.log(this.equipmentList);
         this.displayEquipment(id, equipmentList);
     }
