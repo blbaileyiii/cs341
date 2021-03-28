@@ -159,6 +159,7 @@ export default class Equipment {
             catInput.id = pid+ "-" + cid;
             catInput.name = cid;
             catInput.type = "checkbox";
+            catInput.checked = true;
 
             catLabel.htmlFor = pid + "-" + cid;
             catLabel.textContent = key;
@@ -166,8 +167,8 @@ export default class Equipment {
             // TODO FIX THIS TO USE A CREATED INPUT AND LABEL ELEMENT!!! 
             h2.appendChild(catInput);
             h2.appendChild(catLabel);
-            ul.classList.add(cid);            
-
+            ul.classList.add(cid);
+            
             equipmentList[key].forEach(item => {
 
                 let iid = "-i-" + item.id;
@@ -185,6 +186,9 @@ export default class Equipment {
                 chkBox.dataset.iid = item.id;
                 chkBox.dataset.cat = item.category;
                 chkBox.checked = item.owned;
+
+                if (!item.owned) {catInput.checked = item.owned};
+
                 chkBox.addEventListener('change', function () {
                     master.updateItem(this.dataset.pid, this.dataset.iid, this.checked, this.dataset.cat);
                 })
