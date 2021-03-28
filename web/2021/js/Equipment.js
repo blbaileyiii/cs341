@@ -240,6 +240,7 @@ export default class Equipment {
 
         //console.log("p-" + reg_id + "-" + category);
 
+        // Verify the category for completion and set the checkbox state based on the outcome.
         let categoryChkBx = document.getElementById("p-" + reg_id + "-" + category);
         //console.log(categoryChkBx);
 
@@ -252,6 +253,7 @@ export default class Equipment {
         })        
         categoryChkBx.checked = chkCategory;
 
+        // Trigger the AJAX post request to update the checkbox value in the db.
         this.postItem(reg_id, item_id, owned, pur_price = 0.00);
     }
 
@@ -274,8 +276,8 @@ export default class Equipment {
 
     postItem(reg_id, item_id, owned, pur_price = 0.00) {
 
-        console.log("p-" + reg_id + "-" + item_id);
-        let strike = document.getElementById("p-" + reg_id + "-" + item_id);
+        console.log("p-" + reg_id + "-i-" + item_id);
+        let strike = document.getElementById("p-" + reg_id + "-i-" + item_id);
         if(owned){ strike.classList.add("stike"); } else { strike.classList.remove("strike"); }
 
         let url = "/2021/query/";
