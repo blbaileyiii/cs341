@@ -229,7 +229,7 @@ export default class Equipment {
 
         console.log("p-" + reg_id + "-" + category);
 
-        let categoryChkBx = document.querySelector(".p-" + reg_id + "-" + category);
+        let categoryChkBx = document.getElementById("p-" + reg_id + "-" + category);
         console.log(categoryChkBx);
 
         let url = "/2021/query/";
