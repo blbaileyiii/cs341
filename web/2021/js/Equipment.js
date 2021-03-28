@@ -248,9 +248,13 @@ export default class Equipment {
         let chkCategory = true;
         categoryChkBxs.forEach(chkbox => {
             if(!chkbox.checked) {chkCategory = false;}
-        })
-        
+        })        
         categoryChkBx.checked = chkCategory;
+
+        this.postItem(reg_id, item_id, owned, pur_price = 0.00);
+    }
+
+    postItem(reg_id, item_id, owned, pur_price = 0.00) {
 
         let url = "/2021/query/";
 
@@ -292,12 +296,12 @@ export default class Equipment {
         categoryChkBxs.forEach(chkbox => {
            chkbox.checked = complete;
            // add the update portion to the checkboxes...
-           console.log(chkbox);
-           console.log(chkbox.dataset.pid);
-           console.log(chkbox.dataset.iid);
-           console.log(complete);
-           console.log(category);
-           this.updateItem(chkbox.dataset.pid, chkbox.dataset.iid, complete, category)
+           //console.log(chkbox);
+           //console.log(chkbox.dataset.pid);
+           //console.log(chkbox.dataset.iid);
+           //console.log(complete);
+           //console.log(category);
+           this.postItem(chkbox.dataset.pid, chkbox.dataset.iid, complete);
         })
 
     }
