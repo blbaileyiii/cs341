@@ -14,7 +14,7 @@ export default class Equipment {
         if (list.length > 0) {
             list.forEach(participant => {
                 // console.log(participant);
-                this.getEquipment(this, participant.id)
+                this.getEquipment(this, participant)
                 //this.displayItemCheckList(participant);
             });            
         } else {
@@ -23,7 +23,8 @@ export default class Equipment {
         }
     }
 
-    getEquipment(master, id) {
+    getEquipment(master, participant) {
+        let id = participant.id;
         let url = "/2021/query/?action=getEquipment&reg_id=" + id;
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
@@ -31,7 +32,7 @@ export default class Equipment {
             if (this.readyState == 4 && this.status == 200) {
                 let myDBRes = JSON.parse(this.responseText);
                 // console.log(myDBRes);
-                master.convertEquipmentList(myDBRes, id);
+                master.convertEquipmentList(myDBRes, participant);
             } else if (this.readyState == 4 && this.status == 404) {
                 /*
                 let err404 = document.createElement("p");
@@ -47,7 +48,7 @@ export default class Equipment {
     }
 
     
-    convertEquipmentList(dbEquipment, id) {
+    convertEquipmentList(dbEquipment, participant) {
         let equipmentList = {};
         dbEquipment.forEach(item => {
             if(!equipmentList.hasOwnProperty(item.category)){
@@ -70,12 +71,13 @@ export default class Equipment {
         });
         //this.list = equipmentList;
         // console.log(this.equipmentList);
-        this.displayEquipment(id, equipmentList);
+        this.displayEquipment(participant, equipmentList);
     }
 
-    displayEquipment(id, equipmentList) {
+    displayEquipment(participant, equipmentList) {
+        let id = participant.id;
         if (id) {
-            this.displayItemCheckList(id, equipmentList);            
+            this.displayItemCheckList(participant, equipmentList);            
         } else {
             this.displayItemList(equipmentList);
         }
@@ -128,12 +130,14 @@ export default class Equipment {
     }
 
     displayItemCheckList(participant, equipmentList) {
+        let id = participant.id;
+        let name = participant.p_name;
 
         let master = this;
 
         // console.log(equipmentList);
 
-        let pid = "p-" + participant;
+        let pid = "p-" + id;
 
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.classList.add('equipment-lists-interactive');
@@ -158,7 +162,7 @@ export default class Equipment {
 
             catInput.id = pid+ "-" + cid;
             catInput.name = cid;
-            catInput.dataset.pid = participant;
+            catInput.dataset.pid = id;
             catInput.dataset.cid = cid;
             catInput.type = "checkbox";
             catInput.checked = true;
@@ -188,7 +192,7 @@ export default class Equipment {
                 chkBox.id = identifier;
                 chkBox.name = identifier;
                 chkBox.type = "checkbox";
-                chkBox.dataset.pid = participant;
+                chkBox.dataset.pid = id;
                 chkBox.dataset.iid = item.id;
                 chkBox.dataset.cat = item.category;
                 chkBox.checked = item.owned;
