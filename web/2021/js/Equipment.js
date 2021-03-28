@@ -14,6 +14,8 @@ export default class Equipment {
         if (list.length > 0) {
             let h2 = document.createElement('h2');
             let select = document.createElement('select');
+            select.classList.add('owner');
+
             list.forEach(participant => {
                 // console.log(participant);
                 

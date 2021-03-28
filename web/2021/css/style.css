@@ -681,6 +681,11 @@ p.sig {
     text-decoration: line-through;
 }
 
+select.owner {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
