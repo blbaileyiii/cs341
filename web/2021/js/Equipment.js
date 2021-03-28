@@ -223,7 +223,8 @@ export default class Equipment {
         // console.log(owned);
         // console.log(pur_price);
 
-        console.log(Object.keys(this.list).filter(category => this.list[category].id == item_id) );
+        console.log(this.list);
+        console.log(Object.keys(this.list).filter(category => this.list[category].id == item_id).map(category => this.list[category]) );
 
         let url = "/2021/query/";
 
