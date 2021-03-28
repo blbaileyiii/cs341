@@ -227,6 +227,8 @@ export default class Equipment {
         // console.log(category);
         // console.log(pur_price);
 
+        console.log("p-" + reg_id + "-" + category);
+
         let categoryChkBx = document.querySelector("p-" + reg_id + "-" + category);
         console.log(categoryChkBx);
 
