@@ -12,14 +12,17 @@ export default class Equipment {
 
         console.log(list);
         if (list.length > 0) {
+            let div = document.createElement('div');
+            div.classList.add('form');
+
             let label = document.createElement('label');
             label.textContent = "Choose a participant: "
             label.htmlFor = "participantList";
-            label.classList.add('owner');
+            label.classList.add('xowner');
 
             let select = document.createElement('select');
             select.id = "participantList";
-            select.classList.add('owner');
+            select.classList.add('xowner');
 
             list.forEach(participant => {
                 // console.log(participant);
@@ -34,8 +37,9 @@ export default class Equipment {
                 //this.displayItemCheckList(participant);
             });
 
-            equipDiv.append(label);
-            equipDiv.append(select);
+            div.append(label);
+            div.append(select);
+            equipDiv.append(div);
 
         } else {
             this.getEquipment(this, null)
