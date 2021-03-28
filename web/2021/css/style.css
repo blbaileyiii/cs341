@@ -677,7 +677,7 @@ p.sig {
     outline: none;
 }
 
-.strike {
+.strike + label{
     text-decoration: line-through;
 }
 
