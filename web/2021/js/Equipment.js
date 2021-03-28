@@ -163,7 +163,7 @@ export default class Equipment {
             catInput.type = "checkbox";
             catInput.checked = true;
             catInput.addEventListener('change', function () {
-                master.updateCat(this.dataset.pid, this.dataset.cid);
+                master.updateCat(this.dataset.pid, this.dataset.cid, this.checked);
             })
 
 
@@ -285,13 +285,13 @@ export default class Equipment {
     }
 
 
-    updateCat(reg_id, category) {
+    updateCat(reg_id, category, complete) {
         let categoryChkBxs = document.querySelectorAll("[data-pid='" + reg_id + "'][data-cat='" + category + "']");
         console.log(categoryChkBxs);
 
-        //categoryChkBxs.forEach(chkbox => {
-           //
-        //})
+        categoryChkBxs.forEach(chkbox => {
+           chkbox.checked = complete;
+        })
 
     }
 }
