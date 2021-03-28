@@ -12,7 +12,7 @@ export default class Equipment {
 
         let master = this;
 
-        console.log(list);
+        // console.log(list);
         if (list.length > 0) {
             let div = document.createElement('div');
             div.classList.add('form');
@@ -174,6 +174,8 @@ export default class Equipment {
         }
         let master = this;
 
+        let hiddenswitch = document.getElementById('participantList').value;
+
         // console.log(equipmentList);
 
         let pid = "p-" + id;
@@ -183,7 +185,9 @@ export default class Equipment {
 
         let pDiv = document.createElement('div');
         pDiv.dataset.pid = pid;
-        pDiv.classList.add("equipment-list");        
+        pDiv.classList.add("equipment-list");
+        if (pid != hiddenswitch){ pDiv.classList.add("hidden"); }
+
         let dnb;
 
         Object.keys(equipmentList).forEach(key => {
@@ -281,14 +285,14 @@ export default class Equipment {
         // console.log(category);
         // console.log(pur_price);
 
-        //console.log("p-" + reg_id + "-" + category);
+        // console.log("p-" + reg_id + "-" + category);
 
         // Verify the category for completion and set the checkbox state based on the outcome.
         let categoryChkBx = document.getElementById("p-" + reg_id + "-" + category);
-        //console.log(categoryChkBx);
+        // console.log(categoryChkBx);
 
         let categoryChkBxs = document.querySelectorAll("[data-pid='" + reg_id + "'][data-cat='" + category + "']");
-        //console.log(categoryChkBxs);
+        // console.log(categoryChkBxs);
         
         let chkCategory = true;
         categoryChkBxs.forEach(chkbox => {
@@ -302,16 +306,16 @@ export default class Equipment {
 
     updateCat(reg_id, category, complete) {
         let categoryChkBxs = document.querySelectorAll("[data-pid='" + reg_id + "'][data-cat='" + category + "']");
-        //console.log(categoryChkBxs);
+        // console.log(categoryChkBxs);
 
         categoryChkBxs.forEach(chkbox => {
            chkbox.checked = complete;
            // add the update portion to the checkboxes...
-           //console.log(chkbox);
-           //console.log(chkbox.dataset.pid);
-           //console.log(chkbox.dataset.iid);
-           //console.log(complete);
-           //console.log(category);
+           // console.log(chkbox);
+           // console.log(chkbox.dataset.pid);
+           // console.log(chkbox.dataset.iid);
+           // console.log(complete);
+           // console.log(category);
            this.postItem(chkbox.dataset.pid, chkbox.dataset.iid, complete);
         })
 
@@ -322,7 +326,7 @@ export default class Equipment {
         // This gets trigger whenever a single checkbox is changed. 
         // It also gets triggered whenever the category checkbox is changed.
 
-        console.log("p-" + reg_id + "-i-" + item_id);
+        // console.log("p-" + reg_id + "-i-" + item_id);
         let strike = document.getElementById("p-" + reg_id + "-i-" + item_id);
         if(owned){ strike.classList.add("strike"); } else { strike.classList.remove("strike"); }
 
@@ -358,11 +362,11 @@ export default class Equipment {
         xmlhttp.send(data);
     }
 
-    changeListDisplayed(value) {
+    changeListDisplayed(pid) {
         let equipmentLists = document.querySelectorAll('.equipment-list');
-        console.log(equipmentLists);
+        //console.log(equipmentLists);
         equipmentLists.forEach(list => {
-            if (value == list.dataset.pid) {
+            if (pid == list.dataset.pid) {
                 list.classList.remove('hidden');
             } else {
                 list.classList.add('hidden');
