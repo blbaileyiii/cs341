@@ -93,7 +93,7 @@ switch($action){
 
         // Calculate age by DOB...
         $participantAge = getAge($participantDOB);
-        $participantDOB = checkMaxDOB($participantDOB);
+        $participantDOB = checkMaxDOB($participantDOB, '2009-12-31');
         // If participantDOB is >= 19 certain things
         $guardianSig = checkAge($guardianSig, $participantAge);
 
@@ -248,7 +248,10 @@ switch($action){
 
         // Calculate age by DOB...
         $participantAge = getAge($participantDOB);
-        $participantDOB = checkMaxDOB($participantDOB);
+        foreach($events as $event){
+            if($event['id'] == $eventId) { $minDOB = $event['min_DOB']; };
+        } 
+        $participantDOB = checkMaxDOB($participantDOB, $minDOB);
         // If participantDOB is >= 19 certain things
         $guardianSig = checkAge($guardianSig, $participantAge);
         $guardianESig = checkAge($guardianESig, $participantAge);
@@ -325,8 +328,7 @@ switch($action){
 
         // Validate Insert
         // if($regOutcome === 1){
-        if($regId){
-            
+        if($regId){            
             foreach($events as $event){
                 if($event['id'] == $eventId) { $eventName = $event['name']; };
             }   
