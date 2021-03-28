@@ -20,9 +20,12 @@ export default class Equipment {
                 option.value = participant.p_id;
                 option.textContent = participant.p_name;
 
+                select.appendChild(option);
+
                 this.getEquipment(this, participant)
                 //this.displayItemCheckList(participant);
-            });            
+            });
+            equipDiv.append(select);            
         } else {
             this.getEquipment(this, null)
             //this.displayItemList();
