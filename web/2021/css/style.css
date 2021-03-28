@@ -681,7 +681,7 @@ p.sig {
     text-decoration: line-through;
 }
 
-select.owner {
+.owner {
     font-size: 1.5rem;
     font-weight: 700;
 }
