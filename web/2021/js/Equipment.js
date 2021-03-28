@@ -182,7 +182,8 @@ export default class Equipment {
         equipDiv.classList.add('equipment-lists-interactive');
 
         let pDiv = document.createElement('div');
-        pDiv.classList.add(pid);   
+        pDiv.classList.add(pid);
+        pDiv.classList.add("equipment-list");
         
         let dnb;
 
@@ -359,7 +360,7 @@ export default class Equipment {
     }
 
     changeListDisplayed() {
-        let equipmentlist = document.querySelectorAll('.equipmentList');
-        console.log(equipmentlist);
+        let equipmentList = document.querySelectorAll('.equipment-list');
+        console.log(equipmentList);
     }
 }
