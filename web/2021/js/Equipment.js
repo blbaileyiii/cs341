@@ -3,7 +3,7 @@ import Participants from './Participants.js';
 export default class Equipment {
     constructor() {
         this.participants = new Participants(this.buildEquipment.bind(this));
-        this.list = {};
+        //this.list = {};
     }
 
     buildEquipment(list) {
@@ -68,7 +68,7 @@ export default class Equipment {
                                                     'category': item.category.replace(/ /g,"-").toLowerCase()});
             }
         });
-        this.list = equipmentList;
+        //this.list = equipmentList;
         // console.log(this.equipmentList);
         this.displayEquipment(id, equipmentList);
     }
@@ -228,7 +228,7 @@ export default class Equipment {
 
         //key.replace(/ /g,"-").toLowerCase()
 
-        console.log(this.list);
+        //console.log(this.list);
         console.log(category);
 
         let url = "/2021/query/";
