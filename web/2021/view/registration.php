@@ -23,7 +23,6 @@
                         unset($_SESSION['message']);
                 }
             ?>
-            <p>Participants must be turning 14 this year or older.</p>
             <p>All Adult and Youth Participants are required to register by submitting a valid Permission and Medical Release Form.</p>
             <ul>
                 <li>Please fill out all required fields below. Note: Gray fields will be filled out automatically.</li>
