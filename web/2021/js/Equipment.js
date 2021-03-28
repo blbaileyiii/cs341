@@ -88,14 +88,14 @@ export default class Equipment {
 
         let pDiv = document.createElement('div');
 
-        let xh2;
+        let xh3;
         let xul;
 
         Object.keys(equipmentList).forEach(key => {         
-            let h2 = document.createElement('h2');
+            let h3 = document.createElement('h3');
             let ul = document.createElement('ul');
 
-            h2.innerHTML = key;
+            h3.innerHTML = key;
             ul.classList.add(key.replace(/ /g,"-"));            
 
             equipmentList[key].forEach(item => {
@@ -107,20 +107,20 @@ export default class Equipment {
             });
 
             
-            pDiv.appendChild(h2);
+            pDiv.appendChild(h3);
             pDiv.appendChild(ul);
 
             if (key != "DO NOT BRING") { 
-                pDiv.appendChild(h2);
+                pDiv.appendChild(h3);
                 pDiv.appendChild(ul);
             } else {
-                xh2 = h2;
+                xh3 = h3;
                 xul = ul;
             }
         });
 
-        if(xh2 && xul){
-            pDiv.appendChild(xh2);
+        if(xh3 && xul){
+            pDiv.appendChild(xh3);
             pDiv.appendChild(xul);
         }
 
@@ -150,7 +150,7 @@ export default class Equipment {
             let pCatDiv = document.createElement('div');
             pCatDiv.classList.add(pid + "-" + cid);
             
-            let h2 = document.createElement('h2');
+            let h3 = document.createElement('h3');
             let ul = document.createElement('ul');
 
             let catInput = document.createElement('input');
@@ -171,8 +171,8 @@ export default class Equipment {
             catLabel.textContent = key;
 
             // TODO FIX THIS TO USE A CREATED INPUT AND LABEL ELEMENT!!! 
-            h2.appendChild(catInput);
-            h2.appendChild(catLabel);
+            h3.appendChild(catInput);
+            h3.appendChild(catLabel);
             ul.classList.add(cid);
             
             equipmentList[key].forEach(item => {
@@ -212,7 +212,7 @@ export default class Equipment {
                 ul.appendChild(li);
             });
 
-            pCatDiv.appendChild(h2);
+            pCatDiv.appendChild(h3);
             pCatDiv.appendChild(ul);
 
             pDiv.appendChild(pCatDiv);
