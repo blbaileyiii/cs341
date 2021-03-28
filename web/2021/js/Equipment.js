@@ -291,6 +291,9 @@ export default class Equipment {
 
         categoryChkBxs.forEach(chkbox => {
            chkbox.checked = complete;
+           // add the update portion to the checkboxes...
+           console.log(chkbox);
+           //updateItem(reg_id, item_id, owned, category, pur_price = 0.00)
         })
 
     }
