@@ -682,7 +682,7 @@ p.sig {
 }
 
 .owner {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     font-weight: 700;
 }
 
@@ -726,6 +726,11 @@ p.sig {
 
     .equipment-lists-interactive ul{
         margin: 1rem 1rem 1rem 2.75rem;
+    }
+
+    .owner {
+        font-size: 1.5rem;
+        font-weight: 700;
     }
  }
 

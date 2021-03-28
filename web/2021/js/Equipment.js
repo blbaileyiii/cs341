@@ -13,7 +13,7 @@ export default class Equipment {
         console.log(list);
         if (list.length > 0) {
             let label = document.createElement('label');
-            label.textContent = "Choose a participant:"
+            label.textContent = "Choose a participant: "
             label.htmlFor = "participantList";
             label.classList.add('owner');
 
@@ -26,7 +26,7 @@ export default class Equipment {
                 
                 let option = document.createElement('option');
                 option.value = "p-" + participant.id;
-                option.textContent = participant.p_name + "\n" + participant.event_name;
+                option.textContent = participant.p_name + " - " + participant.event_name;
 
                 select.appendChild(option);
 
