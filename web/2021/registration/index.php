@@ -93,7 +93,16 @@ switch($action){
 
         // Calculate age by DOB...
         $participantAge = getAge($participantDOB);
-        $participantDOB = checkMaxDOB($participantDOB, '2009-12-31');
+        $min_DOB = '2009-12-31';
+        if(isset($eventId)){
+            foreach($events as $event){
+                if($event['id'] == $eventId) { $minDOB = $event['min_DOB']; };
+            } 
+        }
+        $minAge = getAge($min_DOB);
+        
+        $participantDOB = checkMaxDOB($participantDOB, $minDOB);
+
         // If participantDOB is >= 19 certain things
         $guardianSig = checkAge($guardianSig, $participantAge);
 
@@ -145,7 +154,7 @@ switch($action){
         */
 
         if(empty($participantDOB)){
-            $_SESSION['message'] = "<div class='alert'>Sorry, either you forgot to add your Date of Birth or you aren't old enough. Note: Only participants turning 12 this year or older may register.</div>";
+            $_SESSION['message'] = "<div class='alert'>Sorry, either you forgot to add your Date of Birth or you aren't old enough. Note: Only participants turning $minAge this year or older may register.</div>";
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
         }
@@ -254,6 +263,7 @@ switch($action){
                 if($event['id'] == $eventId) { $minDOB = $event['min_DOB']; };
             } 
         }
+        $minAge = getAge($min_DOB);
         
         $participantDOB = checkMaxDOB($participantDOB, $minDOB);
         // If participantDOB is >= 19 certain things
@@ -314,7 +324,7 @@ switch($action){
         */
 
         if(empty($participantDOB)){
-            $_SESSION['message'] = "<div class='alert'>Sorry, either you forgot to add your Date of Birth or you aren't old enough. Note: Only participants turning 12 this year or older may register.</div>";
+            $_SESSION['message'] = "<div class='alert'>Sorry, either you forgot to add your Date of Birth or you aren't old enough. Note: Only participants turning $minAge this year or older may register.</div>";
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
         }
