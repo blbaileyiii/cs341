@@ -19,7 +19,7 @@ export default class Equipment {
             divFields.classList.add('fields');
 
             let label = document.createElement('label');
-            label.textContent = "Choose a participant: "
+            label.textContent = "Choose a participant:"
             label.htmlFor = "participantList";
             label.classList.add('xowner');
 
