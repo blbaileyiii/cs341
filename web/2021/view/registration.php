@@ -351,11 +351,12 @@
     <?php //var_dump($events); ?>
     <?php //echo $_SESSION['participantid']; ?>
     <?php
-        if (isset($_SESSION['participantid']) && isset($_SESSION['participant']) && isset($_SESSION['eventid'])) {
-            $setParticipant = "const participant = {'id': '$_SESSION[participantid]', 'p_name': '$_SESSION[participant]', 'event_id': '$_SESSION[eventid]'};";
+        if (isset($_SESSION['participantid']) && isset($_SESSION['participant']) && isset($_SESSION['eventid']) && isset($_SESSION['eventname'])) {
+            $setParticipant = "const participant = {'id': '$_SESSION[participantid]', 'p_name': '$_SESSION[participant]', 'event_id': '$_SESSION[eventid]', 'event_name': '$_SESSION[eventname]'};";
             unset($_SESSION['participantid']);
             unset($_SESSION['participant']);
             unset($_SESSION['eventid']);
+            unset($_SESSION['eventname']);
         } else {
             $setParticipant = "const participant = null;";
         }

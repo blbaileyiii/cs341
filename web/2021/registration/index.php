@@ -15,21 +15,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
 $events = getEventsJSON(2021);
 $events = json_decode($events, true);
-
-var_dump($events);
-echo "<br>";
-foreach($events as $event){
-    var_dump($event);
-    echo "<br>";
-    echo $event['id'];
-    echo "<br>";
-    echo $event['name'];
-    echo "<br>";
-    if($event['id'] == 2) { echo $event['name']; };
-    echo "<br>";
-}
-
-
 $eventList = buildEventList($events);
 
 $action = filter_input(INPUT_POST, 'action');
@@ -341,18 +326,15 @@ switch($action){
         // Validate Insert
         // if($regOutcome === 1){
         if($regId){
-            var_dump($events);
             foreach($events as $event){
-                var_dump($event);
-                echo $event['id'];
-                echo $event['name'];
                 if($event['id'] == $eventid) { $eventName = $event['name']; };
             }   
             echo $eventName;
             $_SESSION['message'] = "<div class='message'>Thanks for registering $participantName.</div>";
             $_SESSION['participantid'] = $regId;
             $_SESSION['participant'] = $participantName;
-            $_SESSION['eventid'] = $eventId;            
+            $_SESSION['eventid'] = $eventId;
+            $_SESSION['eventname'] = $eventName;
             header('Location: /2021/registration/');
             exit;
         } else {
