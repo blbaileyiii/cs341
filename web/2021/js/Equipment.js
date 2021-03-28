@@ -15,6 +15,9 @@ export default class Equipment {
             let div = document.createElement('div');
             div.classList.add('form');
 
+            let divFields = document.createElement('div');
+            divFields.classList.add('fields');
+
             let label = document.createElement('label');
             label.textContent = "Choose a participant: "
             label.htmlFor = "participantList";
@@ -37,8 +40,9 @@ export default class Equipment {
                 //this.displayItemCheckList(participant);
             });
 
-            div.append(label);
-            div.append(select);
+            divFields.append(label);
+            divFields.append(select);
+            div.append(divFields);
             equipDiv.append(div);
 
         } else {
