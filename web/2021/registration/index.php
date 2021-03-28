@@ -17,7 +17,8 @@ $events = getEventsJSON(2021);
 $events = json_decode($events, true);
 $eventList = buildEventList($events);
 
-echo date('Y') - 12;
+echo (date('Y') - 12).'-12-31';
+//$min_DOB =  (date('Y') - 12).'-12-31';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -259,7 +260,6 @@ switch($action){
 
         // Calculate age by DOB...
         $participantAge = getAge($participantDOB);
-        $min_DOB = '2009-12-31';
         if(isset($eventId)){
             foreach($events as $event){
                 if($event['id'] == $eventId) { $minDOB = $event['min_DOB']; };
