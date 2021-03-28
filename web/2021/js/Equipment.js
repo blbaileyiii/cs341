@@ -182,9 +182,8 @@ export default class Equipment {
         equipDiv.classList.add('equipment-lists-interactive');
 
         let pDiv = document.createElement('div');
-        pDiv.classList.add(pid);
-        pDiv.classList.add("equipment-list");
-        
+        pDiv.dataset.pid(pid);
+        pDiv.classList.add("equipment-list");        
         let dnb;
 
         Object.keys(equipmentList).forEach(key => {
@@ -359,8 +358,16 @@ export default class Equipment {
         xmlhttp.send(data);
     }
 
-    changeListDisplayed() {
-        let equipmentList = document.querySelectorAll('.equipment-list');
-        console.log(equipmentList);
+    changeListDisplayed(value) {
+        let equipmentLists = document.querySelectorAll('.equipment-list');
+        console.log(equipmentLists);
+        equipmentLists.forEach(list => {
+            if (value == list.dataset.pid) {
+                list.classList.remove('hidden');
+            } else {
+                list.classList.add('hidden');
+            }            
+        }
+
     }
 }
