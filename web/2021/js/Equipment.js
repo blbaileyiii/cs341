@@ -192,6 +192,7 @@ export default class Equipment {
                 chkBox.dataset.iid = item.id;
                 chkBox.dataset.cat = item.category;
                 chkBox.checked = item.owned;
+                // if(item.owned){ chkBox.classList.add("stike"); } else { chkBox.classList.remove("strike"); }
 
                 if (!item.owned) {catInput.checked = item.owned};
 
@@ -239,9 +240,6 @@ export default class Equipment {
 
         //console.log("p-" + reg_id + "-" + category);
 
-        let strike = document.getElementById("p-" + reg_id + "-" + item_id);
-        if(owned){ strike.classList.add("stike"); } else { strike.classList.remove("strike"); }
-
         let categoryChkBx = document.getElementById("p-" + reg_id + "-" + category);
         //console.log(categoryChkBx);
 
@@ -275,6 +273,10 @@ export default class Equipment {
     }
 
     postItem(reg_id, item_id, owned, pur_price = 0.00) {
+
+        console.log("p-" + reg_id + "-" + item_id);
+        let strike = document.getElementById("p-" + reg_id + "-" + item_id);
+        if(owned){ strike.classList.add("stike"); } else { strike.classList.remove("strike"); }
 
         let url = "/2021/query/";
 
