@@ -56,14 +56,16 @@ export default class Equipment {
                                                 'quantity': item.quantity,
                                                 'name': item.name,                                                  
                                                 'avg_price': item.avg_price, 
-                                                'pur_price': item.pur_price}];
+                                                'pur_price': item.pur_price,
+                                                'category': item.category.replace(/ /g,"-").toLowerCase()}];
             } else {
                 equipmentList[item.category].push({ 'owned': item.owned,
                                                     'id': item.id,
                                                     'quantity': item.quantity,
                                                     'name': item.name,                                                  
                                                     'avg_price': item.avg_price, 
-                                                    'pur_price': item.pur_price});
+                                                    'pur_price': item.pur_price,
+                                                    'category': item.category.replace(/ /g,"-").toLowerCase()});
             }
         });
         this.list = equipmentList;
@@ -224,8 +226,10 @@ export default class Equipment {
         // console.log(owned);
         // console.log(pur_price);
 
+        //key.replace(/ /g,"-").toLowerCase()
+
         console.log(this.list);
-        //console.log(category);
+        console.log(category);
 
         let url = "/2021/query/";
 
