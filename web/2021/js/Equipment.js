@@ -12,10 +12,12 @@ export default class Equipment {
 
         console.log(list);
         if (list.length > 0) {
-            let h2 = document.createElement('h2');
-            h2.textContent = "Choose a participant:"
+            let label = document.createElement('label');
+            label.textContent = "Choose a participant:"
+            label.htmlFor = "participantList";
 
             let select = document.createElement('select');
+            select.id = "participantList";
             select.classList.add('owner');
 
             list.forEach(participant => {
@@ -31,7 +33,7 @@ export default class Equipment {
                 //this.displayItemCheckList(participant);
             });
 
-            equipDiv.append(h2);
+            equipDiv.append(label);
             equipDiv.append(select);
 
         } else {
@@ -114,14 +116,14 @@ export default class Equipment {
 
         let pDiv = document.createElement('div');
 
-        let xh3;
+        let xh2;
         let xul;
 
         Object.keys(equipmentList).forEach(key => {         
-            let h3 = document.createElement('h3');
+            let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
 
-            h3.innerHTML = key;
+            h2.innerHTML = key;
             ul.classList.add(key.replace(/ /g,"-"));            
 
             equipmentList[key].forEach(item => {
@@ -133,20 +135,20 @@ export default class Equipment {
             });
 
             
-            pDiv.appendChild(h3);
+            pDiv.appendChild(h2);
             pDiv.appendChild(ul);
 
             if (key != "DO NOT BRING") { 
-                pDiv.appendChild(h3);
+                pDiv.appendChild(h2);
                 pDiv.appendChild(ul);
             } else {
-                xh3 = h3;
+                xh2 = h2;
                 xul = ul;
             }
         });
 
-        if(xh3 && xul){
-            pDiv.appendChild(xh3);
+        if(xh2 && xul){
+            pDiv.appendChild(xh2);
             pDiv.appendChild(xul);
         }
 
@@ -179,7 +181,7 @@ export default class Equipment {
             let pCatDiv = document.createElement('div');
             pCatDiv.classList.add(pid + "-" + cid);
             
-            let h3 = document.createElement('h3');
+            let h2 = document.createElement('h2');
             let ul = document.createElement('ul');
 
             let catInput = document.createElement('input');
@@ -200,8 +202,8 @@ export default class Equipment {
             catLabel.textContent = key;
 
             // TODO FIX THIS TO USE A CREATED INPUT AND LABEL ELEMENT!!! 
-            h3.appendChild(catInput);
-            h3.appendChild(catLabel);
+            h2.appendChild(catInput);
+            h2.appendChild(catLabel);
             ul.classList.add(cid);
             
             equipmentList[key].forEach(item => {
@@ -241,7 +243,7 @@ export default class Equipment {
                 ul.appendChild(li);
             });
 
-            pCatDiv.appendChild(h3);
+            pCatDiv.appendChild(h2);
             pCatDiv.appendChild(ul);
 
             pDiv.appendChild(pCatDiv);
