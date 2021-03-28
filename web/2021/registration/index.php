@@ -26,6 +26,7 @@ foreach($events as $event){
     echo $event['name'];
     echo "<br>";
     if($event['id'] == 2) { echo $event['name']; };
+    echo "<br>";
 }
 
 
