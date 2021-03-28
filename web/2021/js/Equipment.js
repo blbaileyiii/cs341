@@ -230,11 +230,16 @@ export default class Equipment {
         console.log("p-" + reg_id + "-" + category);
 
         let categoryChkBx = document.getElementById("p-" + reg_id + "-" + category);
-        console.log(categoryChkBx);
+        //console.log(categoryChkBx);
 
         let categoryChkBxs = document.querySelectorAll("[data-pid='" + reg_id + "'][data-cat='" + category + "']");
-        console.log(categoryChkBxs);
-        //'[data-point-id="7febe088-4eca-493b-8455-385b39ad30e3"][data-period="current"]'
+        //console.log(categoryChkBxs);
+        
+        let chkCategory = true;
+        categoryChkBxs.forEach(chkbox => {
+            if(!chkbox.checked) {chkCategory = false;}
+        })
+        console.log(chkCategory);
 
         let url = "/2021/query/";
 
