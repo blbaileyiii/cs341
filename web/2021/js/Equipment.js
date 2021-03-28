@@ -297,7 +297,7 @@ export default class Equipment {
            console.log(chkbox.dataset.iid);
            console.log(complete);
            console.log(category);
-           updateItem(chkbox.dataset.pid, chkbox.dataset.iid, complete, category)
+           this.updateItem(chkbox.dataset.pid, chkbox.dataset.iid, complete, category)
         })
 
     }
