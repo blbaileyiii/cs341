@@ -17,10 +17,14 @@ $events = getEventsJSON(2021);
 $events = json_decode($events, true);
 
 var_dump($events);
+echo "<br>";
 foreach($events as $event){
     var_dump($event);
+    echo "<br>";
     echo $event['id'];
+    echo "<br>";
     echo $event['name'];
+    echo "<br>";
     if($event['id'] == 2) { echo $event['name']; };
 }
 
