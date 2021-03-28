@@ -158,8 +158,14 @@ export default class Equipment {
 
             catInput.id = pid+ "-" + cid;
             catInput.name = cid;
+            catInput.dataset.pid = participant;
+            catInput.dataset.cid = cid;
             catInput.type = "checkbox";
             catInput.checked = true;
+            catInput.addEventListener('change', function () {
+                master.updateCat(this.dataset.pid, this.dataset.cid);
+            })
+
 
             catLabel.htmlFor = pid + "-" + cid;
             catLabel.textContent = key;
@@ -276,5 +282,16 @@ export default class Equipment {
         };
         xmlhttp.open("POST", url, true);
         xmlhttp.send(data);
+    }
+
+
+    updateCat(reg_id, category) {
+        let categoryChkBxs = document.querySelectorAll("[data-pid='" + reg_id + "'][data-cat='" + category + "']");
+        console.log(categoryChkBxs);
+
+        //categoryChkBxs.forEach(chkbox => {
+           //
+        //})
+
     }
 }
