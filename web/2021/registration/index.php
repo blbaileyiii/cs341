@@ -328,19 +328,15 @@ switch($action){
         if($regId){
             
             foreach($events as $event){
-                echo $eventId;
-                echo "<br>";
-                echo $event['id'];
-                echo "<br>";
                 if($event['id'] == $eventId) { $eventName = $event['name']; };
             }   
-            echo $eventName;
+            //echo $eventName;
             $_SESSION['message'] = "<div class='message'>Thanks for registering $participantName.</div>";
             $_SESSION['participantid'] = $regId;
             $_SESSION['participant'] = $participantName;
             $_SESSION['eventid'] = $eventId;
             $_SESSION['eventname'] = $eventName;
-            //header('Location: /2021/registration/');
+            header('Location: /2021/registration/');
             exit;
         } else {
             $_SESSION['message'] = "<div class='alert'>Sorry, $participantName, but registration failed. Please try again.<br>If the problem persists please contact your Ward Leadership and/or the WebAdmin.</div>";
