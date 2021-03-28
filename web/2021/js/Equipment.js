@@ -13,6 +13,8 @@ export default class Equipment {
         console.log(list);
         if (list.length > 0) {
             let h2 = document.createElement('h2');
+            h2.textContent = "Choose a participant:"
+
             let select = document.createElement('select');
             select.classList.add('owner');
 
@@ -29,8 +31,8 @@ export default class Equipment {
                 //this.displayItemCheckList(participant);
             });
 
-            h2.appendChild(select);
             equipDiv.append(h2);
+            equipDiv.append(select);
 
         } else {
             this.getEquipment(this, null)
