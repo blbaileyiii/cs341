@@ -328,11 +328,11 @@ switch($action){
         if($regId){
             
             foreach($events as $event){
-                echo $eventid;
+                echo $eventId;
                 echo "<br>";
                 echo $event['id'];
                 echo "<br>";
-                if($event['id'] == $eventid) { $eventName = $event['name']; };
+                if($event['id'] == $eventId) { $eventName = $event['name']; };
             }   
             echo $eventName;
             $_SESSION['message'] = "<div class='message'>Thanks for registering $participantName.</div>";
