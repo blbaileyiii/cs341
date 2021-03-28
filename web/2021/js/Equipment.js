@@ -239,6 +239,9 @@ export default class Equipment {
 
         //console.log("p-" + reg_id + "-" + category);
 
+        let strike = document.getElementById("p-" + reg_id + "-" + item_id);
+        if(owned){ strike.classList.add("stike"); } else { strike.classList.remove("strike"); }
+
         let categoryChkBx = document.getElementById("p-" + reg_id + "-" + category);
         //console.log(categoryChkBx);
 
