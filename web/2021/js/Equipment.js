@@ -223,7 +223,7 @@ export default class Equipment {
         // console.log(owned);
         // console.log(pur_price);
 
-        console.log(this.list);
+        console.log("here");
 
         let url = "/2021/query/";
 
