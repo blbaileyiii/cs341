@@ -148,8 +148,6 @@ export default class Equipment {
 
     displayItemCheckList(participant, equipmentList) {
         let id = participant.id;
-        console.log(name);
-
         let master = this;
 
         // console.log(equipmentList);
