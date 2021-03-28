@@ -218,7 +218,7 @@ export default class Equipment {
         pDiv.appendChild(dnb);
 
     }
-, 
+ 
     updateItem(reg_id, item_id, owned, category, pur_price = 0.00) {
 
         // console.log(reg_id);
