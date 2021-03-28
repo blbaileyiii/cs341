@@ -367,7 +367,6 @@ export default class Equipment {
             } else {
                 list.classList.add('hidden');
             }            
-        }
-
+        })
     }
 }
