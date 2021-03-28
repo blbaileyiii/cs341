@@ -287,13 +287,17 @@ export default class Equipment {
 
     updateCat(reg_id, category, complete) {
         let categoryChkBxs = document.querySelectorAll("[data-pid='" + reg_id + "'][data-cat='" + category + "']");
-        console.log(categoryChkBxs);
+        //console.log(categoryChkBxs);
 
         categoryChkBxs.forEach(chkbox => {
            chkbox.checked = complete;
            // add the update portion to the checkboxes...
            console.log(chkbox);
-           //updateItem(reg_id, item_id, owned, category, pur_price = 0.00)
+           console.log(chkbox.dataset.pid);
+           console.log(chkbox.dataset.iid);
+           console.log(complete);
+           console.log(category);
+           //updateItem(chkbox.dataset.pid, chkbox.dataset.iid, complete, category)
         })
 
     }
