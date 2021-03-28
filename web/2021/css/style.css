@@ -681,8 +681,8 @@ p.sig {
     text-decoration: line-through;
 }
 
-.owner {
-    font-size: 0.9rem;
+label.owner {
+    font-size: 1.25rem;
     font-weight: 700;
 }
 
@@ -727,11 +727,6 @@ p.sig {
     .equipment-lists-interactive ul{
         margin: 1rem 1rem 1rem 2.75rem;
     }
-
-    .owner {
-        font-size: 1.25rem;
-        font-weight: 700;
-    }
  }
 
 @media only screen and (min-width: 30rem) {
@@ -764,11 +759,6 @@ p.sig {
     .fields-radio {
         flex-wrap: nowrap;
         flex-direction: row;
-    }
-
-    .owner {
-        font-size: 1.5rem;
-        font-weight: 700;
     }
 }
 

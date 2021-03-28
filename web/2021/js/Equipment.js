@@ -10,6 +10,8 @@ export default class Equipment {
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.innerHTML="";
 
+        let master = this;
+
         console.log(list);
         if (list.length > 0) {
             let div = document.createElement('div');
@@ -25,7 +27,8 @@ export default class Equipment {
 
             let select = document.createElement('select');
             select.id = "participantList";
-            select.classList.add('xowner');
+            select.addEventListener('change', function () {
+                master.changeListDisplayed(this.value); });
 
             list.forEach(participant => {
                 // console.log(participant);
@@ -353,5 +356,10 @@ export default class Equipment {
         };
         xmlhttp.open("POST", url, true);
         xmlhttp.send(data);
+    }
+
+    changeListDisplayed() {
+        let equipmentlist = document.querySelectorAll('.equipmentList');
+        console.log(equipmentlist);
     }
 }
