@@ -276,9 +276,12 @@ export default class Equipment {
 
     postItem(reg_id, item_id, owned, pur_price = 0.00) {
 
+        // This gets trigger whenever a single checkbox is changed. 
+        // It also gets triggered whenever the category checkbox is changed.
+
         console.log("p-" + reg_id + "-i-" + item_id);
         let strike = document.getElementById("p-" + reg_id + "-i-" + item_id);
-        if(owned){ strike.classList.add("stike"); } else { strike.classList.remove("strike"); }
+        if(owned){ strike.classList.add("strike"); } else { strike.classList.remove("strike"); }
 
         let url = "/2021/query/";
 
