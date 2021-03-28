@@ -183,6 +183,7 @@ export default class Equipment {
                 chkBox.type = "checkbox";
                 chkBox.dataset.pid = participant;
                 chkBox.dataset.iid = item.id;
+                chkBox.dataset.cat = item.category;
                 chkBox.checked = item.owned;
                 chkBox.addEventListener('change', function () {
                     master.updateItem(this.dataset.pid, this.dataset.iid, this.checked);
