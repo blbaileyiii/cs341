@@ -351,6 +351,7 @@
     <?php //var_dump($events); ?>
     <?php //echo $_SESSION['participantid']; ?>
     <?php
+        var_dump($_SESSION)
         if (isset($_SESSION['participantid']) && isset($_SESSION['participant']) && isset($_SESSION['eventid']) && isset($_SESSION['eventname'])) {
             $setParticipant = "const participant = {'id': '$_SESSION[participantid]', 'p_name': '$_SESSION[participant]', 'event_id': '$_SESSION[eventid]', 'event_name': '$_SESSION[eventname]'};";
             unset($_SESSION['participantid']);
