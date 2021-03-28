@@ -192,7 +192,7 @@ export default class Equipment {
                 chkBox.dataset.iid = item.id;
                 chkBox.dataset.cat = item.category;
                 chkBox.checked = item.owned;
-                // if(item.owned){ chkBox.classList.add("stike"); } else { chkBox.classList.remove("strike"); }
+                // if(item.owned){ chkBox.classList.add("strike"); } else { chkBox.classList.remove("strike"); }
 
                 if (!item.owned) {catInput.checked = item.owned};
 
