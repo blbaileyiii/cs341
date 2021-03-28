@@ -729,7 +729,7 @@ p.sig {
     }
 
     .owner {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 700;
     }
  }
@@ -764,6 +764,11 @@ p.sig {
     .fields-radio {
         flex-wrap: nowrap;
         flex-direction: row;
+    }
+
+    .owner {
+        font-size: 1.5rem;
+        font-weight: 700;
     }
 }
 
