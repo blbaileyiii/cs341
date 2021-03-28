@@ -15,6 +15,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
 $events = getEventsJSON(2021);
 $events = json_decode($events, true);
+
+var_dump($events);
+foreach($events as $event){
+    var_dump($event);
+    echo $event['id'];
+    echo $event['name'];
+    if($event['id'] == 2) { echo $event['name']; };
+}
+
+
 $eventList = buildEventList($events);
 
 $action = filter_input(INPUT_POST, 'action');
