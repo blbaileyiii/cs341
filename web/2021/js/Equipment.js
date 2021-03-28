@@ -254,6 +254,23 @@ export default class Equipment {
         this.postItem(reg_id, item_id, owned, pur_price = 0.00);
     }
 
+    updateCat(reg_id, category, complete) {
+        let categoryChkBxs = document.querySelectorAll("[data-pid='" + reg_id + "'][data-cat='" + category + "']");
+        //console.log(categoryChkBxs);
+
+        categoryChkBxs.forEach(chkbox => {
+           chkbox.checked = complete;
+           // add the update portion to the checkboxes...
+           //console.log(chkbox);
+           //console.log(chkbox.dataset.pid);
+           //console.log(chkbox.dataset.iid);
+           //console.log(complete);
+           //console.log(category);
+           this.postItem(chkbox.dataset.pid, chkbox.dataset.iid, complete);
+        })
+
+    }
+
     postItem(reg_id, item_id, owned, pur_price = 0.00) {
 
         let url = "/2021/query/";
@@ -286,23 +303,5 @@ export default class Equipment {
         };
         xmlhttp.open("POST", url, true);
         xmlhttp.send(data);
-    }
-
-
-    updateCat(reg_id, category, complete) {
-        let categoryChkBxs = document.querySelectorAll("[data-pid='" + reg_id + "'][data-cat='" + category + "']");
-        //console.log(categoryChkBxs);
-
-        categoryChkBxs.forEach(chkbox => {
-           chkbox.checked = complete;
-           // add the update portion to the checkboxes...
-           //console.log(chkbox);
-           //console.log(chkbox.dataset.pid);
-           //console.log(chkbox.dataset.iid);
-           //console.log(complete);
-           //console.log(category);
-           this.postItem(chkbox.dataset.pid, chkbox.dataset.iid, complete);
-        })
-
     }
 }
