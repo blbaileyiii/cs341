@@ -25,7 +25,9 @@ export default class Equipment {
                 this.getEquipment(this, participant)
                 //this.displayItemCheckList(participant);
             });
-            equipDiv.append(select);            
+
+            equipDiv.append(select);
+
         } else {
             this.getEquipment(this, null)
             //this.displayItemList();
