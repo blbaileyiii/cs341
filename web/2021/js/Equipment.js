@@ -182,7 +182,7 @@ export default class Equipment {
         equipDiv.classList.add('equipment-lists-interactive');
 
         let pDiv = document.createElement('div');
-        pDiv.dataset.pid(pid);
+        pDiv.dataset.pid = pid;
         pDiv.classList.add("equipment-list");        
         let dnb;
 
