@@ -232,6 +232,10 @@ export default class Equipment {
         let categoryChkBx = document.getElementById("p-" + reg_id + "-" + category);
         console.log(categoryChkBx);
 
+        let categoryChkBxs = document.querySelectorAll("[data-pid='" + reg_id + "'][data-cat='" + category + "']");
+        console.log(categoryChkBxs);
+        //'[data-point-id="7febe088-4eca-493b-8455-385b39ad30e3"][data-period="current"]'
+
         let url = "/2021/query/";
 
         let data = new FormData();
