@@ -17,7 +17,7 @@ export default class Equipment {
                 // console.log(participant);
                 
                 let option = document.createElement('option');
-                option.value = participant.p_id;
+                option.value = "p-" + participant.id;
                 option.textContent = participant.p_name;
 
                 select.appendChild(option);
