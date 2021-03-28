@@ -37,10 +37,9 @@ export default class Equipment {
     }
 
     getEquipment(master, participant) {
+        let id;
         if(participant){
             let id = participant.id;
-        } else {
-            let id = null;
         }
         
         let url = "/2021/query/?action=getEquipment&reg_id=" + id;
