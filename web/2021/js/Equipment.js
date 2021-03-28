@@ -21,7 +21,7 @@ export default class Equipment {
             let label = document.createElement('label');
             label.textContent = "Choose a participant:"
             label.htmlFor = "participantList";
-            label.classList.add('xowner');
+            label.classList.add('owner');
 
             let select = document.createElement('select');
             select.id = "participantList";
