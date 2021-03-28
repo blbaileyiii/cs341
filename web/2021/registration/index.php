@@ -326,7 +326,12 @@ switch($action){
         // Validate Insert
         // if($regOutcome === 1){
         if($regId){
+            
             foreach($events as $event){
+                echo $eventid;
+                echo "<br>";
+                echo $event['id'];
+                echo "<br>";
                 if($event['id'] == $eventid) { $eventName = $event['name']; };
             }   
             echo $eventName;
