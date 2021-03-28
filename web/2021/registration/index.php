@@ -248,6 +248,7 @@ switch($action){
 
         // Calculate age by DOB...
         $participantAge = getAge($participantDOB);
+        $min_DOB = '2009-12-31';
         if(isset($eventId)){
             foreach($events as $event){
                 if($event['id'] == $eventId) { $minDOB = $event['min_DOB']; };
