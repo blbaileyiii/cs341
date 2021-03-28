@@ -12,8 +12,14 @@ export default class Equipment {
 
         console.log(list);
         if (list.length > 0) {
+            let select = document.createElement('select');
             list.forEach(participant => {
                 // console.log(participant);
+                
+                let option = document.createElement('option');
+                option.value = participant.p_id;
+                option.textContent = participant.p_name;
+
                 this.getEquipment(this, participant)
                 //this.displayItemCheckList(participant);
             });            
@@ -131,7 +137,6 @@ export default class Equipment {
 
     displayItemCheckList(participant, equipmentList) {
         let id = participant.id;
-        let name = participant.p_name;
         console.log(name);
 
         let master = this;
@@ -144,8 +149,8 @@ export default class Equipment {
         equipDiv.classList.add('equipment-lists-interactive');
 
         let pDiv = document.createElement('div');
-        pDiv.classList.add(pid);       
-
+        pDiv.classList.add(pid);   
+        
         let dnb;
 
         Object.keys(equipmentList).forEach(key => {
