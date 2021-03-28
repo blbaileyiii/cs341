@@ -340,7 +340,7 @@ switch($action){
             $_SESSION['participant'] = $participantName;
             $_SESSION['eventid'] = $eventId;
             $_SESSION['eventname'] = $eventName;
-            header('Location: /2021/registration/');
+            //header('Location: /2021/registration/');
             exit;
         } else {
             $_SESSION['message'] = "<div class='alert'>Sorry, $participantName, but registration failed. Please try again.<br>If the problem persists please contact your Ward Leadership and/or the WebAdmin.</div>";
