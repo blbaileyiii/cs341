@@ -210,7 +210,7 @@ function setMyEvent(eventId){
         let dateStartF = (dateStart.getMonth() + 1) + "/" + dateStart.getDate() + "/" + dateStart.getFullYear();
         let dateEndF = (dateEnd.getMonth() + 1) + "/" + dateEnd.getDate() + "/" + dateEnd.getFullYear();
 
-        let year = Date.now().getFullYear;
+        let year = Date.now().getFullYear();
         let minDOBYear = new Date(myEvent.min_DOB + "T00:00:00").getFullYear();
         let turningAge = year - minDOBYear;
 
