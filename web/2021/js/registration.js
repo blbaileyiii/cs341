@@ -217,6 +217,10 @@ function setMyEvent(eventId){
         console.log(dateStartF);
         console.log(dateEndF);
 
+        console.log(year);
+        console.log(minDOBYear);
+        console.log(turningAge);
+
         document.getElementById('eventDate').value = dateStartF + " - " + dateEndF;
         document.getElementById('eventDesc').value = myEvent.desc;
         document.getElementById('eventLeaderName').value = myEvent.l_name;
