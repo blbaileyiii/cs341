@@ -218,5 +218,6 @@ function setMyEvent(eventId){
         document.getElementById('eventLeaderName').value = myEvent.l_name;
         document.getElementById('eventLeaderPhone').value = myEvent.l_phone;
         document.getElementById('eventLeaderEmail').value = myEvent.l_email;
+        document.getElementById('participantDOB').max = myEvent.min_DOB;
     }
 }
