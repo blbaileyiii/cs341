@@ -210,6 +210,10 @@ function setMyEvent(eventId){
         let dateStartF = (dateStart.getMonth() + 1) + "/" + dateStart.getDate() + "/" + dateStart.getFullYear();
         let dateEndF = (dateEnd.getMonth() + 1) + "/" + dateEnd.getDate() + "/" + dateEnd.getFullYear();
 
+        let year = Date.now().getFullYear;
+        let minDOBYear = new Date(myEvent.min_DOB + "T00:00:00").getFullYear();
+        let turningAge = year - minDOBYear;
+
         console.log(dateStartF);
         console.log(dateEndF);
 
@@ -219,5 +223,6 @@ function setMyEvent(eventId){
         document.getElementById('eventLeaderPhone').value = myEvent.l_phone;
         document.getElementById('eventLeaderEmail').value = myEvent.l_email;
         document.getElementById('participantDOB').max = myEvent.min_DOB;
+        document.getElementById('turningAge').textContent = turningAge;
     }
 }
