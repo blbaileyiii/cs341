@@ -92,7 +92,7 @@
                         </select>
                     </div>
                     <div class="fields">
-                        <label for="participantDOB"><span>Date of birth</span><span id='turningAge'>Must be turning 14 or older.</span><span class="field-tip">Required</span></label> 
+                        <label for="participantDOB"><span>Date of birth - <span id='turningAge'>Must be turning 14 or older.</span></span><span class="field-tip">Required</span></label> 
                         <input id="participantDOB" name="participantDOB" type="date" max="2009-12-31" <?php if(isset($participantDOB)){echo "value='$participantDOB'";} ?> required>
                     </div>
                     <div class="fields">
