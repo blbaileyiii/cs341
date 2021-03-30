@@ -1,9 +1,0 @@
-
-
-
-$specialDiet = checkBool($specialDiet);
-$allergies = checkBool($allergies);
-$medication = checkBool($medication);
-$selfMedicate = checkBool($selfMedicate);
-$chronicIllness = checkBool($chronicIllness);
-$serious = checkBool($serious);
