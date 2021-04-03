@@ -59,7 +59,7 @@
                         </div>
                         <div class="fields">
                             <label for="guardianESig"><span>Parent or guardian's E-signature (Much match previous signature)</span><?php if(isset($participantAge) && $participantAge >=19){ echo "";} else {echo "<span class='field-tip'>Required</span>";} ?></label> 
-                            <input id="guardianESig" name="guardianESig" type="text" <?php if(isset($guardianSig)){echo "placeholder='$guardianSig' pattern='$participantSig'";} ?> <?php if(isset($participantAge) && $participantAge >= 19){echo "value='N/A - Adult Participant' readonly";} else { echo "required";} ?>>
+                            <input id="guardianESig" name="guardianESig" type="text" <?php if(isset($guardianSig)){echo "placeholder='$guardianSig' pattern='$guardianSig'";} ?> <?php if(isset($participantAge) && $participantAge >= 19){echo "value='N/A - Adult Participant' readonly";} else { echo "required";} ?>>
                             <p class="sig"><?php if(isset($guardianSig)){echo $guardianSig;} ?></p>
                         </div>
                         <div class="fields">
