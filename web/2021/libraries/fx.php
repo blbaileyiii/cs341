@@ -8,7 +8,7 @@ function checkInt($chkVal){
 
 function checkBool($chkVal){
     $chkVal = filter_var($chkVal, FILTER_VALIDATE_BOOLEAN);
-    if(!is_null($chkVal)){return $chkVal ? 'y' : 'n';}
+    if(!is_null($chkVal)){return $chkVal ? 'yes' : 'no';}
     return $chkVal;    
 }
 
@@ -53,13 +53,13 @@ function checkIsDate($chkVal, $format = 'Y-m-d')
 }
 
 function checkBoolText($chkVal, $chkTxt) {
-    if($chkVal == 'y' && strlen(trim($chkTxt)) > 0) { return $chkVal; }
-    elseif ($chkVal == 'n') { return $chkVal; }
+    if($chkVal == 'yes' && strlen(trim($chkTxt)) > 0) { return $chkVal; }
+    elseif ($chkVal == 'no') { return $chkVal; }
     return NULL;
 }
 
 function checkDepBool($chkVal, $chkAgainst) {
-    if($chkAgainst == 'y'){
+    if($chkAgainst == 'yes'){
         if(is_null($chkVal)) {return NULL;}
     }
     return TRUE;

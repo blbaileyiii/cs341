@@ -198,47 +198,47 @@
                         <div>
                             <div>Does the participant require a special diet?</div>
                             <div class="inline-block">
-                                <input id="specialDietY" name="specialDiet" type="radio" value="y" <?php if(isset($specialDiet) && $specialDiet=="y"){echo "checked";} ?> required>
+                                <input id="specialDietY" name="specialDiet" type="radio" value="yes" <?php if(isset($specialDiet) && $specialDiet=="yes"){echo "checked";} ?> required>
                                 <label for="specialDietY"><span>Yes</span></label>
                             </div>
                             <div class="inline-block">
-                                <input id="specialDietN" name="specialDiet" type="radio" value="n" <?php if(isset($specialDiet) && $specialDiet=="n"){echo "checked";} ?>>
+                                <input id="specialDietN" name="specialDiet" type="radio" value="no" <?php if(isset($specialDiet) && $specialDiet=="no"){echo "checked";} ?>>
                                 <label for="specialDietN"><span>No</span></label>
                             </div>
                         </div>
                         <span class="field-tip">Required</span>
                     </div> 
                     <div class="fields">
-                        <label for="specialDietTxt"><span>If yes, please explain the dietary restrictions:</span><?php if(isset($specialDiet) && $specialDiet=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
-                        <textarea id="specialDietTxt" name="specialDietTxt" <?php if(isset($specialDiet) && $specialDiet=="y"){echo "required";}?> ><?php if(isset($specialDietTxt)){echo $specialDietTxt;} ?></textarea>
+                        <label for="specialDietTxt"><span>If yes, please explain the dietary restrictions:</span><?php if(isset($specialDiet) && $specialDiet=="yes"){echo "<span class='field-tip'>Required</span>";} ?></label> 
+                        <textarea id="specialDietTxt" name="specialDietTxt" <?php if(isset($specialDiet) && $specialDiet=="yes"){echo "required";}?> ><?php if(isset($specialDietTxt)){echo $specialDietTxt;} ?></textarea>
                     </div>
                     <div class="fields-radio">
                         <div>
                             <div>Does the participant have any allergies?</div>
                             <div class="inline-block">
-                                <input id="allergiesY" name="allergies" type="radio" value="y" <?php if(isset($allergies) && $allergies=="y"){echo "checked";} ?> required>
+                                <input id="allergiesY" name="allergies" type="radio" value="yes" <?php if(isset($allergies) && $allergies=="yes"){echo "checked";} ?> required>
                                 <label for="allergiesY"><span>Yes</span></label>
                             </div>
                             <div class="inline-block">
-                                <input id="allergiesN" name="allergies" type="radio" value="n" <?php if(isset($allergies) && $allergies=="n"){echo "checked";} ?>>
+                                <input id="allergiesN" name="allergies" type="radio" value="no" <?php if(isset($allergies) && $allergies=="no"){echo "checked";} ?>>
                                 <label for="allergiesN"><span>No</span></label>
                             </div>
                         </div>
                         <span class="field-tip">Required</span>
                     </div>
                     <div class="fields">
-                        <label for="allergiesTxt"><span>If yes, please list the allergies:</span><?php if(isset($allergies) && $allergies=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
-                        <textarea id="allergiesTxt" name="allergiesTxt" <?php if(isset($allergies) && $allergies=="y"){echo "required";} ?>><?php if(isset($allergiesTxt)){echo $allergiesTxt;} ?></textarea>
+                        <label for="allergiesTxt"><span>If yes, please list the allergies:</span><?php if(isset($allergies) && $allergies=="yes"){echo "<span class='field-tip'>Required</span>";} ?></label> 
+                        <textarea id="allergiesTxt" name="allergiesTxt" <?php if(isset($allergies) && $allergies=="yes"){echo "required";} ?>><?php if(isset($allergiesTxt)){echo $allergiesTxt;} ?></textarea>
                     </div>
                     <div class="fields-radio">
                         <div>
                             <div>Is the participant taking any medication or over-the-counter (OTC) drugs?</div>
                             <div class="inline-block">
-                                <input id="medicationY" name="medication" type="radio" value="y" <?php if(isset($medication) && $medication=="y"){echo "checked";} ?> required>
+                                <input id="medicationY" name="medication" type="radio" value="yes" <?php if(isset($medication) && $medication=="yes"){echo "checked";} ?> required>
                                 <label for="medicationY"><span>Yes</span></label>
                             </div>
                             <div class="inline-block">
-                                <input id="medicationN" name="medication" type="radio" value="n" <?php if(isset($medication) && $medication=="n"){echo "checked";} ?>>
+                                <input id="medicationN" name="medication" type="radio" value="no" <?php if(isset($medication) && $medication=="no"){echo "checked";} ?>>
                                 <label for="medicationN"><span>No</span></label>
                             </div>
                         </div>
@@ -248,20 +248,20 @@
                         <div>
                             <div>If yes, can the participant self-administer his or her medication?</div>
                             <div class="inline-block">
-                                <input id="selfMedicateY" name="selfMedicate" type="radio" value="y" <?php if(isset($selfMedicate) && $selfMedicate=="y"){echo "checked";} ?> <?php if(isset($medication) && $medication != "y"){echo "disabled";} elseif(!isset($medication)){echo "disabled";} ?> <?php if(isset($medication) && $medication=="y"){echo "required";} ?>>
+                                <input id="selfMedicateY" name="selfMedicate" type="radio" value="yes" <?php if(isset($selfMedicate) && $selfMedicate=="yes"){echo "checked";} ?> <?php if(isset($medication) && $medication != "yes"){echo "disabled";} elseif(!isset($medication)){echo "disabled";} ?> <?php if(isset($medication) && $medication=="yes"){echo "required";} ?>>
                                 <label for="selfMedicateY"><span>Yes</span></label>
                             </div>
                             <div class="inline-block">
-                                <input id="selfMedicateN" name="selfMedicate" type="radio" value="n" <?php if(isset($selfMedicate) && $selfMedicate=="n"){echo "checked";} ?> <?php if(isset($medication) && $medication != "y"){echo "disabled";} elseif(!isset($medication)){echo "disabled";} ?>>
+                                <input id="selfMedicateN" name="selfMedicate" type="radio" value="no" <?php if(isset($selfMedicate) && $selfMedicate=="no"){echo "checked";} ?> <?php if(isset($medication) && $medication != "yes"){echo "disabled";} elseif(!isset($medication)){echo "disabled";} ?>>
                                 <label for="selfMedicateN"><span>No</span></label>
                             </div>
                             <span class="special-instructions">If no, please contact the event or activity leader directly.</span>
                         </div>
-                        <?php if(isset($medication) && $medication=="y"){echo "<span class='field-tip'>Required</span>";} ?>                        
+                        <?php if(isset($medication) && $medication=="yes"){echo "<span class='field-tip'>Required</span>";} ?>                        
                     </div>
                     <div class="fields">
-                        <label for="medicationList"><span>List all prescription or over-the-counter (OTC) medications the participant is taking:</span><?php if(isset($medication) && $medication=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
-                        <textarea id="medicationList" name="medicationList" <?php if(isset($medication) && $medication=="y"){echo "required";} ?>><?php if(isset($medicationList)){echo $medicationList;} ?></textarea>
+                        <label for="medicationList"><span>List all prescription or over-the-counter (OTC) medications the participant is taking:</span><?php if(isset($medication) && $medication=="yes"){echo "<span class='field-tip'>Required</span>";} ?></label> 
+                        <textarea id="medicationList" name="medicationList" <?php if(isset($medication) && $medication=="yes"){echo "required";} ?>><?php if(isset($medicationList)){echo $medicationList;} ?></textarea>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -270,37 +270,37 @@
                         <div>
                             <div>Does the participant have a chronic or recurring illness?</div>
                             <div class="inline-block">
-                                <input id="chronicIllnessY" name="chronicIllness" type="radio" value="y" <?php if(isset($chronicIllness) && $chronicIllness=="y"){echo "checked";} ?> required>
+                                <input id="chronicIllnessY" name="chronicIllness" type="radio" value="yes" <?php if(isset($chronicIllness) && $chronicIllness=="yes"){echo "checked";} ?> required>
                                 <label for="chronicIllnessY"><span>Yes</span></label>
                             </div>
                             <div class="inline-block">
-                                <input id="chronicIllnessN" name="chronicIllness" type="radio" value="n" <?php if(isset($chronicIllness) && $chronicIllness=="n"){echo "checked";} ?>>
+                                <input id="chronicIllnessN" name="chronicIllness" type="radio" value="no" <?php if(isset($chronicIllness) && $chronicIllness=="no"){echo "checked";} ?>>
                                 <label for="chronicIllnessN"><span>No</span></label>
                             </div>
                         </div>
                         <span class="field-tip">Required</span>
                     </div>
                     <div class="fields">
-                        <label for="chronicIllnessTxt"><span>If yes, please explain:</span><?php if(isset($chronicIllness) && $chronicIllness=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
-                        <textarea id="chronicIllnessTxt" name="chronicIllnessTxt" <?php if(isset($chronicIllness) && $chronicIllness=="y"){echo "required";} ?>><?php if(isset($chronicIllnessTxt)){echo $chronicIllnessTxt;} ?></textarea>
+                        <label for="chronicIllnessTxt"><span>If yes, please explain:</span><?php if(isset($chronicIllness) && $chronicIllness=="yes"){echo "<span class='field-tip'>Required</span>";} ?></label> 
+                        <textarea id="chronicIllnessTxt" name="chronicIllnessTxt" <?php if(isset($chronicIllness) && $chronicIllness=="yes"){echo "required";} ?>><?php if(isset($chronicIllnessTxt)){echo $chronicIllnessTxt;} ?></textarea>
                     </div>
                     <div class="fields-radio">
                         <div>
                             <div>Has the participant had surgery or a serious illness in the past year?</div>
                             <div class="inline-block">
-                                <input id="seriousY" name="serious" type="radio" value="y" <?php if(isset($serious) && $serious=="y"){echo "checked";} ?> required>
+                                <input id="seriousY" name="serious" type="radio" value="yes" <?php if(isset($serious) && $serious=="yes"){echo "checked";} ?> required>
                                 <label for="seriousY"><span>Yes</span></label>
                             </div>
                             <div class="inline-block">
-                                <input id="seriousN" name="serious" type="radio" value="n" <?php if(isset($serious) && $serious=="n"){echo "checked";} ?>>
+                                <input id="seriousN" name="serious" type="radio" value="no" <?php if(isset($serious) && $serious=="no"){echo "checked";} ?>>
                                 <label for="seriousN"><span>No</span></label>
                             </div>
                         </div>
                         <span class="field-tip">Required</span>
                     </div>
                     <div class="fields">
-                        <label for="seriousTxt"><span>If yes, please explain:</span><?php if(isset($serious) && $serious=="y"){echo "<span class='field-tip'>Required</span>";} ?></label> 
-                        <textarea id="seriousTxt" name="seriousTxt" <?php if(isset($serious) && $serious=="y"){echo "required";} ?>><?php if(isset($seriousTxt)){echo $seriousTxt;} ?></textarea>
+                        <label for="seriousTxt"><span>If yes, please explain:</span><?php if(isset($serious) && $serious=="yes"){echo "<span class='field-tip'>Required</span>";} ?></label> 
+                        <textarea id="seriousTxt" name="seriousTxt" <?php if(isset($serious) && $serious=="yes"){echo "required";} ?>><?php if(isset($seriousTxt)){echo $seriousTxt;} ?></textarea>
                     </div>
                     <div class="fields">
                         <label for="limitations"><span>Identify any other limits, restrictions, or disabilities that could prevent the participant from fully participating in the event or activity:</span></label> 
