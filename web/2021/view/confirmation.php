@@ -120,7 +120,6 @@
     <?php //var_dump($events); ?>
     <?php //echo $_SESSION['participantid']; ?>
     <script>
-        <?php // echo $eventScript; ?>
         <?php
                     if (isset($_SESSION['participantid']) && isset($_SESSION['participant']) && isset($_SESSION['eventid'])) {
                         echo "const participant = {'participantid': '$_SESSION[participantid]', 'name': '$_SESSION[participant]', 'eventid': '$_SESSION[eventid]'};";
