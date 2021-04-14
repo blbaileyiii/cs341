@@ -1,7 +1,7 @@
 <section id="schedule" class="schedule">
     <div class="section-center">
         <h2>Schedule</h2>
-        <div class="day day-1 tuesday">
+        <div class="day day-1">
             <h3>Day 1: Tuesday</h3>
             <div class="morning">
                 <h4>Morning</h4>
@@ -26,7 +26,7 @@
                 </ul>
             </div>
         </div>
-        <div class="day day-1 tuesday">
+        <div class="day day-2">
             <h3>Day 2: Wednesday</h3>
             <div class="morning">
                 <h4>Morning</h4>
@@ -52,7 +52,7 @@
                 </ul>
             </div>
         </div>
-        <div class="day day-1 tuesday">
+        <div class="day day-3">
             <h3>Day 3: Thursday</h3>
             <div class="morning">
                 <h4>Morning</h4>
@@ -77,7 +77,7 @@
                 </ul>
             </div>
         </div>
-        <div class="day day-1 tuesday">
+        <div class="day day-4">
             <h3>Day 4: Friday</h3>
             <div class="morning">
                 <h4>Morning</h4>
@@ -100,7 +100,7 @@
                 </ul>
             </div>
         </div>
-        <div class="day day-1 tuesday">
+        <div class="day day-5">
             <h3>Day 5: Saturday</h3>
             <div class="morning">
                 <h4>Morning</h4>
