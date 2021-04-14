@@ -1,22 +1,114 @@
 <section id="schedule" class="schedule">
     <div class="section-center">
         <h2>Schedule</h2>
-        <ul>
-            <li><span>07:00 AM</span><span>Wake-up</span></li>
-            <li><span>07:30 AM</span><span>Flag Ceremony</span></li>
-            <li><span>07:45 AM</span><span>Devotional; Scripture Study</span></li>
-            <li><span>08:00 AM</span><span>Breakfast</span></li>
-            <li><span>08:45 AM</span><span>Cleanup/Announcements</span></li>
-            <li><span>09:00 AM</span><span>Morning Activities</span></li>
-            <li><span>12:30 PM</span><span>Lunch</span></li>
-            <li><span>01:15 PM</span><span>Cleanup/Announcements</span></li>
-            <li><span>01:30 PM</span><span>Afternoon Activities</span></li>
-            <li><span>05:00 PM</span><span>Retire Flag</span></li>
-            <li><span>05:15 PM</span><span>Dinner</span></li>
-            <li><span>06:00 PM</span><span>Cleanup/Announcements</span></li>
-            <li><span>06:15 PM</span><span>Evening Activities</span></li>
-            <li><span>09:00 PM</span><span>Cleanup</span></li>
-            <li><span>10:00 PM</span><span>Lights-out</span></li>
-        </ul>
+        <div class="day day-1 tuesday">
+            <h3>Day 1: Tuesday</h3>
+            <div class="morning">
+                <h4>Morning</h4>
+                <ul>
+                    <li>Orientation</li>
+                    <li>Free Time</li>
+                </ul>
+            </div>
+            <div class="afternoon">
+                <h4>Afternoon</h4>
+                <ul>
+                    <li>Knife/Axe Safety</li>
+                    <li>Swimming Tests</li>
+                    <li>Free Time</li>
+                </ul>
+            </div>
+            <div class="evening">
+                <h4>Evening</h4>
+                <ul>
+                    <li>Icebreaker</li>
+                    <li>Capture-the-Flag</li>
+                </ul>
+            </div>
+        </div>
+        <div class="day day-1 tuesday">
+            <h3>Day 2: Wednesday</h3>
+            <div class="morning">
+                <h4>Morning</h4>
+                <ul>
+                    <li>Group 1: Hike</li>
+                    <li>Group 2: Knives & Archery</li>
+                    <li>Free Time</li>
+                </ul>
+            </div>
+            <div class="afternoon">
+                <h4>Afternoon</h4>
+                <ul>
+                    <li>Group 1: Knives & Archery</li>
+                    <li>Group 2: Hike</li>
+                    <li>Free Time</li>
+                </ul>
+            </div>
+            <div class="evening">
+                <h4>Evening</h4>
+                <ul>
+                    <li>First-Aid</li>
+                    <li>Bike Repair</li>
+                </ul>
+            </div>
+        </div>
+        <div class="day day-1 tuesday">
+            <h3>Day 3: Thursday</h3>
+            <div class="morning">
+                <h4>Morning</h4>
+                <ul>
+                    <li>Group 1: Fire Building / Nature</li>
+                    <li>Group 2: Survival Shelters</li>
+                    <li>Free Time</li>
+                </ul>
+            </div>
+            <div class="afternoon">
+                <h4>Afternoon</h4>
+                <ul>
+                    <li>Group 1: Survival Shelters</li>
+                    <li>Group 2: Fire Building / Nature</li>
+                    <li>Free Time</li>
+                </ul>
+            </div>
+            <div class="evening">
+                <h4>Evening</h4>
+                <ul>
+                    <li>Build Your Shelter</li>
+                </ul>
+            </div>
+        </div>
+        <div class="day day-1 tuesday">
+            <h3>Day 4: Friday</h3>
+            <div class="morning">
+                <h4>Morning</h4>
+                <ul>
+                    <li>Triathalon</li>
+                    <li>Free Time</li>
+                </ul>
+            </div>
+            <div class="afternoon">
+                <h4>Afternoon</h4>
+                <ul>
+                    <li>Olympics</li>
+                    <li>Free Time</li>
+                </ul>
+            </div>
+            <div class="evening">
+                <h4>Evening</h4>
+                <ul>
+                    <li>Iron Rod: Blindfolded</li>
+                </ul>
+            </div>
+        </div>
+        <div class="day day-1 tuesday">
+            <h3>Day 5: Saturday</h3>
+            <div class="morning">
+                <h4>Morning</h4>
+                <ul>
+                    <li>Pack-up</li>
+                    <li>Head home</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </section>
