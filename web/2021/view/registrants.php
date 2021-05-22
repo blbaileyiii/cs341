@@ -15,9 +15,9 @@
     </header>    
     <main>    
         <h1><?php echo $page; ?></h1>
-        <div class="total-registrants">  
+        <section class="total-registrants">  
             <?php echo $registrantsTable; ?>
-        </div>
+        </section>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
