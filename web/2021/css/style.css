@@ -688,6 +688,7 @@ label.owner {
 
 table {
     text-align: left;
+    border: 1px solid var(--nav-bg);
 }
 
 tr {
