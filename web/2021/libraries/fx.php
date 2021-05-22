@@ -106,6 +106,7 @@ function buildContactsHTML($events) {
 }
 
 function buildRegistrantsHTML($registrants) {
+
     $registrantsHTML = "<tr>";
     $registrantsHTML .= "<th>Events</th>";
     $registrantsHTML .= "<th>Ward</th>";

@@ -19,7 +19,7 @@ switch($action){
     default:
         $registrants = getRegistrants();
         if($registrants){
-            $registrantsTable = buildRegistrantsHTML($registrants);
+            $registrantsTable = buildRegistrantsHTML(json_decode($registrants));
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registrants.php';
             exit; 
         } 
