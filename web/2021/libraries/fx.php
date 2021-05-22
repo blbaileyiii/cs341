@@ -135,7 +135,7 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "</tr>";
         }
 
-        if ($registrants[$x]['p_age'] >= 18){
+        if ($registrants[$x]['p_age'] >= 19){
             $registrantsHTML .= "<tr class='adult-registrant>";
         } else {
             $registrantsHTML .= "<tr>";
