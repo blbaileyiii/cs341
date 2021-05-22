@@ -19,7 +19,6 @@ switch($action){
     default:
         $registrants = getRegistrants();
         if($registrants){
-            echo $registrants;
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registrants.php';
             exit; 
         } 
