@@ -149,7 +149,7 @@ function buildRegistrantsHTML($registrants) {
         $registrantsHTML .= "</tr>";
     }
 
-    if ($registrants[$x]['name'] != ""){
+    if ($registrantsHTML != ""){
         $registrantsHTML .= "</table>";
     }
 
