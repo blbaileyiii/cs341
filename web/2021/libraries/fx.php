@@ -105,4 +105,9 @@ function buildContactsHTML($events) {
     return $contactsHTML;
 }
 
+function buildRegistrantsHTML($registrants) {
+    $registrantsHTML = "";
+    return $registrantsHTML;
+}
+
 ?>
