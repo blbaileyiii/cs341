@@ -709,8 +709,8 @@ th, td {
     margin: 1rem;
 }
 
-.total-registrants p {
-    margin: 1rem;
+.total-registrants h2:nth-child(n+2){
+    margin-top: 1rem;
 }
 
 tr.adult-registrant {
