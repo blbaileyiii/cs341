@@ -120,7 +120,18 @@ function buildRegistrantsHTML($registrants) {
     $registrantsHTML .= "</tr>";
     
     for ($x = 0; $x < count($registrants); $x++) {
-        
+        $registrantsHTML .= "<tr>";
+        $registrantsHTML .= "<td>$registrants[$x]['name']</td>";
+        $registrantsHTML .= "<td>$registrants[$x]['p_ward']</td>";
+        $registrantsHTML .= "<td>$registrants[$x]['p_name']</td>";
+        $registrantsHTML .= "<td>$registrants[$x]['p_age']</td>";
+        $registrantsHTML .= "<td>$registrants[$x]['email']</td>";
+        $registrantsHTML .= "<td>$registrants[$x]['tele_one']</td>";
+        $registrantsHTML .= "<td>$registrants[$x]['tele_one_type']</td>";
+        $registrantsHTML .= "<td>$registrants[$x]['emer_name']</td>";
+        $registrantsHTML .= "<td>$registrants[$x]['emer_tele_one']</td>";
+        $registrantsHTML .= "<td>$registrants[$x]['emer_tele_one_type']</td>";
+        $registrantsHTML .= "</tr>";
     }
 
     return $registrantsHTML;
