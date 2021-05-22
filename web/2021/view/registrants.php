@@ -20,6 +20,6 @@
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
     </footer>
-    <?php echo $registrants; ?>
+    <?php var_dump($registrants); ?>
 </body>
 </html>
