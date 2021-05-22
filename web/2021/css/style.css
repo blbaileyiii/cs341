@@ -690,7 +690,6 @@ table {
     text-align: left;
     border: 1px solid var(--nav-bg);
     border-collapse: collapse;
-    margin: 1rem;
 }
 
 tr {
@@ -704,6 +703,10 @@ tr:nth-child(even) {
 th, td {
     border: 1px solid var(--nav-bg);
     padding: 0.5rem;
+}
+
+.total-registrants {
+    margin: 1rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
