@@ -686,6 +686,22 @@ label.owner {
     font-weight: 700;
 }
 
+table {
+
+}
+
+tr {
+
+}
+
+tr:nth-child(even) {
+    background: var(--logo-highlight);
+}
+
+td {
+
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
