@@ -56,6 +56,10 @@ switch($action){
 
         echo getParticipantsByIds($ids);
         break;
+    case 'getRegistrants':
+        // Similar to getParticipants but a master list...
+        echo getRegistrants()
+        break;
     case 'postItem':
         // POST
         // ?SECURE THIS BY CREATING THE SESSION VARIABLE TO MATCH THE LOCALSTORAGE ARRAY?
