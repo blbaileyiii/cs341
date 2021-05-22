@@ -19,13 +19,13 @@
             <p>Total Youth Registered: <?php echo $youthCount; ?></p>
             <p>Total Adults Registered: <?php echo $adultCount; ?></p>
             <p>Total Participants Registered: <?php echo $registrantsCount; ?></p>        
-            <?php // echo $registrantsTable; ?>
+            <?php echo $registrantsTable; ?>
         </div>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
     </footer>
     <?php // var_dump($registrants); ?>
-    <?php var_dump($registrantsTable); ?>
+    <?php // var_dump($registrantsTable); ?>
 </body>
 </html>
