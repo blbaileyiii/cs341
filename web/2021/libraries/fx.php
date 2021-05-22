@@ -111,11 +111,22 @@ function buildRegistrantsHTML($registrants) {
     $registrantsHTML = "";
     $event = "";
 
+    $eventRegistrantsCount = 0;
+    $eventYouthCount = 0;
+    $eventAdultCount = 0;
+
     for ($x = 0; $x < count($registrants); $x++) {
         if ($registrants[$x]['name'] != $event){
 
+            $eventRegistrantsCount = 0;
+            $eventYouthCount = 0;
+            $eventAdultCount = 0;
+
             if ($registrants[$x]['name'] != ""){
                 $registrantsHTML .= "</table>";
+                $registrantsHTML .= "<p>Total Youth Registered: $eventYouthCount</p>";
+                $registrantsHTML .= "<p>Total Adults Registered: $eventAdultCount</p>";
+                $registrantsHTML .= "<p>Total Participants Registered: $eventRegistrantsCount</p>";
             }
             $event = $registrants[$x]['name'];
             
@@ -135,9 +146,12 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "</tr>";
         }
 
+        $eventRegistrantsCount++;
         if ($registrants[$x]['p_age'] >= 19){
+            $eventAdultCount++;
             $registrantsHTML .= "<tr class='adult-registrant'>";
         } else {
+            $eventYouthCount++;
             $registrantsHTML .= "<tr>";
         }
 
@@ -156,6 +170,9 @@ function buildRegistrantsHTML($registrants) {
 
     if ($registrantsHTML != ""){
         $registrantsHTML .= "</table>";
+        $registrantsHTML .= "<p>Total Youth Registered: $eventYouthCount</p>";
+        $registrantsHTML .= "<p>Total Adults Registered: $eventAdultCount</p>";
+        $registrantsHTML .= "<p>Total Participants Registered: $eventRegistrantsCount</p>";
     }
 
     return $registrantsHTML;
