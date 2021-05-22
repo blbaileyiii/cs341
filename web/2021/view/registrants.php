@@ -15,6 +15,7 @@
     </header>    
     <main>    
         <h1><?php echo $page; ?></h1>
+        <table><?php echo $</table>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>

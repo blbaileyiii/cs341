@@ -106,7 +106,23 @@ function buildContactsHTML($events) {
 }
 
 function buildRegistrantsHTML($registrants) {
-    $registrantsHTML = "";
+    $registrantsHTML = "<tr>";
+    $registrantsHTML .= "<th>Events</th>";
+    $registrantsHTML .= "<th>Ward</th>";
+    $registrantsHTML .= "<th>Name</th>";
+    $registrantsHTML .= "<th>Age</th>";
+    $registrantsHTML .= "<th>Email</th>";
+    $registrantsHTML .= "<th>Phone</th>";
+    $registrantsHTML .= "<th></th>";
+    $registrantsHTML .= "<th>Emergency Contact</th>";
+    $registrantsHTML .= "<th>Phone</th>";
+    $registrantsHTML .= "<th></th>";
+    $registrantsHTML .= "</tr>";
+    
+    for ($x = 0; $x < count($registrants); $x++) {
+        
+    }
+
     return $registrantsHTML;
 }
 
