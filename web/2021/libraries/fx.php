@@ -119,9 +119,10 @@ function buildRegistrantsHTML($registrants) {
             }
             $event = $registrants[$x]['name'];
             
+            $registrantsHTML .= "<h2>{$registrants[$x]['name']}</h2>";
             $registrantsHTML .= "<table>";
             $registrantsHTML .= "<tr>";
-            $registrantsHTML .= "<th>Event</th>";
+            // $registrantsHTML .= "<th>Event</th>";
             $registrantsHTML .= "<th>Ward</th>";
             $registrantsHTML .= "<th>Name</th>";
             $registrantsHTML .= "<th>Age</th>";
@@ -135,7 +136,7 @@ function buildRegistrantsHTML($registrants) {
         }
         
         $registrantsHTML .= "<tr>";
-        $registrantsHTML .= "<td>{$registrants[$x]['name']}</td>";
+        // $registrantsHTML .= "<td>{$registrants[$x]['name']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_ward']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_name']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_age']}</td>";
