@@ -134,8 +134,13 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "<th></th>";
             $registrantsHTML .= "</tr>";
         }
+
+        if ($registrants[$x]['age'] >=18){
+            $registrantsHTML .= "<tr class='adult-registrant>";
+        } else {
+            $registrantsHTML .= "<tr>";
+        }
         
-        $registrantsHTML .= "<tr>";
         $registrantsHTML .= "<td>{$registrants[$x]['name']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_ward']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_name']}</td>";

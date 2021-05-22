@@ -709,6 +709,11 @@ th, td {
     margin: 1rem;
 }
 
+tr.adult-registrant {
+    background: var(--nav-bg);
+    color: var(--on-nav-bg);
+}
+
 @supports not (-webkit-touch-callout: none) {
     /* CSS for other than iOS devices */ 
     .parallax {
