@@ -709,6 +709,10 @@ th, td {
     margin: 1rem;
 }
 
+.total-registrants p {
+    margin: 1rem;
+}
+
 tr.adult-registrant {
     background: var(--nav-bg);
     color: var(--on-nav-bg);

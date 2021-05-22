@@ -111,28 +111,18 @@ function buildRegistrantsHTML($registrants) {
     $registrantsHTML = "";
     $event = "";
 
-    $eventRegistrantsCount = 0;
-    $eventYouthCount = 0;
-    $eventAdultCount = 0;
-
     for ($x = 0; $x < count($registrants); $x++) {
         if ($registrants[$x]['name'] != $event){
 
             if ($event != ""){
                 $registrantsHTML .= "</table>";
-                $registrantsHTML .= "<p>Total Youth Registered: $eventYouthCount</p>";
-                $registrantsHTML .= "<p>Total Adults Registered: $eventAdultCount</p>";
-                $registrantsHTML .= "<p>Total Participants Registered: $eventRegistrantsCount</p>";
             }
-
-            $eventRegistrantsCount = 0;
-            $eventYouthCount = 0;
-            $eventAdultCount = 0;
 
             $event = $registrants[$x]['name'];
             
             $registrantsHTML .= "<h2>{$registrants[$x]['name']}</h2>";
             $registrantsHTML .= "<table>";
+            $registrantsHTML .= eventRegistrantsCount($registrants, $event);
             $registrantsHTML .= "<tr>";
             $registrantsHTML .= "<th>Event</th>";
             $registrantsHTML .= "<th>Ward</th>";
@@ -147,12 +137,9 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "</tr>";
         }
 
-        $eventRegistrantsCount++;
         if ($registrants[$x]['p_age'] >= 19){
-            $eventAdultCount++;
             $registrantsHTML .= "<tr class='adult-registrant'>";
         } else {
-            $eventYouthCount++;
             $registrantsHTML .= "<tr>";
         }
 
@@ -171,12 +158,33 @@ function buildRegistrantsHTML($registrants) {
 
     if ($registrantsHTML != ""){
         $registrantsHTML .= "</table>";
-        $registrantsHTML .= "<p>Total Youth Registered: $eventYouthCount</p>";
-        $registrantsHTML .= "<p>Total Adults Registered: $eventAdultCount</p>";
-        $registrantsHTML .= "<p>Total Participants Registered: $eventRegistrantsCount</p>";
     }
 
     return $registrantsHTML;
+}
+
+function eventRegistrantsCount($registrants, $event){
+    $countHTML = "";
+
+    $totalRegistrantCount = 0;
+    $youthRegistrantCount = 0;
+    $adultRegistrantCount = 0;
+
+    for ($x = 0; $x < count($registrants); $x++) {
+        if($registrants[$x]['name'] == $event){
+            $totalRegistrantCount++;
+            if ($registrants[$x]['p_age'] >= 19){
+                $adultRegistrantCount++;
+            } else {
+                $youthRegistrantCount++;
+            }
+        }
+    }
+
+    $countHTML .= "<p>Total Youth Registered: $youthRegistrantCount</p>";
+    $countHTML .= "<p>Total Adults Registered: $adultRegistrantCount</p>";
+    $countHTML .= "<p>Total Participants Registered: $totalRegistrantCount</p>";
+    return $countHTML;
 }
 
 ?>
