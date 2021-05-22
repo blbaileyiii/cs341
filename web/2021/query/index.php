@@ -58,7 +58,7 @@ switch($action){
         break;
     case 'getRegistrants':
         // Similar to getParticipants but a master list...
-        echo getRegistrants()
+        echo getRegistrants();
         break;
     case 'postItem':
         // POST
