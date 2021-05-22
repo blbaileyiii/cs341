@@ -20,9 +20,6 @@ switch($action){
         $registrants = getRegistrants();
         if($registrants){
             $registrants = json_decode($registrants, true);
-            $registrantsCount = count($registrants);
-            $youthCount = countYouthRegistrants($registrants);
-            $adultCount = $registrantsCount - $youthCount;
             $registrantsTable = buildRegistrantsHTML($registrants);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registrants.php';
             exit; 
