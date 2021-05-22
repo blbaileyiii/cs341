@@ -700,7 +700,7 @@ tr:nth-child(even) {
     background: var(--logo-highlight);
 }
 
-td {
+th, td {
     border: 1px solid var(--nav-bg);
     padding: 0.5rem;
 }
