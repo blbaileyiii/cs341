@@ -19,7 +19,7 @@
             <p>Total Youth Registered: <?php echo $youthCount; ?></p>
             <p>Total Adults Registered: <?php echo $adultCount; ?></p>
             <p>Total Participants Registered: <?php echo $registrantsCount; ?></p>        
-            <?php echo $registrantsTable; ?>
+            <?php // echo $registrantsTable; ?>
         </div>
     </main>
     <footer>
