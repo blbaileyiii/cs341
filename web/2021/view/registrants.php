@@ -15,10 +15,12 @@
     </header>    
     <main>    
         <h1><?php echo $page; ?></h1>
-        <p>Total Youth Registered: <?php echo $youthCount; ?></p>
-        <p>Total Adults Registered: <?php echo $adultCount; ?></p>
-        <p>Total Participants Registered: <?php echo $registrantsCount; ?></p>
-        <table><?php echo $registrantsTable; ?></table>
+        <div class="total-registrants">
+            <p>Total Youth Registered: <?php echo $youthCount; ?></p>
+            <p>Total Adults Registered: <?php echo $adultCount; ?></p>
+            <p>Total Participants Registered: <?php echo $registrantsCount; ?></p>        
+            <table><?php echo $registrantsTable; ?></table>
+        </div>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
