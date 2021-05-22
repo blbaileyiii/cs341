@@ -22,7 +22,7 @@ switch($action){
             echo $registrants;
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registrants.php';
             exit; 
-        }
+        } 
         break;
 }
 ?>
