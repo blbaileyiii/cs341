@@ -107,20 +107,33 @@ function buildContactsHTML($events) {
 
 function buildRegistrantsHTML($registrants) {
 
-    $registrantsHTML = "<tr>";
-    $registrantsHTML .= "<th>Event</th>";
-    $registrantsHTML .= "<th>Ward</th>";
-    $registrantsHTML .= "<th>Name</th>";
-    $registrantsHTML .= "<th>Age</th>";
-    $registrantsHTML .= "<th>Email</th>";
-    $registrantsHTML .= "<th>Phone</th>";
-    $registrantsHTML .= "<th></th>";
-    $registrantsHTML .= "<th>Emergency Contact</th>";
-    $registrantsHTML .= "<th>Phone</th>";
-    $registrantsHTML .= "<th></th>";
-    $registrantsHTML .= "</tr>";
     
+    $registrantsHTML = "";
+    $event = "";
+
     for ($x = 0; $x < count($registrants); $x++) {
+        if ($registrants[$x]['name'] != $event){
+
+            if ($registrants[$x]['name'] != ""){
+                $registrantsHTML .= "</table>";
+            }
+            $event = $registrants[$x]['name'];
+            
+            $registrantsHTML .= "<table>";
+            $registrantsHTML .= "<tr>";
+            $registrantsHTML .= "<th>Event</th>";
+            $registrantsHTML .= "<th>Ward</th>";
+            $registrantsHTML .= "<th>Name</th>";
+            $registrantsHTML .= "<th>Age</th>";
+            $registrantsHTML .= "<th>Email</th>";
+            $registrantsHTML .= "<th>Phone</th>";
+            $registrantsHTML .= "<th></th>";
+            $registrantsHTML .= "<th>Emergency Contact</th>";
+            $registrantsHTML .= "<th>Phone</th>";
+            $registrantsHTML .= "<th></th>";
+            $registrantsHTML .= "</tr>";
+        }
+        
         $registrantsHTML .= "<tr>";
         $registrantsHTML .= "<td>{$registrants[$x]['name']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_ward']}</td>";
@@ -133,6 +146,10 @@ function buildRegistrantsHTML($registrants) {
         $registrantsHTML .= "<td>{$registrants[$x]['emer_tele_one']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['emer_tele_one_type']}</td>";
         $registrantsHTML .= "</tr>";
+    }
+
+    if ($registrants[$x]['name'] != ""){
+        $registrantsHTML .= "</table>";
     }
 
     return $registrantsHTML;
