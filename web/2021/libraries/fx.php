@@ -118,7 +118,7 @@ function buildRegistrantsHTML($registrants) {
     for ($x = 0; $x < count($registrants); $x++) {
         if ($registrants[$x]['name'] != $event){
 
-            if ($registrants[$x]['name'] != ""){
+            if ($event != ""){
                 $registrantsHTML .= "</table>";
                 $registrantsHTML .= "<p>Total Youth Registered: $eventYouthCount</p>";
                 $registrantsHTML .= "<p>Total Adults Registered: $eventAdultCount</p>";
