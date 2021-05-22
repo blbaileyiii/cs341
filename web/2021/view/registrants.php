@@ -13,9 +13,9 @@
     <header>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/nav-expd.php'; ?>
     </header>    
-    <main>    
-        <h1><?php echo $page; ?></h1>
-        <section class="total-registrants">  
+    <main>
+        <section class="total-registrants">
+            <h1><?php echo $page; ?></h1>
             <?php echo $registrantsTable; ?>
         </section>
     </main>
