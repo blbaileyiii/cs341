@@ -178,14 +178,4 @@ function buildRegistrantsHTML($registrants) {
     return $registrantsHTML;
 }
 
-function countYouthRegistrants($registrants) {
-    $youthCount = 0;
-    for ($x = 0; $x < count($registrants); $x++) {
-        if($registrants[$x]['p_age'] < 19) {
-            $youthCount++; 
-        }
-    }
-    return $youthCount;
-}
-
 ?>
