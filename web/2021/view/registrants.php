@@ -15,6 +15,9 @@
     </header>    
     <main>    
         <h1><?php echo $page; ?></h1>
+        <p>Total Youth Registered: <?php echo $youthCount; ?></p>
+        <p>Total Adults Registered: <?php echo $adultCount; ?></p>
+        <p>Total Participants Registered: <?php echo $registrantsCount; ?></p>
         <table><?php echo $registrantsTable; ?></table>
     </main>
     <footer>
