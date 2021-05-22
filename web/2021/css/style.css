@@ -689,10 +689,11 @@ label.owner {
 table {
     text-align: left;
     border: 1px solid var(--nav-bg);
+    border-collapse: collapse;
 }
 
 tr {
-
+    border: 1px solid var(--nav-bg);
 }
 
 tr:nth-child(even) {
@@ -700,7 +701,8 @@ tr:nth-child(even) {
 }
 
 td {
-
+    border: 1px solid var(--nav-bg);
+    padding: 0.5rem;
 }
 
 @supports not (-webkit-touch-callout: none) {
