@@ -690,6 +690,7 @@ table {
     text-align: left;
     border: 1px solid var(--nav-bg);
     border-collapse: collapse;
+    margin: 1rem;
 }
 
 tr {
