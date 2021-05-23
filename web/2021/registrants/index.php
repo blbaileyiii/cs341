@@ -22,6 +22,8 @@ switch($action){
         if($registrants){
             $events = json_decode($events, true);
             $eventsHTML = buildEventsHTML($events, $year);
+            include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/paperwork.php';
+            exit; 
         }
         break;
     case "print":
@@ -30,7 +32,7 @@ switch($action){
         if($registrants){
             $registrants = json_decode($registrants, true);
             $registrantsTable = buildRegistrantsHTML($registrants);
-            include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registrants.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/print.php';
             exit; 
         } 
         break;
