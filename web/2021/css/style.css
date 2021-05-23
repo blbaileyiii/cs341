@@ -718,8 +718,10 @@ tr.adult-registrant {
 
 }
 
-.page-break {
-    break-after: always;
+@media print {
+    .page-break {
+        break-after: always;
+    }
 }
 
 @supports not (-webkit-touch-callout: none) {
