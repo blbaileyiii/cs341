@@ -726,6 +726,7 @@ tr.adult-registrant {
 }
 
 .print-grid h2 {
+    font-size: 7.5pt;
     margin: 0;
     padding: 0.25rem;
     background: var(--lds-bg);
