@@ -723,6 +723,13 @@ tr.adult-registrant {
 .print-grid {
     display: grid;
     grid-template-columns: repeat(6, 1.25in);
+    gap: 1px;
+    background: black;
+}
+
+.print-grid *{
+    background: white;
+    margin: 0;
 }
 
 .print-grid h2 {
