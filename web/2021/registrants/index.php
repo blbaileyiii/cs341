@@ -19,7 +19,7 @@ switch($action){
     case "getPaperwork":
         $year = 2021;
         $events = getEventsJSON($year);
-        if($registrants){
+        if($events){
             $events = json_decode($events, true);
             $eventsHTML = buildEventsHTML($events, $year);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/paperwork.php';
