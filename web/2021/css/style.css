@@ -720,9 +720,17 @@ tr.adult-registrant {
     width: 7.5in;
 }
 
+.print-registrants h2 {
+    font-size: 7.5pt;
+    margin: 0;
+    padding: 0.25rem;
+    background: var(--lds-bg);
+    color: var(--on-nav-bg);
+}
+
 .print-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1.25in);
+    grid-template-columns: repeat(6, 1.241in);
     gap: 1px;
     background: black;
 }
@@ -730,14 +738,6 @@ tr.adult-registrant {
 .print-grid *{
     background: white;
     margin: 0;
-}
-
-.print-grid h2 {
-    font-size: 7.5pt;
-    margin: 0;
-    padding: 0.25rem;
-    background: var(--lds-bg);
-    color: var(--on-nav-bg);
 }
 
 .print-field {
