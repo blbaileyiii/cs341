@@ -255,11 +255,11 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<table>";
         $permissionSlipsHTML .= "<caption>Participant Information</caption>";
         $permissionSlipsHTML .= "<tr>";
-        $permissionSlipsHTML .= "<td>";
+        $permissionSlipsHTML .= "<td colspan='3'>";
         $permissionSlipsHTML .= "Participant";
         $permissionSlipsHTML .= "{$registrants[$x]['p_name']}";
         $permissionSlipsHTML .= "</td>";
-        $permissionSlipsHTML .= "<td>";
+        $permissionSlipsHTML .= "<td colspan='2'>";
         $permissionSlipsHTML .= "Date of birth";
         $permissionSlipsHTML .= "{$registrants[$x]['p_dob']}";
         $permissionSlipsHTML .= "</td>";
@@ -269,7 +269,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</td>";
         $permissionSlipsHTML .= "</tr>";
         $permissionSlipsHTML .= "<tr>";
-        $permissionSlipsHTML .= "<td>";
+        $permissionSlipsHTML .= "<td colspan='2'>";
         $permissionSlipsHTML .= "Primary telephone number";
         $permissionSlipsHTML .= "{$registrants[$x]['tele_one']}";
         $permissionSlipsHTML .= "</td>";
@@ -279,7 +279,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Cell";
         $permissionSlipsHTML .= "Work";
         $permissionSlipsHTML .= "</td>";
-        $permissionSlipsHTML .= "<td>";
+        $permissionSlipsHTML .= "<td colspan='2'>";
         $permissionSlipsHTML .= "Secondary telephone number";
         $permissionSlipsHTML .= "{$registrants[$x]['tele_two']}";
         $permissionSlipsHTML .= "</td>";
@@ -291,11 +291,11 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</td>";
         $permissionSlipsHTML .= "</tr>";
         $permissionSlipsHTML .= "<tr>";
-        $permissionSlipsHTML .= "<td>";
+        $permissionSlipsHTML .= "<td colspan='3'>";
         $permissionSlipsHTML .= "Address";
         $permissionSlipsHTML .= "{$registrants[$x]['p_address']}";
         $permissionSlipsHTML .= "</td>";
-        $permissionSlipsHTML .= "<td>";
+        $permissionSlipsHTML .= "<td colspan='2'>";
         $permissionSlipsHTML .= "City";
         $permissionSlipsHTML .= "{$registrants[$x]['p_city']}";
         $permissionSlipsHTML .= "</td>";
@@ -305,7 +305,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</td>";
         $permissionSlipsHTML .= "</tr>";
         $permissionSlipsHTML .= "<tr>";
-        $permissionSlipsHTML .= "<td>";
+        $permissionSlipsHTML .= "<td colspan='2'>";
         $permissionSlipsHTML .= "Emergency contact (parent or guardian)";
         $permissionSlipsHTML .= "{$registrants[$x]['emer_name']}";
         $permissionSlipsHTML .= "</td>";
