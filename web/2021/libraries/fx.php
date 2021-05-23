@@ -208,6 +208,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<p>Complete this form separately for each event or activity involving special considerations (see <span class='italics'>Handbook 2: Administering the Church</span>, 13.6.20, ChurchofJesusChrist.org), an overnight stay, travel outside the local area, or an activity with higher than ordinary risks.</p>";
         
         $permissionSlipsHTML .= "<h2 style='grid-column:span 6;'>Event Details (to be filled out by event planner)</h2>";
+
         $permissionSlipsHTML .= "<div class='print-grid'>";
         $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 4;'>";
         $permissionSlipsHTML .= "<span>Event</span>";
@@ -244,46 +245,81 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</div>";
 
         $permissionSlipsHTML .= "<h2 style='grid-column:span 6;'>Participant Information</h2>";
+
         $permissionSlipsHTML .= "<div class='print-grid'>";
+        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>Participant</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['p_name']}</span>";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "<span>Date of birth</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['p_dob']}</span>";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field'>";
         $permissionSlipsHTML .= "<span>Age</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['p_age']}</span>";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "<span>Primary telephone number</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['tele_one']}</span>";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field'>";
         // TODO tele_one_type
         $permissionSlipsHTML .= "Home";
         $permissionSlipsHTML .= "Cell";
         $permissionSlipsHTML .= "Work";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "Secondary telephone number";
         $permissionSlipsHTML .= "{$registrants[$x]['tele_two']}";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field';'>";
         // TODO tele_two_type
         $permissionSlipsHTML .= "Home";
         $permissionSlipsHTML .= "Cell";
         $permissionSlipsHTML .= "Work";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "Address";
         $permissionSlipsHTML .= "{$registrants[$x]['p_address']}";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "City";
         $permissionSlipsHTML .= "{$registrants[$x]['p_city']}";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field'>";
         $permissionSlipsHTML .= "State or province";
         $permissionSlipsHTML .= "{$registrants[$x]['p_state']}";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "Emergency contact (parent or guardian)";
         $permissionSlipsHTML .= "{$registrants[$x]['emer_name']}";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field'>";
         $permissionSlipsHTML .= "Primary telephone number";
         $permissionSlipsHTML .= "{$registrants[$x]['emer_tele_one']}";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field'>";
         // TODO emer_tele_one_type
         $permissionSlipsHTML .= "Home";
         $permissionSlipsHTML .= "Cell";
         $permissionSlipsHTML .= "Work";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field'>";
         $permissionSlipsHTML .= "Secondary telephone number";
         $permissionSlipsHTML .= "{$registrants[$x]['emer_tele_two']}";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field'>";
         // TODO emer_tele_two_type
         $permissionSlipsHTML .= "Home";
         $permissionSlipsHTML .= "Cell";
         $permissionSlipsHTML .= "Work";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "</div>";
+
         $permissionSlipsHTML .= "<h2 style='grid-column:span 6;'>Medical Information</h2>";
+
+        $permissionSlipsHTML .= "<div class='print-grid'>";
         $permissionSlipsHTML .= "Does the participant require a special diet?";
         // TODO
         $permissionSlipsHTML .= "Yes";
