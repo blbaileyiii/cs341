@@ -715,11 +715,11 @@ tr.adult-registrant {
 }
 
 .print-registrants {
-    font-size: 10pt;
+    font-size: 7.5pt;
 }
 
 .print-registrants h2 {
-    font-size: 1rem;
+    font-size: 7.5pt;
     background: var(--nav-bg);
     color: var(--on-nav-bg);
     margin: 0;
