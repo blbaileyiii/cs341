@@ -2,6 +2,7 @@
 
 /* Var */
 :root {
+    --lds-bg: #203bb3;
     --nav-bg: #2f375b;
     --nav-bg-trans: #2f375baa;
     --on-nav-bg: #ffffff;
@@ -721,7 +722,7 @@ tr.adult-registrant {
 
 .print-registrants h2 {
     font-size: 7.5pt;
-    background: var(--nav-bg);
+    background: var(--lds-bg);
     color: var(--on-nav-bg);
     margin: 0;
     padding: 0.25rem;
