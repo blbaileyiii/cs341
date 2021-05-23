@@ -28,7 +28,7 @@ switch($action){
         break;
     case "print":
         $event = filter_input(INPUT_GET, 'event');
-        $registrants = getPaperwork();
+        $registrants = getPaperwork($event);
         if($registrants){
             $registrants = json_decode($registrants, true);
             $permissionSlipsHTML = buildPermissionSlipsHTML($registrants);

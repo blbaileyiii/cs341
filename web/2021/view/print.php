@@ -11,6 +11,7 @@
         <section class="print-registrants">
             <?php echo $permissionSlipsHTML; ?>
         </section>
+        <?php var_dump($registrants); ?>
     </main>
 </body>
 </html>

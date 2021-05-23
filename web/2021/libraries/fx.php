@@ -204,7 +204,7 @@ function buildEventRegistrantsCount($registrants, $event){
 function buildPermissionSlipsHTML($registrants) {
     $permissionSlipsHTML = "";
     for ($x = 0; $x < count($registrants); $x++) {
-        // 
+        $permissionSlipsHTML .= "<img class='responsive' src='/2021/images/permissionslipheader.png' alt='Permission Slip Header'>";
     }
     return $permissionSlipsHTML;
 }
