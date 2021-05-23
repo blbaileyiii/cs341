@@ -742,8 +742,7 @@ tr.adult-registrant {
 
 .print-field {
     display: grid;
-    gap: 0.15rem;
-    padding: 0.25rem;
+    padding: 0.15rem 0.25rem;
 }
 
 @media print {
