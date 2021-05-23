@@ -323,7 +323,12 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Secondary telephone number";
         $permissionSlipsHTML .= "{$registrants[$x]['emer_tele_two']}";
         $permissionSlipsHTML .= "</td>";
+        $permissionSlipsHTML .= "<td>";
         // TODO emer_tele_two_type
+        $permissionSlipsHTML .= "Home";
+        $permissionSlipsHTML .= "Cell";
+        $permissionSlipsHTML .= "Work";
+        $permissionSlipsHTML .= "</td>";
         $permissionSlipsHTML .= "</tr>";
         $permissionSlipsHTML .= "<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
         $permissionSlipsHTML .= "</table>";
