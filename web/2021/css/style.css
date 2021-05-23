@@ -724,13 +724,6 @@ tr.adult-registrant {
     text-align: left;
     background: var(--lds-bg);
     color: var(--on-nav-bg);
-}
-
-.print-registrants h2 {
-    font-size: 7.5pt;
-    background: var(--lds-bg);
-    color: var(--on-nav-bg);
-    margin: 0;
     padding: 0.25rem;
 }
 
