@@ -718,23 +718,8 @@ tr.adult-registrant {
 .print-registrants {
     font-size: 7.5pt;
     width: 7.5in;
-}
-
-.print-registrants caption {
-    text-align: left;
-    background: var(--lds-bg);
-    color: var(--on-nav-bg);
-    padding: 0.25rem;
-}
-
-.print-registrants table {
-    border-collapse: collapse;
-    border-style: hidden;
-    width: 7.5in;
-}
-
-.print-registrants table td {
-    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(6, 1.25in);
 }
 
 @media print {
