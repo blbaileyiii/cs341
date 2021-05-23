@@ -727,6 +727,15 @@ tr.adult-registrant {
     padding: 0.25rem;
 }
 
+.print-registrants table {
+    border-collapse: collapse;
+    border-style: hidden;
+  }
+
+  .print-registrants table td {
+border: 1px solid black;
+}
+
 @media print {
     .print-registrants {
         -webkit-print-color-adjust: exact;
