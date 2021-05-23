@@ -206,7 +206,7 @@ function buildPermissionSlipsHTML($registrants) {
     for ($x = 0; $x < count($registrants); $x++) {
         $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "<img class='responsive' src='/2021/images/permissionslipheader.png' alt='Permission Slip Header'>";
-        $permissionSlipsHTML .= "Complete this form separately for each event or activity involving special considerations (see <span class='italics'>Handbook 2: Administering the Church</span>, 13.6.20, ChurchofJesusChrist.org), an overnight stay, travel outside the local area, or an activity with higher than ordinary risks.";
+        $permissionSlipsHTML .= "<p>Complete this form separately for each event or activity involving special considerations (see <span class='italics'>Handbook 2: Administering the Church</span>, 13.6.20, ChurchofJesusChrist.org), an overnight stay, travel outside the local area, or an activity with higher than ordinary risks.</p>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "<h2>Event Details (to be filled out by event planner)</h2>";
