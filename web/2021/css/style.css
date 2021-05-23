@@ -722,10 +722,6 @@ tr.adult-registrant {
     grid-template-columns: repeat(6, 1.25in);
 }
 
-.print-registrants *{
-    grid-column: span 6;
-}
-
 @media print {
     .print-registrants {
         -webkit-print-color-adjust: exact;
