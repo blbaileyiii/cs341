@@ -209,8 +209,8 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<p style='grid-column:span 6;'>Complete this form separately for each event or activity involving special considerations (see <span class='italics'>Handbook 2: Administering the Church</span>, 13.6.20, ChurchofJesusChrist.org), an overnight stay, travel outside the local area, or an activity with higher than ordinary risks.</p>";
         $permissionSlipsHTML .= "<h2 style='grid-column:span 6;'>Event Details (to be filled out by event planner)</h2>";
         $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 4;'>";
-        $permissionSlipsHTML .= "Event";
-        $permissionSlipsHTML .= "{$registrants[$x]['event_name']}";
+        $permissionSlipsHTML .= "<span>Event</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['event_name']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "<span>Date(s) of event</span>";
