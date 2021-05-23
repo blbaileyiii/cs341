@@ -204,6 +204,7 @@ function buildEventRegistrantsCount($registrants, $event){
 function buildPermissionSlipsHTML($registrants) {
     $permissionSlipsHTML = "";
     for ($x = 0; $x < count($registrants); $x++) {
+        $permissionSlipsHTML .= "<div class='.print-grid'>";
         $permissionSlipsHTML .= "<img class='responsive' style='grid-column:span 6;' src='/2021/images/permissionslipheader.png' alt='Permission Slip Header'>";
         $permissionSlipsHTML .= "<p style='grid-column:span 6;'>Complete this form separately for each event or activity involving special considerations (see <span class='italics'>Handbook 2: Administering the Church</span>, 13.6.20, ChurchofJesusChrist.org), an overnight stay, travel outside the local area, or an activity with higher than ordinary risks.</p>";
         $permissionSlipsHTML .= "<h2 style='grid-column:span 6;'>Event Details (to be filled out by event planner)</h2>";
@@ -338,6 +339,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Date";
         $permissionSlipsHTML .= "{$registrants[$x]['g_sig_date']}";
         $permissionSlipsHTML .= "<p class='legal-sm' style='grid-column:span 6;'>© 2017, 2019 by Intellectual Reserve, Inc. All rights reserved. 5/19. PD60004035 000</p>";
+        $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='page-break'>";
         $permissionSlipsHTML .= "</div>";
     }

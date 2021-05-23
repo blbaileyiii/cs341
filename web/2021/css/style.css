@@ -718,6 +718,9 @@ tr.adult-registrant {
 .print-registrants {
     font-size: 7.5pt;
     width: 7.5in;
+}
+
+.print-grid {
     display: grid;
     grid-template-columns: repeat(6, 1.25in);
 }
