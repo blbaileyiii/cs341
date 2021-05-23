@@ -728,6 +728,11 @@ tr.adult-registrant {
 }
 
 @media print {
+    .print-registrants {
+        font-size: 7.5pt;
+        width: 7.5in;
+    }
+
     .page-break {
         break-after: always;
         page-break-after: always;
