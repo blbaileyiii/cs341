@@ -340,6 +340,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "{$registrants[$x]['g_sig_date']}";
         $permissionSlipsHTML .= "<p class='legal-sm' style='grid-column:span 6;'>© 2017, 2019 by Intellectual Reserve, Inc. All rights reserved. 5/19. PD60004035 000</p>";
         $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='page-break'>";
         $permissionSlipsHTML .= "</div>";
     }
