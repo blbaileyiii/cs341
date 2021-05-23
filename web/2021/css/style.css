@@ -731,6 +731,7 @@ tr.adult-registrant {
     border-collapse: collapse;
     border-style: hidden;
     table-layout:fixed;
+    width: 7.5in;
 }
 
 .print-registrants table td {
