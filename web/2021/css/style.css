@@ -716,6 +716,7 @@ tr.adult-registrant {
 
 .print-registrants {
     font-size: 7.5pt;
+    width: 7.5in;
 }
 
 .print-registrants h2 {
