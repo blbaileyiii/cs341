@@ -686,21 +686,21 @@ label.owner {
     font-weight: 700;
 }
 
-table {
+.total-registrants table {
     text-align: left;
     border: 1px solid var(--nav-bg);
     border-collapse: collapse;
 }
 
-tr {
+.total-registrants tr {
     border: 1px solid var(--nav-bg);
 }
 
-tr:nth-child(even) {
+.total-registrants tr:nth-child(even) {
     background: var(--logo-highlight);
 }
 
-th, td {
+.total-registrants th, .total-registrants td {
     border: 1px solid var(--nav-bg);
     padding: 0.5rem;
 }
