@@ -250,7 +250,6 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "{$registrants[$x]['l_email']}";
         $permissionSlipsHTML .= "</td>";
         $permissionSlipsHTML .= "</tr>";
-        $permissionSlipsHTML .= "<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
         $permissionSlipsHTML .= "</table>";
         $permissionSlipsHTML .= "<table>";
         $permissionSlipsHTML .= "<caption>Participant Information</caption>";
@@ -330,7 +329,6 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Work";
         $permissionSlipsHTML .= "</td>";
         $permissionSlipsHTML .= "</tr>";
-        $permissionSlipsHTML .= "<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
         $permissionSlipsHTML .= "</table>";
         $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "<h2>Medical Information</h2>";
