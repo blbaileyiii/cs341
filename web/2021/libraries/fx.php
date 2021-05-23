@@ -325,20 +325,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</td>";
         // TODO emer_tele_two_type
         $permissionSlipsHTML .= "</tr>";
-        $permissionSlipsHTML .= "<tr>";
-        $permissionSlipsHTML .= "<td>";
-        $permissionSlipsHTML .= "</td>";
-        $permissionSlipsHTML .= "<td>";
-        $permissionSlipsHTML .= "</td>";
-        $permissionSlipsHTML .= "<td>";
-        $permissionSlipsHTML .= "</td>";
-        $permissionSlipsHTML .= "<td>";
-        $permissionSlipsHTML .= "</td>";
-        $permissionSlipsHTML .= "<td>";
-        $permissionSlipsHTML .= "</td>";
-        $permissionSlipsHTML .= "<td>";
-        $permissionSlipsHTML .= "</td>";
-        $permissionSlipsHTML .= "</tr>";
+        $permissionSlipsHTML .= "<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
         $permissionSlipsHTML .= "</table>";
         $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "<h2>Medical Information</h2>";
