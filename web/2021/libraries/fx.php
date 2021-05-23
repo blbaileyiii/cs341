@@ -205,19 +205,13 @@ function buildPermissionSlipsHTML($registrants) {
     $permissionSlipsHTML = "";
     for ($x = 0; $x < count($registrants); $x++) {
         $permissionSlipsHTML .= "<div>";
-        $permissionSlipsHTML .= "<p><img class='responsive' src='/2021/images/permissionslipheader.png' alt='Permission Slip Header'></p>";
-        $permissionSlipsHTML .= "<p>Complete this form separately for each event or activity involving special considerations (see <span class='italics'>Handbook 2: Administering the Church</span>, 13.6.20, ChurchofJesusChrist.org), an overnight stay, travel outside the local area, or an activity with higher than ordinary risks.</p>";
-        $permissionSlipsHTML .= "<p>Event Details (to be filled out by event planner)</p>";
-        $permissionSlipsHTML .= "<p>";
-        $permissionSlipsHTML .= "<span>";
-        $permissionSlipsHTML .= "<p>Event</p>";
-        $permissionSlipsHTML .= "<p>{$registrants[$x]['event_name']}</p>";
-        $permissionSlipsHTML .= "</span>";
-        $permissionSlipsHTML .= "<span>";
-        $permissionSlipsHTML .= "<p>Date(s) of event</p>";
-        $permissionSlipsHTML .= "<p>{$registrants[$x]['date_start']} - {$registrants[$x]['date_end']}</p>";
-        $permissionSlipsHTML .= "</span>";
-        $permissionSlipsHTML .= "</p>";
+        $permissionSlipsHTML .= "<img class='responsive' src='/2021/images/permissionslipheader.png' alt='Permission Slip Header'>";
+        $permissionSlipsHTML .= "Complete this form separately for each event or activity involving special considerations (see <span class='italics'>Handbook 2: Administering the Church</span>, 13.6.20, ChurchofJesusChrist.org), an overnight stay, travel outside the local area, or an activity with higher than ordinary risks.";
+        $permissionSlipsHTML .= "Event Details (to be filled out by event planner)";
+        $permissionSlipsHTML .= "Event";
+        $permissionSlipsHTML .= "{$registrants[$x]['event_name']}";
+        $permissionSlipsHTML .= "Date(s) of event";
+        $permissionSlipsHTML .= "{$registrants[$x]['date_start']} - {$registrants[$x]['date_end']}";
         $permissionSlipsHTML .= "Describe event and activities (please be specific)";
         $permissionSlipsHTML .= "{$registrants[$x]['event_desc']}";
         $permissionSlipsHTML .= "Ward";
