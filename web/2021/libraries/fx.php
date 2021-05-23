@@ -279,7 +279,6 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Home";
         $permissionSlipsHTML .= "Cell";
         $permissionSlipsHTML .= "Work";
-        $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "<h2 style='grid-column:span 6;'>Medical Information</h2>";
         $permissionSlipsHTML .= "Does the participant require a special diet?";
         // TODO
@@ -304,8 +303,6 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "If no, please contact the event or activity leader directly.";
         $permissionSlipsHTML .= "List all prescription or over-the-counter (OTC) medications the participant is taking";
         $permissionSlipsHTML .= "{$registrants[$x]['medication_txt']}";
-        $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "<h2 style='grid-column:span 6;'>Physical Conditions That Limit Activity</h2>";
         $permissionSlipsHTML .= "Does the participant have a chronic or recurring illness?";
         // TODO
@@ -321,8 +318,6 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "{$registrants[$x]['serious_txt']}";
         $permissionSlipsHTML .= "Identify any other limits, restrictions, or disabilities that could prevent the participant from fully participating in the event or activity (attach additional pages if needed)";
         $permissionSlipsHTML .= "{$registrants[$x]['limitations_txt']}";
-        $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "<h2 style='grid-column:span 6;'>Other Accommodations or Special Needs</h2>";
         $permissionSlipsHTML .= "Identify any other needs or considerations the participant has that the event or activity planner should be aware of (attach additional pages if needed)";
         $permissionSlipsHTML .= "<h2 style='grid-column:span 6;'>Permission</h2>";
@@ -339,7 +334,6 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Date";
         $permissionSlipsHTML .= "{$registrants[$x]['g_sig_date']}";
         $permissionSlipsHTML .= "<p class='legal-sm' style='grid-column:span 6;'>© 2017, 2019 by Intellectual Reserve, Inc. All rights reserved. 5/19. PD60004035 000</p>";
-        $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='page-break'>";
         $permissionSlipsHTML .= "</div>";
