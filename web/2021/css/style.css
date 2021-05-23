@@ -722,6 +722,12 @@ tr.adult-registrant {
     grid-template-columns: repeat(6, 1.25in);
 }
 
+.print-field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
 @media print {
     .print-registrants {
         -webkit-print-color-adjust: exact;
