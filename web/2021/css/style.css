@@ -736,7 +736,9 @@ tr.adult-registrant {
 
 .print-registrants table td {
     border: 1px solid black;
+    min-width: 1.25in;
     width: 1.25in;
+    max-width: 1.25in;
 }
 
 @media print {
