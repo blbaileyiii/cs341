@@ -730,6 +730,7 @@ tr.adult-registrant {
 .print-registrants table {
     border-collapse: collapse;
     border-style: hidden;
+    table-layout:fixed;
 }
 
 .print-registrants table td {
