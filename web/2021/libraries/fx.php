@@ -207,6 +207,8 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "<img class='responsive' src='/2021/images/permissionslipheader.png' alt='Permission Slip Header'>";
         $permissionSlipsHTML .= "Complete this form separately for each event or activity involving special considerations (see <span class='italics'>Handbook 2: Administering the Church</span>, 13.6.20, ChurchofJesusChrist.org), an overnight stay, travel outside the local area, or an activity with higher than ordinary risks.";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "Event Details (to be filled out by event planner)";
         $permissionSlipsHTML .= "Event";
         $permissionSlipsHTML .= "{$registrants[$x]['event_name']}";
@@ -224,6 +226,8 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "{$registrants[$x]['l_phone']}";
         $permissionSlipsHTML .= "Event or activity leader's email";
         $permissionSlipsHTML .= "{$registrants[$x]['l_email']}";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "Participant Information";
         $permissionSlipsHTML .= "Participant";
         $permissionSlipsHTML .= "{$registrants[$x]['p_name']}";
@@ -243,6 +247,8 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Home";
         $permissionSlipsHTML .= "Cell";
         $permissionSlipsHTML .= "Work";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "Medical Information";
         $permissionSlipsHTML .= "Does the participant require a special diet?";
         // TODO
@@ -267,6 +273,8 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "If no, please contact the event or activity leader directly.";
         $permissionSlipsHTML .= "List all prescription or over-the-counter (OTC) medications the participant is taking";
         $permissionSlipsHTML .= "{$registrants[$x]['medication_txt']}";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "Physical Conditions That Limit Activity";
         $permissionSlipsHTML .= "Does the participant have a chronic or recurring illness?";
         // TODO
@@ -282,8 +290,12 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "{$registrants[$x]['serious_txt']}";
         $permissionSlipsHTML .= "Identify any other limits, restrictions, or disabilities that could prevent the participant from fully participating in the event or activity (attach additional pages if needed)";
         $permissionSlipsHTML .= "{$registrants[$x]['limitations_txt']}";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "Other Accommodations or Special Needs";
         $permissionSlipsHTML .= "Identify any other needs or considerations the participant has that the event or activity planner should be aware of (attach additional pages if needed)";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "Permission";
         $permissionSlipsHTML .= "{$registrants[$x]['considerations_txt']}";
         $permissionSlipsHTML .= "I give permission for my child or youth to participate in the event and activities listed above (unless noted) and authorize the adult leaders supervising this event to administer emergency treatment to the abovenamed participant for any accident or illness and to act in my stead in approving necessary medical care. This authorization shall cover this event and travel to and from this event.";
