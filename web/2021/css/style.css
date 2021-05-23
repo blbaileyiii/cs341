@@ -714,6 +714,10 @@ tr.adult-registrant {
     color: var(--on-nav-bg);
 }
 
+.print-registrants {
+    font-size: 10pt;
+}
+
 .print-registrants h2 {
     font-size: 1rem;
     background: var(--nav-bg);
@@ -726,14 +730,6 @@ tr.adult-registrant {
     .page-break {
         break-after: always;
         page-break-after: always;
-    }
-
-    .print-registrants h2 {
-        font-size: 1rem;
-        background: var(--nav-bg);
-        color: var(--on-nav-bg);
-        margin: 0;
-        padding: 0.25rem;
     }
 }
 
