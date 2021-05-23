@@ -9,7 +9,7 @@
 <body>  
     <main>
         <section class="print-registrants">
-            <?php echo $registrantsTable; ?>
+            <?php echo $permissionSlipsHTML; ?>
         </section>
     </main>
 </body>

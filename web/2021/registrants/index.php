@@ -31,7 +31,7 @@ switch($action){
         $registrants = getPaperwork();
         if($registrants){
             $registrants = json_decode($registrants, true);
-            $registrantsTable = buildRegistrantsHTML($registrants);
+            $permissionSlipsHTML = buildPermissionSlipsHTML($registrants);
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/print.php';
             exit; 
         } 

@@ -136,7 +136,7 @@ function buildRegistrantsHTML($registrants) {
             
             $registrantsHTML .= "<h2>{$registrants[$x]['name']}</h2>";
             $registrantsHTML .= "<table>";
-            $registrantsHTML .= eventRegistrantsCount($registrants, $event);
+            $registrantsHTML .= buildEventRegistrantsCount($registrants, $event);
             $registrantsHTML .= "<tr>";
             $registrantsHTML .= "<th>Event</th>";
             $registrantsHTML .= "<th>Ward</th>";
@@ -177,7 +177,7 @@ function buildRegistrantsHTML($registrants) {
     return $registrantsHTML;
 }
 
-function eventRegistrantsCount($registrants, $event){
+function buildEventRegistrantsCount($registrants, $event){
     $countHTML = "";
 
     $totalRegistrantCount = 0;
@@ -199,6 +199,14 @@ function eventRegistrantsCount($registrants, $event){
     $countHTML .= "<p>Total Adults Registered: $adultRegistrantCount</p>";
     $countHTML .= "<p>Total Participants Registered: $totalRegistrantCount</p>";
     return $countHTML;
+}
+
+function buildPermissionSlipsHTML($registrants) {
+    $permissionSlipsHTML = "";
+    for ($x = 0; $x < count($registrants); $x++) {
+        // 
+    }
+    return $permissionSlipsHTML;
 }
 
 ?>
