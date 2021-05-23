@@ -718,6 +718,10 @@ tr.adult-registrant {
 
 }
 
+.print-registrants h2 {
+    font-size: 1rem;
+}
+
 @media print {
     .page-break {
         break-after: always;
