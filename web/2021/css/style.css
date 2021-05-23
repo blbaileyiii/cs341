@@ -729,8 +729,7 @@ tr.adult-registrant {
 
 @media print {
     .print-registrants {
-        font-size: 7.5pt;
-        width: 7.5in;
+        -webkit-print-color-adjust: exact;
     }
 
     .page-break {
