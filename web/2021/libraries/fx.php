@@ -252,6 +252,8 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "{$registrants[$x]['l_email']}";
         $permissionSlipsHTML .= "</td>";
         $permissionSlipsHTML .= "</tr>";
+        $permissionSlipsHTML .= "</table>";
+        $permissionSlipsHTML .= "<table>";
         $permissionSlipsHTML .= "<caption>Participant Information</caption>";
         $permissionSlipsHTML .= "<tr>";
         $permissionSlipsHTML .= "<td>";
