@@ -219,8 +219,6 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Date(s) of event";
         $permissionSlipsHTML .= "{$registrants[$x]['date_start']} - {$registrants[$x]['date_end']}";
         $permissionSlipsHTML .= "</td>";
-        $permissionSlipsHTML .= "<td>";
-        $permissionSlipsHTML .= "</td>";
         $permissionSlipsHTML .= "</tr>";
         $permissionSlipsHTML .= "<tr>";
         $permissionSlipsHTML .= "<td colspan='6'>";
