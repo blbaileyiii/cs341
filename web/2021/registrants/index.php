@@ -16,6 +16,24 @@ if ($action == NULL) {
 }
 
 switch($action){
+    case "getPaperwork":
+        $year = 2021;
+        $events = getEventsJSON($year);
+        if($registrants){
+            $events = json_decode($events, true);
+            $eventsHTML = buildEventsHTML($events, $year);
+        }
+        break;
+    case "print":
+        $event = filter_input(INPUT_GET, 'event');
+        $registrants = getPaperwork();
+        if($registrants){
+            $registrants = json_decode($registrants, true);
+            $registrantsTable = buildRegistrantsHTML($registrants);
+            include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registrants.php';
+            exit; 
+        } 
+        break;
     default:
         $registrants = getRegistrants();
         if($registrants){

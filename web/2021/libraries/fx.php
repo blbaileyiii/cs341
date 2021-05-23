@@ -95,6 +95,20 @@ function buildEventList($events){
     return $eventList;
 }
 
+function buildEventsHTML($events, $year) {
+    $eventsHTML = "";
+
+    for ($x = 0; $x < count($events); $x++) {
+        $eventsHTML .= "<p>";
+        $eventsHTML .= "<a href='/$year/registrants/?action=print&event={$events[$x]['key']}' title='Print permission slips for {$events[$x]['name']}'  target='_blank' rel='noreferrer'>";
+        $eventsHTML .= "Print permission slips for {$events[$x]['name']}";
+        $eventsHTML .= "</a>";
+        $eventsHTML .= "</p>";
+    }
+
+    return $eventsHTML;
+}
+
 function buildAboutHTML($events) {
     $aboutHTML = "";
     return $aboutHTML;
