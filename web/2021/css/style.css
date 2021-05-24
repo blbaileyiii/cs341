@@ -755,7 +755,7 @@ tr.adult-registrant {
     padding: 0.15rem 0.25rem;
 }
 
-.print-field input, .print-field label {
+.print-field input, .print-field label, .print-field label + span {
     vertical-align:middle;
 }
 
@@ -764,7 +764,7 @@ tr.adult-registrant {
 }
 
 .print-field label + input, .print-field label + span {
-    margin-left: 1rem;
+    margin-left: 0.75rem;
 }
 
 .print-field.stmt {
