@@ -224,7 +224,8 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>Ward</span>";
-        $permissionSlipsHTML .= "<span>{$registrants[$x]['p_ward']}</span>";
+        $ward = strtoupper($registrants[$x]['p_ward']);
+        $permissionSlipsHTML .= "<span>$ward</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>Stake</span>";
@@ -265,9 +266,19 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field'>";
         // TODO tele_one_type
-        $permissionSlipsHTML .= "Home";
-        $permissionSlipsHTML .= "Cell";
-        $permissionSlipsHTML .= "Work";
+        if($registrants[$x]['tele_one_type'] == "cell") {
+            $permissionSlipsHTML .= "<input type='checkbox'>Home";
+            $permissionSlipsHTML .= "<input type='checkbox' checked>Cell";
+            $permissionSlipsHTML .= "<input type='checkbox'>Work";            
+        } elseif ($registrants[$x]['tele_one_type'] == "home") {
+            $permissionSlipsHTML .= "<input type='checkbox' checked>Home";
+            $permissionSlipsHTML .= "<input type='checkbox'>Cell";
+            $permissionSlipsHTML .= "<input type='checkbox'>Work";  
+        } elseif ($registrants[$x]['tele_one_type'] == "work") {
+            $permissionSlipsHTML .= "<input type='checkbox'>Home";
+            $permissionSlipsHTML .= "<input type='checkbox'>Cell";
+            $permissionSlipsHTML .= "<input type='checkbox' checked>Work";  
+        }
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "<span>Secondary telephone number</span>";
@@ -411,7 +422,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 5;'>";
         $permissionSlipsHTML .= "<span>Participant’s signature</span>";
-        $permissionSlipsHTML .= "<span>{$registrants[$x]['p_sig']}</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['p_sig']} (/s/ e-sig)</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right'>";
         $permissionSlipsHTML .= "<span>Date</span>";
@@ -419,7 +430,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 5;'>";
         $permissionSlipsHTML .= "<span>Parent or guardian’s signature (if necessary)</span>";
-        $permissionSlipsHTML .= "<span>{$registrants[$x]['g_sig']}</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['g_sig']} (/s/ e-sig)</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right'>";
         $permissionSlipsHTML .= "<span>Date</span>";
