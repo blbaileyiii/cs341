@@ -418,8 +418,6 @@ function buildPermissionSlipsHTML($registrants) {
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>No</label>";
             $permissionSlipsHTML .= "</span>";
         }
-        $permissionSlipsHTML .= "Yes ";
-        $permissionSlipsHTML .= "No";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right' style='grid-column:span 4;'>";
         $permissionSlipsHTML .= "<span>If yes, please explain the dietary restrictions</span>";
@@ -427,9 +425,17 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "<span>Does the participant have any allergies?</span>";
-        // TODO
-        $permissionSlipsHTML .= "Yes ";
-        $permissionSlipsHTML .= "No";
+        if($registrants[$x]['allergies'] == TRUE) {
+            $permissionSlipsHTML .= "<span>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>Yes</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>No</label>";
+            $permissionSlipsHTML .= "</span>";         
+        } elseif ($registrants[$x]['allergies'] == FALSE) {
+            $permissionSlipsHTML .= "<span>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Yes</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>No</label>";
+            $permissionSlipsHTML .= "</span>";
+        }
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right' style='grid-column:span 4;'>";
         $permissionSlipsHTML .= "<span>If yes, please list the allergies</span>";
@@ -437,15 +443,31 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>Is the participant taking any medication or over-the-counter (OTC) drugs?</span>";
-        // TODO
-        $permissionSlipsHTML .= "Yes ";
-        $permissionSlipsHTML .= "No";
+        if($registrants[$x]['medication'] == TRUE) {
+            $permissionSlipsHTML .= "<span>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>Yes</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>No</label>";
+            $permissionSlipsHTML .= "</span>";         
+        } elseif ($registrants[$x]['medication'] == FALSE) {
+            $permissionSlipsHTML .= "<span>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Yes</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>No</label>";
+            $permissionSlipsHTML .= "</span>";
+        }
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>If yes, can the participant self-administer his or her medication?</span>";
-        // TODO
-        $permissionSlipsHTML .= "Yes ";
-        $permissionSlipsHTML .= "No ";
+        if($registrants[$x]['self_medicate'] == TRUE) {
+            $permissionSlipsHTML .= "<span>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>Yes</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>No</label>";
+            $permissionSlipsHTML .= "</span>";         
+        } elseif ($registrants[$x]['self_medicate'] == FALSE) {
+            $permissionSlipsHTML .= "<span>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Yes</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>No</label>";
+            $permissionSlipsHTML .= "</span>";
+        }
         $permissionSlipsHTML .= "If no, please contact the event or activity leader directly.";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field full' style='grid-column:span 6;'>";
@@ -459,9 +481,17 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<div class='print-grid'>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>Does the participant have a chronic or recurring illness?</span>";
-        // TODO
-        $permissionSlipsHTML .= "Yes ";
-        $permissionSlipsHTML .= "No";
+        if($registrants[$x]['chronic'] == TRUE) {
+            $permissionSlipsHTML .= "<span>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>Yes</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>No</label>";
+            $permissionSlipsHTML .= "</span>";         
+        } elseif ($registrants[$x]['chronic'] == FALSE) {
+            $permissionSlipsHTML .= "<span>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Yes</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>No</label>";
+            $permissionSlipsHTML .= "</span>";
+        }
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>If yes, please explain</span>";
@@ -469,9 +499,17 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>Has the participant had surgery or a serious illness in the past year?</span>";
-        // TODO
-        $permissionSlipsHTML .= "Yes ";
-        $permissionSlipsHTML .= "No";
+        if($registrants[$x]['serious'] == TRUE) {
+            $permissionSlipsHTML .= "<span>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>Yes</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>No</label>";
+            $permissionSlipsHTML .= "</span>";         
+        } elseif ($registrants[$x]['serious'] == FALSE) {
+            $permissionSlipsHTML .= "<span>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Yes</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>No</label>";
+            $permissionSlipsHTML .= "</span>";
+        }
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>If yes, please explain</span>";
