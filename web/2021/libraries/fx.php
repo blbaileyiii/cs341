@@ -267,17 +267,17 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<div class='print-field'>";
         // TODO tele_one_type
         if($registrants[$x]['tele_one_type'] == "cell") {
-            $permissionSlipsHTML .= "<input type='checkbox'>Home";
-            $permissionSlipsHTML .= "<input type='checkbox' checked>Cell";
-            $permissionSlipsHTML .= "<input type='checkbox'>Work";            
+            $permissionSlipsHTML .= "<input type='checkbox' readonly>Home";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly checked>Cell";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly>Work";            
         } elseif ($registrants[$x]['tele_one_type'] == "home") {
-            $permissionSlipsHTML .= "<input type='checkbox' checked>Home";
-            $permissionSlipsHTML .= "<input type='checkbox'>Cell";
-            $permissionSlipsHTML .= "<input type='checkbox'>Work";  
+            $permissionSlipsHTML .= "<input type='checkbox' readonly checked>Home";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly>Cell";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly>Work";  
         } elseif ($registrants[$x]['tele_one_type'] == "work") {
-            $permissionSlipsHTML .= "<input type='checkbox'>Home";
-            $permissionSlipsHTML .= "<input type='checkbox'>Cell";
-            $permissionSlipsHTML .= "<input type='checkbox' checked>Work";  
+            $permissionSlipsHTML .= "<input type='checkbox' readonly>Home";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly>Cell";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly checked>Work";  
         }
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
