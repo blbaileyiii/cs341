@@ -720,7 +720,7 @@ tr.adult-registrant {
 }
 
 .print-registrants {
-    font-size: 7.5pt;
+    font-size: 7pt;
     width: 7.5in;
 }
 
@@ -729,7 +729,7 @@ tr.adult-registrant {
 }
 
 .print-registrants h2 {
-    font-size: 7.5pt;
+    font-size: 7pt;
     font-weight: normal;
     margin: 0;
     padding: 0.25rem;
