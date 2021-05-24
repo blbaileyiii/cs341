@@ -755,6 +755,11 @@ tr.adult-registrant {
     padding: 0.15rem 0.25rem;
 }
 
+.print-field.stmt {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
 .print-field.left {
     padding: 0.15rem 0.25rem 0.15rem 0;
 }
