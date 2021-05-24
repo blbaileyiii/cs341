@@ -752,7 +752,6 @@ tr.adult-registrant {
 
 .print-field {
     display: grid;
-    padding: 0.15rem 0.25rem;
 }
 
 .print-field.stmt {
@@ -780,15 +779,19 @@ tr.adult-registrant {
     margin-left: 0.75rem;
 }
 
-.print-field.left {
+.print-field, .print-field-phone {
+    padding: 0.15rem 0.25rem;
+}
+
+.print-field.left, .print-field-phone.left {
     padding: 0.15rem 0.25rem 0.15rem 0;
 }
 
-.print-field.right {
+.print-field.right, .print-field-phone.right {
     padding: 0.15rem 0 0.15rem 0.25rem;
 }
 
-.print-field.full {
+.print-field.full, .print-field-phone.full {
     padding: 0.15rem 0;
 }
 
