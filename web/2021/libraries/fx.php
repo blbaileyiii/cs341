@@ -267,17 +267,29 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<div class='print-field'>";
         // TODO tele_one_type
         if($registrants[$x]['tele_one_type'] == "cell") {
+            $permissionSlipsHTML .= "<span>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled>Home";
+            $permissionSlipsHTML .= "</span>";
+            $permissionSlipsHTML .= "<span>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked>Cell";
-            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled>Work";            
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled>Work";
+            $permissionSlipsHTML .= "</span>";         
         } elseif ($registrants[$x]['tele_one_type'] == "home") {
+            $permissionSlipsHTML .= "<span>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked>Home";
+            $permissionSlipsHTML .= "</span>";
+            $permissionSlipsHTML .= "<span>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled>Cell";
-            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled>Work";  
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled>Work";
+            $permissionSlipsHTML .= "</span>";
         } elseif ($registrants[$x]['tele_one_type'] == "work") {
+            $permissionSlipsHTML .= "<span>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled>Home";
+            $permissionSlipsHTML .= "</span>";
+            $permissionSlipsHTML .= "<span>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled>Cell";
-            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked>Work";  
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked>Work";
+            $permissionSlipsHTML .= "</span>"; 
         }
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
