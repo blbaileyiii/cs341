@@ -720,8 +720,13 @@ tr.adult-registrant {
     width: 7.5in;
 }
 
+.print-registrants p{
+    margin: 0.15rem 0;
+}
+
 .print-registrants h2 {
     font-size: 7.5pt;
+    font-weight: normal;
     margin: 0;
     padding: 0.25rem;
     background: var(--lds-bg);
