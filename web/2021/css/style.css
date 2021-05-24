@@ -735,7 +735,7 @@ tr.adult-registrant {
 
 .print-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1.241in);
+    grid-template-columns: repeat(6, 1.245in);
     gap: 1px;
     background: black;
 }
