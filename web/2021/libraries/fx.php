@@ -260,7 +260,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<span>Age</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['p_age']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
+        $permissionSlipsHTML .= "<div class='print-field-phone left' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "<span>Primary telephone number</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['tele_one']}</span>";
