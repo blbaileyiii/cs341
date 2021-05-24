@@ -270,8 +270,8 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Work";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
-        $permissionSlipsHTML .= "Secondary telephone number";
-        $permissionSlipsHTML .= "{$registrants[$x]['tele_two']}";
+        $permissionSlipsHTML .= "<span>Secondary telephone number</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['tele_two']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right';'>";
         // TODO tele_two_type
@@ -323,7 +323,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "<span>Does the participant require a special diet?</span>";
         // TODO
-        $permissionSlipsHTML .= "Yes";
+        $permissionSlipsHTML .= "Yes ";
         $permissionSlipsHTML .= "No";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right' style='grid-column:span 4;'>";
@@ -400,12 +400,14 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<h2 style='grid-column:span 6;'>Permission</h2>";
         
         $permissionSlipsHTML .= "<div class='print-grid'>";
-        $permissionSlipsHTML .= "<div class='print-field full' style='grid-column:span 6;'>";
+        $permissionSlipsHTML .= "<div class='print-field stmt full' style='grid-column:span 6;'>";
+        $permissionSlipsHTML .= "<span>";
         $permissionSlipsHTML .= "<p>I give permission for my child or youth to participate in the event and activities listed above (unless noted) and authorize the adult leaders supervising this event to administer emergency treatment to the abovenamed participant for any accident or illness and to act in my stead in approving necessary medical care. This authorization shall cover this event and travel to and from this event.</p>";
-        $permissionSlipsHTML .= "<div>";
+        $permissionSlipsHTML .= "</span>";
+        $permissionSlipsHTML .= "<span>";
         $permissionSlipsHTML .= "<p>The participant is responsible for his or her own conduct and is aware of and agrees to abide by Church standards, camp or event safety rules, and other pertinent instructions. Participants’ conduct and interactions should abide by Church standards and exemplify Christlike behavior.</p>";
         $permissionSlipsHTML .= "<p>Parents and participants should understand that participation in an activity is not a right but a privilege that can be revoked if they behave inappropriately or if they pose a risk to themselves or others.</p>";
-        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 5;'>";
         $permissionSlipsHTML .= "<span>Participant’s signature</span>";
