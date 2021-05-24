@@ -772,6 +772,11 @@ tr.adult-registrant {
     gap: 1rem;
 }
 
+.print-field-phone {
+    display: flex;
+    justify-content: space-between;
+}
+
 .print-field.left {
     padding: 0.15rem 0.25rem 0.15rem 0;
 }
