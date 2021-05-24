@@ -280,24 +280,24 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Work";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "Address";
-        $permissionSlipsHTML .= "{$registrants[$x]['p_address']}";
+        $permissionSlipsHTML .= "<span>Address</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['p_address']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
-        $permissionSlipsHTML .= "City";
-        $permissionSlipsHTML .= "{$registrants[$x]['p_city']}";
+        $permissionSlipsHTML .= "<span>City</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['p_city']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right'>";
-        $permissionSlipsHTML .= "State or province";
-        $permissionSlipsHTML .= "{$registrants[$x]['p_state']}";
+        $permissionSlipsHTML .= "<span>State or province</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['p_state']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 2;'>";
-        $permissionSlipsHTML .= "Emergency contact (parent or guardian)";
-        $permissionSlipsHTML .= "{$registrants[$x]['emer_name']}";
+        $permissionSlipsHTML .= "<span>Emergency contact (parent or guardian)</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['emer_name']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field'>";
-        $permissionSlipsHTML .= "Primary telephone number";
-        $permissionSlipsHTML .= "{$registrants[$x]['emer_tele_one']}";
+        $permissionSlipsHTML .= "<span>Primary telephone number</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['emer_tele_one']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field'>";
         // TODO emer_tele_one_type
@@ -306,8 +306,8 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Work";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field'>";
-        $permissionSlipsHTML .= "Secondary telephone number";
-        $permissionSlipsHTML .= "{$registrants[$x]['emer_tele_two']}";
+        $permissionSlipsHTML .= "<span>Secondary telephone number</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['emer_tele_two']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right'>";
         // TODO emer_tele_two_type
@@ -321,41 +321,41 @@ function buildPermissionSlipsHTML($registrants) {
 
         $permissionSlipsHTML .= "<div class='print-grid'>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 2;'>";
-        $permissionSlipsHTML .= "Does the participant require a special diet?";
+        $permissionSlipsHTML .= "<span>Does the participant require a special diet?</span>";
         // TODO
         $permissionSlipsHTML .= "Yes";
         $permissionSlipsHTML .= "No";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "If yes, please explain the dietary restrictions";
-        $permissionSlipsHTML .= "{$registrants[$x]['diet_txt']}";
+        $permissionSlipsHTML .= "<span>If yes, please explain the dietary restrictions</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['diet_txt']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "Does the participant have any allergies?";
+        $permissionSlipsHTML .= "<span>Does the participant have any allergies?</span>";
         // TODO
         $permissionSlipsHTML .= "Yes ";
         $permissionSlipsHTML .= "No";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "If yes, please list the allergies";
-        $permissionSlipsHTML .= "{$registrants[$x]['allergies_txt']}";
+        $permissionSlipsHTML .= "<span>If yes, please list the allergies</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['allergies_txt']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "Is the participant taking any medication or over-the-counter (OTC) drugs?";
+        $permissionSlipsHTML .= "<span>Is the participant taking any medication or over-the-counter (OTC) drugs?</span>";
         // TODO
         $permissionSlipsHTML .= "Yes ";
         $permissionSlipsHTML .= "No";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "If yes, can the participant self-administer his or her medication?";
+        $permissionSlipsHTML .= "<span>If yes, can the participant self-administer his or her medication?</span>";
         // TODO
         $permissionSlipsHTML .= "Yes";
         $permissionSlipsHTML .= "No";
         $permissionSlipsHTML .= "If no, please contact the event or activity leader directly.";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "List all prescription or over-the-counter (OTC) medications the participant is taking";
-        $permissionSlipsHTML .= "{$registrants[$x]['medication_txt']}";
+        $permissionSlipsHTML .= "<span>List all prescription or over-the-counter (OTC) medications the participant is taking</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['medication_txt']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "</div>";
 
@@ -363,28 +363,28 @@ function buildPermissionSlipsHTML($registrants) {
 
         $permissionSlipsHTML .= "<div class='print-grid'>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "Does the participant have a chronic or recurring illness?";
+        $permissionSlipsHTML .= "<span>Does the participant have a chronic or recurring illness?</span>";
         // TODO
         $permissionSlipsHTML .= "Yes ";
         $permissionSlipsHTML .= "No";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "If yes, please explain";
-        $permissionSlipsHTML .= "{$registrants[$x]['chronic_txt']}";
+        $permissionSlipsHTML .= "<span>If yes, please explain</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['chronic_txt']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "Has the participant had surgery or a serious illness in the past year?";
+        $permissionSlipsHTML .= "<span>Has the participant had surgery or a serious illness in the past year?</span>";
         // TODO
         $permissionSlipsHTML .= "Yes ";
         $permissionSlipsHTML .= "No";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "If yes, please explain";
-        $permissionSlipsHTML .= "{$registrants[$x]['serious_txt']}";
+        $permissionSlipsHTML .= "<span>If yes, please explain</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['serious_txt']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "Identify any other limits, restrictions, or disabilities that could prevent the participant from fully participating in the event or activity (attach additional pages if needed)";
-        $permissionSlipsHTML .= "{$registrants[$x]['limitations_txt']}";
+        $permissionSlipsHTML .= "<span>Identify any other limits, restrictions, or disabilities that could prevent the participant from fully participating in the event or activity (attach additional pages if needed)</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['limitations_txt']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "</div>";
 
@@ -392,8 +392,8 @@ function buildPermissionSlipsHTML($registrants) {
 
         $permissionSlipsHTML .= "<div class='print-grid'>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
-        $permissionSlipsHTML .= "Identify any other needs or considerations the participant has that the event or activity planner should be aware of (attach additional pages if needed)";
-        $permissionSlipsHTML .= "{$registrants[$x]['considerations_txt']}";
+        $permissionSlipsHTML .= "<span>Identify any other needs or considerations the participant has that the event or activity planner should be aware of (attach additional pages if needed)</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['considerations_txt']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "</div>";
         
@@ -408,20 +408,20 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 5;'>";
-        $permissionSlipsHTML .= "Participant’s signature";
-        $permissionSlipsHTML .= "{$registrants[$x]['p_sig']}";
+        $permissionSlipsHTML .= "<span>Participant’s signature</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['p_sig']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right'>";
-        $permissionSlipsHTML .= "Date";
-        $permissionSlipsHTML .= "{$registrants[$x]['p_sig_date']}";
+        $permissionSlipsHTML .= "<span>Date</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['p_sig_date']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 5;'>";
-        $permissionSlipsHTML .= "Parent or guardian’s signature (if necessary)";
-        $permissionSlipsHTML .= "{$registrants[$x]['g_sig']}";
+        $permissionSlipsHTML .= "<span>Parent or guardian’s signature (if necessary)</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['g_sig']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 5;'>";
-        $permissionSlipsHTML .= "Date";
-        $permissionSlipsHTML .= "{$registrants[$x]['g_sig_date']}";
+        $permissionSlipsHTML .= "<span>Date</span>";
+        $permissionSlipsHTML .= "<span>{$registrants[$x]['g_sig_date']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field full' style='grid-column:span 6;'>";
         $permissionSlipsHTML .= "<p class='legal-sm' style='grid-column:span 6;'>© 2017, 2019 by Intellectual Reserve, Inc. All rights reserved. 5/19. PD60004035 000</p>";
