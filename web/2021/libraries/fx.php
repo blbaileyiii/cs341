@@ -461,14 +461,15 @@ function buildPermissionSlipsHTML($registrants) {
             $permissionSlipsHTML .= "<span>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>Yes</label>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>No</label>";
+            $permissionSlipsHTML .= "<span>If no, please contact the event or activity leader directly.</span>";
             $permissionSlipsHTML .= "</span>";         
         } elseif ($registrants[$x]['self_medicate'] == FALSE) {
             $permissionSlipsHTML .= "<span>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Yes</label>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>No</label>";
+            $permissionSlipsHTML .= "<span>If no, please contact the event or activity leader directly.</span>";
             $permissionSlipsHTML .= "</span>";
         }
-        $permissionSlipsHTML .= "If no, please contact the event or activity leader directly.";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field full' style='grid-column:span 6;'>";
         $permissionSlipsHTML .= "<span>List all prescription or over-the-counter (OTC) medications the participant is taking</span>";
