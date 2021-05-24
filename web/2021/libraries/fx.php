@@ -407,7 +407,17 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<div class='print-grid'>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "<span>Does the participant require a special diet?</span>";
-        // TODO
+        if($registrants[$x]['diet'] == TRUE) {
+            $permissionSlipsHTML .= "<span>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>Yes</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>No</label>";
+            $permissionSlipsHTML .= "</span>";         
+        } elseif ($registrants[$x]['diet'] == FALSE) {
+            $permissionSlipsHTML .= "<span>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Yes</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>No</label>";
+            $permissionSlipsHTML .= "</span>";
+        }
         $permissionSlipsHTML .= "Yes ";
         $permissionSlipsHTML .= "No";
         $permissionSlipsHTML .= "</div>";
