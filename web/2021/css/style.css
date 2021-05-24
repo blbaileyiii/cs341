@@ -767,15 +767,25 @@ tr.adult-registrant {
 .print-field-phone div {
     display:grid;
 }
-.print-field-phone input, .print-field-phone label, .print-field-phone label + span {
+
+.print-field input,
+.print-field label,
+.print-field label + span,
+.print-field-phone input,
+.print-field-phone label,
+.print-field-phone label + span {
     vertical-align:middle;
 }
 
+.print-field input + label,
 .print-field-phone input + label {
     margin-left: 0.25rem;
 }
 
-.print-field-phone label + input, .print-field-phone label + span {
+.print-field label + input,
+.print-field label + span,
+.print-field-phone label + input,
+.print-field-phone label + span {
     margin-left: 0.75rem;
 }
 
