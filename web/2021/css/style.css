@@ -745,6 +745,18 @@ tr.adult-registrant {
     padding: 0.15rem 0.25rem;
 }
 
+.print-field.left {
+    padding: 0.15rem 0.25rem 0.15rem 0;
+}
+
+.print-field.right {
+    padding: 0.15rem 0 0.15rem 0.25rem;
+}
+
+.print-field.full {
+    padding: 0.15rem 0;
+}
+
 @media print {
     .print-registrants {
         -webkit-print-color-adjust: exact;

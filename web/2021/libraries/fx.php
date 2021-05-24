@@ -210,27 +210,27 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<h2 style='grid-column:span 6;'>Event Details (to be filled out by event planner)</h2>";
 
         $permissionSlipsHTML .= "<div class='print-grid'>";
-        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 4;'>";
+        $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 4;'>";
         $permissionSlipsHTML .= "<span>Event</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['event_name']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
+        $permissionSlipsHTML .= "<div class='print-field right' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "<span>Date(s) of event</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['date_start']} - {$registrants[$x]['date_end']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 6;'>";
+        $permissionSlipsHTML .= "<div class='print-field full' style='grid-column:span 6;'>";
         $permissionSlipsHTML .= "<span>Describe event and activities (please be specific)</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['event_desc']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 3;'>";
+        $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>Ward</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['p_ward']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 3;'>";
+        $permissionSlipsHTML .= "<div class='print-field right' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>Stake</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['stake']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
+        $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "<span>Event or activity leader</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['l_name']}</span>";
         $permissionSlipsHTML .= "</div>";
@@ -238,7 +238,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<span>Event or activity leader's phone number</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['l_phone']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
+        $permissionSlipsHTML .= "<div class='print-field right' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "<span>Event or activity leader's email</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['l_email']}</span>";
         $permissionSlipsHTML .= "</div>";
@@ -247,7 +247,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<h2 style='grid-column:span 6;'>Participant Information</h2>";
 
         $permissionSlipsHTML .= "<div class='print-grid'>";
-        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 3;'>";
+        $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>Participant</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['p_name']}</span>";
         $permissionSlipsHTML .= "</div>";
@@ -255,11 +255,11 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<span>Date of birth</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['p_dob']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field'>";
+        $permissionSlipsHTML .= "<div class='print-field right'>";
         $permissionSlipsHTML .= "<span>Age</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['p_age']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
+        $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "<span>Primary telephone number</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['tele_one']}</span>";
         $permissionSlipsHTML .= "</div>";
@@ -273,13 +273,13 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Secondary telephone number";
         $permissionSlipsHTML .= "{$registrants[$x]['tele_two']}";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field';'>";
+        $permissionSlipsHTML .= "<div class='print-field right';'>";
         // TODO tele_two_type
         $permissionSlipsHTML .= "Home";
         $permissionSlipsHTML .= "Cell";
         $permissionSlipsHTML .= "Work";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 3;'>";
+        $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "Address";
         $permissionSlipsHTML .= "{$registrants[$x]['p_address']}";
         $permissionSlipsHTML .= "</div>";
@@ -287,11 +287,11 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "City";
         $permissionSlipsHTML .= "{$registrants[$x]['p_city']}";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field'>";
+        $permissionSlipsHTML .= "<div class='print-field right'>";
         $permissionSlipsHTML .= "State or province";
         $permissionSlipsHTML .= "{$registrants[$x]['p_state']}";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 2;'>";
+        $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 2;'>";
         $permissionSlipsHTML .= "Emergency contact (parent or guardian)";
         $permissionSlipsHTML .= "{$registrants[$x]['emer_name']}";
         $permissionSlipsHTML .= "</div>";
@@ -309,7 +309,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Secondary telephone number";
         $permissionSlipsHTML .= "{$registrants[$x]['emer_tele_two']}";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field'>";
+        $permissionSlipsHTML .= "<div class='print-field right'>";
         // TODO emer_tele_two_type
         $permissionSlipsHTML .= "Home";
         $permissionSlipsHTML .= "Cell";
