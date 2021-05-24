@@ -346,7 +346,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "Yes ";
         $permissionSlipsHTML .= "No";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
+        $permissionSlipsHTML .= "<div class='print-field right' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>If yes, can the participant self-administer his or her medication?</span>";
         // TODO
         $permissionSlipsHTML .= "Yes ";
