@@ -755,10 +755,6 @@ tr.adult-registrant {
     padding: 0.15rem 0.25rem;
 }
 
-.print-field input {
-    line-height: 0.9;
-}
-
 .print-field input + label {
     margin-left: 0.5rem;
 }
