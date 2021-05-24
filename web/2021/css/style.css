@@ -786,7 +786,7 @@ tr.adult-registrant {
 .print-field label + span,
 .print-field-phone label + input,
 .print-field-phone label + span {
-    margin-left: 0.75rem;
+    margin-left: 0.5rem;
 }
 
 .print-field, .print-field-phone {
