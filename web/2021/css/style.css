@@ -777,6 +777,10 @@ tr.adult-registrant {
     justify-content: space-between;
 }
 
+.print-field-phone div {
+    display:grid;
+}
+
 .print-field.left {
     padding: 0.15rem 0.25rem 0.15rem 0;
 }
