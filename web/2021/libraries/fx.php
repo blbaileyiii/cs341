@@ -293,9 +293,12 @@ function buildPermissionSlipsHTML($registrants) {
         }
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field' style='grid-column:span 3;'>";
+        $permissionSlipsHTML .= "<div class='print-field-phone' style='grid-column:span 3;'>";
+        $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "<span>Secondary telephone number</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['tele_two']}</span>";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div>";
         if($registrants[$x]['tele_two_type'] == "cell") {
             $permissionSlipsHTML .= "<span>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Home</label>";
@@ -322,6 +325,7 @@ function buildPermissionSlipsHTML($registrants) {
             $permissionSlipsHTML .= "</span>"; 
         }
         $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>Address</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['p_address']}</span>";
@@ -338,11 +342,12 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<span>Emergency contact (parent or guardian)</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['emer_name']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field'>";
+        $permissionSlipsHTML .= "<div class='print-field-phone' style='grid-column:span 2;'>";
+        $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "<span>Primary telephone number</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['emer_tele_one']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field'>";
+        $permissionSlipsHTML .= "<div>";
         if($registrants[$x]['emer_tele_one_type'] == "cell") {
             $permissionSlipsHTML .= "<span>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Home</label>";
@@ -369,11 +374,13 @@ function buildPermissionSlipsHTML($registrants) {
             $permissionSlipsHTML .= "</span>"; 
         }
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field'>";
+        $permissionSlipsHTML .= "</div>";
+        $permissionSlipsHTML .= "<div class='print-field-phone' style='grid-column:span 2;'>";
+        $permissionSlipsHTML .= "<div>";
         $permissionSlipsHTML .= "<span>Secondary telephone number</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['emer_tele_two']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field right'>";
+        $permissionSlipsHTML .= "<div>";
         if($registrants[$x]['emer_tele_two_type'] == "cell") {
             $permissionSlipsHTML .= "<span>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Home</label>";
@@ -399,6 +406,7 @@ function buildPermissionSlipsHTML($registrants) {
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>Work</label>";
             $permissionSlipsHTML .= "</span>"; 
         }
+        $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "</div>";
 
