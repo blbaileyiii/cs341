@@ -760,7 +760,7 @@ tr.adult-registrant {
 }
 
 .print-field input + label {
-    margin-left: 0.5rem;
+    margin-left: 0.25rem;
 }
 
 .print-field label + input {
