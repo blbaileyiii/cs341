@@ -128,6 +128,10 @@ p.legal-sm {
     font-size: x-small;
 }
 
+.print-registrants p.legal-sm {
+    font-size: 5pt;
+}
+
 .attributions figcaption {
     font-size: 0.75rem;
 }
