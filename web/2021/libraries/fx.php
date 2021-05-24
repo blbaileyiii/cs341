@@ -419,7 +419,7 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<span>Parent or guardian’s signature (if necessary)</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['g_sig']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 5;'>";
+        $permissionSlipsHTML .= "<div class='print-field right'>";
         $permissionSlipsHTML .= "<span>Date</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['g_sig_date']}</span>";
         $permissionSlipsHTML .= "</div>";
