@@ -260,11 +260,9 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<span>Age</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['p_age']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 2;'>";
+        $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 3;'>";
         $permissionSlipsHTML .= "<span>Primary telephone number</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['tele_one']}</span>";
-        $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field'>";
         if($registrants[$x]['tele_one_type'] == "cell") {
             $permissionSlipsHTML .= "<span>";
             $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Home</label>";
