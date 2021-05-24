@@ -268,30 +268,27 @@ function buildPermissionSlipsHTML($registrants) {
         // TODO tele_one_type
         if($registrants[$x]['tele_one_type'] == "cell") {
             $permissionSlipsHTML .= "<span>";
-            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled> Home";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Home</label>";
             $permissionSlipsHTML .= "</span>";
             $permissionSlipsHTML .= "<span>";
-            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked> Cell";
-            $permissionSlipsHTML .= " ";
-            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled> Work";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>Cell</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Work</label>";
             $permissionSlipsHTML .= "</span>";         
         } elseif ($registrants[$x]['tele_one_type'] == "home") {
             $permissionSlipsHTML .= "<span>";
-            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked> Home";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>Home</label>";
             $permissionSlipsHTML .= "</span>";
             $permissionSlipsHTML .= "<span>";
-            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled> Cell";
-            $permissionSlipsHTML .= " ";
-            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled> Work";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Cell</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Work</label>";
             $permissionSlipsHTML .= "</span>";
         } elseif ($registrants[$x]['tele_one_type'] == "work") {
             $permissionSlipsHTML .= "<span>";
-            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled> Home";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Home</label>";
             $permissionSlipsHTML .= "</span>";
             $permissionSlipsHTML .= "<span>";
-            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled> Cell";
-            $permissionSlipsHTML .= " ";
-            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked> Work";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled><label>Cell</label>";
+            $permissionSlipsHTML .= "<input type='checkbox' readonly disabled checked><label>Work</label>";
             $permissionSlipsHTML .= "</span>"; 
         }
         $permissionSlipsHTML .= "</div>";
