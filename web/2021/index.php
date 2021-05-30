@@ -32,6 +32,7 @@ switch($action){
         $events = getEventsJSON(2021);
         $aboutHTML = buildAboutHTML($events);
         $contactsHTML = buildContactsHTML($events);
+        var_dump($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/home.php';
 }
 ?>
