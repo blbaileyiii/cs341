@@ -950,6 +950,11 @@ tr.adult-registrant {
     .about-content{
         display:grid;
         grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .about-content h2 {
+        margin: 0 0 1rem;
     }
 }
 
