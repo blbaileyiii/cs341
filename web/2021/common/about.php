@@ -7,8 +7,9 @@
         <div class="details">
             <table>
             <tr>
-            <th>WHERE</th>
-            <th>WHEN</th>
+                <th>CAMP</th>
+                <th>WHERE</th>
+                <th>WHEN</th>
             </tr>
             <?php echo $aboutHTML; ?>
             </table>
