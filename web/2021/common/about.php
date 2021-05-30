@@ -13,12 +13,6 @@
             </tr>
             <?php echo $aboutHTML; ?>
             </table>
-            <span>YM: Camp Eaton</span>
-            <span>July 27-31 (Tue-Sat)</span>
-            <span>YW: Camp Wrightwood</span>
-            <span>July 27-31 (Tue-Sat)</span>
-            <span>TREK: Riley's Farm</span>
-            <span>October 22-23 (Fri-Sat)</span>
         </div>
         <div>
             <h2>Purpose of Camp</h2>
