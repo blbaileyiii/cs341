@@ -126,11 +126,9 @@ function buildAboutHTML($events) {
 
         $name = strtoupper($events[$x]['key']);
 
-        $aboutHTML .= "<tr>";
-        $aboutHTML .= "<td>$name</td>";
-        $aboutHTML .= "<td>{$events[$x]['camp_name']}</td>";
-        $aboutHTML .= "<td>$startmonth $startmthday - $endmonth $endmthday ($startday-$endday)</td>";
-        $aboutHTML .= "</tr>";
+        $aboutHTML .= "<span>$name</span>";
+        $aboutHTML .= "<span>{$events[$x]['camp_name']}</span>";
+        $aboutHTML .= "<span>$startmonth $startmthday - $endmonth $endmthday ($startday-$endday)</span>";
     }
     return $aboutHTML;
 }
