@@ -719,7 +719,7 @@ label.owner {
 
 tr.adult-registrant {
     background: var(--nav-bg) !important;
-    color: var(--on-nav-bg);
+    color: var(--on-nav-bg) !important;
 }
 
 .print-registrants {
