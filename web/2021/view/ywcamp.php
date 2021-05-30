@@ -18,9 +18,11 @@
         <div class="about"></div>
         <div class="schedule"></div>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/pillars.php'; ?>
+        <div class="gallery"></div>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/faq.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/scripture.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/contact.php'; ?>
+        <div class="guidelines"></div>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
