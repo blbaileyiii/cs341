@@ -124,8 +124,10 @@ function buildAboutHTML($events) {
         $endmthday = $enddate->format('d');
         $endday = $enddate->format('D');
 
+        $name = strtoupper($events[$x]['name']);
+
         $aboutHTML .= "<tr>";
-        $aboutHTML .= "<td>{$events[$x]['name']}</td>";
+        $aboutHTML .= "<td>$name</td>";
         $aboutHTML .= "<td>{$events[$x]['camp_name']}</td>";
         $aboutHTML .= "<td>$startmonth $startmthday - $endmonth $endmthday ($startday-$endday)</td>";
         $aboutHTML .= "</tr>";
