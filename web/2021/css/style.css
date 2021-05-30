@@ -805,6 +805,12 @@ tr.adult-registrant {
     padding: 0.15rem 0;
 }
 
+.details {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1rem;
+}
+
 @media print {
     .print-registrants {
         -webkit-print-color-adjust: exact;
@@ -959,7 +965,8 @@ tr.adult-registrant {
 
     .about-content ul {
         margin: 0;
-        padding: 0;    }
+        padding: 0 1rem;    
+    }
 }
 
 

@@ -5,12 +5,9 @@
             <p>"And Jesus increased in wisdom and stature, and in favour with God and man." (<a href="https://www.churchofjesuschrist.org/study/scriptures/nt/luke/2.52?lang=eng&clang=eng#p52" title="Luke 2:52" target="_blank" rel="noreferrer">Luke 2:52</a>) </p>
         </div>
         <div class="details">
-            <table>
-            <tr>
-                <th>CAMP</th>
-                <th>WHERE</th>
-                <th>WHEN</th>
-            </tr>
+                <span>CAMP</span>
+                <span>WHERE</span>
+                <span>WHEN</span>
             <?php echo $aboutHTML; ?>
             </table>
         </div>
