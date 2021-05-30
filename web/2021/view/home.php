@@ -22,7 +22,7 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/faq.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/scripture.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/contact.php'; ?>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/guidelines.php'; ?>
+        <?php // require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/guidelines.php'; ?>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
