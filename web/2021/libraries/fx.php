@@ -124,7 +124,7 @@ function buildAboutHTML($events) {
         $endmthday = $enddate->format('d');
         $endday = $enddate->format('D');
 
-        $name = strtoupper($events[$x]['name']);
+        $name = strtoupper($events[$x]['key']);
 
         $aboutHTML .= "<tr>";
         $aboutHTML .= "<td>$name</td>";
