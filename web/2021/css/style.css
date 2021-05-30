@@ -256,7 +256,10 @@ header a:hover {
 
 .all-schedules a,
 .all-schedules a:visited,
-.all-schedules a:active{
+.all-schedules a:active,
+.about a,
+.about a:visited,
+.about a:active{
     color: var(--on-nav-bg);
 }
 
