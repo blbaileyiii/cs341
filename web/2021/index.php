@@ -30,10 +30,12 @@ switch($action){
         break;
     default:
         $events = getEventsJSON(2021);
-        $events = json_decode($events, true);
-        $aboutHTML = buildAboutHTML($events);
-        $contactsHTML = buildContactsHTML($events);
-        var_dump($events);
+        if($events){
+            $events = json_decode($events, true);
+            $aboutHTML = buildAboutHTML($events);
+            $contactsHTML = buildContactsHTML($events);
+        }        
+        // var_dump($events);
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/home.php';
 }
 ?>

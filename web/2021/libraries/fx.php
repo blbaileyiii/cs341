@@ -114,19 +114,20 @@ function buildAboutHTML($events) {
 
     for ($x = 0; $x < count($events); $x++) {
 
-        // $startdate = new DateTime($events[$x]['date_start']);
-        // $startmonth = $startdate->format('F');
-        // $startmthday = $startdate->format('d');
-        // $startday = $startdate->format('D');
+        $startdate = new DateTime($events[$x]['date_start']);
+        $startmonth = $startdate->format('F');
+        $startmthday = $startdate->format('d');
+        $startday = $startdate->format('D');
 
-        // $enddate = new DateTime($events[$x]['date_end']);
-        // $endmonth = $enddate->format('F');
-        // $endmthday = $enddate->format('d');
-        // $endday = $enddate->format('D');
+        $enddate = new DateTime($events[$x]['date_end']);
+        $endmonth = $enddate->format('F');
+        $endmthday = $enddate->format('d');
+        $endday = $enddate->format('D');
 
         $aboutHTML .= "<tr>";
-        $aboutHTML .= "<td>{$events[$x]['name']}: {$events[$x]['camp_name']}</td>";
-        // $aboutHTML .= "<td>$startmonth $startmthday - $endmonth $endmthday ($startday-$endday)</td>";
+        $aboutHTML .= "<td>{$events[$x]['name']}</td>";
+        $aboutHTML .= "<td>{$events[$x]['camp_name']}</td>";
+        $aboutHTML .= "<td>$startmonth $startmthday - $endmonth $endmthday ($startday-$endday)</td>";
         $aboutHTML .= "</tr>";
     }
     return $aboutHTML;
