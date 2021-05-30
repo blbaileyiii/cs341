@@ -114,12 +114,12 @@ function buildAboutHTML($events) {
 
     for ($x = 0; $x < count($events); $x++) {
 
-        $startdate = new DateTime($events[$x]['date_start']);
+        // $startdate = new DateTime($events[$x]['date_start']);
         // $startmonth = $startdate->format('F');
         // $startmthday = $startdate->format('d');
         // $startday = $startdate->format('D');
 
-        $enddate = new DateTime($events[$x]['date_end']);
+        // $enddate = new DateTime($events[$x]['date_end']);
         // $endmonth = $enddate->format('F');
         // $endmthday = $enddate->format('d');
         // $endday = $enddate->format('D');
