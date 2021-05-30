@@ -35,7 +35,7 @@
                     <p>On Church-sponsored overnight activities, leaders arrange sleeping accommodations so that male and female participants do not sleep in immediate proximity to each other. Male and female leaders must have separate sleeping facilities. Married couples may share the same quarters if appropriate facilities are available.</p>
                     <p>On Church-sponsored overnight activities, a child or youth may not stay in the same tent or room as an adult unless (1) the adult is his or her parent or guardian or (2) there are at least two adults in the tent or room who are the same gender as the children or youth.</p>
                     <p>If adult leaders and children or youth share other overnight facilities, such as a cabin, there must be at least two adults in the facility, and they must be the same gender as the child or youth.</p>
-                    <p>See <a href='https://abn.churchofjesuschrist.org/study/manual/general-handbook/20-activities?lang=eng#title_number2' title='Overnight Activities, General Handbook: Serving in The Church of Jesus Christ of Latter-day Saints'>Overnight Activities, General Handbook: Serving in The Church of Jesus Christ of Latter-day Saints (20.6.12 ¶:3-5)</a></p>
+                    <p>See <a href='https://abn.churchofjesuschrist.org/study/manual/general-handbook/20-activities?lang=eng#title_number2' title='Overnight Activities, General Handbook: Serving in The Church of Jesus Christ of Latter-day Saints' target="_blank" rel="noreferrer">Overnight Activities, General Handbook: Serving in The Church of Jesus Christ of Latter-day Saints (20.6.12 ¶:3-5)</a></p>
                     <p>For additional information please discuss the topic with your Bishop or the camp director of your specific event.</p>
                 </div>
             </li>
@@ -49,7 +49,7 @@
                     <p>Never lower your standards of dress. Do not use camp as an excuse to be immodest.</p>
                     <p>Immodest clothing is any clothing that is tight, sheer, or revealing in any other manner. Young women should avoid short shorts and short skirts, shirts that do not cover the stomach, and clothing that does not cover the shoulders or is low-cut in the front or the back. Young men should also maintain modesty in their appearance. Young men and young women should be neat and clean and avoid being extreme or inappropriately casual in clothing, hairstyle, and behavior. They should choose appropriately modest apparel when participating in sports.</p>
                     <p>If you are not sure what is appropriate to wear, study the words of the prophets, pray for guidance, and ask your parents or leaders for help.</p>
-                    <p>See <a href='https://abn.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/dress-and-appearance?lang=eng' title='Dress and Apprearance, Standards for Youth'>Dress and Apprearance, Standards for Youth</a></p>
+                    <p>See <a href='https://abn.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/dress-and-appearance?lang=eng' title='Dress and Apprearance, Standards for Youth' target="_blank" rel="noreferrer">Dress and Apprearance, Standards for Youth</a></p>
                 </div>
             </li>
             <li>
