@@ -15,12 +15,12 @@
     </header>
     <main>    
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/countdown.php'; ?>
+        <div class="about"></div>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/schedule-ym.php'; ?>
-        <div class="pillars"></div>
-        <div class="gallery"></div>
-        <div class="FAQ"></div>
-        <div class="contact"></div>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/pillars.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/faq.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/scripture.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/contact.php'; ?>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>

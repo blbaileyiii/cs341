@@ -18,7 +18,7 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/about.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/schedule-all.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/pillars.php'; ?>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/gallery.php'; ?>
+        <?php // require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/gallery.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/faq.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/scripture.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/contact.php'; ?>
