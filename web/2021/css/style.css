@@ -718,7 +718,7 @@ label.owner {
 }
 
 tr.adult-registrant {
-    background: var(--nav-bg);
+    background: var(--nav-bg) !important;
     color: var(--on-nav-bg);
 }
 
