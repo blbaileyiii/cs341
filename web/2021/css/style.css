@@ -956,6 +956,10 @@ tr.adult-registrant {
     .about-content h2 {
         margin: 0 0 1rem;
     }
+
+    .about-content ul {
+        margin: 0;
+        padding: 0;    }
 }
 
 
