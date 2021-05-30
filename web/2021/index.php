@@ -30,6 +30,7 @@ switch($action){
         break;
     default:
         $events = getEventsJSON(2021);
+        $events = json_decode($events, true);
         $aboutHTML = buildAboutHTML($events);
         $contactsHTML = buildContactsHTML($events);
         var_dump($events);
