@@ -5,8 +5,13 @@
             <p>"And Jesus increased in wisdom and stature, and in favour with God and man." (<a href="https://www.churchofjesuschrist.org/study/scriptures/nt/luke/2.52?lang=eng&clang=eng#p52" title="Luke 2:52" target="_blank" rel="noreferrer">Luke 2:52</a>) </p>
         </div>
         <div class="details">
-            <span>WHERE</span>
-            <span>WHEN</span>
+            <table>
+            <tr>
+            <th>WHERE</th>
+            <th>WHEN</th>
+            </tr>
+            <?php echo $aboutHTML; ?>
+            </table>
             <span>YM: Camp Eaton</span>
             <span>July 27-31 (Tue-Sat)</span>
             <span>YW: Camp Wrightwood</span>

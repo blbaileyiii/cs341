@@ -111,6 +111,24 @@ function buildEventsHTML($events, $year) {
 
 function buildAboutHTML($events) {
     $aboutHTML = "";
+
+    for ($x = 0; $x < count($events); $x++) {
+
+        $startdate = new DateTime($events[$x]['date_start']);
+        $startmonth = $startdate->format('Y-m-d H:i:s');
+        $startmthday = $startdate->format('Y-m-d H:i:s');
+        $startday = $startdate->format('D');
+
+        $enddate = new DateTime($events[$x]['date_end']);
+        $endmonth = $enddate->format('Y-m-d H:i:s');
+        $endmthday = $enddate->format('Y-m-d H:i:s');
+        $endday = $enddate->format('D');
+
+        $aboutHTML .= "<tr>";
+        $aboutHTML .= "<td>{$events[$x]['name']}: {$events[$x]['camp_name']}</td>";
+        $aboutHTML .= "<td>$startmonth $startmthday - $endmonth $endmthday ($startday-$endday)</td>";
+        $aboutHTML .= "</tr>";
+    }
     return $aboutHTML;
 }
 
