@@ -717,6 +717,11 @@ label.owner {
     margin-top: 3rem;
 }
 
+tr.atede-registrant {
+    background: var(--html-bg) !important;
+    color: var(--on-nav-bg) !important;
+}
+
 tr.adult-registrant {
     background: var(--nav-bg) !important;
     color: var(--on-nav-bg) !important;
