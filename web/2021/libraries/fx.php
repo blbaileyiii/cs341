@@ -170,7 +170,9 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "</tr>";
         }
 
-        if ($registrants[$x]['p_age'] >= 19){
+        if ($registrants[$x]['inactivated'] == true) {
+            $registrantsHTML .= "<tr class='inactivated-registrant'>";
+        } elseif ($registrants[$x]['p_age'] >= 19) {
             $registrantsHTML .= "<tr class='adult-registrant'>";
         } else {
             $registrantsHTML .= "<tr>";
