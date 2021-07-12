@@ -718,8 +718,7 @@ label.owner {
 }
 
 tr.inactivated-registrant {
-    background: var(--html-bg) !important;
-    color: var(--on-nav-bg) !important;
+    text-decoration: line-through;
 }
 
 tr.adult-registrant {
