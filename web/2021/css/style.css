@@ -717,7 +717,7 @@ label.owner {
     margin-top: 3rem;
 }
 
-tr.atede-registrant {
+tr.inactivated-registrant {
     background: var(--html-bg) !important;
     color: var(--on-nav-bg) !important;
 }
