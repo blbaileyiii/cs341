@@ -204,7 +204,7 @@ function buildEventRegistrantsCount($registrants, $event){
     $adultRegistrantCount = 0;
 
     for ($x = 0; $x < count($registrants); $x++) {
-        if($registrants[$x]['name'] == $event){
+        if($registrants[$x]['name'] == $event && $registrants[$x]['inactivated'] == false){
             $totalRegistrantCount++;
             if ($registrants[$x]['p_age'] >= 19){
                 $adultRegistrantCount++;
