@@ -188,6 +188,8 @@ export default class Equipment {
             this.displayItemList(equipmentList2);
         }
     }
+
+    
     
     displayItemList(equipmentList) {
         // console.log(equipmentList);
@@ -205,7 +207,7 @@ export default class Equipment {
             h2.innerHTML = key;
             pDiv.appendChild(h2);
             
-            equipmentList[key].forEach (camp => {
+            Object.keys(equipmentList[key]).forEach(camp => {
                 let h3 = document.createElement('h3');
                 let ul = document.createElement('ul');
 
@@ -232,9 +234,7 @@ export default class Equipment {
                 }
 
             })
-            
 
-            
         });
 
         if(xh3 && xul){
