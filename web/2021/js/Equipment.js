@@ -106,7 +106,7 @@ export default class Equipment {
             }
         });
         // this.list = equipmentList;
-        console.log(this.equipmentList);
+        console.log(equipmentList);
         this.displayEquipment(participant, equipmentList);
     }
 
