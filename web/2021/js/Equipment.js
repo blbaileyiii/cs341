@@ -174,10 +174,10 @@ export default class Equipment {
         });
         console.log(equipmentList2);
 
-        this.displayEquipment(participant, equipmentList);
+        this.displayEquipment(participant, equipmentList, equipmentList2);
     }
 
-    displayEquipment(participant, equipmentList) {
+    displayEquipment(participant, equipmentList, equipmentList2) {
         let id;
         if(participant){
             id = participant.id;
@@ -185,7 +185,7 @@ export default class Equipment {
         if (id) {
             this.displayItemCheckList(participant, equipmentList);            
         } else {
-            this.displayItemList(equipmentList);
+            this.displayItemList(equipmentList2);
         }
     }
     
@@ -196,39 +196,49 @@ export default class Equipment {
 
         let pDiv = document.createElement('div');
 
-        let xh2;
+        let xh3;
         let xul;
 
-        Object.keys(equipmentList).forEach(key => {         
+        Object.keys(equipmentList).forEach(key => {    
             let h2 = document.createElement('h2');
-            let ul = document.createElement('ul');
 
             h2.innerHTML = key;
-            ul.classList.add(key.replace(/ /g,"-"));            
+            pDiv.appendChild(h2);
+            
+            equipmentList[key].forEach (camp => {
+                let h3 = document.createElement('h3');
+                let ul = document.createElement('ul');
 
-            equipmentList[key].forEach(item => {
-                let li = document.createElement('li');
+                h3.innerHTML = key;
+                ul.classList.add(key.replace(/ /g,"-"));            
 
-                li.innerHTML = item.name;
+                camp.forEach(item => {
+                    let li = document.createElement('li');
 
-                ul.appendChild(li);
-            });
+                    li.innerHTML = item.name;
+
+                    ul.appendChild(li);
+                });
+
+                pDiv.appendChild(h3);
+                pDiv.appendChild(ul);
+
+                if (key != "DO NOT BRING") { 
+                    pDiv.appendChild(h3);
+                    pDiv.appendChild(ul);
+                } else {
+                    xh3 = h3;
+                    xul = ul;
+                }
+
+            })
+            
 
             
-            pDiv.appendChild(h2);
-            pDiv.appendChild(ul);
-
-            if (key != "DO NOT BRING") { 
-                pDiv.appendChild(h2);
-                pDiv.appendChild(ul);
-            } else {
-                xh2 = h2;
-                xul = ul;
-            }
         });
 
-        if(xh2 && xul){
-            pDiv.appendChild(xh2);
+        if(xh3 && xul){
+            pDiv.appendChild(xh3);
             pDiv.appendChild(xul);
         }
 
