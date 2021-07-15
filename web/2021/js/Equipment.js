@@ -194,11 +194,8 @@ export default class Equipment {
         let equipDiv = document.getElementById('equipment-lists');
         equipDiv.classList.add('equipment-lists-standard');
 
-        let pDiv = document.createElement('div');
-
-        
-
-        Object.keys(equipmentList).forEach(camp => {    
+        Object.keys(equipmentList).forEach(camp => {
+            let pDiv = document.createElement('div');  
             let h2 = document.createElement('h2');
 
             let xh3;
@@ -243,12 +240,10 @@ export default class Equipment {
             if(xh3 && xul){
                 pDiv.appendChild(xh3);
                 pDiv.appendChild(xul);
-            }           
+            }
 
+            equipDiv.appendChild(pDiv);
         });
-
-        equipDiv.appendChild(pDiv);
-
     }
 
     displayItemCheckList(participant, equipmentList) {
