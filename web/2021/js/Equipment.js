@@ -199,20 +199,20 @@ export default class Equipment {
         let xh3;
         let xul;
 
-        Object.keys(equipmentList).forEach(key => {    
+        Object.keys(equipmentList).forEach(camp => {    
             let h2 = document.createElement('h2');
 
-            h2.innerHTML = key;
+            h2.innerHTML = camp;
             pDiv.appendChild(h2);
             
-            Object.keys(equipmentList[key]).forEach(camp => {
+            Object.keys(equipmentList[camp]).forEach(cat => {
                 let h3 = document.createElement('h3');
                 let ul = document.createElement('ul');
 
-                h3.innerHTML = key;
-                ul.classList.add(key.replace(/ /g,"-"));
+                h3.innerHTML = cat;
+                ul.classList.add(cat.replace(/ /g,"-"));
                 
-                Object.keys(equipmentList[key][camp]).forEach(item => {
+                Object.keys(equipmentList[camp][cat]).forEach(item => {
                     let li = document.createElement('li');
 
                     li.innerHTML = item.name;
