@@ -19,7 +19,6 @@
                 <div class="section-center">
                     <img class="responsive" src="/2021/images/equipment-w1280x400.webp" alt="camping gear">
                     <h1>Equipment List</h1>
-                    <p>Duffle bags or small suitcases are preferred for packing.</p>
                     <p>(Please label all of your belongings with your name and ward name)</p>
                     <div id="equipment-lists"><h2>LOADING EQUIPMENT LIST...</h2></div>
                     <div>

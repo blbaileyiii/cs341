@@ -85,6 +85,7 @@ export default class Equipment {
     
     convertEquipmentList(dbEquipment, participant) {
         let equipmentList = {};
+        console.log(dbEquipment);
         dbEquipment.forEach(item => {
             if(!equipmentList.hasOwnProperty(item.category)){
                 equipmentList[item.category] = [{'owned': item.owned,
