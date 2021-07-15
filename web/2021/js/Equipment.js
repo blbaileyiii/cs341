@@ -223,7 +223,7 @@ export default class Equipment {
                 pDiv.appendChild(h3);
                 pDiv.appendChild(ul);
 
-                if (key != "DO NOT BRING") { 
+                if (cat != "DO NOT BRING") { 
                     pDiv.appendChild(h3);
                     pDiv.appendChild(ul);
                 } else {
