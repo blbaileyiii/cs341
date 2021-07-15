@@ -243,11 +243,12 @@ export default class Equipment {
         });
 
         equipDiv.appendChild(pDiv);
-        
+
     }
 
     displayItemCheckList(participant, equipmentList) {
         let id;
+        console.log(participant);
         if(participant){
             id = participant.id;
         }
