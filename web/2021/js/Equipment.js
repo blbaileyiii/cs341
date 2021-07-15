@@ -217,7 +217,12 @@ export default class Equipment {
                 equipmentList[camp][cat].forEach(item => {
                     let li = document.createElement('li');
 
-                    li.innerHTML = item.name;
+                    // li.innerHTML = item.name;
+                    if (item.quantity != '1'){
+                        li.innerHTML = item.quantity + " " + item.name;
+                    } else {
+                        li.innerHTML = item.name;
+                    }
 
                     ul.appendChild(li);
                 });
