@@ -203,6 +203,8 @@ export default class Equipment {
 
             h2.innerHTML = camp.toUpperCase();
             pDiv.appendChild(h2);
+
+            pDiv.classList.add('event');
             
             Object.keys(equipmentList[camp]).forEach(cat => {
                 let h3 = document.createElement('h3');
