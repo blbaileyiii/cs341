@@ -212,7 +212,7 @@ export default class Equipment {
                 h3.innerHTML = cat;
                 ul.classList.add(cat.replace(/ /g,"-"));
                 
-                Object.keys(equipmentList[camp][cat]).forEach(item => {
+                equipmentList[camp][cat].forEach(item => {
                     let li = document.createElement('li');
 
                     li.innerHTML = item.name;
