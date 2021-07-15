@@ -188,8 +188,6 @@ export default class Equipment {
             this.displayItemList(equipmentList2);
         }
     }
-
-    
     
     displayItemList(equipmentList) {
         // console.log(equipmentList);
@@ -207,14 +205,14 @@ export default class Equipment {
             h2.innerHTML = key;
             pDiv.appendChild(h2);
             
-            Object.keys(equipmentList[key]).forEach(camp => {
+            equipmentList[key].forEach(camp => {
                 let h3 = document.createElement('h3');
                 let ul = document.createElement('ul');
 
                 h3.innerHTML = key;
                 ul.classList.add(key.replace(/ /g,"-"));            
 
-                camp.forEach(item => {
+                equipmentList[key][camp].forEach(item => {
                     let li = document.createElement('li');
 
                     li.innerHTML = item.name;
