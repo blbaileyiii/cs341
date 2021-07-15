@@ -355,10 +355,9 @@ export default class Equipment {
         });
 
         if(dnb){
-            dnb.remove()
+            dnb.remove();
+            pDiv.appendChild(dnb);
         }
-        pDiv.appendChild(dnb);
-
     }
  
     updateItem(reg_id, item_id, owned, category, pur_price = 0.00) {
