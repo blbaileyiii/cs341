@@ -248,6 +248,7 @@ export default class Equipment {
 
     displayItemCheckList(participant, equipmentList) {
         let id;
+        let camp;
         if(participant){
             id = participant.id;
             camp = participant.event_name.toLowerCase().split(' ')[0];
