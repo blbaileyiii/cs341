@@ -354,7 +354,9 @@ export default class Equipment {
             }
         });
 
-        dnb.remove()
+        if(dnb){
+            dnb.remove()
+        }
         pDiv.appendChild(dnb);
 
     }
