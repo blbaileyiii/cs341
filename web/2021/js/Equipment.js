@@ -112,22 +112,64 @@ export default class Equipment {
         // console.log(dbEquipment);
         dbEquipment.forEach(item => {
 
-            if(!equipmentList2.hasOwnProperty(item.category)){
-                equipmentList2[item.category] = [{'owned': item.owned,
-                                                'id': item.id,
-                                                'quantity': item.quantity,
-                                                'name': item.name,                                                  
-                                                'avg_price': item.avg_price, 
-                                                'pur_price': item.pur_price,
-                                                'category': item.category.replace(/ /g,"-").toLowerCase()}];
-            } else {
-                equipmentList2[item.category].push({ 'owned': item.owned,
+            if(item.ymcamp){
+                if(!equipmentList2.ymcamp.hasOwnProperty(item.category)){
+                    equipmentList2.ymcamp[item.category] = [{'owned': item.owned,
                                                     'id': item.id,
                                                     'quantity': item.quantity,
                                                     'name': item.name,                                                  
                                                     'avg_price': item.avg_price, 
                                                     'pur_price': item.pur_price,
-                                                    'category': item.category.replace(/ /g,"-").toLowerCase()});
+                                                    'category': item.category.replace(/ /g,"-").toLowerCase()}];
+                } else {
+                    equipmentList2.ymcamp[item.category].push({ 'owned': item.owned,
+                                                        'id': item.id,
+                                                        'quantity': item.quantity,
+                                                        'name': item.name,                                                  
+                                                        'avg_price': item.avg_price, 
+                                                        'pur_price': item.pur_price,
+                                                        'category': item.category.replace(/ /g,"-").toLowerCase()});
+                }
+            }
+
+            if(item.ywcamp){
+                if(!equipmentList2.ywcamp.hasOwnProperty(item.category)){
+                    equipmentList2.ywcamp[item.category] = [{'owned': item.owned,
+                                                    'id': item.id,
+                                                    'quantity': item.quantity,
+                                                    'name': item.name,                                                  
+                                                    'avg_price': item.avg_price, 
+                                                    'pur_price': item.pur_price,
+                                                    'category': item.category.replace(/ /g,"-").toLowerCase()}];
+                } else {
+                    equipmentList2.ywcamp[item.category].push({ 'owned': item.owned,
+                                                        'id': item.id,
+                                                        'quantity': item.quantity,
+                                                        'name': item.name,                                                  
+                                                        'avg_price': item.avg_price, 
+                                                        'pur_price': item.pur_price,
+                                                        'category': item.category.replace(/ /g,"-").toLowerCase()});
+                }
+            }
+
+            if(item.trek){
+                if(!equipmentList2.trek.hasOwnProperty(item.category)){
+                    equipmentList2.trek[item.category] = [{'owned': item.owned,
+                                                    'id': item.id,
+                                                    'quantity': item.quantity,
+                                                    'name': item.name,                                                  
+                                                    'avg_price': item.avg_price, 
+                                                    'pur_price': item.pur_price,
+                                                    'category': item.category.replace(/ /g,"-").toLowerCase()}];
+                } else {
+                    equipmentList2.trek[item.category].push({ 'owned': item.owned,
+                                                        'id': item.id,
+                                                        'quantity': item.quantity,
+                                                        'name': item.name,                                                  
+                                                        'avg_price': item.avg_price, 
+                                                        'pur_price': item.pur_price,
+                                                        'category': item.category.replace(/ /g,"-").toLowerCase()});
+                }
             }
         });
         console.log(equipmentList2);
