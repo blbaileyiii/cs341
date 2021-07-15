@@ -236,11 +236,11 @@ export default class Equipment {
             if(xh3 && xul){
                 pDiv.appendChild(xh3);
                 pDiv.appendChild(xul);
-            }
-
-            equipDiv.appendChild(pDiv);
+            }           
 
         });
+
+        equipDiv.appendChild(pDiv);
         
     }
 
