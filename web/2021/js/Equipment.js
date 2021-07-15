@@ -108,7 +108,7 @@ export default class Equipment {
         // this.list = equipmentList;
         // console.log(equipmentList);
 
-        let equipmentList2 = {YMCAMP: {}, YWCAMP: {}, TREK: {}};
+        let equipmentList2 = {ymcamp: {}, ywcamp: {}, trek: {}};
         // console.log(dbEquipment);
         dbEquipment.forEach(item => {
 
@@ -202,7 +202,7 @@ export default class Equipment {
         Object.keys(equipmentList).forEach(camp => {    
             let h2 = document.createElement('h2');
 
-            h2.innerHTML = camp;
+            h2.innerHTML = camp.toUpperCase();
             pDiv.appendChild(h2);
             
             Object.keys(equipmentList[camp]).forEach(cat => {
