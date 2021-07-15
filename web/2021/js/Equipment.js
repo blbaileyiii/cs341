@@ -108,9 +108,10 @@ export default class Equipment {
         // this.list = equipmentList;
         // console.log(equipmentList);
 
-        let equipmentList2 = {};
+        let equipmentList2 = {ymcamp: [], ywcamp: [], trek: []};
         // console.log(dbEquipment);
         dbEquipment.forEach(item => {
+
             if(!equipmentList2.hasOwnProperty(item.category)){
                 equipmentList2[item.category] = [{'owned': item.owned,
                                                 'id': item.id,
