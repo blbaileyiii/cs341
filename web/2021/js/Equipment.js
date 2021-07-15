@@ -205,14 +205,14 @@ export default class Equipment {
             h2.innerHTML = key;
             pDiv.appendChild(h2);
             
-            equipmentList[key].forEach(camp => {
+            Object.keys(equipmentList[key]).forEach(camp => {
                 let h3 = document.createElement('h3');
                 let ul = document.createElement('ul');
 
                 h3.innerHTML = key;
-                ul.classList.add(key.replace(/ /g,"-"));            
-
-                equipmentList[key][camp].forEach(item => {
+                ul.classList.add(key.replace(/ /g,"-"));
+                
+                Object.keys(equipmentList[key][camp]).forEach(item => {
                     let li = document.createElement('li');
 
                     li.innerHTML = item.name;
