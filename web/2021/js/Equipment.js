@@ -106,7 +106,31 @@ export default class Equipment {
             }
         });
         // this.list = equipmentList;
-        console.log(equipmentList);
+        // console.log(equipmentList);
+
+        let equipmentList2 = {};
+        // console.log(dbEquipment);
+        dbEquipment.forEach(item => {
+            if(!equipmentList2.hasOwnProperty(item.category)){
+                equipmentList2[item.category] = [{'owned': item.owned,
+                                                'id': item.id,
+                                                'quantity': item.quantity,
+                                                'name': item.name,                                                  
+                                                'avg_price': item.avg_price, 
+                                                'pur_price': item.pur_price,
+                                                'category': item.category.replace(/ /g,"-").toLowerCase()}];
+            } else {
+                equipmentList2[item.category].push({ 'owned': item.owned,
+                                                    'id': item.id,
+                                                    'quantity': item.quantity,
+                                                    'name': item.name,                                                  
+                                                    'avg_price': item.avg_price, 
+                                                    'pur_price': item.pur_price,
+                                                    'category': item.category.replace(/ /g,"-").toLowerCase()});
+            }
+        });
+        console.log(equipmentList2);
+
         this.displayEquipment(participant, equipmentList);
     }
 
