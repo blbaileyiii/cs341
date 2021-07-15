@@ -726,6 +726,13 @@ tr.adult-registrant {
     color: var(--on-nav-bg) !important;
 }
 
+.event {
+    padding: 0 1rem;
+    border: 2px solid var(--nav-bg);
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
 .print-registrants {
     font-size: 7pt;
     width: 7.5in;
