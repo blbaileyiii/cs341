@@ -85,7 +85,7 @@ export default class Equipment {
     
     convertEquipmentList(dbEquipment, participant) {
         let equipmentList = {};
-        console.log(dbEquipment);
+        // console.log(dbEquipment);
         dbEquipment.forEach(item => {
             if(!equipmentList.hasOwnProperty(item.category)){
                 equipmentList[item.category] = [{'owned': item.owned,
@@ -105,8 +105,8 @@ export default class Equipment {
                                                     'category': item.category.replace(/ /g,"-").toLowerCase()});
             }
         });
-        //this.list = equipmentList;
-        // console.log(this.equipmentList);
+        // this.list = equipmentList;
+        console.log(this.equipmentList);
         this.displayEquipment(participant, equipmentList);
     }
 
