@@ -108,7 +108,7 @@ export default class Equipment {
         // this.list = equipmentList;
         // console.log(equipmentList);
 
-        let equipmentList2 = {ymcamp: {}, ywcamp: {}, trek: {}};
+        let equipmentList2 = {YMCAMP: {}, YWCAMP: {}, TREK: {}};
         // console.log(dbEquipment);
         dbEquipment.forEach(item => {
 
