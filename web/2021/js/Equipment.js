@@ -174,16 +174,16 @@ export default class Equipment {
         });
         console.log(equipmentList2);
 
-        this.displayEquipment(participant, equipmentList, equipmentList2);
+        this.displayEquipment(participant, equipmentList2);
     }
 
-    displayEquipment(participant, equipmentList, equipmentList2) {
+    displayEquipment(participant, equipmentList2) {
         let id;
         if(participant){
             id = participant.id;
         }
         if (id) {
-            this.displayItemCheckList(participant, equipmentList);            
+            this.displayItemCheckList(participant, equipmentList2);            
         } else {
             this.displayItemList(equipmentList2);
         }
@@ -272,7 +272,7 @@ export default class Equipment {
 
         let dnb;
 
-        Object.keys(equipmentList).forEach(key => {
+        Object.keys(equipmentList[camp]).forEach(key => {
 
             let cid = key.replace(/ /g,"-").toLowerCase();
 
@@ -304,7 +304,7 @@ export default class Equipment {
             h2.appendChild(catLabel);
             ul.classList.add(cid);
             
-            equipmentList[key].forEach(item => {
+            equipmentList[camp][key].forEach(item => {
 
                 let iid = "-i-" + item.id;
 
