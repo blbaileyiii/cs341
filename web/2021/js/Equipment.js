@@ -196,11 +196,13 @@ export default class Equipment {
 
         let pDiv = document.createElement('div');
 
-        let xh3;
-        let xul;
+        
 
         Object.keys(equipmentList).forEach(camp => {    
             let h2 = document.createElement('h2');
+
+            let xh3;
+            let xul;
 
             h2.innerHTML = camp.toUpperCase();
             pDiv.appendChild(h2);
