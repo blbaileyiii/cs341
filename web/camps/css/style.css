@@ -299,6 +299,8 @@ header {
     align-items: center;
     background: var(--body-bg);
     color: var(--on-body-bg);
+    margin: 0;
+    padding: 0.5rem 3rem;
 }
 
 nav {
