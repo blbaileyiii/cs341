@@ -56,6 +56,10 @@ a.close-alert {
     font-size: 1.2rem;
 }
 
+header {
+    font-size: 0.75rem;
+}
+
 footer {
     font-size: 0.75rem;
 }
@@ -146,6 +150,11 @@ footer {
 
 body,
 .collapsible-btn {
+    background: var(--body-bg);
+    color: var(--on-body-bg);
+}
+
+header {
     background: var(--body-bg);
     color: var(--on-body-bg);
 }
@@ -303,11 +312,8 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--body-bg);
-    color: var(--on-body-bg);
     margin: 0;
     padding: 0.5rem 3rem;
-    font-size: 0.65rem;
 }
 
 nav {
