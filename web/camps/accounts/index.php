@@ -18,6 +18,7 @@ if ($action == NULL) {
 
 switch($action){
     case 'login':
+        include $_SERVER['DOCUMENT_ROOT'] . '/camps/view/login.php';
         break;
     default:     
         include $_SERVER['DOCUMENT_ROOT'] . '/camps/view/login.php';

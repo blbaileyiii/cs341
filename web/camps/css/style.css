@@ -40,9 +40,9 @@ section h1 {
     font-size: 1.4rem;
 }
 
-header a, 
-header a:visited, 
-header a:active,
+nav a, 
+nav a:visited, 
+nav a:active,
 .all-schedules a,
 .all-schedules a:visited,
 .all-schedules a:active,
@@ -150,7 +150,7 @@ body,
     color: var(--on-body-bg);
 }
 
-header,
+nav,
 .countdown-section,
 .about,
 .guidelines {
@@ -175,9 +175,9 @@ header,
 }
 
 
-header a,
-header a:visited,
-header a:active,
+nav a,
+nav a:visited,
+nav a:active,
 footer a,
 footer a:visited,
 footer a:active {
@@ -188,7 +188,7 @@ a.close-alert,
 a.close-alert:visited,
 a.close-alert:active,
 a.close-alert:hover,
-header a:hover {
+nav a:hover {
     color: var(--on-nav-bg);
 }
 
@@ -288,7 +288,7 @@ body {
     margin: 1rem 1.25rem;
 }
 
-header {
+nav {
     position: sticky;
     top: 0;
     display: flex;
@@ -921,7 +921,7 @@ tr.adult-registrant {
 
 @media only screen and (min-width: 50rem) {
 
-    header {
+    nav {
         flex-direction: row;
         justify-content: space-between;
     }
