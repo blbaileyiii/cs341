@@ -165,7 +165,7 @@ function getEvents() {
         //do stuff with data...
         if (this.readyState == 4 && this.status == 200) {
             let myDBRes = JSON.parse(this.responseText);
-            console.log(myDBRes);
+            // console.log(myDBRes);
             events = myDBRes;
             buildEventScript();
 
@@ -214,12 +214,12 @@ function setMyEvent(eventId){
         let minDOBYear = new Date(myEvent.min_DOB + "T00:00:00").getFullYear();
         let turningAge = year - minDOBYear;
 
-        console.log(dateStartF);
-        console.log(dateEndF);
+        // console.log(dateStartF);
+        // console.log(dateEndF);
 
-        console.log(year);
-        console.log(minDOBYear);
-        console.log(turningAge);
+        // console.log(year);
+        // console.log(minDOBYear);
+        // console.log(turningAge);
 
         document.getElementById('eventDate').value = dateStartF + " - " + dateEndF;
         document.getElementById('eventDesc').value = myEvent.desc;
