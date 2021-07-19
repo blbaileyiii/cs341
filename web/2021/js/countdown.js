@@ -119,12 +119,14 @@ function buildCountdownHTML(){
     if (camps[camp].locked) {
       linkText = document.createTextNode("🔒 Locked");
       a.title = "Register: LOCKED";
+      a.href = "javascript:void(0)";
     } else {      
       linkText = document.createTextNode("Register");
       a.title = "Register";
+      a.href = "/2021/registration?eventId=" + camps[camp].id;
     }
     a.appendChild(linkText);   
-    a.href = "/2021/registration?eventId=" + camps[camp].id;
+    
     a.classList.add('button')
 
     registerDiv.appendChild(a);
