@@ -15,7 +15,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
 $events = getEventsJSON(2021);
 $events = json_decode($events, true);
-var_dump($events);
 $eventList = buildEventList($events);
 
 $min_DOB =  (date('Y') - 12).'-12-31'; // default
