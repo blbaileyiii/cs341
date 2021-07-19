@@ -17,7 +17,13 @@ if ($action == NULL) {
 switch($action){
     case 'getEvents':
         // GET
-        echo getEventsJSON(2021);
+        $unlocked = filter_input(INPUT_GET, 'unlocked');
+        if($unlocked = 'y'){
+            $unlocked = true;
+        } else {
+            $unlocked = false;
+        }
+        echo getEventsJSON(2021, $unlocked);
         break;
     case 'getEquipment':
         // GET
