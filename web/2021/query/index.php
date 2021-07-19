@@ -17,6 +17,7 @@ if ($action == NULL) {
 switch($action){
     case 'getEvents':
         // GET
+        $unlocked = false;
         echo getEventsJSON(2021, true);
         break;
     case 'getEquipment':

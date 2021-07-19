@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/query-model.php';
 // Get the account validation fxs for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
-$events = getEventsJSON(2021, true);
+$events = getEventsJSON(2021);
 $events = json_decode($events, true);
 $eventList = buildEventList($events);
 

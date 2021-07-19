@@ -126,25 +126,15 @@ function getPaperwork($event) {
     }
 }
 
-function getEventsJSON($eventYear, $unlocked) {
+function getEventsJSON($eventYear) {
     try {
         $db = hhConnect();
 
-        if($unlocked){
-            $sql = 
-            'SELECT *
-            FROM hhstake.events AS e
-            WHERE EXTRACT(YEAR FROM e.date_start) = :eventYear AND e.locked = false
-            ORDER BY e.id';
-        } else {
-            $sql = 
-            'SELECT *
-            FROM hhstake.events AS e
-            WHERE EXTRACT(YEAR FROM e.date_start) = :eventYear 
-            ORDER BY e.id';
-        }
-
-        
+        $sql = 
+        'SELECT *
+        FROM hhstake.events AS e
+        WHERE EXTRACT(YEAR FROM e.date_start) = :eventYear
+        ORDER BY e.id';
 
         $sqlVarArray = array(':eventYear' => $eventYear);
 

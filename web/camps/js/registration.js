@@ -159,7 +159,7 @@ function buildRegistrantDiv(participantList){
 
 
 function getEvents() {
-    let url = "/camps/query/?action=getEvents&unlocked=y";
+    let url = "/camps/query/?action=getEvents";
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         //do stuff with data...
