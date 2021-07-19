@@ -63,7 +63,7 @@ function createCountdown(eventList){
 }
 
 function createCamp(event) {
-  console.log(event);
+  console.log(event.locked);
   let campId = event.id;
   let eventStartDate = event.date_start;
   let eventTime = event.meet_time;
