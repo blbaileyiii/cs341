@@ -30,12 +30,13 @@ function getEvents() {
 }
 
 class Camp {
-  constructor(id, name, date, year, datestr) {
+  constructor(id, name, date, year, datestr, locked) {
     this.id = id;
     this.name = name;
     this.date = date;
     this.year = year;
     this.datestr = datestr;
+    this.locked = locked;
   }
 }
 
@@ -75,7 +76,9 @@ function createCamp(event) {
 
   let campName = event.name.replace(year, "").trim();
 
-  let camp = new Camp(campId, campName, eventBTime, year, eventDateFormated);
+  let locked = event.locked;
+
+  let camp = new Camp(campId, campName, eventBTime, year, eventDateFormated, locked);
 
   return camp;
 }
@@ -110,7 +113,11 @@ function buildCountdownHTML(){
 
     let linkText = document.createTextNode("Register");
     a.appendChild(linkText);
-    a.title = "Register";
+    if (camp.locked) {
+      a.title = "Register";
+    } else {
+      a.title = "LOCKED";
+    }    
     a.href = "/2021/registration?eventId=" + camps[camp].id;
     a.classList.add('button')
 
