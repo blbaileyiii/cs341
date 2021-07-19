@@ -63,7 +63,7 @@ function createCountdown(eventList){
 }
 
 function createCamp(event) {
-  console.log(event.locked);
+  // console.log(event);
   let campId = event.id;
   let eventStartDate = event.date_start;
   let eventTime = event.meet_time;
@@ -114,9 +114,9 @@ function buildCountdownHTML(){
 
     let linkText;
 
-    console.log(camp.locked);
+    console.log(camps[camp].locked);
     
-    if (camp.locked) {
+    if (camps[camp].locked) {
       linkText = document.createTextNode("LOCKED");
       a.title = "Register: LOCKED";
     } else {      
