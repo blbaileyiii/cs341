@@ -63,6 +63,7 @@ function createCountdown(eventList){
 }
 
 function createCamp(event) {
+  console.log(event);
   let campId = event.id;
   let eventStartDate = event.date_start;
   let eventTime = event.meet_time;
@@ -114,11 +115,11 @@ function buildCountdownHTML(){
     let linkText;
     
     if (camp.locked) {
-      linkText = document.createTextNode("Register");
-      a.title = "Register";
-    } else {
       linkText = document.createTextNode("LOCKED");
       a.title = "Register: LOCKED";
+    } else {      
+      linkText = document.createTextNode("Register");
+      a.title = "Register";
     }
     a.appendChild(linkText);   
     a.href = "/2021/registration?eventId=" + camps[camp].id;
