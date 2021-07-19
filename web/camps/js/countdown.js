@@ -30,12 +30,13 @@ function getEvents() {
 }
 
 class Camp {
-  constructor(id, name, date, year, datestr) {
+  constructor(id, name, date, year, datestr, locked) {
     this.id = id;
     this.name = name;
     this.date = date;
     this.year = year;
     this.datestr = datestr;
+    this.locked = locked;
   }
 }
 
@@ -62,6 +63,7 @@ function createCountdown(eventList){
 }
 
 function createCamp(event) {
+  // console.log(event);
   let campId = event.id;
   let eventStartDate = event.date_start;
   let eventTime = event.meet_time;
@@ -75,7 +77,9 @@ function createCamp(event) {
 
   let campName = event.name.replace(year, "").trim();
 
-  let camp = new Camp(campId, campName, eventBTime, year, eventDateFormated);
+  let locked = event.locked;
+
+  let camp = new Camp(campId, campName, eventBTime, year, eventDateFormated, locked);
 
   return camp;
 }
@@ -108,10 +112,21 @@ function buildCountdownHTML(){
 
     registerDiv.classList.add('register-block');
 
-    let linkText = document.createTextNode("Register");
-    a.appendChild(linkText);
-    a.title = "Register";
-    a.href = "/camps/registration?eventId=" + camps[camp].id;
+    let linkText;
+
+    console.log(camps[camp].locked);
+    
+    if (camps[camp].locked) {
+      linkText = document.createTextNode("🔒 Locked");
+      a.title = "Register: LOCKED";
+      a.href = "javascript:void(0)";
+    } else {      
+      linkText = document.createTextNode("Register");
+      a.title = "Register";
+      a.href = "/camps/registration?eventId=" + camps[camp].id;
+    }
+    a.appendChild(linkText);   
+    
     a.classList.add('button')
 
     registerDiv.appendChild(a);
