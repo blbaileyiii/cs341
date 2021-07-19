@@ -113,6 +113,8 @@ function buildCountdownHTML(){
     registerDiv.classList.add('register-block');
 
     let linkText;
+
+    console.log(camp.locked);
     
     if (camp.locked) {
       linkText = document.createTextNode("LOCKED");
