@@ -90,7 +90,9 @@ function checkMaxDOB($chkVal, $dateMax) {
 function buildEventList($events){
     $eventList = '';
     for ($x = 0; $x < count($events); $x++) {
-        $eventList .= "<option value='{$events[$x]['id']}'>{$events[$x]['name']}</option>";
+        if(!$events[$x]['locked']) {
+            $eventList .= "<option value='{$events[$x]['id']}'>{$events[$x]['name']}</option>";
+        }        
     }
     return $eventList;
 }
