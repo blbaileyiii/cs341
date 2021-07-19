@@ -92,7 +92,9 @@ function buildEventList($events){
     for ($x = 0; $x < count($events); $x++) {
         if(!$events[$x]['locked']) {
             $eventList .= "<option value='{$events[$x]['id']}'>{$events[$x]['name']}</option>";
-        }        
+        } else {
+            $eventList .= "<option value='' disabled>{$events[$x]['name']}</option>";
+        }
     }
     return $eventList;
 }
