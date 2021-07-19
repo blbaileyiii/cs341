@@ -117,7 +117,7 @@ function buildCountdownHTML(){
     console.log(camps[camp].locked);
     
     if (camps[camp].locked) {
-      linkText = document.createTextNode("LOCKED");
+      linkText = document.createTextNode("🔒 Locked");
       a.title = "Register: LOCKED";
     } else {      
       linkText = document.createTextNode("Register");
