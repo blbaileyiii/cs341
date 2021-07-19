@@ -133,7 +133,7 @@ function getEventsJSON($eventYear) {
         $sql = 
         'SELECT *
         FROM hhstake.events AS e
-        WHERE EXTRACT(YEAR FROM e.date_start) = :eventYear AND e.locked = false
+        WHERE EXTRACT(YEAR FROM e.date_start) = :eventYear
         ORDER BY e.id';
 
         $sqlVarArray = array(':eventYear' => $eventYear);
