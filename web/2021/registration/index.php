@@ -13,9 +13,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/query-model.php';
 // Get the account validation fxs for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
+$backdoor = filter_input(INPUT_GET, 'backdoor');
 $events = getEventsJSON(2021);
 $events = json_decode($events, true);
-$eventList = buildEventList($events);
+if (empty($backdoor)){
+    $eventList = buildEventList($events);
+} else {
+    $eventList = buildEventListBackdoor($events);
+}
+
 
 $min_DOB =  (date('Y') - 12).'-12-31'; // default
 
