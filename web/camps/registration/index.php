@@ -72,8 +72,6 @@ switch($action){
         $eventLeaderPhone = filter_input(INPUT_POST, 'eventLeaderPhone', FILTER_SANITIZE_STRING);
         $eventLeaderEmail = filter_input(INPUT_POST, 'eventLeaderEmail', FILTER_SANITIZE_STRING);
 
-        echo $allergies;
-        echo "<br>";
         // Validate form data
         $eventId = checkInt($eventId);
         $participantDOB = checkIsDate($participantDOB);
@@ -89,11 +87,7 @@ switch($action){
         $specialDiet = checkBool($specialDiet);
         $specialDiet = checkBoolText($specialDiet,$specialDietTxt);
         $allergies = checkBool($allergies);
-        echo $allergies;
-        echo "<br>";
         $allergies = checkBoolText($allergies,$allergiesTxt);
-        echo $allergies;
-        echo "<br>";
         $medication = checkBool($medication);
         $medication = checkBoolText($medication,$medicationList);
         $selfMedicate = checkBool($selfMedicate);
