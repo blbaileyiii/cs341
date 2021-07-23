@@ -369,6 +369,8 @@ switch($action){
         }
 
         break;
+    case 'backdoor':
+        $eventList = buildEventListBackdoor($events);
     default:
         $eventId = filter_input(INPUT_GET, 'eventId', FILTER_SANITIZE_NUMBER_INT);
         $eventId = checkInt($eventId);
