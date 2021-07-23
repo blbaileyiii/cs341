@@ -17,7 +17,6 @@ $events = getEventsJSON(2021);
 $events = json_decode($events, true);
 $eventList = buildEventList($events);
 
-
 $min_DOB =  (date('Y') - 12).'-12-31'; // default
 
 $action = filter_input(INPUT_POST, 'action');
