@@ -13,7 +13,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/query-model.php';
 // Get the account validation fxs for use as needed
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
-$backdoor = filter_input(INPUT_GET, 'action');
+$backdoor = 'locked';
+// $backdoor = filter_input(INPUT_GET, 'action');
 $events = getEventsJSON(2021);
 $events = json_decode($events, true);
 if ($backdoor == 'backdoor'){
