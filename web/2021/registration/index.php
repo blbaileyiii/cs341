@@ -367,9 +367,9 @@ switch($action){
         }
 
         break;
-    // case 'backdoor':
-    //     $eventList = buildEventListBackdoor($events);
-    //     // Note: NO BREAK; or EXIT; This allows this setup to continue to the default: case...
+    case 'backdoor':
+        $eventList = buildEventListBackdoor($events);
+        // Note: NO BREAK; or EXIT; This allows this setup to continue to the default: case...
     default:
         $eventId = filter_input(INPUT_GET, 'eventId', FILTER_SANITIZE_NUMBER_INT);
         $eventId = checkInt($eventId);
