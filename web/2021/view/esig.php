@@ -1,1 +1,1 @@
-getESig(3);
+<?php getESig(3); ?>
