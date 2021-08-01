@@ -276,7 +276,7 @@ function postESig($img) {
         return $returnSQL;
 
     } catch(PDOException $ex) {
-        //echo $sql . "<br>" . $ex->getMessage();
+        echo $sql . "<br>" . $ex->getMessage();
     }
 
 }
