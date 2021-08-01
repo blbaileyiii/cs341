@@ -285,9 +285,9 @@ function postESig(){
     try {
         $db = hhConnect();
 
-        $pathToFile = $_SERVER['DOCUMENT_ROOT'] . '/2021/images/spiderman-logo.png';
-        $mimeType = 'image/png';
-        $fileName = 'spider-man.png';
+        $pathToFile = $_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg';
+        $mimeType = 'image/jpeg';
+        $fileName = 'gw2.jpg.png';
 
         if (!file_exists($pathToFile)) {
             throw new \Exception("File %s not found.");
