@@ -289,7 +289,7 @@ function getESig($id) {
         'SELECT img
         FROM hhstake.esig AS e
         WHERE e.id = :id
-        ORDER BY p.id';
+        ORDER BY e.id';
 
         $sqlVarArray = array(
             ':id' => $id
