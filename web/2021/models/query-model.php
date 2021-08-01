@@ -306,7 +306,7 @@ function getESig($id) {
         return $returnSQL;
 
     } catch(PDOException $ex) {
-        // echo $sql . "<br>" . $ex->getMessage();
+        echo $sql . "<br>" . $ex->getMessage();
     }
 }
 
