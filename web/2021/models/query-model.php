@@ -252,6 +252,35 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
     }
 }
 
+function postESig($img) {
+
+    try {
+        $db = hhConnect();
+
+        $sql = 
+        'INSERT INTO hhstake.esig (img)
+        VALUES (:img)';
+        
+        $sqlVarArray = array(
+            ':img' => $img
+        );
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute($sqlVarArray);
+        $returnSQL = $stmt->rowCount();
+        $returnSQL = json_encode($returnSQL);
+
+        // The next line closes the interaction with the database 
+        $stmt->closeCursor();
+
+        return $returnSQL;
+
+    } catch(PDOException $ex) {
+        //echo $sql . "<br>" . $ex->getMessage();
+    }
+
+}
+
 /* NOTES:
 INSERT INTO the_table (id, column_1, column_2) 
 VALUES (1, 'A', 'X'), (2, 'B', 'Y'), (3, 'C', 'Z')
