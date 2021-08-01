@@ -16,9 +16,11 @@
     <main>    
         <h1><?php echo $page; ?></h1>
         <?php
-            postESig(prepESig($_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg'));
-            // $esig = getESig(1);
-            // $esig = $esig[0]['img'];
+            // postESig(prepESig($_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg'));
+            $esig0 = getESig(1);
+            $esig1 = $esig0[0]['img'];
+            $esig2 = pg_unescape_bytea($esig1);
+            echo "img src='$esig2'>";
             // echo $esig;
             // var_dump($esig);
             // echo "<img src='data:image/*;charset=utf8;base64,base64_encode($esig)'>";
