@@ -28,7 +28,7 @@
             $contents = ob_get_contents(); //Instead, output above is saved to $contents
             ob_end_clean(); //End the output buffer.
 
-            $dataUri = "data:image/png;base64," . base64_encode($contents);
+            $dataUri = "data:image/jpg;base64," . base64_encode($contents);
             echo "<img src='$dataUri' />";
         ?>
     </main>
