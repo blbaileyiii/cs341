@@ -19,8 +19,7 @@
             // postESig(prepESig($_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg'))
             $esig = getESig(1);
             $esig = $esig[0]['img'];
-            $esig = pg_unescape_bytea($esig);
-            //echo "<img src='$esig'>";
+            // $esig = pg_unescape_bytea($esig);
             var_dump($esig);
 
             ob_start(); // Let's start output buffering.
