@@ -20,7 +20,7 @@
             $esig = getESig(1);
             $esig = $esig[0]['img'];
             $esig = pg_unescape_bytea($esig);
-            echo "<img src=$esig>";
+            echo "<img src='$esig'>";
             var_dump($esig);
         ?>
     </main>
