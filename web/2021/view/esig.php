@@ -20,7 +20,7 @@
             $esig0 = getESig(1);
             $esig1 = $esig0[0]['img'];
             $esig2 = pg_unescape_bytea($esig1);
-            echo "img src='$esig2'>";
+            echo "<img src='$esig2'>";
             // echo $esig;
             // var_dump($esig);
             // echo "<img src='data:image/*;charset=utf8;base64,base64_encode($esig)'>";
