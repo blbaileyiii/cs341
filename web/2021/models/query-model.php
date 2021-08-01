@@ -252,7 +252,7 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
     }
 }
 
-function postESig($img) {
+function postESig2($img) {
 
     try {
         $db = hhConnect();
@@ -279,6 +279,54 @@ function postESig($img) {
         // echo $sql . "<br>" . $ex->getMessage();
     }
 
+}
+
+function postESig(){
+    try {
+        $db = hhConnect();
+
+        $pathToFile = $_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg';
+        $mimeType = 'image/jpg';
+        $fileName = 'gw2.jpg';
+
+        if (!file_exists($pathToFile)) {
+            throw new \Exception("File %s not found.");
+        }
+
+        $sql = 
+        'INSERT INTO hhstake.esig(mime_type,file_name,file_data)
+        VALUES(:mime_type,:file_name,:file_data)';
+
+        $db->beginTransaction();
+        
+        // create large object
+        $fileData = $db->pgsqlLOBCreate();
+        $stream = $db->pgsqlLOBOpen($fileData, 'w');
+        
+        // read data from the file and copy the the stream
+        $fh = fopen($pathToFile, 'rb');
+        stream_copy_to_stream($fh, $stream);
+        //
+        $fh = null;
+        $stream = null;
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->execute([
+            ':mime_type' => $mimeType,
+            ':file_name' => $fileName,
+            ':file_data' => $fileData,
+        ]);
+
+        // commit the transaction
+        $db->commit();
+    } catch (\Exception $e) {
+        $db->rollBack();
+        throw $e;
+    }
+
+    return $db->lastInsertId('esig_id_seq');
+    
 }
 
 function getESig($id) {
