@@ -16,14 +16,14 @@
     <main>    
         <h1><?php echo $page; ?></h1>
         <?php
-            postESig();
+            // postESig();
             // postESig(prepESig($_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg'));
             // $esig0 = getESig(1);
             // $esig1 = $esig0[0]['img'];
             // echo $esig;
             // var_dump($esig);
             // echo "<img src='data:image/*;charset=utf8;base64,base64_encode($esig)'>";
-            
+            getESig(1);
         ?>
     </main>
     <footer>
