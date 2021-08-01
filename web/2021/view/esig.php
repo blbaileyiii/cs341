@@ -16,12 +16,7 @@
     <main>    
         <h1><?php echo $page; ?></h1>
         <?php
-            $file_name = $_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg';
-            $img = fopen($file_name, 'r') or die("Cannot read image.");
-            $data = fread($img, filesize($file_name));
-            $es_data = pg_escape_bytea($data);
-            fclose($img);
-            postESig($es_data);
+            postESig(prepESig($_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg'))
         ?>
     </main>
     <footer>

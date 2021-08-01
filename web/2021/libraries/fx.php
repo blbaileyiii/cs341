@@ -612,4 +612,13 @@ function buildPermissionSlipsHTML($registrants) {
     return $permissionSlipsHTML;
 }
 
+function prepESig($imgLoc) {
+    // $imgLoc = $_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg';
+    $img = fopen($imgLoc, 'r') or die("Cannot read image.");
+    $data = fread($img, filesize($imgLoc));
+    $es_data = pg_escape_bytea($data);
+    fclose($img);
+    return $es_data;
+}
+
 ?>
