@@ -19,8 +19,12 @@
             // postESig(prepESig($_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg'));
             $esig0 = getESig(1);
             $esig1 = $esig0[0]['img'];
-            $esig2 = pg_unescape_bytea($esig1);
-            echo "<img src='$esig2'>";
+            ob_start();
+            fpassthru($esig1);
+            $dat = ob_get_contents();
+            ob_end_clean();
+            $dat = "data:image/*;base64," . base64_encode($dat);
+            echo "<img src='$dat'>";
             // echo $esig;
             // var_dump($esig);
             // echo "<img src='data:image/*;charset=utf8;base64,base64_encode($esig)'>";
