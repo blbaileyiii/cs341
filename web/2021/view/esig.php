@@ -19,9 +19,17 @@
             // postESig(prepESig($_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg'))
             $esig = getESig(1);
             $esig = $esig[0]['img'];
-            $esig = pg_unescape_bytea($esig);
-            echo "<img src='$esig'>";
+            //$esig = pg_unescape_bytea($esig);
+            //echo "<img src='$esig'>";
             var_dump($esig);
+
+            ob_start(); // Let's start output buffering.
+            fpassthru($esig); //This will normally output the image, but because of ob_start(), it won't.
+            $contents = ob_get_contents(); //Instead, output above is saved to $contents
+            ob_end_clean(); //End the output buffer.
+
+            $dataUri = "data:image/png;base64," . base64_encode($contents);
+            echo "<img src='$dataUri' />";
         ?>
     </main>
     <footer>
