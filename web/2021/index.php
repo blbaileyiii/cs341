@@ -31,6 +31,9 @@ switch($action){
     case 'esig' :
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/esig.php';
         break;
+    case 'esig-show' :
+        include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/esig-show.php';
+        break;
     default:
         $events = getEventsJSON(2021);
         if($events){
