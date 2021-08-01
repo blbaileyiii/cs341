@@ -21,7 +21,7 @@
             $esig = $esig[0]['img'];
             echo $esig;
             var_dump($esig);
-            echo "<img src='data:image/*;charset=utf8;base64,base64_encode($esig)'";
+            echo "<img src='data:image/*;charset=utf8;base64,base64_encode($esig)'>";
             
         ?>
     </main>
