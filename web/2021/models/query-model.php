@@ -252,34 +252,34 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
     }
 }
 
-function postESig2($img) {
+// function postESig2($img) {
 
-    try {
-        $db = hhConnect();
+//     try {
+//         $db = hhConnect();
 
-        $sql = 
-        'INSERT INTO hhstake.esig (img)
-        VALUES (:img)';
+//         $sql = 
+//         'INSERT INTO hhstake.esig (img)
+//         VALUES (:img)';
         
-        $sqlVarArray = array(
-            ':img' => $img
-        );
+//         $sqlVarArray = array(
+//             ':img' => $img
+//         );
 
-        $stmt = $db->prepare($sql);
-        $stmt->execute($sqlVarArray);
-        $returnSQL = $stmt->rowCount();
-        $returnSQL = json_encode($returnSQL);
+//         $stmt = $db->prepare($sql);
+//         $stmt->execute($sqlVarArray);
+//         $returnSQL = $stmt->rowCount();
+//         $returnSQL = json_encode($returnSQL);
 
-        // The next line closes the interaction with the database 
-        $stmt->closeCursor();
+//         // The next line closes the interaction with the database 
+//         $stmt->closeCursor();
 
-        return $returnSQL;
+//         return $returnSQL;
 
-    } catch(PDOException $ex) {
-        // echo $sql . "<br>" . $ex->getMessage();
-    }
+//     } catch(PDOException $ex) {
+//         // echo $sql . "<br>" . $ex->getMessage();
+//     }
 
-}
+// }
 
 function postESig(){
     try {
@@ -326,37 +326,59 @@ function postESig(){
     }
 
     return $db->lastInsertId('esig_id_seq');
-    
+
 }
 
 function getESig($id) {
-    try {
-        $db = hhConnect();
+    $db = hhConnect();
 
-        $sql = 
-        'SELECT img
-        FROM hhstake.esig AS e
-        WHERE e.id = :id
-        ORDER BY e.id';
+    $db->beginTransaction();
 
-        $sqlVarArray = array(
-            ':id' => $id
-        );
+    $stmt = $db->prepare("SELECT id, file_data, mime_type "
+            . "FROM hhstake.esig "
+            . "WHERE id= :id");
 
-        $stmt = $db->prepare($sql);
-        $stmt->execute($sqlVarArray);
-        $returnSQL = $stmt->fetchAll();
-        // $returnSQL = json_encode($returnSQL);
+    // query blob from the database
+    $stmt->execute([$id]);
 
-        // The next line closes the interaction with the database 
-        $stmt->closeCursor();
+    $stmt->bindColumn('file_data', $fileData, \PDO::PARAM_STR);
+    $stmt->bindColumn('mime_type', $mimeType, \PDO::PARAM_STR);
+    $stmt->fetch(\PDO::FETCH_BOUND);
+    $stream = $db->pgsqlLOBOpen($fileData, 'r');
 
-        return $returnSQL;
-
-    } catch(PDOException $ex) {
-        echo $sql . "<br>" . $ex->getMessage();
-    }
+    // output the file
+    header("Content-type: " . $mimeType);
+    fpassthru($stream);
 }
+
+// function getESig2($id) {
+//     try {
+//         $db = hhConnect();
+
+//         $sql = 
+//         'SELECT img
+//         FROM hhstake.esig AS e
+//         WHERE e.id = :id
+//         ORDER BY e.id';
+
+//         $sqlVarArray = array(
+//             ':id' => $id
+//         );
+
+//         $stmt = $db->prepare($sql);
+//         $stmt->execute($sqlVarArray);
+//         $returnSQL = $stmt->fetchAll();
+//         // $returnSQL = json_encode($returnSQL);
+
+//         // The next line closes the interaction with the database 
+//         $stmt->closeCursor();
+
+//         return $returnSQL;
+
+//     } catch(PDOException $ex) {
+//         echo $sql . "<br>" . $ex->getMessage();
+//     }
+// }
 
 /* NOTES:
 INSERT INTO the_table (id, column_1, column_2) 
