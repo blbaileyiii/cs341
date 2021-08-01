@@ -283,15 +283,10 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
 
 function postESig(){
     try {
-        $db = hhConnect();
+        $db = hhConnect($pathToFile);
 
-        $pathToFile = $_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg';
-        $mimeType = 'image/jpeg';
-        $fileName = 'gw2.jpg';
-
-        if (!file_exists($pathToFile)) {
-            throw new \Exception("File %s not found.");
-        }
+        $mimeType = 'image/png';
+        $fileName = 'esig.png';
 
         $sql = 
         'INSERT INTO hhstake.esig(mime_type,file_name,file_data)
