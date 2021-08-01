@@ -287,7 +287,7 @@ function postESig(){
 
         $pathToFile = $_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg';
         $mimeType = 'image/jpeg';
-        $fileName = 'gw2.jpg.png';
+        $fileName = 'gw2.jpg';
 
         if (!file_exists($pathToFile)) {
             throw new \Exception("File %s not found.");
