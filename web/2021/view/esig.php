@@ -18,7 +18,8 @@
         <?php
             // postESig(prepESig($_SERVER['DOCUMENT_ROOT'] . '/2021/images/gw2.jpg'))
             $esig = getESig(1);
-            var_dump($esig);
+            var_dump($esig[1]);
+            var_dump($esig[1]['img']);
         ?>
     </main>
     <footer>
