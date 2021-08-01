@@ -276,9 +276,38 @@ function postESig($img) {
         return $returnSQL;
 
     } catch(PDOException $ex) {
-        echo $sql . "<br>" . $ex->getMessage();
+        // echo $sql . "<br>" . $ex->getMessage();
     }
 
+}
+
+function getESig($id) {
+    try {
+        $db = hhConnect();
+
+        $sql = 
+        'SELECT img
+        FROM hhstake.esig AS e
+        WHERE e.id = :id
+        ORDER BY p.id';
+
+        $sqlVarArray = array(
+            ':id' => $id
+        );
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute($sqlVarArray);
+        $returnSQL = $stmt->fetchAll();
+        // $returnSQL = json_encode($returnSQL);
+
+        // The next line closes the interaction with the database 
+        $stmt->closeCursor();
+
+        return $returnSQL;
+
+    } catch(PDOException $ex) {
+        // echo $sql . "<br>" . $ex->getMessage();
+    }
 }
 
 /* NOTES:
