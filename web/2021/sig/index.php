@@ -19,10 +19,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 //     var_dump($_POST);
 // }
 
-$imageURL = filter_input(INPUT_POST, 'sig');
+$sigURL = filter_input(INPUT_POST, 'sig');
+var_dump(filter_input(INPUT_POST, 'sig'));
 
-if(isset($imageURL)){
-    echo postSig($imageURL);
+if(isset($sigURL)){
+    echo postSig($sigURL);
 } else {
     echo 'FAILED';
     var_dump($_POST);
