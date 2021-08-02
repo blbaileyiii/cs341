@@ -86,10 +86,10 @@
                 console.log(sigURL);
                 $("#imgData").html('Thank you! Your signature was saved');
 
-                // let data = new FormData();
-                // data.append('action', 'postSig');
-                // data.append('sig', sigURL);
-                // console.log(data);
+                let data = new FormData();
+                data.append('action', 'postSig');
+                data.append('sig', sigURL);
+                console.log(data);
 
                 var ajax = new XMLHttpRequest();
                 ajax.onreadystatechange = function() {
@@ -112,7 +112,7 @@
                 }
                 ajax.open("POST", '/2021/sig/');
                 ajax.setRequestHeader('Content-Type', 'application/upload');
-                ajax.send(sigURL);
+                ajax.send(data);
             });
 
             /** Clear Canvas **/
