@@ -6,7 +6,7 @@
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/head.php'; ?>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <title>Signature Pad</title>
-    <script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.8.0.min.js" integrity="sha256-jFdOCgY5bfpwZLi0YODkqNXQdIxKpm6y5O/fy0baSzE=" crossorigin="anonymous"></script>
     <script type="text/javascript"> 
         $(document).ready(function () {
             /** Set Canvas Size **/
