@@ -128,7 +128,7 @@
       }
     }
   
-    function renderCanvas() {
+    function renderCanvas(ctx) {
       if (drawing) {
         ctx.moveTo(lastPos.x, lastPos.y);
         ctx.lineTo(mousePos.x, mousePos.y);
@@ -156,7 +156,8 @@
   
     (function drawLoop() {
       requestAnimFrame(drawLoop);
-      renderCanvas();
+      renderCanvas(pctx);
+      renderCanvas(gctx);
     })();
   
     function clearCanvas(canvas) {
