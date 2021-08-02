@@ -89,8 +89,6 @@
                 let data = new FormData();
                 data.append('action', 'postSig');
                 data.append('sig', sigURL);
-                console.log(data.get('action'));
-                console.log(data.get('sig'));
 
                 var ajax = new XMLHttpRequest();
                 ajax.onreadystatechange = function() {
@@ -111,7 +109,7 @@
                         // console.log("failed");
                     }
                 }
-                ajax.open("POST", '/2021/sig/');
+                ajax.open("POST", '/2021/sig/', true);
                 ajax.setRequestHeader('Content-Type', 'application/upload');
                 ajax.send(data);
             });
