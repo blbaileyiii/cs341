@@ -55,7 +55,7 @@
             $("#saveSig").click(function saveSig() {
                 var sigData = canvas.toDataURL("image/png");
                 $("#imgData").html('Thank you! Your signature was saved');
-                var ajax = XMLHttpRequest();
+                var ajax = new XMLHttpRequest();
                 ajax.open("POST", '/2021/sig/');
                 ajax.setRequestHeader('Content-Type', 'application/upload');
                 ajax.send(sigData);
