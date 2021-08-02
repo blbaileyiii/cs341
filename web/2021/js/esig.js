@@ -170,7 +170,7 @@
     }
   
     // Set up the UI
-    var pSigText = document.getElementById("participantEsig");
+    var pSigText = document.getElementById("participantESig");
     var pSigImage = document.getElementById("participant-image");
     var pClearBtn = document.getElementById("participant-clearBtn");
     var pSubmitBtn = document.getElementById("participant-submitBtn");
