@@ -12,8 +12,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
 
 if (isset($_POST)) {
-    $sigURL=$_POST[0];
-    echo postSig($sigURL);
+    // $sigURL=$_POST[0];
+    // echo postSig($sigURL);
+    var_dump($_POST);
 } else {
     echo 'FAILED';
     var_dump($_POST);
