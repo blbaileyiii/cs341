@@ -129,7 +129,7 @@ switch($action){
         $participantSigDate = date('Y-m-d');
         $guardianSigDate = date('Y-m-d');
 
-        /*
+
         echo "eventId: ". $eventId . "<br>";
         echo "eventDate: ". $eventDate . "<br>";
         echo "eventDesc: ". $eventDesc . "<br>";
@@ -165,18 +165,16 @@ switch($action){
         echo "serious: ". $serious . "<br>";
         echo "seriousTxt: ". $seriousTxt . "<br>";
         echo "limitations: ". $limitations . "<br>";
-        echo "considerations: ". $considerations . "<br>";
-        echo "participantSig: ". $participantSig . "<br>";
-        echo "participantSigDate: ". $participantSigDate . "<br>";
-        echo "guardianSig: ". $guardianSig . "<br>";
-        echo "guardianSigDate: ". $guardianSigDate . "<br>";
+        echo "considerations: ". $considerations . "<br>";        
         echo "adult: ". $adult . "<br>";
         echo "contact: ". $contact . "<br>";
         echo "permission: ". $permission . "<br>";
         echo "responsibility: ". $responsibility . "<br>";
         echo "participantESig: ". $participantESig . "<br>";
+        echo "participantSigDate: ". $participantSigDate . "<br>";
         echo "guardianESig: ". $guardianSig . "<br>";
-        */
+        echo "guardianSigDate: ". $guardianSigDate . "<br>";
+        
 
         if(empty($participantDOB)){
             $_SESSION['message'] = "<div class='alert'>Sorry, either you forgot to add your Date of Birth or you aren't old enough. Note: Only participants turning $minAge this year or older may register.</div>";
@@ -320,7 +318,7 @@ switch($action){
         $participantSigDate = date('Y-m-d');
         $guardianSigDate = date('Y-m-d');
 
-        
+        /*
         echo "eventId: ". $eventId . "<br>";
         echo "eventDate: ". $eventDate . "<br>";
         echo "eventDesc: ". $eventDesc . "<br>";
@@ -365,6 +363,7 @@ switch($action){
         echo "participantSigDate: ". $participantSigDate . "<br>";
         echo "guardianESig: ". $guardianSig . "<br>";
         echo "guardianSigDate: ". $guardianSigDate . "<br>";
+        */
         
 
         if(empty($participantDOB)){
