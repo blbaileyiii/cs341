@@ -297,7 +297,7 @@ function getSig($id) {
         // query blob from the database
         $stmt->execute($sqlVarArray);
 
-        $stmt->bindColumn('img_data', $imgData, \PDO::PARAM_STR);
+        $stmt->bindColumn('p_esig', $imgData, \PDO::PARAM_STR);
         $stmt->fetch(\PDO::FETCH_BOUND);
         $stream = $db->pgsqlLOBOpen($imgData, 'r');
 
