@@ -16,6 +16,7 @@ if (isset($GLOBALS["HTTP_RAW_POST_DATA"])) {
     echo postSig($imageData);
 } else {
     echo 'FAILED';
+    var_dump($_POST);
 }
 
 ?>
