@@ -57,9 +57,13 @@ switch($action){
         $seriousTxt = filter_input(INPUT_POST, 'seriousTxt', FILTER_SANITIZE_STRING);
         $limitations = filter_input(INPUT_POST, 'limitations', FILTER_SANITIZE_STRING);
         $considerations = filter_input(INPUT_POST, 'considerations', FILTER_SANITIZE_STRING);
-        $participantSig = filter_input(INPUT_POST, 'participantSig', FILTER_SANITIZE_STRING);
+        $adult = filter_input(INPUT_POST, 'adult', FILTER_SANITIZE_STRING);
+        $contact = filter_input(INPUT_POST, 'contact', FILTER_SANITIZE_STRING);
+        $permission = filter_input(INPUT_POST, 'permission', FILTER_SANITIZE_STRING);
+        $responsibility = filter_input(INPUT_POST, 'responsibility', FILTER_SANITIZE_STRING);
+        $participantESig = filter_input(INPUT_POST, 'participantESig', FILTER_SANITIZE_STRING);
         $participantSigDate = filter_input(INPUT_POST, 'participantSigDate', FILTER_SANITIZE_STRING);
-        $guardianSig = filter_input(INPUT_POST, 'guardianSig', FILTER_SANITIZE_STRING);
+        $guardianESig = filter_input(INPUT_POST, 'guardianESig', FILTER_SANITIZE_STRING);
         $guardianSigDate = filter_input(INPUT_POST, 'guardianSigDate', FILTER_SANITIZE_STRING);
 
         // Gray values are not sent on. They are set only to repopulate the gray fields if form validation fails.
@@ -93,8 +97,12 @@ switch($action){
         $chronicIllness = checkBoolText($chronicIllness,$chronicIllnessTxt);
         $serious = checkBool($serious);
         $serious = checkBoolText($serious,$seriousTxt);
-        $participantSig = checkSig($participantSig);
-        $guardianSig = checkSig($guardianSig);
+        $adult = checkBool($adult);
+        $contact = checkBool($contact);
+        $permission = checkBool($permission);
+        $responsibility = checkBool($responsibility);
+        $participantESig = checkSig($participantESig);
+        $guardianESig = checkSig($guardianESig);
 
         //$selfMedicate
         $chkSelfMedicate = checkDepBool($selfMedicate, $medication);
@@ -111,7 +119,7 @@ switch($action){
         $participantDOB = checkMaxDOB($participantDOB, $minDOB);
 
         // If participantDOB is >= 19 certain things
-        $guardianSig = checkAge($guardianSig, $participantAge);
+        $guardianESig = checkAge($guardianESig, $participantAge);
 
         //OVERWRITE Signature Dates... Need to match today.
         $participantSigDate = date('Y-m-d');
@@ -158,6 +166,12 @@ switch($action){
         echo "participantSigDate: ". $participantSigDate . "<br>";
         echo "guardianSig: ". $guardianSig . "<br>";
         echo "guardianSigDate: ". $guardianSigDate . "<br>";
+        echo "adult: ". $adult . "<br>";
+        echo "contact: ". $contact . "<br>";
+        echo "permission: ". $permission . "<br>";
+        echo "responsibility: ". $responsibility . "<br>";
+        echo "participantESig: ". $participantESig . "<br>";
+        echo "guardianESig: ". $guardianSig . "<br>";
         */
 
         if(empty($participantDOB)){
@@ -167,7 +181,7 @@ switch($action){
         }
 
         // Check for empty / null values. All values listed are required.
-        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($participantSig) || empty($guardianSig))){
+        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($adult)  || empty($contact)  || empty($permission)  || empty($responsibility) || empty($participantESig) || empty($guardianESig))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $validate = true;
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
