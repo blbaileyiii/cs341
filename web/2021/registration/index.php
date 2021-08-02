@@ -26,7 +26,7 @@ if ($action == NULL) {
 
 switch($action){
     case 'Registration':
-        echo "HERE I AM"
+        echo "HERE I AM";
         // Sanitize form data
         $eventId = filter_input(INPUT_POST, 'eventId', FILTER_SANITIZE_NUMBER_INT);
         $participantName = filter_input(INPUT_POST, 'participantName', FILTER_SANITIZE_STRING);
