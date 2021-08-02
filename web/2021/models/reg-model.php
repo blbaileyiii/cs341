@@ -6,19 +6,43 @@
 // TODO ENSURE THAT REGISTRATION IS NOT LOCKED PRIOR TO ALLOWING INSERT...
 
 // Will handle site registrations.
-function regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $adult, $contact, $permission, $responsibility, $participantESig, $guardianESig){
+function regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $adult, $contact, $permission, $responsibility, $participantESig, $participantSigDate, $guardianESig, $guardianSigDate){
     try {
         // Create a connection object using the phpmotors connection function
         $db = hhConnect();
-        // The SQL statement
 
+        $hostname = gethostname();
+
+        // The SQL statement
         $sql = 
-        'INSERT INTO hhstake.registrants (event_id, p_name, p_ward, p_dob, p_age, email, tele_one, tele_one_type, tele_two, tele_two_type, p_address, p_city, p_state, emer_name, emer_tele_one, emer_tele_one_type, emer_tele_two, emer_tele_two_type, diet, diet_txt, allergies, allergies_txt, medication, self_medicate, medication_txt, chronic, chronic_txt, serious, serious_txt, limitations_txt, considerations_txt, p_sig, p_sig_date, g_sig, g_sig_date, adult, contact, permission, responsibility, p_esig, g_esig)
-        VALUES (:eventId, :participantName, :ward, :participantDOB, :participantAge, :email, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emerSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllness, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations, :participantSig, :participantSigDate, :guardianSig, :guardianSigDate, :adult, :contact, :permission, :responsibility, :participantESig, :guardianESig)
+        'INSERT INTO hhstake.registrants (event_id, p_name, p_ward, p_dob, p_age, email, tele_one, tele_one_type, tele_two, tele_two_type, p_address, p_city, p_state, emer_name, emer_tele_one, emer_tele_one_type, emer_tele_two, emer_tele_two_type, diet, diet_txt, allergies, allergies_txt, medication, self_medicate, medication_txt, chronic, chronic_txt, serious, serious_txt, limitations_txt, considerations_txt, adult, contact, permission, responsibility, p_esig, p_esig_date, g_esig, g_esig_date, userhost)
+        VALUES (:eventId, :participantName, :ward, :participantDOB, :participantAge, :email, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emerSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllness, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations, :adult, :contact, :permission, :responsibility, :participantESig, :participantSigDate, :guardianESig, :guardianSigDate, :userhost)
         RETURNING id';
 
-        //VALUES ($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $adult, $contact, $permission, $responsibility, $participantESig, $guardianESig)
-        //RETURNING id";
+        $db->beginTransaction();
+
+        // create large object
+        $pESigData = $db->pgsqlLOBCreate();
+        $stream = $db->pgsqlLOBOpen($pESigData, 'w');
+        
+        // read data from the file and copy the the stream
+        $fh = fopen($participantESig, 'rb');
+        stream_copy_to_stream($fh, $stream);
+        //
+        $fh = null;
+        $stream = null;
+
+        // create large object
+        $gESigData = $db->pgsqlLOBCreate();
+        $stream = $db->pgsqlLOBOpen($gESigData, 'w');
+        
+        // read data from the file and copy the the stream
+        $fh = fopen($guardianESig, 'rb');
+        stream_copy_to_stream($fh, $stream);
+        //
+        $fh = null;
+        $stream = null;
+
         // Create the prepared statement using the phpmotors connection
         $stmt = $db->prepare($sql);
         // Build var array
@@ -55,21 +79,24 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
             ':seriousTxt' => $seriousTxt,
             ':limitations' => $limitations,
             ':considerations' => $considerations,
-            ':participantSig' => $participantSig,
-            ':participantSigDate' => $participantSigDate,
-            ':guardianSig' => $guardianSig,
-            ':guardianSigDate' => $guardianSigDate,
             ':adult' => $adult,
             ':contact' => $contact,
             ':permission' => $permission,
             ':responsibility' => $responsibility,
-            ':participantESig' => $participantESig,
-            ':guardianESig' => $guardianESig
+            ':participantESig' => $pESigData,
+            ':participantSigDate' => $participantSigDate,
+            ':guardianESig' => $gESigData,
+            ':guardianSigDate' => $guardianSigDate,
+            ':userhost' => $hostname
         );
         
         // Insert the data
         $stmt->execute($sqlVarArray);
         //$stmt->execute();
+        
+        // commit the transaction
+        $db->commit();
+
         // Ask how many rows changed as a result of our insert
         $regResults = $stmt->fetchAll();
         if (count($regResults === 0)){
