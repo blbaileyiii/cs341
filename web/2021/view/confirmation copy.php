@@ -24,9 +24,51 @@
                 }
             ?>
             <form <?php if(isset($validate)){echo "class='form validate'";} else { echo "class='form'"; } ?> method="post">
-            <img id="participant-image" <?php if(isset($participantESig)){echo "src='$participantESig'";} else { echo "src=''";} ?> alt="Your signature will go here!"/>
-            <img id="guardian-image" <?php if(isset($guardianESig)){echo "src='$guardianESig'";} else { echo "src=''";} ?> alt="Your signature will go here!"/>
-            
+                <div>
+                    <fieldset>
+                        <legend>Re-Affirm Permission</legend>
+                        <ul class="re-affirm-details">
+                            <li><span>Event: </span>
+                                <select class='select-disabled' disabled>
+                                    <?php
+                                        if(isset($eventId)){
+                                            echo "value='$eventId'";
+                                            $eventList = str_replace("value='$eventId'", "value='$eventId' selected", $eventList);
+                                        }
+                                        echo $eventList; 
+                                    ?>
+                                </select>
+                            </li>
+                            <li><span>Date(s) of event: </span><?php if(isset($eventDate)){echo $eventDate;} ?></li>
+                            <li><span>Description of event and activities: </span><?php if(isset($eventDesc)){echo $eventDesc;} ?></li>
+                            <li><span>Updates to be sent to: </span><?php if(isset($email)){echo $email;} ?></li>
+                        </ul>
+                        <p>By submitting this form, I affirm the following:</p>
+                        <p class="chkbx-ind"><input id="adult" name="adult" type="checkbox" required><label for="adult">I am a legal adult (19 years or older).</label></p>
+                        <p class="chkbx-ind"><input id="contact" name="contact" type="checkbox" required><label for="contact">I agree to receive updates via the email address provided.</label></p>
+                        <p class="chkbx-ind"><input id="permission" name="permission" type="checkbox" required><label for="permission">I give permission for my child or youth to participate in the event and activities listed above (unless noted) and authorize the adult leaders supervising this event to administer emergency treatment to the above named participant for any accident or illness and to act in my stead in approving necessary medical care. This authorization shall cover this event and travel to and from this event.</label></p>
+                        <p class="chkbx-ind"><input id="responsibility" name="responsibility" type="checkbox" required><label for="responsibility">The participant is responsible for his or her own conduct and is aware of and agrees to abide by Church standards, camp or event safety rules, and other pertinent instructions. Participants’ conduct and interactions should abide by Church standards and exemplify Christlike behavior. Parents and participants should understand that participation in an activity is not a right but a privilege that can be revoked if they behave inappropriately or if they pose a risk to themselves or others.</label></p>
+                        <div class="fields">
+                            <label for="participantESig"><span>Participant’s E-signature (Much match previous signature)</span><span class="field-tip">Required</span></label> 
+                            <input id="participantESig" name="participantESig" type="text" <?php if(isset($participantSig)){echo "placeholder='$participantSig' pattern='$participantSig'";} ?> required>
+                            <p class="sig"><?php if(isset($participantSig)){echo $participantSig;} ?></p>
+                        </div>
+                        <div class="fields">
+                            <label for="participantSigDate"><span>Date</span></label> 
+                            <input id="participantSigDate" name="participantSigDate" type="date" value="<?php echo date('Y-m-d') ?>" readonly required>
+                        </div>
+                        <div class="fields">
+                            <label for="guardianESig"><span>Parent or guardian's E-signature (Much match previous signature)</span><?php if(isset($participantAge) && $participantAge >=19){ echo "";} else {echo "<span class='field-tip'>Required</span>";} ?></label> 
+                            <input id="guardianESig" name="guardianESig" type="text" <?php if(isset($guardianSig)){echo "placeholder='$guardianSig' pattern='$guardianSig'";} ?> <?php if(isset($participantAge) && $participantAge >= 19){echo "value='N/A - Adult Participant' readonly";} else { echo "required";} ?>>
+                            <p class="sig"><?php if(isset($guardianSig)){echo $guardianSig;} ?></p>
+                        </div>
+                        <div class="fields">
+                            <label for="guardianSigDate"><span>Date</span></label> 
+                            <input id="guardianSigDate" name="guardianSigDate" type="date" value="<?php echo date('Y-m-d') ?>" readonly required>
+                        </div>
+                    </fieldset>
+                    <p class="legal-sm"><a href="https://www.churchofjesuschrist.org/bc/content/shared/content/english/pdf/callings/young-men/parental-permission-medical-release.pdf" title="Permission and Medical Release Form" target="_blank" rel="noreferrer">Permission and Medical Release Form</a> © 2017, 2019 by Intellectual Reserve, Inc. All rights reserved. 5/19. PD60004035 000</p>
+                </div>
                 <div class="non-fields">
                         <button name="action" type="submit" value="Register"><span>Register Participant</span></button>
                 </div>
