@@ -153,7 +153,7 @@ function getPaperwork($event) {
 //     }
 // }
 
-function getEventsJSON($eventYear) {
+function getEventsJSON() {
     try {
         $db = hhConnect();
 
@@ -163,10 +163,8 @@ function getEventsJSON($eventYear) {
         WHERE date_end >= CAST(NOW() AS DATE)
         ORDER BY e.id';
 
-        $sqlVarArray = array(':eventYear' => $eventYear);
-
         $stmt = $db->prepare($sql);
-        $stmt->execute($sqlVarArray);
+        $stmt->execute();
         $returnSQL = $stmt->fetchAll();
         $returnSQL = json_encode($returnSQL);
 
