@@ -277,16 +277,26 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
     }
 }
 
-function getSig($id) {
+function getSig($id, $type) {
     try {
         $db = hhConnect();
 
         $db->beginTransaction();
 
-        $sql =
-        'SELECT id, p_esig
-        FROM hhstake.registrants
-        WHERE id= :id';
+        switch($type){
+            case 'p':
+                $sql =
+                'SELECT id, p_esig
+                FROM hhstake.registrants
+                WHERE id= :id';
+                break;
+            case 'g':
+                $sql =
+                'SELECT id, g_esig
+                FROM hhstake.registrants
+                WHERE id= :id';
+                break;
+        }
 
         $sqlVarArray = array(
             ':id' => $id

@@ -54,12 +54,31 @@ switch($action){
                 array_push($ids, $id);
             }
         }
-
         echo getParticipantsByIds($ids);
         break;
     case 'getRegistrants':
         // Similar to getParticipants but a master list...
         echo getRegistrants();
+        break;
+    case 'getSig':
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING);
+
+        if(empty($id || empty($type))){
+            exit;
+        }
+
+        if($type == 'p' || $type =='g'){
+            getSig($id, $type);
+        } else {
+            exit;
+        }
+
+        // Add the appropriate line to the position to call...
+        // <img src="https://www.hhscamps.com/2021/query/?action=getSig-show&id=224&type=p">
+        // <img src="https://www.hhscamps.com/2021/query/?action=getSig-show&id=224&type=g">
+
+        
         break;
     case 'postItem':
         // POST
