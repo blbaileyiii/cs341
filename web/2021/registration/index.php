@@ -120,7 +120,7 @@ switch($action){
 
         $minAge = getAge($min_DOB);
         
-        $participantDOB = checkMaxDOB($participantDOB);
+        $participantDOB = checkMaxDOB($participantDOB, $minDOB);
 
         // If participantDOB is >= 19 certain things
         $guardianESig = checkAge($guardianESig, $participantAge);
