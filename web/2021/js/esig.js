@@ -170,25 +170,21 @@
     }
   
     // Set up the UI
-    var pSigText = document.getElementById("participant-dataUrl");
     var pSigImage = document.getElementById("participant-image");
     var pClearBtn = document.getElementById("participant-clearBtn");
     var pSubmitBtn = document.getElementById("participant-submitBtn");
 
-    var gSigText = document.getElementById("guardian-dataUrl");
     var gSigImage = document.getElementById("guardian-image");
     var gClearBtn = document.getElementById("guardian-clearBtn");
     var gSubmitBtn = document.getElementById("guardian-submitBtn");
 
     pClearBtn.addEventListener("click", function(e) {
         clearCanvas(participantCanvas);
-        pSigText.innerHTML = "Data URL for your signature will go here!";
         pSigImage.setAttribute("src", "");
     }, false);
 
     pSubmitBtn.addEventListener("click", function(e) {
         var dataURL = participantCanvas.toDataURL("image/png");
-        pSigText.innerHTML = dataURL;
         pSigImage.setAttribute("src", dataURL);
 
         let data = new FormData();
@@ -222,13 +218,11 @@
 
     gClearBtn.addEventListener("click", function(e) {
         clearCanvas(guardianCanvas);
-        gSigText.innerHTML = "Data URL for your signature will go here!";
         gSigImage.setAttribute("src", "");
     }, false);
 
     gSubmitBtn.addEventListener("click", function(e) {
         var dataURL = guardianCanvas.toDataURL();
-        gSigText.innerHTML = dataURL;
         gSigImage.setAttribute("src", dataURL);
 
         let data = new FormData();
