@@ -94,9 +94,6 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
         $stmt->execute($sqlVarArray);
         //$stmt->execute();
         
-        // commit the transaction
-        $db->commit();
-
         // Ask how many rows changed as a result of our insert
         $regResults = $stmt->fetchAll();
         if (count($regResults === 0)){
@@ -104,6 +101,9 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
         } else {
             $regId = NULL;
         }
+
+        // commit the transaction
+        $db->commit();
         
         // Close the database interaction
         $stmt->closeCursor();
