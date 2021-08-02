@@ -278,31 +278,37 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
 }
 
 function getSig($id) {
-    $db = hhConnect();
+    try {
+        $db = hhConnect();
 
-    $db->beginTransaction();
+        $db->beginTransaction();
 
-    $sql =
-    'SELECT id, p_esig
-    FROM hhstake.registrants
-    WHERE id= :id';
+        $sql =
+        'SELECT id, p_esig
+        FROM hhstake.registrants
+        WHERE id= :id';
 
-    $sqlVarArray = array(
-        ':id' => $id
-    );
+        $sqlVarArray = array(
+            ':id' => $id
+        );
 
-    $stmt = $db->prepare($sql);
+        $stmt = $db->prepare($sql);
 
-    // query blob from the database
-    $stmt->execute($sqlVarArray);
+        // query blob from the database
+        $stmt->execute($sqlVarArray);
 
-    $stmt->bindColumn('img_data', $imgData, \PDO::PARAM_STR);
-    $stmt->fetch(\PDO::FETCH_BOUND);
-    $stream = $db->pgsqlLOBOpen($imgData, 'r');
+        $stmt->bindColumn('img_data', $imgData, \PDO::PARAM_STR);
+        $stmt->fetch(\PDO::FETCH_BOUND);
+        $stream = $db->pgsqlLOBOpen($imgData, 'r');
 
-    // output the file
-    header("Content-type: image/png");
-    fpassthru($stream);
+        // output the file
+        header("Content-type: image/png");
+        fpassthru($stream);
+
+    } catch(PDOException $ex) {
+        echo $sql . "<br>" . $ex->getMessage();
+    }
+
 }
 
 /* NOTES:
