@@ -773,6 +773,11 @@ tr.adult-registrant {
     gap: 1rem;
 }
 
+.print-field.sig {
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+}
+
 .print-field-phone {
     display: flex;
     justify-content: space-between;
