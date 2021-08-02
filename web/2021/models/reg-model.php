@@ -15,9 +15,13 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
 
         // The SQL statement
         $sql = 
-        'INSERT INTO hhstake.registrants (event_id, p_name, p_ward, p_dob, p_age, email, tele_one, tele_one_type, tele_two, tele_two_type, p_address, p_city, p_state, emer_name, emer_tele_one, emer_tele_one_type, emer_tele_two, emer_tele_two_type, diet, diet_txt, allergies, allergies_txt, medication, self_medicate, medication_txt, chronic, chronic_txt, serious, serious_txt, limitations_txt, considerations_txt, adult, contact, permission, responsibility, p_esig, p_esig_date, g_esig, g_esig_date, userhost)
-        VALUES (:eventId, :participantName, :ward, :participantDOB, :participantAge, :email, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emerSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllness, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations, :adult, :contact, :permission, :responsibility, :participantESig, :participantSigDate, :guardianESig, :guardianSigDate, :userhost)
+        'INSERT INTO hhstake.registrants (event_id, p_name, p_ward, p_dob, p_age, email, tele_one, tele_one_type, tele_two, tele_two_type, p_address, p_city, p_state, emer_name, emer_tele_one, emer_tele_one_type, emer_tele_two, emer_tele_two_type, diet, diet_txt, allergies, allergies_txt, medication, self_medicate, medication_txt, chronic, chronic_txt, serious, serious_txt, limitations_txt, considerations_txt)
+        VALUES (:eventId, :participantName, :ward, :participantDOB, :participantAge, :email, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emerSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllness, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations)
         RETURNING id';
+
+        // 'INSERT INTO hhstake.registrants (event_id, p_name, p_ward, p_dob, p_age, email, tele_one, tele_one_type, tele_two, tele_two_type, p_address, p_city, p_state, emer_name, emer_tele_one, emer_tele_one_type, emer_tele_two, emer_tele_two_type, diet, diet_txt, allergies, allergies_txt, medication, self_medicate, medication_txt, chronic, chronic_txt, serious, serious_txt, limitations_txt, considerations_txt, adult, contact, permission, responsibility, p_esig, p_esig_date, g_esig, g_esig_date, userhost)
+        // VALUES (:eventId, :participantName, :ward, :participantDOB, :participantAge, :email, :primTel, :primTelType, :secTel, :secTelType, :participantAddress, :participantCity, :participantState, :emergencyContact, :emerPrimTel, :emerPrimTelType, :emerSecTel, :emerSecTelType, :specialDiet, :specialDietTxt, :allergies, :allergiesTxt, :medication, :selfMedicate, :medicationList, :chronicIllness, :chronicIllnessTxt, :serious, :seriousTxt, :limitations, :considerations, :adult, :contact, :permission, :responsibility, :participantESig, :participantSigDate, :guardianESig, :guardianSigDate, :userhost)
+        // RETURNING id';
 
         $db->beginTransaction();
 
@@ -47,6 +51,49 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
         $stmt = $db->prepare($sql);
         // Build var array
         
+        // $sqlVarArray = array(
+        //     ':eventId' => $eventId,
+        //     ':participantName' => $participantName,
+        //     ':ward' => $ward,
+        //     ':participantDOB' => $participantDOB,
+        //     ':participantAge' => $participantAge,
+        //     ':email' => $email,
+        //     ':primTel' => $primTel,
+        //     ':primTelType' => $primTelType,
+        //     ':secTel' => $secTel,
+        //     ':secTelType' => $secTelType,
+        //     ':participantAddress' => $participantAddress,
+        //     ':participantCity' => $participantCity,
+        //     ':participantState' => $participantState,
+        //     ':emergencyContact' => $emergencyContact,
+        //     ':emerPrimTel' => $emerPrimTel,
+        //     ':emerPrimTelType' => $emerPrimTelType,
+        //     ':emerSecTel' => $emerSecTel,
+        //     ':emerSecTelType' => $emerSecTelType,
+        //     ':specialDiet' => $specialDiet,
+        //     ':specialDietTxt' => $specialDietTxt,
+        //     ':allergies' => $allergies,
+        //     ':allergiesTxt' => $allergiesTxt,
+        //     ':medication' => $medication,
+        //     ':selfMedicate' => $selfMedicate,
+        //     ':medicationList' => $medicationList,
+        //     ':chronicIllness' => $chronicIllness,
+        //     ':chronicIllnessTxt' => $chronicIllnessTxt,
+        //     ':serious' => $serious,
+        //     ':seriousTxt' => $seriousTxt,
+        //     ':limitations' => $limitations,
+        //     ':considerations' => $considerations,
+        //     ':adult' => $adult,
+        //     ':contact' => $contact,
+        //     ':permission' => $permission,
+        //     ':responsibility' => $responsibility,
+        //     ':participantESig' => $pESigData,
+        //     ':participantSigDate' => $participantSigDate,
+        //     ':guardianESig' => $gESigData,
+        //     ':guardianSigDate' => $guardianSigDate,
+        //     ':userhost' => $hostname
+        // );
+
         $sqlVarArray = array(
             ':eventId' => $eventId,
             ':participantName' => $participantName,
@@ -78,16 +125,7 @@ function regParticipant($eventId, $participantName, $ward, $participantDOB, $par
             ':serious' => $serious,
             ':seriousTxt' => $seriousTxt,
             ':limitations' => $limitations,
-            ':considerations' => $considerations,
-            ':adult' => $adult,
-            ':contact' => $contact,
-            ':permission' => $permission,
-            ':responsibility' => $responsibility,
-            ':participantESig' => $pESigData,
-            ':participantSigDate' => $participantSigDate,
-            ':guardianESig' => $gESigData,
-            ':guardianSigDate' => $guardianSigDate,
-            ':userhost' => $hostname
+            ':considerations' => $considerations
         );
         
         // Insert the data
