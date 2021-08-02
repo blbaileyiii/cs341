@@ -26,27 +26,27 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <canvas id="sig-canvas1" class='sig-canvas' width="620" height="160">
+                    <canvas id="participantCanvas" width="620" height="160">
                         Get a better browser, bro.
                     </canvas>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <button class="btn btn-primary" id="sig-submitBtn1">Submit Signature</button>
-                    <button class="btn btn-default" id="sig-clearBtn1">Clear Signature</button>
+                    <button class="btn btn-primary" id="participant-submitBtn">Submit Signature</button>
+                    <button class="btn btn-default" id="participant-clearBtn">Clear Signature</button>
                 </div>
             </div>
             <br/>
             <div class="row">
                 <div class="col-md-12">
-                    <textarea id="sig-dataUrl1" class="form-control" rows="5">Data URL for your signature will go here!</textarea>
+                    <textarea id="participant-dataUrl" class="form-control" rows="5">Data URL for your signature will go here!</textarea>
                 </div>
             </div>
             <br/>
             <div class="row">
                 <div class="col-md-12">
-                    <img id="sig-image1" src="" alt="Your signature will go here!"/>
+                    <img id="participant-image" src="" alt="Your signature will go here!"/>
                 </div>
             </div>
         </div>

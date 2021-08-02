@@ -10,8 +10,8 @@
         };
     })();
   
-    var canvas1 = document.getElementById("sig-canvas1");
-    var ctx = canvas1.getContext("2d");
+    var participantCanvas = document.getElementById("participantCanvas");
+    var ctx = participantCanvas.getContext("2d");
     ctx.strokeStyle = "#222222";
     ctx.lineWidth = 4;
   
@@ -22,46 +22,46 @@
     };
     var lastPos = mousePos;
   
-    canvas1.addEventListener("mousedown", function(e) {
+    participantCanvas.addEventListener("mousedown", function(e) {
       drawing = true;
-      lastPos = getMousePos(canvas1, e);
+      lastPos = getMousePos(participantCanvas, e);
     }, false);
   
-    canvas1.addEventListener("mouseup", function(e) {
+    participantCanvas.addEventListener("mouseup", function(e) {
       drawing = false;
     }, false);
   
-    canvas1.addEventListener("mousemove", function(e) {
-      mousePos = getMousePos(canvas1, e);
+    participantCanvas.addEventListener("mousemove", function(e) {
+      mousePos = getMousePos(participantCanvas, e);
     }, false);
   
     // Add touch event support for mobile
-    canvas1.addEventListener("touchstart", function(e) {
+    participantCanvas.addEventListener("touchstart", function(e) {
   
     }, false);
   
-    canvas1.addEventListener("touchmove", function(e) {
+    participantCanvas.addEventListener("touchmove", function(e) {
       var touch = e.touches[0];
       var me = new MouseEvent("mousemove", {
         clientX: touch.clientX,
         clientY: touch.clientY
       });
-      canvas1.dispatchEvent(me);
+      participantCanvas.dispatchEvent(me);
     }, false);
   
-    canvas1.addEventListener("touchstart", function(e) {
-      mousePos = getTouchPos(canvas1, e);
+    participantCanvas.addEventListener("touchstart", function(e) {
+      mousePos = getTouchPos(participantCanvas, e);
       var touch = e.touches[0];
       var me = new MouseEvent("mousedown", {
         clientX: touch.clientX,
         clientY: touch.clientY
       });
-      canvas1.dispatchEvent(me);
+      participantCanvas.dispatchEvent(me);
     }, false);
   
-    canvas1.addEventListener("touchend", function(e) {
+    participantCanvas.addEventListener("touchend", function(e) {
       var me = new MouseEvent("mouseup", {});
-      canvas1.dispatchEvent(me);
+      participantCanvas.dispatchEvent(me);
     }, false);
   
     function getMousePos(canvasDom, mouseEvent) {
@@ -91,17 +91,17 @@
   
     // Prevent scrolling when touching the canvas
     document.body.addEventListener("touchstart", function(e) {
-      if (e.target == canvas1) {
+      if (e.target == participantCanvas) {
         e.preventDefault();
       }
     }, false);
     document.body.addEventListener("touchend", function(e) {
-      if (e.target == canvas1) {
+      if (e.target == participantCanvas) {
         e.preventDefault();
       }
     }, false);
     document.body.addEventListener("touchmove", function(e) {
-      if (e.target == canvas1) {
+      if (e.target == participantCanvas) {
         e.preventDefault();
       }
     }, false);
@@ -112,21 +112,21 @@
     })();
   
     function clearCanvas() {
-      canvas1.width = canvas1.width;
+      participantCanvas.width = participantCanvas.width;
     }
   
     // Set up the UI
-    var sigText = document.getElementById("sig-dataUrl1");
-    var sigImage = document.getElementById("sig-image1");
-    var clearBtn = document.getElementById("sig-clearBtn1");
-    var submitBtn = document.getElementById("sig-submitBtn1");
+    var sigText = document.getElementById("participant-dataUrl");
+    var sigImage = document.getElementById("participant-image");
+    var clearBtn = document.getElementById("participant-clearBtn");
+    var submitBtn = document.getElementById("participant-submitBtn");
     clearBtn.addEventListener("click", function(e) {
       clearCanvas();
       sigText.innerHTML = "Data URL for your signature will go here!";
       sigImage.setAttribute("src", "");
     }, false);
     submitBtn.addEventListener("click", function(e) {
-      var dataUrl = canvas1.toDataURL();
+      var dataUrl = participantCanvas.toDataURL();
       sigText.innerHTML = dataUrl;
       sigImage.setAttribute("src", dataUrl);
     }, false);
