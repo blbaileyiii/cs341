@@ -26,6 +26,7 @@ echo filter_input(INPUT_POST, 'sig');
 $action = filter_input(INPUT_POST, 'action');
 var_dump(filter_input(INPUT_POST, 'action'));
 echo filter_input(INPUT_POST, 'action');
+var_dump($_POST);
 
 if(isset($sigURL)){
     echo postSig($sigURL);
