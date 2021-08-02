@@ -70,9 +70,9 @@ function checkSig($chkVal) {
     return NULL;
 }
 
-function getAge($participantDOB, $eventStart) {
+function getAge($participantDOB) {
     $dOB = new DateTime($participantDOB);
-    $interval = $dOB->diff(new DateTime($eventStart));
+    $interval = $dOB->diff(new DateTime);
     
     return $interval->y;
 }

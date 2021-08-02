@@ -112,16 +112,15 @@ switch($action){
             foreach($events as $event){
                 if($event['id'] == $eventId) { 
                     $minDOB = $event['min_DOB'];
-                    $eventStart = $event['date_start'];
                 };
             } 
         }
 
-        $participantAge = getAge($participantDOB, $eventStart);
+        $participantAge = getAge($participantDOB);
 
-        $minAge = getAge($min_DOB, $eventStart);
+        $minAge = getAge($min_DOB);
         
-        $participantDOB = checkMaxDOB($participantDOB, $minDOB);
+        $participantDOB = checkMaxDOB($participantDOB);
 
         // If participantDOB is >= 19 certain things
         $guardianESig = checkAge($guardianESig, $participantAge);

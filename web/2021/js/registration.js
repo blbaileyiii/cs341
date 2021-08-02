@@ -7,7 +7,7 @@ getEvents();
 document.getElementById('participantDOB').addEventListener('change', function() {
     let dOB = new Date(this.valueAsNumber);
     let ageInput = document.getElementById('participantAge');
-    let guardianSig = document.getElementById('guardianSig');
+    let guardianESig = document.getElementById('guardianESig');
     
     let diff_ms = Date.now() - dOB.getTime();
     let age_dt = new Date(diff_ms);
@@ -19,14 +19,14 @@ document.getElementById('participantDOB').addEventListener('change', function() 
     }
 
     if(ageInput.value >= 19) {
-        guardianSig.value = "N/A - Adult Participant";
-        guardianSig.readOnly = true;
-        changeTxtRequirement(guardianSig, false);
+        guardianESig.value = "";
+        //guardianSig.readOnly = true;
+        changeTxtRequirement(guardianESig, false);
         //guardianSig.required = false;
     } else {
-        guardianSig.value = "";
-        guardianSig.readOnly = false;
-        changeTxtRequirement(guardianSig, true);
+        guardianESig.value = "";
+        //guardianSig.readOnly = false;
+        changeTxtRequirement(guardianESig, true);
         //guardianSig.required = true;
     }
 });
