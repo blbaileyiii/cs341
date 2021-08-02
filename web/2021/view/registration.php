@@ -378,6 +378,6 @@
     ?>
     <script><?php echo $setParticipant; ?></script>
     <script type="module" src="/2021/js/registration.js"></script>
-    <script src="js/esig.js"></script>
+    <script src="/2021/js/esig.js"></script>
 </body>
 </html>
