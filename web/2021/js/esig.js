@@ -19,7 +19,8 @@
     gctx.strokeStyle = "#222222";
     gctx.lineWidth = 4;
   
-    var drawing = false;
+    var pDrawing = false;
+    var gDrawing = false;
     var mousePos = {
       x: 0,
       y: 0
@@ -27,12 +28,12 @@
     var lastPos = mousePos;
   
     participantCanvas.addEventListener("mousedown", function(e) {
-      drawing = true;
+      pDrawing = true;
       lastPos = getMousePos(participantCanvas, e);
     }, false);
   
     participantCanvas.addEventListener("mouseup", function(e) {
-      drawing = false;
+      pDrawing = false;
     }, false);
   
     participantCanvas.addEventListener("mousemove", function(e) {
@@ -70,12 +71,12 @@
 
     //
     guardianCanvas.addEventListener("mousedown", function(e) {
-        drawing = true;
+        gDrawing = true;
         lastPos = getMousePos(guardianCanvas, e);
       }, false);
     
       guardianCanvas.addEventListener("mouseup", function(e) {
-        drawing = false;
+        gDrawing = false;
       }, false);
     
       guardianCanvas.addEventListener("mousemove", function(e) {
@@ -128,11 +129,16 @@
       }
     }
   
-    function renderCanvas(ctx) {
-      if (drawing) {
-        ctx.moveTo(lastPos.x, lastPos.y);
-        ctx.lineTo(mousePos.x, mousePos.y);
-        ctx.stroke();
+    function renderCanvas() {
+      if (pDrawing) {
+        pctx.moveTo(lastPos.x, lastPos.y);
+        pctx.lineTo(mousePos.x, mousePos.y);
+        pctx.stroke();
+        lastPos = mousePos;
+      } else if (gDrawing) {
+        gctx.moveTo(lastPos.x, lastPos.y);
+        gctx.lineTo(mousePos.x, mousePos.y);
+        gctx.stroke();
         lastPos = mousePos;
       }
     }
@@ -156,8 +162,7 @@
   
     (function drawLoop() {
       requestAnimFrame(drawLoop);
-      renderCanvas(pctx);
-      renderCanvas(gctx);
+      renderCanvas();
     })();
   
     function clearCanvas(canvas) {
