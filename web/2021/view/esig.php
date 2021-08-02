@@ -87,6 +87,7 @@
 
                 let data = new FormData();
                 data.append('sig', sigURL);
+                console.log(data);
 
                 var ajax = new XMLHttpRequest();
                 ajax.onreadystatechange = function() {
