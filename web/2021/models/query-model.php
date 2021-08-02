@@ -285,7 +285,7 @@ function getSig($id) {
     $sql =
     'SELECT id, p_esig
     FROM hhstake.registrants
-    WHERE id= :id'
+    WHERE id= :id';
 
     $sqlVarArray = array(
         ':id' => $id
