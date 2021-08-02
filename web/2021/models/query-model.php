@@ -126,6 +126,33 @@ function getPaperwork($event) {
     }
 }
 
+// function getEventsJSON($eventYear) {
+//     try {
+//         $db = hhConnect();
+
+//         $sql = 
+//         'SELECT *
+//         FROM hhstake.events AS e
+//         WHERE EXTRACT(YEAR FROM e.date_start) = :eventYear
+//         ORDER BY e.id';
+
+//         $sqlVarArray = array(':eventYear' => $eventYear);
+
+//         $stmt = $db->prepare($sql);
+//         $stmt->execute($sqlVarArray);
+//         $returnSQL = $stmt->fetchAll();
+//         $returnSQL = json_encode($returnSQL);
+
+//         // The next line closes the interaction with the database 
+//         $stmt->closeCursor();
+
+//         return $returnSQL;
+
+//     } catch(PDOException $ex) {
+//         echo $sql . "<br>" . $ex->getMessage();
+//     }
+// }
+
 function getEventsJSON($eventYear) {
     try {
         $db = hhConnect();
@@ -133,7 +160,7 @@ function getEventsJSON($eventYear) {
         $sql = 
         'SELECT *
         FROM hhstake.events AS e
-        WHERE EXTRACT(YEAR FROM e.date_start) = :eventYear
+        WHERE date_end >= CAST(NOW() AS DATE)
         ORDER BY e.id';
 
         $sqlVarArray = array(':eventYear' => $eventYear);
