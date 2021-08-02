@@ -825,6 +825,12 @@ tr.adult-registrant {
     gap: 0.5rem 1rem;
 }
 
+.esig-canvas {
+    border: 2px dotted #CCCCCC;
+    border-radius: 15px;
+    cursor: crosshair;
+}
+
 @media print {
     .print-registrants {
         -webkit-print-color-adjust: exact;
