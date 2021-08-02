@@ -11,8 +11,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/query-model.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
 
-if (isset($GLOBALS["HTTP_RAW_POST_DATA"])) {
-    $imageData=$GLOBALS['HTTP_RAW_POST_DATA'];
+if (isset($_POST)) {
+    $imageData=$_POST[0];
     echo postSig($imageData);
 } else {
     echo 'FAILED';
