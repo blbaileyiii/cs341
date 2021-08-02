@@ -14,12 +14,10 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
-$year = 2021;
-
 switch($action){
     case 'getEvents':
         // GET
-        echo getEventsJSON($year);
+        echo getEventsJSON();
         break;
     case 'getEquipment':
         // GET

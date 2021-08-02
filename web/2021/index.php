@@ -35,7 +35,7 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/esig-show.php';
         break;
     default:
-        $events = getEventsJSON(2021);
+        $events = getEventsJSON();
         if($events){
             $events = json_decode($events, true);
             $aboutHTML = buildAboutHTML($events);

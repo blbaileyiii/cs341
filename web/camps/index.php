@@ -15,8 +15,6 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
-$year = 2021;
-
 switch($action){
     case 'ymcamp':
         include $_SERVER['DOCUMENT_ROOT'] . '/camps/view/ymcamp.php';
@@ -31,7 +29,7 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/camps/view/attributions.php';
         break;
     default:
-        $events = getEventsJSON($year);
+        $events = getEventsJSON();
         if($events){
             $events = json_decode($events, true);
             $aboutHTML = buildAboutHTML($events);

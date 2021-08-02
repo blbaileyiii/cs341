@@ -18,7 +18,7 @@ if ($action == NULL) {
 switch($action){
     case "getPaperwork":
         $year = 2021;
-        $events = getEventsJSON($year);
+        $events = getEventsJSON();
         if($events){
             $events = json_decode($events, true);
             $eventsHTML = buildEventsHTML($events, $year);
