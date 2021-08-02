@@ -1,4 +1,4 @@
 <?php
     // postSig();
-    getSig(10);
+    getSig(12);
 ?>
