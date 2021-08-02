@@ -170,21 +170,25 @@
     }
   
     // Set up the UI
+    var pSigText = document.getElementById("participantEsig");
     var pSigImage = document.getElementById("participant-image");
     var pClearBtn = document.getElementById("participant-clearBtn");
     var pSubmitBtn = document.getElementById("participant-submitBtn");
 
+    var gSigText = document.getElementById("guardianESig");
     var gSigImage = document.getElementById("guardian-image");
     var gClearBtn = document.getElementById("guardian-clearBtn");
     var gSubmitBtn = document.getElementById("guardian-submitBtn");
 
     pClearBtn.addEventListener("click", function(e) {
         clearCanvas(participantCanvas);
+        pSigText.value = "";
         pSigImage.setAttribute("src", "");
     }, false);
 
     pSubmitBtn.addEventListener("click", function(e) {
         var dataURL = participantCanvas.toDataURL("image/png");
+        pSigText.value = dataURL;
         pSigImage.setAttribute("src", dataURL);
 
         let data = new FormData();
@@ -218,11 +222,13 @@
 
     gClearBtn.addEventListener("click", function(e) {
         clearCanvas(guardianCanvas);
+        gSigText.value = "";
         gSigImage.setAttribute("src", "");
     }, false);
 
     gSubmitBtn.addEventListener("click", function(e) {
         var dataURL = guardianCanvas.toDataURL();
+        gSigText.value = dataURL;
         gSigImage.setAttribute("src", dataURL);
 
         let data = new FormData();

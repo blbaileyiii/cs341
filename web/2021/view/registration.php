@@ -329,6 +329,7 @@
                             </canvas>
                             <button type="button" class="btn btn-primary" id="participant-submitBtn">Confirm Signature</button>
                             <button type="button" class="btn btn-default" id="participant-clearBtn">Clear Signature</button>
+                            <input id="participantESig" name="participantESig" type="hidden" value="">
                             <img id="participant-image" src="" alt="Your signature will go here!"/>
                         </div>
                         <div class="fields">
@@ -342,6 +343,7 @@
                             </canvas>
                             <button type="button" class="btn btn-primary" id="guardian-submitBtn">Confirm Signature</button>
                             <button type="button" class="btn btn-default" id="guardian-clearBtn">Clear Signature</button>
+                            <input id="guardianESig" name="guardianESig" type="hidden" value="">
                             <img id="guardian-image" src="" alt="Your signature will go here!"/>
                         </div>
                         <div class="fields">
