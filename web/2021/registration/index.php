@@ -25,7 +25,7 @@ if ($action == NULL) {
 }
 
 switch($action){
-    case 'Registration':
+    case 'Register':
         echo "HERE I AM<br>";
         echo "HERE I AM<br>";
         echo "HERE I AM<br>";
