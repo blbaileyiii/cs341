@@ -11,12 +11,22 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/models/query-model.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
 
-if (isset($_POST)) {
-    $imageData=$_POST[0];
-    echo postSig($imageData);
+// if (isset($_POST)) {
+//     $imageData=$_POST[0];
+//     echo postSig($imageData);
+// } else {
+//     echo 'FAILED';
+//     var_dump($_POST);
+// }
+
+$imageURL = filter_input(INPUT_POST, 'sig');
+
+if(isset($imageURL)){
+    echo postSig($imageURL);
 } else {
     echo 'FAILED';
-    var_dump($_POST);
 }
+
+
 
 ?>

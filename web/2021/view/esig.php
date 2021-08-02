@@ -51,10 +51,42 @@
                 }
             }
 
+            // /** Save Canvas **/
+            // $("#saveSig").click(function saveSig() {
+            //     var sigData = canvas.toDataURL("image/png");
+            //     $("#imgData").html('Thank you! Your signature was saved');
+            //     var ajax = new XMLHttpRequest();
+            //     ajax.onreadystatechange = function() {
+            //         if (this.readyState == 4 && this.status == 200) {
+            //             // successful
+            //             console.log(this.responseText);
+            //         } else if (this.readyState == 4 && this.status == 404) {
+            //             // unsuccessful
+            //             console.log(this.responseText);
+            //             /*
+            //             let err404 = document.createElement("p");
+            //             err404.className = "err404";
+            //             err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
+            //             */
+            //         } else {
+            //             // very unsuccessful
+            //             console.log(this.responseText);
+            //             // console.log("failed");
+            //         }
+            //     }
+            //     ajax.open("POST", '/2021/sig/');
+            //     ajax.setRequestHeader('Content-Type', 'application/upload');
+            //     ajax.send(sigData);
+            // });
+
             /** Save Canvas **/
             $("#saveSig").click(function saveSig() {
-                var sigData = canvas.toDataURL("image/png");
+                var sigURL = canvas.toDataURL("image/png");
                 $("#imgData").html('Thank you! Your signature was saved');
+
+                let data = new FormData();
+                data.append('sig', sigURL);
+
                 var ajax = new XMLHttpRequest();
                 ajax.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
@@ -76,7 +108,7 @@
                 }
                 ajax.open("POST", '/2021/sig/');
                 ajax.setRequestHeader('Content-Type', 'application/upload');
-                ajax.send(sigData);
+                ajax.send(data);
             });
 
             /** Clear Canvas **/
