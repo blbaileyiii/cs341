@@ -252,54 +252,26 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
     }
 }
 
-// function postESig2($img) {
-
-//     try {
-//         $db = hhConnect();
-
-//         $sql = 
-//         'INSERT INTO hhstake.esig (img)
-//         VALUES (:img)';
-        
-//         $sqlVarArray = array(
-//             ':img' => $img
-//         );
-
-//         $stmt = $db->prepare($sql);
-//         $stmt->execute($sqlVarArray);
-//         $returnSQL = $stmt->rowCount();
-//         $returnSQL = json_encode($returnSQL);
-
-//         // The next line closes the interaction with the database 
-//         $stmt->closeCursor();
-
-//         return $returnSQL;
-
-//     } catch(PDOException $ex) {
-//         // echo $sql . "<br>" . $ex->getMessage();
-//     }
-
-// }
-
-function postSig($file){
+function postSig($imgURL){
     try {
         $db = hhConnect();
 
-        $mimeType = 'image/png';
-        $fileName = 'esig.png';
+        $registrationid = 1;
+        $name = 'Bernard Bailey';
+        $sigtype = 'psig/gsig';
 
         $sql = 
-        'INSERT INTO hhstake.esig(mime_type,file_name,file_data)
-        VALUES(:mime_type,:file_name,:file_data)';
+        'INSERT INTO hhstake.esig(registrationid,name,sigtype,img_data)
+        VALUES(:registrationid,:name,:sigtype,:img_data)';
 
         $db->beginTransaction();
         
         // create large object
-        $fileData = $db->pgsqlLOBCreate();
-        $stream = $db->pgsqlLOBOpen($fileData, 'w');
+        $imgData = $db->pgsqlLOBCreate();
+        $stream = $db->pgsqlLOBOpen($imgData, 'w');
         
         // read data from the file and copy the the stream
-        $fh = fopen($file, 'rb');
+        $fh = fopen($imgURL, 'rb');
         stream_copy_to_stream($fh, $stream);
         //
         $fh = null;
@@ -308,9 +280,10 @@ function postSig($file){
         $stmt = $db->prepare($sql);
 
         $stmt->execute([
-            ':mime_type' => $mimeType,
-            ':file_name' => $fileName,
-            ':file_data' => $fileData,
+            ':registrationid' => $registrationid,
+            ':name' => $name,
+            ':sigtype' => $sigtype,
+            ':img_data' => $imgData
         ]);
 
         // commit the transaction
@@ -329,51 +302,21 @@ function getSig($id) {
 
     $db->beginTransaction();
 
-    $stmt = $db->prepare("SELECT id, file_data, mime_type "
+    $stmt = $db->prepare("SELECT id, img_data, "
             . "FROM hhstake.esig "
             . "WHERE id= :id");
 
     // query blob from the database
     $stmt->execute([$id]);
 
-    $stmt->bindColumn('file_data', $fileData, \PDO::PARAM_STR);
-    $stmt->bindColumn('mime_type', $mimeType, \PDO::PARAM_STR);
+    $stmt->bindColumn('img_data', $imgData, \PDO::PARAM_STR);
     $stmt->fetch(\PDO::FETCH_BOUND);
-    $stream = $db->pgsqlLOBOpen($fileData, 'r');
+    $stream = $db->pgsqlLOBOpen($imgData, 'r');
 
     // output the file
-    header("Content-type: " . $mimeType);
+    header("Content-type: image/png");
     fpassthru($stream);
 }
-
-// function getESig2($id) {
-//     try {
-//         $db = hhConnect();
-
-//         $sql = 
-//         'SELECT img
-//         FROM hhstake.esig AS e
-//         WHERE e.id = :id
-//         ORDER BY e.id';
-
-//         $sqlVarArray = array(
-//             ':id' => $id
-//         );
-
-//         $stmt = $db->prepare($sql);
-//         $stmt->execute($sqlVarArray);
-//         $returnSQL = $stmt->fetchAll();
-//         // $returnSQL = json_encode($returnSQL);
-
-//         // The next line closes the interaction with the database 
-//         $stmt->closeCursor();
-
-//         return $returnSQL;
-
-//     } catch(PDOException $ex) {
-//         echo $sql . "<br>" . $ex->getMessage();
-//     }
-// }
 
 /* NOTES:
 INSERT INTO the_table (id, column_1, column_2) 

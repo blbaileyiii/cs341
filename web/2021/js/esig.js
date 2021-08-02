@@ -187,9 +187,37 @@
     }, false);
 
     pSubmitBtn.addEventListener("click", function(e) {
-        var dataUrl = participantCanvas.toDataURL();
-        pSigText.innerHTML = dataUrl;
-        pSigImage.setAttribute("src", dataUrl);
+        var dataURL = participantCanvas.toDataURL("image/png");
+        pSigText.innerHTML = dataURL;
+        pSigImage.setAttribute("src", dataURL);
+
+        let data = new FormData();
+        data.append('action', 'postSig');
+        data.append('sig', dataURL);
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // successful
+                console.log(this.responseText);
+            } else if (this.readyState == 4 && this.status == 404) {
+                // unsuccessful
+                console.log(this.responseText);
+                /*
+                let err404 = document.createElement("p");
+                err404.className = "err404";
+                err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
+                */
+            } else {
+                // very unsuccessful
+                console.log(this.responseText);
+                // console.log("failed");
+            }
+        }
+        xmlhttp.open("POST", '/2021/sig/', true);
+        // ajax.setRequestHeader('Content-Type', 'application/upload');
+        xmlhttp.send(data);
+
     }, false);
 
     gClearBtn.addEventListener("click", function(e) {
@@ -199,9 +227,36 @@
     }, false);
 
     gSubmitBtn.addEventListener("click", function(e) {
-        var dataUrl = guardianCanvas.toDataURL();
-        gSigText.innerHTML = dataUrl;
-        gSigImage.setAttribute("src", dataUrl);
+        var dataURL = guardianCanvas.toDataURL();
+        gSigText.innerHTML = dataURL;
+        gSigImage.setAttribute("src", dataURL);
+
+        let data = new FormData();
+        data.append('action', 'postSig');
+        data.append('sig', dataURL);
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // successful
+                console.log(this.responseText);
+            } else if (this.readyState == 4 && this.status == 404) {
+                // unsuccessful
+                console.log(this.responseText);
+                /*
+                let err404 = document.createElement("p");
+                err404.className = "err404";
+                err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
+                */
+            } else {
+                // very unsuccessful
+                console.log(this.responseText);
+                // console.log("failed");
+            }
+        }
+        xmlhttp.open("POST", '/2021/sig/', true);
+        // ajax.setRequestHeader('Content-Type', 'application/upload');
+        xmlhttp.send(data);
     }, false);
   
   })();
