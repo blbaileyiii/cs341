@@ -86,6 +86,7 @@
                 $("#imgData").html('Thank you! Your signature was saved');
 
                 let data = new FormData();
+                data.append('action', 'postSig');
                 data.append('sig', sigURL);
                 console.log(data);
 

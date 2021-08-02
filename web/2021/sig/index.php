@@ -21,6 +21,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/2021/libraries/fx.php';
 
 $sigURL = filter_input(INPUT_POST, 'sig');
 var_dump(filter_input(INPUT_POST, 'sig'));
+$action = filter_input(INPUT_POST, 'action');
+var_dump(filter_input(INPUT_POST, 'action'));
 
 if(isset($sigURL)){
     echo postSig($sigURL);
