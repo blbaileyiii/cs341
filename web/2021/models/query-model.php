@@ -302,7 +302,7 @@ function getSig($id) {
 
     $db->beginTransaction();
 
-    $stmt = $db->prepare("SELECT id, img_data, "
+    $stmt = $db->prepare("SELECT id, img_data "
             . "FROM hhstake.esig "
             . "WHERE id= :id");
 
