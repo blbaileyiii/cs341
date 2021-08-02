@@ -26,8 +26,8 @@
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
-        <img src="https://www.hhscamps.com/2021/query/?action=getSig-show&id=224&type=p">
-        <img src="https://www.hhscamps.com/2021/query/?action=getSig-show&id=224&type=g">
+        <img src="https://www.hhscamps.com/2021/query/?action=getSig&id=224&type=p">
+        <img src="https://www.hhscamps.com/2021/query/?action=getSig&id=224&type=g">
     </footer>
     <script src="js/countdown.js"></script>
 </body>

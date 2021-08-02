@@ -289,12 +289,14 @@ function getSig($id, $type) {
                 'SELECT id, p_esig
                 FROM hhstake.registrants
                 WHERE id= :id';
+                $column = 'p_esig';
                 break;
             case 'g':
                 $sql =
                 'SELECT id, g_esig
                 FROM hhstake.registrants
                 WHERE id= :id';
+                $column = 'g_esig';
                 break;
         }
 
@@ -307,7 +309,7 @@ function getSig($id, $type) {
         // query blob from the database
         $stmt->execute($sqlVarArray);
 
-        $stmt->bindColumn('p_esig', $imgData, \PDO::PARAM_STR);
+        $stmt->bindColumn($column, $imgData, \PDO::PARAM_STR);
         $stmt->fetch(\PDO::FETCH_BOUND);
         $stream = $db->pgsqlLOBOpen($imgData, 'r');
 
