@@ -75,8 +75,8 @@ switch($action){
         }
 
         // Add the appropriate line to the position to call...
-        // <img src="https://www.hhscamps.com/2021/query/?action=getSig-show&id=224&type=p">
-        // <img src="https://www.hhscamps.com/2021/query/?action=getSig-show&id=224&type=g">
+        // <img src="https://www.hhscamps.com/2021/query/?action=getSig&id=224&type=p">
+        // <img src="https://www.hhscamps.com/2021/query/?action=getSig&id=224&type=g">
 
         
         break;
