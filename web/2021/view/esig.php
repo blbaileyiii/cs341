@@ -26,7 +26,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <canvas id="participantCanvas" width="620" height="160">
+                    <canvas id="participantCanvas" class="esig-canvas" width="620" height="160">
                         Get a better browser, bro.
                     </canvas>
                 </div>
@@ -60,27 +60,27 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <canvas id="sig-canvas2" class='sig-canvas' width="620" height="160">
+                    <canvas id="guardianCanvas" class="esig-canvas" width="620" height="160">
                         Get a better browser, bro.
                     </canvas>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <button class="btn btn-primary" id="sig-submitBtn2">Submit Signature</button>
-                    <button class="btn btn-default" id="sig-clearBtn2">Clear Signature</button>
+                    <button class="btn btn-primary" id="guardian-submitBtn">Submit Signature</button>
+                    <button class="btn btn-default" id="guardian-clearBtn">Clear Signature</button>
                 </div>
             </div>
             <br/>
             <div class="row">
                 <div class="col-md-12">
-                    <textarea id="sig-dataUrl2" class="form-control" rows="5">Data URL for your signature will go here!</textarea>
+                    <textarea id="guardian-dataUrl" class="form-control" rows="5">Data URL for your signature will go here!</textarea>
                 </div>
             </div>
             <br/>
             <div class="row">
                 <div class="col-md-12">
-                    <img id="sig-image2" src="" alt="Your signature will go here!"/>
+                    <img id="guardian-image" src="" alt="Your signature will go here!"/>
                 </div>
             </div>
         </div>
