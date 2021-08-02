@@ -11,9 +11,13 @@
     })();
   
     var participantCanvas = document.getElementById("participantCanvas");
-    var ctx = participantCanvas.getContext("2d");
-    ctx.strokeStyle = "#222222";
-    ctx.lineWidth = 4;
+    var guardianCanvas = document.getElementById("guardianCanvas");
+    var pctx = participantCanvas.getContext("2d");
+    pctx.strokeStyle = "#222222";
+    pctx.lineWidth = 4;
+    var gctx = guardianCanvas.getContext("2d");
+    gctx.strokeStyle = "#222222";
+    gctx.lineWidth = 4;
   
     var drawing = false;
     var mousePos = {
@@ -63,6 +67,50 @@
       var me = new MouseEvent("mouseup", {});
       participantCanvas.dispatchEvent(me);
     }, false);
+
+    //
+    guardianCanvas.addEventListener("mousedown", function(e) {
+        drawing = true;
+        lastPos = getMousePos(guardianCanvas, e);
+      }, false);
+    
+      guardianCanvas.addEventListener("mouseup", function(e) {
+        drawing = false;
+      }, false);
+    
+      guardianCanvas.addEventListener("mousemove", function(e) {
+        mousePos = getMousePos(guardianCanvas, e);
+      }, false);
+    
+      // Add touch event support for mobile
+      guardianCanvas.addEventListener("touchstart", function(e) {
+    
+      }, false);
+    
+      guardianCanvas.addEventListener("touchmove", function(e) {
+        var touch = e.touches[0];
+        var me = new MouseEvent("mousemove", {
+          clientX: touch.clientX,
+          clientY: touch.clientY
+        });
+        guardianCanvas.dispatchEvent(me);
+      }, false);
+    
+      guardianCanvas.addEventListener("touchstart", function(e) {
+        mousePos = getTouchPos(guardianCanvas, e);
+        var touch = e.touches[0];
+        var me = new MouseEvent("mousedown", {
+          clientX: touch.clientX,
+          clientY: touch.clientY
+        });
+        guardianCanvas.dispatchEvent(me);
+      }, false);
+    
+      guardianCanvas.addEventListener("touchend", function(e) {
+        var me = new MouseEvent("mouseup", {});
+        guardianCanvas.dispatchEvent(me);
+      }, false);
+    //
   
     function getMousePos(canvasDom, mouseEvent) {
       var rect = canvasDom.getBoundingClientRect();
@@ -91,17 +139,17 @@
   
     // Prevent scrolling when touching the canvas
     document.body.addEventListener("touchstart", function(e) {
-      if (e.target == participantCanvas) {
+      if (e.target == participantCanvas || e.target == guardianCanvas) {
         e.preventDefault();
       }
     }, false);
     document.body.addEventListener("touchend", function(e) {
-      if (e.target == participantCanvas) {
+      if (e.target == participantCanvas || e.target == guardianCanvas) {
         e.preventDefault();
       }
     }, false);
     document.body.addEventListener("touchmove", function(e) {
-      if (e.target == participantCanvas) {
+        if (e.target == participantCanvas || e.target == guardianCanvas) {
         e.preventDefault();
       }
     }, false);
@@ -111,24 +159,43 @@
       renderCanvas();
     })();
   
-    function clearCanvas() {
-      participantCanvas.width = participantCanvas.width;
+    function clearCanvas(canvas) {
+      canvas.width = canvas.width;
     }
   
     // Set up the UI
-    var sigText = document.getElementById("participant-dataUrl");
-    var sigImage = document.getElementById("participant-image");
-    var clearBtn = document.getElementById("participant-clearBtn");
-    var submitBtn = document.getElementById("participant-submitBtn");
-    clearBtn.addEventListener("click", function(e) {
-      clearCanvas();
-      sigText.innerHTML = "Data URL for your signature will go here!";
-      sigImage.setAttribute("src", "");
+    var pSigText = document.getElementById("participant-dataUrl");
+    var pSigImage = document.getElementById("participant-image");
+    var pClearBtn = document.getElementById("participant-clearBtn");
+    var pSubmitBtn = document.getElementById("participant-submitBtn");
+
+    var gSigText = document.getElementById("guardian-dataUrl");
+    var gSigImage = document.getElementById("guardian-image");
+    var gClearBtn = document.getElementById("guardian-clearBtn");
+    var gSubmitBtn = document.getElementById("guardian-submitBtn");
+
+    pClearBtn.addEventListener("click", function(e) {
+        clearCanvas(participantCanvas);
+        pSigText.innerHTML = "Data URL for your signature will go here!";
+        pSigImage.setAttribute("src", "");
     }, false);
-    submitBtn.addEventListener("click", function(e) {
-      var dataUrl = participantCanvas.toDataURL();
-      sigText.innerHTML = dataUrl;
-      sigImage.setAttribute("src", dataUrl);
+
+    pSubmitBtn.addEventListener("click", function(e) {
+        var dataUrl = participantCanvas.toDataURL();
+        pSigText.innerHTML = dataUrl;
+        pSigImage.setAttribute("src", dataUrl);
+    }, false);
+
+    gClearBtn.addEventListener("click", function(e) {
+        clearCanvas(guardianCanvas);
+        gSigText.innerHTML = "Data URL for your signature will go here!";
+        gSigImage.setAttribute("src", "");
+    }, false);
+
+    gSubmitBtn.addEventListener("click", function(e) {
+        var dataUrl = guardianCanvas.toDataURL();
+        gSigText.innerHTML = dataUrl;
+        gSigImage.setAttribute("src", dataUrl);
     }, false);
   
   })();
