@@ -26,12 +26,6 @@ if ($action == NULL) {
 
 switch($action){
     case 'Register':
-        echo "HERE I AM<br>";
-        echo "HERE I AM<br>";
-        echo "HERE I AM<br>";
-        echo "HERE I AM<br>";
-        echo "HERE I AM<br>";
-        echo "HERE I AM<br>";
 
         // Sanitize form data
         $eventId = filter_input(INPUT_POST, 'eventId', FILTER_SANITIZE_NUMBER_INT);
