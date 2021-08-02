@@ -110,7 +110,7 @@
                     }
                 }
                 ajax.open("POST", '/2021/sig/', true);
-                ajax.setRequestHeader('Content-Type', 'application/upload');
+                // ajax.setRequestHeader('Content-Type', 'application/upload');
                 ajax.send(data);
             });
 
