@@ -327,8 +327,8 @@
                             <canvas id="participantCanvas" class="esig-canvas" width="620" height="160">
                                 Incompatible with your current browser. Please update.
                             </canvas>
-                            <button class="btn btn-primary" id="participant-submitBtn">Confirm Signature</button>
-                            <button class="btn btn-default" id="participant-clearBtn">Clear Signature</button>
+                            <button type="button" class="btn btn-primary" id="participant-submitBtn">Confirm Signature</button>
+                            <button type="button" class="btn btn-default" id="participant-clearBtn">Clear Signature</button>
                             <img id="participant-image" src="" alt="Your signature will go here!"/>
                         </div>
                         <div class="fields">
@@ -340,8 +340,8 @@
                             <canvas id="guardianCanvas" class="esig-canvas" width="620" height="160">
                                 Incompatible with your current browser. Please update.
                             </canvas>
-                            <button class="btn btn-primary" id="guardian-submitBtn">Confirm Signature</button>
-                            <button class="btn btn-default" id="guardian-clearBtn">Clear Signature</button>
+                            <button type="button" class="btn btn-primary" id="guardian-submitBtn">Confirm Signature</button>
+                            <button type="button" class="btn btn-default" id="guardian-clearBtn">Clear Signature</button>
                             <img id="guardian-image" src="" alt="Your signature will go here!"/>
                         </div>
                         <div class="fields">
