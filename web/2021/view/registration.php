@@ -318,10 +318,10 @@
                     <fieldset>
                         <legend>Permission</legend>
                         <p>By submitting this form, I affirm the following:</p>
-                        <p class="chkbx-ind"><input id="adult" name="adult" type="checkbox" <?php if(isset($adult) && $adult=="yes"){echo "checked";} ?>required><label for="adult">I am a legal adult (19 years or older).</label></p>
-                        <p class="chkbx-ind"><input id="contact" name="contact" type="checkbox" required><label for="contact">I agree to receive updates via the email address provided.</label></p>
-                        <p class="chkbx-ind"><input id="permission" name="permission" type="checkbox" required><label for="permission">I give permission for my child or youth to participate in the event and activities listed above (unless noted) and authorize the adult leaders supervising this event to administer emergency treatment to the above named participant for any accident or illness and to act in my stead in approving necessary medical care. This authorization shall cover this event and travel to and from this event.</label></p>
-                        <p class="chkbx-ind"><input id="responsibility" name="responsibility" type="checkbox" required><label for="responsibility">The participant is responsible for his or her own conduct and is aware of and agrees to abide by Church standards, camp or event safety rules, and other pertinent instructions. Participants’ conduct and interactions should abide by Church standards and exemplify Christlike behavior. Parents and participants should understand that participation in an activity is not a right but a privilege that can be revoked if they behave inappropriately or if they pose a risk to themselves or others.</label></p>
+                        <p class="chkbx-ind"><input id="adult" name="adult" type="checkbox" <?php if(isset($adult) && $adult=="yes"){echo "checked";} ?> required><label for="adult">I am a legal adult (19 years or older).</label></p>
+                        <p class="chkbx-ind"><input id="contact" name="contact" type="checkbox" <?php if(isset($contact) && $contact=="yes"){echo "checked";} ?> required><label for="contact">I agree to receive updates via the email address provided.</label></p>
+                        <p class="chkbx-ind"><input id="permission" name="permission" type="checkbox" <?php if(isset($permission) && $permission=="yes"){echo "checked";} ?> required><label for="permission">I give permission for my child or youth to participate in the event and activities listed above (unless noted) and authorize the adult leaders supervising this event to administer emergency treatment to the above named participant for any accident or illness and to act in my stead in approving necessary medical care. This authorization shall cover this event and travel to and from this event.</label></p>
+                        <p class="chkbx-ind"><input id="responsibility" name="responsibility" type="checkbox" <?php if(isset($responsibility) && $responsibility=="yes"){echo "checked";} ?> required><label for="responsibility">The participant is responsible for his or her own conduct and is aware of and agrees to abide by Church standards, camp or event safety rules, and other pertinent instructions. Participants’ conduct and interactions should abide by Church standards and exemplify Christlike behavior. Parents and participants should understand that participation in an activity is not a right but a privilege that can be revoked if they behave inappropriately or if they pose a risk to themselves or others.</label></p>
                         <div class="fields">
                             <label><span>Participant’s E-signature (Use your finger or mouse to sign inside the box below)</span><span class="field-tip">Required</span></label> 
                             <canvas id="participantCanvas" class="esig-canvas" width="620" height="160">
@@ -329,8 +329,8 @@
                             </canvas>
                             <button type="button" class="btn btn-primary" id="participant-submitBtn">Confirm Signature</button>
                             <button type="button" class="btn btn-default" id="participant-clearBtn">Clear Signature</button>
-                            <input id="participantESig" name="participantESig" type="hidden" value="">
-                            <img id="participant-image" src="" alt="Your signature will go here!"/>
+                            <input id="participantESig" name="participantESig" type="hidden" <?php if(isset($participantESig)){echo "value='$participantESig'";} ?>>
+                            <img id="participant-image" <?php if(isset($participantESig)){echo "src='$participantESig'";} else { echo "src=''";} ?> alt="Your signature will go here!"/>
                         </div>
                         <div class="fields">
                             <label for="participantSigDate"><span>Date</span></label> 
@@ -343,8 +343,8 @@
                             </canvas>
                             <button type="button" class="btn btn-primary" id="guardian-submitBtn">Confirm Signature</button>
                             <button type="button" class="btn btn-default" id="guardian-clearBtn">Clear Signature</button>
-                            <input id="guardianESig" name="guardianESig" type="hidden" value="">
-                            <img id="guardian-image" src="" alt="Your signature will go here!"/>
+                            <input id="guardianESig" name="guardianESig" type="hidden" <?php if(isset($guardianESig)){echo "value='$guardianESig'";} ?>>
+                            <img id="guardian-image" <?php if(isset($guardianESig)){echo "src='$guardianESig'";} else { echo "src=''";} ?> alt="Your signature will go here!"/>
                         </div>
                         <div class="fields">
                             <label for="guardianSigDate"><span>Date</span></label> 
