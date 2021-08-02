@@ -26,6 +26,7 @@
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/footer.php'; ?>
+        <img src="https://www.hhscamps.com/2021/?action=esig-show">
     </footer>
     <script src="js/countdown.js"></script>
 </body>
