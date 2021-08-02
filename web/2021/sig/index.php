@@ -25,6 +25,7 @@ if(isset($imageURL)){
     echo postSig($imageURL);
 } else {
     echo 'FAILED';
+    var_dump($_POST);
 }
 
 
