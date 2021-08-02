@@ -25,7 +25,7 @@ if ($action == NULL) {
 }
 
 switch($action){
-    case 'confirm':
+    case 'Register':
         // Sanitize form data
         $eventId = filter_input(INPUT_POST, 'eventId', FILTER_SANITIZE_NUMBER_INT);
         $participantName = filter_input(INPUT_POST, 'participantName', FILTER_SANITIZE_STRING);
@@ -175,7 +175,7 @@ switch($action){
         }
         include $_SERVER['DOCUMENT_ROOT'] . '/camps/view/confirmation.php';
         break;
-    case 'Register':
+    case 'confirmation':
         // Sanitize form data
         $eventId = filter_input(INPUT_POST, 'eventId', FILTER_SANITIZE_NUMBER_INT);
         $participantName = filter_input(INPUT_POST, 'participantName', FILTER_SANITIZE_STRING);

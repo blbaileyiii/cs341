@@ -70,15 +70,15 @@ function checkSig($chkVal) {
     return NULL;
 }
 
-function getAge($participantDOB) {
+function getAge($participantDOB, $eventStart) {
     $dOB = new DateTime($participantDOB);
-    $interval = $dOB->diff(new DateTime);
+    $interval = $dOB->diff(new DateTime($eventStart));
     
     return $interval->y;
 }
 
 function checkAge($chkVal, $age){
-    if($age >= 19) { return "N/A - Adult Participant"; }
+    if($age >= 19) { return NULL; }
     return $chkVal;
 }
 

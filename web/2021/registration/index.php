@@ -25,7 +25,7 @@ if ($action == NULL) {
 }
 
 switch($action){
-    case 'confirm':
+    case 'Registration':
         // Sanitize form data
         $eventId = filter_input(INPUT_POST, 'eventId', FILTER_SANITIZE_NUMBER_INT);
         $participantName = filter_input(INPUT_POST, 'participantName', FILTER_SANITIZE_STRING);
@@ -107,14 +107,19 @@ switch($action){
         //$selfMedicate
         $chkSelfMedicate = checkDepBool($selfMedicate, $medication);
 
-        // Calculate age by DOB...
-        $participantAge = getAge($participantDOB);
+        // Calculate age by DOB against date event will occur...        
         if(isset($eventId)){
             foreach($events as $event){
-                if($event['id'] == $eventId) { $minDOB = $event['min_DOB']; };
+                if($event['id'] == $eventId) { 
+                    $minDOB = $event['min_DOB'];
+                    $eventStart = $event['date_start'];
+                };
             } 
         }
-        $minAge = getAge($min_DOB);
+
+        $participantAge = getAge($participantDOB, $eventStart);
+
+        $minAge = getAge($min_DOB, $eventStart);
         
         $participantDOB = checkMaxDOB($participantDOB, $minDOB);
 
@@ -181,15 +186,37 @@ switch($action){
         }
 
         // Check for empty / null values. All values listed are required.
-        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($adult)  || empty($contact)  || empty($permission)  || empty($responsibility) || empty($participantESig) || empty($guardianESig))){
+        if((empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($adult)  || empty($contact)  || empty($permission)  || empty($responsibility) || empty($participantESig) || (empty($guardianESig) && $participantAge < 19 ))){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $validate = true;
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
         }
-        include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/confirmation.php';
+        // Insert form data
+        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $adult, $contact, $permission, $responsibility, $participantESig, $guardianESig);
+        //$regId = false; // Testing only
+
+        // Validate Insert
+        // if($regOutcome === 1){
+        if($regId){            
+            foreach($events as $event){
+                if($event['id'] == $eventId) { $eventName = $event['name']; };
+            }   
+            //echo $eventName;
+            $_SESSION['message'] = "<div class='message'>Thanks for registering $participantName.</div>";
+            $_SESSION['participantid'] = $regId;
+            $_SESSION['participant'] = $participantName;
+            $_SESSION['eventid'] = $eventId;
+            $_SESSION['eventname'] = $eventName;
+            header('Location: /2021/registration/');
+            exit;
+        } else {
+            $_SESSION['message'] = "<div class='alert'>Sorry, $participantName, but registration failed. Please try again.<br>If the problem persists please contact your Ward Leadership and/or the WebAdmin.</div>";
+            include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
+            exit;
+        }
         break;
-    case 'Register':
+    case 'confirmation':
         // Sanitize form data
         $eventId = filter_input(INPUT_POST, 'eventId', FILTER_SANITIZE_NUMBER_INT);
         $participantName = filter_input(INPUT_POST, 'participantName', FILTER_SANITIZE_STRING);
