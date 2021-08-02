@@ -277,62 +277,24 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
     }
 }
 
-function postSig($imgURL){
-    try {
-        $db = hhConnect();
-
-        $registrationid = 1;
-        $name = 'Bernard Bailey';
-        $sigtype = 'psig/gsig';
-
-        $sql = 
-        'INSERT INTO hhstake.esig(registrationid,name,sigtype,img_data)
-        VALUES(:registrationid,:name,:sigtype,:img_data)';
-
-        $db->beginTransaction();
-        
-        // create large object
-        $imgData = $db->pgsqlLOBCreate();
-        $stream = $db->pgsqlLOBOpen($imgData, 'w');
-        
-        // read data from the file and copy the the stream
-        $fh = fopen($imgURL, 'rb');
-        stream_copy_to_stream($fh, $stream);
-        //
-        $fh = null;
-        $stream = null;
-
-        $stmt = $db->prepare($sql);
-
-        $stmt->execute([
-            ':registrationid' => $registrationid,
-            ':name' => $name,
-            ':sigtype' => $sigtype,
-            ':img_data' => $imgData
-        ]);
-
-        // commit the transaction
-        $db->commit();
-    } catch (\Exception $e) {
-        $db->rollBack();
-        throw $e;
-    }
-
-    return $db->lastInsertId('esig_id_seq');
-
-}
-
 function getSig($id) {
     $db = hhConnect();
 
     $db->beginTransaction();
 
-    $stmt = $db->prepare("SELECT id, img_data "
-            . "FROM hhstake.esig "
-            . "WHERE id= :id");
+    $sql =
+    'SELECT id, p_esig
+    FROM hhstake.registrants
+    WHERE id= :id'
+
+    $sqlVarArray = array(
+        ':id' => $id
+    );
+
+    $stmt = $db->prepare($sql);
 
     // query blob from the database
-    $stmt->execute([$id]);
+    $stmt->execute($sqlVarArray);
 
     $stmt->bindColumn('img_data', $imgData, \PDO::PARAM_STR);
     $stmt->fetch(\PDO::FETCH_BOUND);

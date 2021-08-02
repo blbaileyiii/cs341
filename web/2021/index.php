@@ -28,9 +28,6 @@ switch($action){
     case 'attributions':
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/attributions.php';
         break;
-    case 'esig' :
-        include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/esig.php';
-        break;
     case 'esig-show' :
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/esig-show.php';
         break;
