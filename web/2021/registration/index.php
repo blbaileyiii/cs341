@@ -174,7 +174,7 @@ switch($action){
         echo "participantSigDate: ". $participantSigDate . "<br>";
         echo "guardianESig: ". $guardianSig . "<br>";
         echo "guardianSigDate: ". $guardianSigDate . "<br>";
-        
+
 
         if(empty($participantDOB)){
             $_SESSION['message'] = "<div class='alert'>Sorry, either you forgot to add your Date of Birth or you aren't old enough. Note: Only participants turning $minAge this year or older may register.</div>";
@@ -190,7 +190,7 @@ switch($action){
             exit; 
         }
         // Insert form data
-        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $participantSig, $participantSigDate, $guardianSig, $guardianSigDate, $adult, $contact, $permission, $responsibility, $participantESig, $guardianESig);
+        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $adult, $contact, $permission, $responsibility, $participantESig, $participantSigDate, $guardianESig, $guardianSigDate);
         //$regId = false; // Testing only
 
         // Validate Insert
