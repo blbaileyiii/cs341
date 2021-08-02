@@ -82,6 +82,7 @@
             /** Save Canvas **/
             $("#saveSig").click(function saveSig() {
                 var sigURL = canvas.toDataURL("image/png");
+                console.log(sigURL);
                 $("#imgData").html('Thank you! Your signature was saved');
 
                 let data = new FormData();
