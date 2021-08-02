@@ -281,9 +281,9 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
 
 // }
 
-function postESig(){
+function postSig($file){
     try {
-        $db = hhConnect($pathToFile);
+        $db = hhConnect();
 
         $mimeType = 'image/png';
         $fileName = 'esig.png';
@@ -299,7 +299,7 @@ function postESig(){
         $stream = $db->pgsqlLOBOpen($fileData, 'w');
         
         // read data from the file and copy the the stream
-        $fh = fopen($pathToFile, 'rb');
+        $fh = fopen($file, 'rb');
         stream_copy_to_stream($fh, $stream);
         //
         $fh = null;
@@ -324,7 +324,7 @@ function postESig(){
 
 }
 
-function getESig($id) {
+function getSig($id) {
     $db = hhConnect();
 
     $db->beginTransaction();

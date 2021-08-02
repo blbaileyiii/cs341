@@ -56,7 +56,7 @@
                 var sigData = canvas.toDataURL("image/png");
                 $("#imgData").html('Thank you! Your signature was saved');
                 var ajax = XMLHttpRequest();
-                ajax.open("POST", 'post-html.php');
+                ajax.open("POST", '/2021/query/?action=postSig');
                 ajax.setRequestHeader('Content-Type', 'application/upload');
                 ajax.send(sigData);
             });

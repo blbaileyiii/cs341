@@ -81,6 +81,12 @@ switch($action){
         }
         echo postItemJSON($reg_id, $item_id, $owned, $pur_price);
         break;
+    case 'postSig':
+        if (isset($GLOBALS["HTTP_RAW_POST_DATA"])) {
+            $imageData=$GLOBALS['HTTP_RAW_POST_DATA'];
+            postSig($imageData);
+        }        
+        break;
     default:
         break;
 }
