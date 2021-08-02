@@ -594,9 +594,15 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "<span>Date</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['p_esig_date']}</span>";
         $permissionSlipsHTML .= "</div>";
-        $permissionSlipsHTML .= "<div class='print-field sig full' style='grid-column:span 5;'>";
-        $permissionSlipsHTML .= "<span>Parent or guardian’s signature (if necessary)</span>";
-        $permissionSlipsHTML .= "<span><img style='max-width:100%;height:25px;' class='esig' src='https://www.hhscamps.com/2021/query/?action=getSig&id={$registrants[$x]['p_id']}&type=g' onerror='this.style.display=`none`'></span>";
+        if($registrants[$x]['p_age'] >= 19) {
+            $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 5;'>";
+            $permissionSlipsHTML .= "<span>Parent or guardian’s signature (if necessary)</span>";
+            $permissionSlipsHTML .= "<span>N/A Adult Participant</span>";
+        } else {
+            $permissionSlipsHTML .= "<div class='print-field sig full' style='grid-column:span 5;'>";
+            $permissionSlipsHTML .= "<span>Parent or guardian’s signature (if necessary)</span>";
+            $permissionSlipsHTML .= "<span><img style='max-width:100%;height:25px;' class='esig' src='https://www.hhscamps.com/2021/query/?action=getSig&id={$registrants[$x]['p_id']}&type=g'></span>";
+        }
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right'>";
         $permissionSlipsHTML .= "<span>Date</span>";
