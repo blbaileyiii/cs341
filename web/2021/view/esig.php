@@ -21,19 +21,19 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>E-Signature</h1>
-                    <p>Sign in the canvas below and save your signature as an image!</p>
+                    <p>Sign in the box below.</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <canvas id="participantCanvas" class="esig-canvas" width="620" height="160">
-                        Get a better browser, bro.
+                        Incompatible with your current browser. Please update.
                     </canvas>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <button class="btn btn-primary" id="participant-submitBtn">Submit Signature</button>
+                    <button class="btn btn-primary" id="participant-submitBtn">Confirm Signature</button>
                     <button class="btn btn-default" id="participant-clearBtn">Clear Signature</button>
                 </div>
             </div>
@@ -55,13 +55,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>E-Signature</h1>
-                    <p>Sign in the canvas below and save your signature as an image!</p>
+                    <p>Sign in the box below.</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <canvas id="guardianCanvas" class="esig-canvas" width="620" height="160">
-                        Get a better browser, bro.
+                        Incompatible with your current browser. Please update.
                     </canvas>
                 </div>
             </div>
