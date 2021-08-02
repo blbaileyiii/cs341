@@ -10,8 +10,8 @@
         };
     })();
   
-    var canvas = document.getElementById("sig-canvas");
-    var ctx = canvas.getContext("2d");
+    var canvas1 = document.getElementById("sig-canvas1");
+    var ctx = canvas1.getContext("2d");
     ctx.strokeStyle = "#222222";
     ctx.lineWidth = 4;
   
@@ -22,46 +22,46 @@
     };
     var lastPos = mousePos;
   
-    canvas.addEventListener("mousedown", function(e) {
+    canvas1.addEventListener("mousedown", function(e) {
       drawing = true;
-      lastPos = getMousePos(canvas, e);
+      lastPos = getMousePos(canvas1, e);
     }, false);
   
-    canvas.addEventListener("mouseup", function(e) {
+    canvas1.addEventListener("mouseup", function(e) {
       drawing = false;
     }, false);
   
-    canvas.addEventListener("mousemove", function(e) {
-      mousePos = getMousePos(canvas, e);
+    canvas1.addEventListener("mousemove", function(e) {
+      mousePos = getMousePos(canvas1, e);
     }, false);
   
     // Add touch event support for mobile
-    canvas.addEventListener("touchstart", function(e) {
+    canvas1.addEventListener("touchstart", function(e) {
   
     }, false);
   
-    canvas.addEventListener("touchmove", function(e) {
+    canvas1.addEventListener("touchmove", function(e) {
       var touch = e.touches[0];
       var me = new MouseEvent("mousemove", {
         clientX: touch.clientX,
         clientY: touch.clientY
       });
-      canvas.dispatchEvent(me);
+      canvas1.dispatchEvent(me);
     }, false);
   
-    canvas.addEventListener("touchstart", function(e) {
-      mousePos = getTouchPos(canvas, e);
+    canvas1.addEventListener("touchstart", function(e) {
+      mousePos = getTouchPos(canvas1, e);
       var touch = e.touches[0];
       var me = new MouseEvent("mousedown", {
         clientX: touch.clientX,
         clientY: touch.clientY
       });
-      canvas.dispatchEvent(me);
+      canvas1.dispatchEvent(me);
     }, false);
   
-    canvas.addEventListener("touchend", function(e) {
+    canvas1.addEventListener("touchend", function(e) {
       var me = new MouseEvent("mouseup", {});
-      canvas.dispatchEvent(me);
+      canvas1.dispatchEvent(me);
     }, false);
   
     function getMousePos(canvasDom, mouseEvent) {
@@ -91,17 +91,17 @@
   
     // Prevent scrolling when touching the canvas
     document.body.addEventListener("touchstart", function(e) {
-      if (e.target == canvas) {
+      if (e.target == canvas1) {
         e.preventDefault();
       }
     }, false);
     document.body.addEventListener("touchend", function(e) {
-      if (e.target == canvas) {
+      if (e.target == canvas1) {
         e.preventDefault();
       }
     }, false);
     document.body.addEventListener("touchmove", function(e) {
-      if (e.target == canvas) {
+      if (e.target == canvas1) {
         e.preventDefault();
       }
     }, false);
@@ -112,21 +112,21 @@
     })();
   
     function clearCanvas() {
-      canvas.width = canvas.width;
+      canvas1.width = canvas1.width;
     }
   
     // Set up the UI
-    var sigText = document.getElementById("sig-dataUrl");
-    var sigImage = document.getElementById("sig-image");
-    var clearBtn = document.getElementById("sig-clearBtn");
-    var submitBtn = document.getElementById("sig-submitBtn");
+    var sigText = document.getElementById("sig-dataUrl1");
+    var sigImage = document.getElementById("sig-image1");
+    var clearBtn = document.getElementById("sig-clearBtn1");
+    var submitBtn = document.getElementById("sig-submitBtn1");
     clearBtn.addEventListener("click", function(e) {
       clearCanvas();
       sigText.innerHTML = "Data URL for your signature will go here!";
       sigImage.setAttribute("src", "");
     }, false);
     submitBtn.addEventListener("click", function(e) {
-      var dataUrl = canvas.toDataURL();
+      var dataUrl = canvas1.toDataURL();
       sigText.innerHTML = dataUrl;
       sigImage.setAttribute("src", dataUrl);
     }, false);

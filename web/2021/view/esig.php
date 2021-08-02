@@ -26,27 +26,61 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <canvas id="sig-canvas" width="620" height="160">
+                    <canvas id="sig-canvas1" class='sig-canvas' width="620" height="160">
                         Get a better browser, bro.
                     </canvas>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
-                    <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button>
+                    <button class="btn btn-primary" id="sig-submitBtn1">Submit Signature</button>
+                    <button class="btn btn-default" id="sig-clearBtn1">Clear Signature</button>
                 </div>
             </div>
             <br/>
             <div class="row">
                 <div class="col-md-12">
-                    <textarea id="sig-dataUrl" class="form-control" rows="5">Data URL for your signature will go here!</textarea>
+                    <textarea id="sig-dataUrl1" class="form-control" rows="5">Data URL for your signature will go here!</textarea>
                 </div>
             </div>
             <br/>
             <div class="row">
                 <div class="col-md-12">
-                    <img id="sig-image" src="" alt="Your signature will go here!"/>
+                    <img id="sig-image1" src="" alt="Your signature will go here!"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>E-Signature</h1>
+                    <p>Sign in the canvas below and save your signature as an image!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <canvas id="sig-canvas2" class='sig-canvas' width="620" height="160">
+                        Get a better browser, bro.
+                    </canvas>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-primary" id="sig-submitBtn2">Submit Signature</button>
+                    <button class="btn btn-default" id="sig-clearBtn2">Clear Signature</button>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-12">
+                    <textarea id="sig-dataUrl2" class="form-control" rows="5">Data URL for your signature will go here!</textarea>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-12">
+                    <img id="sig-image2" src="" alt="Your signature will go here!"/>
                 </div>
             </div>
         </div>
