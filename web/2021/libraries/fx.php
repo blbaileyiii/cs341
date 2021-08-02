@@ -587,16 +587,14 @@ function buildPermissionSlipsHTML($registrants) {
         $permissionSlipsHTML .= "</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 5;'>";
-        $permissionSlipsHTML .= "<span>Participant’s signature</span>";
-        $permissionSlipsHTML .= "<span><img  class='esig' src='https://www.hhscamps.com/2021/query/?action=getSig&id={$registrants[$x]['p_id']}&type=p' alt='E-Sig for Participant'></span>";        
+        $permissionSlipsHTML .= "<span>Participant’s signature<img style='max-width:100%;height:25px;' class='esig' src='https://www.hhscamps.com/2021/query/?action=getSig&id={$registrants[$x]['p_id']}&type=p' alt='E-Sig for Participant'></span>";        
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right'>";
         $permissionSlipsHTML .= "<span>Date</span>";
         $permissionSlipsHTML .= "<span>{$registrants[$x]['p_esig_date']}</span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field left' style='grid-column:span 5;'>";
-        $permissionSlipsHTML .= "<span>Parent or guardian’s signature (if necessary)</span>";
-        $permissionSlipsHTML .= "<span><img style='max-width:100%;height=20px;' class='esig' src='https://www.hhscamps.com/2021/query/?action=getSig&id={$registrants[$x]['p_id']}&type=g' alt='E-Sig for Guardian/Parent'></span>";
+        $permissionSlipsHTML .= "<span>Parent or guardian’s signature (if necessary)<img style='max-width:100%;height:25px;' class='esig' src='https://www.hhscamps.com/2021/query/?action=getSig&id={$registrants[$x]['p_id']}&type=g' alt='E-Sig for Guardian/Parent'></span>";
         $permissionSlipsHTML .= "</div>";
         $permissionSlipsHTML .= "<div class='print-field right'>";
         $permissionSlipsHTML .= "<span>Date</span>";
