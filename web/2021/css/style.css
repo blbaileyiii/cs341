@@ -373,6 +373,11 @@ section {
     display: block;
 }
 
+img.esig {
+    transform: scale(2.0) translateX(1rem);
+    background: #ffffff00;
+}
+
 .nav-hide {
     opacity: 0;
 }
