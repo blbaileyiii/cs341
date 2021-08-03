@@ -247,6 +247,7 @@ header a:hover {
 .btn-default:hover {
     background: var(--on-nav-bg);
     color: var(--btn-bg-soft);
+    border: 1px solid var(--btn-bg-soft);
 }
 
 .scripture {
