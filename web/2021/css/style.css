@@ -228,8 +228,7 @@ header a:hover {
 }
 
 .non-fields button,
-.non-fields .button,
-.btn-primary {
+.non-fields .button {
     background: var(--btn-bg);
     color: var(--on-nav-bg);
 }
@@ -239,15 +238,26 @@ header a:hover {
     background: var(--btn-bg-soft);
 }
 
+.btn-primary {
+    background: var(--btn-bg);
+    color: var(--on-nav-bg);
+    border: 1px solid var(--btn-bg);
+}
+
+.btn-primary:hover {
+    background: var(--logo-highlight);
+    color: var(--btn-bg);
+}
+
 .btn-default {
     background: var(--btn-bg-soft);
     color: var(--on-nav-bg);
+    border: 1px solid var(--btn-bg-soft);
 }
 
 .btn-default:hover {
     background: var(--on-nav-bg);
     color: var(--btn-bg-soft);
-    border: 1px solid var(--btn-bg-soft);
 }
 
 .scripture {
@@ -527,7 +537,6 @@ a.button:active {
 .btn-primary,
 .btn-default {
     padding: 0.25rem;
-    border: 1px solid var(--body-bg);
     outline: none;
 }
 
