@@ -173,23 +173,25 @@
     var pSigText = document.getElementById("participantESig");
     var pSigImage = document.getElementById("participant-image");
     var pClearBtn = document.getElementById("participant-clearBtn");
-    var pSubmitBtn = document.getElementById("participant-submitBtn");
+    var pConfirmBtn = document.getElementById("participant-confirmBtn");
 
     var gSigText = document.getElementById("guardianESig");
     var gSigImage = document.getElementById("guardian-image");
     var gClearBtn = document.getElementById("guardian-clearBtn");
-    var gSubmitBtn = document.getElementById("guardian-submitBtn");
+    var gConfirmBtn = document.getElementById("guardian-confirmBtn");
 
     pClearBtn.addEventListener("click", function(e) {
         clearCanvas(participantCanvas);
         pSigText.value = "";
         pSigImage.setAttribute("src", "");
+        pSigImage.classList.add('hidden');
     }, false);
 
-    pSubmitBtn.addEventListener("click", function(e) {
+    pConfirmBtn.addEventListener("click", function(e) {
         var dataURL = participantCanvas.toDataURL("image/png");
         pSigText.value = dataURL;
         pSigImage.setAttribute("src", dataURL);
+        pSigImage.classList.remove('hidden');
 
         let data = new FormData();
         data.append('action', 'postSig');
@@ -224,12 +226,14 @@
         clearCanvas(guardianCanvas);
         gSigText.value = "";
         gSigImage.setAttribute("src", "");
+        gSigImage.classList.add('hidden');
     }, false);
 
-    gSubmitBtn.addEventListener("click", function(e) {
+    gConfirmBtn.addEventListener("click", function(e) {
         var dataURL = guardianCanvas.toDataURL();
         gSigText.value = dataURL;
         gSigImage.setAttribute("src", dataURL);
+        gSigImage.classList.remove('hidden');
 
         let data = new FormData();
         data.append('action', 'postSig');
