@@ -519,6 +519,11 @@ a.button:active {
     outline: none;
 }
 
+.btn-default {
+    padding: 0.25rem;
+    outline: none;
+}
+
 .non-fields button:active {
     transform: scale(.9);
 }
