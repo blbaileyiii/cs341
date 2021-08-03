@@ -418,6 +418,7 @@ input[type=checkbox]:checked.qr-trig, input[type=checkbox]:checked.qr-trig ~ .qr
     left: 50%;
     border: 2px solid var(--border-intense);
     border-radius: 0.2rem;
+    background: white;
 }
 
 .qr-code.qr-border {
