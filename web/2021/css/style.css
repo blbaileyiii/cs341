@@ -343,7 +343,11 @@ section {
 
 .hidden,
 .nav-hidden {
-    display: none;
+    display: none !important;
+}
+
+.esig-img {
+    display: block;
 }
 
 .nav-hide {
