@@ -328,7 +328,7 @@
                                 Incompatible with your current browser. Please update.
                             </canvas>
                             <input id="participantESig" name="participantESig" type="hidden" <?php if(isset($participantESig)){echo "value='$participantESig'";} ?>>
-                            <img id="participant-image" class='esig-img hidden' <?php if(isset($participantESig)){echo "src='$participantESig'";} else { echo "src=''";} ?> alt="Participant E-Sig"/>
+                            <img id="participant-image" <?php if(isset($participantESig)){echo "class='esig-img' src='$participantESig'";} else { echo "class='esig-img hidden' src=''";} ?> alt="Participant E-Sig"/>
                             <button type="button" class="btn btn-primary" id="participant-confirmBtn">Confirm Signature</button>
                             <button type="button" class="btn btn-default" id="participant-clearBtn">Clear Signature</button>
                         </div>
