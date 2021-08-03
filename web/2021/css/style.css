@@ -385,7 +385,7 @@ img.esig {
     align-items: center;
 }
 
-.qr-code.qr-hidden {
+.qr-div {
     display: none;
 }
 
@@ -1045,10 +1045,7 @@ tr.adult-registrant {
     }
 
     .qr-div {
-        display: inline;
-    }
-
-    .qr-code.qr-hidden {
+        position: relative;
         display: inline;
     }
     
@@ -1066,7 +1063,7 @@ tr.adult-registrant {
         opacity: 0;
     }
 
-    input[type=checkbox]:checked.qr-trig ~ .qr-code {
+    input[type=checkbox]:checked.qr-trig, input[type=checkbox]:checked.qr-trig ~ .qr-code {
         transform: scale(4.8) translate(-5px, -5px);
         position: fixed;
         top: 50%;
