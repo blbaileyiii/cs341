@@ -145,18 +145,17 @@
   
     // Prevent scrolling when touching the canvas
     document.body.addEventListener("touchstart", function(e) {
-      if (e.target == participantCanvas) {
-        //  || e.target == guardianCanvas
+      if (e.target == participantCanvas || e.target == guardianCanvas) {
         e.preventDefault();
       }
     }, {passive: false});
     document.body.addEventListener("touchend", function(e) {
-      if (e.target == participantCanvas) {
+      if (e.target == participantCanvas || e.target == guardianCanvas) {
         e.preventDefault();
       }
     }, {passive: false});
     document.body.addEventListener("touchmove", function(e) {
-      if (e.target == participantCanvas) {
+      if (e.target == participantCanvas || e.target == guardianCanvas) {
         e.preventDefault();
       }
     }, {passive: false});
