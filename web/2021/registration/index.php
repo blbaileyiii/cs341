@@ -189,14 +189,14 @@ switch($action){
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
         }
-        if(empty($participantESig)){
-            $_SESSION['message'] = "<div class='alert'>Please have the participant sign and confirm.</div>";
+        if(empty($guardianESig) && $participantAge < 19 ){
+            $_SESSION['message'] = "<div class='alert'>Both the participant and the parent or guardian must sign and confirm.</div>";
             $validate = true;
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
         }
-        if(empty($guardianESig) && $participantAge < 19 ){
-            $_SESSION['message'] = "<div class='alert'>Please have the parent or guardian sign and confirm.</div>";
+        if(empty($participantESig)){
+            $_SESSION['message'] = "<div class='alert'>The participant must sign and confirm.</div>";
             $validate = true;
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
             exit; 
