@@ -1047,6 +1047,7 @@ tr.adult-registrant {
     .qr-div {
         position: relative;
         display: inline;
+        margin: 0.5rem;
     }
     
     .qr-code {
