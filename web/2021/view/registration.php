@@ -336,7 +336,7 @@
                             <label for="participantSigDate"><span>Date</span></label> 
                             <input id="participantSigDate" name="participantSigDate" type="date" value="<?php echo date('Y-m-d') ?>" readonly required>
                         </div>
-                        <div class="fields">
+                        <div class="fields guardianNA">
                             <label for="guardianESig"><span>Parent or guardian's E-signature (Use your finger or mouse to sign inside the box below)</span><?php if(isset($participantAge) && $participantAge >=19){ echo "";} else {echo "<span class='field-tip'>Required</span>";} ?></label> 
                             <canvas id="guardianCanvas" <?php if(isset($guardianESig)){echo "class='esig-canvas hidden'";} else { echo "class='esig-canvas'";} ?> width="620" height="160">
                                 Incompatible with your current browser. Please update.
@@ -346,7 +346,7 @@
                             <button type="button" <?php if(isset($guardianESig)){echo "class='btn btn-primary hidden'";} else { echo "class='btn btn-primary'";} ?> id="guardian-confirmBtn">Confirm Signature</button>
                             <button type="button" class="btn btn-default" id="guardian-clearBtn">Clear Signature</button>
                         </div>
-                        <div class="fields">
+                        <div class="fields guardianNA">
                             <label for="guardianSigDate"><span>Date</span></label> 
                             <input id="guardianSigDate" name="guardianSigDate" type="date" value="<?php echo date('Y-m-d') ?>" readonly required>
                         </div>
