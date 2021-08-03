@@ -328,7 +328,7 @@
                                 Incompatible with your current browser. Please update.
                             </canvas>
                             <img id="participant-image" class='hidden' <?php if(isset($participantESig)){echo "src='$participantESig'";} else { echo "src=''";} ?> alt="Participant E-Sig"/>
-                            <button type="button" class="btn btn-primary" id="participant-submitBtn">Confirm Signature</button>
+                            <button type="button" class="btn btn-primary" id="participant-confirmBtn">Confirm Signature</button>
                             <button type="button" class="btn btn-default" id="participant-clearBtn">Clear Signature</button>
                             <input id="participantESig" name="participantESig" type="hidden" <?php if(isset($participantESig)){echo "value='$participantESig'";} ?>>
                             
@@ -343,7 +343,7 @@
                                 Incompatible with your current browser. Please update.
                             </canvas>
                             <img id="guardian-image" class='hidden' <?php if(isset($guardianESig)){echo "src='$guardianESig'";} else { echo "src=''";} ?> alt="Guardian E-Sig"/>
-                            <button type="button" class="btn btn-primary" id="guardian-submitBtn">Confirm Signature</button>
+                            <button type="button" class="btn btn-primary" id="guardian-confirmBtn">Confirm Signature</button>
                             <button type="button" class="btn btn-default" id="guardian-clearBtn">Clear Signature</button>
                             <input id="guardianESig" name="guardianESig" type="hidden" <?php if(isset($guardianESig)){echo "value='$guardianESig'";} ?>>
                         </div>
