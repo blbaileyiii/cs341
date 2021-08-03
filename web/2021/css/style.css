@@ -382,7 +382,10 @@ img.esig {
 
 .qr-flex {
     display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
     align-items: center;
+    align-content: center;
 }
 
 .qr-div {
