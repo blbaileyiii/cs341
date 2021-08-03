@@ -377,12 +377,16 @@ img.esig {
     transform: scale(2.0) translateX(1rem);
     background: #ffffff00;
     max-width: 100%;
-    height: 1rem;
+    height: 1.5rem;
 }
 
 .qr-code {
     max-width: 100%;
-    height: 1rem;
+    height: 1.5rem;
+}
+
+.nav .qr-code {
+    margin-right: 1rem;
 }
 
 .nav-hide {
