@@ -2,7 +2,7 @@
     <div class="section-center about-content">
         <div>
             <h2><span class="camp-yr-logo"><span class="logo-lg">Camp</span><span class="logo-highlight logo-sm">2021</span></span> <span class="logo-match">Theme</span></h2>
-            <p>"And Jesus increased in wisdom and stature, and in favour with God and man." (<a href="https://www.churchofjesuschrist.org/study/scriptures/nt/luke/2.52?lang=eng&clang=eng#p52" title="Luke 2:52" target="_blank" rel="noreferrer">Luke 2:52</a>) </p>
+            <p> “Wherefore, be not weary in well-doing, for ye are laying the foundation of a great work. And out of small things proceedeth that which is great. Behold, the Lord requireth the heart and a willing mind” (<a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/64.33-34?lang=eng#32" title="Doctrine and Covenants 64:33-34" target="_blank" rel="noreferrer">Doctrine and Covenants 64:33-34</a>) </p>
         </div>
         <div class="details">
                 <span>CAMP</span>
