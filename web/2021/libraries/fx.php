@@ -126,7 +126,7 @@ function buildAboutHTML($events) {
 
     for ($x = 0; $x < count($events); $x++) {
 
-        $startdate = new DateTime("$events[$x]['date_start'] $events[$x]['meet_time']");
+        $startdate = DateTime::createFromFormat("Y-m-d H:i:s", "$events[$x]['date_start'] $events[$x]['meet_time']");
         $startmonth = $startdate->format('M');
         $startmthday = $startdate->format('d');
         $startday = $startdate->format('D');
