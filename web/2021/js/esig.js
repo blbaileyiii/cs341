@@ -168,6 +168,16 @@
     function clearCanvas(canvas) {
       canvas.width = canvas.width;
     }
+
+    function isCanvasBlank(canvas) {
+      const context = canvas.getContext('2d');
+    
+      const pixelBuffer = new Uint32Array(
+        context.getImageData(0, 0, canvas.width, canvas.height).data.buffer
+      );
+    
+      return !pixelBuffer.some(color => color !== 0);
+    }
   
     // Set up the UI
     var pSigText = document.getElementById("participantESig");
@@ -191,41 +201,46 @@
 
     }, false);
 
-    pConfirmBtn.addEventListener("click", function(e) {
-        var dataURL = participantCanvas.toDataURL("image/png");
-        pSigText.value = dataURL;
-        pSigImage.setAttribute("src", dataURL);
+    pConfirmBtn.addEventListener("click", function(e) {        
 
-        participantCanvas.classList.add('hidden');
-        pConfirmBtn.classList.add('hidden');
-        pSigImage.classList.remove('hidden');
+        if(!isCanvasBlank(participantCanvas)){
+          var dataURL = participantCanvas.toDataURL("image/png");
+          pSigText.value = dataURL;
+          pSigImage.setAttribute("src", dataURL);
 
-        let data = new FormData();
-        data.append('action', 'postSig');
-        data.append('sig', dataURL);
-
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                // successful
-                console.log(this.responseText);
-            } else if (this.readyState == 4 && this.status == 404) {
-                // unsuccessful
-                console.log(this.responseText);
-                /*
-                let err404 = document.createElement("p");
-                err404.className = "err404";
-                err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
-                */
-            } else {
-                // very unsuccessful
-                console.log(this.responseText);
-                // console.log("failed");
-            }
+          participantCanvas.classList.add('hidden');
+          pConfirmBtn.classList.add('hidden');
+          pSigImage.classList.remove('hidden');
+        } else {
+          alert('Signature not detected.')
         }
-        xmlhttp.open("POST", '/2021/sig/', true);
-        // ajax.setRequestHeader('Content-Type', 'application/upload');
-        xmlhttp.send(data);
+
+        // let data = new FormData();
+        // data.append('action', 'postSig');
+        // data.append('sig', dataURL);
+
+        // var xmlhttp = new XMLHttpRequest();
+        // xmlhttp.onreadystatechange = function() {
+        //     if (this.readyState == 4 && this.status == 200) {
+        //         // successful
+        //         console.log(this.responseText);
+        //     } else if (this.readyState == 4 && this.status == 404) {
+        //         // unsuccessful
+        //         console.log(this.responseText);
+        //         /*
+        //         let err404 = document.createElement("p");
+        //         err404.className = "err404";
+        //         err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
+        //         */
+        //     } else {
+        //         // very unsuccessful
+        //         console.log(this.responseText);
+        //         // console.log("failed");
+        //     }
+        // }
+        // xmlhttp.open("POST", '/2021/sig/', true);
+        // // ajax.setRequestHeader('Content-Type', 'application/upload');
+        // xmlhttp.send(data);
 
     }, false);
 
@@ -241,40 +256,44 @@
     }, false);
 
     gConfirmBtn.addEventListener("click", function(e) {
-        var dataURL = guardianCanvas.toDataURL();
-        gSigText.value = dataURL;
-        gSigImage.setAttribute("src", dataURL);
+        if(!isCanvasBlank(participantCanvas)){
+          var dataURL = guardianCanvas.toDataURL();
+          gSigText.value = dataURL;
+          gSigImage.setAttribute("src", dataURL);
 
-        guardianCanvas.classList.add('hidden');
-        gConfirmBtn.classList.add('hidden');
-        gSigImage.classList.remove('hidden');
-
-        let data = new FormData();
-        data.append('action', 'postSig');
-        data.append('sig', dataURL);
-
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                // successful
-                console.log(this.responseText);
-            } else if (this.readyState == 4 && this.status == 404) {
-                // unsuccessful
-                console.log(this.responseText);
-                /*
-                let err404 = document.createElement("p");
-                err404.className = "err404";
-                err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
-                */
-            } else {
-                // very unsuccessful
-                console.log(this.responseText);
-                // console.log("failed");
-            }
+          guardianCanvas.classList.add('hidden');
+          gConfirmBtn.classList.add('hidden');
+          gSigImage.classList.remove('hidden');
+        } else {
+          alert('Signature not detected.')
         }
-        xmlhttp.open("POST", '/2021/sig/', true);
-        // ajax.setRequestHeader('Content-Type', 'application/upload');
-        xmlhttp.send(data);
+
+        // let data = new FormData();
+        // data.append('action', 'postSig');
+        // data.append('sig', dataURL);
+
+        // var xmlhttp = new XMLHttpRequest();
+        // xmlhttp.onreadystatechange = function() {
+        //     if (this.readyState == 4 && this.status == 200) {
+        //         // successful
+        //         console.log(this.responseText);
+        //     } else if (this.readyState == 4 && this.status == 404) {
+        //         // unsuccessful
+        //         console.log(this.responseText);
+        //         /*
+        //         let err404 = document.createElement("p");
+        //         err404.className = "err404";
+        //         err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
+        //         */
+        //     } else {
+        //         // very unsuccessful
+        //         console.log(this.responseText);
+        //         // console.log("failed");
+        //     }
+        // }
+        // xmlhttp.open("POST", '/2021/sig/', true);
+        // // ajax.setRequestHeader('Content-Type', 'application/upload');
+        // xmlhttp.send(data);
     }, false);
   
   })();
