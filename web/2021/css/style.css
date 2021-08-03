@@ -834,6 +834,8 @@ tr.adult-registrant {
     border: 2px dotted #CCCCCC;
     border-radius: 15px;
     cursor: crosshair;
+    display: block;
+    margin: 0.5rem 0;
 }
 
 @media print {
