@@ -100,7 +100,7 @@
                         <input id="participantAge" name="participantAge" type="number" min="11" placeholder="Invalid Birthday" <?php if(isset($participantAge)){echo "value='$participantAge'";} ?> readonly>
                     </div>
                     <div class="fields">
-                        <label for="shirtSize"><span>Ward</span><span class="field-tip">Required</span></label>
+                        <label for="shirtSize"><span>Shirt Size</span><span class="field-tip">Required</span></label>
                         <select id="shirtSize" name="shirtSize" required>
                             <option value="" <?php if(!isset($shirtSize)){echo "selected";} ?> disabled>Choose your size</option>
                             <option value="XS" <?php if(isset($shirtSize) && $shirtSize=="XS"){echo "selected";} ?>>XS</option>
