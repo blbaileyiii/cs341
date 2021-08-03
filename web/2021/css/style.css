@@ -282,7 +282,10 @@ header a:hover {
 .all-schedules a:active,
 .about a,
 .about a:visited,
-.about a:active{
+.about a:active
+.scripture a,
+.scripture a:visited,
+.scripture a:active {
     color: var(--on-nav-bg);
 }
 
