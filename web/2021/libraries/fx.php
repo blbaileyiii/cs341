@@ -132,7 +132,7 @@ function buildAboutHTML($events) {
         $startmthday = $startdate->format('d');
         $startday = $startdate->format('D');
 
-        // $meettime = $startdate->format('g:iA');
+        $meettime = $startdate->format('g:iA');
 
         $enddate = new DateTime($events[$x]['date_end']);
         $endmonth = $enddate->format('M');
@@ -144,7 +144,7 @@ function buildAboutHTML($events) {
         $aboutHTML .= "<span>$name</span>";
         $aboutHTML .= "<span>{$events[$x]['camp_name']}</span>";
         $aboutHTML .= "<span>{$events[$x]['meet_loc']} </span>";
-        $aboutHTML .= "<span>$startmonth $startmthday - $endmonth $endmthday ($startday-$endday)</span>";
+        $aboutHTML .= "<span>$startmonth $startmthday $meettime - $endmonth $endmthday ($startday-$endday)</span>";
         
     }
     return $aboutHTML;
