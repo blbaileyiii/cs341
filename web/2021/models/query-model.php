@@ -183,7 +183,7 @@ function getEquipmentJSON($reg_id) {
         $db = hhConnect();
 
         $sql = 
-        'SELECT e.category, e.ywcamp, e.ymcamp, e.trek, i.owned, e.id, e.quantity, e.name, e.avg_price, i.pur_price 
+        'SELECT e.category, e.ywcamp, e.ymcamp, e.trek, i.owned, e.id, e.quantity, e.name, e.gender, e.avg_price, i.pur_price 
         FROM hhstake.equipment AS e
         LEFT JOIN hhstake.inventory AS i ON e.id = i.item_id AND i.reg_id = :reg_id
         ORDER BY e.category, e.name';

@@ -91,7 +91,8 @@ export default class Equipment {
                 equipmentList[item.category] = [{'owned': item.owned,
                                                 'id': item.id,
                                                 'quantity': item.quantity,
-                                                'name': item.name,                                                  
+                                                'name': item.name,
+                                                'gender': item.gender,                                                
                                                 'avg_price': item.avg_price, 
                                                 'pur_price': item.pur_price,
                                                 'category': item.category.replace(/ /g,"-").toLowerCase()}];
@@ -99,7 +100,8 @@ export default class Equipment {
                 equipmentList[item.category].push({ 'owned': item.owned,
                                                     'id': item.id,
                                                     'quantity': item.quantity,
-                                                    'name': item.name,                                                  
+                                                    'name': item.name,
+                                                    'gender': item.gender,                                            
                                                     'avg_price': item.avg_price, 
                                                     'pur_price': item.pur_price,
                                                     'category': item.category.replace(/ /g,"-").toLowerCase()});
@@ -117,7 +119,8 @@ export default class Equipment {
                     equipmentList2.ymcamp[item.category] = [{'owned': item.owned,
                                                     'id': item.id,
                                                     'quantity': item.quantity,
-                                                    'name': item.name,                                                  
+                                                    'name': item.name,
+                                                    'gender': item.gender,
                                                     'avg_price': item.avg_price, 
                                                     'pur_price': item.pur_price,
                                                     'category': item.category.replace(/ /g,"-").toLowerCase()}];
@@ -125,7 +128,8 @@ export default class Equipment {
                     equipmentList2.ymcamp[item.category].push({ 'owned': item.owned,
                                                         'id': item.id,
                                                         'quantity': item.quantity,
-                                                        'name': item.name,                                                  
+                                                        'name': item.name,
+                                                        'gender': item.gender,
                                                         'avg_price': item.avg_price, 
                                                         'pur_price': item.pur_price,
                                                         'category': item.category.replace(/ /g,"-").toLowerCase()});
@@ -137,7 +141,8 @@ export default class Equipment {
                     equipmentList2.ywcamp[item.category] = [{'owned': item.owned,
                                                     'id': item.id,
                                                     'quantity': item.quantity,
-                                                    'name': item.name,                                                  
+                                                    'name': item.name,
+                                                    'gender': item.gender,
                                                     'avg_price': item.avg_price, 
                                                     'pur_price': item.pur_price,
                                                     'category': item.category.replace(/ /g,"-").toLowerCase()}];
@@ -145,7 +150,8 @@ export default class Equipment {
                     equipmentList2.ywcamp[item.category].push({ 'owned': item.owned,
                                                         'id': item.id,
                                                         'quantity': item.quantity,
-                                                        'name': item.name,                                                  
+                                                        'name': item.name,
+                                                        'gender': item.gender,
                                                         'avg_price': item.avg_price, 
                                                         'pur_price': item.pur_price,
                                                         'category': item.category.replace(/ /g,"-").toLowerCase()});
@@ -157,7 +163,8 @@ export default class Equipment {
                     equipmentList2.trek[item.category] = [{'owned': item.owned,
                                                     'id': item.id,
                                                     'quantity': item.quantity,
-                                                    'name': item.name,                                                  
+                                                    'name': item.name,
+                                                    'gender': item.gender,
                                                     'avg_price': item.avg_price, 
                                                     'pur_price': item.pur_price,
                                                     'category': item.category.replace(/ /g,"-").toLowerCase()}];
@@ -165,7 +172,8 @@ export default class Equipment {
                     equipmentList2.trek[item.category].push({ 'owned': item.owned,
                                                         'id': item.id,
                                                         'quantity': item.quantity,
-                                                        'name': item.name,                                                  
+                                                        'name': item.name,
+                                                        'gender': item.gender,
                                                         'avg_price': item.avg_price, 
                                                         'pur_price': item.pur_price,
                                                         'category': item.category.replace(/ /g,"-").toLowerCase()});
@@ -217,10 +225,13 @@ export default class Equipment {
                     let li = document.createElement('li');
 
                     // li.innerHTML = item.name;
+                    if (item.gender != "Both") {
+                        li.innerHTML = "[" + item.gender + "]";
+                    }
                     if (item.quantity != '1'){
-                        li.innerHTML = item.quantity + " " + item.name;
+                        li.innerHTML = li.innerHTML + item.quantity + " " + item.name;
                     } else {
-                        li.innerHTML = item.name;
+                        li.innerHTML = li.innerHTML + item.name;
                     }
 
                     ul.appendChild(li);
@@ -332,10 +343,16 @@ export default class Equipment {
                 })
 
                 label.htmlFor = identifier;
+
+
+                // li.innerHTML = item.name;
+                if (item.gender != "Both") {
+                    li.innerHTML = "[" + item.gender + "]";
+                }
                 if (item.quantity != '1'){
-                    label.textContent = item.quantity + " " + item.name;
+                    label.textContent = label.textContent + item.quantity + " " + item.name;
                 } else {
-                    label.textContent = item.name;
+                    label.textContent = label.textContent + item.name;
                 }
 
                 li.append(chkBox);
