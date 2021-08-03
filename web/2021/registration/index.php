@@ -31,6 +31,7 @@ switch($action){
         $participantName = filter_input(INPUT_POST, 'participantName', FILTER_SANITIZE_STRING);
         $ward = filter_input(INPUT_POST, 'ward', FILTER_SANITIZE_STRING);
         $participantDOB = filter_input(INPUT_POST, 'participantDOB', FILTER_SANITIZE_STRING);
+        $shirtSize = filter_input(INPUT_POST, 'sirtSize', FILTER_SANITIZE_STRING);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $primTel = filter_input(INPUT_POST, 'primTel', FILTER_SANITIZE_STRING);
         $primTelType = filter_input(INPUT_POST, 'primTelType', FILTER_SANITIZE_STRING);
@@ -183,7 +184,7 @@ switch($action){
         }
 
         // Check for empty / null values. All values listed are required.
-        if(empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($adult)  || empty($contact)  || empty($permission)  || empty($responsibility)){
+        if(empty($eventId) || empty($participantName) || empty($ward) || empty($participantDOB) || empty($shirtSize) || empty($email) || empty($primTel) || empty($primTelType) || empty($participantAddress) || empty($participantCity) || empty($participantState) || empty($emergencyContact) || empty($emerPrimTel) || empty($emerPrimTelType) || empty($specialDiet) || empty($allergies) || empty($medication) || empty($chkSelfMedicate) || empty($chronicIllness) || empty($serious) || empty($adult)  || empty($contact)  || empty($permission)  || empty($responsibility)){
             $_SESSION['message'] = "<div class='alert'>Please provide information for all empty form fields.</div>";
             $validate = true;
             include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/registration.php';
@@ -202,7 +203,7 @@ switch($action){
             exit; 
         }
         // Insert form data
-        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $adult, $contact, $permission, $responsibility, $participantESig, $participantSigDate, $guardianESig, $guardianSigDate);
+        $regId = regParticipant($eventId, $participantName, $ward, $participantDOB, $participantAge, $shirtSize, $email, $primTel, $primTelType, $secTel, $secTelType, $participantAddress, $participantCity, $participantState, $emergencyContact, $emerPrimTel, $emerPrimTelType, $emerSecTel, $emerSecTelType, $specialDiet, $specialDietTxt, $allergies, $allergiesTxt, $medication, $selfMedicate, $medicationList, $chronicIllness, $chronicIllnessTxt, $serious, $seriousTxt, $limitations, $considerations, $adult, $contact, $permission, $responsibility, $participantESig, $participantSigDate, $guardianESig, $guardianSigDate);
         //$regId = false; // Testing only
 
         // Validate Insert
