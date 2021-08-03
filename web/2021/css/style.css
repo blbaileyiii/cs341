@@ -385,6 +385,10 @@ img.esig {
     height: 1.5rem;
 }
 
+.qr-code:hover {
+    transform: scale(3.0);
+}
+
 .camp-yr-logo .qr-code {
     margin-right: 1rem;
 }
