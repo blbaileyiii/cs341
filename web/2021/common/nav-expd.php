@@ -1,4 +1,4 @@
-<div class="camp-yr-logo">
+<div class="camp-yr-logo qr-flex">
     <a class='qr-hover' href="/2021/" title="Hacienda Heights Stake Youth Camps Home"><img class="qr-code" src='/2021/images/qr-code.png' alt='hhscamps qr code'><span class="logo-highlight-none logo-lg">Camp</span><span class="logo-highlight logo-sm">2021</span></a>
 </div>
 <div class="menu">
