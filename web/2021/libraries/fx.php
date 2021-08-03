@@ -125,9 +125,9 @@ function buildAboutHTML($events) {
     $aboutHTML = "";
 
     for ($x = 0; $x < count($events); $x++) {
-        //$startdate = DateTime::createFromFormat("Y-m-d H:i:s", "$events[$x]['date_start'] $events[$x]['meet_time']");
-        echo $events[$x]['date_start'] . " " . $events[$x]['meet_time'];
-        $startdate = new DateTime($events[$x]['date_start']);
+        $startdate = DateTime::createFromFormat("Y-m-d H:i:s", $events[$x]['date_start'] . " " .$events[$x]['meet_time']);
+        // echo $events[$x]['date_start'] . " " . $events[$x]['meet_time'];
+        //$startdate = new DateTime($events[$x]['date_start']);
         $startmonth = $startdate->format('M');
         $startmthday = $startdate->format('d');
         $startday = $startdate->format('D');
