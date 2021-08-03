@@ -387,10 +387,14 @@ img.esig {
 
 .qr-code:hover {
     transform: scale(3.0);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border: 4px solid var(--border-intense);
 }
 
 .camp-yr-logo .qr-code {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 }
 
 .nav-hide {
