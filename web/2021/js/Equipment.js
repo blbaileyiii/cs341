@@ -226,7 +226,7 @@ export default class Equipment {
 
                     // li.innerHTML = item.name;
                     if (item.gender != "Both") {
-                        li.innerHTML = "[" + item.gender + "]";
+                        li.innerHTML = "[" + item.gender + "] ";
                     }
                     if (item.quantity != '1'){
                         li.innerHTML = li.innerHTML + item.quantity + " " + item.name;
@@ -345,9 +345,9 @@ export default class Equipment {
                 label.htmlFor = identifier;
 
 
-                // li.innerHTML = item.name;
+                // label.textContent = item.name;
                 if (item.gender != "Both") {
-                    li.innerHTML = "[" + item.gender + "]";
+                    label.textContent = "[" + item.gender + "] ";
                 }
                 if (item.quantity != '1'){
                     label.textContent = label.textContent + item.quantity + " " + item.name;
