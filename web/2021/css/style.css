@@ -530,7 +530,9 @@ a.button:active {
     outline: none;
 }
 
-.non-fields button:active {
+.non-fields button:active,
+.btn-primary:active,
+.btn-default:active, {
     transform: scale(.9);
 }
 
