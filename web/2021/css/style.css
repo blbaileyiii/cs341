@@ -532,7 +532,7 @@ a.button:active {
 
 .non-fields button:active,
 .btn-primary:active,
-.btn-default:active, {
+.btn-default:active {
     transform: scale(.9);
 }
 
