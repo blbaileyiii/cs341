@@ -1,5 +1,5 @@
 <div class="camp-yr-logo qr-flex">
-    <span><input class="qr-trig" type="checkbox"><img class="qr-code qr-hidden" src='/2021/images/qr-code.png' alt='hhscamps qr code'></span>
+    <div><input class="qr-trig" type="checkbox"><img class="qr-code qr-hidden" src='/2021/images/qr-code.png' alt='hhscamps qr code'></div>
     <a href="/2021/" title="Hacienda Heights Stake Youth Camps Home"><span class="logo-highlight-none logo-lg">Camp</span><span class="logo-highlight logo-sm">2021</span></a>
 </div>
 <div class="menu">
