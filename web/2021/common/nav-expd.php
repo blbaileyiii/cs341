@@ -1,6 +1,5 @@
-<div class="camp-yr-logo">
-    
-<div class='qr-div qr-flex'>
+<div class="camp-yr-logo qr-flex">    
+    <div class='qr-div qr-flex'>
         <input class="qr-trig" type="checkbox">
         <img class="qr-code" src='/2021/images/qr-code.png' alt='hhscamps qr code'>
     </div>
