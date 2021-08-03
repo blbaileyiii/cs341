@@ -31,7 +31,7 @@ switch($action){
         $participantName = filter_input(INPUT_POST, 'participantName', FILTER_SANITIZE_STRING);
         $ward = filter_input(INPUT_POST, 'ward', FILTER_SANITIZE_STRING);
         $participantDOB = filter_input(INPUT_POST, 'participantDOB', FILTER_SANITIZE_STRING);
-        $shirtSize = filter_input(INPUT_POST, 'sirtSize', FILTER_SANITIZE_STRING);
+        $shirtSize = filter_input(INPUT_POST, 'shirtSize', FILTER_SANITIZE_STRING);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $primTel = filter_input(INPUT_POST, 'primTel', FILTER_SANITIZE_STRING);
         $primTelType = filter_input(INPUT_POST, 'primTelType', FILTER_SANITIZE_STRING);
