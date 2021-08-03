@@ -149,17 +149,17 @@
         //  || e.target == guardianCanvas
         e.preventDefault();
       }
-    }, false);
+    }, {passive: false});
     document.body.addEventListener("touchend", function(e) {
       if (e.target == participantCanvas) {
         e.preventDefault();
       }
-    }, false);
+    }, {passive: false});
     document.body.addEventListener("touchmove", function(e) {
       if (e.target == participantCanvas) {
         e.preventDefault();
       }
-    }, false);
+    }, {passive: false});
   
     (function drawLoop() {
       requestAnimFrame(drawLoop);
