@@ -527,7 +527,7 @@ a.button:active {
 .btn-primary,
 .btn-default {
     padding: 0.25rem;
-    border: none;
+    border: 1px solid var(--body-bg);
     outline: none;
 }
 
