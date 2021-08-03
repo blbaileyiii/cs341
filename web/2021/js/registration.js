@@ -8,6 +8,7 @@ document.getElementById('participantDOB').addEventListener('change', function() 
     let dOB = new Date(this.valueAsNumber);
     let ageInput = document.getElementById('participantAge');
     let guardianESig = document.getElementById('guardianESig');
+    let guardianBlock = document.querySelectorAll('.guardianNA');
     
     let diff_ms = Date.now() - dOB.getTime();
     let age_dt = new Date(diff_ms);
@@ -23,11 +24,17 @@ document.getElementById('participantDOB').addEventListener('change', function() 
         //guardianSig.readOnly = true;
         changeTxtRequirement(guardianESig, false);
         //guardianSig.required = false;
+        guardianBlock.forEach( (block) => {
+            block.classList.add('hidden');
+        });
     } else {
         guardianESig.value = "";
         //guardianSig.readOnly = false;
         changeTxtRequirement(guardianESig, true);
         //guardianSig.required = true;
+        guardianBlock.forEach( (block) => {
+            block.classList.remove('hidden');
+        });
     }
 });
 
