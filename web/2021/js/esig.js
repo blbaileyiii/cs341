@@ -145,17 +145,18 @@
   
     // Prevent scrolling when touching the canvas
     document.body.addEventListener("touchstart", function(e) {
-      if (e.target == participantCanvas || e.target == guardianCanvas) {
+      if (e.target == participantCanvas) {
+        //  || e.target == guardianCanvas
         e.preventDefault();
       }
     }, false);
     document.body.addEventListener("touchend", function(e) {
-      if (e.target == participantCanvas || e.target == guardianCanvas) {
+      if (e.target == participantCanvas) {
         e.preventDefault();
       }
     }, false);
     document.body.addEventListener("touchmove", function(e) {
-        if (e.target == participantCanvas || e.target == guardianCanvas) {
+      if (e.target == participantCanvas) {
         e.preventDefault();
       }
     }, false);
@@ -214,34 +215,6 @@
         } else {
           alert('Signature not detected.')
         }
-
-        // let data = new FormData();
-        // data.append('action', 'postSig');
-        // data.append('sig', dataURL);
-
-        // var xmlhttp = new XMLHttpRequest();
-        // xmlhttp.onreadystatechange = function() {
-        //     if (this.readyState == 4 && this.status == 200) {
-        //         // successful
-        //         console.log(this.responseText);
-        //     } else if (this.readyState == 4 && this.status == 404) {
-        //         // unsuccessful
-        //         console.log(this.responseText);
-        //         /*
-        //         let err404 = document.createElement("p");
-        //         err404.className = "err404";
-        //         err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
-        //         */
-        //     } else {
-        //         // very unsuccessful
-        //         console.log(this.responseText);
-        //         // console.log("failed");
-        //     }
-        // }
-        // xmlhttp.open("POST", '/2021/sig/', true);
-        // // ajax.setRequestHeader('Content-Type', 'application/upload');
-        // xmlhttp.send(data);
-
     }, false);
 
     gClearBtn.addEventListener("click", function(e) {
@@ -267,33 +240,6 @@
         } else {
           alert('Signature not detected.')
         }
-
-        // let data = new FormData();
-        // data.append('action', 'postSig');
-        // data.append('sig', dataURL);
-
-        // var xmlhttp = new XMLHttpRequest();
-        // xmlhttp.onreadystatechange = function() {
-        //     if (this.readyState == 4 && this.status == 200) {
-        //         // successful
-        //         console.log(this.responseText);
-        //     } else if (this.readyState == 4 && this.status == 404) {
-        //         // unsuccessful
-        //         console.log(this.responseText);
-        //         /*
-        //         let err404 = document.createElement("p");
-        //         err404.className = "err404";
-        //         err404.textContent = "404: JSON file not found. Try again; perhaps using a valid file name this time."
-        //         */
-        //     } else {
-        //         // very unsuccessful
-        //         console.log(this.responseText);
-        //         // console.log("failed");
-        //     }
-        // }
-        // xmlhttp.open("POST", '/2021/sig/', true);
-        // // ajax.setRequestHeader('Content-Type', 'application/upload');
-        // xmlhttp.send(data);
     }, false);
   
   })();
