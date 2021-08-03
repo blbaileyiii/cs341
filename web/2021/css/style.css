@@ -239,6 +239,16 @@ header a:hover {
     background: var(--btn-bg-soft);
 }
 
+.btn-default {
+    background: var(--btn-bg-soft);
+    color: var(--on-nav-bg);
+}
+
+.btn-default:hover {
+    background: var(--on-nav-bg);
+    color: var(--btn-bg-soft);
+}
+
 .scripture {
     color: var(--on-nav-bg);
     text-shadow: 2px 2px var(--nav-bg);
@@ -513,14 +523,10 @@ a.button:active {
     outline: none;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-default {
     padding: 0.25rem;
     border: none;
-    outline: none;
-}
-
-.btn-default {
-    padding: 0.12rem;
     outline: none;
 }
 
