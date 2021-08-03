@@ -144,7 +144,7 @@ function buildAboutHTML($events) {
         $aboutHTML .= "<span>$name</span>";
         $aboutHTML .= "<span>{$events[$x]['camp_name']}</span>";
         $aboutHTML .= "<span>{$events[$x]['meet_loc']} </span>";
-        $aboutHTML .= "<span>$startmonth $startmthday $meettime - $endmonth $endmthday ($startday-$endday)</span>";
+        $aboutHTML .= "<span>$meettime $startmonth $startmthday - $endmonth $endmthday ($startday-$endday)</span>";
         
     }
     return $aboutHTML;
