@@ -100,6 +100,19 @@
                         <input id="participantAge" name="participantAge" type="number" min="11" placeholder="Invalid Birthday" <?php if(isset($participantAge)){echo "value='$participantAge'";} ?> readonly>
                     </div>
                     <div class="fields">
+                        <label for="shirtSize"><span>Ward</span><span class="field-tip">Required</span></label>
+                        <select id="shirtSize" name="shirtSize" required>
+                            <option value="" <?php if(!isset($shirtSize)){echo "selected";} ?> disabled>Choose your size</option>
+                            <option value="XS" <?php if(isset($shirtSize) && $shirtSize=="XS"){echo "selected";} ?>>XS</option>
+                            <option value="S" <?php if(isset($shirtSize) && $shirtSize=="S"){echo "selected";} ?>>S</option>
+                            <option value="M" <?php if(isset($shirtSize) && $shirtSize=="M"){echo "selected";} ?>>M</option>
+                            <option value="L" <?php if(isset($shirtSize) && $shirtSize=="L"){echo "selected";} ?>>L</option>
+                            <option value="XL" <?php if(isset($shirtSize) && $shirtSize=="XL"){echo "selected";} ?>>XL</option>
+                            <option value="2XL" <?php if(isset($shirtSize) && $shirtSize=="2XL"){echo "selected";} ?>>2XL</option>
+                            <option value="3XL" <?php if(isset($shirtSize) && $shirtSize=="3XL"){echo "selected";} ?>>3XL</option>
+                        </select>
+                    </div>
+                    <div class="fields">
                         <label for="email"><span>Email (If under 19, must be for legal parent or guardian)</span><span class="field-tip">Required</span></label> 
                         <input id="email" name="email" type="email" <?php if(isset($email)){echo "value='$email'";} ?> required>
                     </div>
