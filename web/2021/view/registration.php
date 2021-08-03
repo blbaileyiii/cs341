@@ -329,7 +329,7 @@
                             </canvas>
                             <input id="participantESig" name="participantESig" type="hidden" <?php if(isset($participantESig)){echo "value='$participantESig'";} ?>>
                             <img id="participant-image" <?php if(isset($participantESig)){echo "class='esig-img' src='$participantESig'";} else { echo "class='esig-img hidden' src=''";} ?> alt="Participant E-Sig"/>
-                            <button type="button" <?php if(isset($participantESig)){echo "class='btn btn-primary hidden'";} else { echo "class='btn btn-primary'";} ?>id="participant-confirmBtn">Confirm Signature</button>
+                            <button type="button" <?php if(isset($participantESig)){echo "class='btn btn-primary hidden'";} else { echo "class='btn btn-primary'";} ?> id="participant-confirmBtn">Confirm Signature</button>
                             <button type="button" class="btn btn-default" id="participant-clearBtn">Clear Signature</button>
                         </div>
                         <div class="fields">
@@ -338,12 +338,12 @@
                         </div>
                         <div class="fields">
                             <label for="guardianESig"><span>Parent or guardian's E-signature (Use your finger or mouse to sign inside the box below)</span><?php if(isset($participantAge) && $participantAge >=19){ echo "";} else {echo "<span class='field-tip'>Required</span>";} ?></label> 
-                            <canvas id="guardianCanvas" class="esig-canvas" width="620" height="160">
+                            <canvas id="guardianCanvas" <?php if(isset($guardianESig)){echo "class='esig-canvas hidden'";} else { echo "class='esig-canvas'";} ?> width="620" height="160">
                                 Incompatible with your current browser. Please update.
                             </canvas>
                             <input id="guardianESig" name="guardianESig" type="hidden" <?php if(isset($guardianESig)){echo "value='$guardianESig'";} ?>>
                             <img id="guardian-image" <?php if(isset($guardianESig)){echo "class='esig-img' src='$guardianESig'";} else { echo "class='esig-img hidden' src=''";} ?> alt="Guardian E-Sig"/>
-                            <button type="button" class="btn btn-primary" id="guardian-confirmBtn">Confirm Signature</button>
+                            <button type="button" <?php if(isset($guardianESig)){echo "class='btn btn-primary hidden'";} else { echo "class='btn btn-primary'";} ?> id="guardian-confirmBtn">Confirm Signature</button>
                             <button type="button" class="btn btn-default" id="guardian-clearBtn">Clear Signature</button>
                         </div>
                         <div class="fields">
