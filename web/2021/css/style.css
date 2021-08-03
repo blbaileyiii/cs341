@@ -1044,6 +1044,10 @@ tr.adult-registrant {
         width: 25rem;
     }
 
+    .qr-div {
+        display: inline;
+    }
+
     .qr-code.qr-hidden {
         display: inline;
     }
