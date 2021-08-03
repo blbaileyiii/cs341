@@ -235,7 +235,7 @@
         gSigImage.setAttribute("src", "");
 
         guardianCanvas.classList.remove('hidden');
-        gClearBtn.classList.remove('hidden');
+        gConfirmBtn.classList.remove('hidden');
         gSigImage.classList.add('hidden');
 
     }, false);
@@ -246,7 +246,7 @@
         gSigImage.setAttribute("src", dataURL);
 
         guardianCanvas.classList.add('hidden');
-        gClearBtn.classList.add('hidden');
+        gConfirmBtn.classList.add('hidden');
         gSigImage.classList.remove('hidden');
 
         let data = new FormData();
