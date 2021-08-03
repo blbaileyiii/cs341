@@ -186,6 +186,7 @@
         pSigImage.setAttribute("src", "");
 
         participantCanvas.classList.remove('hidden');
+        pConfirmBtn.classList.remove('hidden');
         pSigImage.classList.add('hidden');
 
     }, false);
@@ -196,6 +197,7 @@
         pSigImage.setAttribute("src", dataURL);
 
         participantCanvas.classList.add('hidden');
+        pConfirmBtn.classList.add('hidden');
         pSigImage.classList.remove('hidden');
 
         let data = new FormData();
@@ -233,6 +235,7 @@
         gSigImage.setAttribute("src", "");
 
         guardianCanvas.classList.remove('hidden');
+        gClearBtn.classList.remove('hidden');
         gSigImage.classList.add('hidden');
 
     }, false);
@@ -243,6 +246,7 @@
         gSigImage.setAttribute("src", dataURL);
 
         guardianCanvas.classList.add('hidden');
+        gClearBtn.classList.add('hidden');
         gSigImage.classList.remove('hidden');
 
         let data = new FormData();
