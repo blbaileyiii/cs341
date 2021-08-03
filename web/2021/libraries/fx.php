@@ -173,6 +173,7 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "<th>Ward</th>";
             $registrantsHTML .= "<th>Name</th>";
             $registrantsHTML .= "<th>Age</th>";
+            $registrantsHTML .= "<th>Shirt Size</th>";
             $registrantsHTML .= "<th>Email</th>";
             $registrantsHTML .= "<th>Phone</th>";
             $registrantsHTML .= "<th></th>";
@@ -196,6 +197,7 @@ function buildRegistrantsHTML($registrants) {
         $registrantsHTML .= "<td>{$registrants[$x]['p_ward']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_name']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_age']}</td>";
+        $registrantsHTML .= "<td>{$registrants[$x]['p_shirt_size']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['email']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['tele_one']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['tele_one_type']}</td>";
