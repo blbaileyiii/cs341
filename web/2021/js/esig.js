@@ -256,7 +256,7 @@
     }, false);
 
     gConfirmBtn.addEventListener("click", function(e) {
-        if(!isCanvasBlank(participantCanvas)){
+        if(!isCanvasBlank(guardianCanvas)){
           var dataURL = guardianCanvas.toDataURL();
           gSigText.value = dataURL;
           gSigImage.setAttribute("src", dataURL);
