@@ -324,12 +324,12 @@
                         <p class="chkbx-ind"><input id="responsibility" name="responsibility" type="checkbox" <?php if(isset($responsibility) && $responsibility=="yes"){echo "checked";} ?> required><label for="responsibility">The participant is responsible for his or her own conduct and is aware of and agrees to abide by Church standards, camp or event safety rules, and other pertinent instructions. Participants’ conduct and interactions should abide by Church standards and exemplify Christlike behavior. Parents and participants should understand that participation in an activity is not a right but a privilege that can be revoked if they behave inappropriately or if they pose a risk to themselves or others.</label></p>
                         <div class="fields">
                             <label for="participantESig"><span>Participant’s E-signature (Use your finger or mouse to sign inside the box below)</span><span class="field-tip">Required</span></label> 
-                            <canvas id="participantCanvas" class="esig-canvas" width="620" height="160">
+                            <canvas id="participantCanvas" <?php if(isset($participantESig)){echo "class='esig-canvas hidden'";} else { echo "class='esig-canvas'";} ?> width="620" height="160">
                                 Incompatible with your current browser. Please update.
                             </canvas>
                             <input id="participantESig" name="participantESig" type="hidden" <?php if(isset($participantESig)){echo "value='$participantESig'";} ?>>
                             <img id="participant-image" <?php if(isset($participantESig)){echo "class='esig-img' src='$participantESig'";} else { echo "class='esig-img hidden' src=''";} ?> alt="Participant E-Sig"/>
-                            <button type="button" class="btn btn-primary" id="participant-confirmBtn">Confirm Signature</button>
+                            <button type="button" <?php if(isset($participantESig)){echo "class='btn btn-primary hidden'";} else { echo "class='btn btn-primary'";} ?>id="participant-confirmBtn">Confirm Signature</button>
                             <button type="button" class="btn btn-default" id="participant-clearBtn">Clear Signature</button>
                         </div>
                         <div class="fields">
@@ -342,7 +342,7 @@
                                 Incompatible with your current browser. Please update.
                             </canvas>
                             <input id="guardianESig" name="guardianESig" type="hidden" <?php if(isset($guardianESig)){echo "value='$guardianESig'";} ?>>
-                            <img id="guardian-image" class='esig-img hidden' <?php if(isset($guardianESig)){echo "src='$guardianESig'";} else { echo "src=''";} ?> alt="Guardian E-Sig"/>
+                            <img id="guardian-image" <?php if(isset($guardianESig)){echo "class='esig-img' src='$guardianESig'";} else { echo "class='esig-img hidden' src=''";} ?> alt="Guardian E-Sig"/>
                             <button type="button" class="btn btn-primary" id="guardian-confirmBtn">Confirm Signature</button>
                             <button type="button" class="btn btn-default" id="guardian-clearBtn">Clear Signature</button>
                         </div>
