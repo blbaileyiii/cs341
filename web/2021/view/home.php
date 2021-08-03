@@ -15,7 +15,6 @@
     </header>
     <main>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/countdown.php'; ?>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/share.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/about.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/schedule-all.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/2021/common/pillars.php'; ?>
