@@ -228,12 +228,14 @@ header a:hover {
 }
 
 .non-fields button,
-.non-fields .button {
+.non-fields .button,
+.btn-primary {
     background: var(--btn-bg);
     color: var(--on-nav-bg);
 }
 
-.non-fields button:hover {
+.non-fields button:hover,
+.btn-primary:hover {
     background: var(--btn-bg-soft);
 }
 
@@ -506,6 +508,12 @@ a.button:active {
 
 .non-fields button {
     width: 100%;
+    padding: 0.25rem;
+    border: none;
+    outline: none;
+}
+
+.btn-primary {
     padding: 0.25rem;
     border: none;
     outline: none;
