@@ -7,6 +7,7 @@
         <div class="details">
                 <span>CAMP</span>
                 <span>WHERE</span>
+                <span>MEET</span>
                 <span>WHEN</span>
             <?php echo $aboutHTML; ?>
             </table>
