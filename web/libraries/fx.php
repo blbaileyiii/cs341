@@ -195,7 +195,7 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "<table>";
             $registrantsHTML .= buildEventRegistrantsCount($registrants, $event);
             $registrantsHTML .= "<p>";
-            $registrantsHTML .= "<a href='?action=print&event={$registrants[$x]['key']}&id=0' title='Print permission slips for {$registrants[$x]['name']}'  target='_blank' rel='noreferrer'>";
+            $registrantsHTML .= "<a href='?action=print&event={$registrants[$x]['key']}' title='Print permission slips for {$registrants[$x]['name']}'  target='_blank' rel='noreferrer'>";
             $registrantsHTML .= "Print permission slips for {$registrants[$x]['name']}";
             $registrantsHTML .= "</a>";
             $registrantsHTML .= "</p>";
