@@ -31,6 +31,7 @@ switch($action){
             $path = '/images/' . $camp;
             $images = scandir($dir);
             $galleryHTML = buildGalleryHTML($images, $path);
+            $galleryThumbsHTML = buildGalleryThumbnailsHTML($images, $path);
 
             if((@include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php') === false)
             {

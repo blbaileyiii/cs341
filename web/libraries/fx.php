@@ -676,11 +676,31 @@ function buildGalleryHTML($images, $path) {
             $galleryHTML .= "<div class='mySlides'>";
             $galleryHTML .= "<div class='numbertext'>$imgNumber / $imgCount</div>";
             $galleryHTML .= "<img class='responsive' src='$path/{$images[$x]}'>";
-            $galleryHTML .= "</div/>";
+            $galleryHTML .= "</div>";
         }        
     }
 
     return $galleryHTML;
+}
+
+function buildGalleryThumbnailsHTML($images, $path) {
+    $galleryThumbsHTML = "";
+    $galleryThumbsHTML .= "<div class='row'>";
+
+    $imgNumber = 0;
+
+    for ($x = 0; $x < count($images); $x++) {
+        if(substr($images[$x], -4) == '.jpg') {
+            $imgNumber++;            
+            $galleryThumbsHTML .= "<div class='column'>";
+            $galleryThumbsHTML .= "<img class='demo cursor' src='$path/{$images[$x]}' onclick='currentSlide($imgNumber)'>";
+            $galleryThumbsHTML .= "</div>";
+        }        
+    }
+
+    $galleryThumbsHTML .= "</div>";
+
+    return $galleryThumbsHTML;
 }
 
 // function prepESig($imgLoc) {
