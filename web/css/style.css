@@ -443,7 +443,8 @@ input[type=checkbox]:checked.qr-trig, input[type=checkbox]:checked.qr-trig ~ .qr
 .menu,
 footer,
 .countdown-section,
-.scripture {
+.scripture,
+.center-txt {
     text-align: center;
 }
 
