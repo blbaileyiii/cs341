@@ -660,7 +660,7 @@ function buildPermissionSlipsHTML($registrants) {
     return $permissionSlipsHTML;
 }
 
-function buildGalleryHTML($images, $dir) {
+function buildGalleryHTML($images, $path) {
     $galleryHTML = "";
 
     $imgCount = 0;
@@ -675,7 +675,7 @@ function buildGalleryHTML($images, $dir) {
             $imgNumber++;
             $galleryHTML .= "<div class='mySlides'>";
             $galleryHTML .= "<div class='numbertext'>$imgNumber / $imgCount</div>";
-            $galleryHTML .= "<img class='responsive' src='$dir/{$images[$x]}'>";
+            $galleryHTML .= "<img class='responsive' src='$path/{$images[$x]}'>";
             $galleryHTML .= "</div/>";
         }        
     }
