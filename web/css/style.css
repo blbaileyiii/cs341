@@ -323,6 +323,7 @@ header {
     align-items: center;
     margin: 0;
     padding: 0.5rem 3rem;
+    z-index: 1;
 }
 
 footer {
