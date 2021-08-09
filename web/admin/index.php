@@ -27,7 +27,6 @@ switch($action){
         $id = filter_input(INPUT_GET, 'id');
 
         $id = checkInt($id);
-        echo $id;
         $registrants = getPaperwork($event, $id);
         if($registrants){
             $registrants = json_decode($registrants, true);
