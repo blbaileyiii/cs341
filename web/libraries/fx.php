@@ -187,11 +187,6 @@ function buildRegistrantsHTML($registrants) {
 
             if ($event != ""){
                 $registrantsHTML .= "</table>";
-                $registrantsHTML .= "<p>";
-                $registrantsHTML .= "<a href='?action=print&event={$registrants[$x]['key']}' title='Print permission slips for {$registrants[$x]['name']}'  target='_blank' rel='noreferrer'>";
-                $registrantsHTML .= "Print permission slips for {$registrants[$x]['name']}";
-                $registrantsHTML .= "</a>";
-                $registrantsHTML .= "</p>";
             }
 
             $event = $registrants[$x]['name'];
@@ -199,6 +194,11 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "<h2>{$registrants[$x]['name']}</h2>";
             $registrantsHTML .= "<table>";
             $registrantsHTML .= buildEventRegistrantsCount($registrants, $event);
+            $registrantsHTML .= "<p>";
+            $registrantsHTML .= "<a href='?action=print&event={$registrants[$x]['key']}' title='Print permission slips for {$registrants[$x]['name']}'  target='_blank' rel='noreferrer'>";
+            $registrantsHTML .= "Print permission slips for {$registrants[$x]['name']}";
+            $registrantsHTML .= "</a>";
+            $registrantsHTML .= "</p>";
             $registrantsHTML .= "<tr>";
             $registrantsHTML .= "<th>Event</th>";
             $registrantsHTML .= "<th>Ward</th>";
