@@ -31,10 +31,7 @@ switch($action){
         $registrants = getPaperwork($event, $id);
         if($registrants){
             $registrants = json_decode($registrants, true);
-            echo $id;
-            if($id > -1){
-                $permissionSlipsHTML = buildPermissionSlipsHTML($registrants);
-            }            
+            $permissionSlipsHTML = buildPermissionSlipsHTML($registrants);         
             include $_SERVER['DOCUMENT_ROOT'] . '/view/print.php';
             exit; 
         } 
