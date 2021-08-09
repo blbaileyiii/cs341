@@ -34,9 +34,6 @@ switch($action){
     case 'attributions':
         include $_SERVER['DOCUMENT_ROOT'] . '/view/attributions.php';
         break;
-    case 'esig-show' :
-        include $_SERVER['DOCUMENT_ROOT'] . '/view/esig-show.php';
-        break;
     default:
         if($events){
             $aboutHTML = buildAboutHTML($events);
