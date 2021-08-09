@@ -75,7 +75,7 @@ function getRegistrants() {
         $db = hhConnect();
 
         $sql = 
-        'SELECT e.key, e.name, r.p_ward, r.p_name, r.p_age, r.p_shirt_size, r.email, r.tele_one, r.tele_one_type, r.emer_name, r.emer_tele_one, r.emer_tele_one_type, r.inactivated
+        'SELECT e.key, e.name, r.id, r.p_ward, r.p_name, r.p_age, r.p_shirt_size, r.email, r.tele_one, r.tele_one_type, r.emer_name, r.emer_tele_one, r.emer_tele_one_type, r.inactivated
         FROM hhstake.registrants AS r
         LEFT JOIN hhstake.events AS e ON r.event_id = e.id
         ORDER BY e.name, r.p_ward, r.p_name';
@@ -96,20 +96,37 @@ function getRegistrants() {
     }
 }
 
-function getPaperwork($event) {
+function getPaperwork($event, $id) {
     try {
         $db = hhConnect();
 
-        $sql = 
-        'SELECT e.id AS "eventid", e.key AS "event_key", e.name AS "event_name", e.date_start, e.date_end, e.desc AS "event_desc", e.stake, e.l_name, e.l_phone, e.l_email, e.meet_time, e.meet_loc, e.camp_name, e.camp_address, e.camp_city, e.camp_state, e.camp_zip, e."min_DOB", r.id AS "p_id", r.event_id, r.p_name, r.checkedin, r.p_ward, r.p_dob, r.p_age, r.email, r.tele_one, r.tele_one_type, r.tele_two, r.tele_two_type, r.p_address, r.p_city, r.p_state, r.emer_name, r.emer_tele_one, r.emer_tele_one_type, r.emer_tele_two, r.emer_tele_two_type, r.diet, r.diet_txt, r.allergies, r.allergies_txt, r.medication, r.self_medicate, r.medication_txt, r.chronic, r.chronic_txt, r.serious, r.serious_txt, r.limitations_txt, r.considerations_txt, r.adult, r.contact, r.permission, r.responsibility, r.p_esig_date, r.g_esig_date, r.created
-        FROM hhstake.registrants AS r
-        LEFT JOIN hhstake.events AS e ON r.event_id = e.id
-        WHERE e.key = :event AND r.inactivated = false
-        ORDER BY e.name, r.p_ward, r.p_name';
+        if($id == 'all'){
+            $sql = 
+            'SELECT e.id AS "eventid", e.key AS "event_key", e.name AS "event_name", e.date_start, e.date_end, e.desc AS "event_desc", e.stake, e.l_name, e.l_phone, e.l_email, e.meet_time, e.meet_loc, e.camp_name, e.camp_address, e.camp_city, e.camp_state, e.camp_zip, e."min_DOB", r.id AS "p_id", r.event_id, r.p_name, r.checkedin, r.p_ward, r.p_dob, r.p_age, r.email, r.tele_one, r.tele_one_type, r.tele_two, r.tele_two_type, r.p_address, r.p_city, r.p_state, r.emer_name, r.emer_tele_one, r.emer_tele_one_type, r.emer_tele_two, r.emer_tele_two_type, r.diet, r.diet_txt, r.allergies, r.allergies_txt, r.medication, r.self_medicate, r.medication_txt, r.chronic, r.chronic_txt, r.serious, r.serious_txt, r.limitations_txt, r.considerations_txt, r.adult, r.contact, r.permission, r.responsibility, r.p_esig_date, r.g_esig_date, r.created
+            FROM hhstake.registrants AS r
+            LEFT JOIN hhstake.events AS e ON r.event_id = e.id
+            WHERE e.key = :event AND r.inactivated = false
+            ORDER BY e.name, r.p_ward, r.p_name';
 
-        $sqlVarArray = array(
-            ':event' => $event
-        );
+            $sqlVarArray = array(
+                ':event' => $event
+            );
+
+        } else if ($id){
+            $sql = 
+            'SELECT e.id AS "eventid", e.key AS "event_key", e.name AS "event_name", e.date_start, e.date_end, e.desc AS "event_desc", e.stake, e.l_name, e.l_phone, e.l_email, e.meet_time, e.meet_loc, e.camp_name, e.camp_address, e.camp_city, e.camp_state, e.camp_zip, e."min_DOB", r.id AS "p_id", r.event_id, r.p_name, r.checkedin, r.p_ward, r.p_dob, r.p_age, r.email, r.tele_one, r.tele_one_type, r.tele_two, r.tele_two_type, r.p_address, r.p_city, r.p_state, r.emer_name, r.emer_tele_one, r.emer_tele_one_type, r.emer_tele_two, r.emer_tele_two_type, r.diet, r.diet_txt, r.allergies, r.allergies_txt, r.medication, r.self_medicate, r.medication_txt, r.chronic, r.chronic_txt, r.serious, r.serious_txt, r.limitations_txt, r.considerations_txt, r.adult, r.contact, r.permission, r.responsibility, r.p_esig_date, r.g_esig_date, r.created
+            FROM hhstake.registrants AS r
+            LEFT JOIN hhstake.events AS e ON r.event_id = e.id
+            WHERE e.key = :event AND r.inactivated = false AND r.id = :id
+            ORDER BY e.name, r.p_ward, r.p_name';
+
+            $sqlVarArray = array(
+                ':event' => $event,
+                ':id' => $id
+            );
+        }
+
+        
 
         $stmt = $db->prepare($sql);
         $stmt->execute($sqlVarArray);

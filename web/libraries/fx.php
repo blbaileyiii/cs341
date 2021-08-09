@@ -195,7 +195,7 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "<table>";
             $registrantsHTML .= buildEventRegistrantsCount($registrants, $event);
             $registrantsHTML .= "<p>";
-            $registrantsHTML .= "<a href='?action=print&event={$registrants[$x]['key']}' title='Print permission slips for {$registrants[$x]['name']}'  target='_blank' rel='noreferrer'>";
+            $registrantsHTML .= "<a href='?action=print&event={$registrants[$x]['key']}&id=all' title='Print permission slips for {$registrants[$x]['name']}'  target='_blank' rel='noreferrer'>";
             $registrantsHTML .= "Print permission slips for {$registrants[$x]['name']}";
             $registrantsHTML .= "</a>";
             $registrantsHTML .= "</p>";
@@ -226,7 +226,7 @@ function buildRegistrantsHTML($registrants) {
 
         $registrantsHTML .= "<td>{$registrants[$x]['name']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_ward']}</td>";
-        $registrantsHTML .= "<td>{$registrants[$x]['p_name']}</td>";
+        $registrantsHTML .= "<td><a href='?action=print&event={$registrants[$x]['key']}&id={$registrants[$x]['id']}' title='Print permission slips for {$registrants[$x]['p_name']}'  target='_blank' rel='noreferrer'>{$registrants[$x]['p_name']}</a></td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_age']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_shirt_size']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['email']}</td>";
