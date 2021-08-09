@@ -109,7 +109,7 @@ function buildExpNavList($events){
     $navList .= "<li class='nav item'><a href='/' title='Hacienda Heights Stake Youth Camps Home'>Home</a></li>";
     
     for ($x = 0; $x < count($events); $x++){
-        $navList .= "<li class='nav item'><a href='/?action={$events[$x]['key']}' title='{$events[$x]['name']}'>{$events[$x]['name']}</a></li>";
+        $navList .= "<li class='nav item'><a href='/?action=getCamp&camp={$events[$x]['key']}' title='{$events[$x]['name']}'>{$events[$x]['name']}</a></li>";
     }
 
     $navList .= "<li class='nav item'><a href='#about' title='About'>About</a></li>";
