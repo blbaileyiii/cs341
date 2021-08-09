@@ -1010,15 +1010,8 @@ tr.adult-registrant {
   color: white;
 }
 
-.gallery .row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.gallery .column {
-  float: left;
-  width: 16.66%;
+.gallery .row {
+    display: grid;
 }
 
 .gallery .demo {
