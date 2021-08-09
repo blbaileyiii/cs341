@@ -814,20 +814,9 @@ tr.inactivated-registrant {
     text-decoration: line-through;
 }
 
-tr.adult-registrant,
-tr.adult-registrant a,
-tr.adult-registrant a:visited,
-tr.adult-registrant a:hover,
-tr.adult-registrant a:active  {
+tr.adult-registrant{
     background: var(--nav-bg) !important;
     color: var(--on-nav-bg) !important;
-}
-
-.total-registrants tr a,
-.total-registrants tr a:visited,
-.total-registrants tr a:hover,
-.total-registrants tr a:active {
-    color: var(--on-body-bg);
 }
 
 .event {
