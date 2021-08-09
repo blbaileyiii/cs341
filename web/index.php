@@ -31,8 +31,8 @@ switch($action){
             $images = scandir($dir);
             var_dump($images);
 
-            $images2 = glob($dir . '/*.jpg');
-            var_dump($images2)
+            //$images2 = glob($dir . '/*.jpg');
+            //var_dump($images2)
 
             if((@include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php') === false)
             {
