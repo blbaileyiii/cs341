@@ -693,7 +693,7 @@ function buildGalleryThumbnailsHTML($images, $path) {
         if(substr($images[$x], -4) == '.jpg') {
             $imgNumber++;            
             $galleryThumbsHTML .= "<div class='column'>";
-            $galleryThumbsHTML .= "<img class='demo cursor' src='$path/{$images[$x]}' onclick='currentSlide($imgNumber)'>";
+            $galleryThumbsHTML .= "<img class='demo cursor' style='width:100%' src='$path/{$images[$x]}' onclick='currentSlide($imgNumber)'>";
             $galleryThumbsHTML .= "</div>";
         }        
     }

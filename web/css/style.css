@@ -931,6 +931,79 @@ tr.adult-registrant {
     margin: 0.5rem 0;
 }
 
+.gallery .gallery-container {
+    position: relative;
+}
+
+.gallery .mySlides {
+    display: none;
+}
+
+.gallery .cursor {
+    cursor: pointer;
+}
+
+.gallery .prev,
+.gallery .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.gallery .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.gallery .prev:hover,
+.gallery .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gallery .numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.gallery .caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.gallery .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.gallery .column {
+  float: left;
+  width: 16.66%;
+}
+
+.gallery .demo {
+  opacity: 0.6;
+}
+
+.gallery .active,
+.gallery .demo:hover {
+  opacity: 1;
+}
+
 @media print {
     .print-registrants {
         -webkit-print-color-adjust: exact;
