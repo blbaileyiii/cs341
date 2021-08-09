@@ -675,7 +675,7 @@ function buildGalleryHTML($images, $dir) {
             $imgNumber++;
             $galleryHTML .= "<div class='mySlides'>";
             $galleryHTML .= "<div class='numbertext'>$imgNumber / $imgCount</div>";
-            $galleryHTML .= "<img class='responsive' src='$dir/{$images[$x]}>";
+            $galleryHTML .= "<img class='responsive' src='$dir/{$images[$x]}'>";
             $galleryHTML .= "</div/>";
         }        
     }
