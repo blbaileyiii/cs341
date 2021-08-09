@@ -35,8 +35,8 @@ switch($action){
                 //    $navList = buildExpNavList($events);
                 //}
 
-                include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php';
-                break;
+                //include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php';
+                //break;
             }            
         }
         header('Location: /');
