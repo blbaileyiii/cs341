@@ -200,10 +200,12 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "</a>";
             $registrantsHTML .= "</p>";
             $registrantsHTML .= "<tr>";
+            $registrantsHTML .= "<th>Checked In</th>";
             $registrantsHTML .= "<th>Event</th>";
             $registrantsHTML .= "<th>Ward</th>";
             $registrantsHTML .= "<th>Name</th>";
             $registrantsHTML .= "<th class='center-txt' style='font-size:1.5rem;'>🖶</th>";
+            $registrantsHTML .= "<th>Reviewed</th>";
             $registrantsHTML .= "<th>Age</th>";
             $registrantsHTML .= "<th>Shirt Size</th>";
             $registrantsHTML .= "<th>Email</th>";
@@ -222,13 +224,15 @@ function buildRegistrantsHTML($registrants) {
         } elseif ($registrants[$x]['p_age'] >= 19) {
             $registrantsHTML .= "<tr class='adult-registrant'>";
         } else {
-            $registrantsHTML .= "<tr>";
+            $registrantsHTML .= "<tr data-pid='{$registrants[$x]['id']}'>";
         }
 
+        $registrantsHTML .= "<td><input class='checkedin' type='checkbox'></td>";
         $registrantsHTML .= "<td>{$registrants[$x]['name']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_ward']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_name']}</td>";
         $registrantsHTML .= "<td class='center-txt'><a class='nounderline' href='?action=print&event={$registrants[$x]['key']}&id={$registrants[$x]['id']}' title='Print permission slips for {$registrants[$x]['p_name']}'  target='_blank' rel='noreferrer'>📄</a></td>";
+        $registrantsHTML .= "<td><input class='reviewed' type='checkbox'></td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_age']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_shirt_size']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['email']}</td>";
