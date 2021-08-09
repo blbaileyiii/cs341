@@ -24,11 +24,11 @@
             <div class="owl-carousel owl-theme owl-loaded">
                 <div class="owl-stage-outer">
                     <div class="owl-stage">
-                        <div class="owl-item">...</div>
-                        <div class="owl-item">...</div>
-                        <div class="owl-item">...</div>
-                        <div class="owl-item">...</div>
-                        <div class="owl-item">...</div>
+                        <div class="owl-item">Does</div>
+                        <div class="owl-item">.It</div>
+                        <div class="owl-item">Work</div>
+                        <div class="owl-item">Or</div>
+                        <div class="owl-item">Not</div>
                         <div class="owl-item">...</div>
                     </div>
                 </div>
