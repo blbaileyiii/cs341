@@ -20,7 +20,7 @@
                 <div class="collapsible-content">
                     <!-- <p>YWCAMP 2021: Each Ward is responsible to arrange transportation on July 27th, 2021. Please ask the Bishop for exact details.</p> -->
                     <!-- <p>YMCAMP 2021: Please drop your children off at the Stake Center at 8 AM July 27th, 2021.</p> -->
-                    <p>TREK 2021: TBD</p>
+                    <p>TREK 2021: Each Ward will determine a specific drop-off point and time. Contact your Bishopric with specific questions.</p>
                 </div>
             </li>
             <li>
