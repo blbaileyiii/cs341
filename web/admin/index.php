@@ -13,6 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/libraries/fx.php';
 $events = getEventsJSON();
 if($events){
     $events = json_decode($events, true);
+    $navList = buildNavList($events);
 } 
 
 $action = filter_input(INPUT_POST, 'action');

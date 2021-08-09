@@ -17,6 +17,7 @@ $events = getEventsJSON();
 if($events){
     $events = json_decode($events, true);
     $eventList = buildEventList($events);
+    $navList = buildNavList($events);
 }
 
 $min_DOB =  (date('Y') - 12).'-12-31'; // default
