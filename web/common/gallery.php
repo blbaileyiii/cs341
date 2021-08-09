@@ -3,7 +3,7 @@
         <h2>Gallery</h2>
         <div class='video'>
         <iframe width="420" height="315"
-            src="https://youtu.be/rLqL07Q_Fqk">
+            src="https://www.youtube.com/embed/rLqL07Q_Fqk">
         </iframe>
         </div>
         <div class='gallery-container'>
