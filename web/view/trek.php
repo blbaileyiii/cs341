@@ -22,13 +22,11 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/pillars.php'; ?>
         <div class="gallery">
             <div class="owl-carousel">
-                <div> Your Content </div>
-                <div> Your Content </div>
-                <div> Your Content </div>
-                <div> Your Content </div>
-                <div> Your Content </div>
-                <div> Your Content </div>
-                <div> Your Content </div>
+                <div> Does</div>
+                <div> It </div>
+                <div> Work </div>
+                <div> Or </div>
+                <div> Not </div>
             </div>
         </div>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/faq.php'; ?>
