@@ -18,8 +18,7 @@
         <div class="about"></div>
         <div class="schedule"></div>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/pillars.php'; ?>
-        <div class="gallery">
-        </div>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/gallery.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/faq.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/scripture.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/contact.php'; ?>

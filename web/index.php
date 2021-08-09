@@ -26,6 +26,14 @@ switch($action){
         $camp = filter_input(INPUT_GET, 'camp', FILTER_SANITIZE_STRING);
         if($camp){
             // Check if page exists...send to Home if not.
+
+            $dir = $_SERVER['DOCUMENT_ROOT'] . '/images/' . $camp;
+            $images = scandir($dir);
+            var_dump($images);
+
+            $images2 = glob($dir . '/*.jpg');
+            var_dump($images2)
+
             if((@include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php') === false)
             {
                 header('Location: /');
