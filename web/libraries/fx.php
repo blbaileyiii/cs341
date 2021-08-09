@@ -660,6 +660,22 @@ function buildPermissionSlipsHTML($registrants) {
     return $permissionSlipsHTML;
 }
 
+function buildGalleryHTML($images, $dir) {
+    $galleryHTML = "";
+
+    $imgCount = count($images);
+
+    for ($x = 0; $x < count($images); $x++) {
+        $imgNumber = $x + 1;
+        $galleryHTML .= "<div class='mySlides>";
+        $galleryHTML .= "<div class='numbertext>$imgNumber / $imgCount</div>";
+        $galleryHTML .= "<img class='responsive' src='$dir/{$images[$x]}>";
+        $galleryHTML .= "</div/>";
+    }
+
+    return $galleryHTML;
+}
+
 // function prepESig($imgLoc) {
 //     // $imgLoc = $_SERVER['DOCUMENT_ROOT'] . '/images/gw2.jpg';
 //     $img = fopen($imgLoc, 'r') or die("Cannot read image.");
