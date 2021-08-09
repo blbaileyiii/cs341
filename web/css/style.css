@@ -966,7 +966,7 @@ tr.adult-registrant {
 
 .gallery .prev:hover,
 .gallery .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--nav-bg);
 }
 
 .gallery .numbertext {
@@ -974,7 +974,9 @@ tr.adult-registrant {
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
-  top: 0;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: var(--nav-bg);
 }
 
 .gallery .caption-container {
