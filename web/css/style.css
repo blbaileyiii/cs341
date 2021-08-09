@@ -959,14 +959,19 @@ tr.adult-registrant {
   -webkit-user-select: none;
 }
 
+.gallery .prev {
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
 .gallery .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
+    border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .gallery .prev:hover,
 .gallery .next:hover {
-  background-color: var(--nav-bg);
+  background-color: var(--html-bg);
+  border-radius: 2rem 2rem 0 0;
 }
 
 .gallery .numbertext {
@@ -976,7 +981,8 @@ tr.adult-registrant {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  background-color: var(--nav-bg);
+  background-color: var(--html-bg);
+  border-radius: 2rem;
 }
 
 .gallery .caption-container {
