@@ -22,14 +22,6 @@ if ($action == NULL) {
 }
 
 switch($action){
-    case "getPaperwork":
-        $year = 2021;
-        if($events){
-            $eventsHTML = buildEventsHTML($events, $year);
-            include $_SERVER['DOCUMENT_ROOT'] . '/view/paperwork.php';
-            exit; 
-        }
-        break;
     case "print":
         $event = filter_input(INPUT_GET, 'event');
         $registrants = getPaperwork($event);
