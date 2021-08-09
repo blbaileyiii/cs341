@@ -31,9 +31,9 @@ switch($action){
                 header('Location: /');
                 exit;
             } else {
-                if($events){
-                    $navList = buildExpNavList($events);
-                }
+                //if($events){
+                //    $navList = buildExpNavList($events);
+                //}
 
                 include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php';
                 break;
