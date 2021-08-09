@@ -25,14 +25,19 @@ switch($action){
     case 'getCamp':
         $camp = filter_input(INPUT_GET, 'camp', FILTER_SANITIZE_STRING);
         if($camp){
+            // Check if page exists...send to Home if not.
             if((@include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php') === false)
             {
                 header('Location: /');
                 exit;
-            }
-            
-            include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php';
-            break;
+            } else {
+                if($events){
+                    $navList = buildExpNavList($events);
+                }
+
+                include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php';
+                break;
+            }            
         }
         header('Location: /');
         exit;

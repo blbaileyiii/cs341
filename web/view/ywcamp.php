@@ -11,7 +11,7 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/alert.php'; ?>
     </aside>
     <header>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/nav-expd.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/nav.php'; ?>
     </header>
     <main>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/countdown.php'; ?>        
