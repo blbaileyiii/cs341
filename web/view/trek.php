@@ -4,6 +4,8 @@
 <head>
     <?php $page = "Template" ?>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/head.php'; ?>
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
 </head>
 
 <body>
@@ -28,5 +30,7 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
     </footer>
     <script src="js/countdown.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="tools/owlcarousel/owl.carousel.min.js"></script>
 </body>
 </html>
