@@ -22,6 +22,14 @@ if ($action == NULL) {
 }
 
 switch($action){
+    case 'getCamp':
+        $camp = filter_input(INPUT_GET, 'camp', FILTER_SANITIZE_STRING);
+        if($camp){
+            include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php';
+            break;
+        }
+        header('Location: /registration/');
+        exit;
     case 'ymcamp':
         include $_SERVER['DOCUMENT_ROOT'] . '/view/ymcamp.php';
         break;
