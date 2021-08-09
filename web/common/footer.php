@@ -3,5 +3,5 @@
   <br>WebAdmin: B L Bailey III - <a href = "mailto: hhscamps@gmail.com">Contact</a> | <span id="lastUpdated" class="lastUpdated"><?php echo "Last Updated: " . date("j F, Y", getlastmod());?></span></p>
   <hr>
   <p>"This is not an official website of The Church of Jesus Christ of Latter-day Saints."</p>
-  <img class="qr-code qr-border" src='/images/qr-code.png' alt='hhscamps qr code'>
+  <img class="qr-code qr-border" src='/images/qr-code-w800.webp' alt='hhscamps qr code'>
 </div>
