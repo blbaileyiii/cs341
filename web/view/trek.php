@@ -38,6 +38,8 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
     </footer>
     <script src="js/countdown.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
 
 </body>
 </html>
