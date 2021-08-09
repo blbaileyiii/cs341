@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/libraries/fx.php';
 $events = getEventsJSON();
 if($events){
     $events = json_decode($events, true);
-    $navList = buildNavList($events);
+    $navList = buildExpNavList($events);
 } 
 
 $action = filter_input(INPUT_POST, 'action');
@@ -22,26 +22,26 @@ if ($action == NULL) {
 }
 
 switch($action){
-    // case 'getCamp':
-    //     $camp = filter_input(INPUT_GET, 'camp', FILTER_SANITIZE_STRING);
-    //     if($camp){
-    //         // Check if page exists...send to Home if not.
-    //         if((@include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php') === false)
-    //         {
-    //             header('Location: /');
-    //             exit;
-    //         } 
-    //         //if($events){
-    //         //    $navList = buildExpNavList($events);
-    //         //}
+    case 'getCamp':
+        $camp = filter_input(INPUT_GET, 'camp', FILTER_SANITIZE_STRING);
+        if($camp){
+            // Check if page exists...send to Home if not.
+            if((@include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php') === false)
+            {
+                header('Location: /');
+                exit;
+            } else {
+                include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php';
+                break;
+            }
 
-    //         //include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php';
-    //         //break;
-
-    //     }
-    //     header('Location: /');
-    //     exit;
+        }
+        header('Location: /');
+        exit;
     case 'attributions':
+        if($events){
+            $navList = buildNavList($events);
+        } 
         include $_SERVER['DOCUMENT_ROOT'] . '/view/attributions.php';
         break;
     default:
