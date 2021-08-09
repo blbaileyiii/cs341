@@ -16,7 +16,7 @@
                 </div>
             </li>
             <li>
-                <button type="button" class="collapsible-btn"><span class="faq-q">Where do I drop off my children for camp?</span><span class="expander">✚</span></button>
+                <button type="button" class="collapsible-btn"><span class="faq-q">Where do I drop off my children for camp/trek?</span><span class="expander">✚</span></button>
                 <div class="collapsible-content">
                     <!-- <p>YWCAMP 2021: Each Ward is responsible to arrange transportation on July 27th, 2021. Please ask the Bishop for exact details.</p> -->
                     <!-- <p>YMCAMP 2021: Please drop your children off at the Stake Center at 8 AM July 27th, 2021.</p> -->
