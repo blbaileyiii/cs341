@@ -667,11 +667,11 @@ function buildGalleryHTML($images, $path) {
     $imgNumber = 0;
 
     for ($x = 0; $x < count($images); $x++) {
-        if(substr($images[$x], -4 == '.jpg')){$imgCount++;}
+        if(substr($images[$x], -4) == '.jpg'){$imgCount++;}
     }
 
     for ($x = 0; $x < count($images); $x++) {
-        if(substr($images[$x], -4 == '.jpg')) {
+        if(substr($images[$x], -4) == '.jpg') {
             $imgNumber++;
             $galleryHTML .= "<div class='mySlides'>";
             $galleryHTML .= "<div class='numbertext'>$imgNumber / $imgCount</div>";
