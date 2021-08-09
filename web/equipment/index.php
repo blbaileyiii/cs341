@@ -6,10 +6,10 @@ session_start();
 // Get the database connection file
 require_once $_SERVER['DOCUMENT_ROOT'] . '/libraries/connections.php';
 // Get the registration model for use as needed
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/models/query-model.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/query-model.php';
 //require_once $_SERVER['DOCUMENT_ROOT'] . '/models/equipment-model.php';
 // Get the fxs for valiation and file building
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/libraries/fx.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/libraries/fx.php';
 
 $events = getEventsJSON();
 if($events){
