@@ -93,7 +93,7 @@ function buildNavList($events){
     $navList .= "<li class='nav item'><a href='/' title='Hacienda Heights Stake Youth Camps Home'>Home</a></li>";
     
     for ($x = 0; $x < count($events); $x++){
-        $eventName = strtoupper($events[$x]['key']);
+        $eventName = ucwords($events[$x]['key']);
         $navList .= "<li class='nav item'><a href='/?action={$events[$x]['key']}' title='$eventName'>$eventName</a></li>";
     }
 
