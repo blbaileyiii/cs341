@@ -1,8 +1,8 @@
 {
-  "name": "eow",
+  "name": "hhscamps",
   "version": "1.0.0",
-  "description": "Echoes of Whimsy",
-  "main": "eow.js",
+  "description": "Hacienda Heights Stake Camps",
+  "main": "hhscamps.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

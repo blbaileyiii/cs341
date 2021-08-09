@@ -15,6 +15,8 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
+echo $_SERVER['DOCUMENT_ROOT'];
+
 switch($action){
     case 'ymcamp':
         include $_SERVER['DOCUMENT_ROOT'] . '/2021/view/ymcamp.php';
