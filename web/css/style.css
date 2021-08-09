@@ -284,6 +284,7 @@ header a:hover {
 .about a:visited,
 .about a:active
 .scripture a,
+.scripture a:link,
 .scripture a:visited,
 .scripture a:active {
     color: var(--on-nav-bg);
