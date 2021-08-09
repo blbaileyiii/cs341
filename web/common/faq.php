@@ -38,7 +38,7 @@
                     <p>See <a href='https://abn.churchofjesuschrist.org/study/manual/general-handbook/20-activities?lang=eng#title_number2' title='Overnight Activities, General Handbook: Serving in The Church of Jesus Christ of Latter-day Saints' target="_blank" rel="noreferrer">Overnight Activities, General Handbook: Serving in The Church of Jesus Christ of Latter-day Saints (20.6.12 ¶:3-5)</a></p>
                     <p>For additional information please discuss the topic with your Bishop or the camp director of your specific event.</p>
                 </div>
-            </li>
+            </li>            
             <li>
                 <button type="button" class="collapsible-btn"><span class="faq-q">What are the dress requirements?</span><span class="expander">✚</span></button>
                 <div class="collapsible-content">
@@ -50,6 +50,13 @@
                     <p>Immodest clothing is any clothing that is tight, sheer, or revealing in any other manner. Young women should avoid short shorts and short skirts, shirts that do not cover the stomach, and clothing that does not cover the shoulders or is low-cut in the front or the back. Young men should also maintain modesty in their appearance. Young men and young women should be neat and clean and avoid being extreme or inappropriately casual in clothing, hairstyle, and behavior. They should choose appropriately modest apparel when participating in sports.</p>
                     <p>If you are not sure what is appropriate to wear, study the words of the prophets, pray for guidance, and ask your parents or leaders for help.</p>
                     <p>See <a href='https://abn.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/dress-and-appearance?lang=eng' title='Dress and Apprearance, Standards for Youth' target="_blank" rel="noreferrer">Dress and Apprearance, Standards for Youth</a></p>
+                </div>
+            </li>
+            <li>
+                <button type="button" class="collapsible-btn"><span class="faq-q">Do I have to dress like a pioneer for Trek?</span><span class="expander">✚</span></button>
+                <div class="collapsible-content">
+                    <p>Yes.</p>
+                    <p>Contact the camp directors for this event with specific questions or concerns.</p>
                 </div>
             </li>
             <li>

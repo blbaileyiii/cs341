@@ -2,6 +2,7 @@
     <div class="section-center">
         <h2>Gallery</h2>
         <div class='video'>
+            <!-- TREK Video (Pres. Rigby) -->
             <iframe class='responsive-iframe' src="https://www.youtube.com/embed/rLqL07Q_Fqk"></iframe>
         </div>
         <div class='gallery-container'>
