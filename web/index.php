@@ -30,7 +30,6 @@ switch($action){
             $dir = $_SERVER['DOCUMENT_ROOT'] . '/images/' . $camp;
             $path = '/images/' . $camp;
             $images = scandir($dir);
-            var_dump($images);
             $galleryHTML = buildGalleryHTML($images, $path);
 
             if((@include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php') === false)
