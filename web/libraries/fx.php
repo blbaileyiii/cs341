@@ -91,9 +91,6 @@ function buildNavList($events){
     $navList = '';
 
     $navList .= "<li class='nav item'><a href='/' title='Hacienda Heights Stake Youth Camps Home'>Home</a></li>";
-    $navList .= "<li class='nav item'><a href='/?action=ywcamp' title='YW Camp'>YW Camp</a></li>";
-    $navList .= "<li class='nav item'><a href='/?action=ymcamp' title='YM Camp'>YM Camp</a></li>";
-    $navList .= "<li class='nav item'><a href='/?action=trek' title='Trek'>Trek</a></li>";
     
     for ($x = 0; $x < count($events); $x++){
         $eventName = strtoupper($events[$x]['key']);
