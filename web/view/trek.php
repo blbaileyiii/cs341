@@ -40,6 +40,9 @@
                     <div class="owl-dot active"><span></span></div>
                     <div class="owl-dot"><span></span></div>
                     <div class="owl-dot"><span></span></div>
+                    <div class="owl-dot"><span></span></div>
+                    <div class="owl-dot"><span></span></div>
+                    <div class="owl-dot"><span></span></div>
                 </div>
             </div>
         </div>
