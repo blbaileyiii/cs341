@@ -966,7 +966,8 @@ tr.adult-registrant {
 .gallery .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 50%;
+  transform: translate(0, -50%);
   width: auto;
   padding: 16px;
   color: white;
