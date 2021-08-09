@@ -16,7 +16,7 @@
                 </div>
             </li>
             <li>
-                <button type="button" class="collapsible-btn"><span class="faq-q">Where do I drop off my children for camp/trek?</span><span class="expander">✚</span></button>
+                <button type="button" class="collapsible-btn"><span class="faq-q">Where do I drop my children off?</span><span class="expander">✚</span></button>
                 <div class="collapsible-content">
                     <!-- <p>YWCAMP 2021: Each Ward is responsible to arrange transportation on July 27th, 2021. Please ask the Bishop for exact details.</p> -->
                     <!-- <p>YMCAMP 2021: Please drop your children off at the Stake Center at 8 AM July 27th, 2021.</p> -->
@@ -43,7 +43,7 @@
                 <button type="button" class="collapsible-btn"><span class="faq-q">What are the dress requirements?</span><span class="expander">✚</span></button>
                 <div class="collapsible-content">
                     <p>We expect all youth to dress modestly and appropriately for camp.</p>
-                    <p>Equipment lists are provided for each camp, including what not to bring.</p>
+                    <p>Dress requirements vary between camps. Equipment lists are provided for each camp, which include the required clothing. They also including what not to bring. Example: Trek requires period dress.</p>                 
                     <p>However, the equipment lists cannot be expected to cover all items which would be appropriate or inappropriate. As such, consider the following when choosing what to wear:</p>
                     <p>We have been continually counseled to dress modestly. When you are well groomed and modestly dressed, you invite the companionship of the Spirit.</p>
                     <p>Never lower your standards of dress. Do not use camp as an excuse to be immodest.</p>
