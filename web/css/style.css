@@ -971,7 +971,6 @@ tr.adult-registrant {
 .gallery .prev:hover,
 .gallery .next:hover {
   background-color: var(--html-bg);
-  border-radius: 2rem 2rem 0 0;
 }
 
 .gallery .numbertext {
