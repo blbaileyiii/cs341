@@ -21,12 +21,26 @@
         <div class="schedule"></div>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/pillars.php'; ?>
         <div class="gallery">
-            <div class="owl-carousel">
-                <div> Does</div>
-                <div> It </div>
-                <div> Work </div>
-                <div> Or </div>
-                <div> Not </div>
+            <div class="owl-carousel owl-theme owl-loaded">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage">
+                        <div class="owl-item">...</div>
+                        <div class="owl-item">...</div>
+                        <div class="owl-item">...</div>
+                        <div class="owl-item">...</div>
+                        <div class="owl-item">...</div>
+                        <div class="owl-item">...</div>
+                    </div>
+                </div>
+                <div class="owl-nav">
+                    <div class="owl-prev">prev</div>
+                    <div class="owl-next">next</div>
+                </div>
+                <div class="owl-dots">
+                    <div class="owl-dot active"><span></span></div>
+                    <div class="owl-dot"><span></span></div>
+                    <div class="owl-dot"><span></span></div>
+                </div>
             </div>
         </div>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/faq.php'; ?>
