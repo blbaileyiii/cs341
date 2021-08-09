@@ -10,7 +10,7 @@
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
             <!-- Image text -->
-            <div class="caption-container">
+            <div class="caption-container hidden">
                 <p id="caption"></p>
             </div>
 
