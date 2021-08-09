@@ -48,7 +48,8 @@ header a:active,
 .all-schedules a:active,
 a.close-alert,
 a.close-alert:visited,
-a.close-alert:active{
+a.close-alert:active,
+.nounderline {
     text-decoration: none;
 }
 
