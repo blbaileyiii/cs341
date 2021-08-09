@@ -16,7 +16,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/libraries/fx.php';
 $events = getEventsJSON();
 if($events){
     $events = json_decode($events, true);
-    $eventList = buildEventList($events);
     $navList = buildNavList($events);
 }
 
