@@ -663,14 +663,21 @@ function buildPermissionSlipsHTML($registrants) {
 function buildGalleryHTML($images, $dir) {
     $galleryHTML = "";
 
-    $imgCount = count($images);
+    $imgCount = 0;
+    $imgNumber = 0;
 
     for ($x = 0; $x < count($images); $x++) {
-        $imgNumber = $x + 1;
-        $galleryHTML .= "<div class='mySlides>";
-        $galleryHTML .= "<div class='numbertext>$imgNumber / $imgCount</div>";
-        $galleryHTML .= "<img class='responsive' src='$dir/{$images[$x]}>";
-        $galleryHTML .= "</div/>";
+        if(substr($images[$x], -4 == '.jpg')){$imgCount++;}
+    }
+
+    for ($x = 0; $x < count($images); $x++) {
+        if(substr($images[$x], -4 == '.jpg')) {
+            $imgNumber++;
+            $galleryHTML .= "<div class='mySlides'>";
+            $galleryHTML .= "<div class='numbertext'>$imgNumber / $imgCount</div>";
+            $galleryHTML .= "<img class='responsive' src='$dir/{$images[$x]}>";
+            $galleryHTML .= "</div/>";
+        }        
     }
 
     return $galleryHTML;
