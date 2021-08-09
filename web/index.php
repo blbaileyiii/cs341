@@ -28,17 +28,8 @@ switch($action){
             include $_SERVER['DOCUMENT_ROOT'] . '/view/' . $camp . '.php';
             break;
         }
-        header('Location: /registration/');
+        header('Location: /');
         exit;
-    case 'ymcamp':
-        include $_SERVER['DOCUMENT_ROOT'] . '/view/ymcamp.php';
-        break;
-    case 'ywcamp':
-        include $_SERVER['DOCUMENT_ROOT'] . '/view/ywcamp.php';
-        break;
-    case 'trek':
-        include $_SERVER['DOCUMENT_ROOT'] . '/view/trek.php';
-        break;
     case 'attributions':
         include $_SERVER['DOCUMENT_ROOT'] . '/view/attributions.php';
         break;
