@@ -4,8 +4,8 @@
 <head>
     <?php $page = "Template" ?>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/head.php'; ?>
-    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
 </head>
 
 <body>
@@ -20,7 +20,17 @@
         <div class="about"></div>
         <div class="schedule"></div>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/pillars.php'; ?>
-        <div class="gallery"></div>
+        <div class="gallery">
+            <div class="owl-carousel">
+                <div> Your Content </div>
+                <div> Your Content </div>
+                <div> Your Content </div>
+                <div> Your Content </div>
+                <div> Your Content </div>
+                <div> Your Content </div>
+                <div> Your Content </div>
+            </div>
+        </div>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/faq.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/scripture.php'; ?>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/contact.php'; ?>
@@ -30,7 +40,12 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
     </footer>
     <script src="js/countdown.js"></script>
-    <script src="jquery.min.js"></script>
-    <script src="tools/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owlcarousel/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel();
+        });
+    </script>
 </body>
 </html>
