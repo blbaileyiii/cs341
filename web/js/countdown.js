@@ -115,7 +115,7 @@ function buildCountdownHTML(){
 
     let linkText;
 
-    console.log(camps[camp].locked);
+    // console.log(camps[camp].locked);
     
     if (camps[camp].locked) {
       linkText = document.createTextNode("🔒 Locked");
