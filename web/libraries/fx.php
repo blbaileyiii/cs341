@@ -203,7 +203,7 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "<th>Event</th>";
             $registrantsHTML .= "<th>Ward</th>";
             $registrantsHTML .= "<th>Name</th>";
-            $registrantsHTML .= "<th style='font-size:2rem;'>🖶</th>";
+            $registrantsHTML .= "<th style='font-size:1.25rem;'>🖶</th>";
             $registrantsHTML .= "<th>Age</th>";
             $registrantsHTML .= "<th>Shirt Size</th>";
             $registrantsHTML .= "<th>Email</th>";
