@@ -14,8 +14,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/query-model.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/libraries/fx.php';
 
 $events = getEventsJSON();
-$events = json_decode($events, true);
-$eventList = buildEventList($events);
+if($events){
+    $events = json_decode($events, true);
+    $eventList = buildEventList($events);
+}
 
 $min_DOB =  (date('Y') - 12).'-12-31'; // default
 

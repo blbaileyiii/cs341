@@ -10,6 +10,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/query-model.php';
 // Get the fxs for valiation and file building
 require_once $_SERVER['DOCUMENT_ROOT'] . '/libraries/fx.php';
 
+$events = getEventsJSON();
+if($events){
+    $events = json_decode($events, true);
+    $navList = buildNavList($events);
+} 
+
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
@@ -32,9 +38,7 @@ switch($action){
         include $_SERVER['DOCUMENT_ROOT'] . '/view/esig-show.php';
         break;
     default:
-        $events = getEventsJSON();
         if($events){
-            $events = json_decode($events, true);
             $aboutHTML = buildAboutHTML($events);
             $contactsHTML = buildContactsHTML($events);
         }        

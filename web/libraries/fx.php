@@ -87,6 +87,27 @@ function checkMaxDOB($chkVal, $dateMax) {
     return NULL;
 }
 
+function buildNavList($events){
+    $navList = '';
+
+    $navList .= "<li class='nav item'><a href='/' title='Hacienda Heights Stake Youth Camps Home'>Home</a></li>";
+    $navList .= "<li class='nav item'><a href='/?action=ywcamp' title='YW Camp'>YW Camp</a></li>";
+    $navList .= "<li class='nav item'><a href='/?action=ymcamp' title='YM Camp'>YM Camp</a></li>";
+    $navList .= "<li class='nav item'><a href='/?action=trek' title='Trek'>Trek</a></li>";
+    
+    for ($x = 0; $x < count($events); $x++){
+        $eventName = strtoupper($events[$x]['key']);
+        $navList .= "<li class='nav item'><a href='/?action={$events[$x]['key']}' title='$eventName'>$eventName</a></li>";
+    }
+
+    $navList .= "<li class='nav item'><a href='/equipment' title='Equipment'>Equipment</a></li>";
+    $navList .= "<li class='nav item'><a href='https://www.churchofjesuschrist.org/callings/church-safety-and-health/protecting-children-and-youth?lang=eng' title='Leadership Training' target='_blank' rel='noreferrer'>Leadership Training</a></li>";
+    $navList .= "<li class='nav item'><a href='/registration' title='Register'>Register</a></li>";
+
+    return $navList;
+
+}
+
 function buildEventList($events){
     $eventList = '';
     for ($x = 0; $x < count($events); $x++) {
