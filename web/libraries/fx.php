@@ -226,7 +226,7 @@ function buildRegistrantsHTML($registrants) {
 
         $registrantsHTML .= "<td>{$registrants[$x]['name']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_ward']}</td>";
-        $registrantsHTML .= "<td>{$registrants[$x]['p_name']}<a href='?action=print&event={$registrants[$x]['key']}&id={$registrants[$x]['id']}' title='Print permission slips for {$registrants[$x]['p_name']}'  target='_blank' rel='noreferrer'>📄</a></td>";
+        $registrantsHTML .= "<td>{$registrants[$x]['p_name']} <a href='?action=print&event={$registrants[$x]['key']}&id={$registrants[$x]['id']}' title='Print permission slips for {$registrants[$x]['p_name']}'  target='_blank' rel='noreferrer'>📄</a></td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_age']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_shirt_size']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['email']}</td>";
