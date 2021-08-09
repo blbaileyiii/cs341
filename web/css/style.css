@@ -823,10 +823,10 @@ tr.adult-registrant a:active  {
     color: var(--on-nav-bg) !important;
 }
 
-tr a,
-tr a:visited,
-tr a:hover,
-tr a:active {
+.total-registrants tr a,
+.total-registrants tr a:visited,
+.total-registrants tr a:hover,
+.total-registrants tr a:active {
     color: var(--on-body-bg);
 }
 
