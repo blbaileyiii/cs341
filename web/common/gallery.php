@@ -2,9 +2,7 @@
     <div class="section-center">
         <h2>Gallery</h2>
         <div class='video'>
-        <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/rLqL07Q_Fqk">
-        </iframe>
+        <iframe src="https://www.youtube.com/embed/rLqL07Q_Fqk"></iframe>
         </div>
         <div class='gallery-container'>
             <!-- Full-width images with number text -->
