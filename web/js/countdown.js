@@ -1,6 +1,7 @@
 // TODO: Only add the element to the camps array below based on the page...Home = all, other pages = only the specific one.
 let urlParms = new URLSearchParams(window.location.search);
 let action = urlParms.get('action');
+let campPage = urlParms.get('camp');
 let camps = {};
 
 getEvents();
@@ -46,10 +47,10 @@ function createCountdown(eventList){
 		eventList.forEach(event => {
 			// console.log(event);
       // console.log(event.key);
-      // console.log(action);
+      // console.log(campPage);
     
-      if(action){
-        if(event.key == action){
+      if(action && campPage){
+        if(action == 'getCamp' && event.key == campPage){
           camps[event.key] = createCamp(event);
         }        
       } else {
