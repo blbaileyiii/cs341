@@ -21,9 +21,9 @@ checkedInList.forEach(input => {
 function post(data){
     let url = "/query/";
 
-    for (let pair of data.entries()){
-        console.log(pair[0]+ ', ' + pair[1]); 
-    }
+    // for (let pair of data.entries()){
+    //     console.log(pair[0]+ ', ' + pair[1]); 
+    // }
 
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
