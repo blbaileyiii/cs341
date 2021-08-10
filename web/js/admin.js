@@ -44,6 +44,7 @@ leaderList.forEach(input => {
         data.append('p_id', this.dataset.pid);
         data.append('leader', this.checked);
 
+        if(this.dataset.age == '18')
         if(this.checked){
             this.parentNode.parentNode.classList.add('adult-registrant');
         } else {
