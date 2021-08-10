@@ -220,11 +220,11 @@ function buildRegistrantsHTML($registrants) {
         }
 
         if ($registrants[$x]['p_age'] >= 19 && $registrants[$x]['inactivated'] == true) {
-            $registrantsHTML .= "<tr class='inactivated-registrant adult-registrant'>";
+            $registrantsHTML .= "<tr class='inactivated-registrant adult-registrant' data-pid='{$registrants[$x]['id']}'>";
         } elseif ($registrants[$x]['inactivated'] == true) {
-            $registrantsHTML .= "<tr class='inactivated-registrant'>";
+            $registrantsHTML .= "<tr class='inactivated-registrant' data-pid='{$registrants[$x]['id']}'>";
         } elseif ($registrants[$x]['p_age'] >= 19) {
-            $registrantsHTML .= "<tr class='adult-registrant'>";
+            $registrantsHTML .= "<tr class='adult-registrant' data-pid='{$registrants[$x]['id']}'>";
         } else {
             $registrantsHTML .= "<tr data-pid='{$registrants[$x]['id']}'>";
         }
