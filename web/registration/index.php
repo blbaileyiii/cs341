@@ -211,7 +211,7 @@ switch($action){
         $email = strtolower($email);
         $participantAddress = ucwords(strtolower($participantAddress));
         $participantCity = ucwords(strtolower($participantCity));
-        $participantState = ucwords(strtolower($participantState));
+        if (strlen(trim($participantState)) <= 2) {$participantState = strtoupper($participantState);} else {$participantState = ucwords(strtolower($participantState));}
         $emergencyContact = ucwords(strtolower($emergencyContact));
 
         if($participantAge > 18) {
