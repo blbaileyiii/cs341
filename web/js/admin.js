@@ -43,6 +43,12 @@ leaderList.forEach(input => {
         data.append('action', 'postLeader');
         data.append('p_id', this.dataset.pid);
         data.append('leader', this.checked);
+
+        if(this.checked){
+            this.parentNode.parentNode.classList.add('adult-registrant');
+        } else {
+            this.parentNode.parentNode.classList.remove('adult-registrant');
+        }
         // post the Data
         post(data);
     })
