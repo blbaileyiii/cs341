@@ -234,7 +234,7 @@ function buildRegistrantsHTML($registrants) {
         if($registrants[$x]['checkedin'] == true){$checkedin = 'checked';} else {$checkedin = '';}
         if($registrants[$x]['reviewed'] == true ){$reviewed = 'checked';} else {$reviewed = '';}
         if($registrants[$x]['is_graduated'] == true){ $leader = 'checked';} else {$leader = '';}
-        if($registrants[$x]['is_graduated'] == true && $registrants[$x]['p_age'] == 18){$adultcheck = '';} else {$adultcheck = 'disabled';}
+        if($registrants[$x]['p_age'] == 18){$adultcheck = '';} else {$adultcheck = 'disabled';}
 
         $registrantsHTML .= "<td class='center-txt'><input class='checkedin' type='checkbox' data-pid='{$registrants[$x]['id']}' $checkedin></td>";
         $registrantsHTML .= "<td>{$registrants[$x]['name']}</td>";
