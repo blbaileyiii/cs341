@@ -1,7 +1,7 @@
-let checkedInList = document.querySelector('.checkedin');
-let reviewedList = document.querySelector('.reviewed');
-let leaderList = document.querySelector('.leader');
-let inactiveList = document.querySelector('.inactive');
+let checkedInList = document.querySelectorAll('.checkedin');
+let reviewedList = document.querySelectorAll('.reviewed');
+let leaderList = document.querySelectorAll('.leader');
+let inactiveList = document.querySelectorAll('.inactive');
 
 checkedInList.forEach(input => {
     input.addEventListener('change', function() {
