@@ -57,7 +57,7 @@ inactiveList.forEach(input => {
         let data = new FormData();
         data.append('action', 'postInactivated');
         data.append('p_id', this.dataset.pid);
-        data.append('inactive', this.checked);
+        data.append('inactive', this.value);
         // post the Data
         post(data);
     })
