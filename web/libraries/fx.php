@@ -244,7 +244,7 @@ function buildRegistrantsHTML($registrants) {
         $registrantsHTML .= "<td >{$registrants[$x]['emer_tele_one']}</td>";
         $registrantsHTML .= "<td class='center-txt'>{$registrants[$x]['emer_tele_one_type']}</td>";
         $registrantsHTML .= "<td class='center-txt'><input class='leader' type='checkbox' data-pid='{$registrants[$x]['id']}'></td>";
-        $registrantsHTML .= "<td class='center-txt'><button class='inactive' type='button' data-pid='{$registrants[$x]['id']}'>✚✖</button></td>";
+        $registrantsHTML .= "<td class='center-txt'><button class='inactive' type='button' value='true' data-pid='{$registrants[$x]['id']}'>✚✖</button></td>";
         $registrantsHTML .= "</tr>";
     }
 
