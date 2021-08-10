@@ -62,6 +62,7 @@ inactiveList.forEach(input => {
         this.dataset.value = !this.dataset.value;
 
         alert(this.dataset.value);
+        alert(!this.dataset.value);
 
         if(this.dataset.value){
             this.textContent = "✖";
