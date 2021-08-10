@@ -78,14 +78,6 @@ switch($action){
         $eventLeaderPhone = filter_input(INPUT_POST, 'eventLeaderPhone', FILTER_SANITIZE_STRING);
         $eventLeaderEmail = filter_input(INPUT_POST, 'eventLeaderEmail', FILTER_SANITIZE_STRING);
 
-        // Correct Capitalization
-        $participantName = ucwords(strtolower($participantName));
-        $email = strtolower($email);
-        $participantAddress = ucwords(strtolower($participantAddress));
-        $participantCity = ucwords(strtolower($participantCity));
-        $participantState = ucwords(strtolower($participantState));
-        $emergencyContact = ucwords(strtolower($emergencyContact));
-
         // Validate form data    
         $eventId = checkInt($eventId);
         $participantDOB = checkIsDate($participantDOB);
@@ -213,6 +205,14 @@ switch($action){
             include $_SERVER['DOCUMENT_ROOT'] . '/view/registration.php';
             exit; 
         }
+
+        // Correct Capitalization
+        $participantName = ucwords(strtolower($participantName));
+        $email = strtolower($email);
+        $participantAddress = ucwords(strtolower($participantAddress));
+        $participantCity = ucwords(strtolower($participantCity));
+        $participantState = ucwords(strtolower($participantState));
+        $emergencyContact = ucwords(strtolower($emergencyContact));
 
         if($participantAge > 18) {
             $leader = true;
