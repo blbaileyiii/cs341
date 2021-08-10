@@ -96,7 +96,7 @@ function post(data){
             console.log(this.responseText);
             let myDBRes = JSON.parse(this.responseText);
             if(myDBRes) {
-                // SUCCESSFUL...
+                location.reload();
             }
         } else if (this.readyState == 4 && this.status == 404) {
             /*
