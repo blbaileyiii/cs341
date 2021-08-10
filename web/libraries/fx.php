@@ -216,7 +216,7 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "<th>Emergency Contact</th>";
             $registrantsHTML .= "<th>Phone</th>";
             $registrantsHTML .= "<th></th>";
-            $registrantsHTML .= "<th>Leader</th>";
+            $registrantsHTML .= "<th>Adult</th>";
             $registrantsHTML .= "<th></th>";
             $registrantsHTML .= "</tr>";
         }
