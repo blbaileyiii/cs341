@@ -62,9 +62,11 @@ inactiveList.forEach(input => {
         if(this.dataset.value == 'false'){
             this.dataset.value = 'true';
             this.textContent = "✖";
+            this.parentNode.parentNode.classList.remove('inactivated-registrant');
         } else {
             this.dataset.value = 'false';
             this.textContent = "✚";
+            this.parentNode.parentNode.classList.add('inactivated-registrant');
         }
 
         // post the Data
