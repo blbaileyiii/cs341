@@ -318,7 +318,8 @@ function postCheckedIn($p_id, $isChecked) {
         return $returnSQL;
 
     } catch(PDOException $ex) {
-        echo json_encode("{'message':$sql . '<br>' . $ex->getMessage()}");
+        $message = $sql . '<br>' . $ex->getMessage();
+        echo json_encode("{'message': $message}");
     }
 }
 
