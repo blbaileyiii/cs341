@@ -62,9 +62,9 @@ inactiveList.forEach(input => {
         this.value = !this.value;
 
         if(this.value){
-            this.textcontent = "✖";
+            this.textContent = "✖";
         } else {
-            this.textcontent = "✚";
+            this.textContent = "✚";
         }
         // post the Data
         post(data);
