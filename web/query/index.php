@@ -118,7 +118,7 @@ switch($action){
         break;
     case 'postReviewed':
         $p_id = filter_input(INPUT_POST, 'p_id', FILTER_SANITIZE_NUMBER_INT);
-        $reviwed = filter_input(INPUT_POST, 'reviwed', FILTER_SANITIZE_STRING);
+        $reviewed = filter_input(INPUT_POST, 'reviewed', FILTER_SANITIZE_STRING);
 
         $p_id = checkInt($p_id);
         $reviewed = checkBool($reviewed);
