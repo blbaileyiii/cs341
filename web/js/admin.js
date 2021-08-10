@@ -60,10 +60,10 @@ inactiveList.forEach(input => {
         data.append('inactive', this.dataset.value);
 
         if(this.dataset.value == 'false'){
-            this.dataset.value == 'true';
+            this.dataset.value = 'true';
             this.textContent = "✖";
         } else {
-            this.dataset.value == 'false';
+            this.dataset.value = 'false';
             this.textContent = "✚";
         }
 
