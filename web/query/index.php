@@ -108,7 +108,7 @@ switch($action){
         $isChecked = checkBool($isChecked);
 
         if(empty($p_id) || empty($isChecked)){
-            $returnSQL = "{}";
+            $returnSQL = "{empty}";
             echo json_encode($returnSQL);
             exit;
         }
