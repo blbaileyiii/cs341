@@ -214,7 +214,8 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "<th>Emergency Contact</th>";
             $registrantsHTML .= "<th>Phone</th>";
             $registrantsHTML .= "<th></th>";
-            $registrantsHTML .= "<th>Action</th>";
+            $registrantsHTML .= "<th>Actions</th>";
+            $registrantsHTML .= "<th></th>";
             $registrantsHTML .= "</tr>";
         }
 
@@ -242,7 +243,8 @@ function buildRegistrantsHTML($registrants) {
         $registrantsHTML .= "<td>{$registrants[$x]['emer_name']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['emer_tele_one']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['emer_tele_one_type']}</td>";
-        $registrantsHTML .= "<td><button type='button'>Make Leader</button><button type='button'>Inactivate</button></td>";
+        $registrantsHTML .= "<td><button type='button' data-pid='{$registrants[$x]['id']}>Make Leader</button></td>";
+        $registrantsHTML .= "<td><button type='button' data-pid='{$registrants[$x]['id']}>Inactivate</button></td>";
         $registrantsHTML .= "</tr>";
     }
 
