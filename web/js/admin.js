@@ -67,7 +67,7 @@ inactiveList.forEach(input => {
             this.textContent = "✚";
         }
 
-        alert(this.dataset.value);
+        alert(this.dataset.value + " " + !this.dataset.value);
         // post the Data
         post(data);
     })
