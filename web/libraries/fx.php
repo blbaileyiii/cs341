@@ -221,11 +221,11 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "</tr>";
         }
 
-        if ($registrants[$x]['p_age'] >= 19 && $registrants[$x]['inactivated'] == true) {
+        if ($registrants[$x]['is_graduated'] && $registrants[$x]['inactivated'] == true) {
             $registrantsHTML .= "<tr class='inactivated-registrant adult-registrant' data-pid='{$registrants[$x]['id']}'>";
         } elseif ($registrants[$x]['inactivated'] == true) {
             $registrantsHTML .= "<tr class='inactivated-registrant' data-pid='{$registrants[$x]['id']}'>";
-        } elseif ($registrants[$x]['p_age'] >= 19) {
+        } elseif ($registrants[$x]['is_graduated']) {
             $registrantsHTML .= "<tr class='adult-registrant' data-pid='{$registrants[$x]['id']}'>";
         } else {
             $registrantsHTML .= "<tr data-pid='{$registrants[$x]['id']}'>";
@@ -275,7 +275,8 @@ function buildEventRegistrantsCount($registrants, $event){
     for ($x = 0; $x < count($registrants); $x++) {
         if($registrants[$x]['name'] == $event && $registrants[$x]['inactivated'] == false){
             $totalRegistrantCount++;
-            if ($registrants[$x]['p_age'] >= 19){
+            // if ($registrants[$x]['p_age'] >= 19){
+            if ($registrants[$x]['is_graduated']){
                 $adultRegistrantCount++;
             } else {
                 $youthRegistrantCount++;
