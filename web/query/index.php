@@ -108,13 +108,29 @@ switch($action){
         $isChecked = checkBool($isChecked);
 
         // echo json_encode("{'p_id': $p_id, 'checked': $isChecked}");
+
         if(empty($p_id) || empty($isChecked)){
             $returnSQL = "{}";
             echo json_encode($returnSQL);
             exit;
         }
         echo postCheckedIn($p_id, $isChecked);
-        //echo json_encode("{'p_id': $p_id, 'checked': $isChecked}");
+        break;
+    case 'postReviewed':
+        $p_id = filter_input(INPUT_POST, 'p_id', FILTER_SANITIZE_NUMBER_INT);
+        $reviwed = filter_input(INPUT_POST, 'reviwed', FILTER_SANITIZE_STRING);
+
+        $p_id = checkInt($p_id);
+        $reviewed = checkBool($reviewed);
+
+        // echo json_encode("{'p_id': $p_id, 'checked': $isChecked}");
+        
+        if(empty($p_id) || empty($reviewed)){
+            $returnSQL = "{}";
+            echo json_encode($returnSQL);
+            exit;
+        }
+        echo postReviewed($p_id, $reviewed);
         break;
 
     default:
