@@ -18,6 +18,21 @@ checkedInList.forEach(input => {
     })
 })
 
+reviewedList.forEach(input => {
+    input.addEventListener('change', function() {
+        // alert(this.dataset.pid);
+        // alert(this.checked);
+
+        // Prepare Post FormData
+        let data = new FormData();
+        data.append('action', 'postReviewed');
+        data.append('p_id', this.dataset.pid);
+        data.append('reviwed', this.checked);
+        // post the Data
+        post(data);
+    })
+})
+
 function post(data){
     let url = "/query/";
 

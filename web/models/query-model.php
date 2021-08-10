@@ -318,8 +318,38 @@ function postCheckedIn($p_id, $isChecked) {
         return $returnSQL;
 
     } catch(PDOException $ex) {
-        $message = $sql . '<br>' . $ex->getMessage();
-        echo json_encode("{'message': $message}");
+        // $message = $sql . '<br>' . $ex->getMessage();
+        // echo json_encode("{'message': $message}");
+    }
+}
+
+function postReviewed($p_id, $reviewed) {
+    try {
+        $db = hhConnect();
+
+        $sql = 
+        'UPDATE hhstake.registrants 
+        SET reviewed = :reviewed
+        WHERE id = :p_id';
+        
+        $sqlVarArray = array(
+            ':p_id' => $p_id,
+            ':reviewed' => $reviewed
+        );
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute($sqlVarArray);
+        $returnSQL = $stmt->rowCount();
+        $returnSQL = json_encode($returnSQL);
+
+        // The next line closes the interaction with the database 
+        $stmt->closeCursor();
+
+        return $returnSQL;
+
+    } catch(PDOException $ex) {
+        // $message = $sql . '<br>' . $ex->getMessage();
+        // echo json_encode("{'message': $message}");
     }
 }
 
