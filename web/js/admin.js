@@ -6,6 +6,6 @@ let inactiveList = document.querySelectorAll('.inactive');
 checkedInList.forEach(input => {
     input.addEventListener('change', function() {
         // alert(this.dataset.pid);
-        alert(this.value);
+        alert(this.checked);
     })
 })
