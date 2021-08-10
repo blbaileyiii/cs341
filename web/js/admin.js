@@ -66,6 +66,8 @@ inactiveList.forEach(input => {
             this.dataset.value == 'false';
             this.textContent = "✚";
         }
+
+        alert(this.dataset.value);
         // post the Data
         post(data);
     })
