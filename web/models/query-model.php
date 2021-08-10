@@ -293,6 +293,35 @@ function postItemJSON($reg_id, $item_id, $owned, $pur_price) {
     }
 }
 
+function postCheckedIn($p_id, $isChecked) {
+    try {
+        $db = hhConnect();
+
+        $sql = 
+        'UPDATE hhstake.registrants 
+        SET checkedin = :$isChecked
+        WHERE id = :p_id';
+        
+        $sqlVarArray = array(
+            ':p_id' => $p_id,
+            ':checkedin' => $isChecked
+        );
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute($sqlVarArray);
+        $returnSQL = $stmt->rowCount();
+        $returnSQL = json_encode($returnSQL);
+
+        // The next line closes the interaction with the database 
+        $stmt->closeCursor();
+
+        return $returnSQL;
+
+    } catch(PDOException $ex) {
+        //echo $sql . "<br>" . $ex->getMessage();
+    }
+}
+
 function getSig($id, $type) {
     try {
         $db = hhConnect();

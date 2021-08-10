@@ -100,6 +100,21 @@ switch($action){
         }
         echo postItemJSON($reg_id, $item_id, $owned, $pur_price);
         break;
+    case 'postCheckedIn':
+        $p_id = filter_input(INPUT_POST, 'p_id', FILTER_SANITIZE_NUMBER_INT);
+        $isChecked = filter_input(INPUT_POST, 'isChecked', FILTER_SANITIZE_STRING);
+
+        $p_id = checkInt($p_id);
+        $isChecked = checkBool($isChecked);
+
+        if(empty($p_id) || empty($isChecked)){
+            $returnSQL = "{}";
+            echo json_encode($returnSQL);
+            exit;
+        }
+        echo postCheckedIn($p_id, $isChecked);
+        break;
+
     default:
         break;
 }
