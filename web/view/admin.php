@@ -1,5 +1,5 @@
 <?php
-if(!$_SESSION['loggedin'] Or $_SESSION['hhsAccount']['clientLevel'] <= 1) {
+if(!$_SESSION['loggedin'] Or $_SESSION['hhsAccount']['client_level'] <= 1) {
     header('Location: /');
     exit;
 }

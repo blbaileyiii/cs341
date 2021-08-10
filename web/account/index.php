@@ -17,7 +17,10 @@ if ($action == NULL) {
 }
 
 switch($action){
-    case "print":
+    case "createAccount":
+        include $_SERVER['DOCUMENT_ROOT'] . '/views/accountCreation.php';
+        break;
+    case "CreateAccount":
         break;
     default:
         include $_SERVER['DOCUMENT_ROOT'] . '/view/login.php';
