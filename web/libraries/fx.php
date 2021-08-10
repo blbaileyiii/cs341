@@ -229,9 +229,9 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "<tr data-pid='{$registrants[$x]['id']}'>";
         }
 
-        if($registrants[$x]['checkedin'] == 'true'){$checkedin = 'checked';}
-        if($registrants[$x]['reviewed'] == 'true' ){$reviewed = 'checked';}
-        if($registrants[$x]['is_graduated'] == 'true'){$leader = 'checked';}
+        if($registrants[$x]['checkedin'] == true){$checkedin = 'checked';} else { $checkedin = '';}
+        if($registrants[$x]['reviewed'] == true ){$reviewed = 'checked';} else { $checkedin = '';}
+        if($registrants[$x]['is_graduated'] == true){$leader = 'checked';} else { $checkedin = '';}
 
         $registrantsHTML .= "<td class='center-txt'><input class='checkedin' type='checkbox' data-pid='{$registrants[$x]['id']}' $checkedin></td>";
         $registrantsHTML .= "<td>{$registrants[$x]['name']}</td>";
@@ -248,7 +248,7 @@ function buildRegistrantsHTML($registrants) {
         $registrantsHTML .= "<td >{$registrants[$x]['emer_tele_one']}</td>";
         $registrantsHTML .= "<td class='center-txt'>{$registrants[$x]['emer_tele_one_type']}</td>";
         $registrantsHTML .= "<td class='center-txt'><input class='leader' type='checkbox' data-pid='{$registrants[$x]['id']}' data-age='{$registrants[$x]['p_age']}' $leader></td>";
-        if($registrants[$x]['inactivated'] == 'true'){
+        if($registrants[$x]['inactivated'] == true){
             $registrantsHTML .= "<td class='center-txt'><button class='inactive' type='button' data-value='true' data-pid='{$registrants[$x]['id']}'>✖</button></td>";
         } else {
             $registrantsHTML .= "<td class='center-txt'><button class='inactive' type='button' data-value='false' data-pid='{$registrants[$x]['id']}'>✚</button></td>";
