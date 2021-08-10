@@ -227,12 +227,12 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "<tr data-pid='{$registrants[$x]['id']}'>";
         }
 
-        $registrantsHTML .= "<td class='center-txt'><input class='checkedin' type='checkbox'></td>";
+        $registrantsHTML .= "<td class='center-txt'><input class='checkedin' type='checkbox' data-pid='{$registrants[$x]['id']}'></td>";
         $registrantsHTML .= "<td>{$registrants[$x]['name']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_ward']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_name']}</td>";
         $registrantsHTML .= "<td class='center-txt'><a class='nounderline' href='?action=print&event={$registrants[$x]['key']}&id={$registrants[$x]['id']}' title='Print permission slips for {$registrants[$x]['p_name']}'  target='_blank' rel='noreferrer'>📄</a></td>";
-        $registrantsHTML .= "<td class='center-txt'><input class='reviewed' type='checkbox'></td>";
+        $registrantsHTML .= "<td class='center-txt'><input class='reviewed' type='checkbox' data-pid='{$registrants[$x]['id']}'></td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_age']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['p_shirt_size']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['email']}</td>";
