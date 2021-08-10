@@ -51,8 +51,8 @@
                     <?php
                         $date = date_create(date('Y-m-d'));
                         echo $date;
-                        date_sub($date, date_interval_create_from_date_string('12 years'));
-                        echo date_format($date, 'Y-m-d');
+                        // date_sub($date, date_interval_create_from_date_string('12 years'));
+                        // echo date_format($date, 'Y-m-d');
                     ?>
                     <div class="fields">
                         <label for="dOB"><span>Date of birth (Must be turning <span id='turningAge'>12</span> this year or older)</span><span class="field-tip">Required</span></label> 
