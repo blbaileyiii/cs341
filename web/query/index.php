@@ -112,10 +112,8 @@ switch($action){
             $returnSQL = "{}";
             echo json_encode($returnSQL);
             exit;
-        } else {
-            echo json_encode("{'p_id': $p_id, 'checked': $isChecked}");
         }
-        //echo postCheckedIn($p_id, $isChecked);
+        echo postCheckedIn($p_id, $isChecked);
         //echo json_encode("{'p_id': $p_id, 'checked': $isChecked}");
         break;
 
