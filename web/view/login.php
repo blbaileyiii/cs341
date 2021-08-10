@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-    <?php $page = "LOGIN" ?>
+    <?php $page = "Login" ?>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/head.php'; ?>
 </head>
 
@@ -15,7 +15,7 @@
     </header>    
     <main>
         <section>
-            <h1><?php echo ucwords(strtolower($page)); ?></h1>
+            <h1><?php echo $page; ?></h1>
             <?php
                 if (isset($_SESSION['message'])) { 
                         echo $_SESSION['message']; 
