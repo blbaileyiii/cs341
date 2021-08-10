@@ -15,6 +15,12 @@
     </header>    
     <main>    
         <h1><?php echo $page; ?></h1>
+        <?php
+            if (isset($_SESSION['message'])) { 
+                    echo $_SESSION['message']; 
+                    unset($_SESSION['message']);
+            }
+        ?>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>

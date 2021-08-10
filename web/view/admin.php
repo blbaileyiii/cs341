@@ -1,3 +1,9 @@
+<?php
+if(!$_SESSION['loggedin'] Or $_SESSION['hhsAccount']['clientLevel'] <= 1) {
+    header('Location: /');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -16,6 +22,12 @@
     <main>
         <section class="total-registrants">
             <h1><?php echo $page; ?></h1>
+            <?php
+                if (isset($_SESSION['message'])) { 
+                        echo $_SESSION['message']; 
+                        unset($_SESSION['message']);
+                }
+            ?>
             <?php echo $registrantsTable; ?>
         </section>
     </main>

@@ -3,6 +3,13 @@
  * Master Controller
  */
 session_start();
+
+$account = $_SESSION['hhsAccount']['account'];
+if(empty($account)){            
+    header('Location: /account/?action=login');
+    exit;
+}
+
 // Get the database connection file
 require_once $_SERVER['DOCUMENT_ROOT'] . '/libraries/connections.php';
 // Get the registration model for use as needed
@@ -42,7 +49,7 @@ switch($action){
             $registrantsTable = buildRegistrantsHTML($registrants);
             include $_SERVER['DOCUMENT_ROOT'] . '/view/admin.php';
             exit; 
-        } 
+        }        
         break;
 }
 ?>
