@@ -75,7 +75,7 @@ function getRegistrants() {
         $db = hhConnect();
 
         $sql = 
-        'SELECT e.key, e.name, r.id, r.p_ward, r.p_name, r.checkin, r.p_age, r.p_shirt_size, r.email, r.tele_one, r.tele_one_type, r.emer_name, r.emer_tele_one, r.emer_tele_one_type, r.is_graduated, r.reviewed, r.inactivated
+        'SELECT e.key, e.name, r.id, r.p_ward, r.p_name, r.checkedin, r.p_age, r.p_shirt_size, r.email, r.tele_one, r.tele_one_type, r.emer_name, r.emer_tele_one, r.emer_tele_one_type, r.is_graduated, r.reviewed, r.inactivated
         FROM hhstake.registrants AS r
         LEFT JOIN hhstake.events AS e ON r.event_id = e.id
         ORDER BY e.name, r.p_ward, r.p_name';
