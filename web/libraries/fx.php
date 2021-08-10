@@ -183,7 +183,7 @@ function buildRegistrantsHTML($registrants) {
     $event = "";
 
     for ($x = 0; $x < count($registrants); $x++) {
-        var_dump($registrants);
+        var_dump($registrants[$x]);
         echo "<br>";
         if ($registrants[$x]['name'] != $event){
 
@@ -232,8 +232,8 @@ function buildRegistrantsHTML($registrants) {
         }
 
         if($registrants[$x]['checkedin'] == true){$checkedin = 'checked';} else { $checkedin = '';}
-        if($registrants[$x]['reviewed'] == true ){$reviewed = 'checked';} else { $checkedin = '';}
-        if($registrants[$x]['is_graduated'] == true){$leader = 'checked';} else { $checkedin = '';}
+        if($registrants[$x]['reviewed'] == true ){$reviewed = 'checked';} else { $reviewed = '';}
+        if($registrants[$x]['is_graduated'] == true){$leader = 'checked';} else { $leader = '';}
 
         $registrantsHTML .= "<td class='center-txt'><input class='checkedin' type='checkbox' data-pid='{$registrants[$x]['id']}' $checkedin></td>";
         $registrantsHTML .= "<td>{$registrants[$x]['name']}</td>";
