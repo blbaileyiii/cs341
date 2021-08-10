@@ -183,6 +183,8 @@ function buildRegistrantsHTML($registrants) {
     $event = "";
 
     for ($x = 0; $x < count($registrants); $x++) {
+        var_dump($registrants);
+        echo "<br>";
         if ($registrants[$x]['name'] != $event){
 
             if ($event != ""){
