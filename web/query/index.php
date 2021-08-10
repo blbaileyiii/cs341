@@ -162,7 +162,7 @@ switch($action){
             echo json_encode($returnSQL);
             exit;
         }
-        echo postInactive($p_id, $inactive);
+        echo postInactivated($p_id, $inactive);
         break;
     default:
         break;
