@@ -304,7 +304,7 @@ function postCheckedIn($p_id, $isChecked) {
         
         $sqlVarArray = array(
             ':p_id' => $p_id,
-            ':checkedin' => $isChecked
+            ':isChecked' => $isChecked
         );
 
         $stmt = $db->prepare($sql);
