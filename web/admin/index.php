@@ -26,7 +26,7 @@ switch($action){
         $event = filter_input(INPUT_GET, 'event');
         $id = filter_input(INPUT_GET, 'id');
         $id = checkInt($id);
-        
+
         $registrants = getPaperwork($event, $id);
         if($registrants){
             $registrants = json_decode($registrants, true);
@@ -40,7 +40,7 @@ switch($action){
         if($registrants){
             $registrants = json_decode($registrants, true);
             $registrantsTable = buildRegistrantsHTML($registrants);
-            include $_SERVER['DOCUMENT_ROOT'] . '/view/registrants.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/view/admin.php';
             exit; 
         } 
         break;

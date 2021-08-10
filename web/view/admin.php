@@ -24,5 +24,6 @@
     </footer>
     <?php // var_dump($registrants); ?>
     <?php // var_dump($registrantsTable); ?>
+    <script type="module" src="/js/admin.js"></script>
 </body>
 </html>
