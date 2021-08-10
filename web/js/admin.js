@@ -59,14 +59,11 @@ inactiveList.forEach(input => {
         data.append('p_id', this.dataset.pid);
         data.append('inactive', this.dataset.value);
 
-        this.dataset.value = !this.dataset.value;
-
-        alert(this.dataset.value);
-        alert(!this.dataset.value);
-
-        if(this.dataset.value){
+        if(this.dataset.value == 'false'){
+            this.dataset.value == 'true';
             this.textContent = "✖";
         } else {
+            this.dataset.value == 'false';
             this.textContent = "✚";
         }
         // post the Data
