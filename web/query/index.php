@@ -94,7 +94,7 @@ switch($action){
         $pur_price = checkFloat($pur_price);
 
         if(empty($reg_id) || empty($item_id) || empty($owned)){
-            $returnSQL = "{}";
+            $returnSQL = "{'empty': 'empty'}";
             echo json_encode($returnSQL);
             exit;
         }
@@ -108,7 +108,7 @@ switch($action){
         $isChecked = checkBool($isChecked);
 
         if(empty($p_id) || empty($isChecked)){
-            $returnSQL = "{'empty': 'empty'}";
+            $returnSQL = "{}";
             echo json_encode($returnSQL);
             exit;
         }
