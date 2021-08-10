@@ -299,7 +299,7 @@ function postCheckedIn($p_id, $isChecked) {
 
         $sql = 
         'UPDATE hhstake.registrants 
-        SET checkedin = :$isChecked
+        SET checkedin = :isChecked
         WHERE id = :p_id';
         
         $sqlVarArray = array(
