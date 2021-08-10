@@ -27,7 +27,7 @@ reviewedList.forEach(input => {
         let data = new FormData();
         data.append('action', 'postReviewed');
         data.append('p_id', this.dataset.pid);
-        data.append('reviwed', this.checked);
+        data.append('reviewed', this.checked);
         // post the Data
         post(data);
     })
