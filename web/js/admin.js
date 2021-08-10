@@ -13,8 +13,6 @@ checkedInList.forEach(input => {
         data.append('action', 'postCheckedIn');
         data.append('p_id', this.dataset.pid);
         data.append('isChecked', this.checked);
-
-        console.log(data);
         // post the Data
         post(data);
     })
@@ -23,8 +21,10 @@ checkedInList.forEach(input => {
 function post(data){
     let url = "/query/";
 
-    console.log(data);
-    
+    for (let pair of data.entries()){
+        console.log(pair[0]+ ', ' + pair[1]); 
+    }
+
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         //do stuff with data...
