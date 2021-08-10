@@ -61,7 +61,7 @@ inactiveList.forEach(input => {
 
         this.dataset.value = !this.dataset.value;
 
-        if(this.value){
+        if(this.dataset.value){
             this.textContent = "✖";
         } else {
             this.textContent = "✚";
