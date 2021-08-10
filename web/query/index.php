@@ -107,9 +107,10 @@ switch($action){
         $p_id = checkInt($p_id);
         $isChecked = checkBool($isChecked);
 
+        echo json_encode("{'p_id': $p_id, 'checked': $isChecked}");
         if(empty($p_id) || empty($isChecked)){
             $returnSQL = "{'a':1}";
-            echo json_encode($returnSQL);
+            //echo json_encode($returnSQL);
             exit;
         }
         //echo postCheckedIn($p_id, $isChecked);
