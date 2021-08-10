@@ -353,6 +353,66 @@ function postReviewed($p_id, $reviewed) {
     }
 }
 
+function postLeader($p_id, $leader) {
+    try {
+        $db = hhConnect();
+
+        $sql = 
+        'UPDATE hhstake.registrants 
+        SET isGraduated = :leader
+        WHERE id = :p_id';
+        
+        $sqlVarArray = array(
+            ':p_id' => $p_id,
+            ':leader' => $leader
+        );
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute($sqlVarArray);
+        $returnSQL = $stmt->rowCount();
+        $returnSQL = json_encode($returnSQL);
+
+        // The next line closes the interaction with the database 
+        $stmt->closeCursor();
+
+        return $returnSQL;
+
+    } catch(PDOException $ex) {
+        // $message = $sql . '<br>' . $ex->getMessage();
+        // echo json_encode("{'message': $message}");
+    }
+}
+
+function postInactivated($p_id, $inactive) {
+    try {
+        $db = hhConnect();
+
+        $sql = 
+        'UPDATE hhstake.registrants 
+        SET inactivated = :inactive
+        WHERE id = :p_id';
+        
+        $sqlVarArray = array(
+            ':p_id' => $p_id,
+            ':inactive' => $inactive
+        );
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute($sqlVarArray);
+        $returnSQL = $stmt->rowCount();
+        $returnSQL = json_encode($returnSQL);
+
+        // The next line closes the interaction with the database 
+        $stmt->closeCursor();
+
+        return $returnSQL;
+
+    } catch(PDOException $ex) {
+        // $message = $sql . '<br>' . $ex->getMessage();
+        // echo json_encode("{'message': $message}");
+    }
+}
+
 function getSig($id, $type) {
     try {
         $db = hhConnect();

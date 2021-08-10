@@ -132,7 +132,38 @@ switch($action){
         }
         echo postReviewed($p_id, $reviewed);
         break;
+    case 'postLeader':
+        $p_id = filter_input(INPUT_POST, 'p_id', FILTER_SANITIZE_NUMBER_INT);
+        $leader = filter_input(INPUT_POST, 'leader', FILTER_SANITIZE_STRING);
 
+        $p_id = checkInt($p_id);
+        $leader = checkBool($leader);
+
+        // echo json_encode("{'p_id': $p_id, 'reviewed': $reviewed}");
+        
+        if(empty($p_id) || empty($leader)){
+            $returnSQL = "{}";
+            echo json_encode($returnSQL);
+            exit;
+        }
+        echo postLeader($p_id, $leader);
+        break;
+    case 'postInactivated':
+        $p_id = filter_input(INPUT_POST, 'p_id', FILTER_SANITIZE_NUMBER_INT);
+        $inactive = filter_input(INPUT_POST, 'inactive', FILTER_SANITIZE_STRING);
+
+        $p_id = checkInt($p_id);
+        $inactive = checkBool($inactive);
+
+        // echo json_encode("{'p_id': $p_id, 'reviewed': $reviewed}");
+        
+        if(empty($p_id) || empty($inactive)){
+            $returnSQL = "{}";
+            echo json_encode($returnSQL);
+            exit;
+        }
+        echo postInactive($p_id, $inactive);
+        break;
     default:
         break;
 }
