@@ -214,7 +214,7 @@ function buildRegistrantsHTML($registrants) {
             $registrantsHTML .= "<th>Emergency Contact</th>";
             $registrantsHTML .= "<th>Phone</th>";
             $registrantsHTML .= "<th></th>";
-            $registrantsHTML .= "<th>Actions</th>";
+            $registrantsHTML .= "<th>Leader</th>";
             $registrantsHTML .= "<th></th>";
             $registrantsHTML .= "</tr>";
         }
@@ -243,7 +243,7 @@ function buildRegistrantsHTML($registrants) {
         $registrantsHTML .= "<td>{$registrants[$x]['emer_name']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['emer_tele_one']}</td>";
         $registrantsHTML .= "<td>{$registrants[$x]['emer_tele_one_type']}</td>";
-        $registrantsHTML .= "<td><button type='button' data-pid='{$registrants[$x]['id']}'>Make Leader</button></td>";
+        $registrantsHTML .= "<td><input class='leader' type='checkbox' data-pid='{$registrants[$x]['id']}'></td>";
         $registrantsHTML .= "<td><button type='button' data-pid='{$registrants[$x]['id']}'>✚✖</button></td>";
         $registrantsHTML .= "</tr>";
     }
