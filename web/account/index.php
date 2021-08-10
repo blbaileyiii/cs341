@@ -18,7 +18,7 @@ if ($action == NULL) {
 
 switch($action){
     case "createAccount":
-        include $_SERVER['DOCUMENT_ROOT'] . '/views/accountCreation.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/view/accountCreation.php';
         break;
     case "CreateAccount":
         break;
