@@ -48,6 +48,12 @@
                         <label for="l_name"><span>Last Name(s)</span><span class="field-tip">Required</span></label> 
                         <input id="l_name" name="l_name" type="text" <?php if(isset($l_name)){echo "value='$l_name'";} ?> required>
                     </div>
+                    <?php
+                        $date = date_create(date('Y-m-d'));
+                        echo $date;
+                        date_sub($date, date_interval_create_from_date_string('12 years'));
+                        echo date_format($date, 'Y-m-d');
+                    ?>
                     <div class="fields">
                         <label for="dOB"><span>Date of birth (Must be turning <span id='turningAge'>12</span> this year or older)</span><span class="field-tip">Required</span></label> 
                         <input id="dOB" name="dOB" type="date" max="2009-12-31" <?php if(isset($dOB)){echo "value='$dOB'";} ?> required>
