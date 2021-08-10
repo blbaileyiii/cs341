@@ -94,7 +94,7 @@ switch($action){
         $pur_price = checkFloat($pur_price);
 
         if(empty($reg_id) || empty($item_id) || empty($owned)){
-            $returnSQL = "{'empty': 'empty'}";
+            $returnSQL = "{}";
             echo json_encode($returnSQL);
             exit;
         }
