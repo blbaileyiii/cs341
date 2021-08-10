@@ -359,7 +359,7 @@ function postLeader($p_id, $leader) {
 
         $sql = 
         'UPDATE hhstake.registrants 
-        SET isGraduated = :leader
+        SET is_graduated = :leader
         WHERE id = :p_id';
         
         $sqlVarArray = array(
