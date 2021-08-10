@@ -123,7 +123,7 @@ switch($action){
         $p_id = checkInt($p_id);
         $reviewed = checkBool($reviewed);
 
-        // echo json_encode("{'p_id': $p_id, 'checked': $isChecked}");
+        // echo json_encode("{'p_id': $p_id, 'reviewed': $reviewed}");
         
         if(empty($p_id) || empty($reviewed)){
             $returnSQL = "{}";
