@@ -22,7 +22,7 @@
                         unset($_SESSION['message']);
                 }
             ?>
-            <form class="row gap" action="/account/" method="post">
+            <form class="form" action="/account/" method="post">
                 <div class="fields">
                     <label for="account"><span>Account Name (Email Address)</span><span class="field-tip">Required</span></label>
                     <input id="account" name="account" type="text" autocomplete="username" required>
