@@ -378,8 +378,8 @@ function postLeader($p_id, $leader) {
         return $returnSQL;
 
     } catch(PDOException $ex) {
-        // $message = $sql . '<br>' . $ex->getMessage();
-        // echo json_encode("{'message': $message}");
+        $message = $sql . '<br>' . $ex->getMessage();
+        echo json_encode("{'message': $message}");
     }
 }
 
