@@ -57,9 +57,9 @@ inactiveList.forEach(input => {
         let data = new FormData();
         data.append('action', 'postInactivated');
         data.append('p_id', this.dataset.pid);
-        data.append('inactive', this.value);
+        data.append('inactive', this.dataset.value);
 
-        this.value = !this.value;
+        this.dataset.value = !this.dataset.value;
 
         if(this.value){
             this.textContent = "✖";
